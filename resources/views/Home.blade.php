@@ -1,5 +1,17 @@
 @extends('layouts.main')
 @section('title','Home')
+@section('linkAuth')
+ <!-- BEGIN PAGE LEVEL STYLE -->
+ <link href="../src/plugins/src/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+
+<link href="../src/plugins/css/light/fullcalendar/custom-fullcalendar.css" rel="stylesheet" type="text/css" />
+<link href="../src/assets/css/light/components/modal.css" rel="stylesheet" type="text/css">
+
+<link href="../src/plugins/css/dark/fullcalendar/custom-fullcalendar.css" rel="stylesheet" type="text/css" />
+<link href="../src/assets/css/dark/components/modal.css" rel="stylesheet" type="text/css">
+<!-- END PAGE LEVEL STYLE -->
+
+@endsection
 
 @section('content')
 <!-- BEGIN LOADER -->
@@ -18,26 +30,96 @@
                     <div class="page-meta">
                         <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Dasboard</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Cliente</li>
+                                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Secretaria</li>
                             </ol>
                         </nav>
                     </div>
                     <!-- /BREADCRUMB -->
-    
-                    <div class="row layout-top-spacing">
-
-                        <div class="col-12">
-                            <div class="alert alert-arrow-right alert-icon-right alert-light-warning alert-dismissible fade show mb-4" role="alert">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg>
-                                <strong>Kick Start you new project with ease!</strong> Learn more about Starter Kit by refering to the <a target="_blank" href="https://designreset.com/cork/documentation/getting-started.html">Documentation</a>
+                   <!--calendario-->
+                   <div class="row layout-top-spacing layout-spacing" id="cancel-row">
+                        <div class="col-xl-12 col-lg-12 col-md-12">
+                            <div class="calendar-container">
+                                <div class="calendar"></div>
                             </div>
-                        </div>  
-                        
-                        <div class="col-md-12">
                         </div>
-    
                     </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+    
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="">
+                                                <label class="form-label">Enter Title</label>
+                                                <input id="event-title" type="text" class="form-control">
+                                            </div>
+                                        </div>
+    
+                                        <div class="col-md-12 d-none">
+                                            <div class="">
+                                                <label class="form-label">Enter Start Date</label>
+                                                <input id="event-start-date" type="text" class="form-control">
+                                            </div>
+                                        </div>
+    
+                                        <div class="col-md-12 d-none">
+                                            <div class="">
+                                                <label class="form-label">Enter End Date</label>
+                                                <input id="event-end-date" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-12">
+    
+                                            <div class="d-flex mt-4">
+                                                <div class="n-chk">
+                                                    <div class="form-check form-check-primary form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="event-level" value="Work" id="rwork">
+                                                        <label class="form-check-label" for="rwork">Work</label>
+                                                    </div>
+                                                </div>
+                                                <div class="n-chk">
+                                                    <div class="form-check form-check-warning form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="event-level" value="Travel" id="rtravel">
+                                                        <label class="form-check-label" for="rtravel">Travel</label>
+                                                    </div>
+                                                </div>
+                                                <div class="n-chk">
+                                                    <div class="form-check form-check-success form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="event-level" value="Personal" id="rPersonal">
+                                                        <label class="form-check-label" for="rPersonal">Personal</label>
+                                                    </div>
+                                                </div>
+                                                <div class="n-chk">
+                                                    <div class="form-check form-check-danger form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="event-level" value="Important" id="rImportant">
+                                                        <label class="form-check-label" for="rImportant">Important</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-success btn-update-event" data-fc-event-public-id="">Update changes</button>
+                                    <button type="button" class="btn btn-primary btn-add-event">Add Event</button>
+                                    <button type="button" class="btn btn-primary btn-add-event" id="btnAgregar">Agregar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  <!--end_Calendario-->
 
                 </div>
 
@@ -49,4 +131,15 @@
 
     </div>
     <!-- END MAIN CONTAINER -->
+@endsection
+@section('Scripts')
+  <!-- BEGIN PAGE LEVEL SCRIPTS -->
+  <script src="../src/plugins/src/fullcalendar/fullcalendar.min.js"></script>
+    <script src="../src/plugins/src/uuid/uuid4.min.js"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+    
+    <!--  BEGIN CUSTOM SCRIPTS FILE  -->
+    <script src="../src/plugins/src/fullcalendar/custom-fullcalendar.js"></script>
+    <!--  END CUSTOM SCRIPTS FILE  -->
+
 @endsection

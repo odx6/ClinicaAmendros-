@@ -2,7 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Date variable
     var newDate = new Date();
-
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     /** 
      * 
      * @getDynamicMonth() fn. is used to validate 2 digit number and act accordingly 
@@ -51,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var calendarEventsList = [
         {
             id: 1,
-            title: 'All Day Event',
+            title: 'Todos los everntos',
             start: `${newDate.getFullYear()}-${getDynamicMonth()}-01`,
             extendedProps: { calendar: 'Work' }
         },
@@ -176,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         customButtons: {
             addEventButton: {
-                text: 'Add Event',
+                text: 'Añadir Cita',
                 click: calendarAddEvent
             }
         },
@@ -251,4 +255,43 @@ document.addEventListener('DOMContentLoaded', function() {
         var getModalIfCheckedRadioBtnEl = document.querySelector('input[name="event-level"]:checked');
         if (getModalIfCheckedRadioBtnEl !== null) { getModalIfCheckedRadioBtnEl.checked = false; }
     })
+
+    // mis variables 
+    $("#btnAgregar").click(function(){
+        alert("me pulso");
+        $.ajax({
+            type:"POST",
+            url:'eventos',
+            data:{
+                id:1,
+                _token: $('meta[name="csrf-token"]').attr('content'),
+            
+            },
+           }).done(function(res){alert(res)});
+
+    })
+
+    function recolectarDatosGUI (method) {
+        nuevoEvento={
+         id:10,
+            title: $("#event-title").val(),
+            start: `${newDate.getFullYear()}-${getDynamicMonth()}-01`,
+            extendedProps: { calendar: 'Work' },
+            '_method':method,
+        }
+        console.log(nuevoEvento);
+        return nuevoEvento;
+    }
+
+    function EnviarInformacion (accion,objEvento) {
+
+        $.ajax({
+        type:"POST",
+        url:"{{ url('/eventos') }}"+1,
+        data:objEvento,
+       // success: function(msg){ console. log (msg);},
+       success: function(){ console. log ("correcto");},
+        error:function (){ alert ("Hay un error"+ error);}
+    });
+     }
 });

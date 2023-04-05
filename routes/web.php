@@ -30,3 +30,6 @@ Route::get('/logout', [SessionController::class, 'destroy'])->middleware('auth')
 #Routes Admin 
 
 Route::get('/Admin',[AdminController::class, 'index'])->middleware('auth.admin')->name('admin.index');
+
+//prueba 
+Route::post('/eventos', [SessionController::class, 'prueba'])->name('login.prueba');

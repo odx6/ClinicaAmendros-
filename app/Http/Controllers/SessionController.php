@@ -42,4 +42,11 @@ class SessionController extends Controller
         auth()->logout();
         return redirect()->to('/login');
     }
+
+    public function prueba(Request $request){
+
+      #  $datos=request()->all();
+       # print_r($datos);
+       return "hola controler prueba";
+    }
 }

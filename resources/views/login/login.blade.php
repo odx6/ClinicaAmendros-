@@ -40,21 +40,21 @@
                             <div class="row">
                                 <div class="col-md-12 mb-3">
                                     
-                                    <h2>Sign In</h2>
-                                    <p>Enter your email and password to login</p>
+                                    <h2>Inicio de sesión</h2>
+                                    <p>Ingresa tu correo y tu contraseña </p>
                                     <form class="user" method="POST" action="">
                                     @csrf   
                                 </div>
                                 <div class="col-md-12">
                                     <div class="mb-3">
-                                        <label class="form-label">Email</label>
+                                        <label class="form-label">Correro Electronico</label>
                                         <input type="email" class="form-control" name="email">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="mb-4">
-                                        <label class="form-label">Password</label>
-                                        <input type="text" class="form-control"  name="password">
+                                        <label class="form-label">Contraseña</label>
+                                        <input type="password" class="form-control"  name="password">
                                     </div>
                                 </div>
                                
