@@ -520,13 +520,13 @@ span.red {
 .form-control:disabled:not(.flatpickr-input), .form-control[readonly]:not(.flatpickr-input) {
   background-color: #f1f2f3;
   cursor: no-drop;
-  color: #d3d3d3;
+  color: #030000;
 }
 .form-control:disabled:focus, .form-control[readonly]:focus {
   background-color: #f1f2f3;
 }
 .form-control:disabled::-webkit-input-placeholder, .form-control:disabled::-ms-input-placeholder, .form-control:disabled::-moz-placeholder, .form-control[readonly]::-webkit-input-placeholder, .form-control[readonly]::-ms-input-placeholder, .form-control[readonly]::-moz-placeholder {
-  color: #888ea8;
+  color: #000000;
   font-size: 15px;
 }
 

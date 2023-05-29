@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','Home')
+@section('title','Doctor')
 @section('linkAuth')
  <!-- BEGIN PAGE LEVEL STYLE -->
  <link href="../src/plugins/src/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
@@ -44,6 +44,9 @@
                             </div>
                         </div>
                     </div>
+                    <!--Carta Consentimiento -->
+                    
+                    <!--end Consentimiento-->
 
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -53,6 +56,9 @@
                                     <h5 class="modal-title" id="exampleModalLabel">Agregar una nueva cita</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
+                                <form method="POST" action="{{ route('Doctor.historial') }}">
+                                    @csrf
+                                
                                 <div class="modal-body">
     
                                     <div class="row">
@@ -136,12 +142,14 @@
                                     </div>
                                     
                                 </div>
+
                                 <div class="modal-footer">
                                     <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
                                     <button type="button" class="btn btn-success btn-update-event" data-fc-event-public-id="">Actualizar una cita</button>
                                     <button type="button" class="btn btn-primary btn-add-event">Agregar Cita</button>
-                                    <button type="button" class="btn btn-primary btn-add-event" id="btnAgregar">Agregar</button>
+                                    <button type="submit" class="btn btn-primary btn-add-event" id="idConsulta">Consulta</button>
                                 </div>
+                            </form>
                             </div>
                         </div>
                     </div>
@@ -165,7 +173,7 @@
     <!-- END PAGE LEVEL SCRIPTS -->
     
     <!--  BEGIN CUSTOM SCRIPTS FILE  -->
-    <script src="../src/plugins/src/fullcalendar/custom-fullcalendar.js"></script>
+    <script src="../src/plugins/src/fullcalendar/Calendario-Doctor.js"></script>
     <!--  END CUSTOM SCRIPTS FILE  -->
 
 @endsection

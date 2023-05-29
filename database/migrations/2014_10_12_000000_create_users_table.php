@@ -13,6 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
+        
+      $this->down();
+        
+        
         Schema::create('users', function (Blueprint $table) {
             $table->id()->unique();
             $table->string('name');
@@ -24,24 +28,24 @@ return new class extends Migration
             $table->timestamps();
         });
         //Create area
-        Schema::create('area', function (Blueprint $table) {
+        Schema::create('areas', function (Blueprint $table) {
             $table->id('IDAREA')->unique();
             $table->string('NOMBE_AREA');
             $table->timestamps();
         });
   // create doctor 
-        Schema::create('doctor', function (Blueprint $table) {
+        Schema::create('doctors', function (Blueprint $table) {
             $table->id('DSS')->unique();
             $table->unsignedBigInteger('AreaDoctor');
             $table->string('ESPECIALIDAD');
             
             $table->timestamps();
             // para claves foraneas 
-            $table->foreign('AreaDoctor')->references('IDAREA')->on('area');
+            $table->foreign('AreaDoctor')->references('IDAREA')->on('areas');
             
         });
         //create paciente 
-        Schema::create('paciente', function (Blueprint $table) {
+        Schema::create('pacientes', function (Blueprint $table) {
             $table->id('SS')->unique();
             $table->unsignedBigInteger('PacienteDoctor');
             $table->string('Nombre');
@@ -57,21 +61,27 @@ return new class extends Migration
             $table->string('Escolaridad');
             $table->date('FechaIngreso');
             $table->date('FechaSalida');
+            $table->timestamps();
             // para claves foraneas 
-            $table->foreign('PacienteDoctor')->references('DSS')->on('doctor');
+            $table->foreign('PacienteDoctor')->references('DSS')->on('doctors');
             
         });
         //create history_clinic
-        Schema::create('historial_clinico', function (Blueprint $table) {
+        Schema::create('historial__clinicos', function (Blueprint $table) {
             $table->id('idHIstorial_clinico')->unique();
             $table->unsignedBigInteger('PacienteSS');
             $table->Boolean('DM');
             $table->Boolean('HAS');
             $table->Boolean('CA');
-
+            //PARA EL PADRE
+            $table->Boolean('PDM');
+            $table->Boolean('PHAS');
+            $table->Boolean('PCA');
             $table->string('MFALLECIDA');
             $table->string('PFALLECIDA');
             $table->string('CAUSAS');
+            $table->string('ALERGIAS');
+
             $table->string('ALIMENTOS');
             $table->string('SUSTANCIAS_Q');
             $table->string('CIRUJIAS_P');
@@ -80,24 +90,28 @@ return new class extends Migration
             $table->boolean('ALCHOLISMO');
             $table->boolean('TABASQUISMO');
             $table->boolean('DROGAS');
+            $table->timestamps();
             
             // para claves foraneas 
-            $table->foreign('PacienteSS')->references('SS')->on('paciente');
+            $table->foreign('PacienteSS')->references('SS')->on('pacientes');
             
         });
         
         //Antecedentes_Ginecobstetrico
         
-        Schema::create('a_ginecobstetrico', function (Blueprint $table) {
+        Schema::create('a_ginecobstetricos', function (Blueprint $table) {
             $table->id('id_a_g')->unique();
             $table->unsignedBigInteger('fk_ag');
             $table->integer('Menarca');
             $table->integer('Ivsa');
             $table->integer('Gesta');
+            $table->integer('Cesareas');
             $table->integer('Aborto');
             $table->integer('Paras');
+            $table->timestamps();
+
             // para claves foraneas 
-            $table->foreign('fk_ag')->references('idHIstorial_clinico')->on('historial_clinico');
+            $table->foreign('fk_ag')->references('SS')->on('pacientes');
             
         });
          //Antecedentes_Ginecobstetrico
@@ -109,14 +123,16 @@ return new class extends Migration
             $table->Boolean('Has');
             $table->Boolean('HasTe');
             $table->Boolean('Ir');
+            $table->String('IrTe');
             $table->String('Otra');
+            $table->timestamps();
             
             // para claves foraneas 
-            $table->foreign('fk_ap')->references('idHIstorial_clinico')->on('historial_clinico');
+            $table->foreign('fk_ap')->references('SS')->on('pacientes');
             
         });
-         //Antecedentes_Ginecobstetrico
-         Schema::create('nota_p_quirurgica', function (Blueprint $table) {
+         //Notas post Quirurgica 
+         Schema::create('nota_p_quirurgicas', function (Blueprint $table) {
             $table->id('idNotaP')->unique();
             $table->unsignedBigInteger('fk_npq');
             $table->Date('ProgramacionC');
@@ -128,67 +144,85 @@ return new class extends Migration
             $table->String('Nombre_Instrumentista');
             $table->String('Nombre_Aniestesiologo');
             $table->String('Circulante');
+            $table->timestamps();
+
             // para claves foraneas 
-            $table->foreign('fk_npq')->references('idHIstorial_clinico')->on('historial_clinico');
+            $table->foreign('fk_npq')->references('SS')->on('pacientes');
             
         });
         // Notas
-         Schema::create('nota', function (Blueprint $table) {
+         Schema::create('notas', function (Blueprint $table) {
             $table->id('pk_nota')->unique();
             $table->unsignedBigInteger('fk_n');
             $table->String('Nota');
             $table->String('Tipo');
+            $table->timestamps();
             
             // para claves foraneas 
-            $table->foreign('fk_n')->references('idHIstorial_clinico')->on('historial_clinico');
+            $table->foreign('fk_n')->references('SS')->on('pacientes');
             
         });
           //Estudios
-         Schema::create('estudio', function (Blueprint $table) {
+         Schema::create('estudios', function (Blueprint $table) {
             $table->id('pk_estudio')->unique();
             $table->unsignedBigInteger('fk_e');
-            $table->String('Nombre_e');
-            $table->String('Tipo_e');
-            $table->String('Descripcion_e');
+            $table->String('HEMOGLOBINA');
+            $table->String('HEMATOCRITO');
+            $table->String('PLAQUETAS');
+            $table->String('GLUCOSA');
+            $table->String('UREA');
+            $table->String('CREATININA');
+            $table->String('RX');
+            $table->String('USG');
+            $table->timestamps();
             
             // para claves foraneas 
-            $table->foreign('fk_e')->references('idHIstorial_clinico')->on('historial_clinico');
+            $table->foreign('fk_e')->references('SS')->on('pacientes');
             
         });
          //Estudios
-         Schema::create('exploracion_f', function (Blueprint $table) {
+         Schema::create('exploracion_fs', function (Blueprint $table) {
             $table->id('pk_Exploracion')->unique();
             $table->unsignedBigInteger('fk_e');
             $table->unsignedBigInteger('fk_d');
             $table->unsignedBigInteger('fk_p');
+            $table->Boolean('TA');
+            $table->Boolean('FC');
+            $table->Boolean('X1');
+            $table->Boolean('FR');
+            $table->Boolean('X2');
+            $table->Double('TEMP');
+            $table->Double('PESO');
             $table->String('Nombre_ef');
             $table->String('Cabeza_ef');
             $table->String('Cuello_ef');
             $table->String('Abdomen_ef');
             $table->String('Miembro_pelvico_ef');
             $table->String('Miembro_toraxico_ef');
-            $table->Timestamp('x');
+            $table->Timestamps();
             
             // para claves foraneas 
-            $table->foreign('fk_e')->references('idHIstorial_clinico')->on('historial_clinico');
-            $table->foreign('fk_d')->references('DSS')->on('doctor');
-            $table->foreign('fk_p')->references('SS')->on('paciente');
+            $table->foreign('fk_e')->references('idHIstorial_clinico')->on('historial__clinicos');
+            $table->foreign('fk_d')->references('DSS')->on('doctors');
+            $table->foreign('fk_p')->references('SS')->on('pacientes');
         });
           //Cita
-          Schema::create('cita', function (Blueprint $table) {
+          Schema::create('citas', function (Blueprint $table) {
             $table->id('pk_cita')->unique();
           
             $table->unsignedBigInteger('fk_dc');
             $table->unsignedBigInteger('fk_pc');
            
-            $table->Timestamp('inicio_c');
+            
+            $table->DateTime('inicio_c');
+            $table->DateTime('fin_cita');
             
             $table->Time('Duracion');
             $table->String('Estado');
-            
+            $table->timestamps();
             // para claves foraneas 
-            $table->foreign('fk_dc')->references('DSS')->on('doctor');
-            $table->foreign('fk_pc')->references('SS')->on('paciente');
+            $table->foreign('fk_dc')->references('DSS')->on('doctors');
+            $table->foreign('fk_pc')->references('SS')->on('pacientes');
         });
     }
 
@@ -199,18 +233,20 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
-        Schema::dropIfExists('area');
-        Schema::dropIfExists('doctor');
-        Schema::dropIfExists('paciente');
-        Schema::dropIfExists('historial_clinico');
-        Schema::dropIfExists('a_ginecobstetrico');
+        Schema::dropIfExists('citas');
+        Schema::dropIfExists('exploracion_fs');
+        Schema::dropIfExists('estudios');
+        Schema::dropIfExists('notas');
+        Schema::dropIfExists('nota_p_quirurgicas');
         Schema::dropIfExists('a_patologicos');
-        Schema::dropIfExists('nota_p_quirurgica');
-        Schema::dropIfExists('nota');
-        Schema::dropIfExists('estudio');
-        Schema::dropIfExists('exploracion_f');
-        Schema::dropIfExists('cita');
+        Schema::dropIfExists('a_ginecobstetricos');
+        Schema::dropIfExists('historial__clinicos');
+        Schema::dropIfExists('pacientes');
+        
+        Schema::dropIfExists('doctors');
+        Schema::dropIfExists('areas');
+        Schema::dropIfExists('users');
+      
 
     }
 };

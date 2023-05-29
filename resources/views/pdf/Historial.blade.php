@@ -85,8 +85,10 @@ top: 0;
 left: 0;
 height: 18px;
 width: 18px;
-background-color: #eee;
+background-color: #ece7e7;
 border-radius: 3px;
+border: 1px solid black;
+
 }
 
 .historial-item .checkbox-container:hover input[type="checkbox"]~.checkmark {
@@ -163,52 +165,58 @@ padding-right: 4px;
     <div class="historial-container">
       
         <h1 class="historial-header">HISTORIA CLINICA </h1>
-
+        @foreach ($Historiales  as $Historial)
+            
+        
         <table>
             <tr>
                 <th>No.Expediente:</th>
-                <td>1  </td>
+                <td>{{$Historial->idHIstorial_clinico}}</td>
 
 
 
             </tr>
         </table>
+        @endforeach
         <h1 class="historial-header">FICHA DE IDENTIFICACION:
         </h1>
         <table>
 
             <tr>
                 <th align="left">Apellidos:</th>
-                <td align="left">John Doe</td>
+                <td align="left">{{$Paciente->SS}}</td>
                 <th align="left">Nombre:</th>
-                <td align="left">01/01/1990</td>
+                <td align="left">{{$Paciente->Nombre}}</td>
             </tr>
             <tr>
                 <th align="left">Edad:</th>
-                <td align="left">Masculino</td>
+                <td align="left">{{$Paciente->Edad}}</td>
                 <th align="left">Sexo:</th>
-                <td align="left">Masculino</td>
+                <td align="left">{{$Paciente->Sexo}}</td>
                 <th align="left">Edo.civil:</th>
-                <td align="left">Soltero</td>
+                <td align="left">{{$Paciente->Estado_civil}}</td>
                 <th align="left">Religion:</th>
-                <td align="left">Cristiano</td>
+                <td align="left">{{$Paciente->Religion}}</td>
 
 
             </tr>
             <tr>
                 <th align="left">Lugar de origen:</th>
-                <td align="left">Oaxaca</td>
+                <td align="left">{{$Paciente->Origen}}</td>
                 <th align="left">Ocupación:</th>
-                <td align="left">Mecanico</td>
+                <td align="left">{{$Paciente->Ocuacion}}</td>
             </tr>
             <tr>
 
                 <th align="left">Domicilio:</th>
-                <td align="left">john@example.com</td>
+                <td align="left">{{$Paciente->Direccion}}</td>
                 <th align="left">Teléfono:</th>
-                <td align="left">1234567890</td>
+                <td align="left">{{$Paciente->Telefono}}</td>
             </tr>
         </table>
+        @foreach ($Historiales  as $Historial)
+            
+        
         <h1 class="historial-header">ANTECEDENTES HEREDOFAMILIARES:
         </h1>
 
@@ -217,29 +225,46 @@ padding-right: 4px;
 
             <div class="checkbox-container">
                 <label for="enfermedades-actuales">DM </label>
+                @if($Historial->DM=="1")
                 <input type="checkbox" id="enfermedades-actuales" checked>
+                @else
+                <input type="checkbox" id="enfermedades-actuales" >
+                @endif
                 <span class="checkmark"></span>
             </div>
 
 
             <div class="checkbox-container">
                 <label for="enfermedades-actuales">HAS </label>
+                @if($Historial->HAS=="1")
                 <input type="checkbox" id="enfermedades-actuales" checked>
+                @else
+                <input type="checkbox" id="enfermedades-actuales" >
+                @endif
                 <span class="checkmark"></span>
             </div>
 
             <div class="checkbox-container">
                 <label for="enfermedades-actuales">CA </label>
+
+                @if($Historial->CA=="1")
                 <input type="checkbox" id="enfermedades-actuales" checked>
+                @else
+                <input type="checkbox" id="enfermedades-actuales" >
+                @endif
                 <span class="checkmark"></span>
             </div>
             <div class="checkbox-container">
                 <label for="enfermedades-actuales">FALLECIDA </label>
+                @if($Historial->MFALLECIDA=="Si")
                 <input type="checkbox" id="enfermedades-actuales" checked>
+                @else
+                <input type="checkbox" id="enfermedades-actuales" >
+                @endif
                 <span class="checkmark"></span>
             </div>
             <div class="checkbox-container">
-                <label for="enfermedades-actuales">CAUSAS : </label>
+                <label for="enfermedades-actuales">CAUSAS : {{$Historial->CAUSAS}}</label>
 
             </div>
 
@@ -266,7 +291,7 @@ padding-right: 4px;
                 <span class="checkmark"></span>
             </div>
             <div class="checkbox-container">
-                <label for="enfermedades-actuales">FALLECIDA </label>
+                <label for="enfermedades-actuales">FALLECIDO </label>
                 <input type="checkbox" id="enfermedades-actuales" checked>
                 <span class="checkmark"></span>
             </div>
@@ -275,7 +300,7 @@ padding-right: 4px;
             </div>
 
         </div>
-       
+        @endforeach
         <h2 class="historial-header">ANTECEDENTES PERSONALES NO PATOLOGICOS:
 
         </h2>
@@ -314,38 +339,50 @@ padding-right: 4px;
 
                         </div>
                         <div class="historial-item">
-                            <label for="enfermedades-actuales">Adatos </label>
+                            <label for="enfermedades-actuales">{{$Historial->ALIMENTOS}}</label>
 
                         </div>
                         <div class="historial-item">
-                            <label for="enfermedades-actuales">Sustancias qdatos </label>
+                            <label for="enfermedades-actuales">{{$Historial->SUSTANCIAS_Q}} </label>
                         </div>
                         <div class="historial-item">
-                            <label for="enfermedades-actuales">Cirujias datos </label>
+                            <label for="enfermedades-actuales">{{$Historial->CIRUJIAS_P}}</label>
                         </div>
                         <div class="historial-item">
-                            <label for="enfermedades-actuales">Transfudatos </label>
+                            <label for="enfermedades-actuales">{{$Historial->TRANSFUCIONES}} </label>
                         </div>
                         <div class="historial-item">
-                            <label for="enfermedades-actuales">Fracturas y/o adatos </label>
+                            <label for="enfermedades-actuales">{{$Historial->FRACTURAS}} </label>
                         </div>
                         <div class="historial-item">
                             <div class="checkbox-container">
                                 <label for="enfermedades-actuales">Alcholismo </label>
-                                <input type="checkbox" id="enfermedades-actuales" checked>
+                                @if($Historial->ALCHOLISMO=="1")
+                <input type="checkbox" id="enfermedades-actuales" checked>
+                @else
+                <input type="checkbox" id="enfermedades-actuales" >
+                @endif
                                 <span class="checkmark"></span>
                             </div>
 
 
                             <div class="checkbox-container">
                                 <label for="enfermedades-actuales">Tabaquismo </label>
+                                @if($Historial->TABASQUISMO=="1")
                                 <input type="checkbox" id="enfermedades-actuales" checked>
+                                @else
+                                <input type="checkbox" id="enfermedades-actuales" >
+                                @endif
                                 <span class="checkmark"></span>
                             </div>
 
                             <div class="checkbox-container">
                                 <label for="enfermedades-actuales">Drogas</label>
+                                @if($Historial->DROGAS=="1")
                                 <input type="checkbox" id="enfermedades-actuales" checked>
+                                @else
+                                <input type="checkbox" id="enfermedades-actuales" >
+                                @endif
                                 <span class="checkmark"></span>
                             </div>
                     </th>
@@ -359,6 +396,7 @@ padding-right: 4px;
 
         </div>
         <!---end-->
+        @foreach($Patologicos as $Patologico)
         <h2 class="historial-header">ANTECEDENTES PERSONALES PATOLOGICOS:
 
         </h2>
@@ -368,29 +406,41 @@ padding-right: 4px;
 
             <div class="checkbox-container">
                 <label for="enfermedades-actuales">DM </label>
-                <input type="checkbox" id="enfermedades-actuales" checked>
+                @if($Patologico->Dm=="1")
+                                <input type="checkbox" id="enfermedades-actuales" checked>
+                                @else
+                                <input type="checkbox" id="enfermedades-actuales" >
+                                @endif
                 <span class="checkmark"></span>
 
 
             </div>
             <div class="historial-item">
-                <label for="enfermedades-actuales">Tiempo de evolucion : </label>
+                <label for="enfermedades-actuales">Tiempo de evolucion :{{$Patologico->DmTE}} </label>
             </div>
 
 
             <div class="checkbox-container">
                 <label for="enfermedades-actuales">HAS </label>
+                @if($Patologico->Has=="1")
                 <input type="checkbox" id="enfermedades-actuales" checked>
+                @else
+                <input type="checkbox" id="enfermedades-actuales" >
+                @endif
                 <span class="checkmark"></span>
             </div>
             <div class="historial-item">
-                <label for="enfermedades-actuales">Tiempo de evolucion : </label>
+                <label for="enfermedades-actuales">Tiempo de evolucion :{{$Patologico->HasTe}} </label>
             </div>
 
 
             <div class="checkbox-container">
                 <label for="enfermedades-actuales">IR(A Ó C ) </label>
+                @if($Patologico->Ir=="1")
                 <input type="checkbox" id="enfermedades-actuales" checked>
+                @else
+                <input type="checkbox" id="enfermedades-actuales" >
+                @endif
                 <span class="checkmark"></span>
             </div>
             <div class="historial-item">
@@ -398,13 +448,14 @@ padding-right: 4px;
             </div>
 
             <div class="historial-item">
-                <label for="enfermedades-actuales">Otra : </label>
+                <label for="enfermedades-actuales">Otra :{{$Patologico->Otra}} </label>
             </div>
             
         
         </div>
+        @endforeach
         <div class="page-break"></div>
-                
+    @foreach($Exploraciones as $Exploracion)
         <div class="historial-container">
     
             <div class="historial-item">
@@ -426,10 +477,19 @@ padding-right: 4px;
             <input type="checkbox" id="enfermedades-actuales" checked>
             <span class="checkmark"></span>
         </div>
-
+        <div class="checkbox-container">
+            <label for="enfermedades-actuales">FR</label>
+            <input type="checkbox" id="enfermedades-actuales" checked>
+            <span class="checkmark"></span>
+        </div>
 
         <div class="checkbox-container">
             <label for="enfermedades-actuales">X1 </label>
+            <input type="checkbox" id="enfermedades-actuales" checked>
+            <span class="checkmark"></span>
+        </div>
+        <div class="checkbox-container">
+            <label for="enfermedades-actuales">FR</label>
             <input type="checkbox" id="enfermedades-actuales" checked>
             <span class="checkmark"></span>
         </div>
@@ -455,6 +515,9 @@ padding-right: 4px;
                         <label for="enfermedades-actuales">CUELLO: </label>
                     </div>
                     <div class="historial-item">
+                        <label for="enfermedades-actuales">ABDOMEN: </label>
+                    </div>
+                    <div class="historial-item">
                         <label for="enfermedades-actuales">MIEMBRIOS PELVICOS: </label>
                     </div>
                     <div class="historial-item">
@@ -470,16 +533,19 @@ padding-right: 4px;
                     </div>
 
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">CABdatos: </label>
+                        <label for="enfermedades-actuales">{{$Exploracion->Cabeza_ef}} </label>
                     </div>
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">CUdatosO: </label>
+                        <label for="enfermedades-actuales">{{$Exploracion->Cuello_ef}} </label>
                     </div>
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">MIEMBRIOS PELVIdatos: </label>
+                        <label for="enfermedades-actuales">{{$Exploracion->Abdomen_ef}} </label>
                     </div>
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">MIEMBRIOS TORÁXICOdatos</label>
+                        <label for="enfermedades-actuales">{{$Exploracion->Miembro_pelvico_ef}}</label>
+                    </div>
+                    <div class="historial-item">
+                        <label for="enfermedades-actuales">{{$Exploracion->Miembro_toraxico_ef}}</label>
                     </div>
                 </th>
             </tr>
@@ -490,6 +556,9 @@ padding-right: 4px;
 
 
     </div>
+     @endforeach
+
+     @foreach($Gineco as $Gine)
     <h2 class="historial-header">ANTECEDENTES GINECOBSTÉTRICO:
 
 
@@ -512,14 +581,14 @@ padding-right: 4px;
                 </td>
                 <td align="left">
                     <div class="historial-item">
-                        <label for="enfermedades-actuales"> MENARCA : </label>
+                        <label for="enfermedades-actuales"> {{$Gine->Menarca}} Años</label>
                     </div>
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">IVSA: </label>
+                        <label for="enfermedades-actuales">{{$Gine->Ivsa}} Años</label>
                     </div>
 
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">GESTA: </label>
+                        <label for="enfermedades-actuales">{{$Gine->Gesta}} Años</label>
                     </div>
                 </td>
 
@@ -542,10 +611,10 @@ padding-right: 4px;
                         <label for="enfermedades-actuales">CESÁREAS: </label>
                     </div>
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">ABORTOS: </label>
+                        <label for="enfermedades-actuales">{{$Gine->Aborto}} </label>
                     </div>
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">PARAS: </label>
+                        <label for="enfermedades-actuales">{{$Gine->Paras}} </label>
                     </div>
                 </td>
             </tr>
@@ -558,6 +627,8 @@ padding-right: 4px;
 
 
     </div>
+    @endforeach
+    @foreach($Estudios as $Estudio)
     <h2 class="historial-header">RESULTADOS DE LABORATORIO:
 
 
@@ -582,14 +653,14 @@ padding-right: 4px;
                 </th>
                 <th align="left">
                     <div class="historial-item">
-                        <label for="enfermedades-actuales"> HEMOGLOBINA: </label>
+                        <label for="enfermedades-actuales"> {{$Estudio->Nombre_e}}</label>
                     </div>
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">HEMATOCRITO: </label>
+                        <label for="enfermedades-actuales">{{$Estudio->Tipo_e}} </label>
                     </div>
 
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">PLAQUETAS: </label>
+                        <label for="enfermedades-actuales">{{$Estudio->Descripcion_e}}</label>
                     </div>
                 </th>
             </tr>
@@ -645,7 +716,8 @@ padding-right: 4px;
     </div>
 
     </div>
-  
+  @endforeach
+  @foreach($Notas_p as $Nota)
 <div class="page-break"></div>
 
     
@@ -692,34 +764,34 @@ padding-right: 4px;
                 </th>
                 <th align="left">
                     <div class="historial-item">
-                        <label for="enfermedades-actuales"> CIRUJIA PROGRAMADA </label>
+                        <label for="enfermedades-actuales"> {{$Nota->ProgramacionC}} </label>
                     </div>
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">CIRUJIA REALIZADA: </label>
-                    </div>
-
-                    <div class="historial-item">
-                        <label for="enfermedades-actuales">HALLAZGOS: </label>
+                        <label for="enfermedades-actuales">{{$Nota->Ejecucion}}: </label>
                     </div>
 
+                    <div class="historial-item">
+                        <label for="enfermedades-actuales">{{$Nota->Hallazgos}} </label>
+                    </div>
+
 
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">COMPLICACIONES: </label>
+                        <label for="enfermedades-actuales">{{$Nota->Complicaciones}} </label>
                     </div>
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">CIRUJANO: </label>
+                        <label for="enfermedades-actuales">{{$Nota->Nombre_Cirujano}} </label>
                     </div>
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">AYUDANTE: </label>
+                        <label for="enfermedades-actuales">{{$Nota->Nombre_Ayudante}} </label>
                     </div>
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">INTRUMENTISTA: </label>
+                        <label for="enfermedades-actuales">{{$Nota->Nombre_Instrumentista}} </label>
                     </div>
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">ANIESTESIOLOGO: </label>
+                        <label for="enfermedades-actuales">{{$Nota->Nombre_Aniestesiologo}}</label>
                     </div>
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">CIRCULANTE: </label>
+                        <label for="enfermedades-actuales">{{$Nota->Circulante}} </label>
                     </div>
 
                 </th>
@@ -728,10 +800,11 @@ padding-right: 4px;
         </table>
 
     </div>
-
+@endforeach
+@foreach($Notas as $Nota)
     <div class="historial-item textarea-container">
         <label for="observaciones">NOTA DE EVALUACIÓN POSTOPERATORIA:</label>
-        <textarea id="observaciones">EJEMPLO NOTA</textarea>
+        <textarea id="observaciones">{{$Nota->Nota}}</textarea>
     </div>
     <div class="historial-item textarea-container">
         <label for="observaciones">NOTA MEDICA:</label>
@@ -753,7 +826,7 @@ padding-right: 4px;
        
     </div>
 
-
+@endforeach
 
 </main>
 

@@ -5,6 +5,8 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Models\Area;
+use App\Models\Doctor;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,7 +25,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         //user Admin
-        $user = new User;
+       $user = new User;
         $user->name ='Admin';
         $user->email='Admin@gmail.com';
         $user->password='1234';
@@ -37,6 +39,15 @@ class DatabaseSeeder extends Seeder
         $user2->password='1234';
         
         $user2->save();
+        //area
+        $area = new Area;
+        $area->NOMBE_AREA='FISOTERAPIA';
+        $area->save();
+
+        $Doctor= new  Doctor;
+        $Doctor->AreaDoctor=1;
+        $Doctor->ESPECIALIDAD='Medico';
+        $Doctor->save();
     }
 
 

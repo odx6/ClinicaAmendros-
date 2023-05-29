@@ -20,8 +20,10 @@ class Adminauth
         if(auth()->check() ){
             if(auth()->user()->role == 'admin')
             return $next($request);
+            
         }
-        return redirect()->to('/');
+       // return redirect()->to('/');
+        return view('Home');
         
     }
 }

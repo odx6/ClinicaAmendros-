@@ -1,6 +1,58 @@
 document.addEventListener('DOMContentLoaded', function() {
     var citasList ;
+    $("#form-custom-switch-success").click(function(){
+        //alert("check ")
+
+    var checkbox = document.getElementById('form-custom-switch-success');
+    if (checkbox.checked) {
+        var boton = document.getElementsByClassName('Hola');
+        for (var i = 0; i < boton.length; i++) {
+            boton[i].style.display = "block";
+        }
+        
+        var inputs = document.getElementsByClassName('form-control');
+for (var i = 0; i < inputs.length; i++) {
+    inputs[i].readOnly = false;
+}
+var selects = document.getElementsByClassName('selects');
+for (var i = 0; i < selects.length; i++) {
+    selects[i].disabled = false;
+}
+var inputs2 = document.getElementById('bold');
+    inputs2.readOnly = true;
+    } else {
+        
+        var boton = document.getElementsByClassName('Hola');
+for (var i = 0; i < boton.length; i++) {
+    boton[i].style.display = "none";
+}
+        var inputs = document.getElementsByClassName('form-control');
+for (var i = 0; i < inputs.length; i++) {
+    inputs[i].readOnly = true;
+}
+var selects = document.getElementsByClassName('selects');
+for (var i = 0; i < selects.length; i++) {
+    selects[i].disabled = true;
+}
+
+
+    }
+    })
+
+
+//Desactivar los inputs 
+var inputs = document.getElementsByClassName('form-control');
+for (var i = 0; i < inputs.length; i++) {
+    inputs[i].readOnly = true;
+}
+var selects = document.getElementsByClassName('selects');
+for (var i = 0; i < selects.length; i++) {
+    selects[i].disabled = true;
+}
+//End 
     
+    
+
     // Date variable
     var newDate = new Date();
     $.ajaxSetup({
@@ -12,9 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
      * 
      * @getDynamicMonth() fn. is used to validate 2 digit number and act accordingly 
      * 
-    */   
+    */ /*   var miVariable = json_encode($Doctor);
 
-   $.get('calendario', function(response) {
+    // Ahora puedes utilizar la variable en JavaScript
+    alert(miVariable);*/
+   $.get('Doctores', function(response) {
     citasList=response;
     //codigo agregado 
     function getDynamicMonth() {
@@ -58,74 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
     }
-    var calendarEventsList = [
-        {
-            id: 1,
-            title: 'Todos los eventos ',
-            start: `${newDate.getFullYear()}-${getDynamicMonth()}-01`,
-            extendedProps: { calendar: 'Work' }
-        },
-        {
-            id: 2,
-            title: 'Long Event',
-            start: `${newDate.getFullYear()}-${getDynamicMonth()}-07`,
-            end: `${newDate.getFullYear()}-${getDynamicMonth()}-10`,
-            extendedProps: { calendar: 'Personal' }
-        },
-        {
-            groupId: '999',
-            id: 3,
-            title: 'Repeating Event',
-            start: `${newDate.getFullYear()}-${getDynamicMonth()}-09T16:00:00`,
-            extendedProps: { calendar: 'Important' }
-        },
-        {
-            groupId: '999',
-            id: 4,
-            title: 'Repeating Event',
-            start: `${newDate.getFullYear()}-${getDynamicMonth()}-16T16:00:00`,
-            extendedProps: { calendar: 'Travel' }
-        },
-        {
-            id: 5,
-            title: 'Conference',
-            start: `${newDate.getFullYear()}-${getDynamicMonth()}-11`,
-            end: `${newDate.getFullYear()}-${getDynamicMonth()}-13`,
-            extendedProps: { calendar: 'Work' }
-        },
-        {
-            id: 6,
-            title: 'Meeting',
-            start: `${newDate.getFullYear()}-${getDynamicMonth()}-12T10:30:00`,
-            end: `${newDate.getFullYear()}-${getDynamicMonth()}-12T12:30:00`,
-            extendedProps: { calendar: 'Personal' }
-        },
-        {
-            id: 7,
-            title: 'Lunch',
-            start: `${newDate.getFullYear()}-${getDynamicMonth()}-12T12:00:00`,
-            extendedProps: { calendar: 'Important' }
-        },
-        {
-            id: 8,
-            title: 'Meeting',
-            start: `${newDate.getFullYear()}-${getDynamicMonth()}-12T14:30:00`,
-            extendedProps: { calendar: 'Travel' }
-        },
-        {
-            id: 9,
-            title: 'Birthday Party',
-            start: `${newDate.getFullYear()}-${getDynamicMonth()}-13T07:00:00`,
-            extendedProps: { calendar: 'Personal' }
-        },
-        {
-            id: 10,
-            title: 'Click for Google',
-            url: 'http://google.com/',
-            start: `${newDate.getFullYear()}-${getDynamicMonth()}-28`,
-            extendedProps: { calendar: 'Important' }
-        }
-    ]
+   
     alert(response);
     // Calendar Select fn.
     var calendarSelect = function(info) {
@@ -166,17 +153,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // se mandan los valores del evento al dar click 
             getModalTitleEl.value = eventObj.extendedProps.IdDoctor;
             getModalTitleE2.value =eventObj.extendedProps.Idpaciente;
-          //  getModalStartDateEl.value =eventObj.start.toISOString().slice(0, 16);
-         // getModalStartDateEl.value = '2023-05-05 15:30:00';
-           let fecha =""+eventObj.start;
-           let fecha3=new Date(fecha);
-            let Format=fecha3.toISOString().slice(0, 10)+' '+ fecha3.toLocaleTimeString();
-            alert(Format);
-            let end= ""+eventObj.end;
-            let fechaEnd=new Date(end);
-            let FormatEnd=fechaEnd.toISOString().slice(0, 10)+' '+ fechaEnd.toLocaleTimeString();
-            getModalStartDateEl.value = Format;
-            getModalEndDateEl.value=FormatEnd;
+            getModalStartDateEl.value =eventObj.start.toISOString().slice(0, 16);
+           
+            alert(eventObj.start.toISOString().slice(0, 16));
+            getModalEndDateEl.value=eventObj.end.toISOString().slice(0, 16);
             getModalCheckedRadioBtnEl.checked = true;
             getModalUpdateBtnEl.setAttribute('data-fc-event-public-id', getModalEventId)
             getModalAddBtnEl.style.display = 'none';
@@ -324,9 +304,58 @@ document.addEventListener('DOMContentLoaded', function() {
             },
            }).done(function(res){alert(res)});
 
+           
+
     })
 
     //end
+    $("#btnAgregar").click(function(){
+        alert("me pulso");
+        $.ajax({
+            type:"",
+            url:'eventos',
+            data:{
+                id:$('#event-title').val(),
+                paciente:$('#event-title2').val(),
+                inicio: $('event-start-date').val(),
+                
+                _token: $('meta[name="csrf-token"]').attr('content'),
+            
+            },
+           }).done(function(res){alert(res)});
+
+           
+
+    })
+
+    //end
+/*
+    $("#idConsulta").click(function(){
+        alert("me pulso Consulta");
+        $.ajax({
+            type:"POST",
+            url:'Doctor/paciente',
+            data:{
+                paciente:$('#event-title2').val(),
+                _token: $('meta[name="csrf-token"]').attr('content'),
+            
+            },
+           }).done(function(res){alert(res)
+            window.location.href ='Doctor/paciente/historial';
+        });
+
+           
+
+    })
+*/
+    //end
+
+    
+           
+
+
+
+    
 
 })
 .fail(function(error) {
