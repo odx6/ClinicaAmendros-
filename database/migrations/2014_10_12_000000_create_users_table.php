@@ -37,11 +37,18 @@ return new class extends Migration
         Schema::create('doctors', function (Blueprint $table) {
             $table->id('DSS')->unique();
             $table->unsignedBigInteger('AreaDoctor');
+            $table->unsignedBigInteger('fk_user');
+            $table->string('Nombre');
+            $table->string('Apellidos');
+            $table->string('Especialidades');
+            $table->string('Cedula');
             $table->string('ESPECIALIDAD');
+           
             
             $table->timestamps();
             // para claves foraneas 
             $table->foreign('AreaDoctor')->references('IDAREA')->on('areas');
+            $table->foreign('fk_user')->references('id')->on('users');
             
         });
         //create paciente 
@@ -60,7 +67,7 @@ return new class extends Migration
             $table->string('Religion');
             $table->string('Escolaridad');
             $table->date('FechaIngreso');
-            $table->date('FechaSalida');
+            $table->date('FechaSalida')->nullable();
             $table->timestamps();
             // para claves foraneas 
             $table->foreign('PacienteDoctor')->references('DSS')->on('doctors');
@@ -70,13 +77,13 @@ return new class extends Migration
         Schema::create('historial__clinicos', function (Blueprint $table) {
             $table->id('idHIstorial_clinico')->unique();
             $table->unsignedBigInteger('PacienteSS');
-            $table->Boolean('DM');
-            $table->Boolean('HAS');
-            $table->Boolean('CA');
+            $table->Integer('DM');
+            $table->Integer('HAS');
+            $table->Integer('CA');
             //PARA EL PADRE
-            $table->Boolean('PDM');
-            $table->Boolean('PHAS');
-            $table->Boolean('PCA');
+            $table->Integer('PDM');
+            $table->Integer('PHAS');
+            $table->Integer('PCA');
             $table->string('MFALLECIDA');
             $table->string('PFALLECIDA');
             $table->string('CAUSAS');
@@ -87,9 +94,9 @@ return new class extends Migration
             $table->string('CIRUJIAS_P');
             $table->string('TRANSFUCIONES');
             $table->string('FRACTURAS');
-            $table->boolean('ALCHOLISMO');
-            $table->boolean('TABASQUISMO');
-            $table->boolean('DROGAS');
+            $table->Integer('ALCHOLISMO');
+            $table->Integer('TABASQUISMO');
+            $table->Integer('DROGAS');
             $table->timestamps();
             
             // para claves foraneas 
@@ -118,11 +125,11 @@ return new class extends Migration
          Schema::create('a_patologicos', function (Blueprint $table) {
             $table->id('id_a_p')->unique();
             $table->unsignedBigInteger('fk_ap');
-            $table->Boolean('Dm');
-            $table->Boolean('DmTE');
-            $table->Boolean('Has');
-            $table->Boolean('HasTe');
-            $table->Boolean('Ir');
+            $table->Integer('Dm');
+            $table->Integer('DmTE');
+            $table->Integer('Has');
+            $table->Integer('HasTe');
+            $table->Integer('Ir');
             $table->String('IrTe');
             $table->String('Otra');
             $table->timestamps();

@@ -12,9 +12,11 @@ class NotaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $id=request('id');
+       return view('Notas.index', compact('id'));
+      
     }
 
     /**
@@ -24,7 +26,11 @@ class NotaController extends Controller
      */
     public function create()
     {
-        //
+        $Nota= new  nota;
+        $Nota->fk_n=request('id');
+        $Nota->Nota=request('NOT');
+        $Nota->Tipo=request('TIPO');
+        $Nota->save();
     }
 
     /**
@@ -83,8 +89,17 @@ class NotaController extends Controller
      * @param  \App\Models\nota  $nota
      * @return \Illuminate\Http\Response
      */
-    public function destroy(nota $nota)
+    public function destroy(Request $request)
     {
-        //
+        $id=request('id');
+        $dato =nota::Find($id);
+
+
+        if ($dato) {
+          
+            $dato->delete();
+
+        }else{}
+        return view('Doctor.index');
     }
 }

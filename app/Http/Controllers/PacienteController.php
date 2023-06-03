@@ -24,30 +24,29 @@ class PacienteController extends Controller
 
         return view('paciente.index');
     }
-    public function prueba(Request $request){
+    public function  create(Request $request){
 
-        $datos=request()->all();
-        $datos2=request('id');
-        $paciente = new PacienteController;
-        $paciente->PacienteDDoctor=reques('idDocotor');
-        $paciente->Nombre=reques('Nombre');
-        $paciente->Apellido=reques('Apellido');
-        $paciente->Edad=reques('Edad');
-        $paciente->Sexo=reques('Sexo');
-        $paciente->Estado_civil=reques('Estado_civil');
-        $paciente->Origen=reques('Origen');
-        $paciente->Ocupacion=reques('Ocupacion');
-        $paciente->Direccion=reques('Direccion');
-        $paciente->Telefono=reques('Telefono');
-        $paciente->Religion=reques('Religion');
-        $paciente->Escolaridad=reques('Escolaridad');
-        $paciente->FechaIngreso=reques('FechaIngreso');
-        $paciente->FechaSalida=reques('FechaSalida');
+        
+        $paciente = new Paciente;
+        $paciente->PacienteDoctor=1;
+        $paciente->Nombre=request('Nombre');
+        $paciente->Apellido=request('Apellido');
+        $paciente->Edad=request('Edad');
+        $paciente->Sexo=request('Sexo');
+        $paciente->Estado_civil=request('Estado_civil');
+        $paciente->Origen=request('Origen');
+        $paciente->Ocupacion=request('Ocupacion');
+        $paciente->Direccion=request('Direccion');
+        $paciente->Telefono=request('Telefono');
+        $paciente->Religion=request('Religion');
+        $paciente->Escolaridad=request('Escolaridad');
+        $date = Carbon::now();
+        $paciente->FechaIngreso=$date->format('Y-m-d');
+       
         $paciente->save();
-       // return "hola controler prueba"
+        return view('Doctor.index');
 
     
-       return $datos2;
      }
      public function store(Request $request){
 
@@ -201,6 +200,29 @@ class PacienteController extends Controller
     
       
   }
+  public function destroy(Request $request)
+    {
+      $id=request('id');
+      $dato =Paciente::find(request('id'));
+
+      if ($dato) {
+        $dato->historiales()->where('PacienteSS', $dato->SS)->delete();
+        $dato->Ginecobstetricos()->where('fk_ag', $dato->SS)->delete();
+        $dato->Patologicos()->where('fk_ap', $dato->SS)->delete();
+        $dato->notasPost()->where('fk_npq', $dato->SS)->delete();
+        $dato->notas()->where('fk_n', $dato->SS)->delete();
+        $dato->Estudios()->where('fk_e', $dato->SS)->delete();
+        $dato->EsploracionFisica()->where('fk_p', $dato->SS)->delete();
+        $dato->citas()->where('fk_pc', $dato->SS)->delete();
+        
+
+          $dato->delete();
+          
+      } else {
+          
+      }
+     return view('Doctor.index');
+    }
     
 
 }

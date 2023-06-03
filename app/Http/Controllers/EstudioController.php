@@ -12,19 +12,33 @@ class EstudioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $id=request('id');
+
+        return view('Estudios.index',compact('id'));
     }
+
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $Estudio= new estudio;
+        $Estudio->fk_e=request('id');
+        $Estudio->HEMOGLOBINA=request('HEMOGLOBINA');
+       $Estudio->HEMATOCRITO=request('HEMATOCRITO');
+       $Estudio->PLAQUETAS=request('PLAQUETAS');
+       $Estudio->GLUCOSA=request('GLUCOSA');
+       $Estudio->UREA=request('UREA');
+       $Estudio->CREATININA=request('CREATININA');
+       $Estudio->RX=request('RX');
+       $Estudio->USG=request('USG');
+        $Estudio->save();
+
     }
 
     /**
@@ -87,8 +101,18 @@ class EstudioController extends Controller
      * @param  \App\Models\estudio  $estudio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(estudio $estudio)
+    public function destroy(Request $request)
     {
-        //
+        $id=request('id');
+      $dato =estudio::find(request('id'));
+
+      if ($dato) {
+       
+          $dato->delete();
+          
+      } else {
+          
+      }
+     return view('Doctor.index');
     }
 }

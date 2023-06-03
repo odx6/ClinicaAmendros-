@@ -208,6 +208,15 @@
                                         <div class="tab-pane fade show active" id="rounded-pills-icon-home"
                                             role="tabpanel" aria-labelledby="rounded-pills-icon-home-tab">
                                             <!---Datos Paciente-->
+                                            @if($Paciente==null)
+                                            <div class="widget-content widget-content-area">
+                                                <div class="alert alert-arrow-right alert-icon-right alert-light-danger alert-dismissible fade show mb-4" role="alert">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg>
+                                                    <strong>Lo sentimos !</strong> No Hay registros disponibles para el paciente.
+                                                </div>
+                                                
+                                            </div>
+                                            @else
                                             <form class="user" method="POST" action="{{ route('paciente.update') }}">
 
                                                 @csrf
@@ -331,23 +340,53 @@
                                                             placeholder="FechaIngreso" name="FechaSalida"
                                                             value="{{ $Paciente->FechaSalida }}">
                                                     </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-danger btn-add-event Hola"
-                                                            id="Hola" style="display: none;">Eliminar</button>
-                                                        <button type="submit" class="btn btn-success btn-add-event Hola"
-                                                            id="Hola2" style="display: none;">Actualizar</button>
-                                                    </div>
+                                                    
                                                 </div>
-                                            </form>
+                                                <div class="modal-footer">
+                                                        
+                                                    <button type="submit" class="btn btn-success  btn-rounded mb-2 me-4  btn-add-event Hola"
+                                                        id="Hola2" style="display: none;">Actualizar</button>
+                                                    </form>
+                                                        <form class="user" method="POST" action="{{ route('paciente.destroy', ['id'=>$Paciente->SS])}}">
+                                                        @csrf
+                                                    <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                        id="Hola" style="display: none;">Eliminar</button>
+                                                    </form>
+                                                    <form class="user" method="GET" action="{{ route('paciente.index')}}">
+                                                        @csrf
+                                                    <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                        id="Hola" style="display: none;">Agregar Paciente</button>
+                                                    </form>
+                                                </div>
                                             <!--End-Datos-Paciente-->
-
+                                            @endif
 
                                         </div>
 
                                         <div class="tab-pane fade" id="rounded-pills-icon-profile" role="tabpanel"
                                             aria-labelledby="rounded-pills-icon-profile-tab">
+                                            @if($Historiales->isEmpty())
+
+                                            <div class="widget-content widget-content-area">
+                                                <div class="alert alert-arrow-right alert-icon-right alert-light-danger alert-dismissible fade show mb-4" role="alert">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg>
+                                                    <strong>Lo sentimos !</strong> No Hay registros disponibles para el paciente.
+                                                </div>
+
+                                                <form class="user" method="POST" action="{{ route('historial.Formulario', ['id'=>$Paciente->SS])}}">
+                                                    @csrf
+                                                <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                    id="Hola" style="display: none;">Agregar Historial</button>
+                                                </form>
+                                            </div>
+                                           
+                                                
+                                            @else
+                                                
+                                        
                                             @foreach ($Historiales as $Historial)
                                                 <!--- Historial-->
+
                                                 <form class="user" method="POST"
                                                     action="{{ route('historial.update') }}">
                                                     @csrf
@@ -599,23 +638,50 @@
 
                                                             </select>
                                                         </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-danger btn-add-event Hola"
-                                                                style="display: none;">Eliminar</button>
-                                                            <button type="submit"
-                                                                class="btn btn-success btn-add-event Hola"
-                                                                style="display: none;">Actualizar</button>
-                                                        </div>
+                                                    </form>
+                                                    
+                                                       
+                                                        
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                            
+                                                        <button type="submit"
+                                                            class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                            style="display: none;">Actualizar</button>
+                                                            <form class="user" method="POST" action="{{ route('Historial.destroy', ['id'=>$Historial->idHIstorial_clinico])}}">
+                                                                @csrf
+                                                            <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                                id="Hola" style="display: none;">Eliminar</button>
+                                                            </form>
+                                                            <form class="user" method="POST" action="{{ route('historial.Formulario', ['id'=>$Paciente->SS])}}">
+                                                                @csrf
+                                                            <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                                id="Hola" style="display: none;">Agregar Historial</button>
+                                                            </form>
 
                                                     </div>
 
-                                                </form>
+                                               
                                             @endforeach
+                                            @endif
                                             <!---End-Historial-->
                                         </div>
                                         <div class="tab-pane fade" id="rounded-pills-icon-contact" role="tabpanel"
                                             aria-labelledby="rounded-pills-icon-contact-tab">
+                                            @if($Gineco->isEmpty())
+                                            <div class="widget-content widget-content-area">
+                                                <div class="alert alert-arrow-right alert-icon-right alert-light-danger alert-dismissible fade show mb-4" role="alert">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg>
+                                                    <strong>Lo sentimos !</strong> No Hay registros disponibles para el paciente.
+                                                </div>
+                                                <form class="user" method="POST" action="{{ route('Gineco.Formulario',['id'=>$Paciente->SS])}}">
+                                                    @csrf
+                                                <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                    id="Hola" >Agregar Antecedente Ginecobstetrico</button>
+                                                </form>
+                                            
+                                            </div>
+                                            @else
                                             <h2> ANTECEDENTES Ginecobstrecticos </h2>
                                             @foreach ($Gineco as $Gine)
                                                 <!--- Historial-->
@@ -686,24 +752,49 @@
                                                                 value="{{ $Gine->Paras }}">
                                                         </div>
                                                     </div>
-
+                                                </form>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-danger btn-add-event Hola"
-                                                            style="display: none;">Eliminar</button>
-                                                        <button type="submit" class="btn btn-success btn-add-event Hola"
-                                                            style="display: none;">Actualizar</button>
+                                                        <form class="user" method="POST" action="{{ route('Gineco.destroy', ['id'=>$Gine->fk_ag])}}">
+                                                            @csrf
+                                                        <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                            id="Hola" style="display: none;">Eliminar</button>
+                                                        </form>
+                                                        <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                            style="display: none;">Actualizar</button> 
+                                                            <form class="user" method="POST" action="{{ route('Gineco.Formulario',['id'=>$Paciente->SS])}}">
+                                                    @csrf
+                                                <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                    id="Hola" >Agregar Antecedente Ginecobstetrico</button>
+                                                </form>
                                                     </div>
 
 
 
-                                                </form>
+                                                
+                                               
                                             @endforeach
                                             <!-----end gine--->
-
+                                            
+                                            @endif
 
                                         </div>
+                                        
                                         <div class="tab-pane fade" id="rounded-pills-icon-settings" role="tabpanel"
                                             aria-labelledby="rounded-pills-icon-settings-tab">
+                                            @if($Patologicos->isEmpty())
+                                            <div class="widget-content widget-content-area">
+                                                <div class="alert alert-arrow-right alert-icon-right alert-light-danger alert-dismissible fade show mb-4" role="alert">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg>
+                                                    <strong>Lo sentimos !</strong> No Hay registros disponibles para el paciente.
+                                                
+                                                </div>
+                                                <form class="user" method="POST" action="{{ route('Pato.Formulario',['id'=>$Paciente->SS])}}">
+                                                    @csrf
+                                                <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                    id="Hola" style="display: none;">Agregar antecedente patologico</button>
+                                                </form>
+                                            </div>
+                                            @else
                                             <h2> ANTECEDENTES NO PATOLOGICOS </h2>
                                             <!--Antecedentes patologicos-->
                                             @foreach ($Patologicos as $patologico)
@@ -817,19 +908,45 @@
                                                                 value="{{ $patologico->Otra }}">
                                                         </div>
                                                     </div>
+                                                     </form>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-danger btn-add-event Hola"
-                                                            style="display: none;">Eliminar</button>
-                                                        <button type="submit" class="btn btn-success btn-add-event Hola"
+                                                        
+                                                        <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
                                                             style="display: none;">Actualizar</button>
-                                                    </div>
+                                                            <form class="user" method="POST" action="{{ route('Pato.Formulario',['id'=>$Paciente->SS])}}">
+                                                                @csrf
+                                                            <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                                id="Hola" style="display: none;">Agregar antecedente patologico</button>
+                                                            </form>
+
+                                                            <form class="user" method="POST" action="{{ route('Pato.destroy', ['id'=>$patologico->id_a_p])}}">
+                                                                @csrf
+                                                            <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                                id="Hola" style="display: none;">Eliminar</button>
+                                                            </form>
+                                                        </div>
                                                     <!--end aPatologicos-->
 
-                                                </form>
+                                               
                                             @endforeach
+                                            @endif
                                         </div>
                                         <div class="tab-pane fade" id="rounded-pills-icon-Estudios" role="tabpanel"
                                             aria-labelledby="rounded-pills-icon-settings-tab">
+                                            @if($Estudios->isEmpty())
+                                            <div class="widget-content widget-content-area">
+                                                <div class="alert alert-arrow-right alert-icon-right alert-light-danger alert-dismissible fade show mb-4" role="alert">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg>
+                                                    <strong>Lo sentimos !</strong> No Hay registros disponibles para el paciente.
+                                                
+                                                </div>
+                                                <form class="user" method="POST" action="{{ route('Estudios.Formulario',['id'=>$Paciente->SS])}}">
+                                                    @csrf
+                                                <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                    id="Hola" style="display: none;">Agregar estudio del paciente</button>
+                                                </form>
+                                            </div>
+                                            @else
                                             <h2>Estudios del paciente </h2>
                                             <!--Antecedentes patologicos-->
                                             @foreach ($Estudios as $estudio)
@@ -915,25 +1032,49 @@
                                                                     value="{{ $estudio->USG }}">
                                                             </div>
                                                         </div>
-
+                                                    </form>
                                                         <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-danger btn-add-event Hola"
-                                                                style="display: none;">Eliminar</button>
+                                                            
                                                             <button type="submit"
-                                                                class="btn btn-success btn-add-event Hola"
+                                                                class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
                                                                 style="display: none;">Actualizar</button>
+                                                                <form class="user" method="POST" action="{{ route('Estudios.Formulario',['id'=>$Paciente->SS])}}">
+                                                                    @csrf
+                                                                <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                                    id="Hola" style="display: none;">Agregar estudio del paciente</button>
+                                                                </form>
+                                                                <form class="user" method="POST" action="{{ route('Estudios.destroy', ['id'=>$estudio->pk_estudio])}}">
+                                                                    @csrf
+                                                                <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                                    id="Hola" style="display: none;">Eliminar</button>
+                                                                </form>
                                                         </div>
+                                                    </div>
                                                         <!--end aPatologicos-->
 
-                                                </form>
+                                                
                                             @endforeach
+                                            @endif
                                         </div>
 
 
-                                    </div>
+                                  
                                     <div class="tab-pane fade" id="rounded-pills-icon-Nota" role="tabpanel"
                                         aria-labelledby="rounded-pills-icon-settings-tab">
+                                        @if($Notas_p->isEmpty())
+                                        <div class="widget-content widget-content-area">
+                                                <div class="alert alert-arrow-right alert-icon-right alert-light-danger alert-dismissible fade show mb-4" role="alert">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg>
+                                                    <strong>Lo sentimos !</strong> No Hay registros disponibles para el paciente.
+                                                
+                                                </div>
+                                                <form class="user" method="POST" action="{{ route('NotasPost.Formulario',['id'=>$Paciente->SS])}}">
+                                                    @csrf
+                                                <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                    id="Hola" style="display: none;">Agregar nota-post quirurgica</button>
+                                                </form>                       
+                                            </div>
+                                        @else
                                         <h2>NOTAS POST QUIRURGICA </h2>
                                         <!--Antecedentes patologicos-->
                                         @foreach ($Notas_p as $np)
@@ -1019,29 +1160,58 @@
                                                                 name="CIR"value="{{ $np->Circulante }}">
                                                         </div>
                                                         <!--end notaspost-->
+                                                    
                                                         <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-danger btn-add-event Hola"
-                                                                style="display: none;">Eliminar</button>
+                                                            
                                                             <button type="submit"
-                                                                class="btn btn-success btn-add-event Hola"
+                                                                class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
                                                                 style="display: none;">Actualizar</button>
+                                                            </form>
+                                                            <form class="user" method="POST" action="{{ route('NotasPost.destroy', ['id'=>$np->fk_npq])}}">
+                                                                @csrf
+                                                            <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                                id="Hola" style="display: none;">Eliminar</button>
+                                                            </form>
+                                                                <form class="user" method="POST" action="{{ route('NotasPost.Formulario',['id'=>$Paciente->SS])}}">
+                                                                    @csrf
+                                                                <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                                    id="Hola" style="display: none;">Agregar nota-post quirurgica</button>
+                                                                </form>                       
+                                                            </div>
                                                         </div>
-                                            </form>
-                                        @endforeach
+                                                    </div>
+                                                </div>
+                                           
+                                            @endforeach
+                                            @endif
+                                            
                                     </div>
-                                    
+                                   
+                                   
 
 
-
-                                </div>
+                               
                                 
 
-                        </div>
+                       
                         <!--end--nota post quirurgica-->
 
                         <div class="tab-pane fade" id="rounded-pills-icon-Notas" role="tabpanel"
                         aria-labelledby="rounded-pills-icon-settings-tab">
+                        @if($Notas->isEmpty())
+                        <div class="widget-content widget-content-area">
+                                                <div class="alert alert-arrow-right alert-icon-right alert-light-danger alert-dismissible fade show mb-4" role="alert">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg>
+                                                    <strong>Lo sentimos !</strong> No Hay registros disponibles para el paciente.
+                                                
+                                                </div>
+                                                  <form class="user" method="POST" action="{{ route('Notas.Formulario',['id'=>$Paciente->SS])}}">
+                                                                    @csrf
+                                                                <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                                    id="Hola" style="display: none;">Agregar nota-post quirurgica</button>
+                                                                </form>    
+                                            </div>
+                        @else
                         <h2>NOTAS </h2>
                         <!--Antecedentes patologicos-->
                         @foreach ($Notas as $np)
@@ -1082,17 +1252,44 @@
                                 <!----- end Notas--->
                                 <!--end notaspost-->
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger btn-add-event Hola"
-                                        style="display: none;">Eliminar</button>
-                                    <button type="submit" class="btn btn-success btn-add-event Hola"
+                                      
+                                    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
                                         style="display: none;">Actualizar</button>
+                                         </form>
+                                        <form class="user" method="POST" action="{{ route('Notas.Formulario',['id'=>$Paciente->SS])}}">
+                                            @csrf
+                                        <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
+                                            id="Hola" style="display: none;">Agregar nota-post quirurgica</button>
+                                        </form> 
+                                         <form class="user" method="POST" action="{{ route('Notas.destroy', ['id'=>$np->fk_n ])}}">
+                                                                @csrf
+                                                            <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                                id="Hola" style="display: none;">Eliminar</button>
+                                                            </form>
                                 </div>
-                            </form>
+                           
                         @endforeach
+                        </div>
+                        @endif
                     </div>
+                   
 
                     <div class="tab-pane fade" id="rounded-pills-icon-Ex" role="tabpanel"
                     aria-labelledby="rounded-pills-icon-settings-tab">
+                    @if($Exploraciones->isEmpty())
+                   <div class="widget-content widget-content-area">
+                                                <div class="alert alert-arrow-right alert-icon-right alert-light-danger alert-dismissible fade show mb-4" role="alert">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg>
+                                                    <strong>Lo sentimos !</strong> No Hay registros disponibles para el paciente.
+                                                
+                                                </div>
+                                                <form class="user" method="POST" action="{{ route('Exploracion.Formulario',['id'=>$Paciente->SS])}}">
+                                                    @csrf
+                                                <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                    id="Hola" style="display: none;">Agregar exploracion fisica del paciente</button>
+                                                </form>   
+                                            </div>
+                    @else
                     @foreach ($Exploraciones as $Ex)
                             <form class="user" method="POST" action="{{ route('Exploracion.store') }}">
                                 @csrf
@@ -1248,14 +1445,25 @@
                                 <!----- end Notas--->
                                 <!--end notaspost-->
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger btn-add-event Hola"
-                                        style="display: none;">Eliminar</button>
-                                    <button type="submit" class="btn btn-success btn-add-event Hola"
+                                    
+                                    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4  btn-add-event Hola"
                                         style="display: none;">Actualizar</button>
+                                    </form>
+                                    <form class="user" method="POST" action="{{ route('Exploracion.destroy', ['id'=>$Ex->pk_Exploracion])}}">
+                                        @csrf
+                                    <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola"
+                                        id="Hola" style="display: none;">Eliminar</button>
+                                    </form>
+                                        <form class="user" method="POST" action="{{ route('Exploracion.Formulario',['id'=>$Paciente->SS])}}">
+                                            @csrf
+                                        <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
+                                            id="Hola" style="display: none;">Agregar Exploracion</button>
+                                        </form>   
                                 </div>
-                            </form>
+                            
                         @endforeach
                     </div>
+                    @endif
             </div>
 
                     </div>

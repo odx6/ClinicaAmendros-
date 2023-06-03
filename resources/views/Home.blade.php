@@ -56,18 +56,29 @@
                                 <div class="modal-body">
     
                                     <div class="row">
+                                         <div class="col-md-12">
+                                            <div class="">
+                                                <label class="form-label">Area</label>
+                                               <!-- <input id="event-title" type="text" class="form-control">-->
+                                                <select class="form-control" name="Area" id="event-title-area">
+                                                    @php
+                                                    $Areas =App\Models\Area::all();
+                                        
+                                                    @endphp
+                                                    @foreach($Areas as $Area)
+                                                    <option value="{{ $Area->IDAREA}}">{{ $Area->NOMBE_AREA }}</option>
+                                                    @endforeach
+                                                    
+                                                </select>
+                                            </div>
                                         <div class="col-md-12">
                                             <div class="">
                                                 <label class="form-label">Nombre del Doctor</label>
                                                <!-- <input id="event-title" type="text" class="form-control">-->
                                                 <select class="form-control" name="DOCTOR" id="event-title">
-                                                    @php
-                                                    $doctores =App\Models\Doctor::all();
-                                        
-                                                    @endphp
-                                                    @foreach($doctores as $doctor)
-                                                    <option value="{{ $doctor->DSS}}">{{ $doctor->ESPECIALIDAD }}</option>
-                                                    @endforeach
+                                               
+                                                   
+                                                    <option >Medico</option>
                                                     
                                                 </select>
                                             </div>
@@ -108,26 +119,26 @@
                                             <div class="d-flex mt-4">
                                                 <div class="n-chk">
                                                     <div class="form-check form-check-primary form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="event-level" value="Work" id="rwork">
-                                                        <label class="form-check-label" for="rwork">Work</label>
+                                                        <input class="form-check-input" type="radio" name="event-level" value="Fisoterapia" id="rwork">
+                                                        <label class="form-check-label" for="rwork">Fisoterapia</label>
                                                     </div>
                                                 </div>
                                                 <div class="n-chk">
                                                     <div class="form-check form-check-warning form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="event-level" value="Travel" id="rtravel">
-                                                        <label class="form-check-label" for="rtravel">Travel</label>
+                                                        <input class="form-check-input" type="radio" name="event-level" value="Ginecologia" id="rtravel">
+                                                        <label class="form-check-label" for="rtravel">Ginecologia</label>
                                                     </div>
                                                 </div>
                                                 <div class="n-chk">
                                                     <div class="form-check form-check-success form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="event-level" value="Personal" id="rPersonal">
-                                                        <label class="form-check-label" for="rPersonal">Personal</label>
+                                                        <input class="form-check-input" type="radio" name="event-level" value=" Oftalmologia" id="rPersonal">
+                                                        <label class="form-check-label" for="rPersonal"> Oftalmologia</label>
                                                     </div>
                                                 </div>
                                                 <div class="n-chk">
                                                     <div class="form-check form-check-danger form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="event-level" value="Importante" id="rImportant">
-                                                        <label class="form-check-label" for="rImportant">Important</label>
+                                                        <input class="form-check-input" type="radio" name="event-level" value="Traumatologia" id="rImportant">
+                                                        <label class="form-check-label" for="rImportant">Traumatologia</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -139,8 +150,8 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
                                     <button type="button" class="btn btn-success btn-update-event" data-fc-event-public-id="">Actualizar una cita</button>
-                                    <button type="button" class="btn btn-primary btn-add-event">Agregar Cita</button>
-                                    <button type="button" class="btn btn-primary btn-add-event" id="btnAgregar">Agregar</button>
+                                    
+                                    <button type="button" class="btn btn-primary btn-add-event" id="btnAgregar">Agregar Cita</button>
                                 </div>
                             </div>
                         </div>

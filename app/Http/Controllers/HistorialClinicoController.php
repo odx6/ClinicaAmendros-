@@ -12,9 +12,11 @@ class HistorialClinicoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $id=request('id');
+       return view('Historiales.create', compact('id'));
+      
     }
 
     /**
@@ -22,9 +24,31 @@ class HistorialClinicoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $Historial= new Historial_Clinico;
+        $Historial->PacienteSS=request('Paciente');
+        $Historial->DM=request('DM');
+        $Historial->HAS=request('HAS');
+        $Historial->CA=request('CA');
+        $Historial->PDM=request('PDM');
+        $Historial->PHAS=request('PHAS');
+        $Historial->PCA=request('PCA');
+        $Historial->MFALLECIDA=request('MF');
+        $Historial->PFALLECIDA=request('PF');
+        $Historial->CAUSAS=request('CAM');
+        $Historial->ALERGIAS=request('ALERGIAS');
+
+        $Historial->ALIMENTOS=request('AL');
+        $Historial->SUSTANCIAS_Q=request('ALS');
+        $Historial->CIRUJIAS_P=request('CP');
+        $Historial->TRANSFUCIONES=request('TF');
+        $Historial->FRACTURAS=request('FP');
+        $Historial->ALCHOLISMO=request('ALP');
+        $Historial->TABASQUISMO=request('TB');
+        $Historial->DROGAS=request('DR');
+        $Historial->save();
+        return view('Doctor.index');
     }
 
     /**
@@ -115,8 +139,17 @@ class HistorialClinicoController extends Controller
      * @param  \App\Models\Historial_Clinico  $historial_Clinico
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Historial_Clinico $historial_Clinico)
+    public function destroy(Request $request)
     {
-        //
+        $id=request('id');
+        $dato =Historial_clinico::Find($id);
+
+
+        if ($dato) {
+            $dato->Exploraciones()->where('fk_e', $dato->idHIstorial_clinico)->delete();
+            $dato->delete();
+
+        }else{}
+        return $id;
     }
 }

@@ -50,8 +50,9 @@ class SessionController extends Controller
                 return redirect()->route('admin.index');
 
             }else if(auth()->user()->role == 'medico'){
+                
 
-                return redirect()->route('Doctor.index');
+                return redirect()->route('Doctor.index' );
             }
             else
             {

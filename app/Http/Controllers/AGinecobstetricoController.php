@@ -12,9 +12,10 @@ class AGinecobstetricoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $id=request('id');
+         return view('Ginecopstetricos.index',compact('id'));
     }
 
     /**
@@ -22,9 +23,19 @@ class AGinecobstetricoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $gineco = new a_ginecobstetrico;
+        $gineco->fk_ag=request('id');
+        $gineco->Menarca=request('Menarca');
+        $gineco->Ivsa=request('IVSA');
+        $gineco->Gesta=request('gestas');
+        $gineco->Cesareas=request('Cesareas');
+
+        $gineco->Aborto=request('Abortos');
+        $gineco->Paras=request('Partos');
+        $gineco->save();
+      
     }
 
     /**
@@ -87,8 +98,20 @@ class AGinecobstetricoController extends Controller
      * @param  \App\Models\a_ginecobstetrico  $a_ginecobstetrico
      * @return \Illuminate\Http\Response
      */
-    public function destroy(a_ginecobstetrico $a_ginecobstetrico)
+    public function destroy(Request $request)
     {
-        //
+        $id=request('id');
+        $dato =a_ginecobstetrico::find(request('id'));
+  
+        if ($dato) {
+          
+  
+            $dato->delete();
+            
+        } else {
+            
+        }
+       return view('Doctor.index');
+        
     }
 }

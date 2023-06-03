@@ -29,6 +29,7 @@ class DoctorController extends Controller
     public function HistorialPaciente(Request $request)
     {
         $valorSeleccionado = $request->input('paciente');
+        if(isset($valorSeleccionado)){
         // Sacar su Historial del paciente 
         $Historiales = Historial_Clinico::where('PacienteSS', '=', $valorSeleccionado)->get();
          $Gineco=a_ginecobstetrico::where('fk_ag', '=', $valorSeleccionado) ->get();
@@ -41,7 +42,13 @@ class DoctorController extends Controller
       $Paciente =Paciente::Find($valorSeleccionado);
        
         return view('Doctor.Paciente',compact('valorSeleccionado','Paciente', 'Historiales','Gineco','Patologicos','Estudios','Notas_p','Notas','Exploraciones'));
+    }else{
+       return redirect()->back();
     }
+
+
+
+}
 
     public function HistorialPacientePDF()
     {
@@ -184,5 +191,15 @@ class DoctorController extends Controller
     public function destroy(Doctor $doctor)
     {
         //
+    }
+    public function Medico( Request $request)
+    {
+        $id =Request('area');
+        $Medicos=Doctor::where('AreaDoctor', '=', $id) ->get();
+        $MedicosJson = json_encode($Medicos);
+        //return $MedicosJson;
+        //Para mostrar los datos con javaScript
+        
+        return response()->json($Medicos);
     }
 }

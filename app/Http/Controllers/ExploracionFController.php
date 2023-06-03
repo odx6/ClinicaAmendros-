@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\exploracion_f;
+use App\Models\Paciente;
 use Illuminate\Http\Request;
 
 class ExploracionFController extends Controller
@@ -12,9 +13,14 @@ class ExploracionFController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $id=request('id');
+        $paciente=Paciente::find($id);
+        $idDoc=$paciente->PacienteDoctor;
+    
+
+        return view('Exploraciones.index',compact('id','idDoc'));
     }
 
     /**
@@ -22,9 +28,28 @@ class ExploracionFController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $Exploracion= new exploracion_f;
+        $Exploracion->fk_e=1;
+       /* $Exploracion->fk_d=request('Doctor');
+        $Exploracion->fk_p=request('Paciente');*/
+        $Exploracion->fk_d=request('idDoc');
+        $Exploracion->fk_p=request('id');
+        $Exploracion->TA=request('T/A');
+        $Exploracion->FC=request('FC');
+        $Exploracion->X1=request('X1');
+        $Exploracion->FR=request('FR');
+        $Exploracion->X2=request('X2');
+        $Exploracion->TEMP=request('TEMP');
+        $Exploracion->PESO=request('PESO');
+        $Exploracion->Nombre_ef=request('NEF');
+        $Exploracion->Cabeza_ef=request('CAEF');
+        $Exploracion->Cuello_ef=request('CUEF');
+        $Exploracion->Abdomen_ef=request('ABEF');
+        $Exploracion->Miembro_Pelvico_ef=request('MP');
+        $Exploracion->Miembro_toraxico_ef=request('MT');
+        $Exploracion->save();
     }
 
     /**
@@ -97,8 +122,19 @@ class ExploracionFController extends Controller
      * @param  \App\Models\exploracion_f  $exploracion_f
      * @return \Illuminate\Http\Response
      */
-    public function destroy(exploracion_f $exploracion_f)
+    public function destroy(Request $request)
     {
-        //
+      $id=request('id');
+      $dato =exploracion_f::find(request('id'));
+
+      if ($dato) {
+        
+
+          $dato->delete();
+          
+      } else {
+          
+      }
+     return view('Doctor.index');
     }
 }

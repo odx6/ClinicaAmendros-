@@ -13,7 +13,43 @@ document.addEventListener('DOMContentLoaded', function() {
      * @getDynamicMonth() fn. is used to validate 2 digit number and act accordingly 
      * 
     */   
+    $("#event-title-area").change(function() {
 
+        var areaSeleccionada = $(this).val();
+        //alert(areaSeleccionada);
+        $.ajax({
+            type:"POST",
+            url:'Medicos',
+            data:{
+              area:areaSeleccionada,
+              _token: $('meta[name="csrf-token"]').attr('content'),
+            
+            },
+           }).done(function(res){
+           
+           // alert(res)
+        
+            mostrarUsuarios(res);});
+        
+    });
+
+
+
+          function mostrarUsuarios(usuarios) {
+            var selectUsuarios = $("#event-title");
+            selectUsuarios.empty();
+      
+            if (usuarios.length > 0) {
+              usuarios.forEach(function(usuario) {
+                selectUsuarios.append("<option value='" + usuario.DSS + "'>" + usuario.ESPECIALIDAD + "</option>");
+              });
+            } else {
+              selectUsuarios.append("<option value=''>No se encontraron usuarios en el área seleccionada.</option>");
+            }
+          }
+    
+    
+    
    $.get('calendario', function(response) {
     citasList=response;
     //codigo agregado 
@@ -36,10 +72,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var getModalAddBtnEl = document.querySelector('.btn-add-event');
     var getModalUpdateBtnEl = document.querySelector('.btn-update-event');
     var calendarsEvents = {
-        operaciones: 'primary',
-        Personal: 'success',
-        Importante: 'danger',
-        Travel: 'warning',
+        Fisoterapia: 'primary',
+        Ginecologia: 'success',
+        Oftalmologia: 'danger',
+        Traumatologia: 'warning',
     }
 
     // Calendar Elements and options

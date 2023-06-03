@@ -12,9 +12,11 @@ class APatologicoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $id=request('id');
+
+        return view('patologicos.index',compact('id'));
     }
 
     /**
@@ -22,9 +24,18 @@ class APatologicoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $patologico= new a_patologico;
+        $patologico->fk_ap =request('IDPA');
+        $patologico->Dm=request('DMN');
+        $patologico->DmTE=request('DMTE');
+        $patologico->Has=request('HASN');
+        $patologico->HasTe=request('HASTE');
+        $patologico->Ir=request('IR');
+        $patologico->IrTe=request('IrTe');
+        $patologico->Otra=request('OTRA');
+        $patologico->save();
     }
 
     /**
@@ -88,8 +99,17 @@ class APatologicoController extends Controller
      * @param  \App\Models\a_patologico  $a_patologico
      * @return \Illuminate\Http\Response
      */
-    public function destroy(a_patologico $a_patologico)
+    public function destroy(Request $request)
     {
-        //
+        $id=request('id');
+      $dato =a_patologico::find(request('id'));
+
+      if ($dato) {
+          $dato->delete();
+          
+      } else {
+          
+      }
+     return view('Doctor.index');
     }
 }

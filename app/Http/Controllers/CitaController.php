@@ -139,16 +139,17 @@ class CitaController extends Controller
                'title'=>$nombre,
                'start'=>$event->inicio_c,
                'end'=>$event->fin_cita,
-               'extendedProps'=>['calendar'=>'Importante','Idpaciente'=>$event->fk_pc,'IdDoctor'=>$event->fk_dc,],
+               'extendedProps'=>['calendar'=>'Fisoterapia','Idpaciente'=>$event->fk_pc,'IdDoctor'=>$event->fk_dc,],
            ];
     }
     $datosJson = json_encode($events);
   //  return "Hola como calendario";
   return response()->json($events);
 }
-public function CitasDoctores()
+public function CitasDoctores(Request $request)
     {
-        $all_events = Cita::where('fk_dc', '=', 1)
+        $valor=request('id');
+        $all_events = Cita::where('fk_dc', '=', $valor)
         ->get();
 
        // $all_events=Cita::findOrFail(1);
@@ -168,8 +169,8 @@ public function CitasDoctores()
            ];
     }
     $datosJson = json_encode($events);
-  //  return "Hola como calendario";
-  return response()->json($events);
+   
+return response()->json($events);
 }
     
 }

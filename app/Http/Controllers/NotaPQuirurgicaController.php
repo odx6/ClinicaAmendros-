@@ -12,9 +12,11 @@ class NotaPQuirurgicaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $id=request('id');
+       return view('NotasPost.index', compact('id'));
+      
     }
 
     /**
@@ -22,9 +24,20 @@ class NotaPQuirurgicaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $Nota_p= new nota_p_quirurgica;
+         $Nota_p->fk_npq=request('id');
+         $Nota_p->ProgramacionC=request('PC');
+         $Nota_p->Ejecucion=request('EJ');
+         $Nota_p->Hallazgos=request('HA');
+         $Nota_p->Complicaciones=request('CO');
+         $Nota_p->Nombre_Cirujano=request('NC');
+         $Nota_p->Nombre_Ayudante=request('NAY');
+         $Nota_p->Nombre_Instrumentista=request('NI');
+         $Nota_p->Nombre_Aniestesiologo=request('NAN');
+         $Nota_p->Circulante=request('CIR');
+         $Nota_p->save();
     }
 
     /**
@@ -90,8 +103,17 @@ class NotaPQuirurgicaController extends Controller
      * @param  \App\Models\nota_p_quirurgica  $nota_p_quirurgica
      * @return \Illuminate\Http\Response
      */
-    public function destroy(nota_p_quirurgica $nota_p_quirurgica)
+    public function destroy(Request $request)
     {
-        //
+        $id=request('id');
+        $dato =nota_p_quirurgica::Find($id);
+
+
+        if ($dato) {
+          
+            $dato->delete();
+
+        }else{}
+        return view('Doctor.index');
     }
 }

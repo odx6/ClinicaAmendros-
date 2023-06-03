@@ -31,7 +31,7 @@
                         <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Secretaria</li>
+                                <li class="breadcrumb-item active" aria-current="page">Vista Doctores</li>
                             </ol>
                         </nav>
                     </div>
@@ -68,7 +68,8 @@
                                                <!-- <input id="event-title" type="text" class="form-control">-->
                                                 <select class="form-control" name="DOCTOR" id="event-title">
                                                     @php
-                                                    $doctores =App\Models\Doctor::all();
+                                                   $id=auth()->user()->id;
+                                                   $doctores =App\Models\Doctor::where('fk_user', '=', $id)->get();
                                         
                                                     @endphp
                                                     @foreach($doctores as $doctor)
@@ -98,14 +99,14 @@
                                         <div class="col-md-12 ">
                                             <div class="">
                                                 <label class="form-label">Ingresa La fecha de inicio y la hora</label>
-                                                <input id="event-start-date" type="datetime-local" class="form-control">
+                                                <input id="event-start-date" type="datetime-local" class="">
                                             </div>
                                         </div>
     
                                         <div class="col-md-12 ">
                                             <div class="">
                                                 <label class="form-label">Ingresa la fecha que concluye la cita </label>
-                                                <input id="event-end-date" type="datetime-local" class="form-control">
+                                                <input id="event-end-date" type="datetime-local" class="">
                                             </div>
                                         </div>
                                         
@@ -145,10 +146,18 @@
 
                                 <div class="modal-footer">
                                     <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
+                                    
+                                    
+                                    @if($pacientes->isEmpty() ||  $doctores->isEmpty() )
+                                    
+                                        
+                                    @else
                                     <button type="button" class="btn btn-success btn-update-event" data-fc-event-public-id="">Actualizar una cita</button>
                                     <button type="button" class="btn btn-primary btn-add-event">Agregar Cita</button>
                                     <button type="submit" class="btn btn-primary btn-add-event" id="idConsulta">Consulta</button>
+                                    @endif
                                 </div>
+                                
                             </form>
                             </div>
                         </div>
