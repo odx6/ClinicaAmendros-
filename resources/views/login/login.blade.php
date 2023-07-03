@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title','login')
+@section('title','Inicio de sesión')
 @section('linkAuth')
 <link href="../src/assets/css/light/authentication/auth-cover.css" rel="stylesheet" type="text/css" />
 
@@ -70,7 +70,7 @@
                                             </div>
                                             <div class="media-body">
                                                 <div class="alert-text">
-                                                    <strong>Warning! </strong><span> {{ $message }}</span> 
+                                                    <strong>Error ! </strong><span> {{ $message }}</span> 
                                                 </div>
                                                 
                                             </div>
@@ -84,7 +84,7 @@
                                         <div class="form-check form-check-primary form-check-inline">
                                             <input class="form-check-input me-3" type="checkbox" id="form-check-default">
                                             <label class="form-check-label" for="form-check-default">
-                                                Remember me
+                                               Recordar contraseña
                                             </label>
                                         </div>
                                     </div>
@@ -92,7 +92,7 @@
                                 
                                 <div class="col-12">
                                     <div class="mb-4">
-                                        <button class="btn btn-secondary w-100">SIGN IN</button>
+                                        <button class="btn btn-secondary w-100">Iniciar Sesión</button>
                                     </div>
                                 </div>
                                 
@@ -134,7 +134,7 @@
 -->
                                 <div class="col-12">
                                     <div class="text-center">
-                                        <p class="mb-0">No tienes Cuenta <a href="{{route('register.index')}}" class="text-warning">Sign Up</a></p>
+                                        <p class="mb-0">No tienes Cuenta <a href="{{route('register.index')}}" class="text-warning">Registrarse</a></p>
                                     </div>
                                 </div>
                                 

@@ -65,6 +65,14 @@
                                     <div class="row">
                                         <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                             <h4>Historial clinico {{ $valorSeleccionado }}</h4>
+                                            <div class="tab-content" id="rounded-pills-icon-tabContent">
+                                                <!--Boton para activar Edicion --->
+                                                <div class="switch form-switch-custom switch-inline form-switch-success">
+                                                    <form class="user" method="POST" action="{{ route('Paciente.historial-completo',['id'=>$valorSeleccionado])}}">
+                                                        @csrf
+                                                    <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Agregar Historial Completo al paciente</button>
+                                                    </form>
+                                                    </div>
                                         </div>
                                     </div>
                                 </div>
@@ -196,14 +204,18 @@
                                                 </svg>Exploraciones Fisicas</a>
                                         </li>
                                     </ul>
-                                    <div class="tab-content" id="rounded-pills-icon-tabContent">
-                                        <!--Boton para activar Edicion --->
-                                        <div class="switch form-switch-custom switch-inline form-switch-success">
-                                            <input class="switch-input" type="checkbox" role="switch"
-                                                id="form-custom-switch-success">
-                                            <label class="switch-label" for="form-custom-switch-success">Editar Datos
-                                            </label>
-                                        </div>
+                                   
+                                  
+                                        <div class="tab-content" id="rounded-pills-icon-tabContent">
+                                            <!--Boton para activar Edicion --->
+                                            <div class="switch form-switch-custom switch-inline form-switch-success">
+                                                <input class="switch-input" type="checkbox" role="switch"
+                                                    id="form-custom-switch-success">
+                                                <label class="switch-label" for="form-custom-switch-success">Editar Datos
+                                                </label>
+    
+                                                
+                                            </div>
                                         <!---Boton-end-->
                                         <div class="tab-pane fade show active" id="rounded-pills-icon-home"
                                             role="tabpanel" aria-labelledby="rounded-pills-icon-home-tab">
@@ -638,7 +650,7 @@
 
                                                             </select>
                                                         </div>
-                                                    </form>
+                                                    
                                                     
                                                        
                                                         
@@ -648,6 +660,7 @@
                                                         <button type="submit"
                                                             class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
                                                             style="display: none;">Actualizar</button>
+                                                        </form>
                                                             <form class="user" method="POST" action="{{ route('Historial.destroy', ['id'=>$Historial->idHIstorial_clinico])}}">
                                                                 @csrf
                                                             <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola"
@@ -752,19 +765,21 @@
                                                                 value="{{ $Gine->Paras }}">
                                                         </div>
                                                     </div>
-                                                </form>
+                                                
                                                     <div class="modal-footer">
-                                                        <form class="user" method="POST" action="{{ route('Gineco.destroy', ['id'=>$Gine->fk_ag])}}">
-                                                            @csrf
-                                                        <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola"
-                                                            id="Hola" style="display: none;">Eliminar</button>
-                                                        </form>
+                                                       
                                                         <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
                                                             style="display: none;">Actualizar</button> 
+                                                        </form>
                                                             <form class="user" method="POST" action="{{ route('Gineco.Formulario',['id'=>$Paciente->SS])}}">
                                                     @csrf
                                                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
                                                     id="Hola" >Agregar Antecedente Ginecobstetrico</button>
+                                                </form>
+                                                <form class="user" method="POST" action="{{ route('Gineco.destroy', ['id'=>$Gine->fk_ag])}}">
+                                                    @csrf
+                                                <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola"
+                                                    id="Hola" style="display: none;">Eliminar</button>
                                                 </form>
                                                     </div>
 
@@ -908,11 +923,12 @@
                                                                 value="{{ $patologico->Otra }}">
                                                         </div>
                                                     </div>
-                                                     </form>
+                                                     
                                                     <div class="modal-footer">
                                                         
                                                         <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
                                                             style="display: none;">Actualizar</button>
+                                                        </form>
                                                             <form class="user" method="POST" action="{{ route('Pato.Formulario',['id'=>$Paciente->SS])}}">
                                                                 @csrf
                                                             <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
@@ -1032,12 +1048,13 @@
                                                                     value="{{ $estudio->USG }}">
                                                             </div>
                                                         </div>
-                                                    </form>
+                                                   
                                                         <div class="modal-footer">
                                                             
                                                             <button type="submit"
                                                                 class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
                                                                 style="display: none;">Actualizar</button>
+                                                            </form>
                                                                 <form class="user" method="POST" action="{{ route('Estudios.Formulario',['id'=>$Paciente->SS])}}">
                                                                     @csrf
                                                                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
@@ -1167,7 +1184,7 @@
                                                                 class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
                                                                 style="display: none;">Actualizar</button>
                                                             </form>
-                                                            <form class="user" method="POST" action="{{ route('NotasPost.destroy', ['id'=>$np->fk_npq])}}">
+                                                            <form class="user" method="POST" action="{{ route('NotasPost.destroy', ['id'=>$np->idNotaP ])}}">
                                                                 @csrf
                                                             <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola"
                                                                 id="Hola" style="display: none;">Eliminar</button>
@@ -1261,7 +1278,7 @@
                                         <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
                                             id="Hola" style="display: none;">Agregar nota-post quirurgica</button>
                                         </form> 
-                                         <form class="user" method="POST" action="{{ route('Notas.destroy', ['id'=>$np->fk_n ])}}">
+                                         <form class="user" method="POST" action="{{ route('Notas.destroy', ['id'=>$np->pk_n ])}}">
                                                                 @csrf
                                                             <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola"
                                                                 id="Hola" style="display: none;">Eliminar</button>
@@ -1298,11 +1315,11 @@
                                     <label for="formGroupExampleInput">
                                         T/A </label>
                                     <select class="form-control" name="T/A">
-                                        <option value="{{ $patologico->TA }}">
-                                            @if ($patologico->TA== '1')
+                                        <option value="{{ $Ex->TA }}">
+                                            @if ($Ex->TA== '1')
                                                 {{ 'Si' }}
                                             @endif
-                                            @if ($patologico->TA == '0')
+                                            @if ($Ex->TA == '0')
                                                 {{ 'No' }}
                                             @endif
                                         </option>
@@ -1315,11 +1332,11 @@
                                     <label for="formGroupExampleInput">
                                         FC </label>
                                     <select class="form-control" name="FC">
-                                        <option value="{{ $patologico->FC }}">
-                                            @if ($patologico->FC== '1')
+                                        <option value="{{ $Ex->FC }}">
+                                            @if ($Ex->FC== '1')
                                                 {{ 'Si' }}
                                             @endif
-                                            @if ($patologico->FC == '0')
+                                            @if ($Ex->FC == '0')
                                                 {{ 'No' }}
                                             @endif
                                         </option>
@@ -1332,11 +1349,11 @@
                                     <label for="formGroupExampleInput">
                                         X1 </label>
                                     <select class="form-control" name="X1">
-                                        <option value="{{ $patologico->X1 }}">
-                                            @if ($patologico->X1== '1')
+                                        <option value="{{ $Ex->X1 }}">
+                                            @if ($Ex->X1== '1')
                                                 {{ 'Si' }}
                                             @endif
-                                            @if ($patologico->X1 == '0')
+                                            @if ($Ex->X1 == '0')
                                                 {{ 'No' }}
                                             @endif
                                         </option>
@@ -1349,11 +1366,11 @@
                                     <label for="formGroupExampleInput">
                                         FR </label>
                                     <select class="form-control" name="FR">
-                                        <option value="{{ $patologico->FR }}">
-                                            @if ($patologico->FR== '1')
+                                        <option value="{{ $Ex->FR }}">
+                                            @if ($Ex->FR== '1')
                                                 {{ 'Si' }}
                                             @endif
-                                            @if ($patologico->FR == '0')
+                                            @if ($Ex->FR == '0')
                                                 {{ 'No' }}
                                             @endif
                                         </option>
@@ -1366,11 +1383,11 @@
                                     <label for="formGroupExampleInput">
                                         X2 </label>
                                     <select class="form-control" name="X2">
-                                        <option value="{{ $patologico->X2 }}">
-                                            @if ($patologico->X2== '1')
+                                        <option value="{{ $Ex->X2 }}">
+                                            @if ($Ex->X2== '1')
                                                 {{ 'Si' }}
                                             @endif
-                                            @if ($patologico->X2 == '0')
+                                            @if ($Ex->X2 == '0')
                                                 {{ 'No' }}
                                             @endif
                                         </option>
@@ -1636,6 +1653,7 @@
 
     <!--  BEGIN CUSTOM SCRIPTS FILE  -->
     <script src="../src/plugins/src/fullcalendar/Calendario-Doctor.js"></script>
+    <script src="../MisFunciones/Desactivar.js"></script>
     <!--  END CUSTOM SCRIPTS FILE  -->
     <script src="../src/plugins/src/highlight/highlight.pack.js"></script>
 

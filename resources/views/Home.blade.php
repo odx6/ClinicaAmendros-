@@ -53,14 +53,16 @@
                                     <h5 class="modal-title" id="exampleModalLabel">Agregar una nueva cita</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
+<form class="needs-validation" novalidate id="foreverisa">
                                 <div class="modal-body">
     
                                     <div class="row">
                                          <div class="col-md-12">
-                                            <div class="">
+                                            <div class="form-control">
                                                 <label class="form-label">Area</label>
                                                <!-- <input id="event-title" type="text" class="form-control">-->
-                                                <select class="form-control" name="Area" id="event-title-area">
+                                                <select class="form-control event-title-area" name="Area" id="event-title-area" required >
+                                                   <option selected disabled value="">Seleciona el area </option>
                                                     @php
                                                     $Areas =App\Models\Area::all();
                                         
@@ -70,24 +72,37 @@
                                                     @endforeach
                                                     
                                                 </select>
+                                                <div class="valid-feedback">
+                                        Datos correctos
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         Selecciona un area valida
+                                     </div>
                                             </div>
                                         <div class="col-md-12">
-                                            <div class="">
+                                            <div class="form-control">
                                                 <label class="form-label">Nombre del Doctor</label>
                                                <!-- <input id="event-title" type="text" class="form-control">-->
-                                                <select class="form-control" name="DOCTOR" id="event-title">
-                                               
+                                                <select class="form-control event-title" name="DOCTOR" id="event-title" required>
+                                                <option selected disabled value="">Selecciona el medico </option>
                                                    
-                                                    <option >Medico</option>
+                                                    
                                                     
                                                 </select>
+                                                 <div class="valid-feedback">
+                                        Selecion correcta
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         Selecciona un médico
+                                     </div>
                                             </div>
                                         </div>
                                          <div class="col-md-12">
-                                            <div class="">
+                                            <div class="form-control">
                                                 <label class="form-label">Nombre del pacente</label>
                                                <!-- <input id="event-title2" type="text" class="form-control">-->
-                                                <select class="form-control" name="paciente" id="event-title2" >
+                                                <select class="form-control" name="paciente" id="event-title2" required>
+                                                     <option selected disabled value="">Selecciona el paciente </option>
                                                     @php
                                                     $pacientes =App\Models\Paciente::all();
                                         
@@ -97,68 +112,50 @@
                                                     @endforeach
                                                     
                                                 </select>
+                                                <div class="valid-feedback">
+                                            Datos correctos
+                                         </div>
+                                         <div class="invalid-feedback">
+                                            selecion del paciente correcta
+                                         </div>
                                             </div>
                                         </div>
     
                                         <div class="col-md-12 ">
-                                            <div class="">
+                                            <div class="form-control">
                                                 <label class="form-label">Ingresa La fecha de inicio y la hora</label>
-                                                <input id="event-start-date" type="datetime-local" class="form-control">
+                                                <input id="event-start-date" type="datetime-local" class="form-control"   placeholder="Fecha de la cita" required >
+                                                <div class="valid-feedback">
+                                            Datos correctos
+                                         </div>
+                                         <div class="invalid-feedback">
+                                            Ingresa un fecha y hora correcta
+                                         </div>
                                             </div>
-                                        </div>
-    
-                                        <div class="col-md-12 ">
-                                            <div class="">
-                                                <label class="form-label">Ingresa la fecha que concluye la cita </label>
-                                                <input id="event-end-date" type="datetime-local" class="form-control">
-                                            </div>
+
+                                           
                                         </div>
                                         
-                                        <div class="col-md-12">
-    
-                                            <div class="d-flex mt-4">
-                                                <div class="n-chk">
-                                                    <div class="form-check form-check-primary form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="event-level" value="Fisoterapia" id="rwork">
-                                                        <label class="form-check-label" for="rwork">Fisoterapia</label>
-                                                    </div>
-                                                </div>
-                                                <div class="n-chk">
-                                                    <div class="form-check form-check-warning form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="event-level" value="Ginecologia" id="rtravel">
-                                                        <label class="form-check-label" for="rtravel">Ginecologia</label>
-                                                    </div>
-                                                </div>
-                                                <div class="n-chk">
-                                                    <div class="form-check form-check-success form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="event-level" value=" Oftalmologia" id="rPersonal">
-                                                        <label class="form-check-label" for="rPersonal"> Oftalmologia</label>
-                                                    </div>
-                                                </div>
-                                                <div class="n-chk">
-                                                    <div class="form-check form-check-danger form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="event-level" value="Traumatologia" id="rImportant">
-                                                        <label class="form-check-label" for="rImportant">Traumatologia</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
                                     </div>
                                     
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
-                                    <button type="button" class="btn btn-success btn-update-event" data-fc-event-public-id="">Actualizar una cita</button>
+                                    <button type="submit" class="btn btn-success btn-update-event" data-fc-event-public-id="">Actualizar una cita</button>
                                     
-                                    <button type="button" class="btn btn-primary btn-add-event" id="btnAgregar">Agregar Cita</button>
+                                    <button type="submit" class="btn btn-primary btn-add-event" id="btnAgregar">Agregar Cita</button>
+                                    <button type="submit" class="btn btn-primary btn-delete-event" data-fc-event-public-id="">Cancelar cita</button>
                                 </div>
                             </div>
+                            </form>
                         </div>
                     </div>
                   <!--end_Calendario-->
 
                 </div>
+
+@include('layouts.ModalConfirmacion')
+@include('layouts.PrimeraCita')
 
             </div>
 

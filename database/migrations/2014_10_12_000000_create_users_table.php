@@ -219,12 +219,7 @@ return new class extends Migration
           
             $table->unsignedBigInteger('fk_dc');
             $table->unsignedBigInteger('fk_pc');
-           
-            
             $table->DateTime('inicio_c');
-            $table->DateTime('fin_cita');
-            
-            $table->Time('Duracion');
             $table->String('Estado');
             $table->timestamps();
             // para claves foraneas 

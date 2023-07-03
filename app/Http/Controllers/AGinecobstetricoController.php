@@ -98,7 +98,7 @@ class AGinecobstetricoController extends Controller
      * @param  \App\Models\a_ginecobstetrico  $a_ginecobstetrico
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destory(Request $request)
     {
         $id=request('id');
         $dato =a_ginecobstetrico::find(request('id'));

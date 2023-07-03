@@ -42,13 +42,13 @@
                             <div class="row">
                                 <div class="col-md-12 mb-3">
                                     
-                                    <h2>Sign Up</h2>
-                                    <p>Enter your email and password to register</p>
+                                    <h2>Registrarse ¿</h2>
+                                    <p>Ingresa tu correo electronico</p>
                                     
                                 </div>
                                 <div class="col-md-12">
                                     <div class="mb-3">
-                                        <label class="form-label">Name</label>
+                                        <label class="form-label">Nombre</label>
                                         <input type="text" class="form-control add-billing-address-input" name="name" id="name">
                                     </div>
                                 </div>
@@ -70,13 +70,13 @@
                                 <!--endAlerta-->
                                 <div class="col-12">
                                     <div class="mb-3">
-                                        <label class="form-label">Password</label>
+                                        <label class="form-label">Contraseña</label>
                                         <input type="text" class="form-control"name="password" >
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="mb-3">
-                                        <label class="form-label">Password</label>
+                                        <label class="form-label">Contraseña</label>
                                         <input type="text" class="form-control"name="PasswordC" >
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                         <div class="form-check form-check-primary form-check-inline">
                                             <input class="form-check-input me-3" type="checkbox" id="form-check-default">
                                             <label class="form-check-label" for="form-check-default">
-                                                I agree the <a href="javascript:void(0);" class="text-primary">Terms and Conditions</a>
+                                                  Yo acepto los <a href="javascript:void(0);" class="text-primary">Terminos y condiciones </a>
                                             </label>
                                         </div>
                                     </div>
