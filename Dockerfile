@@ -1,5 +1,4 @@
-#FROM richarvey/nginx-php-fpm:1.7.2
-FROM openresty/openresty:latest
+FROM richarvey/nginx-php-fpm:1.7.2
 
 COPY . .
 
