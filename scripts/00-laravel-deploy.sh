@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 echo "corriendo Running composer"
 composer global require hirak/prestissimo
-composer install --no-dev --working-dir=/var/www/html
+composer install --no-dev 
 
 echo " corriendo Caching config..."
 php artisan config:cache
