@@ -1,13 +1,13 @@
-#! /usr/bin/env bash
-echo  " Compositor en ejecución "
-compositor global requiere hirak/prestissimo
-instalación del compositor --no-dev --working-dir=/var/www/html
+#!/usr/bin/env bash
+echo "Running composer"
+composer global require hirak/prestissimo
+composer install --no-dev --working-dir=/var/www/html
 
-echo  " Configuración de almacenamiento en caché... "
-configuración artesanal de php: caché
+echo "Caching config..."
+php artisan config:cache
 
-echo  " Almacenamiento en caché de rutas... "
-ruta artesanal de php: caché
+echo "Caching routes..."
+php artisan route:cache
 
-echo  " Ejecutando migraciones... "
-php artesanal migrar --fuerza
+echo "Running migrations..."
+php artisan migrate --force
