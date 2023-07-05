@@ -1,15 +1,7 @@
 @extends('layouts.main')
 @section('title','Home')
 @section('linkAuth')
- <!-- BEGIN PAGE LEVEL STYLE -->
- <link href="../src/plugins/src/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
 
-<link href="../src/plugins/css/light/fullcalendar/custom-fullcalendar.css" rel="stylesheet" type="text/css" />
-<link href="../src/assets/css/light/components/modal.css" rel="stylesheet" type="text/css">
-
-<link href="../src/plugins/css/dark/fullcalendar/custom-fullcalendar.css" rel="stylesheet" type="text/css" />
-<link href="../src/assets/css/dark/components/modal.css" rel="stylesheet" type="text/css">
-<!-- END PAGE LEVEL STYLE -->
 
 @endsection
 
@@ -260,13 +252,6 @@
     <!-- END MAIN CONTAINER -->
 @endsection
 @section('Scripts')
-  <!-- BEGIN PAGE LEVEL SCRIPTS -->
-  <script src="../src/plugins/src/fullcalendar/fullcalendar.min.js"></script>
-    <script src="../src/plugins/src/uuid/uuid4.min.js"></script>
-    <!-- END PAGE LEVEL SCRIPTS -->
-    
-    <!--  BEGIN CUSTOM SCRIPTS FILE  -->
-    <script src="../src/plugins/src/fullcalendar/custom-fullcalendar.js"></script>
-    <!--  END CUSTOM SCRIPTS FILE  -->
+ 
 
 @endsection

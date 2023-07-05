@@ -2,12 +2,10 @@
 @section('title','Home')
 @section('linkAuth')
  <!-- BEGIN PAGE LEVEL STYLE -->
- <link href="../src/plugins/src/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
-
-<link href="../src/plugins/css/light/fullcalendar/custom-fullcalendar.css" rel="stylesheet" type="text/css" />
+ 
 <link href="../src/assets/css/light/components/modal.css" rel="stylesheet" type="text/css">
 
-<link href="../src/plugins/css/dark/fullcalendar/custom-fullcalendar.css" rel="stylesheet" type="text/css" />
+
 <link href="../src/assets/css/dark/components/modal.css" rel="stylesheet" type="text/css">
 <!-- END PAGE LEVEL STYLE -->
 

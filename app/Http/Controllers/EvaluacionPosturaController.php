@@ -46,10 +46,8 @@ foreach ($request->input('Posturas') as $PosturaData) {
             $Evaluacion->create([
                 'fk_postura' => $Vista->pk_vista,
                 'Inclinacion_Corporal' => $PosturaData['Nombre'],
-                'L' => $PosturaData['L'],
-                'M' => $PosturaData['M'],  
-                'S' => $PosturaData['S'],
-                'Tipo_vista' => $PosturaData['Observaciones'],
+                'valor' => $PosturaData['L'],
+                'Observaciones' => $PosturaData['Observaciones'],
                 // Otros campos de cliente que desees actualizar
             ]);
         }        
@@ -115,10 +113,9 @@ foreach ($request->input('Posturas') as $PosturaData) {
 
             $postura->update([
                 'Inclinacion_Corporal' => $PosturaData['Nombre'],
-                  'L' => $PosturaData['L'],
-                'M' => $PosturaData['M'],  
-                'S' => $PosturaData['S'],
-                'Tipo_vista' => $PosturaData['Observaciones'],
+                  'valor' => $PosturaData['L'],
+                
+                'Observaciones' => $PosturaData['Observaciones'],
                 // Otros cPosturade cliente que desees actualizar
             ]);
         }

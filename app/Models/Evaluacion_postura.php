@@ -10,10 +10,8 @@ class Evaluacion_postura extends Model
       protected $fillable = [
         'fk_postura',
         'Inclinacion_Corporal',
-        'L',
-        'M',
-        'S',
-        'Tipo_vista',
+        'valor',
+        'Observaciones',
         // Otros atributos fillable
     ];
     use HasFactory;

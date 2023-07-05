@@ -1,26 +1,19 @@
 @extends('layouts.main')
 @section('title', 'Historial')
 @section('linkAuth')
-    <!-- BEGIN PAGE LEVEL STYLE -->
-    <link href="../src/plugins/src/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
-
-    <link href="../src/plugins/css/light/fullcalendar/custom-fullcalendar.css" rel="stylesheet" type="text/css" />
+   
     <link href="../src/assets/css/light/components/modal.css" rel="stylesheet" type="text/css">
 
-    <link href="../src/plugins/css/dark/fullcalendar/custom-fullcalendar.css" rel="stylesheet" type="text/css" />
+
     <link href="../src/assets/css/dark/components/modal.css" rel="stylesheet" type="text/css">
     <!-- END PAGE LEVEL STYLE -->
     <!--  BEGIN CUSTOM STYLE FILE  -->
-    <link href="../src/assets/css/light/scrollspyNav.css" rel="stylesheet" type="text/css" />
     <link href="../src/assets/css/light/components/tabs.css" rel="stylesheet" type="text/css" />
 
-    <link href="../src/assets/css/dark/scrollspyNav.css" rel="stylesheet" type="text/css" />
     <link href="../src/assets/css/dark/components/tabs.css" rel="stylesheet" type="text/css" />
     <!--  END CUSTOM STYLE FILE  -->
-    <link href="../src/assets/css/light/scrollspyNav.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../src/assets/css/light/forms/switches.css">
 
-    <link href="../src/assets/css/dark/scrollspyNav.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../src/assets/css/dark/forms/switches.css">
     .bold {
     font-weight: bold;
@@ -1073,6 +1066,7 @@
                                             @endforeach
                                             @endif
                                         </div>
+                                        </div>
 
 
                                   
@@ -1197,14 +1191,13 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                     @endforeach
+                                            @endif
                                                 </div>
                                            
-                                            @endforeach
-                                            @endif
+                                           
                                             
-                                    </div>
-                                   
-                                   
+                                    
 
 
                                

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('fk_dmi');
             $table->String('Reflejos');
             $table->String('Sensibilidad');
-            $table->String('Lenguaje-Orientacion');
+            $table->String('LenguajeOrientacion');
             $table->String('Otros');
             $table->timestamps();
             $table->foreign('fk_dmi')->references('SS')->on('pacientes');

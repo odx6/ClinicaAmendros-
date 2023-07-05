@@ -235,7 +235,7 @@
     <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
         style="display: none;">Actualizar</button>
     </form>
-    <form class="user" method="POST" action="{{ route('index.TratamientoF', ['id' => $Paciente->SS]) }}">
+    <form class="user" method="POST" action="{{ route('index.AntecedenteAH', ['id' => $Paciente->SS]) }}">
         @csrf
         <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
             style="display: none;">Agregar

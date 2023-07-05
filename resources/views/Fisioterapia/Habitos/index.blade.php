@@ -52,7 +52,7 @@
                         <label class="switch-label" for="form-custom-switch-success">Actividad
                             física</label>
                         <input class="switch-input" type="checkbox" role="switch"
-                            id="form-custom-switch-success" name="Actividad-física">
+                            id="form-custom-switch-success" name="Actividad-física"value="si">
 
                     </div>
                 </td>
@@ -61,7 +61,7 @@
 
                         <input type="text" class="form-control"
                             id="exampleFormControlInput1" value=""
-                            placeholder="Especificaciones Actividad fisica" name="EActividad-física">
+                            placeholder="Especificaciones Actividad fisica" name="EActividad-física" value="si">
                     </div>
                 </td>
 
@@ -73,7 +73,7 @@
                         <label class="switch-label"
                             for="form-custom-switch-success">Alcholismo</label>
                         <input class="switch-input" type="checkbox" role="switch"
-                            id="form-custom-switch-success" name="Alcholismo">
+                            id="form-custom-switch-success" name="Alcholismo" value="si">
 
                     </div>
                 </td>
@@ -82,7 +82,7 @@
 
                         <input type="text" class="form-control"
                             id="exampleFormControlInput1" value=""
-                            placeholder="Especificaciones Alcholismo " name="EAlcholismo">
+                            placeholder="Especificaciones Alcholismo " name="EAlcholismo" value="si">
                     </div>
                 </td>
                 <td>
@@ -90,7 +90,7 @@
                         <label class="switch-label" for="form-custom-switch-success">Se
                             Automedica</label>
                         <input class="switch-input" type="checkbox" role="switch"
-                            id="form-custom-switch-success" name="Se-Automedica">
+                            id="form-custom-switch-success" name="Se-Automedica" value="si">
 
                     </div>
                 </td>
@@ -99,7 +99,7 @@
 
                         <input type="text" class="form-control"
                             id="exampleFormControlInput1" value=""
-                            placeholder="Especificaciones Se Automedica " name="ESe-Automedica">
+                            placeholder="Especificaciones Se Automedica " name="ESe-Automedica" value="si">
                     </div>
                 </td>
 
@@ -112,7 +112,7 @@
                         <label class="switch-label"
                             for="form-custom-switch-success">Drogas</label>
                         <input class="switch-input" type="checkbox" role="switch"
-                            id="form-custom-switch-success" name="Drogas">
+                            id="form-custom-switch-success" name="Drogas" value="si">
 
                     </div>
                 </td>
@@ -121,7 +121,7 @@
 
                         <input type="text" class="form-control"
                             id="exampleFormControlInput1" value=""
-                            placeholder="Especificaciones Drogas " name="EDrogas">
+                            placeholder="Especificaciones Drogas " name="EDrogas" value="si">
                     </div>
                 </td>
                 <td>
@@ -129,7 +129,7 @@
                         <label class="switch-label"
                             for="form-custom-switch-success">Pasatiempo</label>
                         <input class="switch-input" type="checkbox" role="switch"
-                            id="form-custom-switch-success" name="Pasatiempo">
+                            id="form-custom-switch-success" name="Pasatiempo" value="si">
 
                     </div>
                 </td>
@@ -138,7 +138,7 @@
 
                         <input type="text" class="form-control"
                             id="exampleFormControlInput1" value=""
-                            placeholder="Especificaciones Pasatiempos " name="EPasatiempo">
+                            placeholder="Especificaciones Pasatiempos " name="EPasatiempo" value="si">
                     </div>
                 </td>
             </tr>

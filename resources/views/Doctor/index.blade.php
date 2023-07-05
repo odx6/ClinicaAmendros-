@@ -67,6 +67,7 @@
                                                 <label class="form-label">Nombre del Médico</label>
                                                <!-- <input id="event-title" type="text" class="form-control">-->
                                                 <select class="form-control" name="DOCTOR" id="event-title" required>
+                                                      
 
                                                     @php
                                                    $id=auth()->user()->id;
@@ -92,12 +93,17 @@
                                                 <label class="form-label">Nombre del pacente</label>
                                                <!-- <input id="event-title2" type="text" class="form-control">-->
                                                 <select class="form-control" name="paciente" id="event-title2" required >
+
                                                     @php
                                                     $pacientes =App\Models\Paciente::all();
                                         
                                                     @endphp
-                                                    @foreach($pacientes as $paciente)
+                                                     @foreach($doctores as $doctor)
+                                                    @if ($doctor->Pacientes->count() > 0)
+                                                    @foreach($doctor->Pacientes as $paciente)
                                                     <option value="{{ $paciente->SS}}">{{ $paciente->Nombre}} {{ $paciente->Apellido}} </option>
+                                                    @endforeach
+                                                    @endif
                                                     @endforeach
                                                     
                                                 </select>

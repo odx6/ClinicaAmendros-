@@ -31,10 +31,9 @@
     <!--  BEGIN CUSTOM STYLE FILE  -->
     <link rel="stylesheet" type="text/css" href="{{asset('src/assets/css/light/elements/alert.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('src/assets/css/dark/elements/alert.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('src/plugins/src/flatpickr/flatpickr.css')}}">
+  
     <link rel="stylesheet" type="text/css" href="{{asset('src/plugins/src/noUiSlider/nouislider.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('src/plugins/css/light/flatpickr/custom-flatpickr.css')}}">
-     <link rel="stylesheet" type="text/css" href="{{asset('src/plugins/css/dark/flatpickr/custom-flatpickr.css')}}">
+   
     <!--  END CUSTOM STYLE FILE  -->
 
 
@@ -66,8 +65,7 @@
 <!-- END PAGE LEVEL SCRIPTS -->
     <script src="{{ asset('src/assets/js/forms/bootstrap_validation/bs_validation_script.js')}}"></script>
 <script src="{{ asset('MisFunciones/ValidacionFomularioPaciente.js') }}"></script>
-<script src="{{ asset('src/plugins/src/flatpickr/flatpickr.js') }}"></script>
-<script src="{{ asset('src/plugins/src/flatpickr/custom-flatpickr.js') }}"></script>
+
 
 @yield('Scripts')
 </body>

@@ -32,6 +32,7 @@ class AntecedentesPhController extends Controller
         $this->agregar($data['id'],'Enf.Reumaticas',$data['EnfReumaticas'],$data['EEnf']);
         $this->agregar($data['id'],'Alergias',$data['Alergias'],$data['EAlergias']);
         $this->agregar($data['id'],'Encames',$data['Encames'],$data['EEncames']);
+        $this->agregar($data['id'],'HTA',$data['HTA'],$data['ETA']);
         $this->agregar($data['id'],'Accidentes',$data['Accidentes'],$data['EAccidentes']);
         $this->agregar($data['id'],'Cáncer',$data['Cáncer'],$data['ECancer']);
         $this->agregar($data['id'],'Cardiopatías',$data['Cardiopatias'],$data['ECardiopatias']);
@@ -171,8 +172,8 @@ class AntecedentesPhController extends Controller
         $Antecedente= new Antecedentes_Ph;
         $Antecedente->fk_Antecedentes_ph=$id;
         $Antecedente->Nombre_Antecedente=$nombre;
-        if($valor->isEmpty()){ $Antecedente->Valor="no"; } else{
-        $Antecedente->Valor=$valor;}
+        if(isset($valor)){  $Antecedente->Valor=$valor; } else{
+       $Antecedente->Valor="no"; }
         $Antecedente->Especificacion=$Especificacion;
         $Antecedente->save();
 

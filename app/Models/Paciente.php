@@ -11,6 +11,10 @@ class Paciente extends Model
     //sirve para especificar que la columna no se llama id 
     protected $primaryKey = 'SS';
 
+ public function Doctor()
+    {
+         return $this->belongsTo(Doctor::class);
+    }
 
 //Relaciones uno a muchos 
     public function historiales()

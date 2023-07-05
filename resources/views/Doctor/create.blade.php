@@ -1,23 +1,19 @@
 @extends('layouts.main')
 @section('title', 'Agragar historial Completo')
 @section('linkAuth')
-    <!-- BEGIN PAGE LEVEL STYLE -->
-    <link href="{{ asset('src/plugins/src/fullcalendar/fullcalendar.min.css') }}" rel="stylesheet" type="text/css" />
-
-    <link href="{{ asset('src/plugins/css/light/fullcalendar/custom-fullcalendar.css') }}" rel="stylesheet" type="text/css" />
+   
     <link href="{{ asset('src/assets/css/light/components/modal.css') }}" rel="stylesheet" type="text/css">
 
-    <link href="{{ asset('src/plugins/css/dark/fullcalendar/custom-fullcalendar.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('src/assets/css/dark/components/modal.css') }}" rel="stylesheet" type="text/css">
     <!-- END PAGE LEVEL STYLE -->
     <!--  BEGIN CUSTOM STYLE FILE  -->
-    <link href="{{ asset('src/assets/css/light/scrollspyNav.css') }}" rel="stylesheet" type="text/css" />
+   
     <link href="{{ asset('src/assets/css/light/components/tabs.css') }}" rel="stylesheet" type="text/css" />
 
-    <link href="{{ asset('src/assets/css/dark/scrollspyNav.css') }}" rel="stylesheet" type="text/css" />
+   
     <link href="{{ asset('src/assets/css/dark/components/tabs.css') }}" rel="stylesheet" type="text/css" />
     <!--  END CUSTOM STYLE FILE  -->
-    <link href="{{ asset('src/assets/css/light/scrollspyNav.css') }}" rel="stylesheet" type="text/css" />
+
     <link rel="stylesheet" type="text/css" href="{{ asset('src/assets/css/light/forms/switches.css') }}">
 
     <link href="{{ asset('src/assets/css/dark/scrollspyNav.css') }}" rel="stylesheet" type="text/css" />
@@ -681,13 +677,7 @@
         <!-- END MAIN CONTAINER -->
     @endsection
     @section('Scripts')
-        <!-- BEGIN PAGE LEVEL SCRIPTS -->
-        <script src="{{ asset('src/plugins/src/fullcalendar/fullcalendar.min.js') }}"></script>
-        <script src="{{ asset('src/plugins/src/uuid/uuid4.min.js') }}"></script>
-        <!-- END PAGE LEVEL SCRIPTS -->
-
-        <!--  BEGIN CUSTOM SCRIPTS FILE  -->
-        <script src="{{ asset('src/plugins/src/fullcalendar/custom-fullcalendar.js') }}"></script>
+       
         <script src="{{ asset('MisFunciones/Clinica.js') }}"></script>
         <script src="{{ asset('src/plugins/src/highlight/highlight.pack.js') }}"></script>
 

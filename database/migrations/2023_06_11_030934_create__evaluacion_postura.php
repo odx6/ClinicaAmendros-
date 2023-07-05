@@ -17,10 +17,8 @@ return new class extends Migration
             $table->id('pk_postura');
             $table->unsignedBigInteger('fk_postura');
             $table->String('Inclinacion_Corporal');
-            $table->integer('L');
-            $table->integer('M');
-            $table->integer('S');
-            $table->String('Tipo_vista');
+            $table->String('valor');
+            $table->String('Observaciones');
             $table->timestamps();
             $table->foreign('fk_postura')->references('pk_vista')->on('vista_posturas');
         });

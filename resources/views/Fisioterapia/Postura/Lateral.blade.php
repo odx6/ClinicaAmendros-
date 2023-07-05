@@ -20,10 +20,9 @@
                                                     <table class="table">
                                                         <thead>
                                                             <tr>
-                                                                <th scope="col">Aliniacion Corporal</th>
-                                                                <th scope="col">L</th>
-                                                                <th class="text-center" scope="col">M</th>
-                                                                <th class="text-center" scope="col">S</th>
+                                                               <th scope="col">Aliniacion Corporal</th>
+                                                                <th scope="col">GRADOS L M S</th>
+                                                                
                                                                 <th class="text-center" scope="col">Observaciones</th>
                                                             </tr>
                                                             <tr aria-hidden="true" class="mt-3 d-block table-row-hidden">
@@ -50,32 +49,11 @@
                                                                     <td>  <select class="form-control"
                                                                         name="Posturas[{{ $Dat }}][L]">
                                                                        
-                                                                        @for ($i = 0; $i <= 360; $i++)
-                                                                            <option value="{{ $i }}">
-                                                                                {{ $i }}°</option>
-                                                                        @endfor
+                                                                        <option value="L">Leve</option>
+                                                                     <option value="M">Moderado</option>
+                                                                     <option value="S">S</option>
                                                                     </select>
-                                                                    </td>
-                                                                    <td>
-                                                                          <select class="form-control"
-                                                                        name="Posturas[{{ $Dat }}][M]">
-                                                                       
-                                                                        @for ($i = 0; $i <= 360; $i++)
-                                                                            <option value="{{ $i }}">
-                                                                                {{ $i }}°</option>
-                                                                        @endfor
-                                                                    </select>
-                                                                    </td>
-                                                                    <td>
-                                                                        <select class="form-control"
-                                                                        name="Posturas[{{ $Dat }}][S]">
-                                                                       
-                                                                        @for ($i = 0; $i <= 360; $i++)
-                                                                            <option value="{{ $i }}">
-                                                                                {{ $i }}°</option>
-                                                                        @endfor
-                                                                    </select>
-                                                                    </td>
+                                                                    
                                                                     <td>
                                                                         <div class="form-group">
                                                           

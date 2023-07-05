@@ -41,10 +41,9 @@
                                                     <table class="table">
                                                         <thead>
                                                             <tr>
-                                                                <th scope="col">Alineacion Corporal</th>
-                                                                <th scope="col">L</th>
-                                                                <th class="text-center" scope="col">M</th>
-                                                                <th class="text-center" scope="col">S</th>
+                                                               <th scope="col">Aliniacion Corporal</th>
+                                                                <th scope="col">GRADOS L M S</th>
+                                                                
                                                                 <th class="text-center" scope="col">Observaciones</th>
                                                             </tr>
                                                             <tr aria-hidden="true" class="mt-3 d-block table-row-hidden">
@@ -68,44 +67,18 @@
                                                     </td>
                                                                     <td>  <select class="form-control"
                                                                         name="Posturas[{{  $pos->pk_postura }}][L]">
-                                                                       <option value="{{ $pos->L }}">
-                                                                                {{ $pos->L}}°</option>
-                                                                        @for ($i = 0; $i <= 360; $i++)
-                                                                            <option value="{{ $i }}">
-                                                                                {{ $i }}°</option>
-                                                                        @endfor
+                                                                     
+                                                                       <option value="L" @if($pos->valor=="L") selected  @endif>Leve</option>
+                                                                     <option value="M"  @if($pos->valor=="M") selected  @endif>Moderado</option>
+                                                                     <option value="S"  @if($pos->valor=="S") selected  @endif>S</option>
                                                                     </select>
-                                                                    </td>
-                                                                    <td>
-                                                                          <select class="form-control"
-                                                                        name="Posturas[{{  $pos->pk_postura }}][M]">
-                                                                        <option value="{{ $pos->M }}">
-                                                                                {{ $pos->M}}°</option>
-                                                                       
-                                                                        @for ($i = 0; $i <= 360; $i++)
-                                                                            <option value="{{ $i }}">
-                                                                                {{ $i }}°</option>
-                                                                        @endfor
-                                                                    </select>
-                                                                    </td>
-                                                                    <td>
-                                                                        <select class="form-control"
-                                                                        name="Posturas[{{  $pos->pk_postura }}][S]">
-                                                                        <option value="{{ $pos->S }}">
-                                                                                {{ $pos->S}}°</option>
-                                                                       
-                                                                        @for ($i = 0; $i <= 360; $i++)
-                                                                            <option value="{{ $i }}">
-                                                                                {{ $i }}°</option>
-                                                                        @endfor
-                                                                    </select>
-                                                                    </td>
+                                                                
                                                                     <td>
                                                                         <div class="form-group">
                                                           
                                                             <input type="text" class="form-control"
                                                                 id="exampleFormControlInput1"
-                                                                value="{{$pos->Tipo_vista}}"
+                                                                value="{{$pos->Observaciones}}"
                                                                 name="Posturas[{{ $pos->pk_postura }}][Observaciones]"
                                                                 placeholder="Observaciones">
                                                         </div>
