@@ -23,7 +23,7 @@
     @else
         @foreach ($Planes as $plan)
             <form class="user" method="POST"
-                action="{{ route('update.Formulario', ['id' =>$plan->pk_plan]) }}">
+                action="{{ route('update.FormularioPlan', ['id' =>$plan->pk_plan]) }}">
                 @csrf
             <div class="container"  style="border: 1px solid black;">
   <div class="row"  >

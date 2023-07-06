@@ -233,7 +233,7 @@ Route::post('/Paciente/AgregarFormulario/fisioterapia/Eliminar', [FormularioValo
 //Plan
 Route::post('/Paciente/AgregarPlan',[PlanAnaliticoController::class, 'index'])->name('index.Plan');
 Route::post('/Paciente/AgregarPlan/fisioterapia',[ PlanAnaliticoController::class, 'create'])->name('create.Plan');
-Route::post('/Paciente/AgregarPlan/fisioterapia/Actualizar', [PlanAnaliticoController::class, 'update'])->name('update.Formulario');
+Route::post('/Paciente/AgregarPlan/fisioterapia/Actualizar', [PlanAnaliticoController::class, 'update'])->name('update.FormularioPlan');
 Route::post('/Paciente/AgregarPlan/fisioterapia/Eliminar', [PlanAnaliticoController::class, 'destroy'])->name('destroy.Plan');
 
 //Analisis Marcha
