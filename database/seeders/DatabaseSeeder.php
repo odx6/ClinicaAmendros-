@@ -85,7 +85,7 @@ class DatabaseSeeder extends Seeder
 
         $Doctor= new  Doctor;
         $Doctor->AreaDoctor=2;
-        $Doctor->fk_user=2;
+        $Doctor->fk_user=3;
         $Doctor->Nombre="Tomas";
         $Doctor->Apellidos="Perez Cruz";
         $Doctor->Especialidades='reumatologo en artritis';
