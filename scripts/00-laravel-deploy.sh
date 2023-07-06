@@ -17,3 +17,4 @@ echo "ever Running migrations..."
 php artisan migrate --force
 echo "ever corriendo los seeders..."
 php artisan db:seed
+echo "yes"
