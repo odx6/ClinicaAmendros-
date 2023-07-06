@@ -23,7 +23,7 @@ return new class extends Migration
             $table->String('NombreMovi');
 
             $table->timestamps();
-         $table->foreign('fk_movimiento')->references('pk_prueba')->on('prueba__ms');
+        // $table->foreign('fk_movimiento')->references('pk_prueba')->on('prueba__ms');
         });
     }
 
