@@ -1,5 +1,5 @@
-#FROM richarvey/nginx-php-fpm:1.7.2
-FROM php:8.0
+#FROM richarvey/nginx-php-fpm:2.0.0
+
 COPY . .
 
 # Image config
@@ -17,6 +17,5 @@ ENV LOG_CHANNEL stderr
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 # Instalar Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN chmod +x /start.sh
+
 CMD ["/start.sh"]
