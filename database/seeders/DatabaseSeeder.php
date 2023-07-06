@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
         $user2->name ='Usertest';
         $user2->email='User@gmail.com';
         $user2->password='1234';
-        $user3->role='secretaria';
+        $user2->role='secretaria';
         $user2->save();
 
          //user Admin
@@ -62,6 +62,12 @@ class DatabaseSeeder extends Seeder
        $user3->password='1234';
        $user3->role='medico';
        $user3->save();
+        $user4 = new User;
+       $user4->name ='Tomas';
+       $user4->email='Tomas@gmail.com';
+       $user4->password='1234';
+       $user4->role='medico';
+       $user4->save();
         //area
         $area = new Area;
         $area->NOMBE_AREA='FISOTERAPIA';

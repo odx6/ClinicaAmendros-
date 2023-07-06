@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Cicatriz__q_s', function (Blueprint $table) {
+        Schema::create('cicatriz__q_s', function (Blueprint $table) {
             $table->id('pk_cicatriz');
             $table->unsignedBigInteger('fk_cicatriz');
             $table->String('sitio');
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Cicatriz__q_s');
+        Schema::dropIfExists('cicatriz__q_s');
     }
 };

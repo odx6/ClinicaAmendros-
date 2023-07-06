@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Movimientos', function (Blueprint $table) {
+        Schema::create('movimientos', function (Blueprint $table) {
             $table->id('pk_movimiento');
             $table->unsignedBigInteger('fk_movimiento');
             $table->String('titulo1');
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->String('NombreMovi');
 
             $table->timestamps();
-         $table->foreign('fk_movimiento')->references('pk_prueba')->on('Prueba__Ms');
+         $table->foreign('fk_movimiento')->references('pk_prueba')->on('prueba__ms');
         });
     }
 

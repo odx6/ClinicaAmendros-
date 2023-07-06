@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Dedos', function (Blueprint $table) {
+        Schema::create('dedos', function (Blueprint $table) {
             $table->id('pk_dedos');
             $table->unsignedBigInteger('fk_dedos');
             $table->String('Nombre');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('IFD');
             $table->integer('ABD');
             $table->timestamps();
-            $table->foreign('fk_dedos')->references('pk_prueba')->on('Prueba__ms');
+            $table->foreign('fk_dedos')->references('pk_prueba')->on('prueba__ms');
         });
     }
 
