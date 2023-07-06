@@ -27,7 +27,11 @@
                             <img src="../src/assets/img/ClinicaAlmendros.svg" alt="auth-img">
     
                             <h2 class="mt-5 text-white font-weight-bolder px-2">Clinica  Almendros</h2>
-                            <p class="text-white px-2">Historia de la Clinica</p>
+                            <p class="text-white px-2">Historia de la Clinica @if(DB::connection()->getPdo())
+    <p>Conexión exitosa a la base de datos.</p>
+@else
+    <p>Error al conectar a la base de datos.</p>
+@endif </p>
                         </div>
                         
                     </div>
