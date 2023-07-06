@@ -10,6 +10,8 @@ echo "Limpiar las rutas"
 php artisan cache:clear
 echo "ever Caching routes..."
 php artisan route:cache
+echo "ever Caching routes..."
+php artisan view:cache
 
 echo "ever Running migrations..."
 php artisan migrate --force
