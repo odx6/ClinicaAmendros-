@@ -14,7 +14,6 @@ echo "ever Caching routes..."
 php artisan view:cache
 
 echo "ever Running migrations..."
-php artisan migrate --force
-echo "ever corriendo los seeders..."
-php artisan db:seed --force
+ php artisan migrate:refresh --seed   --force
+
 
