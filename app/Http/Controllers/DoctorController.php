@@ -79,7 +79,7 @@ class DoctorController extends Controller
             $DIME=DIME_Rehabilitacion::where('fk_dmi', '=', $valorSeleccionado)->get();
             $Cicatriz=Cicatriz_Q::where('fk_cicatriz', '=', $valorSeleccionado)->get();
             $Traslados=Traslados::where('fk_traslados', '=', $valorSeleccionado)->get();
-            $Marchas=Marcha_Deambulacion::where('fk_marcha', '=', $valorSeleccionado)->get();
+            $MarchasDeam=Marcha_Deambulacion::where('fk_marcha', '=', $valorSeleccionado)->get();
             $Dolor=Escala_dolor::where('fk_escala', '=', $valorSeleccionado)->get();
             $Evaluaciones=Evaluacion::where('fk_evaluacion', '=', $valorSeleccionado)->get();
             $Superiores=Movimiento::where('fk_movimiento', '=', $valorSeleccionado)->get();
@@ -92,7 +92,7 @@ class DoctorController extends Controller
 
             
              if($Area->NOMBE_AREA=="FISOTERAPIA"){
-               return view('Fisioterapia.create', compact('valorSeleccionado', 'Paciente', 'ExploracionesF', 'Tratamiento', 'Antecedentes', 'Estudios', 'DIME', 'Ingravidez', 'habitos','signos', 'Cicatriz', 'Traslados','Marchas','Dolor', 'Evaluaciones','Notas', 'Superiores','Pruebas','PruebasInferiores','PosturaFrontal','Formularios', 'Planes','Marchas'));
+               return view('Fisioterapia.create', compact('valorSeleccionado', 'Paciente', 'ExploracionesF', 'Tratamiento', 'Antecedentes', 'Estudios', 'DIME', 'Ingravidez', 'habitos','signos', 'Cicatriz', 'Traslados','MarchasDeam','Dolor', 'Evaluaciones','Notas', 'Superiores','Pruebas','PruebasInferiores','PosturaFrontal','Formularios', 'Planes','Marchas'));
              }
 
             return view('Doctor.Paciente', compact('valorSeleccionado', 'Paciente', 'Historiales', 'Gineco', 'Patologicos', 'Estudios', 'Notas_p', 'Notas', 'Exploraciones'));

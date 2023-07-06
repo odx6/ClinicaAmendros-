@@ -1,5 +1,5 @@
 <div class="tab-pane fade" id="rounded-pills-icon-marcha" role="tabpanel" aria-labelledby="rounded-pills-icon-settings-tab">
-    @if ($PosturaFrontal->isEmpty())
+    @if ($MarchasDeam->isEmpty())
         <div class="widget-content widget-content-area">
             <div class="alert alert-arrow-right alert-icon-right alert-light-danger alert-dismissible fade show mb-4"
                 role="alert">

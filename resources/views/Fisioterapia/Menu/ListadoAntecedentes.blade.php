@@ -229,7 +229,7 @@
             </div>
     @endforeach
     @endif
-</div>
+
 <div class="modal-footer">
 
     <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
@@ -254,5 +254,6 @@
 <!--end seccion de Tercer container-->
 @endif
 
+</div>
 </div>
 <!--end-Antecedentes--->

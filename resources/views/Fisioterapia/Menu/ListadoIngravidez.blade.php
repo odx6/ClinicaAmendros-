@@ -84,8 +84,8 @@
                     style="display: none;">Agregar Estado de ingravidez</button>
             </form>
 </div>
-</div>
 
 @endforeach
 @endif
 </div>
+

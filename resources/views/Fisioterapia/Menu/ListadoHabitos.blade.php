@@ -127,14 +127,13 @@
 
 
 
-            </div>
-            <div class="modal-footer">
 
-                <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
-                    style="display: none;">Actualizar</button>
+                    <div class="modal-footer">
+
+                        <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
+                            style="display: none;">Actualizar</button>
                 </form>
-                <form class="user" method="POST"
-                    action="{{ route('destroy.AntecedenteHAB', ['id' => $ids]) }}">
+                <form class="user" method="POST" action="{{ route('destroy.AntecedenteHAB', ['id' => $ids]) }}">
                     @csrf
                     <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola"
                         id="Hola" style="display: none;">Eliminar</button>
@@ -146,7 +145,9 @@
                         id="Hola" style="display: none;">Agregar Habitos de salud</button>
                 </form>
             </div>
+        </div>
+
     @endif
-
-
 </div>
+</div>
+

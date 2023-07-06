@@ -21,48 +21,48 @@
         </div>
     @else
         @foreach ($Notas as $nota)
-        <form class="user" method="POST" action="{{ route('Nota.store',['IDAG'=>$nota->pk_nota,'IDPA'=>$nota->fk_n,'TIPO'=>$nota->Tipo]) }}">
-            @csrf
-            <div class="row">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm">
-                            <img src="{{ asset('src/assets/img/Fisioterapia/cuerpo.png') }}"
-                                alt="" width="100%" height="100%">
-                        </div>
-                        <div class="col-sm">
-                            <h2>Nota Clinica-Valoración Inicial</h2>
-                            <div class="form-group mb-4">
-                                <label for="exampleFormControlTextarea1">{{$nota->Tipo}}</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="NOT">{{$nota->Nota}}</textarea>
+            <form class="user" method="POST"
+                action="{{ route('Nota.store', ['IDAG' => $nota->pk_nota, 'IDPA' => $nota->fk_n, 'TIPO' => $nota->Tipo]) }}">
+                @csrf
+                <div class="row">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <img src="{{ asset('src/assets/img/Fisioterapia/cuerpo.png') }}" alt=""
+                                    width="100%" height="100%">
+                            </div>
+                            <div class="col-sm">
+                                <h2>Nota Clinica-Valoración Inicial</h2>
+                                <div class="form-group mb-4">
+                                    <label for="exampleFormControlTextarea1">{{ $nota->Tipo }}</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="NOT">{{ $nota->Nota }}</textarea>
+                                </div>
+
                             </div>
 
                         </div>
-
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!--end-table-->
-        <div class="modal-footer">
 
-            <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
-                style="display: none;">Actualizar</button>
-    </form>
-    <form class="user" method="POST" action="{{ route('index.Cicatriz',['id' => $Paciente->SS]) }}">
-        @csrf
-        <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-            style="display: none;">Agregar Nota Clínica-Valoración Inicial
-        </button>
-    </form>
-    <form class="user" method="POST" action="{{ route('Notas.destroy', ['id' =>$nota->pk_nota]) }}">
-        @csrf
-        <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-            style="display: none;">Eliminar</button>
-    </form>
-        
-</div>
+                <!--end-table-->
+                <div class="modal-footer">
+
+                    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
+                        style="display: none;">Actualizar</button>
+            </form>
+            <form class="user" method="POST" action="{{ route('index.Cicatriz', ['id' => $Paciente->SS]) }}">
+                @csrf
+                <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
+                    style="display: none;">Agregar Nota Clínica-Valoración Inicial
+                </button>
+            </form>
+            <form class="user" method="POST" action="{{ route('Notas.destroy', ['id' => $nota->pk_nota]) }}">
+                @csrf
+                <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
+                    style="display: none;">Eliminar</button>
+            </form>
+
 
 @endforeach
 @endif
