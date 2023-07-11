@@ -35,7 +35,10 @@ class FExploracionFisicaController extends Controller
         $Exploracion->Motivo= request('Motivo');
         $Exploracion->Save();
 
-        return $id;
+     return $id;
+
+
+        
     }
        public function update(Request $request)
     {
@@ -48,7 +51,7 @@ class FExploracionFisicaController extends Controller
         $Exploracion->Motivo= request('Motivo');
         $Exploracion->Save();
 
-        return $id;
+         return $id;
     }
        public function destory(Request $request)
     {
@@ -66,8 +69,7 @@ class FExploracionFisicaController extends Controller
         } else {
             
         }
-       return view('Doctor.index');
-        
+     return $id;
         
     }
 }

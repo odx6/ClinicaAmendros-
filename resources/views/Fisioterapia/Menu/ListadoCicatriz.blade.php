@@ -121,8 +121,7 @@
                 <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
                     style="display: none;">Eliminar</button>
             </form>
-
+        @endforeach
+    @endif
 </div>
-</div>
-@endforeach
-@endif
+@if($Cicatriz->isEmpty()) @else </div> @endif

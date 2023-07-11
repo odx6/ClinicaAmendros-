@@ -25,6 +25,7 @@ return new class extends Migration
             $table->integer('valor7');
             $table->integer('valor8');
             $table->integer('valor9');
+            $table->integer('valor10');
             $table->integer('total');
           
             $table->timestamps();

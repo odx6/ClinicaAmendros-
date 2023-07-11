@@ -76,11 +76,15 @@
                 <!--calendario-->
                 <div class="row layout-top-spacing layout-spacing" id="cancel-row">
                     <div class="col-xl-12 col-lg-12 col-md-12">
+
+ <form class="user" method="POST" action="{{ route('create.FHistorial', ['id' => $id]) }}">
+            @csrf
                          <!--radio boton-->
                 <div class="switch form-switch-custom switch-inline form-switch-info">
                     <input class="switch-input" type="checkbox" role="switch" id="FisioExploraciones"
                         name="FisioExploraciones" value="1">
                     <label class="switch-label" for="form-custom-switch-info">¿Tiene Exploraiones el paciente?</label>
+                    <br>
                 </div>
                 <!--end  radio -->
 
@@ -158,7 +162,7 @@
                     <!--End-Cicatriz-->
                          <!--radio boton-->
                 <div class="switch form-switch-custom switch-inline form-switch-info">
-                    <input class="switch-input" type="checkbox" role="switch" id="FisioDeam"
+                    <input class="switch-input" type="checkbox" role="switch" id="FisioDeambu"
                         name="FisioDeam" value="1">
                     <label class="switch-label" for="form-custom-switch-info">¿Tiene analisis Marcha/Deambulación el paciente?</label>
                 </div>
@@ -192,36 +196,12 @@
                       <div class="switch form-switch-custom switch-inline form-switch-info">
                     <input class="switch-input" type="checkbox" role="switch" id="FisioSuperiores"
                         name="FisioSuperiores" value="1">
-                    <label class="switch-label" for="form-custom-switch-info">¿Tiene Prueba de  miembros superiores el paciente?</label>
+                    <label class="switch-label" for="form-custom-switch-info">¿Tiene Prueba de  miembros  el paciente?</label>
                 </div>
                             <!--MuscSuperiores-->
                      @include('Fisioterapia.Historial.Superiores')
-                    <!--End-MuscSuperiores-->
-                      <div class="switch form-switch-custom switch-inline form-switch-info">
-                    <input class="switch-input" type="checkbox" role="switch" id="FisioDedos"
-                        name="FisioDedos" value="1">
-                    <label class="switch-label" for="form-custom-switch-info">¿Tiene Prueba de  miembros superiores de dedos  el paciente?</label>
-                </div>
-                           <!--MuscDedos-->
-                     @include('Fisioterapia.Historial.Dedos')
-                    <!--End-MuscDedos-->
-                       <div class="switch form-switch-custom switch-inline form-switch-info">
-                    <input class="switch-input" type="checkbox" role="switch" id="FisioInferiores"
-                        name="FisioInferiores" value="1">
-                    <label class="switch-label" for="form-custom-switch-info">¿Tiene Prueba de  miembros inferiores  el paciente?</label>
-                </div>
-                      
-                         <!--MuscInferiores-->
-                     @include('Fisioterapia.Historial.Inferiores')
-                    <!--End-MuscInferiores-->
-                      <div class="switch form-switch-custom switch-inline form-switch-info">
-                    <input class="switch-input" type="checkbox" role="switch" id="FisioCadera"
-                        name="FisioCadera" value="1">
-                    <label class="switch-label" for="form-custom-switch-info">¿Tiene Prueba de caderas  el paciente?</label>
-                </div>
-            
-                     <!--MuscMiembroSolo-->
-                     @include('Fisioterapia.Historial.MiembroSolo')
+                  
+                   
                     <!--End-MuscMiembroSolo-->
   <div class="switch form-switch-custom switch-inline form-switch-info">
                     <input class="switch-input" type="checkbox" role="switch" id="FisioFrontal"

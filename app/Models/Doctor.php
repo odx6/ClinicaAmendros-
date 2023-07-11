@@ -14,4 +14,9 @@ class Doctor extends Model
     {
         return $this->hasMany(Paciente::class,'PacienteDoctor','DSS');
     }
+    public function Citas()
+    {
+        return $this->hasMany(Cita::class,'fk_dc','DSS');
+
+    }
 }

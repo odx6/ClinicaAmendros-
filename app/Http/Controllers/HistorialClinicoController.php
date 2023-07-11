@@ -48,7 +48,7 @@ class HistorialClinicoController extends Controller
         $Historial->TABASQUISMO=request('TB');
         $Historial->DROGAS=request('DR');
         $Historial->save();
-        return view('Doctor.index');
+            return view('Doctor.index');
     }
 
     /**
@@ -76,7 +76,7 @@ class HistorialClinicoController extends Controller
         $Historial->TABASQUISMO=1;
         $Historial->DROGAS=1;
         $nombre=request('Nombre');
-        return  "Echo" ;
+          return view('Doctor.index');
     }
 
     /**
@@ -131,6 +131,7 @@ class HistorialClinicoController extends Controller
          $Historial->TABASQUISMO=request('TB');
          $Historial->DROGAS=request('DR');
          $Historial->save();
+           return view('Doctor.index');
     }
 
     /**
@@ -150,6 +151,6 @@ class HistorialClinicoController extends Controller
             $dato->delete();
 
         }else{}
-        return $id;
+         return view('Doctor.index');
     }
 }

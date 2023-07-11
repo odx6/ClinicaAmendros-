@@ -1,4 +1,6 @@
 <div class="container desactivado" id="Fitraslados">
+    <div class="col">
+    
         <h2>Traslado para el paciente {{ $id }}</h2>
         
             @csrf
@@ -31,5 +33,6 @@
             </div>
             <!--end-table-->
 
+    </div>
     </div>
    

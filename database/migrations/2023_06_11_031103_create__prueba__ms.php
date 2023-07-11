@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('prueba__ms', function (Blueprint $table) {
             $table->id('pk_prueba');
             $table->unsignedBigInteger('fk_prueba');
+            $table->String('NombrePrueba');
             $table->String('Observaciones_prue');
             $table->String('Tipo');
             $table->timestamps();

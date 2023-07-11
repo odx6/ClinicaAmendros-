@@ -1,5 +1,5 @@
 @extends('layouts.formularios')
-@section('nombreVista', 'Agregar Formulario de valoracion de la bateria')
+@section('nombreVista', 'Plan Analítico de Atención Integral de Terapia Física')
 
 @section('formulario')
     <div class="col-sm">
@@ -7,7 +7,7 @@
         <!---table-->
         <form class="user" method="POST" action="{{ route('create.Plan', ['id' => $id]) }}">
             @csrf
-            <div class="container"  style="border: 1px solid black;">
+            <div class="container" >
   <div class="row"  >
     <div class="col" >
      <h2>Objetivos</h2>
@@ -73,6 +73,8 @@
     
   </div>
 </div>
+
+
 
     </div>
     <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Enviar

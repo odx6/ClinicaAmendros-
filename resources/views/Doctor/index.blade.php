@@ -94,10 +94,7 @@
                                                <!-- <input id="event-title2" type="text" class="form-control">-->
                                                 <select class="form-control" name="paciente" id="event-title2" required >
 
-                                                    @php
-                                                    $pacientes =App\Models\Paciente::all();
-                                        
-                                                    @endphp
+                                                   
                                                      @foreach($doctores as $doctor)
                                                     @if ($doctor->Pacientes->count() > 0)
                                                     @foreach($doctor->Pacientes as $paciente)
@@ -140,7 +137,7 @@
                                     <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
                                     
                                     
-                                    @if($pacientes->isEmpty() ||  $doctores->isEmpty() )
+                                    @if($doctor->Pacientes->count() <= 0 ||  $doctores->isEmpty() )
                                     
                                         
                                     @else

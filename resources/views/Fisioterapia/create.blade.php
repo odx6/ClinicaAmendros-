@@ -239,6 +239,11 @@
                     <!-- Resto de los campos del formulario -->
                     <button type="submit"class="btn btn-danger mb-2 me-4">Generar Historial PDF</button>
                 </form>
+                <form action="{{ route('index.Consultas',['pacientes'=>$Paciente]) }}" method="GET">
+                    @csrf
+                    <!-- Resto de los campos del formulario -->
+                    <button type="submit"class="btn btn-danger mb-2 me-4">Terminar Consulta</button>
+                </form>
                 <div class="col-lg-6">
 
                     <!-- Rotate in right modal -->

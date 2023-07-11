@@ -40,7 +40,7 @@ class ExploracionFController extends Controller
         $Exploracion->FC=request('FC');
         $Exploracion->X1=request('X1');
         $Exploracion->FR=request('FR');
-        $Exploracion->X2=request('X2');
+        $Exploracion->X2=request('X2');                                                                
         $Exploracion->TEMP=request('TEMP');
         $Exploracion->PESO=request('PESO');
         $Exploracion->Nombre_ef=request('NEF');

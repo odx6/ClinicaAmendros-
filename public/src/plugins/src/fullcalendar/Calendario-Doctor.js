@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var citasList ;
-   
- function agregarCeroIzquierda(numero) {
+document.addEventListener('DOMContentLoaded', function () {
+    var citasList;
+
+    function agregarCeroIzquierda(numero) {
         return numero < 10 ? '0' + numero : numero;
     }
     // Date variable
@@ -20,27 +20,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Ahora puedes utilizar la variable en JavaScript
     alert(miVariable);*/
     $.ajax({
-        type:"POST",
-        url:'Doctores',
-        data:{
-            id:$('#event-title').val(),
+        type: "POST",
+        url: 'Doctores',
+        data: {
+            id: $('#event-title').val(),
             _token: $('meta[name="csrf-token"]').attr('content'),
-        
+
         },
-       }).done(function(response) {
-        citasList=response;
+    }).done(function (response) {
+        citasList = response;
         //codigo agregado 
         function getDynamicMonth() {
             getMonthValue = newDate.getMonth();
             if (getMonthValue < 10) {
-                return `0${getMonthValue+1}`;
+                return `0${getMonthValue + 1}`;
             } else {
-                return `${getMonthValue+1}`;
+                return `${getMonthValue + 1}`;
             }
         }
-        
+
         console.log(getDynamicMonth())
-    
+
         // Modal Elements
         var getModalTitleEl = document.querySelector('#event-title');
         var getModalTitleE2 = document.querySelector('#event-title2');
@@ -48,41 +48,41 @@ document.addEventListener('DOMContentLoaded', function() {
         //var getModalEndDateEl = document.querySelector('#event-end-date');
         var getModalAddBtnEl = document.querySelector('.btn-add-event');
         var getModalUpdateBtnEl = document.querySelector('.btn-update-event');
-         var getBotonCancelarCita = document.querySelector('.btn-delete-event');
+        var getBotonCancelarCita = document.querySelector('.btn-delete-event');
         var BotonConsulta = document.querySelector('#idConsulta');
         //Primeracita
         var getAreaP = document.querySelector('#PrimeraArea');
-        var getDoctor= document.querySelector('#PrimeraDoctor');
+        var getDoctor = document.querySelector('#PrimeraDoctor');
         var getModalStartP = document.querySelector('#PrimerStar');
         var getArea = document.querySelector('#event-title-area');
         //endprimeracita
 
         var calendarsEvents = {
-           Fisoterapia: 'primary',
+            Fisoterapia: 'primary',
             Ginecologia: 'success',
             Oftalmologia: 'danger',
             Traumatologia: 'warning',
         }
-    
+
         // Calendar Elements and options
         var calendarEl = document.querySelector('.calendar');
-    
-        var checkWidowWidth = function() {
+
+        var checkWidowWidth = function () {
             if (window.innerWidth <= 1199) {
                 return true;
             } else {
                 return false;
             }
         }
-        
+
         var calendarHeaderToolbar = {
             left: 'prev next addEventButton',
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
         }
-         //Funcion para segundas citas
+        //Funcion para segundas citas
         $(".NoPrimera").click(function () {
-var currentDate = new Date().toISOString().slice(0, 16);
+            var currentDate = new Date().toISOString().slice(0, 16);
 
             // Establecer el valor mínimo en el input
             document.getElementById("event-start-date").min = currentDate;
@@ -104,8 +104,8 @@ var currentDate = new Date().toISOString().slice(0, 16);
             // alert(fechaHoraActual);
             getModalAddBtnEl.style.display = 'block';
             getModalUpdateBtnEl.style.display = 'none';
-             BotonConsulta.style.display = 'none';
-             getBotonCancelarCita.style.display = 'none';
+            BotonConsulta.style.display = 'none';
+            getBotonCancelarCita.style.display = 'none';
             myModal.show()
 
             getModalStartDateEl.value = fechaHoraActual;
@@ -117,8 +117,8 @@ var currentDate = new Date().toISOString().slice(0, 16);
         });
         //end terminacion de citas 
         //Funcion es primeracita
-         $(".SiPrimera").click(function () {
-var currentDate = new Date().toISOString().slice(0, 16);
+        $(".SiPrimera").click(function () {
+            var currentDate = new Date().toISOString().slice(0, 16);
 
             // Establecer el valor mínimo en el input
             document.getElementById("event-start-date").min = currentDate;
@@ -151,30 +151,31 @@ var currentDate = new Date().toISOString().slice(0, 16);
 
         });
         //endprimeracita
-       
+
         //alert(response);
         // Calendar Select fn.
-      var calendarSelect = function (info) {
+        var calendarSelect = function (info) {
             //alert("Te encontre");
             Notificacion.show();
             // Obtener la fecha y hora actual
-            
+
         }
-    
+
         // Calendar AddEvent fn.
-        var calendarAddEvent = function() {
+        var calendarAddEvent = function () {
+
             var currentDate = new Date();
             var dd = String(currentDate.getDate()).padStart(2, '0');
             var mm = String(currentDate.getMonth() + 1).padStart(2, '0'); //January is 0!
             var yyyy = currentDate.getFullYear();
             var combineDate = `${yyyy}-${mm}-${dd}T00:00:00`;
             getModalAddBtnEl.style.display = 'block';
-            getModalUpdateBtnEl.style.display = 'none';    
-            getBotonCancelarCita.style.display = 'none';    
+            getModalUpdateBtnEl.style.display = 'none';
+            getBotonCancelarCita.style.display = 'none';
             myModal.show();
             getModalStartDateEl.value = combineDate;
         }
-    
+
         // Calendar eventClick fn.
         var calendarEventClick = function (info) {
 
@@ -196,8 +197,8 @@ var currentDate = new Date().toISOString().slice(0, 16);
                 option.value = eventObj.extendedProps.IdDoctor;
                 option.text = eventObj.extendedProps.Doctor;
                 getModalTitleEl.appendChild(option);
-                
-               
+
+
                 getModalTitleE2.value = eventObj.extendedProps.Idpaciente;
 
                 let fecha = "" + eventObj.start;
@@ -215,20 +216,20 @@ var currentDate = new Date().toISOString().slice(0, 16);
                 myModal.show();
             }
         }
-    
+
         // Activate Calender    
         var calendar = new FullCalendar.Calendar(calendarEl, {
             selectable: true,
             height: checkWidowWidth() ? 900 : 1052,
             initialView: checkWidowWidth() ? 'listWeek' : 'dayGridMonth',
-           //initialView: 'dayGridDay' ,
+            //initialView: 'dayGridDay' ,
             initialDate: `${newDate.getFullYear()}-${getDynamicMonth()}-07`,
             headerToolbar: calendarHeaderToolbar,
-           // events: calendarEventsList,
-             events:response,
-             timeFormat: 'h:mm a',
+            // events: calendarEventsList,
+            events: response,
+            timeFormat: 'h:mm a',
             select: calendarSelect,
-            unselect: function() {
+            unselect: function () {
                 console.log('unselected')
             },
             customButtons: {
@@ -240,15 +241,15 @@ var currentDate = new Date().toISOString().slice(0, 16);
             eventClassNames: function ({ event: calendarEvent }) {
                 const getColorValue = calendarsEvents[calendarEvent._def.extendedProps.calendar];
                 return [
-                  // Background Color
-                  'event-fc-color fc-bg-' + getColorValue
+                    // Background Color
+                    'event-fc-color fc-bg-' + getColorValue
                 ];
             },
-            
+
             eventClick: calendarEventClick,
-            windowResize: function(arg) {
+            windowResize: function (arg) {
                 if (checkWidowWidth()) {
-                    
+
                     calendar.changeView('listWeek');
                     calendar.setOption('height', 900);
                 } else {
@@ -256,115 +257,118 @@ var currentDate = new Date().toISOString().slice(0, 16);
                     calendar.setOption('height', 1052);
                 }
             }
-    
+
         });
-    
+
         // Add Event
-        getModalAddBtnEl.addEventListener('click', function() {
+        getModalAddBtnEl.addEventListener('click', function () {
             //se asignan los valores de 
             var getModalCheckedRadioBtnEl = document.querySelector('input[name="event-level"]:checked');
             var getTitleValue = getModalTitleEl.value;
             var setModalStartDateValue = getModalStartDateEl.value;
             //var setModalEndDateValue = getModalEndDateEl.value;
             var getModalCheckedRadioBtnValue = (getModalCheckedRadioBtnEl !== null) ? getModalCheckedRadioBtnEl.value : '';
-    
+
             calendar.addEvent({
                 id: uuidv4(),
                 title: getTitleValue,
                 start: setModalStartDateValue,
-               // end: setModalEndDateValue,
+                // end: setModalEndDateValue,
                 allDay: true,
                 extendedProps: { calendar: getModalCheckedRadioBtnValue }
             })
-    
+
             //alert("me pulso");
             $.ajax({
-                type:"POST",
-                url:'eventos',
-                data:{
-                    id:$('#event-title').val(),
-                    paciente:$('#event-title2').val(),
+                type: "POST",
+                url: 'eventos',
+                data: {
+                    id: $('#event-title').val(),
+                    paciente: $('#event-title2').val(),
                     inicio: $('#event-start-date').val(),
-                     fin: $('#event-end-date').val(),
+                    fin: $('#event-end-date').val(),
                     _token: $('meta[name="csrf-token"]').attr('content'),
-                
+
                 },
-               }).done(function(res){//alert(res)
-           myModal.hide()
-       location.reload();});
-            
+            }).done(function (res) {//alert(res)
+                myModal.hide()
+                location.reload();
+            });
+
         })
-    
-    
-    
+
+
+
         // Update Event
-        getModalUpdateBtnEl.addEventListener('click', function() {
+        getModalUpdateBtnEl.addEventListener('click', function () {
             var getPublicID = this.dataset.fcEventPublicId;
             var getTitleUpdatedValue = getModalTitleEl.value;
             var getEvent = calendar.getEventById(getPublicID);
             var getModalUpdatedCheckedRadioBtnEl = document.querySelector('input[name="event-level"]:checked');
-    
+
             var getModalUpdatedCheckedRadioBtnValue = (getModalUpdatedCheckedRadioBtnEl !== null) ? getModalUpdatedCheckedRadioBtnEl.value : '';
-            
+
             getEvent.setProp('title', getTitleUpdatedValue);
             getEvent.setExtendedProp('calendar', getModalUpdatedCheckedRadioBtnValue);
             //codigo para actualizar 
             $.ajax({
-                type:"POST",
-                url:'ActualizarCita',
-                data:{
-                    idCita:getPublicID,
-                    idDoctor:$('#event-title').val(),
-                    paciente:$('#event-title2').val(),
+                type: "POST",
+                url: 'ActualizarCita',
+                data: {
+                    idCita: getPublicID,
+                    idDoctor: $('#event-title').val(),
+                    paciente: $('#event-title2').val(),
                     inicio: $('#event-start-date').val(),
-                     fin: $('#event-end-date').val(),
+                    fin: $('#event-end-date').val(),
                     _token: $('meta[name="csrf-token"]').attr('content'),
-                
+
                 },
-               }).done(function(res){//alert(res)
-           myModal.hide()
-       location.reload();});
-    
-            
+            }).done(function (res) {//alert(res)
+                myModal.hide()
+                location.reload();
+            });
+
+
         })
         //Eliminar
-           // Delete Event
-       getBotonCancelarCita.addEventListener('click', function () {
-           
+        // Delete Event
+        getBotonCancelarCita.addEventListener('click', function () {
+
             var getPublicID = this.dataset.fcEventPublicId;
             var getTitleUpdatedValue = getModalTitleEl.value;
 
-           // var getEvent = calendar.getEventById(getPublicID);
+            // var getEvent = calendar.getEventById(getPublicID);
 
             //getEvent.setProp('title', getTitleUpdatedValue);
             //codigo para actualizar 
- //alert("Delete"+ getPublicID);
+            //alert("Delete"+ getPublicID);
             $.ajax({
                 type: "POST",
                 url: 'EliminarCita',
                 data: {
-                    idCita:getPublicID,
+                    idCita: getPublicID,
                     _token: $('meta[name="csrf-token"]').attr('content'),
 
                 },
             }).done(function (res) { //alert(res)
 
-            location.reload(); });
+                location.reload();
+            });
 
-            
+
         })
         //endEliminar
         calendar.setOption('locale', 'ES');
         // Calendar Renderation
         calendar.render();
-        
+
         var myModal = new bootstrap.Modal(document.getElementById('exampleModal'))
         //Muestra  el mensaje si es primera cita;
         var Notificacion = new bootstrap.Modal(document.getElementById('standardModal'))
         //Primera cita
         var Primeracita = new bootstrap.Modal(document.getElementById('FormPrimeraDoctor'))
         var modalToggle = document.querySelector('.fc-addEventButton-button ')
-    
+
         document.getElementById('exampleModal').addEventListener('hidden.bs.modal', function (event) {
             getModalTitleEl.value = '';
             getModalStartDateEl.value = '';
@@ -372,38 +376,39 @@ var currentDate = new Date().toISOString().slice(0, 16);
             var getModalIfCheckedRadioBtnEl = document.querySelector('input[name="event-level"]:checked');
             if (getModalIfCheckedRadioBtnEl !== null) { getModalIfCheckedRadioBtnEl.checked = false; }
         })
-    
+
         // mis variables 
-        $("#btnAgregar").click(function(){
+        $("#btnAgregar").click(function () {
             //alert("me pulso");
             $.ajax({
-                type:"POST",
-                url:'eventos',
-                data:{
-                    id:$('#event-title').val(),
-                    paciente:$('#event-title2').val(),
+                type: "POST",
+                url: 'eventos',
+                data: {
+                    id: $('#event-title').val(),
+                    paciente: $('#event-title2').val(),
                     inicio: $('event-start-date').val(),
-                    
-                    _token: $('meta[name="csrf-token"]').attr('content'),
-                
-                },
-               }).done(function(res){//alert(res)
 
-               location.reload();});
-    
-               
-    
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+
+                },
+            }).done(function (res) {//alert(res)
+
+                location.reload();
+            });
+
+
+
         })
-    
+
         //end
-      // mis variables 
+        // mis variables 
         $("#btnPrimera").click(function () {
             //alert("me pulso primera cita");
             $.ajax({
                 type: "POST",
                 url: 'PrimeraCita',
                 data: {
-                    id:$('#NombreDoctorP').val(),
+                    id: $('#NombreDoctorP').val(),
                     NombrePaciente: $('#NombrePacienteP').val(),
                     Telefono: $('#TelefonoP').val(),
                     inicio: $('#PrimerStar').val(),
@@ -419,38 +424,38 @@ var currentDate = new Date().toISOString().slice(0, 16);
         })
 
         //end
-    /*
-        $("#idConsulta").click(function(){
-            alert("me pulso Consulta");
-            $.ajax({
-                type:"POST",
-                url:'Doctor/paciente',
-                data:{
-                    paciente:$('#event-title2').val(),
-                    _token: $('meta[name="csrf-token"]').attr('content'),
-                
-                },
-               }).done(function(res){alert(res)
-                window.location.href ='Doctor/paciente/historial';
-            });
-    
-               
-    
-        })
-    */
+        /*
+            $("#idConsulta").click(function(){
+                alert("me pulso Consulta");
+                $.ajax({
+                    type:"POST",
+                    url:'Doctor/paciente',
+                    data:{
+                        paciente:$('#event-title2').val(),
+                        _token: $('meta[name="csrf-token"]').attr('content'),
+                    
+                    },
+                   }).done(function(res){alert(res)
+                    window.location.href ='Doctor/paciente/historial';
+                });
+        
+                   
+        
+            })
+        */
         //end
-    
-        
-               
-    
-    
-    
-        
-    
-    });
-   // alert(dato);
-   
 
-   
-     
+
+
+
+
+
+
+
+    });
+    // alert(dato);
+
+
+
+
 });

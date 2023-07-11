@@ -35,6 +35,7 @@ class AGinecobstetricoController extends Controller
         $gineco->Aborto=request('Abortos');
         $gineco->Paras=request('Partos');
         $gineco->save();
+          return view('Doctor.index');
       
     }
 
@@ -89,6 +90,7 @@ class AGinecobstetricoController extends Controller
         $gineco->Aborto=request('Abortos');
         $gineco->Paras=request('Partos');
         $gineco->save();
+          return view('Doctor.index');
 
     }
 

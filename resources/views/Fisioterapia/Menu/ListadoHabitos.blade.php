@@ -79,6 +79,7 @@
                                 @endphp
                             @endforeach
                         </div>
+                      
                         <div class="col-md-6">
                             @php
                                 $count = 0;
@@ -115,6 +116,7 @@
                                             
                                         @endphp
                                     </div>
+                                    
                                 @endif
                                 @php
                                     $count++;
@@ -123,11 +125,6 @@
                         </div>
 
                     </div>
-
-
-
-
-
                     <div class="modal-footer">
 
                         <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
@@ -149,5 +146,6 @@
 
     @endif
 </div>
-</div>
+@if($habitos->isEmpty()) @else </div> @endif
+
 

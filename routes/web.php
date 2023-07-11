@@ -33,6 +33,8 @@ use  App\Http\Controllers\EvaluacionPosturaController;
 use  App\Http\Controllers\FormularioValoracionController;
 use  App\Http\Controllers\PlanAnaliticoController;
 use  App\Http\Controllers\AnalisisMarchaController;
+use  App\Http\Controllers\ControllerFHistorial;
+use  App\Http\Controllers\ConsultaController;
 use Barryvdh\DomPDF\Facade\Pdf;
 /*
 |--------------------------------------------------------------------------
@@ -241,6 +243,14 @@ Route::post('/Paciente/AgregarAnalisisMarcha',[AnalisisMarchaController::class, 
 Route::post('/Paciente/AgregarAnalisisMarcha/fisioterapia',[ AnalisisMarchaController::class, 'create'])->name('create.AnalisisMarcha');
 Route::post('/Paciente/AgregarAnalisisMarcha/fisioterapia/Actualizar', [AnalisisMarchaController::class, 'update'])->name('update.AnalisisMarcha');
 Route::post('/Paciente/AgregarAnalisisMarcha/fisioterapia/Eliminar', [AnalisisMarchaController::class, 'destroy'])->name('destroy.AnalisisMarcha');
-
+//Historial 
+Route::post('/Paciente/AgregarHistorialFisio', [ControllerFHistorial::class, 'create'])->name('create.FHistorial');
 
 //end rutas Fisioterapia
+
+//rutas consultas
+Route::get('/Doctor/Consultas',[ConsultaController::class, 'index'])->name('index.Consultas');
+Route::post('/Doctor/AgregarConsultas',[ ConsultaController::class, 'create'])->name('create.Consultas');
+Route::post('/Doctor/ActualizarConsultas', [ConsultaController::class, 'update'])->name('update.Consultas');
+Route::post('/Doctor/EliminarConsultas', [ConsultaController::class, 'destroy'])->name('destroy.Consultas');
+//endconsultas

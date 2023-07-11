@@ -45,11 +45,9 @@
                             @csrf
                             <h1>Datos del paciente </h1>
                             <div class="row mb-4">
-                                <div class="col">
-                                    <select class="form-control" name="Area" id="event-title-area" required>
+                                <div class="col-7">
+                                    <select class="form-control event-title-area" name="Area"  required>
                                         <option selected disabled value="">Area </option>
-
-
                                         @foreach ($Areas as $area)
                                             <option value="{{ $area->IDAREA }}">{{ $area->NOMBE_AREA }}</option>
                                         @endforeach
@@ -61,8 +59,10 @@
                                          Selecciona un area valida
                                      </div>
                                 </div>
-                                <div class="col">
-                                    <select class="form-control" name="Doctor" id="event-title" required>
+                            </div>
+                                 <div class="row mb-4">
+                                <div class="col-7">
+                                    <select class="form-control event-title" name="Doctor"  required>
                                         <option selected disabled value="">Selecione un medico </option>
                                     </select>
                                     <div class="valid-feedback">
@@ -75,11 +75,12 @@
                             </div>
 
                             <div class="row mb-4">
-                                <div class="col">
+                                <div class="col-7">
                                     <!--<label for="formGroupExampleInput">Nombre del paciente</label>-->
                                     <input type="text" class="form-control " placeholder="Nombre del paciente "
                                         name="Nombre" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"
                                         max="30">
+                                        
                                         <div class="valid-feedback">
                                             Datos correctos
                                          </div>
@@ -87,6 +88,9 @@
                                             Ingresa un nombre valido ejemplo :"jose luis"
                                          </div>
                                 </div>
+                                </div>
+
+                            <div class="row mb-4">
                                 <div class="col">
                                     <input type="text" class="form-control" placeholder="Apellido del paciente"
                                         name="Apellido" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"
@@ -98,6 +102,9 @@
                                             Ingresa apellidos validos  :"Hernandez Lopez"
                                          </div>
                                 </div>
+                                </div>
+
+                            <div class="row mb-4">
                                 <div class="col">
                                     <select class="form-control" name="Edad" required>
                                         <option selected disabled value="">Edad del paciente en años</option>
@@ -113,6 +120,9 @@
                                          Selecciona la edad 
                                      </div>
                                 </div>
+                                </div>
+
+                            <div class="row mb-4">
                                 <div class="col">
                                     <select class="form-control" name="Sexo" required>
                                         <option selected disabled value="">Sexo del paciente</option>
@@ -150,6 +160,9 @@
                                         Por favor ingresa Estado civil del paciente valido
                                     </div>
                                 </div>
+                                </div>
+
+                            <div class="row mb-4">
                                 <div class="col">
                                     <input type="text" class="form-control" placeholder="Origen el paciente"
                                         name="Origen" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
@@ -160,6 +173,9 @@
                                         Por favor ingresa Origen valido
                                     </div>
                                 </div>
+                                </div>
+
+                            <div class="row mb-4">
                                 <div class="col">
                                     <input type="text" class="form-control" placeholder="Ocupacion del paciente"
                                         name="Ocupacion" required>
@@ -185,6 +201,9 @@
                                             Por favor ingresa una Direccion valida
                                         </div>
                                 </div>
+                                </div>
+
+                            <div class="row mb-4">
                                 <div class="col">
                                     <input type="text" class="form-control" placeholder="Telefono del paciente"
                                         name="Telefono" required minlength="10" maxlength="10" pattern="[0-9]{9,15}">
@@ -195,6 +214,9 @@
                                             Ingresa un telefono de la forma 9514886716 sin letras ni espacios
                                         </div>
                                 </div>
+                                </div>
+
+                            <div class="row mb-4">
 
                                 <div class="col">
                                     <select class="form-control" name="Religion" required>
@@ -215,7 +237,9 @@
                                      </div>
                                 </div>
 
+                                </div>
 
+                            <div class="row mb-4">
 
                                 <div class="col">
                                     <select class="form-control" name="Escolaridad" required>
@@ -260,5 +284,5 @@
     <!-- END MAIN CONTAINER -->
 @endsection
 @section('Scripts')
-    
+ <script src="{{ asset('MisFunciones/Clinica.js') }}"></script>
 @endsection

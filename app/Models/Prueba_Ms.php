@@ -13,8 +13,5 @@ class Prueba_Ms extends Model
     {
         return $this->hasMany(Movimiento::class,'fk_movimiento','pk_prueba');
     }
-     public function Dedos()
-    {
-        return $this->hasMany(Dedos::class,'fk_dedos','pk_prueba');
-    }
+    
 }

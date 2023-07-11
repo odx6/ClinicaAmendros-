@@ -256,18 +256,7 @@ var currentDate = new Date().toISOString().slice(0, 16);
 
         // Calendar AddEvent fn.
         var calendarAddEvent = function () {
-
-            var currentDate = new Date();
-            var dd = String(currentDate.getDate()).padStart(2, '0');
-            var mm = String(currentDate.getMonth() + 1).padStart(2, '0'); //January is 0!
-            var yyyy = currentDate.getFullYear();
-
-            var combineDate = `${yyyy}-${mm}-${dd}T00:00:00`;
-            getModalAddBtnEl.style.display = 'block';
-            getModalUpdateBtnEl.style.display = 'none';
-            getBotonCancelarCita.style.display = 'none';
-            myModal.show();
-            getModalStartDateEl.value = combineDate;
+            Notificacion.show();
         }
 
         // Calendar eventClick fn.

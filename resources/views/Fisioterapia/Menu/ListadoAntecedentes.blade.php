@@ -218,42 +218,36 @@
 
                                     </div>
 
-                                    <!--end-espacio-->
+
                                 </div>
 
-                                <div class="w-100"></div>
+
 
 
                             </div>
                         </div>
             </div>
-    @endforeach
+                  @endforeach
+                   @endif
+
+    <div class="modal-footer">
+
+        <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
+            style="display: none;">Actualizar</button>
+        </form>
+        <form class="user" method="POST" action="{{ route('index.AntecedenteAH', ['id' => $Paciente->SS]) }}">
+            @csrf
+            <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
+                style="display: none;">Agregar
+                Antecedentes </button>
+        </form>
+        <form class="user" method="POST"
+            action="{{ route('destroy.AntecedenteAH', ['id' => $ids, 'signos' => $signosx]) }}">
+            @csrf
+            <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
+                style="display: none;">Eliminar</button>
+        </form>
+    </div>
     @endif
-
-<div class="modal-footer">
-
-    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
-        style="display: none;">Actualizar</button>
-    </form>
-    <form class="user" method="POST" action="{{ route('index.AntecedenteAH', ['id' => $Paciente->SS]) }}">
-        @csrf
-        <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-            style="display: none;">Agregar
-            Antecedentes </button>
-    </form>
-    <form class="user" method="POST"
-        action="{{ route('destroy.AntecedenteAH', ['id' => $ids, 'signos' => $signosx]) }}">
-        @csrf
-        <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-            style="display: none;">Eliminar</button>
-    </form>
-</div>
-
-
-<!--end seccion de Segundo container-->
-<!--end seccion de Tercer container-->
-@endif
-
-</div>
-</div>
-<!--end-Antecedentes--->
+ </div>
+ @if($Antecedentes->isEmpty()) @else </div> @endif

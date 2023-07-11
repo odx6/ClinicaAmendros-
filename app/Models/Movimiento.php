@@ -9,12 +9,10 @@ class Movimiento extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'titulo1',
-        'ValorT1',
-        'titulo2',
-        'ValorT2',
-        'NombreMovi',
-        // Otros atributos fillable
+        'fk_movimiento',
+                'NombreMovi',
+                'valor',
+       
     ];
     protected $primaryKey = 'pk_movimiento';
 

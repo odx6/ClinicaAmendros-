@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Dedos;
+use App\Models\Secretaria;
 use Illuminate\Http\Request;
 
-class DedosController extends Controller
+class SecretariaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class DedosController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Dedos  $dedos
+     * @param  \App\Models\Secretaria  $secretaria
      * @return \Illuminate\Http\Response
      */
-    public function show(Dedos $dedos)
+    public function show(Secretaria $secretaria)
     {
         //
     }
@@ -52,10 +52,10 @@ class DedosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Dedos  $dedos
+     * @param  \App\Models\Secretaria  $secretaria
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dedos $dedos)
+    public function edit(Secretaria $secretaria)
     {
         //
     }
@@ -64,10 +64,10 @@ class DedosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Dedos  $dedos
+     * @param  \App\Models\Secretaria  $secretaria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dedos $dedos)
+    public function update(Request $request, Secretaria $secretaria)
     {
         //
     }
@@ -75,10 +75,10 @@ class DedosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Dedos  $dedos
+     * @param  \App\Models\Secretaria  $secretaria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dedos $dedos)
+    public function destroy(Secretaria $secretaria)
     {
         //
     }

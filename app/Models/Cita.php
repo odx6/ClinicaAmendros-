@@ -10,4 +10,8 @@ class Cita extends Model
     use HasFactory;
     public $timestamps = false;
     protected $primaryKey = 'pk_cita';
+    public function Doctor()
+    {
+        return $this->belongsTo(Doctor::class);
+    }
 }

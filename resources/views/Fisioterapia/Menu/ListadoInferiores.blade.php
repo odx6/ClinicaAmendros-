@@ -25,109 +25,73 @@
             <form class="user" method="POST"
                 action="{{ route('update.MSuperiores', ['id' => $prueba->pk_prueba]) }}">
                 @csrf
-                <div class="container">
+                 <div class="container">
                     <h2>Prueba de Arcos de moviidad de miembros superiores</h2>
 
                     <div class="row">
-                        <div class="col-sm">
-
-                            <img src="{{ asset('src/assets/img/Fisioterapia/img11.jpg') }}" alt=""
-                                width="100%" height="100%">
-                        </div>
 
                         <div class="col-sm">
-                            <h2>Movimiento</h2>
-
+                            <h2>Miembro</h2>
+                            <input type="text" class="form-control form-control-lg"
+                                placeholder="Nombre del miembro a evaluar" name="NombreMiembro"
+                                placeholder="Nombre del miembro a evaluar" value="{{ $prueba->NombrePrueba }}">
                             <div class="container">
-                                <div class="row">
-                                    <div class="col-sm">
-                                        @if ($prueba->Movimientos->count() > 0)
-                                            @foreach ($prueba->Movimientos as $movimiento)
-                                                <div class="table-responsive">
-                                                    <h2>
-                                                        <div class="form-group">
-                                                            <label for="exampleFormControlInput1">Nombre del movimento a
-                                                                evaluar</label>
-                                                            <input type="text" class="form-control"
-                                                                id="exampleFormControlInput1"
-                                                                value="{{ $movimiento->NombreMovi }}"
-                                                                name="movimiento[{{ $movimiento->pk_movimiento }}][Nombre]"
-                                                                placeholder="Nombre del movimiento a evaluar">
-                                                        </div>
-                                                    </h2>
-                                                    <input type="hidden" class="form-control"
-                                                        id="exampleFormControlInput1"
-                                                        value="{{ $movimiento->pk_movimiento }}"
-                                                        name="movimiento[{{ $movimiento->pk_movimiento }}][IDM]"
-                                                        placeholder="Nombre del movimiento a evaluar">
-                                                    <table class="table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">
-                                                                    <div class="form-group">
-                                                                        <label for="exampleFormControlInput1">Tipo
-                                                                            evaluacion ejemplo "Externa"</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="exampleFormControlInput1"
-                                                                            value="{{ $movimiento->titulo1 }}"
-                                                                            name="movimiento[{{ $movimiento->pk_movimiento }}][Tipo]"
-                                                                            placeholder="Externa">
-                                                                    </div>
-                                                                </th>
-                                                                <th scope="col">
-                                                                    <div class="form-group">
-                                                                        <label for="exampleFormControlInput1">Tipo
-                                                                            evaluacion ejemplo "Externa"</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="exampleFormControlInput1"
-                                                                            value="{{ $movimiento->titulo2 }}"
-                                                                            name="movimiento[{{ $movimiento->pk_movimiento }}][Tipo1]"
-                                                                            placeholder="Inerna">
-                                                                    </div>
-                                                                </th>
-
-                                                            </tr>
-                                                            <tr aria-hidden="true"
-                                                                class="mt-3 d-block table-row-hidden"></tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <select class="form-control"
-                                                                        name="movimiento[{{ $movimiento->pk_movimiento }}][valor1]">
-
-                                                                        <option value="{{ $movimiento->ValorT1 }}">
-                                                                            {{ $movimiento->ValorT1 }}°</option>
-                                                                        @for ($i = 0; $i <= 360; $i++)
-                                                                            <option value="{{ $i }}">
-                                                                                {{ $i }}°</option>
-                                                                        @endfor
-                                                                    </select>
-                                                                </td>
-                                                                <td>
-                                                                    <select class="form-control"
-                                                                        name="movimiento[{{ $movimiento->pk_movimiento }}][valor2]">
-                                                                        <option value="{{ $movimiento->ValorT2 }}">
-                                                                            {{ $movimiento->ValorT1 }}°</option>
-                                                                        @for ($i = 0; $i <= 360; $i++)
-                                                                            <option value="{{ $i }}">
-                                                                                {{ $i }}°</option>
-                                                                        @endfor
-                                                                    </select>
-                                                                </td>
-                                                            </tr>
+                                <div class="table-responsive">
+                                    <table class="table" id="tablamiembroS">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Movimiento</th>
+                                                <th scope="col">Grados</th>
 
 
+                                            </tr>
+                                            <tr aria-hidden="true" class="mt-3 d-block table-row-hidden"></tr>
+                                        </thead>
+                                        <tbody>
+                                            <div id="elementoOriginal">
+                                                @if ($prueba->Movimientos->count() > 0)
+                                                    @foreach ($prueba->Movimientos as $movi)
+                                                        <tr>
 
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            @endforeach
-                                        @endif
+                                                            <td>
+                                                                <input type="text"
+                                                                    class="form-control form-control-lg"
+                                                                    placeholder="Nombre del movimiento"
+                                                                    name="Movimientos[{{$movi->pk_movimiento}}][Nombre]"
+                                                                    value="{{ $movi->NombreMovi }}">
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control"
+                                                                    name="Movimientos[{{$movi->pk_movimiento}}][Valor]">
+                                                                    <option selected disabled value="">Selecciona
+                                                                        el grado
+                                                                    </option>
 
-                                    </div>
+                                                                    @for ($i = 0; $i <= 360; $i++)
+                                                                        <option value="{{ $i }}"
+                                                                            @if ($movi->valor == $i) selected @endif>
+                                                                            {{ $i }}°
+                                                                        </option>
+                                                                    @endfor
+                                                                </select>
+
+                                                            </td>
+
+                                                            <td>
+                                                                <input type="hidden"
+                                                                    class="form-control form-control-lg"
+                                                                    placeholder="Nombre del movimiento"
+                                                                    name="Movimientos[{{$movi->pk_movimiento}}][idMovi]"
+                                                                    value="{{ $movi->pk_movimiento }}">
+
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                @endif
 
 
+                                        </tbody>
+                                    </table>
                                 </div>
 
 
@@ -136,10 +100,6 @@
                         </div>
 
 
-                        <div class="col-sm">
-                            <img src="{{ asset('src/assets/img/Fisioterapia/im10.jpg') }}" alt=""
-                                width="100%" height="100%">
-                        </div>
 
                     </div>
 
@@ -150,7 +110,6 @@
                     <br>
                     <br>
                 </div>
-
                 <!--end-table-->
                 <div class="modal-footer">
 

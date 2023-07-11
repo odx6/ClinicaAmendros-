@@ -167,101 +167,10 @@
                                     style="display: none;">Eliminar</button>
                             </form>
                             @endif
-                            @endforeach
+                           
                         </div>
-                        <div class="row">
-                            <h2>Evaluación Goniometrica</h2>
-                            @foreach ($Evaluaciones as $Evaluacion)
-                            <form class="user" method="POST"
-                            action="{{ route('update.Muscular', ['id' => $Evaluacion->pk_evaluacion]) }}">
-                            @csrf
-                            @if ($Evaluacion->Tipo == 'Goniométrica')
-                            <table class="table table-sm">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Nombre del miembro a evaluar</th>
-                                        <th scope="col">Izuierda</th>
-                                        <th scope="col">Derecha</th>
-                                        <th scope="col">Tipo</th>
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="col">
-
-                                                <input type="text" class="form-control form-control-lg"
-                                                    placeholder="Nombre del miembro a evaluar" name="Nombre" value="{{$Evaluacion->Nombre_miembro}}">
-                                            </div>
-                                        </th>
-                                        <td>
-                                            <select class="form-select form-select-lg mb-3"
-                                                aria-label=".form-select-lg example" name="izquierda">
-                                                
-
-                                                <option value="{{ $Evaluacion->val_iquierda }}">Grado
-                                                    {{ $Evaluacion->val_iquierda }}</option>
-                                                <option value="0">Grado 0</option>
-                                                <option value="1">Grado 1</option>
-                                                <option value="2">Grado 2</option>
-                                                <option value="3">Grado 3</option>
-                                                <option value="4">Grado 4</option>
-                                                <option value="5">Grado 5</option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <select class="form-select form-select-lg mb-3"
-                                                aria-label=".form-select-lg example" name="Derecha">
-                                                
-                                                <option value="{{ $Evaluacion->val_derecha }}">Grado
-                                                    {{ $Evaluacion->val_derecha }}</option>
-                                                <option value="0">Grado 0</option>
-                                                <option value="1">Grado 1</option>
-                                                <option value="2">Grado 2</option>
-                                                <option value="3">Grado 3</option>
-                                                <option value="4">Grado 4</option>
-                                                <option value="5">Grado 5</option>
-                                            </select>
-                                        </td>
-                                        <td>
-
-                                            <select class="form-select form-select-lg mb-3"
-                                                aria-label=".form-select-lg example"name="Tipo">
-                                            
-
-                                                <option value="{{ $Evaluacion->Tipo }}">Evaluación
-                                                    {{ $Evaluacion->Tipo }}</option>
-                                                <option value="Muscular">Evaluación Muscular</option>
-                                                <option value="Goniométrica">Evaluación Goniométrica</option>
-
-                                            </select>
-                                        </td>
-
-
-                                </tbody>
-                            </table>
-                            <div class="modal-footer">
-
-                                <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
-                                    style="display: none;">Actualizar</button>
-                        </form>
-                        <form class="user" method="POST" action="{{ route('index.Muscular', ['id' => $Paciente->SS]) }}">
-                            @csrf
-                            <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-                                style="display: none;">Agregar Evaluacion Muscular
-                            </button>
-                        </form>
-                        <form class="user" method="POST"
-                            action="{{ route('destroy.Muscular', ['id' => $Evaluacion->pk_evaluacion]) }}">
-                            @csrf
-                            <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-                                style="display: none;">Eliminar</button>
-                        </form>
-                        @endif
                         @endforeach
-                        </div>
-
+                      
                     </div>
 
                 </div>
@@ -269,10 +178,11 @@
 
                 <!--end-table-->
                
-
+</form>
 </div>
 </div>
 
 @endif
-</div>
+@if($habitos->isEmpty()) </div> @endif
+
 

@@ -1,54 +1,47 @@
  <div class="container desactivado" id="FisioTratamientos">
-         
-              
-                            <div class="col">
-                                
-                                <h2>Tratamientos</h2>
-                                <table class="table">
 
-                                    <tbody>
-                                         <tr>
 
-                                            <td>
-                                                <h3>Identificador del paciente :</h3>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-   
-    <input type="text" class="form-control" id="exampleFormControlInput1" value="{{$id}}" name="Peso">
-</div> 
-                                            </td>
+     <div class="col">
 
-                                        </tr>
-                                        <tr>
+         <h2>Tratamientos</h2>
+         <table class="table">
 
-                                            <td>
-                                                <h3>tratamientos Previos :</h3>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-   
-    <input type="text" class="form-control" id="exampleFormControlInput1" value="" name="Tratamiento" placeholder="Tratamientos">
-</div> 
-                                            </td>
+             <tbody>
+                 <tr>
 
-                                        </tr>
-                                        
-                                    </tbody>
-                                </table>
+                     <td>
+                         <h3>Identificador del paciente :</h3>
+                     </td>
+                     <td>
+                         <div class="form-group">
 
-                            </div>
-                          
-                          
-                        </div>
+                             <input type="text" class="form-control" id="exampleFormControlInput1"
+                                 value="{{ $id }}" name="Peso">
+                         </div>
+                     </td>
 
-                    </div>
-                    
-                  
-            </div>
-            </form>
+                 </tr>
+                 <tr>
 
-        </div>
+                     <td>
+                         <h3>tratamientos Previos :</h3>
+                     </td>
+                     <td>
+                         <div class="form-group">
 
-    </div>   </div>
- 
+                             <input type="text" class="form-control" id="exampleFormControlInput1" value=""
+                                 name="Tratamiento" placeholder="Tratamientos">
+                         </div>
+                     </td>
+
+                 </tr>
+
+             </tbody>
+         </table>
+
+     </div>
+
+
+ </div>
+
+

@@ -20,7 +20,7 @@
             </form>
         </div>
     @else
-        @foreach ($Marchas as $mar)
+        @foreach ($MarchasDeam as $mar)
         <form class="user" method="POST" action="{{ route('update.Marcha',['id'=>$mar->pk_marcha]) }}">
             @csrf
             <div class="table-responsive">
@@ -134,10 +134,11 @@
         <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
             style="display: none;">Eliminar</button>
     </form>
-        
+      @endforeach
+      @endif
 </div>
-</div>
-@endforeach
-@endif
-</div>
+@if($MarchasDeam->isEmpty())@else </div> @endif
+
+
+
 

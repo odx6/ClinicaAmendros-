@@ -29,105 +29,69 @@
                     <h2>Prueba de Arcos de moviidad de miembros superiores</h2>
 
                     <div class="row">
-                        <div class="col-sm">
-
-                            <img src="{{ asset('src/assets/img/Fisioterapia/img2.jpg') }}" alt="" width="100%"
-                                height="100%">
-                        </div>
 
                         <div class="col-sm">
-                            <h2>Movimiento</h2>
-
+                            <h2>Miembro</h2>
+                            <input type="text" class="form-control form-control-lg"
+                                placeholder="Nombre del miembro a evaluar" name="NombreMiembro"
+                                placeholder="Nombre del miembro a evaluar" value="{{ $prueba->NombrePrueba }}">
                             <div class="container">
-                                <div class="row">
-                                    <div class="col-sm">
-                                        @if ($prueba->Movimientos->count() > 0)
-                                            @foreach ($prueba->Movimientos as $movimiento)
-                                                <div class="table-responsive">
-                                                    <h2>
-                                                        <div class="form-group">
-                                                            <label for="exampleFormControlInput1">Nombre del movimento a
-                                                                evaluar</label>
-                                                            <input type="text" class="form-control"
-                                                                id="exampleFormControlInput1"
-                                                                value="{{ $movimiento->NombreMovi }}"
-                                                                name="movimiento[{{ $movimiento->pk_movimiento }}][Nombre]"
-                                                                placeholder="Nombre del movimiento a evaluar">
-                                                        </div>
-                                                    </h2>
-                                                    <input type="hidden" class="form-control"
-                                                        id="exampleFormControlInput1"
-                                                        value="{{ $movimiento->pk_movimiento }}"
-                                                        name="movimiento[{{ $movimiento->pk_movimiento }}][IDM]"
-                                                        placeholder="Nombre del movimiento a evaluar">
-                                                    <table class="table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">
-                                                                    <div class="form-group">
-                                                                        <label for="exampleFormControlInput1">Tipo
-                                                                            evaluacion ejemplo "Externa"</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="exampleFormControlInput1"
-                                                                            value="{{ $movimiento->titulo1 }}"
-                                                                            name="movimiento[{{ $movimiento->pk_movimiento }}][Tipo]"
-                                                                            placeholder="Externa">
-                                                                    </div>
-                                                                </th>
-                                                                <th scope="col">
-                                                                    <div class="form-group">
-                                                                        <label for="exampleFormControlInput1">Tipo
-                                                                            evaluacion ejemplo "Externa"</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="exampleFormControlInput1"
-                                                                            value="{{ $movimiento->titulo2 }}"
-                                                                            name="movimiento[{{ $movimiento->pk_movimiento }}][Tipo1]"
-                                                                            placeholder="Inerna">
-                                                                    </div>
-                                                                </th>
-
-                                                            </tr>
-                                                            <tr aria-hidden="true"
-                                                                class="mt-3 d-block table-row-hidden"></tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <select class="form-control"
-                                                                        name="movimiento[{{ $movimiento->pk_movimiento }}][valor1]">
-
-                                                                        <option value="{{ $movimiento->ValorT1 }}">
-                                                                            {{ $movimiento->ValorT1 }}°</option>
-                                                                        @for ($i = 0; $i <= 360; $i++)
-                                                                            <option value="{{ $i }}">
-                                                                                {{ $i }}°</option>
-                                                                        @endfor
-                                                                    </select>
-                                                                </td>
-                                                                <td>
-                                                                    <select class="form-control"
-                                                                        name="movimiento[{{ $movimiento->pk_movimiento }}][valor2]">
-                                                                        <option value="{{ $movimiento->ValorT2 }}">
-                                                                            {{ $movimiento->ValorT1 }}°</option>
-                                                                        @for ($i = 0; $i <= 360; $i++)
-                                                                            <option value="{{ $i }}">
-                                                                                {{ $i }}°</option>
-                                                                        @endfor
-                                                                    </select>
-                                                                </td>
-                                                            </tr>
+                                <div class="table-responsive">
+                                    <table class="table" id="tablamiembroS">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Movimiento</th>
+                                                <th scope="col">Grados</th>
 
 
+                                            </tr>
+                                            <tr aria-hidden="true" class="mt-3 d-block table-row-hidden"></tr>
+                                        </thead>
+                                        <tbody>
+                                            <div id="elementoOriginal">
+                                                @if ($prueba->Movimientos->count() > 0)
+                                                    @foreach ($prueba->Movimientos as $movi)
+                                                        <tr>
 
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            @endforeach
-                                        @endif
+                                                            <td>
+                                                                <input type="text"
+                                                                    class="form-control form-control-lg"
+                                                                    placeholder="Nombre del movimiento"
+                                                                    name="Movimientos[{{ $movi->pk_movimiento }}][Nombre]"
+                                                                    value="{{ $movi->NombreMovi }}">
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control"
+                                                                    name="Movimientos[{{ $movi->pk_movimiento }}][Valor]">
+                                                                    <option selected disabled value="">Selecciona
+                                                                        el grado
+                                                                    </option>
 
-                                    </div>
+                                                                    @for ($i = 0; $i <= 360; $i++)
+                                                                        <option value="{{ $i }}"
+                                                                            @if ($movi->valor == $i) selected @endif>
+                                                                            {{ $i }}°
+                                                                        </option>
+                                                                    @endfor
+                                                                </select>
+
+                                                            </td>
+
+                                                            <td>
+                                                                <input type="hidden"
+                                                                    class="form-control form-control-lg"
+                                                                    placeholder="Nombre del movimiento"
+                                                                    name="Movimientos[{{ $movi->pk_movimiento }}][idMovi]"
+                                                                    value="{{ $movi->pk_movimiento }}">
+
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                @endif
 
 
+                                        </tbody>
+                                    </table>
                                 </div>
 
 
@@ -135,12 +99,8 @@
 
                         </div>
 
-                     
-                            <div class="col-sm">
-                                <img src="{{ asset('src/assets/img/Fisioterapia/img3.jpg') }}" alt=""
-                                    width="100%" height="100%">
-                            </div>
-                        
+
+
                     </div>
 
                     <div class="input-group">
@@ -150,106 +110,6 @@
                     <br>
                     <br>
                 </div>
-                @if ($prueba->Dedos->count() > 0)
-                <div class="col-sm">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Dedos</th>
-                                    <th scope="col">MCF</th>
-                                    <th class="text-center" scope="col">IFP</th>
-                                    <th class="text-center" scope="col">IFD</th>
-                                    <th class="text-center" scope="col">ABD</th>
-                                </tr>
-                                <tr aria-hidden="true" class="mt-3 d-block table-row-hidden">
-                                </tr>
-                            </thead>
-                            <tbody>
-
-
-                                @foreach ($prueba->Dedos as $Dedo)
-                                    <tr>
-
-                                        <td>
-                                            <div class="form-group">
-                                                <label for="exampleFormControlInput1">Nombre
-                                                    del dedo a evaluar</label>
-                                                <input type="text" class="form-control"
-                                                    id="exampleFormControlInput1"
-                                                    value="{{ $Dedo->Nombre }}"
-                                                    name="Dedos[{{ $Dedo->pk_dedos }}][Nombre]"
-                                                    placeholder="Nombre dedo">
-                                            </div>
-                                        </td>
-
-                                        <td class="text-center">
-                                            <select class="form-control form-control-sm"
-                                                name="Dedos[{{ $Dedo->pk_dedos }}][MCF]">
-                                                <option value="{{ $Dedo->MCF }}">
-                                                    {{ $Dedo->MCF }}°
-                                                </option>
-                                                @for ($i = 0; $i <= 90; $i++)
-                                                    <option value="{{ $i }}">
-                                                        {{ $i }}°
-                                                    </option>
-                                                @endfor
-                                            </select>
-                                        </td>
-                                        <td class="text-center">
-                                            <select class="form-control form-control-sm"
-                                                name="Dedos[{{ $Dedo->pk_dedos }}][IFP]">
-                                                <option value="{{ $Dedo->IFP }}">
-                                                    {{ $Dedo->IFP }}° </option>
-                                                @for ($i = 0; $i <= 90; $i++)
-                                                    <option value="{{ $i }}">
-                                                        {{ $i }}°
-                                                    </option>
-                                                @endfor
-                                            </select>
-                                        </td>
-                                        <td class="text-center">
-                                            <select class="form-control form-control-sm"
-                                                name="Dedos[{{ $Dedo->pk_dedos }}][IFD]">
-                                                <option value="{{ $Dedo->IFD }}">
-                                                    {{ $Dedo->IFD }}° </option>
-                                                @for ($i = 0; $i <= 90; $i++)
-                                                    <option value="{{ $i }}">
-                                                        {{ $i }}°
-                                                    </option>
-                                                @endfor
-                                            </select>
-                                        </td>
-                                        <td class="text-center">
-                                            <select class="form-control form-control-sm"
-                                                name="Dedos[{{ $Dedo->pk_dedos }}][ABD]">
-                                                <option value="{{ $Dedo->ABD }}">
-                                                    {{ $Dedo->ABD }}° </option>
-                                                @for ($i = 0; $i <= 90; $i++)
-                                                    <option value="{{ $i }}">
-                                                        {{ $i }}°
-                                                    </option>
-                                                @endfor
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <div class="form-group">
-                                                
-                                                <input type="hidden" class="form-control"
-                                                    id="exampleFormControlInput1"
-                                                    value="{{ $Dedo->pk_dedos }}"
-                                                    name="Dedos[{{ $Dedo->pk_dedos }}][IDEDO]"
-                                                    placeholder="Nombre dedo">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            @endif
-                <!--end-table-->
                 <div class="modal-footer">
 
                     <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
@@ -257,8 +117,8 @@
             </form>
             <form class="user" method="POST" action="{{ route('index.MSuperiores', ['id' => $Paciente->SS]) }}">
                 @csrf
-                <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
-                    id="Hola" style="display: none;">Agregar Evaluacion Miembros Superiores
+                <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
+                    style="display: none;">Agregar Evaluacion Miembros Superiores
                 </button>
             </form>
             <form class="user" method="POST"
@@ -269,7 +129,6 @@
             </form>
 
 </div>
-
 @endforeach
 @endif
 </div>

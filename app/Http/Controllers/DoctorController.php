@@ -122,22 +122,61 @@ class DoctorController extends Controller
         $Notas_p = nota_p_quirurgica::where('fk_npq', '=', $valorSeleccionado)->get();
         $Notas = nota::where('fk_n', '=', $valorSeleccionado)->get();
         $Exploraciones = exploracion_f::where('fk_d', '=', $valorSeleccionado)->get();
-
+        $Paciente = Paciente::Find($valorSeleccionado);
+            $idDoctor=$Paciente->PacienteDoctor;
+            $Doctor=Doctor::find($idDoctor);
+            $idArea=$Doctor->AreaDoctor;
+            $Area=Area::find($idArea);
         $Paciente = Paciente::Find($valorSeleccionado);
         Pdf::setOption(['dpi' => 150, 'defaultFont' => 'sans-serif']);
         $data = []; // Agrega aquí los datos que deseas pasar a la vista
+          if($Area->NOMBE_AREA=="FISOTERAPIA"){
+            //Fisioterapia
 
+            $ExploracionesF=F_ExploracionFisica::where('fk_Exploracion_ff', '=', $valorSeleccionado)->get();
+            $Tratamiento=Tratamientos_p::where('fk_tratamientos_p', '=', $valorSeleccionado)->get();
+            $Antecedentes=Antecedentes_Ph::where('fk_Antecedentes_ph', '=', $valorSeleccionado)->get();
+            $signos=Signos_Vitales::where('fk_Signos', '=', $valorSeleccionado)->get();
+            $habitos=Habitos_salud::where('fk_Habitos', '=', $valorSeleccionado)->get();
+            $Ingravidez=Estado_ingravidez::where('fk_ingravidez', '=', $valorSeleccionado)->get();
+            $DIME=DIME_Rehabilitacion::where('fk_dmi', '=', $valorSeleccionado)->get();
+            $Cicatriz=Cicatriz_Q::where('fk_cicatriz', '=', $valorSeleccionado)->get();
+            $Traslados=Traslados::where('fk_traslados', '=', $valorSeleccionado)->get();
+            $MarchasDeam=Marcha_Deambulacion::where('fk_marcha', '=', $valorSeleccionado)->get();
+            $Dolor=Escala_dolor::where('fk_escala', '=', $valorSeleccionado)->get();
+            $Evaluaciones=Evaluacion::where('fk_evaluacion', '=', $valorSeleccionado)->get();
+            $Superiores=Movimiento::where('fk_movimiento', '=', $valorSeleccionado)->get();
+            $Pruebas=Prueba_Ms::where('fk_prueba', '=', $valorSeleccionado)->where('Tipo', '=','Superior')->get();
+            $PruebasInferiores=Prueba_Ms::where('fk_prueba', '=', $valorSeleccionado)->where('Tipo', '=','Inferior')->get();
+             $PosturaFrontal=VistaPostura::where('fk_vista', '=', $valorSeleccionado)->get();
+             $Formularios=Formulario_Valoracion::where('fk_formulario', '=', $valorSeleccionado)->get();
+             $Planes=Plan_Analitico::where('fk_plan', '=', $valorSeleccionado)->get();
+             $Marchas=Analisis_marcha::where('fk_Analis_marcha', '=', $valorSeleccionado)->get();
+
+
+        $pdf = PDF::loadView('Fisioterapia.pdfFisio', compact('valorSeleccionado', 'Paciente', 'ExploracionesF', 'Tratamiento', 'Antecedentes', 'Estudios', 'DIME', 'Ingravidez', 'habitos','signos', 'Cicatriz', 'Traslados','MarchasDeam','Dolor', 'Evaluaciones','Notas', 'Superiores','Pruebas','PruebasInferiores','PosturaFrontal','Formularios', 'Planes','Marchas'))->setPaper('a4', 'letter');
+        return $pdf->stream('login.pdf');
+
+          }else{
         $pdf = PDF::loadView('pdf.Historial', compact('valorSeleccionado', 'Paciente', 'Historiales', 'Gineco', 'Patologicos', 'Estudios', 'Notas_p', 'Notas', 'Exploraciones'))->setPaper('a4', 'letter');
         // Agrega la cabecera al PDF
 
 
         return $pdf->stream('login.pdf');
-
+}
         // return view('pdf.Historial',compact('valorSeleccionado','Paciente', 'Historiales','Gineco','Patologicos','Estudios','Notas_p','Notas','Exploraciones'));
 
     }
     public function ConsentimientoPDF(Request $request)
     {
+
+
+
+        $Paciente = Paciente::Find(request('id'));
+            $idDoctor=$Paciente->PacienteDoctor;
+            $Doctor=Doctor::find($idDoctor);
+            $idArea=$Doctor->AreaDoctor;
+            $Area=Area::find($idArea);
         $Fecha = $fechaActual = Carbon::now();
         $valorSeleccionado = request('id');
         $NombreResponsable = request('Nombre');
@@ -158,19 +197,30 @@ class DoctorController extends Controller
             $NoAcepta = 0;
         }
 
+
         // Sacar su Historial del paciente 
+            $idDoctor=$Paciente->PacienteDoctor;
+            $Doctor=Doctor::find($idDoctor);
+            $idArea=$Doctor->AreaDoctor;
+            $Area=Area::find($idArea);
+          
 
         $Paciente = Paciente::Find($valorSeleccionado);
         $Doctor = Doctor::Find($Paciente->SS);
+        $Planes=Plan_Analitico::where('fk_plan', '=', $valorSeleccionado)->get();
         Pdf::setOption(['dpi' => 150, 'defaultFont' => 'sans-serif']);
         $data = []; // Agrega aquí los datos que deseas pasar a la vista
+          if($Area->NOMBE_AREA=="FISOTERAPIA"){
+            $pdf = PDF::loadView('pdf.cFisio', compact('valorSeleccionado', 'Paciente', 'Fecha','Planes', 'Doctor'))->setPaper('a4', 'letter');
+            return $pdf->stream('login.pdf');
+          }else{
 
         $pdf = PDF::loadView('pdf.Consentimeinto', compact('valorSeleccionado', 'Paciente', 'Fecha', 'NombreResponsable', 'DomicilioResponsable', 'EdadResponsable', 'CalidadPaciente', 'Tratamiento', 'Revocar', 'NoAcepta', 'Doctor'))->setPaper('a4', 'letter');
         // Agrega la cabecera al PDF
 
 
         return $pdf->stream('login.pdf');
-
+}
 
     }
 
@@ -220,8 +270,7 @@ class DoctorController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Doctor  $doctor
+     *     * @param  \App\Models\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
     public function edit(Doctor $doctor)
