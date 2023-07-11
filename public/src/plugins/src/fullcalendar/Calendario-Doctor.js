@@ -163,8 +163,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Calendar AddEvent fn.
         var calendarAddEvent = function () {
-
-            var currentDate = new Date();
+            Notificacion.show();
+           /* var currentDate = new Date();
             var dd = String(currentDate.getDate()).padStart(2, '0');
             var mm = String(currentDate.getMonth() + 1).padStart(2, '0'); //January is 0!
             var yyyy = currentDate.getFullYear();
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function () {
             getModalUpdateBtnEl.style.display = 'none';
             getBotonCancelarCita.style.display = 'none';
             myModal.show();
-            getModalStartDateEl.value = combineDate;
+            getModalStartDateEl.value = combineDate;*/
         }
 
         // Calendar eventClick fn.
@@ -410,6 +410,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 data: {
                     id: $('#NombreDoctorP').val(),
                     NombrePaciente: $('#NombrePacienteP').val(),
+                    Apellidos: $('#NombreApellidosP').val(),
                     Telefono: $('#TelefonoP').val(),
                     inicio: $('#PrimerStar').val(),
                     _token: $('meta[name="csrf-token"]').attr('content'),

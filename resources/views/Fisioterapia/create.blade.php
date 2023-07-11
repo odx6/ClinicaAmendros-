@@ -177,7 +177,7 @@
                                               @include('Fisioterapia.Menu.ListadoSuperiores')
                                               <!--miembros inferiores--->
                                               <!--miembros inferiores--->
-                                              @include('Fisioterapia.Menu.Listadoinferiores')
+                                              @include('Fisioterapia.Menu.ListadoInferiores')
                                               <!--miembros inferiores--->
                                               <!--miembros inferiores--->
                                               @include('Fisioterapia.Menu.ListadoPosturas')

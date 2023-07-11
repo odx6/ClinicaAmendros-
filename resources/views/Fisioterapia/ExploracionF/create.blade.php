@@ -89,7 +89,7 @@
                                          <tr>
 
                                             <td>
-                                                <h3>Identificador del paciente :</h3>
+                                                <h3>Identificador :</h3>
                                             </td>
                                             <td>
                                                 <div class="form-group">

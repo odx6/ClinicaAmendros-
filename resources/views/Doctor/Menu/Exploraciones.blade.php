@@ -26,6 +26,8 @@
                 <form class="user" method="POST" action="{{ route('Exploracion.store') }}">
                     @csrf
 
+
+                                <div class="row mb-4">
                     <div class="col">
                         <label for="formGroupExampleInput">
                             T/A </label>
@@ -60,6 +62,9 @@
 
                         </select>
                     </div>
+                    </div>
+
+                                <div class="row mb-4">
                     <div class="col">
                         <label for="formGroupExampleInput">
                             X1 </label>
@@ -94,6 +99,9 @@
 
                         </select>
                     </div>
+                    </div>
+
+                                <div class="row mb-4">
                     <div class="col">
                         <label for="formGroupExampleInput">
                             X2 </label>
@@ -118,7 +126,9 @@
                         <input type="text" class="form-control" placeholder="Identificador del Exploracion"
                             name="IDAG" value="{{ $Ex->pk_Exploracion }}" required>
                     </div>
+</div>
 
+                                <div class="row mb-4">
                     <div class="col">
                         <label for="formGroupExampleInput">IDENTIFICADOR DEL DOCTOR
                         </label>
@@ -143,6 +153,9 @@
                                 <input type="text" class="form-control" placeholder="PESO (KG)" name="PESO"
                                     value="{{ $Ex->PESO }}">
                             </div>
+                            </div>
+
+                                <div class="row mb-4">
                             <div class="col">
                                 <label for="formGroupExampleInput">NOMBRE EXPLORACION </label>
                                 <input type="text" class="form-control" placeholder="Exploracion Cabeza"
@@ -153,6 +166,9 @@
                                 <input type="text" class="form-control" placeholder="Exploracion Cabeza"
                                     name="CAEF" value="{{ $Ex->Cabeza_ef }}" required>
                             </div>
+                            </div>
+
+                                <div class="row mb-4">
                             <div class="col">
                                 <label for="formGroupExampleInput">CUELLO</label>
                                 <input type="text" class="form-control" placeholder="Exploracion cuello  "

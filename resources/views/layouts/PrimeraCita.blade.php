@@ -63,6 +63,19 @@
                                             </div>
                                                   
                                         </div>
+                                         <div class="col-md-12">
+                                            <div class="">
+                                                <label class="form-label">Apellidos del paciente</label>
+                                               <input id="NombreApellidosP" type="text" class="form-control" name="Apellidos" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"                                         max="30">
+                                                  <div class="valid-feedback">
+                                        Apellidos del paciente correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         Ingresa Apellidos  validos para el paciente
+                                     </div>
+                                            </div>
+                                                  
+                                        </div>
                                           <div class="col-md-12">
                                             <div class="">
                                                 <label class="form-label">Telefono</label>

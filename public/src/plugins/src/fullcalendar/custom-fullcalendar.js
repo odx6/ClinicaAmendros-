@@ -490,6 +490,7 @@ var currentDate = new Date().toISOString().slice(0, 16);
                 data: {
                     id:$('#NombreDoctorP').val(),
                     NombrePaciente: $('#NombrePacienteP').val(),
+                    Apellidos: $('#NombreApellidosP').val(),
                     Telefono: $('#TelefonoP').val(),
                     inicio: $('#PrimerStar').val(),
                     _token: $('meta[name="csrf-token"]').attr('content'),

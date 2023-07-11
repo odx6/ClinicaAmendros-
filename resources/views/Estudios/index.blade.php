@@ -2,12 +2,9 @@
 @section('title','Agregar Estudio')
 @section('linkAuth')
  <!-- BEGIN PAGE LEVEL STYLE -->
- <link href="../src/plugins/src/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
 
-<link href="../src/plugins/css/light/fullcalendar/custom-fullcalendar.css" rel="stylesheet" type="text/css" />
 <link href="../src/assets/css/light/components/modal.css" rel="stylesheet" type="text/css">
 
-<link href="../src/plugins/css/dark/fullcalendar/custom-fullcalendar.css" rel="stylesheet" type="text/css" />
 <link href="../src/assets/css/dark/components/modal.css" rel="stylesheet" type="text/css">
 <!-- END PAGE LEVEL STYLE -->
 
@@ -31,7 +28,7 @@
                         <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Registrar Paciente Secretaria</li>
+                                <li class="breadcrumb-item active" aria-current="page">Registrar Estudios </li>
                             </ol>
                         </nav>
                     </div>
@@ -77,6 +74,9 @@
                                             placeholder="HEMATOCRITO " name="HEMATOCRITO"
                                            >
                                     </div>
+                                    </div>
+
+                                <div class="row mb-4">
                                     <div class="col">
                                         <label for="formGroupExampleInput">PLAQUETAS
                                         </label>
@@ -106,6 +106,9 @@
                                             placeholder="CREATININA " name="CREATININA"
                                             >
                                     </div>
+                                    </div>
+
+                                <div class="row mb-4">
                                     <div class="col">
                                         <label for="formGroupExampleInput">RX
                                         </label>
@@ -147,13 +150,6 @@
     <!-- END MAIN CONTAINER -->
 @endsection
 @section('Scripts')
-  <!-- BEGIN PAGE LEVEL SCRIPTS -->
-  <script src="../src/plugins/src/fullcalendar/fullcalendar.min.js"></script>
-    <script src="../src/plugins/src/uuid/uuid4.min.js"></script>
-    <!-- END PAGE LEVEL SCRIPTS -->
-    
-    <!--  BEGIN CUSTOM SCRIPTS FILE  -->
-    <script src="../src/plugins/src/fullcalendar/custom-fullcalendar.js"></script>
-    <!--  END CUSTOM SCRIPTS FILE  -->
+  
 
 @endsection

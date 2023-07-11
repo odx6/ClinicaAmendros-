@@ -80,7 +80,7 @@ class CitaController extends Controller
        $Paciente = new Paciente;
         $Paciente->PacienteDoctor=$data['id'];
         $Paciente->Nombre=$data['NombrePaciente'];
-        $Paciente->Apellido="Sin apellidos";
+        $Paciente->Apellido=$data['Apellidos'];
         $Paciente->Edad=0;
         $Paciente->Sexo="M";
         $Paciente->Estado_civil="Soltero(a)";

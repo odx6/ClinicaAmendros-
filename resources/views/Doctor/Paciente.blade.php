@@ -51,7 +51,7 @@
                 <div class="row layout-top-spacing layout-spacing" id="cancel-row">
                     <div class="col-xl-12 col-lg-12 col-md-12">
 
-                        <p>{{ $valorSeleccionado }}</p>
+                        
                         <div id="tabsWithIcons" class="col-lg-12 col-12 layout-spacing">
                             <div class="statbox widget box box-shadow">
                                 <div class="widget-header">

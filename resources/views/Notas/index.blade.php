@@ -61,13 +61,16 @@
                                         <label for="formGroupExampleInput">NOTA </label>
                                         <input type="text" class="form-control"
                                             placeholder="cuerpo de la nota" name="NOT"
-                                            >
+                                            required>
                                     </div>
+                                    </div>
+
+                                <div class="row mb-4">
                                     <div class="col">
                                         <label for="formGroupExampleInput">TIPO DE NOTA</label>
                                         <input type="text" class="form-control"
                                             placeholder="TIPO DE NOTA" name="TIPO"
-                                            >
+                                            required>
                                     </div>
 
                                 </div>

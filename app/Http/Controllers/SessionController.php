@@ -16,23 +16,11 @@ class SessionController extends Controller
     }
 
     public function store(){
-       $all_events=Cita::all();
-     $events=[];
-
-     foreach($all_events as $event){
-
-        $events[]=[
-            'title'=>$event->fk_dc,
-            'start'=>$event->inicio_c,
-            'end'=>$event->inicio_c,
-
-        ];
-     }
+      
 
      //prueba del paciente 
 
-     $paciente= Paciente::findOrFail(1);
-     $nombre=$paciente->Nombre.' '.$paciente->Apellido;
+     
         if(auth()->attempt(request(['email','password']))== false){
 
           
@@ -58,7 +46,7 @@ class SessionController extends Controller
             {
                     
               //  return redirect()->to('/');
-              return view('Home',compact('events'));
+              return view('Home');
               //return $nombre;  
             }
         }

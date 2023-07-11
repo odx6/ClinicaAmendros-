@@ -45,7 +45,7 @@
                             @csrf
                             <h1>Datos del paciente </h1>
                             <div class="row mb-4">
-                                <div class="col-7">
+                                <div class="col">
                                     <select class="form-control event-title-area" name="Area"  required>
                                         <option selected disabled value="">Area </option>
                                         @foreach ($Areas as $area)
@@ -59,9 +59,8 @@
                                          Selecciona un area valida
                                      </div>
                                 </div>
-                            </div>
-                                 <div class="row mb-4">
-                                <div class="col-7">
+                            
+                                <div class="col">
                                     <select class="form-control event-title" name="Doctor"  required>
                                         <option selected disabled value="">Selecione un medico </option>
                                     </select>
@@ -88,9 +87,7 @@
                                             Ingresa un nombre valido ejemplo :"jose luis"
                                          </div>
                                 </div>
-                                </div>
-
-                            <div class="row mb-4">
+                               
                                 <div class="col">
                                     <input type="text" class="form-control" placeholder="Apellido del paciente"
                                         name="Apellido" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"
@@ -120,9 +117,7 @@
                                          Selecciona la edad 
                                      </div>
                                 </div>
-                                </div>
-
-                            <div class="row mb-4">
+                               
                                 <div class="col">
                                     <select class="form-control" name="Sexo" required>
                                         <option selected disabled value="">Sexo del paciente</option>
@@ -160,9 +155,7 @@
                                         Por favor ingresa Estado civil del paciente valido
                                     </div>
                                 </div>
-                                </div>
-
-                            <div class="row mb-4">
+                                
                                 <div class="col">
                                     <input type="text" class="form-control" placeholder="Origen el paciente"
                                         name="Origen" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
@@ -173,9 +166,7 @@
                                         Por favor ingresa Origen valido
                                     </div>
                                 </div>
-                                </div>
-
-                            <div class="row mb-4">
+                               
                                 <div class="col">
                                     <input type="text" class="form-control" placeholder="Ocupacion del paciente"
                                         name="Ocupacion" required>
@@ -201,9 +192,7 @@
                                             Por favor ingresa una Direccion valida
                                         </div>
                                 </div>
-                                </div>
-
-                            <div class="row mb-4">
+                                
                                 <div class="col">
                                     <input type="text" class="form-control" placeholder="Telefono del paciente"
                                         name="Telefono" required minlength="10" maxlength="10" pattern="[0-9]{9,15}">
@@ -237,9 +226,7 @@
                                      </div>
                                 </div>
 
-                                </div>
-
-                            <div class="row mb-4">
+                               
 
                                 <div class="col">
                                     <select class="form-control" name="Escolaridad" required>

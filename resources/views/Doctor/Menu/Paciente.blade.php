@@ -23,45 +23,45 @@
 
                                                     </div>
                                                 @else
-                                                    <form class="user" method="POST"
-                                                        action="{{ route('paciente.update') }}">
+                                                    <form class="user needs-validation" method="POST"
+                                                        action="{{ route('paciente.update') }}" novalidate>
 
                                                         @csrf
                                                         <h1>Datos del paciente </h1>
 
                                                         <div class="row mb-4">
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Identificador Del
-                                                                    paciente</label>
+                                                                <label for="formGroupExampleInput">Identificador </label>
                                                                 <input type="text" class="form-control bold"
                                                                     id="bold" placeholder="Identificador del Paciente "
-                                                                    name="Identificador" value="{{ $Paciente->SS }}">
+                                                                    name="Identificador" value="{{ $Paciente->SS }}" required>
                                                             </div>
                                                             <div class="col">
                                                                 <label for="formGroupExampleInput">Doctor</label>
                                                                 <input type="text" class="form-control bold"
                                                                     id="bold" placeholder="Identificador del Doctor"
                                                                     name="Doctor"
-                                                                    id="Doctor"value="{{ $Paciente->PacienteDoctor }}">
+                                                                    id="Doctor"value="{{ $Paciente->PacienteDoctor }}"required>
                                                             </div>
+                                                            </div>
+                                                            <div class="row mb-4">
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Nombre del
-                                                                    paciente</label>
+                                                                <label for="formGroupExampleInput">Nombre </label>
                                                                 <input type="text" class="form-control "
                                                                     placeholder="Nombre del paciente " name="Nombre"
-                                                                    value="{{ $Paciente->Nombre }}">
+                                                                    value="{{ $Paciente->Nombre }}"  pattern="^[A-Za-z\s]+${3,30}" required>
                                                             </div>
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Apellido del
-                                                                    paciente</label>
+                                                                <label for="formGroupExampleInput">Apellidos</label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="Apellido del paciente" name="Apellido"
-                                                                    value="{{ $Paciente->Apellido }}">
+                                                                    value="{{ $Paciente->Apellido }}"  pattern="^[A-Za-z\s]+${3,30}" required>
                                                             </div>
+                                                            </div>
+                                                            <div class="row mb-4">
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Edad del
-                                                                    paciente</label>
-                                                                <select class="form-control selects" name="Edad">
+                                                                <label for="formGroupExampleInput">Edad </label>
+                                                                <select class="form-control selects" name="Edad" required>
                                                                     <option value="{{ $Paciente->Edad }}">
                                                                         {{ $Paciente->Edad }}
                                                                     </option>
@@ -73,9 +73,8 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Sexo del
-                                                                    Paciente</label>
-                                                                <select class="form-control selects" name="Sexo">
+                                                                <label for="formGroupExampleInput">Sexo  </label>
+                                                                <select class="form-control selects" name="Sexo" required>
                                                                     <option value={{ $Paciente->Sexo }}>
                                                                         @if ($Paciente->Sexo == 'M')
                                                                             {{ 'Masculino' }}
@@ -94,26 +93,25 @@
                                                         </div>
                                                         <div class="row mb-4">
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Estado civil del
-                                                                    paciente</label>
+                                                                <label for="formGroupExampleInput">Estado civil </label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="Estado civil del paciente "
                                                                     name="Estado_civil"
-                                                                    value="{{ $Paciente->Estado_civil }}">
+                                                                    value="{{ $Paciente->Estado_civil }}"  pattern="^[A-Za-z\s]+${3,30}" required>
                                                             </div>
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Origen del
-                                                                    paciente</label>
+                                                                <label for="formGroupExampleInput">Origen </label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="Origen el paciente" name="Origen"
-                                                                    value="{{ $Paciente->Origen }}">
+                                                                    value="{{ $Paciente->Origen }}"  pattern="^[A-Za-z\s]+${3,30}" required>
                                                             </div>
+                                                            </div>
+                                                        <div class="row mb-4">
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Ocupacion del
-                                                                    paciente</label>
+                                                                <label for="formGroupExampleInput">Ocupacion </label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="Ocupacion del paciente" name="Ocupacion"
-                                                                    value="{{ $Paciente->Ocupacion }}">
+                                                                    value="{{ $Paciente->Ocupacion }}"  pattern="^[A-Za-z\s]+${3,30}" required>
                                                             </div>
 
 
@@ -121,47 +119,50 @@
                                                         <div class="row mb-4">
 
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Direccón del
-                                                                    paciente</label>
+                                                                <label for="formGroupExampleInput">Direccón </label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="Direccion del paciente" name="Direccion"
-                                                                    value="{{ $Paciente->Direccion }}">
+                                                                    value="{{ $Paciente->Direccion }}" required>
                                                             </div>
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Telefono del
-                                                                    paciente</label>
-                                                                <input type="text" class="form-control"
+                                                                <label for="formGroupExampleInput">Telefono </label>
+                                                                <input type="numeric" class="form-control"
                                                                     placeholder="Telefono del paciente" name="Telefono"
-                                                                    value="{{ $Paciente->Telefono }}">
+                                                                    value="{{ $Paciente->Telefono }}" required>
 
                                                             </div>
+                                                            </div>
+                                                        <div class="row mb-4">
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Religión del
-                                                                    paciente</label>
+                                                                <label for="formGroupExampleInput">Religión</label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="Religion del paciente" name="Religion"
-                                                                    value="{{ $Paciente->Religion }}">
+                                                                    value="{{ $Paciente->Religion }}"  pattern="^[A-Za-z\s]+${3,30}" required>
                                                             </div>
+                                                            </div>
+                                                        <div class="row mb-4">
+
                                                             <div class="col">
                                                                 <label for="formGroupExampleInput">Escolaridad </label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="Escolaridad del paciente"
                                                                     name="Escolaridad"
-                                                                    value="{{ $Paciente->Escolaridad }}">
+                                                                    value="{{ $Paciente->Escolaridad }}" pattern="^[A-Za-z\s]+${3,30}" >
                                                             </div>
                                                             <div class="col">
                                                                 <label for="formGroupExampleInput">Fecha de Ingreso</label>
-                                                                <input type="text" class="form-control"
+                                                                <input type="date" class="form-control"
                                                                     placeholder="FechaIngreso" name="FechaIngreso"
                                                                     value="{{ $Paciente->FechaIngreso }}">
                                                             </div>
+                                                            </div>
+                                                        <div class="row mb-4">
                                                             <div class="col">
                                                                 <label for="formGroupExampleInput">Fecha de Salida</label>
-                                                                <input type="text" class="form-control"
+                                                                <input type="date" class="form-control"
                                                                     placeholder="FechaIngreso" name="FechaSalida"
                                                                     value="{{ $Paciente->FechaSalida }}">
                                                             </div>
-
                                                         </div>
                                                         <div class="modal-footer">
 
