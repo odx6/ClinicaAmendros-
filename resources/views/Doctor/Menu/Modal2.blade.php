@@ -22,7 +22,7 @@ role="dialog">
             <div class="row mb-4">
                 <form
                     action="{{ route('Consentimeinto.pdf', ['id' => $Paciente->SS]) }}"
-                    method="POST">
+                    method="POST" class="needs-validation" novalidate>
                     @csrf
                     <div class="col">
                         <label for="formGroupExampleInput">Nombre del representante
@@ -30,20 +30,21 @@ role="dialog">
                             allegado:</label>
                         <input type="text" class="form-control"
                             placeholder="Nombre del representante legal:"
-                            name="Nombre">
+                            name="Nombre" pattern="[A-Za-z0-9\s\-\,\#]+" required>
                     </div>
                     <div class="col">
                         <label for="formGroupExampleInput">Domicilio del representante
                             legal</label>
                         <input type="text" class="form-control"
                             placeholder="Domicilio del representante"
-                            name="Domicilio">
+                            name="Domicilio" required>
 
                     </div>
                     <div class="col">
                         <label for="formGroupExampleInput">Edad del representante
                             familiar o allegado:</label>
-                        <select class="form-control selects" name="Edad">
+                        <select class="form-control selects" name="Edad" required>
+                            <option selected disabled value="">Edad </option>
                             @for ($i = 1; $i <= 100; $i++)
                                 <option value="{{ $i }}">{{ $i }}
                                 </option>
@@ -58,13 +59,13 @@ role="dialog">
                         paciente</label>
                     <input type="text" class="form-control"
                         placeholder="Calidad en la que llega el paciente"
-                        name="Calidad">
+                        name="Calidad" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                 </div>
                 <div class="col">
                     <label for="formGroupExampleInput">Tratamiento o
                         procedimiento</label>
                     <input type="text" class="form-control"
-                        placeholder="Tratamiento o procedimiento" name="Tratamiento">
+                        placeholder="Tratamiento o procedimiento" name="Tratamiento" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
                 </div>
             </div>
 
@@ -93,13 +94,15 @@ role="dialog">
                 </div>
             </div>
             <div class="modal-footer md-button">
+                                <button type="submit" class="btn btn-primary">Generar</button>
+                                </form>
                 <button class="btn" data-bs-dismiss="modal"><i
                         class="flaticon-cancel-12"></i>
                     cancelar</button>
-                <button type="submit" class="btn btn-primary">Generar</button>
+
             </div>
         </div>
-        </form>
+        
     </div>
 </div>
 

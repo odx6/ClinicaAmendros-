@@ -16,40 +16,26 @@
             <form class="user" method="POST" action="{{ route('Notas.Formulario', ['id' => $Paciente->SS]) }}">
                 @csrf
                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-                    style="display: none;">Agregar nota-post quirurgica</button>
+                    style="display: none;">Agregar nota</button>
             </form>
         </div>
     @else
         <h2>NOTAS </h2>
         <!--Antecedentes patologicos-->
         @foreach ($Notas as $np)
-            <form class="user" method="POST" action="{{ route('Nota.store') }}">
+            <form class="user needs-validation" method="POST" action="{{ route('Nota.store',['IDAG'=>$np->pk_nota,'IDPA'=>$np->fk_n]) }}">
                 @csrf
-
-
-                <div class="col">
-                    <label for="formGroupExampleInput">IDENTIFICADOR DE NOTAS
-                    </label>
-                    <input type="text" class="form-control" placeholder="Identificador del analisis" name="IDAG"
-                        value="{{ $np->pk_nota }}">
-                </div>
-                <div class="col">
-                    <label for="formGroupExampleInput">IDENTIFICADOR DEL PACIENTE
-                    </label>
-                    <input type="text" class="form-control" placeholder="Identificador Del Paciente" name="IDPA"
-                        value="{{ $np->fk_n }}">
-                </div>
 
                 <div class="row mb-4">
                     <div class="col">
-                        <label for="formGroupExampleInput">NOTA </label>
+                        <label for="formGroupExampleInput">Nota </label>
                         <input type="text" class="form-control" placeholder="cuerpo de la nota" name="NOT"
-                            value="{{ $np->Nota }}">
+                            value="{{ $np->Nota }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
                     </div>
                     <div class="col">
-                        <label for="formGroupExampleInput">TIPO DE NOTA</label>
+                        <label for="formGroupExampleInput">Tipo </label>
                         <input type="text" class="form-control" placeholder="TIPO DE NOTA" name="TIPO"
-                            value="{{ $np->Tipo }}">
+                            value="{{ $np->Tipo }}"pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"  required>
                     </div>
 
                 </div>
@@ -63,7 +49,7 @@
             <form class="user" method="POST" action="{{ route('Notas.Formulario', ['id' => $Paciente->SS]) }}">
                 @csrf
                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-                    style="display: none;">Agregar nota-post quirurgica</button>
+                    style="display: none;">Agregar nota</button>
             </form>
             <form class="user" method="POST" action="{{ route('Notas.destroy', ['id' => $np->pk_n]) }}">
                 @csrf

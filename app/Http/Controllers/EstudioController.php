@@ -49,7 +49,7 @@ class EstudioController extends Controller
      */
     public function store(Request $request)
     {
-        $Estudio= estudio::find(request('IDAG'));
+        $Estudio= estudio::find(request('id'));
         $Estudio->HEMOGLOBINA=request('HEMOGLOBINA');
        $Estudio->HEMATOCRITO=request('HEMATOCRITO');
        $Estudio->PLAQUETAS=request('PLAQUETAS');

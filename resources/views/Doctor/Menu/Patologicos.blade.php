@@ -31,34 +31,16 @@
                                         <h2> ANTECEDENTES NO PATOLOGICOS </h2>
                                         <!--Antecedentes patologicos-->
                                         @foreach ($Patologicos as $patologico)
-                                            <form class="user" method="POST"
-                                                action="{{ route('APatologicos.store') }}">
+                                            <form class="user needs-validation" method="POST"
+                                                action="{{ route('APatologicos.store',['IDAG'=>$patologico->id_a_p,'IDPA'=>$patologico->fk_ap]) }}" novalidate>
                                                 @csrf
 
 
-                                                <div class="row mb-4">
-
-                                                    <div class="col">
-                                                        <label for="formGroupExampleInput">IDENTIFICADOR DE ANALISIS
-                                                        </label>
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Identificador del analisis" name="IDAG"
-                                                            value="{{ $patologico->id_a_p }}">
-                                                    </div>
-                                                    <div class="col">
-                                                        <label for="formGroupExampleInput">Identificador Del Paciente
-                                                        </label>
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Identificador Del Paciente" name="IDPA"
-                                                            value="{{ $patologico->fk_ap }}">
-
-                                                    </div>
-
-                                                </div>
+                                              
                                                 <div class="row mb-4">
                                                     <div class="col">
-                                                        <label for="formGroupExampleInput">DIABETES MELITUS </label>
-                                                        <select class="form-control" name="DMN">
+                                                        <label for="formGroupExampleInput">diabetes millitus(DM)</label>
+                                                        <select class="form-control" name="DMN" required>
 
                                                             <option value="{{ $patologico->Dm }}">
                                                                 @if ($patologico->Dm == '1')
@@ -75,7 +57,7 @@
                                                     </div>
 
                                                     <div class="col">
-                                                        <label for="formGroupExampleInput">TIEMPO DE EVOLUCION </label>
+                                                        <label for="formGroupExampleInput">Tiempo de evolución </label>
                                                         <input type="text" class="form-control"
                                                             placeholder="Evolucion de la diabetes  " name="DMTE"
                                                             value="{{ $patologico->DmTE }}">
@@ -83,8 +65,7 @@
                                                 </div>
                                                 <div class="row mb-4">
                                                     <div class="col">
-                                                        <label for="formGroupExampleInput">HIPERTENSIÓN ARTERIAL
-                                                            SISTÉMICA </label>
+                                                        <label for="formGroupExampleInput">Hirpentensión </label>
                                                         <select class="form-control" name="HASN">
                                                             <option value="{{ $patologico->Has }}">
                                                                 @if ($patologico->Has == '1')
@@ -100,17 +81,16 @@
                                                         </select>
                                                     </div>
                                                     <div class="col">
-                                                        <label for="formGroupExampleInput">TIEMPO DE EVOLUCION </label>
+                                                        <label for="formGroupExampleInput"> Tiempo de evolución</label>
                                                         <input type="text" class="form-control"
                                                             placeholder="Evolucion" name="HASTE"
-                                                            value="{{ $patologico->HasTe }}">
+                                                            value="{{ $patologico->HasTe }}" required>
                                                     </div>
                                                 </div>
                                                 <div class="row mb-4">
                                                     <div class="col">
-                                                        <label for="formGroupExampleInput">INSUFICIENCIA RENAL AGUDA O
-                                                            CRÓNICA </label>
-                                                        <select class="form-control" name="IR">
+                                                        <label for="formGroupExampleInput">Insuficiencia renal <br>Aguda o Cronica </label>
+                                                        <select class="form-control" name="IR" required>
                                                             <option value="{{ $patologico->Ir }}">
                                                                 @if ($patologico->Ir == '1')
                                                                     {{ 'Si' }}
@@ -125,20 +105,20 @@
                                                         </select>
                                                     </div>
                                                     <div class="col">
-                                                        <label for="formGroupExampleInput">TIEMPO DE EVOLUCION </label>
+                                                        <label for="formGroupExampleInput">Tiempo de <br> evolución </label>
                                                         <input type="text" class="form-control"
                                                             placeholder="Evolucion" name="IrTe"
-                                                            value="{{ $patologico->IrTe }}">
+                                                            value="{{ $patologico->IrTe }}" required>
                                                     </div>
                                                 </div>
 
                                                 <div class="row mb-4">
 
                                                     <div class="col">
-                                                        <label for="formGroupExampleInput">OTRA </label>
+                                                        <label for="formGroupExampleInput">Otra </label>
                                                         <input type="text" class="form-control"
                                                             placeholder="Evolucion" name="OTRA"
-                                                            value="{{ $patologico->Otra }}">
+                                                            value="{{ $patologico->Otra }}" required>
                                                     </div>
                                                 </div>
 

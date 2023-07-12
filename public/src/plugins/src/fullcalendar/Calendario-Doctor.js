@@ -163,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Calendar AddEvent fn.
         var calendarAddEvent = function () {
+           
             Notificacion.show();
            /* var currentDate = new Date();
             var dd = String(currentDate.getDate()).padStart(2, '0');

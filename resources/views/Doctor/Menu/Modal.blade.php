@@ -11,22 +11,24 @@
                                             </div>
                                             <div class="modal-body">
                                                 <form action="{{ route('Receta.pdf', ['id' => $Paciente->SS]) }}"
-                                                    method="POST">
+                                                    method="POST" class="needs-validation" novalidate>
                                                     @csrf
                                                     <div class="col">
                                                         <label for="formGroupExampleInput">Indicaciones Medicas </label>
 
                                                         <span class="input-group-text">Indicaciones</span>
-                                                        <textarea class="form-control" name="Receta"></textarea>
+                                                        <textarea class="form-control" name="Receta" rows="10" required></textarea>
 
                                                     </div>
                                             </div>
                                             <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary">Generar</button>
+                                                </form>
                                                 <button class="btn" data-bs-dismiss="modal"><i
                                                         class="flaticon-cancel-12"></i>Cancelar</button>
-                                                <button type="submit" class="btn btn-primary">Generar</button>
+                                                
                                             </div>
                                         </div>
                                     </div>
-                                    </form>
+                                    
                                 </div>

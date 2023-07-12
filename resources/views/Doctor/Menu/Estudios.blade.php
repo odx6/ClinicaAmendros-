@@ -16,8 +16,8 @@
                     <strong>Lo sentimos !</strong> No Hay registros disponibles para el paciente.
 
                 </div>
-                <form class="user" method="POST"
-                    action="{{ route('Estudios.Formulario', ['id' => $Paciente->SS]) }}">
+                <form class="user needs-validation" method="POST"
+                    action="{{ route('Estudios.Formulario', ['id' => $Paciente->SS]) }}" novalidate>
                     @csrf
                     <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
                         id="Hola" style="display: none;">Agregar estudio del
@@ -28,75 +28,67 @@
             <h2>Estudios del paciente </h2>
             <!--Antecedentes patologicos-->
             @foreach ($Estudios as $estudio)
-                <form class="user" method="POST" action="{{ route('Estudios.store') }}">
+                <form class="user needs-validation" method="POST" action="{{ route('Estudios.store',['id'=>$estudio->pk_estudio]) }}" novalidate>
                     @csrf
 
 
                     <div class="row mb-4">
 
-                        <div class="col">
-                            <label for="formGroupExampleInput">IDENTIFICADOR DE ESTUDIO
-                            </label>
-                            <input type="text" class="form-control" placeholder="Identificador del analisis"
-                                name="IDAG" value="{{ $estudio->pk_estudio }}" required>
-                        </div>
-                        <div class="col">
-                            <label for="formGroupExampleInput">IDENTIFICADOR DEL PACIENTE
-                            </label>
-                            <input type="text" class="form-control" placeholder="Identificador Del Paciente"
-                                name="IDPA" value="{{ $estudio->fk_e }}" required>
-
-
-                        </div>
 
                         <div class="row mb-4">
                             <div class="col">
-                                <label for="formGroupExampleInput">HEMOGLOBINA
+                                <label for="formGroupExampleInput">Hemoglobina
                                 </label>
                                 <input type="text" class="form-control" placeholder="HEMOGLOBINA" name="HEMOGLOBINA"
-                                    value="{{ $estudio->HEMOGLOBINA }}" required>
+                                    value="{{ $estudio->HEMOGLOBINA }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required>
                             </div>
                             <div class="col">
-                                <label for="formGroupExampleInput">HEMATOCRITO</label>
+                                <label for="formGroupExampleInput">Hematocrito</label>
                                 <input type="text" class="form-control" placeholder="HEMATOCRITO " name="HEMATOCRITO"
-                                    value="{{ $estudio->HEMATOCRITO }}" required>
+                                    value="{{ $estudio->HEMATOCRITO }}"  attern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required>
                             </div>
+                            </div>
+
+                        <div class="row mb-4">
                             <div class="col">
-                                <label for="formGroupExampleInput">PLAQUETAS
+                                <label for="formGroupExampleInput">plaquetas
                                 </label>
                                 <input type="text" class="form-control" placeholder="PLAQUETAS" name="PLAQUETAS"
-                                    value="{{ $estudio->PLAQUETAS }}" required>
+                                    value="{{ $estudio->PLAQUETAS }}" attern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required>
                             </div>
                             <div class="col">
-                                <label for="formGroupExampleInput">GLUCOSA
+                                <label for="formGroupExampleInput">Glucosa
                                 </label>
                                 <input type="text" class="form-control" placeholder="GLUCOSA" name="GLUCOSA"
-                                    value="{{ $estudio->GLUCOSA }}" required>
+                                    value="{{ $estudio->GLUCOSA }}" attern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required>
                             </div>
                         </div>
                         <div class="row mb-4">
                             <div class="col">
-                                <label for="formGroupExampleInput">UREA
+                                <label for="formGroupExampleInput">Urea
                                 </label>
                                 <input type="text" class="form-control" placeholder="UREA" name="UREA"
-                                    value="{{ $estudio->UREA }}" required>
+                                    value="{{ $estudio->UREA }}"  attern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required>
                             </div>
                             <div class="col">
-                                <label for="formGroupExampleInput">CREATININA</label>
+                                <label for="formGroupExampleInput">Creatinina</label>
                                 <input type="text" class="form-control" placeholder="CREATININA " name="CREATININA"
-                                    value="{{ $estudio->CREATININA }}" required>
+                                    value="{{ $estudio->CREATININA }}"  attern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required>
                             </div>
+                             </div>
+
+                        <div class="row mb-4">
                             <div class="col">
-                                <label for="formGroupExampleInput">RX
+                                <label for="formGroupExampleInput">Rx
                                 </label>
                                 <input type="text" class="form-control" placeholder="RX" name="RX"
-                                    value="{{ $estudio->RX }}" required>
+                                    value="{{ $estudio->RX }}" attern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required>
                             </div>
                             <div class="col">
-                                <label for="formGroupExampleInput">USG
+                                <label for="formGroupExampleInput">Usg
                                 </label>
                                 <input type="text" class="form-control" placeholder="USG" name="USG"
-                                    value="{{ $estudio->USG }}" required>
+                                    value="{{ $estudio->USG }}" attern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required> 
                             </div>
                         </div>
 

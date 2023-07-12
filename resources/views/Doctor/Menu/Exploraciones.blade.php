@@ -23,7 +23,7 @@
             </div>
         @else
             @foreach ($Exploraciones as $Ex)
-                <form class="user" method="POST" action="{{ route('Exploracion.store') }}">
+                <form class="user needs-validation" method="POST" action="{{ route('Exploracion.store',['IDAG'=>$Ex->pk_Exploracion,'IDDOC'=>$Ex->fk_e]) }}" novalidate>
                     @csrf
 
 
@@ -120,76 +120,62 @@
                         </select>
                     </div>
 
-                    <div class="col">
-                        <label for="formGroupExampleInput">IDENTIFICADOR DE Exploracion Fisica
-                        </label>
-                        <input type="text" class="form-control" placeholder="Identificador del Exploracion"
-                            name="IDAG" value="{{ $Ex->pk_Exploracion }}" required>
-                    </div>
+                    
 </div>
 
-                                <div class="row mb-4">
-                    <div class="col">
-                        <label for="formGroupExampleInput">IDENTIFICADOR DEL DOCTOR
-                        </label>
-                        <input type="text" class="form-control" placeholder="Identificador Del Doctort"
-                            name="IDDOC" value="{{ $Ex->fk_e }}" required>
-                    </div>
+                                
+                    
 
                     <div class="row mb-4">
-                        <div class="col">
-                            <label for="formGroupExampleInput">IDENTIFICADOR DEL PACIENTE </label>
-                            <input type="text" class="form-control" placeholder="Identificador del paciente"
-                                name="IDPA" value="{{ $Ex->fk_p }}" required>
-                        </div>
+                        
                         <div class="row mb-4">
                             <div class="col">
-                                <label for="formGroupExampleInput">TEMPERATURA </label>
-                                <input type="text" class="form-control" placeholder="TEMPERATURA" name="TEMP"
-                                    value="{{ $Ex->TEMP }}">
+                                <label for="formGroupExampleInput">Temperatura</label>
+                                <input type="numeric" class="form-control" placeholder="TEMPERATURA" name="TEMP"
+                                    value="{{ $Ex->TEMP }}" pattern="^\d+(\.\d+)?$" required>
                             </div>
                             <div class="col">
                                 <label for="formGroupExampleInput">PESO (KG) </label>
-                                <input type="text" class="form-control" placeholder="PESO (KG)" name="PESO"
-                                    value="{{ $Ex->PESO }}">
+                                <input type="numeric " class="form-control" placeholder="PESO (KG)" name="PESO"
+                                    value="{{ $Ex->PESO }}" pattern="^\d+(\.\d+)?$" required>
                             </div>
                             </div>
 
                                 <div class="row mb-4">
                             <div class="col">
-                                <label for="formGroupExampleInput">NOMBRE EXPLORACION </label>
+                                <label for="formGroupExampleInput">Nombre de exploración </label>
                                 <input type="text" class="form-control" placeholder="Exploracion Cabeza"
-                                    name="NEF" value="{{ $Ex->Nombre_ef }}" required>
+                                    name="NEF" value="{{ $Ex->Nombre_ef }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="5" required>
                             </div>
                             <div class="col">
-                                <label for="formGroupExampleInput">CABEZA </label>
+                                <label for="formGroupExampleInput">Cabeza </label>
                                 <input type="text" class="form-control" placeholder="Exploracion Cabeza"
-                                    name="CAEF" value="{{ $Ex->Cabeza_ef }}" required>
+                                    name="CAEF" value="{{ $Ex->Cabeza_ef }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="5" required>
                             </div>
                             </div>
 
                                 <div class="row mb-4">
                             <div class="col">
-                                <label for="formGroupExampleInput">CUELLO</label>
+                                <label for="formGroupExampleInput">Cuello</label>
                                 <input type="text" class="form-control" placeholder="Exploracion cuello  "
-                                    name="CUEF" value="{{ $Ex->Cuello_ef }}" required>
+                                    name="CUEF" value="{{ $Ex->Cuello_ef }}"  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="5"required>
                             </div>
                             <div class="col">
-                                <label for="formGroupExampleInput">ABDOMEN </label>
+                                <label for="formGroupExampleInput">Abdomen </label>
                                 <input type="text" class="form-control" placeholder="Exploracion abdomen "
-                                    name="ABEF" value="{{ $Ex->Abdomen_ef }}" required>
+                                    name="ABEF" value="{{ $Ex->Abdomen_ef }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="5" required>
                             </div>
                         </div>
                         <div class="row mb-4">
                             <div class="col">
-                                <label for="formGroupExampleInput">MIEMBRO PELVICO </label>
+                                <label for="formGroupExampleInput">Miembro pelvico </label>
                                 <input type="text" class="form-control" placeholder="Exploracion miembro pelvico"
-                                    name="MP" value="{{ $Ex->Miembro_pelvico_ef }}" required>
+                                    name="MP" value="{{ $Ex->Miembro_pelvico_ef }}"pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="5" required>
                             </div>
                             <div class="col">
-                                <label for="formGroupExampleInput">MIEMBRO TORAXICO</label>
+                                <label for="formGroupExampleInput">Miembro toraxico</label>
                                 <input type="text" class="form-control" placeholder="Exploracion miembro toraxico"
-                                    name="MT" value="{{ $Ex->Miembro_toraxico_ef }}" required>
+                                    name="MT" value="{{ $Ex->Miembro_toraxico_ef }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="5" required>
                             </div>
 
                         </div>

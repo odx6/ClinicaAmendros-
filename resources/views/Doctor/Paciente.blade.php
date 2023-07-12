@@ -51,7 +51,7 @@
                 <div class="row layout-top-spacing layout-spacing" id="cancel-row">
                     <div class="col-xl-12 col-lg-12 col-md-12">
 
-                        
+
                         <div id="tabsWithIcons" class="col-lg-12 col-12 layout-spacing">
                             <div class="statbox widget box box-shadow">
                                 <div class="widget-header">
@@ -95,15 +95,6 @@
                                             @include('Doctor.Menu.NotasPos')
                                             @include('Doctor.Menu.Notas')
                                             @include('Doctor.Menu.Exploraciones')
-
-
-
-
-
-
-
-
-
                                         </div>
                                     </div>
 
@@ -111,48 +102,41 @@
                                 <!-- Modal -->
                                 @include('Doctor.Menu.Modal')
                                 @include('Doctor.Menu.Modal2')
-                                <!--- end Modal receta--->
 
-
-                                <!---Modal consentimiento  -->
-
-
-                                
-                                <div class="text-center">
-                                 
-                                <div class="col-lg-5">
-
-                                    <!-- Rotate in right modal -->
-                                    <button type="button" class="btn btn-info mb-2 me-4" data-bs-toggle="modal"
-                                        data-bs-target="#rotateleftModal">Generar carta consentimiento</button>
-                                           <form action="{{ route('Historial.pdf', ['id' => $Paciente->SS]) }}" method="POST">
-                                    @csrf
-                                    <!-- Resto de los campos del formulario -->
-                                    <button type="submit"class="btn btn-danger mb-2 me-4">Generar Historial PDF</button>
-                                </form>
-                                </div>
-                                    <button type="button" class="btn btn-primary mr-2" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">
-                                        Generar Receta
-                                    </button>
-                                     <form action="{{ route('index.Consultas',['pacientes'=>$Paciente]) }}" method="GET">
-                    @csrf
-                    <!-- Resto de los campos del formulario -->
-                    <button type="submit"class="btn btn-danger mb-2 me-4">Terminar Consulta</button>
-                </form>
-
-                                </div>
-                                <!--end tags--->
                             </div>
+
+
+
+
+                            
+
                         </div>
 
-                        <!-- Modal -->
-
-                        <!--end_Calendario-->
-
                     </div>
+                    <div class="modal-footer">
+                    <!-- Rotate in right modal -->
+                    <button type="button" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola" data-bs-toggle="modal"
+                    data-bs-target="#rotateleftModal">Generar carta consentimiento</button>
+                <form action="{{ route('Historial.pdf', ['id' => $Paciente->SS]) }}" method="POST">
+                    @csrf
+                    <!-- Resto de los campos del formulario -->
+                    <button type="submit"class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Generar Historial
+                        PDF</button>
+                </form>
+
+                <button type="button" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Generar Receta
+                </button>
+                <form action="{{ route('index.Consultas', ['pacientes' => $Paciente]) }}" method="GET">
+                    @csrf
+                    <!-- Resto de los campos del formulario -->
+                    <button type="submit"class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola">Terminar Consulta</button>
+                </form>
+
 
                 </div>
+            </div>
 
                 @include('layouts.footer')
             </div>
@@ -163,7 +147,7 @@
     @endsection
     @section('Scripts')
         <!-- BEGIN PAGE LEVEL SCRIPTS -->
-      
+
         <script src="../MisFunciones/Desactivar.js"></script>
         <!--  END CUSTOM SCRIPTS FILE  -->
         <script src="../src/plugins/src/highlight/highlight.pack.js"></script>

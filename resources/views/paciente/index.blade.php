@@ -184,7 +184,7 @@
 
                                 <div class="col">
                                     <input type="text" class="form-control" placeholder="Direccion del paciente"
-                                        name="Direccion" required minlength="4">
+                                        name="Direccion" required minlength="4" pattern="[A-Za-z0-9\s\-\,\#]+">
                                         <div class="valid-feedback">
                                             Datos Direccion correctos
                                         </div>

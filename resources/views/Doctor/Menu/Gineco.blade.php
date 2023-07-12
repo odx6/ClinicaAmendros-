@@ -30,71 +30,56 @@
                                             <h2> ANTECEDENTES Ginecobstrecticos </h2>
                                             @foreach ($Gineco as $Gine)
                                                 <!--- Historial-->
-                                                <form class="user" method="POST"
-                                                    action="{{ route('Gineco.update') }}">
+                                                <form class="user needs-validation" method="POST"
+                                                    action="{{ route('Gineco.update',['IDAG'=>$Gine->id_a_g, 'IDPA'=>$Gine->fk_ag]) }}" novalidate>
                                                     @csrf
                                                     <!--Antecedentes ginecologicos-->
-                                                    <div class="row mb-4">
-
-                                                        <div class="col">
-                                                            <label for="formGroupExampleInput">IDENTIFICADOR DE ANALISIS
-                                                            </label>
-                                                            <input type="text" class="form-control"
-                                                                placeholder="Identificador del analisis" name="IDAG"
-                                                                value="{{ $Gine->id_a_g }}">
-                                                        </div>
-                                                        <div class="col">
-                                                            <label for="formGroupExampleInput">Identificador Del Paciente
-                                                            </label>
-                                                            <input type="text" class="form-control"
-                                                                placeholder="Identificador Del Paciente" name="IDPA"
-                                                                value="{{ $Gine->fk_ag }}">
-
-                                                        </div>
-
-                                                    </div>
+                                                
 
                                                     <div class="row mb-4">
 
                                                         <div class="col">
-                                                            <label for="formGroupExampleInput">MENARCA </label>
-                                                            <input type="text" class="form-control"
+                                                            <label for="formGroupExampleInput">Menarca </label>
+                                                            <input type="numeric" class="form-control"
                                                                 placeholder="Inicio de la menstruacion en años "
-                                                                name="Menarca" value="{{ $Gine->Menarca }}">
+                                                                name="Menarca" value="{{ $Gine->Menarca }}"   pattern="^\d+(\.\d+)?$" required >
                                                         </div>
                                                         <div class="col">
-                                                            <label for="formGroupExampleInput">INCIO DE LA ACTIVIDAD SEXUAL
+                                                            <label for="formGroupExampleInput">Inicio actividad sexual
                                                             </label>
-                                                            <input type="text" class="form-control"
+                                                            <input type="numeric" class="form-control"
                                                                 placeholder="inicio de la vida sexual" name="IVSA"
-                                                                value="{{ $Gine->Ivsa }}">
+                                                                value="{{ $Gine->Ivsa }}"   pattern="^\d+(\.\d+)?$" required >
 
                                                         </div>
+                                                        </div>
+                                                          <div class="row mb-4">
                                                         <div class="col">
-                                                            <label for="formGroupExampleInput">NUMERO DE GESTAS </label>
-                                                            <input type="text" class="form-control"
+                                                            <label for="formGroupExampleInput">Número de gestas </label>
+                                                            <input type="numeric" class="form-control"
                                                                 placeholder="Numero de gestas " name="gestas"
-                                                                value="{{ $Gine->Gesta }}">
+                                                                value="{{ $Gine->Gesta }}"   pattern="^\d+(\.\d+)?$" required>
                                                         </div>
-                                                    </div>
-                                                    <div class="row mb-4">
+                                                    
                                                         <div class="col">
-                                                            <label for="formGroupExampleInput">NUMERO DE CESAREAS </label>
-                                                            <input type="text" class="form-control"
+                                                            <label for="formGroupExampleInput">Número de cesareas </label>
+                                                            <input type="numeric" class="form-control"
                                                                 placeholder="Numero de cesareas" name="Cesareas"
-                                                                value="{{ $Gine->Paras }}">
+                                                                value="{{ $Gine->Paras }}"   pattern="^\d+(\.\d+)?$" required>
                                                         </div>
+                                                         </div>
+                                                          <div class="row mb-4">
                                                         <div class="col">
-                                                            <label for="formGroupExampleInput">NUMERO DE ABORTOS</label>
-                                                            <input type="text" class="form-control"
+                                                            <label for="formGroupExampleInput">Número de abortos</label>
+                                                            <input type="numeric" class="form-control"
                                                                 placeholder="Numero de Abortos" name="Abortos"
-                                                                value="{{ $Gine->Aborto }}">
+                                                                value="{{ $Gine->Aborto }}"   pattern="^\d+(\.\d+)?$" required>
                                                         </div>
                                                         <div class="col">
-                                                            <label for="formGroupExampleInput">NUMERO DE PARAS</label>
-                                                            <input type="text" class="form-control"
+                                                            <label for="formGroupExampleInput">Número de paras</label>
+                                                            <input type="numeric" class="form-control"
                                                                 placeholder="Numero de Partos" name="Partos"
-                                                                value="{{ $Gine->Paras }}">
+                                                                value="{{ $Gine->Paras }}"   pattern="^\d+(\.\d+)?$" required>
                                                         </div>
                                                     </div>
 
@@ -109,8 +94,8 @@
                                                     @csrf
                                                     <button type="submit"
                                                         class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
-                                                        id="Hola">Agregar Antecedente Ginecobstetrico</button>
-                                                </form>
+                                                        id="Hola" style="display: none;">Agregar Antecedente Ginecobstetrico</button>
+                                                </form>s
                                                 <form class="user" method="POST"
                                                     action="{{ route('Gineco.destroy', ['id' => $Gine->fk_ag]) }}">
                                                     @csrf

@@ -27,7 +27,7 @@ class APatologicoController extends Controller
     public function create(Request $request)
     {
         $patologico= new a_patologico;
-        $patologico->fk_ap =request('IDPA');
+        $patologico->fk_ap =request('id');
         $patologico->Dm=request('DMN');
         $patologico->DmTE=request('DMTE');
         $patologico->Has=request('HASN');

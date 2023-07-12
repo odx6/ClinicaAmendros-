@@ -43,47 +43,38 @@
 
                     <!-- Estudios -->
                     
-                            <form class="user" method="POST" action="{{ route('Notas.create',['id'=>$id]) }}">
+                            <form class="user needs-validation" method="POST" action="{{ route('Notas.create',['id'=>$id]) }}" novalidate>
                                 @csrf
 
 
-                                
-                                <div class="col">
-                                    <label for="formGroupExampleInput">IDENTIFICADOR DEL PACIENTE
-                                    </label>
-                                    <input type="text" class="form-control"
-                                        placeholder="Identificador Del Paciente" name="IDPA"
-                                        value="{{ $id }}">
-                                </div>
+                                <h1>Notas </h1>
+                                <br>
 
                                 <div class="row mb-4">
                                     <div class="col">
                                         <label for="formGroupExampleInput">NOTA </label>
-                                        <input type="text" class="form-control"
-                                            placeholder="cuerpo de la nota" name="NOT"
-                                            required>
+                                        <input type="text" class="form-control" placeholder="cuerpo de la nota"
+                                            name="NOT" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                                     </div>
-                                    </div>
-
+                                </div>
                                 <div class="row mb-4">
                                     <div class="col">
                                         <label for="formGroupExampleInput">TIPO DE NOTA</label>
-                                        <input type="text" class="form-control"
-                                            placeholder="TIPO DE NOTA" name="TIPO"
-                                            required>
+                                        <input type="text" class="form-control" placeholder="TIPO DE NOTA"
+                                            name="TIPO" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                                     </div>
 
                                 </div>
-                                <!----- end Notas--->
                                 <!--end notaspost-->
-                                <div class="modal-footer">
+                                
+                        
+                        </div>
+                      
                                     
                                     <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
                                         >Enviar Datos</button>
-                                </div>
+                                
                             </form>
-                        
-                        </div>
                         
                     </div>
                   
