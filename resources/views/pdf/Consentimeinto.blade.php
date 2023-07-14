@@ -8,15 +8,15 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            font-size: 12px;
+            font-size: 9px;
         }
 
         header {
-            height: 2cm;
+            height: 1.5 cm;
             background-color: #ffffff;
             color: rgb(0, 0, 0);
             text-align: center;
-            line-height: 30px;
+            line-height: 20px;
         }
 
         footer {
@@ -28,8 +28,8 @@
         }
 
         .container {
-            padding: 20px;
-            margin-top: 40px;
+            padding: 0px;
+            margin-top: 0px;
         }
 
         h2, h3, h4 {
@@ -51,12 +51,12 @@
 </head>
 <body>
 <header>
-    <h4>Clínica Almendros <br>Unidad Médico Quirúrgica</h4>
+    <h7>Clínica Almendros <br>Unidad Médico Quirúrgica</h7>
 </header>
 <br>
 <main>
     <div class="container">
-        <h3 class="fecha">CARTA DE CONSENTIMIENTO BAJO INFORMACION</h3>
+        <h8 class="fecha">CARTA DE CONSENTIMIENTO BAJO INFORMACION</h8>
         <div class="row">
             <div class="col-md-6">
                 <div class="image-container">
@@ -65,8 +65,8 @@
                     <p>Una corta estancia<br>con calidez y calidad</p>
                 </div>
             </div>
-            <div class="col-md-6">
-                <h2>Información del paciente:</h2>
+            <div class="col-md-12">
+                <h7>Información del paciente:</h7>
                 <p>Nombre completo: <strong>{{$Paciente->Nombre}} {{$Paciente->Apellido}}</strong></p>
                 <p>Edad: <strong>{{$Paciente->Edad}} Años</strong></p>
                 <p>Domicilio: <strong>{{$Paciente->Direccion}}</strong></p>
@@ -76,20 +76,20 @@
                 <p>En calidad de: <strong>{{ $CalidadPaciente}}</strong></p>
             </div>
         </div>
-        <h4>DECLARO</h4>
+        <h7>DECLARO</h7>
         <p class="justi">
-            Que el (la) Dr(a). {{$Doctor->ESPECIALIDAD}} me ha explicado que es conveniente proceder a {{ $Tratamiento }}
+            Que el (la) Dr(a). {{$Doctor->Nombre}} {{$Doctor->Apellidos}}  me ha explicado que es conveniente proceder a {{ $Tratamiento }}
             y que, todo acto médico, diagnóstico o terapéutico, sea quirúrgico o no quirúrgico, lleva implícito una serie
             de complicaciones mayores o menores a veces potencialmente serias, incluyen cierto riesgo de mortalidad y que
             pueden requerir tratamientos complementarios, médicos o quirúrgicos que aumentan su estancia hospitalaria,
             dichas complicaciones unas veces son derivadas directamente de las propias técnicas, pero otras dependen del
             procedimiento, del estado previo del paciente y de los tratamientos que están recibiendo o de las posibles
             anomalías anatómicas y/o de la utilización de los equipos médicos. Entre las complicaciones que pueden surgir
-            en: {{ $Tratamiento }}
+            en: {{ $Tratamiento }}  se encuentra {{ $CalidadPaciente }}
         </p>
-        <p class="justi">
-            se encuentra {{ $CalidadPaciente }}
-        </p>
+       
+           
+       
         <p class="justi">
             Por lo que he comprendido las explicaciones que se me han facilitado en un lenguaje claro y sencillo y que el
             médico que me ha atendido me realizó todas las observaciones y aclaró todas las dudas que le he planteado.
@@ -99,7 +99,7 @@
             para que exclusivamente el (ella) reciba información sobre mi estado de salud, diagnóstico, tratamiento
             y/o pronóstico y en tales condiciones.
         </p>
-        <h4>CONSIENTO</h4>
+        <h7>CONSIENTO</h7>
         <p class="justi">
             En que se me realicen los procedimientos de diagnóstico y tratamientos que me fueron explicados y que me doy
             por enterado en mi declaración. Así como, me reservo expresamente el derecho de revocar mi consentimiento en
@@ -122,7 +122,7 @@
         <div class="row">
             <div class="col-md-6">
                 <br>
-                <p>_____________________________<br>{{$Doctor->ESPECIALIDAD}}</p>
+                <p>_____________________________<br>{{$Doctor->Nombre}} {{$Doctor->Apellidos}}</p>
                 <br>
                 <br>
                 <p>______________________________<br>{{$NombreResponsable}}</p>

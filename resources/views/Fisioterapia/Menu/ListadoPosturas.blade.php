@@ -17,108 +17,87 @@
             <form class="user" method="POST" action="{{ route('index.Postura', ['id' => $Paciente->SS]) }}">
                 @csrf
                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-                    style="display: none;">Agregar Evaluacion  Evaluación postura</button>
+                    style="display: none;">Agregar Evaluacion Evaluación postura</button>
             </form>
         </div>
     @else
         @foreach ($PosturaFrontal as $postura)
-            <form class="user" method="POST"
-                action="{{ route('update.Postura', ['id' => $postura->pk_vista]) }}">
+            <form class="user needs-validation" method="POST"
+                action="{{ route('update.Postura', ['id' => $postura->pk_vista]) }}" novalidate>
                 @csrf
-                  <div class="container">
-                        <h2>Evaluacion Postura</h2>
-                        <div class="row">
-                            <div class="col-sm">
 
-                                <!---septimo container-->
-                                <div class="container">
+                <h2>Evaluacion Postura</h2>
 
-                                    <div class="container">
-                                        <h2>{{$postura->Nombre}}</h2>
-                                        <div class="row">
-                                            <div class="col-sm">
-                                                <div class="table-responsive">
-                                                    <table class="table">
-                                                        <thead>
-                                                            <tr>
-                                                               <th scope="col">Aliniacion Corporal</th>
-                                                                <th scope="col">GRADOS L M S</th>
-                                                                
-                                                                <th class="text-center" scope="col">Observaciones</th>
-                                                            </tr>
-                                                            <tr aria-hidden="true" class="mt-3 d-block table-row-hidden">
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            @if ($postura->Posturas->count() > 0)
-                                                              @foreach ($postura->Posturas as $pos)
-                                                            
-                                                                <tr>
-                                                                    <td>
-                                                                        
-                                                                        <div class="form-group">
-                                                          
-                                                            <input type="text" class="form-control"
-                                                                id="exampleFormControlInput1"
-                                                                value="{{$pos->Inclinacion_Corporal}}"
-                                                                name="Posturas[{{ $pos->pk_postura }}][Nombre]"
-                                                                placeholder="Observaciones">
-                                                        </div>
-                                                    </td>
-                                                                    <td>  <select class="form-control"
-                                                                        name="Posturas[{{  $pos->pk_postura }}][L]">
-                                                                     
-                                                                       <option value="L" @if($pos->valor=="L") selected  @endif>Leve</option>
-                                                                     <option value="M"  @if($pos->valor=="M") selected  @endif>Moderado</option>
-                                                                     <option value="S"  @if($pos->valor=="S") selected  @endif>S</option>
-                                                                    </select>
-                                                                
-                                                                    <td>
-                                                                        <div class="form-group">
-                                                          
-                                                            <input type="text" class="form-control"
-                                                                id="exampleFormControlInput1"
-                                                                value="{{$pos->Observaciones}}"
-                                                                name="Posturas[{{ $pos->pk_postura }}][Observaciones]"
-                                                                placeholder="Observaciones">
-                                                        </div>
-                                                                    </td>
-                                                                     <td>
-                                                                        <div class="form-group">
-                                                          
-                                                            <input type="hidden" class="form-control"
-                                                                id="exampleFormControlInput1"
-                                                                value="{{$pos->pk_postura}}"
-                                                                name="Posturas[{{ $pos->pk_postura }}][IDP]"
-                                                                placeholder="Observaciones">
-                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                          
-                                                            <tr>
- @endforeach
-                                      @endif
+                <h2>{{ $postura->Nombre }}</h2>
 
-                                                        </tbody>
-                                                    </table>
-                                                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Aliniacion Corporal</th>
+                                <th scope="col">GRADOS L M S</th>
+
+                                <th class="text-center" scope="col">Observaciones</th>
+                            </tr>
+                            <tr aria-hidden="true" class="mt-3 d-block table-row-hidden">
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if ($postura->Posturas->count() > 0)
+                                @foreach ($postura->Posturas as $pos)
+                                    <tr>
+                                        <td>
+
+                                            <div class="form-group">
+
+                                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                    value="{{ $pos->Inclinacion_Corporal }}"
+                                                    name="Posturas[{{ $pos->pk_postura }}][Nombre]"
+                                                    placeholder="Observaciones" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3" required>
                                             </div>
+                                        </td>
+                                        <td> <select class="form-control" name="Posturas[{{ $pos->pk_postura }}][L]" required>
 
-                                        </div>
-                                    </div>
-                                    <!---table-->
-                                     
-                                    <!--end table -->
-                                </div>
+                                                <option value="L"
+                                                    @if ($pos->valor == 'L') selected @endif>
+                                                    Leve</option>
+                                                <option value="M"
+                                                    @if ($pos->valor == 'M') selected @endif>
+                                                    Moderado</option>
+                                                <option value="S"
+                                                    @if ($pos->valor == 'S') selected @endif>
+                                                    S</option>
+                                            </select>
 
-                                <!---end--septimo container-->
-                            </div>
-                            
+                                        <td>
+                                            <div class="form-group">
 
-                        </div>
-                    </div>
-               
-                <!--end-table-->
+                                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                    value="{{ $pos->Observaciones }}"
+                                                    name="Posturas[{{ $pos->pk_postura }}][Observaciones]"
+                                                    placeholder="Observaciones" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3" required>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+
+                                                <input type="hidden" class="form-control" id="exampleFormControlInput1"
+                                                    value="{{ $pos->pk_postura }}"
+                                                    name="Posturas[{{ $pos->pk_postura }}][IDP]"
+                                                    placeholder="Observaciones">
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                @endforeach
+                            @endif
+
+                        </tbody>
+                    </table>
+                </div>
+
                 <div class="modal-footer">
 
                     <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
@@ -126,19 +105,17 @@
             </form>
             <form class="user" method="POST" action="{{ route('index.Postura', ['id' => $Paciente->SS]) }}">
                 @csrf
-                <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
-                    id="Hola" style="display: none;">Agregar Evaluacion Postura
+                <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
+                    style="display: none;">Agregar Evaluacion Postura
                 </button>
             </form>
-            <form class="user" method="POST"
-                action="{{ route('destroy.Postura', ['id' => $postura->pk_vista]) }}">
+            <form class="user" method="POST" action="{{ route('destroy.Postura', ['id' => $postura->pk_vista]) }}">
                 @csrf
                 <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
                     style="display: none;">Eliminar</button>
             </form>
 
 </div>
-
 @endforeach
 @endif
 </div>

@@ -27,37 +27,21 @@
         <h2> TRATAMEINTOS PREVIOS DEL PACIENTE </h2>
         @foreach ($Tratamiento as $trata)
             <!--- Historial-->
-            <form class="user" method="POST"
-                action="{{ route('update.TratamientoF', ['id' => $trata->pk_tratamientos_p]) }}">
+            <form class="user needs-validation" method="POST"
+                action="{{ route('update.TratamientoF', ['id' => $trata->pk_tratamientos_p]) }}" novalidate>
                 @csrf
                 <!--Antecedentes ginecologicos-->
-                <div class="row mb-4">
-
-                    <div class="col">
-                        <label for="formGroupExampleInput">IDENTIFICADOR DEL
-                            TRATAMIENTO
-                        </label>
-                        <input type="text" class="form-control" placeholder="Identificador del analisis"
-                            name="IDAG" value="{{ $trata->pk_tratamientos_p }}">
-                    </div>
-                    <div class="col">
-                        <label for="formGroupExampleInput">Identificador Del
-                            Paciente
-                        </label>
-                        <input type="text" class="form-control" placeholder="Identificador Del Paciente"
-                            name="IDPA" value="{{ $trata->fk_tratamientos_p }}">
-
-                    </div>
-
-                </div>
+               
 
                 <div class="row mb-4">
 
                     <div class="col">
                         <label for="formGroupExampleInput">Tratamientos Previos
                         </label>
-                        <input type="text" class="form-control" placeholder="Inicio de la menstruacion en años "
-                            name="Tratamiento" value="{{ $trata->des_tratamiento }}">
+                       
+
+                               <textarea type="text" class="form-control" id="exampleFormControlInput1"
+                                                        value="" name="Tratamiento" placeholder="Tratamientos" required minlength="3" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">{{ $trata->des_tratamiento }}</textarea>
                     </div>
 
                 </div>

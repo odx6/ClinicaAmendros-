@@ -73,7 +73,7 @@ text-align: right;
           </div>
         
        
-    <p class="abajo">________________________<br> Firma: Dr. Juan Pérez<br></p>
+    <p class="abajo">________________________<br>{{$Doctor->Nombre}} {{$Doctor->Apellidos}}<br></p>
     </div>
     
 </body>

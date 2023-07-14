@@ -3,8 +3,8 @@
 @section('formulario')
 
 <div class="col">
-    <form class="user" method="POST"
-    action="{{ route('create.AntecedenteHAB', ['id' => $id]) }}">
+    <form class="user needs-validation" method="POST"
+    action="{{ route('create.AntecedenteHAB', ['id' => $id]) }}" novalidate>
     @csrf
     <h2>Habitos de la salud para el paciente {{$id}}</h2>
     <table class="table">
@@ -16,12 +16,7 @@
                 <th scope="col">
                     <h3>Especifique</h3>
                 </th>
-                <th scope="col">
-                    <h3>si no</h3>
-                </th>
-                <th scope="col">
-                    <h3>Especifique</h3>
-                </th>
+                
 
             </tr>
             <tr aria-hidden="true" class="mt-3 d-block table-row-hidden"></tr>
@@ -44,9 +39,11 @@
 
                         <input type="text" class="form-control"
                             id="exampleFormControlInput1" value=""
-                            placeholder="Especificaciones Tabaquismo" name="ETabaquismo">
+                            placeholder="Especificaciones Tabaquismo" name="ETabaquismo" required  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                     </div>
                 </td>
+            </tr>
+             <tr>
                 <td>
                     <div class="switch form-switch-custom switch-inline form-switch-success">
                         <label class="switch-label" for="form-custom-switch-success">Actividad
@@ -61,12 +58,13 @@
 
                         <input type="text" class="form-control"
                             id="exampleFormControlInput1" value=""
-                            placeholder="Especificaciones Actividad fisica" name="EActividad-física" value="si">
+                            placeholder="Especificaciones Actividad fisica" name="EActividad-física" value="si" required  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                     </div>
                 </td>
 
             </tr>
-            <tr>
+             <tr>
+         
 
                 <td>
                     <div class="switch form-switch-custom switch-inline form-switch-success">
@@ -82,9 +80,11 @@
 
                         <input type="text" class="form-control"
                             id="exampleFormControlInput1" value=""
-                            placeholder="Especificaciones Alcholismo " name="EAlcholismo" value="si">
+                            placeholder="Especificaciones Alcholismo " name="EAlcholismo" value="si" required  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                     </div>
                 </td>
+                </tr>
+             <tr>
                 <td>
                     <div class="switch form-switch-custom switch-inline form-switch-success">
                         <label class="switch-label" for="form-custom-switch-success">Se
@@ -99,13 +99,13 @@
 
                         <input type="text" class="form-control"
                             id="exampleFormControlInput1" value=""
-                            placeholder="Especificaciones Se Automedica " name="ESe-Automedica" value="si">
+                            placeholder="Especificaciones Se Automedica " name="ESe-Automedica" value="si" required  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                     </div>
                 </td>
 
 
             </tr>
-            <tr>
+             <tr>
 
                 <td>
                     <div class="switch form-switch-custom switch-inline form-switch-success">
@@ -121,9 +121,11 @@
 
                         <input type="text" class="form-control"
                             id="exampleFormControlInput1" value=""
-                            placeholder="Especificaciones Drogas " name="EDrogas" value="si">
+                            placeholder="Especificaciones Drogas " name="EDrogas" value="si" required  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                     </div>
                 </td>
+                </tr>
+             <tr>
                 <td>
                     <div class="switch form-switch-custom switch-inline form-switch-success">
                         <label class="switch-label"
@@ -138,7 +140,7 @@
 
                         <input type="text" class="form-control"
                             id="exampleFormControlInput1" value=""
-                            placeholder="Especificaciones Pasatiempos " name="EPasatiempo" value="si">
+                            placeholder="Especificaciones Pasatiempos " name="EPasatiempo" value="si" required  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                     </div>
                 </td>
             </tr>

@@ -10,12 +10,12 @@
                     <div class="col-sm">
                         <h2>Miembro</h2>
                         <input type="text" class="form-control form-control-lg" placeholder="Nombre del miembro a evaluar"
-                            name="NombreMiembro" placeholder="Nombre del miembro a evaluar" value="">
+                            name="NombreMiembro" placeholder="Nombre del miembro a evaluar" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3" required>
                             <td>
 
                                 <select class="form-select form-select-lg mb-3"
-                                    aria-label=".form-select-lg example"name="TipoM">
-                                    <option selected>Tipo</option>
+                                    aria-label=".form-select-lg example"name="TipoM" required>
+                                    <option elected disabled value="">Tipo</option>
                                     <option value="Superior">Miembro Superior</option>
                                     <option value="Inferior">Miembro Inferior</option>
 
@@ -40,7 +40,7 @@
                                                 <td>
                                                     <input type="text" class="form-control form-control-lg"
                                                         placeholder="Nombre del movimiento"
-                                                        name="Movimientos[movimento][Nombre]" value="">
+                                                        name="Movimientos[movimento][Nombre]" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3" required>
                                                 </td>
                                                 <td>
                                                     <select class="form-control" name="Movimientos[movimento][Valor]">
@@ -111,7 +111,7 @@
 
                 <div class="input-group">
                     <span class="input-group-text">Observaciones</span>
-                    <textarea class="form-control" aria-label="With textarea" name="observaciones"></textarea>
+                    <textarea class="form-control" aria-label="With textarea" name="observaciones" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3" required></textarea>
                 </div>
                 <br>
                 <br>

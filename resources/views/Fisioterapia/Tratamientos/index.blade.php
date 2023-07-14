@@ -13,34 +13,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('src/assets/css/light/forms/switches.css') }}">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('src/assets/css/dark/forms/switches.css') }}">
-    <style>
-        input[type="range"] {
-            width: 100%;
-        }
 
-        input[type="range"]::-webkit-slider-runnable-track {
-            background: linear-gradient(to right, green 0%, yellow 50%, red 100%);
-        }
-
-        input[type="range"]::-moz-range-track {
-            background: linear-gradient(to right, green 0%, yellow 50%, red 100%);
-        }
-
-        input[type="range"]::-ms-track {
-            background: linear-gradient(to right, green 0%, yellow 50%, red 100%);
-        }
-
-        h2 {
-            background-color: #c4c8c5;
-            text-align: center;
-        }
-
-        label {
-
-            font-size-adjust: initial;
-            font-size: .3cm;
-        }
-    </style>
 @endsection
 
 @section('content')
@@ -65,7 +38,7 @@
                     <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Registrar Paciente Secretaria</li>
+                            <li class="breadcrumb-item active" aria-current="page">Registrar tratamientos</li>
                         </ol>
                     </nav>
                 </div>
@@ -75,27 +48,15 @@
 
                     <!--Primer seccion de container--->
                     <div class="container">
-           <form class="user" method="POST" action="{{ route('create.TratamientoF', ['id' => $id]) }}">
-              @csrf
+                        <form class="user needs-validation" method="POST" action="{{ route('create.TratamientoF', ['id' => $id]) }}" novalidate>
+                            @csrf
                             <div class="col">
-                                
+
                                 <h2>Tratamientos</h2>
                                 <table class="table">
 
                                     <tbody>
-                                         <tr>
-
-                                            <td>
-                                                <h3>Identificador :</h3>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-   
-    <input type="text" class="form-control" id="exampleFormControlInput1" value="{{$id}}" name="Peso">
-</div> 
-                                            </td>
-
-                                        </tr>
+                                       
                                         <tr>
 
                                             <td>
@@ -103,49 +64,50 @@
                                             </td>
                                             <td>
                                                 <div class="form-group">
-   
-    <input type="text" class="form-control" id="exampleFormControlInput1" value="" name="Tratamiento" placeholder="Tratamientos">
-</div> 
+
+                                                    <textarea type="text" class="form-control" id="exampleFormControlInput1"
+                                                        value="" name="Tratamiento" placeholder="Tratamientos" required minlength="3" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"></textarea>
+                                                </div>
                                             </td>
 
                                         </tr>
-                                        
+
                                     </tbody>
                                 </table>
 
                             </div>
-                          
-                          
-                        </div>
+
 
                     </div>
-                    <input type="submit" name="time" class="btn btn-primary">
-                  
+
+                </div>
+                <input type="submit" name="time" class="btn btn-primary">
+
             </div>
             </form>
 
         </div>
 
     </div>
- 
+
     <!---end--octavo container-->
 
 
 
 
-                </div>
-            </div>
+    </div>
+    </div>
 
 
-            @include('layouts.footer')
-        </div>
-        <!--  END CONTENT AREA  -->
+    @include('layouts.footer')
+    </div>
+    <!--  END CONTENT AREA  -->
 
     </div>
     <!-- END MAIN CONTAINER -->
 @endsection
 @section('Scripts')
-    
+
 
     <!--  END CUSTOM SCRIPTS FILE  -->
 

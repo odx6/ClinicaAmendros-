@@ -34,7 +34,7 @@
 
         <div class="row">
             <div class="col">
-                <form class="user" method="POST" action="{{ route('update.AntecedenteHAB') }}">
+                <form class="user needs-validation" method="POST" action="{{ route('update.AntecedenteHAB') }}" novalidate>
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
@@ -61,7 +61,7 @@
                                         <br>
                                         <input type="text" class="form-control" id="exampleFormControlInput1"
                                             value="{{ $item->Especificacion }}"
-                                            placeholder="Especificacion para diabetes" name="E{{ $item->Nombre }}"><br>
+                                            placeholder="Especificacion para diabetes" name="E{{ $item->Nombre }}" required  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"><br>
                                     </div>
                                     <div class="form-group">
                                         <br>
@@ -103,7 +103,7 @@
                                         <br>
                                         <input type="text" class="form-control" id="exampleFormControlInput1"
                                             value="{{ $item->Especificacion }}"
-                                            placeholder="Especificacion para diabetes" name="E{{ $item->Nombre }}">
+                                            placeholder="Especificacion para diabetes" name="E{{ $item->Nombre }}" required  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                                         <br>
                                     </div>
                                     <div class="form-group">

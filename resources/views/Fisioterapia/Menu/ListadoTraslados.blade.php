@@ -21,12 +21,12 @@
         </div>
     @else
         @foreach ($Traslados as $trase)
-        <form class="user" method="POST" action="{{ route('update.Traslados',['id'=>$trase->pk_traslados]) }}">
+        <form class="user needs-validation" method="POST" action="{{ route('update.Traslados',['id'=>$trase->pk_traslados]) }}" novalidate>
             @csrf
             <div class="col-sm">
 
                 <h3>Val Inicial</h3>
-                <select class="form-control" name="Inicial">
+                <select class="form-control" name="Inicial" required>
                     <option value="{{$trase->Val_inicial}}">{{$trase->Val_inicial}}</option>
                     @php
                         $traslados = ['Independiente', 'Silla de ruedas', 'con ayudas', 'camillas'];
@@ -37,7 +37,7 @@
                     @endforeach
                 </select>
                 <h3>Val.final</h3>
-                <select class="form-control" name="Final">
+                <select class="form-control" name="Final" required>
                     <option value="{{$trase->Val_final}}">{{$trase->Val_final}}</option>
                     @php
                         $traslados = ['Independiente', 'Silla de ruedas', 'con ayudas', 'camillas'];

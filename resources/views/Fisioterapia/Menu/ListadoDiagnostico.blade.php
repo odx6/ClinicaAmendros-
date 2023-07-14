@@ -22,7 +22,7 @@
     @else
         <!--Antecedentes patologicos-->
         @foreach ($DIME as $dime)
-            <form class="user" method="POST" action="{{ route('update.Diagnostico', ['id' => $dime->fk_dmi]) }}">
+            <form class="user needs-validation" method="POST" action="{{ route('update.Diagnostico', ['id' => $dime->fk_dmi]) }}" novalidate>
                 @csrf
                 <div class="container">
                     <div class="row">
@@ -30,7 +30,7 @@
 
                             <div class="input-group">
                                 <span class="input-group-text">Reflejos</span>
-                                <textarea class="form-control" aria-label="With textarea" name="Reflejos">{{ $dime->Reflejos }}</textarea>
+                                <textarea class="form-control" aria-label="With textarea" name="Reflejos" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>{{ $dime->Reflejos }}</textarea>
                             </div>
 
                         </div>
@@ -38,19 +38,19 @@
 
                             <div class="input-group">
                                 <span class="input-group-text">Sensibilidad</span>
-                                <textarea class="form-control" aria-label="With textarea" name="Sensibilidad">{{ $dime->Sensibilidad }}</textarea>
+                                <textarea class="form-control" aria-label="With textarea" name="Sensibilidad" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>{{ $dime->Sensibilidad }}</textarea>
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="input-group">
                                 <span class="input-group-text">Lenguaje / Orientacion</span>
-                                <textarea class="form-control" aria-label="With textarea" name="LeOr">{{ $dime->LenguajeOrientacion }}</textarea>
+                                <textarea class="form-control" aria-label="With textarea" name="LeOr" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>{{ $dime->LenguajeOrientacion }}</textarea>
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="input-group">
                                 <span class="input-group-text">Otros</span>
-                                <textarea class="form-control" aria-label="With textarea" name="Otros">{{ $dime->Otros }}</textarea>
+                                <textarea class="form-control" aria-label="With textarea" name="Otros" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>{{ $dime->Otros }}</textarea>
                             </div>
                         </div>
                     </div>

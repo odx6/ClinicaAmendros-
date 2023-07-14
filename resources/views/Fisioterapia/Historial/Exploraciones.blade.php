@@ -1,97 +1,89 @@
 <div class="container desactivado" id="FisioExplo">
 
-    <div class="col">
+     <div class="container">
+                        <form class="user needs-validation" method="POST" action="{{ route('create.FExploracionF', ['id' => $id]) }}" novalidate>
+                            @csrf
+                            <div class="col">
 
-        <h2>Exploración Física</h2>
-        <table class="table">
+                                <h2>Exploración Física</h2>
+                                <table class="table">
 
-            <tbody>
-                <tr>
+                                    <tbody>
 
-                    <td>
-                        <h3>Identificador del paciente :</h3>
-                    </td>
-                    <td>
-                        <div class="form-group">
+                                        <tr>
 
-                            <input type="text" class="form-control" id="exampleFormControlInput1"
-                                value="{{ $id }}" name="Peso">
-                        </div>
-                    </td>
+                                            <td>
+                                                <h3>peso :</h3>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
 
-                </tr>
-                <tr>
+                                                    <input type="numeric" class="form-control" id="exampleFormControlInput1"
+                                                        placeholder="Peso(Kg)" name="Peso" required pattern="^\d+(\.\d+)?$" title="Ingresa un número entero o decimal válido">
+                                                </div>
+                                            </td>
 
-                    <td>
-                        <h3>peso :</h3>
-                    </td>
-                    <td>
-                        <div class="form-group">
+                                        </tr>
+                                        <tr>
 
-                            <input type="text" class="form-control" id="exampleFormControlInput1" value="Peso en kg"
-                                name="Peso">
-                        </div>
-                    </td>
+                                            <td>
+                                                <h3>Estatura :</h3>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
 
-                </tr>
-                <tr>
+                                                    <input type="numeric" class="form-control" id="exampleFormControlInput1"
+                                                       placeholder="Estatura" name="Estatura" pattern="^\d+(\.\d+)?$" required>
+                                                </div>
+                                            </td>
 
-                    <td>
-                        <h3>Estatura :</h3>
-                    </td>
-                    <td>
-                        <div class="form-group">
+                                        </tr>
+                                        <tr>
 
-                            <input type="text" class="form-control" id="exampleFormControlInput1"
-                                value="Estatura en m" name="Estatura">
-                        </div>
-                    </td>
+                                            <td>
+                                                <h3>(IMC):</h3>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
 
-                </tr>
-                <tr>
+                                                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                        value="" placeholder="(IMC)" name="IMC" pattern="^\d+(\.\d+)?$" required>
+                                                </div>
+                                            </td>
 
-                    <td>
-                        <h3>(IMC):</h3>
-                    </td>
-                    <td>
-                        <div class="form-group">
+                                        </tr>
+                                        <tr>
 
-                            <input type="text" class="form-control" id="exampleFormControlInput1" value="(IMC)"
-                                name="IMC">
-                        </div>
-                    </td>
+                                            <td>
+                                                <h3>Etnia :</h3>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
 
-                </tr>
-                <tr>
+                                                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                        value=""  placeholder="Etnia" name="Etnia" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                                </div>
+                                            </td>
 
-                    <td>
-                        <h3>Etnia :</h3>
-                    </td>
-                    <td>
-                        <div class="form-group">
+                                        </tr>
 
-                            <input type="text" class="form-control" id="exampleFormControlInput1" value="Etnia"
-                                name="Etnia">
-                        </div>
-                    </td>
+                                    </tbody>
+                                </table>
 
-                </tr>
+                            </div>
+                            <div class="col">
+                               
+                                <h2>Motivo de la consulta</h2>
+                                <div class="form-group">
 
-            </tbody>
-        </table>
+                                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                                        value="" placeholder="Motivo" name="Motivo" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                </div>
 
-    </div>
-    <div class="col">
-        2 of 3
-        <h2>Motivo de la consulta</h2>
-        <div class="form-group">
+                            </div>
 
-            <input type="text" class="form-control" id="exampleFormControlInput1" value="Motivo de la  consulta"
-                name="Motivo">
-        </div>
 
-    </div>
-
+                    </div>
 
 </div>
 

@@ -21,8 +21,8 @@
         </div>
     @else
         @foreach ($Notas as $nota)
-            <form class="user" method="POST"
-                action="{{ route('Nota.store', ['IDAG' => $nota->pk_nota, 'IDPA' => $nota->fk_n, 'TIPO' => $nota->Tipo]) }}">
+            <form class="user needs-validation" method="POST"
+                action="{{ route('Nota.store', ['IDAG' => $nota->pk_nota, 'IDPA' => $nota->fk_n, 'TIPO' => $nota->Tipo]) }}" novalidate>
                 @csrf
                 <div class="row">
                     <div class="container">
@@ -35,7 +35,7 @@
                                 <h2>Nota Clinica-Valoración Inicial</h2>
                                 <div class="form-group mb-4">
                                     <label for="exampleFormControlTextarea1">{{ $nota->Tipo }}</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="NOT">{{ $nota->Nota }}</textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="NOT" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">{{ $nota->Nota }}</textarea>
                                 </div>
 
                             </div>

@@ -1,47 +1,33 @@
  <div class="container desactivado" id="FisioTratamientos">
-
-
      <div class="col">
 
-         <h2>Tratamientos</h2>
-         <table class="table">
+                                <h2>Tratamientos</h2>
+                                <table class="table">
 
-             <tbody>
-                 <tr>
+                                    <tbody>
+                                       
+                                        <tr>
 
-                     <td>
-                         <h3>Identificador del paciente :</h3>
-                     </td>
-                     <td>
-                         <div class="form-group">
+                                            <td>
+                                                <h3>tratamientos <br> previos :</h3>
+                                            </td>
+                                            <td>
+                                                <div class="form-group">
 
-                             <input type="text" class="form-control" id="exampleFormControlInput1"
-                                 value="{{ $id }}" name="Peso">
-                         </div>
-                     </td>
+                                                    <textarea type="text" class="form-control" id="exampleFormControlInput1"
+                                                        value="" name="Tratamiento" placeholder="Tratamientos" required minlength="3" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"></textarea>
+                                                </div>
+                                            </td>
 
-                 </tr>
-                 <tr>
+                                        </tr>
 
-                     <td>
-                         <h3>tratamientos Previos :</h3>
-                     </td>
-                     <td>
-                         <div class="form-group">
+                                    </tbody>
+                                </table>
 
-                             <input type="text" class="form-control" id="exampleFormControlInput1" value=""
-                                 name="Tratamiento" placeholder="Tratamientos">
-                         </div>
-                     </td>
+                            </div>
 
-                 </tr>
 
-             </tbody>
-         </table>
-
-     </div>
+     
 
 
  </div>
-
-

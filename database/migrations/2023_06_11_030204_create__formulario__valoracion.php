@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('P_semitandem');
             $table->integer('P_tandem');
             $table->integer('Segundos');
-            $table->integer('Total');
+           
             $table->String('Comentarios');
             $table->timestamps();
             $table->foreign('fk_formulario')->references('SS')->on('pacientes');

@@ -69,9 +69,6 @@ class DatabaseSeeder extends Seeder
        $user4->role='medico';
        $user4->save();
         //area
-        $area = new Area;
-        $area->NOMBE_AREA='FISOTERAPIA';
-        $area->save();
 
         $Doctor= new  Doctor;
         $Doctor->AreaDoctor=1;

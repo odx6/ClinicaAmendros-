@@ -28,8 +28,8 @@
             <!--- Historial-->
             <!--Primer seccion de container--->
             <div class="container">
-                <form class="user" method="POST"
-                    action="{{ route('update.FExploracionF', ['id' => $Explora->pk_Exploracion_ff]) }}">
+                <form class="user needs-validation" method="POST"
+                    action="{{ route('update.FExploracionF', ['id' => $Explora->pk_Exploracion_ff]) }}" novalidate>
                     @csrf
                     <div class="col">
 
@@ -37,20 +37,7 @@
                         <table class="table">
 
                             <tbody>
-                                <tr>
-
-                                    <td>
-                                        <h3>Identificador del paciente :</h3>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-
-                                            <input type="text" class="form-control" id="exampleFormControlInput1"
-                                                value="{{ $Explora->fk_Exploracion_ff }}" name="IdPaciente">
-                                        </div>
-                                    </td>
-
-                                </tr>
+                                
                                 <tr>
 
                                     <td>
@@ -60,7 +47,7 @@
                                         <div class="form-group">
 
                                             <input type="text" class="form-control" id="exampleFormControlInput1"
-                                                value="{{ $Explora->Peso }}" name="Peso">
+                                                value="{{ $Explora->Peso }}" name="Peso" required pattern="^\d+(\.\d+)?$">
                                         </div>
                                     </td>
 
@@ -74,7 +61,7 @@
                                         <div class="form-group">
 
                                             <input type="text" class="form-control" id="exampleFormControlInput1"
-                                                value="{{ $Explora->Estatura }}" name="Estatura">
+                                                value="{{ $Explora->Estatura }}" name="Estatura" required pattern="^\d+(\.\d+)?$" >
                                         </div>
                                     </td>
 
@@ -88,7 +75,7 @@
                                         <div class="form-group">
 
                                             <input type="text" class="form-control" id="exampleFormControlInput1"
-                                                value="{{ $Explora->IMC }}" name="IMC">
+                                                value="{{ $Explora->IMC }}" name="IMC" required pattern="^\d+(\.\d+)?$">
                                         </div>
                                     </td>
 
@@ -102,7 +89,7 @@
                                         <div class="form-group">
 
                                             <input type="text" class="form-control" id="exampleFormControlInput1"
-                                                value="{{ $Explora->Etnia }}" name="Etnia">
+                                                value="{{ $Explora->Etnia }}" name="Etnia" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                                         </div>
                                     </td>
 
@@ -113,12 +100,12 @@
 
                     </div>
                     <div class="col">
-                        2 of 3
+                       
                         <h2>Motivo de la consulta</h2>
                         <div class="form-group">
 
                             <input type="text" class="form-control" id="exampleFormControlInput1"
-                                value="{{ $Explora->Motivo }}" name="Motivo">
+                                value="{{ $Explora->Motivo }}" name="Motivo" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                         </div>
 
                     </div>

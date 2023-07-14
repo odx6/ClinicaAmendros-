@@ -1,20 +1,20 @@
-<div class="col-sm">
+<div class="conteiner">
 
     <!---table-->
-    <form class="user" method="POST" action="{{ route('create.Postura', ['id' => $id, 'TipoM' => 'Lateral']) }}">
+    <form class="user needs-validation" method="POST"
+        action="{{ route('create.Postura', ['id' => $id, 'TipoM' => 'Lateral']) }}" novalidate>
         @csrf
-        <div class="container">
+        
             <h2>Evaluacion Postura</h2>
-            <div class="row">
-                <div class="col-sm">
-
+            
+                
                     <!---septimo container-->
-                    <div class="container">
+                    
 
-                        <div class="container">
+                       
                             <h2>Vista Lateral</h2>
-                            <div class="row">
-                                <div class="col-sm">
+                            
+                               
                                     <div class="table-responsive">
                                         <table class="table">
                                             <thead>
@@ -22,7 +22,7 @@
                                                     <th scope="col">Aliniacion Corporal</th>
                                                     <th scope="col">GRADOS L M S</th>
 
-                                                    <th class="text-center" scope="col">Observaciones</th>
+
                                                 </tr>
                                                 <tr aria-hidden="true" class="mt-3 d-block table-row-hidden">
                                                 </tr>
@@ -38,28 +38,30 @@
 
                                                             <div class="form-group">
 
-                                                                <input type="text" class="form-control"
-                                                                    id="exampleFormControlInput1"
-                                                                    value="{{ $Dat }}"
-                                                                    name="Posturas[{{ $Dat }}][Nombre]"
-                                                                    placeholder="Observaciones">
+                                                                <textarea type="text" class="form-control" id="exampleFormControlInput1" name="Posturas[{{ $Dat }}][Nombre]"
+                                                                    placeholder="Observaciones" rows="3" required>{{ $Dat }}</textarea>
                                                             </div>
                                                         </td>
-                                                        <td> <select class="form-control"
-                                                                name="Posturas[{{ $Dat }}][L]">
 
+                                                        <td> <select class="form-control"
+                                                                name="Posturas[{{ $Dat }}][L]" required>
+                                                                <option selected disabled value="">Grado
+                                                                </option>
                                                                 <option value="L">Leve</option>
                                                                 <option value="M">Moderado</option>
                                                                 <option value="S">Severo</option>
                                                             </select>
-
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
                                                         <td>
                                                             <div class="form-group">
 
                                                                 <input type="text" class="form-control"
                                                                     id="exampleFormControlInput1" value=""
                                                                     name="Posturas[{{ $Dat }}][Observaciones]"
-                                                                    placeholder="Observaciones">
+                                                                    placeholder="Observaciones" required
+                                                                    pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3">
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -70,21 +72,21 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                </div>
+                                
 
-                            </div>
-                        </div>
+                          
+                        
                         <!---table-->
 
                         <!--end table -->
-                    </div>
+                   
 
                     <!---end--septimo container-->
-                </div>
+               
 
 
-            </div>
-        </div>
+            
+       
 
         <!--end-table-->
 

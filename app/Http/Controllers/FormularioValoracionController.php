@@ -38,7 +38,7 @@ class FormularioValoracionController extends Controller
          $Formulario->P_semitandem=$data['pregunta2'];
          $Formulario->P_tandem=$data['pregunta3'];
          $Formulario->Segundos=$data['pregunta4'];
-         $Formulario->Total=$data['total'];
+         
          $Formulario->Comentarios=$data['NOT'];
          $Formulario->Save();
            return response()->json($data);
@@ -92,7 +92,7 @@ class FormularioValoracionController extends Controller
          $Formulario->P_semitandem=$data['pregunta2'];
          $Formulario->P_tandem=$data['pregunta3'];
          $Formulario->Segundos=$data['pregunta4'];
-         $Formulario->Total=$data['total'];
+        
          $Formulario->Comentarios=$data['NOT'];
          $Formulario->Save();
         return response()->json($data);

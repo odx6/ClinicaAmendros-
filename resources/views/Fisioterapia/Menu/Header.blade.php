@@ -214,6 +214,18 @@
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
             </svg>Formulario </a>
     </li>
+     <li class="nav-item ml-2 mr-2">
+        <a class="nav-link mb-2 text-center" id="rounded-pills-icon-settings-tab" data-bs-toggle="pill"
+            href="#rounded-pills-icon-AnalisisMarcha" role="tab" aria-controls="rounded-pills-icon-settings"
+            aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="feather feather-users">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>Analisis Marcha </a>
+    </li>
     <li class="nav-item ml-2 mr-2">
         <a class="nav-link mb-2 text-center" id="rounded-pills-icon-settings-tab" data-bs-toggle="pill"
             href="#rounded-pills-icon-plan" role="tab" aria-controls="rounded-pills-icon-settings"
@@ -226,18 +238,7 @@
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
             </svg>Plan Analítico </a>
     </li>
-  <li class="nav-item ml-2 mr-2">
-        <a class="nav-link mb-2 text-center" id="rounded-pills-icon-settings-tab" data-bs-toggle="pill"
-            href="#rounded-pills-icon-AnalisisMarcha" role="tab" aria-controls="rounded-pills-icon-settings"
-            aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" class="feather feather-users">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>Analisis Marcha </a>
-    </li>
+ 
     
     
 </ul>

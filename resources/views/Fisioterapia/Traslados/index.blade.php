@@ -4,13 +4,13 @@
     <div class="col-sm">
         <h2>Traslado para el paciente {{ $id }}</h2>
         <!---table-->
-        <form class="user" method="POST" action="{{ route('create.Traslados', ['id' => $id]) }}">
+        <form class="user needs-validation" method="POST" action="{{ route('create.Traslados', ['id' => $id]) }}" novalidate>
             @csrf
             <div class="col-sm">
 
                 <h3>Val Inicial</h3>
-                <select class="form-control" name="Inicial">
-                    <option>Traslado Inicial del paciente</option>
+                <select class="form-control" name="Inicial" required>
+                    <option selected disabled value="">Traslado Inicial <br> del paciente</option>
                     @php
                         $traslados = ['Independiente', 'Silla de ruedas', 'con ayudas', 'camillas'];
                     @endphp
@@ -20,8 +20,8 @@
                     @endforeach
                 </select>
                 <h3>Val.final</h3>
-                <select class="form-control" name="Final">
-                    <option>Traslado Final del paciente</option>
+                <select class="form-control" name="Final" required>
+                    <option selected disabled value="">Traslado Final<br>  del paciente</option>
                     @php
                         $traslados = ['Independiente', 'Silla de ruedas', 'con ayudas', 'camillas'];
                     @endphp

@@ -22,6 +22,7 @@ use App\Models\Evaluacion_postura;
 use App\Models\Formulario_Valoracion;
 use App\Models\Plan_Analitico;
 use App\Models\Analisis_marcha;
+use App\Models\nota;
 
 class ControllerFHistorial extends Controller
 {
@@ -173,7 +174,7 @@ class ControllerFHistorial extends Controller
              $Evalauciaon= new Evaluacion;
          $Evalauciaon->fk_evaluacion=$data['id'];
          $Evalauciaon->Nombre_miembro=$data['Nombre'];
-         $Evalauciaon->Tipo=$data['Tipo'];
+         $Evalauciaon->Tipo='Muscular';
          $Evalauciaon->Val_iquierda=$data['izquierda'];
          $Evalauciaon->Val_derecha=$data['Derecha'];
          $Evalauciaon->save();
@@ -284,7 +285,7 @@ foreach ($request->input('PosturasPosterior') as $PosturaData) {
          $Formulario->P_semitandem=$data['pregunta2'];
          $Formulario->P_tandem=$data['pregunta3'];
          $Formulario->Segundos=$data['pregunta4'];
-         $Formulario->Total=$data['total'];
+        
          $Formulario->Comentarios=$data['NOT'];
          $Formulario->Save();
         } 

@@ -39,7 +39,7 @@
       <td colspan="3">
         @if(isset($Planes))
         @foreach ($Planes as $Plan)
-        <p>{{$Plan->Diagnostico}}  </p
+        <p>{{$Plan->Diagnostico}}  </p>
             
         @endforeach
         @endif

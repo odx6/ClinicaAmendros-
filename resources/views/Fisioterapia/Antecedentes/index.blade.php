@@ -2,54 +2,19 @@
 @section('title', 'Historial-clinico-fisioterapia')
 @section('linkAuth')
     <!-- BEGIN PAGE LEVEL STYLE -->
-    <link href="../src/plugins/src/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
 
-    <link href="../src/plugins/css/light/fullcalendar/custom-fullcalendar.css" rel="stylesheet" type="text/css" />
-    <link href="../src/assets/css/light/components/modal.css" rel="stylesheet" type="text/css">
 
-    <link href="../src/plugins/css/dark/fullcalendar/custom-fullcalendar.css" rel="stylesheet" type="text/css" />
     <link href="../src/assets/css/dark/components/modal.css" rel="stylesheet" type="text/css">
     <!-- END PAGE LEVEL STYLE -->
     <!--  BEGIN CUSTOM STYLE FILE  -->
-    <link href="{{ asset('src/assets/css/light/scrollspyNav.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('src/assets/css/light/components/tabs.css') }}" rel="stylesheet" type="text/css" />
 
-    <link href="{{ asset('src/assets/css/dark/scrollspyNav.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('src/assets/css/dark/components/tabs.css') }}" rel="stylesheet" type="text/css" />
     <!--  END CUSTOM STYLE FILE  -->
-    <link href="{{ asset('src/assets/css/light/scrollspyNav.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="{{ asset('src/assets/css/light/forms/switches.css') }}">
 
-    <link href="{{ asset('src/assets/css/dark/scrollspyNav.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="{{ asset('src/assets/css/dark/forms/switches.css') }}">
-    <style>
-        input[type="range"] {
-            width: 100%;
-        }
-
-        input[type="range"]::-webkit-slider-runnable-track {
-            background: linear-gradient(to right, green 0%, yellow 50%, red 100%);
-        }
-
-        input[type="range"]::-moz-range-track {
-            background: linear-gradient(to right, green 0%, yellow 50%, red 100%);
-        }
-
-        input[type="range"]::-ms-track {
-            background: linear-gradient(to right, green 0%, yellow 50%, red 100%);
-        }
-
-        h2 {
-            background-color: #c4c8c5;
-            text-align: center;
-        }
-
-        label {
-
-            font-size-adjust: initial;
-            font-size: .3cm;
-        }
-    </style>
+   s
 @endsection
 
 @section('content')
@@ -88,8 +53,8 @@
                         <h2>Antecedentes Patologicos y Heredofamiliares</h2>
                         <div class="row">
                             <div class="col">
-                                <form class="user" method="POST"
-                                    action="{{ route('create.AntecedenteAH', ['id' => $id]) }}">
+                                <form class="user needs-validation" method="POST"
+                                    action="{{ route('create.AntecedenteAH', ['id' => $id]) }}" novalidate>
                                     @csrf
                                     <table class="table">
                                         <thead>
@@ -100,12 +65,7 @@
                                                 <th scope="col">
                                                     <h3>Especifique</h3>
                                                 </th>
-                                                <th scope="col">
-                                                    <h3>si no</h3>
-                                                </th>
-                                                <th scope="col">
-                                                    <h3>Especifique</h3>
-                                                </th>
+                                               
 
                                             </tr>
                                             <tr aria-hidden="true" class="mt-3 d-block table-row-hidden"></tr>
@@ -129,9 +89,12 @@
 
                                                         <input type="text" class="form-control"
                                                             id="exampleFormControlInput1" value=""
-                                                            placeholder="Especificacion para diabetes" name="EDiabetes">
+                                                            placeholder="Especificacion para diabetes" name="EDiabetes"
+                                                            required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                                                     </div>
                                                 </td>
+                                            </tr>
+                                            <tr>
                                                 <td>
                                                     <div
                                                         class="switch form-switch-custom switch-inline form-switch-success">
@@ -148,7 +111,8 @@
 
                                                         <input type="text" class="form-control"
                                                             id="exampleFormControlInput1" value=""
-                                                            placeholder="Enfermedades Reumaticas" name="EEnf">
+                                                            placeholder="Enfermedades Reumaticas" name="EEnf" required
+                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                                                     </div>
                                                 </td>
 
@@ -161,8 +125,7 @@
                                                         <label class="switch-label"
                                                             for="form-custom-switch-success">Alergias</label>
                                                         <input class="switch-input" type="checkbox" role="switch"
-                                                            id="form-custom-switch-success" name="Alergias"
-                                                            value="si">
+                                                            id="form-custom-switch-success" name="Alergias" value="si">
 
                                                     </div>
                                                 </td>
@@ -171,9 +134,13 @@
 
                                                         <input type="text" class="form-control"
                                                             id="exampleFormControlInput1" value=""
-                                                            placeholder="Alergias" name="EAlergias">
+                                                            placeholder="Alergias" name="EAlergias" required
+                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                                                     </div>
                                                 </td>
+
+                                            </tr>
+                                            <tr>
                                                 <td>
                                                     <div
                                                         class="switch form-switch-custom switch-inline form-switch-success">
@@ -190,7 +157,8 @@
 
                                                         <input type="text" class="form-control"
                                                             id="exampleFormControlInput1" value=""
-                                                            placeholder="Encames" name="EEncames">
+                                                            placeholder="Encames" name="EEncames" required
+                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                                                     </div>
                                                 </td>
 
@@ -214,9 +182,12 @@
 
                                                         <input type="text" class="form-control"
                                                             id="exampleFormControlInput1" value=""
-                                                            placeholder="HTA" name="ETA">
+                                                            placeholder="HTA" name="ETA" required
+                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                                                     </div>
                                                 </td>
+                                                </tr>
+                                            <tr>
                                                 <td>
                                                     <div
                                                         class="switch form-switch-custom switch-inline form-switch-success">
@@ -233,7 +204,8 @@
 
                                                         <input type="text" class="form-control"
                                                             id="exampleFormControlInput1" value=""
-                                                            placeholder="Accidentes" name="EAccidentes">
+                                                            placeholder="Accidentes" name="EAccidentes" required
+                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                                                     </div>
                                                 </td>
                                             </tr>
@@ -255,9 +227,12 @@
 
                                                         <input type="text" class="form-control"
                                                             id="exampleFormControlInput1" value=""
-                                                            placeholder="Cáncer" name="ECancer">
+                                                            placeholder="Cáncer" name="ECancer" required
+                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                                                     </div>
                                                 </td>
+                                                  </tr>
+                                            <tr>
                                                 <td>
                                                     <div
                                                         class="switch form-switch-custom switch-inline form-switch-success">
@@ -269,12 +244,14 @@
 
                                                     </div>
                                                 </td>
+                                              
                                                 <td>
                                                     <div class="form-group">
 
                                                         <input type="text" class="form-control"
                                                             id="exampleFormControlInput1" value=""
-                                                            placeholder="Cardiopatias" name="ECardiopatias">
+                                                            placeholder="Cardiopatias" name="ECardiopatias" required
+                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                                                     </div>
                                                 </td>
                                             </tr>
@@ -296,9 +273,12 @@
 
                                                         <input type="text" class="form-control"
                                                             id="exampleFormControlInput1" value=""
-                                                            placeholder="Transfunciones" name="ETransfunciones">
+                                                            placeholder="Transfunciones" name="ETransfunciones" required
+                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                                                     </div>
                                                 </td>
+                                                </tr>
+                                            <tr>
                                                 <td>
                                                     <div
                                                         class="switch form-switch-custom switch-inline form-switch-success">
@@ -315,7 +295,8 @@
 
                                                         <input type="text" class="form-control"
                                                             id="exampleFormControlInput1" value=""
-                                                            placeholder="Cirugias" name="ECirugias">
+                                                            placeholder="Cirugias" name="ECirugias" required
+                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                                                     </div>
                                                 </td>
                                             </tr>
@@ -337,7 +318,8 @@
 
                                                         <input type="text" class="form-control"
                                                             id="exampleFormControlInput1" value=""
-                                                            placeholder="Fracturas" name="EFracturas">
+                                                            placeholder="Fracturas" name="EFracturas" required
+                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                                                     </div>
                                                 </td>
 
@@ -345,131 +327,134 @@
                                         </tbody>
                                     </table>
 
-
-                            </div>
-                            <div class="col">
-                                2 of 2
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col">
-                                            <!--Espacio-->
-                                            <div class="container">
-                                                <h3>Signos vitales</h3>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <h3>T/A</h3>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="form-group">
-
-                                                            <input type="text" class="form-control"
-                                                                id="exampleFormControlInput1" value=""
-                                                                placeholder="TA" name="TA">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <h3>TEMP</h3>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="form-group">
-
-                                                            <input type="text" class="form-control"
-                                                                id="exampleFormControlInput1" value=""
-                                                                placeholder="Temp" name="Temp">
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <h3>FC</h3>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="form-group">
-
-                                                            <input type="text" class="form-control"
-                                                                id="exampleFormControlInput1" value=""
-                                                                placeholder="FC" name="FC">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col">
-
-                                                        <h3>FR</h3>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="form-group">
-
-                                                            <input type="text" class="form-control"
-                                                                id="exampleFormControlInput1" value=""
-                                                                placeholder="FR" name="FR">
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <!--end-espacio-->
-                                        </div>
-
-                                        <div class="w-100"></div>
-                                        <div class="col"><br>
-                                            <h2><u>Espasmos o contratuctua muscular </u></h2>
-                                            <!---table-->
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">si no </th>
-                                                            <th scope="col">Sitio/Caracteristicas</th>
-
-                                                        </tr>
-                                                        <tr aria-hidden="true" class="mt-3 d-block table-row-hidden"></tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <div
-                                                                    class="switch form-switch-custom switch-inline form-switch-success">
-                                                                    <label class="switch-label"
-                                                                        for="form-custom-switch-success">Si/no</label>
-                                                                    <input class="switch-input" type="checkbox"
-                                                                        role="switch" id="form-custom-switch-success"
-                                                                        name="Espasmos" value="si">
-
-                                                                </div>
-                                                            </td>
-                                                            <td>
+                                    <div class="col">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <!--Espacio-->
+                                                    <div class="container">
+                                                        <h3>Signos vitales</h3>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <h3>T/A</h3>
+                                                            </div>
+                                                            <div class="col">
                                                                 <div class="form-group">
 
-                                                                    <input type="text" class="form-control"
+                                                                    <input type="numeric" class="form-control"
                                                                         id="exampleFormControlInput1" value=""
-                                                                        placeholder="Especificacion Espasmos"
-                                                                        name="EEspasmos">
+                                                                        placeholder="TA" name="TA" required>
                                                                 </div>
-                                                            </td>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <h3>TEMP</h3>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="form-group">
 
-                                                        </tr>
+                                                                    <input type="numeric" class="form-control"
+                                                                        id="exampleFormControlInput1" value=""
+                                                                        placeholder="Temp" name="Temp" required>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <h3>FC</h3>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="form-group">
+
+                                                                    <input type="numeric" class="form-control"
+                                                                        id="exampleFormControlInput1" value=""
+                                                                        placeholder="FC" name="FC" required>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col">
+
+                                                                <h3>FR</h3>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="form-group">
+
+                                                                    <input type="numeric" class="form-control"
+                                                                        id="exampleFormControlInput1" value=""
+                                                                        placeholder="FR" name="FR" required>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <!--end-espacio-->
+                                                </div>
+
+                                                <div class="w-100"></div>
+                                                <div class="col"><br>
+                                                    <h2><u>Espasmos o contratuctua muscular </u></h2>
+                                                    <!---table-->
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">si no </th>
+                                                                    <th scope="col">Sitio/Caracteristicas</th>
+
+                                                                </tr>
+                                                                <tr aria-hidden="true"
+                                                                    class="mt-3 d-block table-row-hidden"></tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div
+                                                                            class="switch form-switch-custom switch-inline form-switch-success">
+                                                                            <label class="switch-label"
+                                                                                for="form-custom-switch-success">Si/no</label>
+                                                                            <input class="switch-input" type="checkbox"
+                                                                                role="switch"
+                                                                                id="form-custom-switch-success"
+                                                                                name="Espasmos" value="si">
+
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="form-group">
+
+                                                                            <input type="text" class="form-control"
+                                                                                id="exampleFormControlInput1"
+                                                                                value=""
+                                                                                placeholder="Especificacion Espasmos"
+                                                                                name="EEspasmos" required
+                                                                                pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                                                        </div>
+                                                                    </td>
+
+                                                                </tr>
 
 
-                                                    </tbody>
-                                                </table>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <!--end-table-->
+
+
+
+
+
+                                                </div>
+
                                             </div>
-                                            <!--end-table-->
-
-
-
-
-
                                         </div>
-
                                     </div>
-                                </div>
                             </div>
+
                         </div>
 
                     </div>
@@ -495,13 +480,7 @@
     <!-- END MAIN CONTAINER -->
 @endsection
 @section('Scripts')
-    <!-- BEGIN PAGE LEVEL SCRIPTS -->
-    <script src="../src/plugins/src/fullcalendar/fullcalendar.min.js"></script>
-    <script src="../src/plugins/src/uuid/uuid4.min.js"></script>
-    <!-- END PAGE LEVEL SCRIPTS -->
 
-    <!--  BEGIN CUSTOM SCRIPTS FILE  -->
-    <script src="../src/plugins/src/fullcalendar/custom-fullcalendar.js"></script>
     <!--  END CUSTOM SCRIPTS FILE  -->
     <!--  BEGIN CUSTOM SCRIPTS FILE  -->
 

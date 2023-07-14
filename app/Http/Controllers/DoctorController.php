@@ -231,7 +231,8 @@ class DoctorController extends Controller
         $Receta = request('Receta');
 
         $Paciente = Paciente::Find($valorSeleccionado);
-        $pdf = PDF::loadView('pdf.Receta', compact('valorSeleccionado', 'Paciente', 'Fecha', 'Receta'))->setPaper('a4', 'letter');
+        $Doctor=Doctor::find($Paciente->PacienteDoctor);
+        $pdf = PDF::loadView('pdf.Receta', compact('valorSeleccionado', 'Paciente', 'Fecha', 'Receta' ,'Doctor'))->setPaper('a4', 'letter');
 
 
         return $pdf->stream('Receta.pdf');

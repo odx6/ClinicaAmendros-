@@ -5,7 +5,7 @@
     <div class="col-sm">
 
         <!---table-->
-        <form class="user" method="POST" action="{{ route('create.MSuperiores', ['id' => $id, 'TipoM'=>'Inferior']) }}">
+        <form class="user needs-validation" method="POST" action="{{ route('create.MSuperiores', ['id' => $id, 'TipoM'=>'Inferior']) }}" novalidate>
             @csrf
             <div class="container">
                 <h2>Prueba de Arcos de moviidad de miembros inferiores</h2>
@@ -15,10 +15,10 @@
                     <div class="col-sm">
                         <h2>Miembro</h2>
                           <input type="text" class="form-control form-control-lg"
-                                                        placeholder="Nombre del miembro a evaluar" name="NombreMiembro" placeholder="Nombre del miembro a evaluar" value="">
+                                                        placeholder="Nombre del miembro a evaluar" name="NombreMiembro" placeholder="Nombre del miembro a evaluar"  required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3">
                         <div class="container">
                             <br>
-                            <div class="table-responsive">
+                            <div class="table-responsive"> 
     <table class="table" id="tablamiembroS">
         <thead>
             <tr>
@@ -34,10 +34,10 @@
             <tr>
                 <td>
                     <input type="text" class="form-control form-control-lg"
-                                                        placeholder="Nombre del movimiento" name="Movimientos[movimento][Nombre]" value="">
+                                                        placeholder="Nombre del movimiento" name="Movimientos[movimento][Nombre]" value="" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3">
                 </td>
                 <td>
-                     <select class="form-control" name="Movimientos[movimento][Valor]">
+                     <select class="form-control" name="Movimientos[movimento][Valor]" required>
                                         <option selected disabled value="">Selecciona el grado </option>
 
                                         @for ($i = 0; $i <= 360; $i++)
@@ -74,7 +74,7 @@
 
                 <div class="input-group">
                     <span class="input-group-text">Observaciones</span>
-                    <textarea class="form-control" aria-label="With textarea" name="observaciones"></textarea>
+                    <textarea class="form-control" aria-label="With textarea" name="observaciones" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" ></textarea>
                 </div>
                 <br>
                 <br>

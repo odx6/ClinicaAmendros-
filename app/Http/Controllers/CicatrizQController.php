@@ -34,7 +34,7 @@ class CicatrizQController extends Controller
         $data = $request->all();
         $Cicatriz = new Cicatriz_Q;
         $Cicatriz->fk_cicatriz = $data['id'];
-        (isset($data['Sitio'])) ? $Cicatriz->sitio = $data['Sitio']: $Cicatriz->sitio = "no";
+        $Cicatriz->sitio = $data['Sitio'];
         (isset($data['Abierta'])) ? $Cicatriz->abierta = $data['Abierta']: $Cicatriz->abierta = "no";
         (isset($data['Queloide'])) ? $Cicatriz->queloide = $data['Queloide']: $Cicatriz->queloide = "no";
         (isset($data['Retractil'])) ? $Cicatriz->Retractil = $data['Retractil']: $Cicatriz->Retractil = "no";
@@ -89,7 +89,7 @@ class CicatrizQController extends Controller
     {
         $data = $request->all();
         $Cicatriz =Cicatriz_Q::find($data['id']);
-        (isset($data['Sitio'])) ? $Cicatriz->sitio = $data['Sitio']: $Cicatriz->sitio = "no";
+          $Cicatriz->sitio = $data['Sitio'];
         (isset($data['Abierta'])) ? $Cicatriz->abierta = $data['Abierta']: $Cicatriz->abierta = "no";
         (isset($data['Queloide'])) ? $Cicatriz->queloide = $data['Queloide']: $Cicatriz->queloide = "no";
         (isset($data['Retractil'])) ? $Cicatriz->Retractil = $data['Retractil']: $Cicatriz->Retractil = "no";

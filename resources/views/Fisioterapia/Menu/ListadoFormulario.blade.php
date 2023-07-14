@@ -17,84 +17,123 @@
             <form class="user" method="POST" action="{{ route('index.Formulario', ['id' => $Paciente->SS]) }}">
                 @csrf
                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-                    style="display: none;">Agregar Formulariode valoración  </button>
+                    style="display: none;">Agregar Formulariode valoración </button>
             </form>
         </div>
     @else
         @foreach ($Formularios as $form)
-            <form class="user" method="POST"
-                action="{{ route('update.Formulario', ['id' =>$form->pk_formulario]) }}">
+            <form class="user needs-validation" method="POST"
+                action="{{ route('update.Formulario', ['id' => $form->pk_formulario]) }}" novalidate>
                 @csrf
-                     <div class="container">
-                <h2>Formulario de valoración  de la batería breve valoración  funcional</h2>
-  <div class="row">
-    <div class="col-sm">
-      <h4>Pruebas de equilibrio</h4>
-      <p>El sujeto debe de ser capaz de ponerse de pie, sin ayuda de bastones o andadores.</p>
-      <p>A.Posición con pies juntos</p>
-      <div class="form-group">
-      <select class="form-control formulario" name="pregunta1" >
-      <option value="1" @if($form->P_pies_juntos == "1") selected @endif>(1)Se sostuvo durante 10 segundos</option>
-      <option value="0" @if($form->P_pies_juntos == "0") selected @endif >(0)No se sostuvo durante 10 segundos o No lo intento</option>
-        </select>
-     </div>
-      <h4>En caso de obtener 0 puntos  termine la prueba de equilibrio</h4>
+                <div class="container">
+                    <h2>Formulario de valoración de la batería breve valoración funcional</h2>
+                    <div class="row">
+                        <div class="col-sm">
+                            <h4>Pruebas de equilibrio</h4>
+                            <p>El sujeto debe de ser capaz de ponerse de pie, sin ayuda de bastones o andadores.</p>
+                            <p>A.Posición con pies juntos</p>
+                            <div class="form-group">
+                                <select class="form-control formulario" name="pregunta1" required>
 
-      <h4>B.Posición  de semitándendem </h4>
-      <div class="form-group">
-      <select class="form-control" name="pregunta2">
-      <option value="1" @if($form->P_semitandem == "1") selected @endif>(1)Se sostuvo durante 10 segundos</option>
-      <option value="0" @if($form->P_semitandem == "0") selected @endif>(0)No se sostuvo durante 10 segundos o No lo intento</option>
-        </select>
-     </div>
-     <h4>Número de segundos con equilibrio si es inferior a los 10 segundos</h4>
-     <h4>C.posicion en tándem completo</h4>
-       <div class="form-group">
-      <select class="form-control formulario" name="pregunta3">
-      <option value="2" @if($form->P_tandem == "2") selected @endif>(2)Se sostuvo durante 10 segundos</option>
-      <option value="1" @if($form->P_tandem == "1") selected @endif>(1)No se sostuvo durante 3 a 9 segundos</option>
-      <option value="0" @if($form->P_tandem == "0") selected @endif>(0)No se sostuvo durante al menos 3 seg o no lo intento</option>
-        </select>
-     </div>
-    </div>
-    <div class="col-sm">
-       <h4>Número de segundos con equilibrio si es inferior a 10 segundos </h4>
-      <div class="form-group">
-       <select class="form-control formulario" name="pregunta4">
-                                                                        @for ($i = 1; $i <10; $i++)
-                                                                            <option value="{{ $i }}"@if($form->Segundos== "{{$i}}") selected @endif>
-                                                                                {{ $i }} segundos </option>
-                                                                        @endfor
-        </select>
-     </div>
-     <h4>D.Puntuación total de equilibrio(Suma de puntos ) </h4>
-      <div class="form-group">
-       <input type="text" class="form-control"
-                                                                            id="exampleFormControlInput1"
-                                                                            value="{{$form->Total}}"
-                                                                            name="total"
-                                                                            placeholder="puntuacion">
-     </div>
 
-<p>Si no se realizó la prueba </p>
-<p>Indique el motivo que mejor refleja por qué el sujeto  no realizo las prueas. </p>
-<p>*Lo intentó pero no fue capaz ...1 </p>
-<p>*El sujeto no pudo ponerse  de pie sin ayuda ...2</p>
-<p>*No lo intentó, usted lo notaba inseguro ...3</p>
-<p>*No lo intentó, el sujeto se sentía inseguro...4 </p>
-<p>*El sujeto no entendió las intrucciónes...5 </p>
-<p>*Otro motivo (especifiquelo)...6 </p>
-<p>*El sujeto rechazó la prueba...7  </p>
-<h2>Comentarios</h2>
-<div class="form-group mb-4">
-                               
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="NOT">{{$form->Comentarios}}</textarea>
+                                    <option value="0" @if ($form->P_pies_juntos == '0') selected @endif>Se sostuvo
+                                        durante 10 segundos</option>
+                                    <option value="1" @if ($form->P_pies_juntos == '1') selected @endif>No se
+                                        sostuvo durante 10 segundos</option>
+                                    <option value="2" @if ($form->P_pies_juntos == '2') selected @endif>Lo intento
+                                        pero no fue capaz</option>
+                                    <option value="3" @if ($form->P_pies_juntos == '3') selected @endif>El sujeto
+                                        no pudo ponerse de pie sin ayuda</option>
+                                    <option value="4" @if ($form->P_pies_juntos == '4') selected @endif>No lo
+                                        intentó , usted lo notaba inseguro</option>
+                                    <option value="5" @if ($form->P_pies_juntos == '5') selected @endif>No lo
+                                        intentó el sujeto sentía insenguro </option>
+                                    <option value="6" @if ($form->P_pies_juntos == '6') selected @endif>El sujeto
+                                        no entendió las instrucciónes</option>
+                                    <option value="7" @if ($form->P_pies_juntos == '7') selected @endif>Otro motivo
+                                    </option>
+                                    <option value="8" @if ($form->P_pies_juntos == '8') selected @endif>El sujeto
+                                        rechazo la prueba</option>
+                                </select>
+                            </div>
+                            <h4>En caso de obtener 0 puntos termine la prueba de equilibrio</h4>
+
+                            <h4>B.Posición de semitándendem </h4>
+                            <div class="form-group">
+                                <select class="form-control" name="pregunta2" required>
+
+                                    <option value="0" @if ($form->P_semitandem == '0') selected @endif>Se sostuvo
+                                        durante 10 segundos</option>
+                                    <option value="1" @if ($form->P_semitandem == '1') selected @endif>No se
+                                        sostuvo durante 10 segundos</option>
+                                    <option value="2" @if ($form->P_semitandem == '2') selected @endif>Lo
+                                        intento pero no fue capaz</option>
+                                    <option value="3" @if ($form->P_semitandem == '3') selected @endif>El sujeto
+                                        no pudo ponerse de pie sin ayuda</option>
+                                    <option value="4" @if ($form->P_semitandem == '4') selected @endif>No lo
+                                        intentó , usted lo notaba inseguro</option>
+                                    <option value="5" @if ($form->P_semitandem == '5') selected @endif>No lo
+                                        intentó el sujeto sentía insenguro </option>
+                                    <option value="6" @if ($form->P_semitandem == '6') selected @endif>El sujeto
+                                        no entendió las instrucciónes</option>
+                                    <option value="7" @if ($form->P_semitandem == '7') selected @endif>Otro
+                                        motivo</option>
+                                    <option value="8" @if ($form->P_semitandem == '8') selected @endif>El sujeto
+                                        rechazo la prueba</option>
+                                    </select>
+                            </div>
+                            <h4>Número de segundos con equilibrio si es inferior a los 10 segundos</h4>
+                            <h4>C.posicion en tándem completo</h4>
+                            <div class="form-group">
+                                <select class="form-control" name="pregunta3" required>
+
+                                    <option value="0" @if ($form->P_tandem == '0') selected @endif>Se
+                                        sostuvo durante 10 segundos</option>
+                                    <option value="1" @if ($form->P_tandem == '1') selected @endif>No se
+                                        sostuvo durante 10 segundos</option>
+                                    <option value="2" @if ($form->P_sandem == '2') selected @endif>Lo
+                                        intento pero no fue capaz</option>
+                                    <option value="3" @if ($form->P_tandem == '3') selected @endif>El sujeto
+                                        no pudo ponerse de pie sin ayuda</option>
+                                    <option value="4" @if ($form->P_tandem == '4') selected @endif>No lo
+                                        intentó , usted lo notaba inseguro</option>
+                                    <option value="5" @if ($form->P_tandem == '5') selected @endif>No lo
+                                        intentó el sujeto sentía insenguro </option>
+                                    <option value="6" @if ($form->P_tandem == '6') selected @endif>El sujeto
+                                        no entendió las instrucciónes</option>
+                                    <option value="7" @if ($form->P_tandem == '7') selected @endif>Otro
+                                        motivo</option>
+                                    <option value="8" @if ($form->P_tandem == '8') selected @endif>El sujeto
+                                        rechazo la prueba</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <h4>Número de segundos con equilibrio si es inferior a 10 segundos </h4>
+                            <div class="form-group">
+                                <select class="form-control formulario" name="pregunta4" required>
+                                    @for ($i = 1; $i < 10; $i++)
+                                        <option
+                                            value="{{ $i }}"@if ($form->Segundos == '{{ $i }}') selected @endif>
+                                            {{ $i }} segundos </option>
+                                    @endfor
+                                </select>
                             </div>
 
-    </div>
-   
-  </div>
-</div>
+
+
+                            <h2>Comentarios</h2>
+                            <div class="form-group mb-4">
+
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="NOT" required
+                                    pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">{{ $form->Comentarios }}</textarea>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
 
                 <!--end-table-->
                 <div class="modal-footer">
@@ -104,8 +143,8 @@
             </form>
             <form class="user" method="POST" action="{{ route('index.Formulario', ['id' => $Paciente->SS]) }}">
                 @csrf
-                <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
-                    id="Hola" style="display: none;">Agregar Formulario de evalauacion 
+                <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
+                    style="display: none;">Agregar Formulario de evalauacion
                 </button>
             </form>
             <form class="user" method="POST"
@@ -116,7 +155,6 @@
             </form>
 
 </div>
-
 @endforeach
 @endif
 </div>

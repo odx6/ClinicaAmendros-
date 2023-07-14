@@ -22,8 +22,8 @@
         </div>
     @else
         @foreach ($Pruebas as $prueba)
-            <form class="user" method="POST"
-                action="{{ route('update.MSuperiores', ['id' => $prueba->pk_prueba]) }}">
+            <form class="user needs-validation" method="POST"
+                action="{{ route('update.MSuperiores', ['id' => $prueba->pk_prueba]) }}" novalidate>
                 @csrf
                 <div class="container">
                     <h2>Prueba de Arcos de moviidad de miembros superiores</h2>
@@ -34,7 +34,7 @@
                             <h2>Miembro</h2>
                             <input type="text" class="form-control form-control-lg"
                                 placeholder="Nombre del miembro a evaluar" name="NombreMiembro"
-                                placeholder="Nombre del miembro a evaluar" value="{{ $prueba->NombrePrueba }}">
+                                placeholder="Nombre del miembro a evaluar" value="{{ $prueba->NombrePrueba }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3" required>
                             <div class="container">
                                 <div class="table-responsive">
                                     <table class="table" id="tablamiembroS">
@@ -58,11 +58,11 @@
                                                                     class="form-control form-control-lg"
                                                                     placeholder="Nombre del movimiento"
                                                                     name="Movimientos[{{ $movi->pk_movimiento }}][Nombre]"
-                                                                    value="{{ $movi->NombreMovi }}">
+                                                                    value="{{ $movi->NombreMovi }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3" required>
                                                             </td>
                                                             <td>
                                                                 <select class="form-control"
-                                                                    name="Movimientos[{{ $movi->pk_movimiento }}][Valor]">
+                                                                    name="Movimientos[{{ $movi->pk_movimiento }}][Valor]" required>
                                                                     <option selected disabled value="">Selecciona
                                                                         el grado
                                                                     </option>
@@ -105,7 +105,7 @@
 
                     <div class="input-group">
                         <span class="input-group-text">Observaciones</span>
-                        <textarea class="form-control" aria-label="With textarea" name="observaciones">{{ $prueba->Observaciones_prue }}</textarea>
+                        <textarea class="form-control" aria-label="With textarea" name="observaciones" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3" required >{{ $prueba->Observaciones_prue }}</textarea>
                     </div>
                     <br>
                     <br>

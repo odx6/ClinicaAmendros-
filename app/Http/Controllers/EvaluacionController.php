@@ -35,7 +35,7 @@ class EvaluacionController extends Controller
          $Evalauciaon= new Evaluacion;
          $Evalauciaon->fk_evaluacion=$data['id'];
          $Evalauciaon->Nombre_miembro=$data['Nombre'];
-         $Evalauciaon->Tipo=$data['Tipo'];
+         $Evalauciaon->Tipo="Muscular";
          $Evalauciaon->Val_iquierda=$data['izquierda'];
          $Evalauciaon->Val_derecha=$data['Derecha'];
          $Evalauciaon->save();
@@ -89,7 +89,7 @@ class EvaluacionController extends Controller
         $data = $request->all();
         $Evalauciaon= Evaluacion::find($data['id']);
          $Evalauciaon->Nombre_miembro=$data['Nombre'];
-         $Evalauciaon->Tipo=$data['Tipo'];
+         $Evalauciaon->Tipo="Muscular";
          $Evalauciaon->Val_iquierda=$data['izquierda'];
          $Evalauciaon->Val_derecha=$data['Derecha'];
          $Evalauciaon->save();

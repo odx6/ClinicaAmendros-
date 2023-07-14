@@ -34,7 +34,7 @@
 
         <div class="row">
             <div class="col">
-                <form class="user" method="POST" action="{{ route('update.AntecedenteAH') }}">
+                <form class="user needs-validation" method="POST" action="{{ route('update.AntecedenteAH') }}" novalidate >
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
@@ -62,7 +62,7 @@
                                         <input type="text" class="form-control" id="exampleFormControlInput1"
                                             value="{{ $item->Especificacion }}"
                                             placeholder="Especificacion para diabetes"
-                                            name="E{{ $item->Nombre_Antecedente }}"><br>
+                                            name="E{{ $item->Nombre_Antecedente }}" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" ><br>
                                     </div>
                                     <div class="form-group">
                                         <br>
@@ -105,7 +105,7 @@
                                         <input type="text" class="form-control" id="exampleFormControlInput1"
                                             value="{{ $item->Especificacion }}"
                                             placeholder="Especificacion para diabetes"
-                                            name="E{{ $item->Nombre_Antecedente }}">
+                                            name="E{{ $item->Nombre_Antecedente }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
                                         <br>
                                     </div>
                                     <div class="form-group">
@@ -128,11 +128,7 @@
 
                     </div>
 
-
-
-
-            </div>
-            <div class="col">
+                     <div class="col">
                 @php
                     $signosx = [];
                     
@@ -167,9 +163,9 @@
                                             <div class="col">
                                                 <div class="form-group">
 
-                                                    <input type="text" class="form-control"
+                                                    <input type="numeric" class="form-control"
                                                         id="exampleFormControlInput1" value="{{ $signo->TA }}"
-                                                        placeholder="TA" name="TA">
+                                                        placeholder="TA" name="TA" required pattern="[0-9]+(\.[0-9]+)?" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -182,7 +178,7 @@
 
                                                     <input type="text" class="form-control"
                                                         id="exampleFormControlInput1" value="{{ $signo->Temp }}"
-                                                        placeholder="Temp" name="Temp">
+                                                        placeholder="Temp" name="Temp" pattern="[0-9]+(\.[0-9]+)?" required>
                                                 </div>
 
                                             </div>
@@ -197,7 +193,7 @@
 
                                                     <input type="text" class="form-control"
                                                         id="exampleFormControlInput1" value="{{ $signo->FC }}"
-                                                        placeholder="FC" name="FC">
+                                                        placeholder="FC" name="FC" pattern="[0-9]+(\.[0-9]+)?" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -211,7 +207,7 @@
 
                                                     <input type="text" class="form-control"
                                                         id="exampleFormControlInput1" value="{{ $signo->FR }}"
-                                                        placeholder="FR" name="FR">
+                                                        placeholder="FR" name="FR" pattern="[0-9]+(\.[0-9]+)?" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -230,6 +226,10 @@
                   @endforeach
                    @endif
 
+
+
+            </div>
+           
     <div class="modal-footer">
 
         <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"

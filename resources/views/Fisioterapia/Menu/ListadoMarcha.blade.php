@@ -21,7 +21,7 @@
         </div>
     @else
         @foreach ($MarchasDeam as $mar)
-        <form class="user" method="POST" action="{{ route('update.Marcha',['id'=>$mar->pk_marcha]) }}">
+        <form class="user needs-validation" method="POST" action="{{ route('update.Marcha',['id'=>$mar->pk_marcha]) }}" novalidate>
             @csrf
             <div class="table-responsive">
                 <table class="table">
@@ -107,7 +107,7 @@
                                 <h2>Observaciones</h2>
                                 <div class="form-group mb-4">
                                     <label for="exampleFormControlTextarea1">Example textarea</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Observaciones">{{$mar->Observaciones_marcha}}</textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Observaciones" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">{{$mar->Observaciones_marcha}}</textarea>
                                 </div>
                             </td>
 

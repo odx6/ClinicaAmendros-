@@ -1,12 +1,12 @@
 @extends('layouts.formularios')
 
 @section('formulario')
-    <div class="col-sm">
+    <div class="container">
         
         <!---table-->
-        <form class="user" method="POST" action="{{ route('create.Marcha', ['id' => $id]) }}">
+        <form class="user needs-validation" method="POST" action="{{ route('create.Marcha', ['id' => $id]) }}" novalidate>
             @csrf
-            <div class="col-sm">
+            
                 <h2>Marcha Deambulacion {{ $id }} </h2>
                 <!---table-->
                 <div class="table-responsive">
@@ -92,8 +92,8 @@
                                 <td>
                                     <h2>Observaciones</h2>
                                     <div class="form-group mb-4">
-                                        <label for="exampleFormControlTextarea1">Example textarea</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Observaciones"></textarea>
+                                      
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Observaciones" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"></textarea>
                                     </div>
                                 </td>
 
@@ -104,7 +104,7 @@
                     </table>
                 </div>
                 <!--end-table-->
-            </div>
+          
            
             <!--end-table-->
 

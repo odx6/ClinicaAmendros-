@@ -5,7 +5,7 @@
     <div class="col-sm">
 
         <!---table-->
-        <form class="user" method="POST" action="{{ route('create.AnalisisMarcha', ['id' => $id]) }}">
+        <form class="user needs-validation" method="POST" action="{{ route('create.AnalisisMarcha', ['id' => $id]) }}" novalidate>
             @csrf
             <!---octavo container-->
             <div class="container">
@@ -23,7 +23,7 @@
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th scope="col">INICIO DE LA MARCHA (Inmediatamente después de decir “camine”) </th>
+                                                    <th scope="col">INICIO DE LA MARCHA <br>(Inmediatamente después<br> de decir “camine”) </th>
                                                     <th scope="col"> si = 0 no =1 Moderado=2</th>
 
                                                 </tr>
@@ -35,16 +35,17 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-group">
-                                                            <label for="formGroupExampleInput">Duda o vacila o múltiples
-                                                                intentos para comenzar
+                                                            <label for="formGroupExampleInput">Duda o <br> vacila o <br> múltiples
+                                                               <br> intentos <br> para comenzar
                                                             </label>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="form-group">
-
+                                                            
                                                             <select class="form-control Marcha"
-                                                                name="Valor1">
+                                                                name="Valor1" required >
+                                                                <option selected disabled value="">Respuesta </option>
                                                                 <option value="0">(0)si</option>
                                                                 <option value="1">(1)No </option>
                                                                 <option value="2">(2)Moderado </option>
@@ -61,7 +62,7 @@
                                                     <td>
                                                         <div class="form-group">
                                                             <label for="formGroupExampleInput">
-                                                                LONGITUD Y ALTURA DEL PASO
+                                                                LONGITUD Y <br>    ALTURA DEL PASO
                                                             </label>
                                                         </div>
                                                     </td>
@@ -70,7 +71,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-group">
-                                                            <label for="formGroupExampleInput">El pie derecho no sobrepasa al izquierdo con el paso en la fase del balanceo
+                                                            <label for="formGroupExampleInput">El pie derecho <br> no sobrepasa <br> al izquierdo con el paso <br>en la fase del<br> bal anceo
                                                             </label>
                                                         </div>
                                                     </td>
@@ -78,7 +79,9 @@
                                                         <div class="form-group">
 
                                                             <select class="form-control Marcha"
-                                                                name="Valor2">
+                                                                name="Valor2" required>
+                                                            <option selected disabled value="">Respuesta </option>
+
                                                                 <option value="0">(0)si</option>
                                                                 <option value="1">(1)No </option>
                                                                 
@@ -93,7 +96,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-group">
-                                                            <label for="formGroupExampleInput">El pie derecho no se levanta completamente del suelo con el paso en la fase del balanceo
+                                                            <label for="formGroupExampleInput">El pie derecho <br> no se levanta <br>completamente del suelo <br> con el paso <br>en la fase del balanceo
                                                             </label>
                                                         </div>
                                                     </td>
@@ -101,7 +104,8 @@
                                                         <div class="form-group">
 
                                                             <select class="form-control Marcha"
-                                                                name="Valor3">
+                                                                name="Valor3" required>
+                                                                <option selected disabled value="">Respuesta </option>
                                                                 <option value="0">(0)si</option>
                                                                 <option value="1">(1)No </option>
                                                                 
@@ -116,7 +120,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-group">
-                                                            <label for="formGroupExampleInput">El pie izquierdo no sobrepasa el derecho con el paso en la fase del balanceo
+                                                            <label for="formGroupExampleInput">El pie izquierdo<br> no sobrepasa el derecho<br> con el paso<br> en la fase del balanceo
                                                             </label>
                                                         </div>
                                                     </td>
@@ -124,7 +128,8 @@
                                                         <div class="form-group">
 
                                                             <select class="form-control Marcha"
-                                                                name="Valor4">
+                                                                name="Valor4" required>
+                                                                <option selected disabled value="">Respuesta </option>
                                                                 <option value="0">(0)si</option>
                                                                 <option value="1">(1)No </option>
                                                                 
@@ -139,7 +144,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-group">
-                                                            <label for="formGroupExampleInput">El pie izquierdo no se levanta completamente del suelo con el paso en la fase del balanceo
+                                                            <label for="formGroupExampleInput">El pie izquierdo<br> no se levanta completamente<br> del suelo <br>con el paso en<br> la fase del balanceo
                                                             </label>
                                                         </div>
                                                     </td>
@@ -147,7 +152,8 @@
                                                         <div class="form-group">
 
                                                             <select class="form-control Marcha"
-                                                                name="Valor5">
+                                                                name="Valor5" required>
+                                                                <option selected disabled value="">Respuesta </option>
                                                                 <option value="0">(0)si</option>
                                                                 <option value="1">(1)No </option>
                                                                 
@@ -172,7 +178,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-group">
-                                                            <label for="formGroupExampleInput">La longitud del paso con el pie derecho e izquierdo es diferente
+                                                            <label for="formGroupExampleInput">La longitud del<br> paso con el pie derecho<br> e izquierdo es diferente
                                                             </label>
                                                         </div>
                                                     </td>
@@ -180,7 +186,8 @@
                                                         <div class="form-group">
 
                                                             <select class="form-control Marcha"
-                                                                name="Valor6">
+                                                                name="Valor6" required>
+                                                                <option selected disabled value="">Respuesta </option>
                                                                 <option value="0">(0)si</option>
                                                                 <option value="1">(1)No </option>
                                                                 
@@ -205,7 +212,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-group">
-                                                            <label for="formGroupExampleInput">Para o hay discontinuidad entre los pasos
+                                                            <label for="formGroupExampleInput">Para<br> o hay discontinuidad <br>entre los pasos
                                                             </label>
                                                         </div>
                                                     </td>
@@ -213,7 +220,8 @@
                                                         <div class="form-group">
 
                                                             <select class="form-control Marcha"
-                                                                name="Valor7">
+                                                                name="Valor7" required>
+                                                                <option selected disabled value="">Respuesta </option>
                                                                 <option value="0">(0)si</option>
                                                                 <option value="1">(1)No </option>
                                                                 
@@ -225,7 +233,7 @@
                                                         <td>
                                                             <div class="form-group">
                                                                 <label for="formGroupExampleInput">
-                                                                    TRAYECTORIA <br>(Estimada en relación a las baldosas del suelo de 30 cm;<br> se observa la desviación de un pie en 3 mts de distancia)
+                                                                    TRAYECTORIA <br>(Estimada en relación a las <br>baldosas del suelo de 30 cm;<br> se observa<br> la desviación de un pie <br>en 3 mts de distancia)
                                                                 </label>
                                                             </div>
                                                         </td>
@@ -235,7 +243,7 @@
                                                     <tr>
                                                         <td>
                                                             <div class="form-group">
-                                                                <label for="formGroupExampleInput">Marcada desviación, utiliza ayuda
+                                                                <label for="formGroupExampleInput">Marcada desviación,<br> utiliza ayuda
                                                                 </label>
                                                             </div>
                                                         </td>
@@ -243,7 +251,8 @@
                                                             <div class="form-group">
     
                                                                 <select class="form-control Marcha"
-                                                                    name="Valor8">
+                                                                    name="Valor8" required>
+                                                                    <option selected disabled value="">Respuesta </option>
                                                                     <option value="0">(0)si</option>
                                                                     <option value="1">(1)No </option>
                                                                     <option value="2">(2)Moderado </option>
@@ -265,7 +274,7 @@
                                                     <tr>
                                                         <td>
                                                             <div class="form-group">
-                                                                <label for="formGroupExampleInput">Marcado balanceo o utiliza ayuda,<br> flexión de rodillas, espalda o extensión hacia afuera de los brazos
+                                                                <label for="formGroupExampleInput">Marcado balanceo<br> o utiliza ayuda,<br> flexión de rodillas,<br> espalda <br>o extensión hacia afuera<br> de los brazos
                                                                 </label>
                                                             </div>
                                                         </td>
@@ -273,7 +282,8 @@
                                                             <div class="form-group">
     
                                                                 <select class="form-control Marcha"
-                                                                    name="Valor9">
+                                                                    name="Valor9" required>
+                                                                    <option selected disabled value="">Respuesta </option>
                                                                     <option value="0">(0)si</option>
                                                                     <option value="1">(1)No </option>
                                                                     <option value="2">(2)Moderado </option>
@@ -295,7 +305,7 @@
                                                     <tr>
                                                         <td>
                                                             <div class="form-group">
-                                                                <label for="formGroupExampleInput"> Talones separados
+                                                                <label for="formGroupExampleInput"> Talones <br>separados
                                                                 </label>
                                                             </div>
                                                         </td>
@@ -303,7 +313,8 @@
                                                             <div class="form-group">
     
                                                                 <select class="form-control Marcha"
-                                                                    name="Valor10">
+                                                                    name="Valor10" required>
+                                                                    <option selected disabled value="">Respuesta </option>
                                                                     <option value="0">(0)si</option>
                                                                     <option value="1">(1)No </option>
                                                                    
@@ -322,7 +333,7 @@
                                                         <td>
                                                             <div class="form-group">
     
-                                                                <input type="text" class="form-control" placeholder="Suma total" name="Total" id="Resultado">
+                                                                <input type="numeric" class="form-control" placeholder="Suma total" name="Total" id="Resultado" required>
                                                             </div>
                                                         </td>
                                                     </tr>

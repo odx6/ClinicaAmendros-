@@ -21,7 +21,7 @@
         </div>
     @else
         @foreach ($Cicatriz as $cica)
-            <form class="user" method="POST" action="{{ route('update.Cicatriz', ['id' => $cica->pk_cicatriz]) }}">
+            <form class="user needs-validation" method="POST" action="{{ route('update.Cicatriz', ['id' => $cica->pk_cicatriz]) }}" novalidate>
                 @csrf
                 <div class="table-responsive">
                     <table class="table">
@@ -39,9 +39,9 @@
                                 <td>
                                     <div class="switch form-switch-custom switch-inline form-switch-success">
                                         <label class="switch-label" for="form-custom-switch-success">Sitio</label>
-                                        <input class="switch-input" type="checkbox" role="switch"
-                                            id="form-custom-switch-success" name="Sitio" value="si"
-                                            @if ($cica->sitio == 'si') checked @endif>
+                                        <input class="form-control" type="text" 
+                                            id="form-custom-switch-success" name="Sitio" value="{{$cica->sitio}}"
+                                             required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
 
                                     </div>
                                 </td>
@@ -54,6 +54,8 @@
 
                                     </div>
                                 </td>
+                                 </tr>
+                            <tr>
                                 <td>
                                     <div class="switch form-switch-custom switch-inline form-switch-success">
                                         <label class="switch-label" for="form-custom-switch-success">Retractil</label>
@@ -63,8 +65,7 @@
 
                                     </div>
                                 </td>
-                            </tr>
-                            <tr>
+                           
                                 <td>
                                     <div class="switch form-switch-custom switch-inline form-switch-success">
                                         <label class="switch-label" for="form-custom-switch-success">Abierta</label>
@@ -74,6 +75,8 @@
 
                                     </div>
                                 </td>
+                                 </tr>
+                            <tr>
                                 <td>
                                     <div class="switch form-switch-custom switch-inline form-switch-success">
                                         <label class="switch-label" for="form-custom-switch-success">Con

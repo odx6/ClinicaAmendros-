@@ -256,7 +256,7 @@ $(document).ready(function() {
                 selectUsuarios.append("<option value='" + usuario.DSS + "'>" + usuario.Nombre + " " + usuario.Apellidos + " " + usuario.ESPECIALIDAD + "</option>");
             });
         } else {
-            selectUsuarios.append("<option value=''>No se encontraron usuarios en el área seleccionada.</option>");
+            selectUsuarios.append("<option selected disabled value='' >No se encontraron usuarios en el área seleccionada.</option>");
         }
     }
 
@@ -294,11 +294,11 @@ document.getElementById("Enlace").addEventListener("click", function(event) {
   var fila = tabla.insertRow();
   
   var celda1 = fila.insertCell();
-  celda1.innerHTML = ' <input type="text" class="form-control form-control-lg" placeholder="Nombre del movimiento" name="Movimientos[movimento'+contador+'][Nombre]" value="">';
+  celda1.innerHTML = ' <input type="text" class="form-control form-control-lg" placeholder="Nombre del movimiento" name="Movimientos[movimento'+contador+'][Nombre]" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3">';
   
   var celda2 = fila.insertCell();
-  var selectHTML = '<select class="form-control" name="Movimientos[movimento'+contador+'][Valor]">';
-  selectHTML += '<option selected disabled value="">Selecciona el grado</option>';
+  var selectHTML = '<select class="form-control" name="Movimientos[movimento'+contador+'][Valor]" required>';
+  selectHTML += '<option selected disabled value="" >Selecciona el grado</option>';
   for (var i = 0; i <= 360; i++) {
     selectHTML += '<option value="' + i + '">' + i + '°</option>';
   }
