@@ -37,7 +37,9 @@ class EscalaDolorController extends Controller
          $Escala->Escala=$data['Escala'];
          $Escala->save();
 
-         return response()->json($data);
+         //return response()->json($data);
+         $paciente=$data['id'];
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedente agregado correctamente!');
     }
 
     /**
@@ -88,7 +90,9 @@ class EscalaDolorController extends Controller
       
          $Escala->Escala=$data['Escala'];
          $Escala->save();
-         return response()->json($data);
+        // return response()->json($data);
+          $paciente=$Escala->fk_escala;
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedente actuaizado  correctamente!');
     }
 
     /**
@@ -101,7 +105,7 @@ class EscalaDolorController extends Controller
     {
          $id=request('id');
         $dato =Escala_dolor::find(request('id'));
-  
+        $paciente=$dato->fk_escala;
         if ($dato) {
           
   
@@ -110,5 +114,7 @@ class EscalaDolorController extends Controller
         } else {
             
         }
+
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedente Eliminado correctamente!');
     }
 }

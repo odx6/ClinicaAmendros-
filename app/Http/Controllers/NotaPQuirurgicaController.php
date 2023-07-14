@@ -38,6 +38,9 @@ class NotaPQuirurgicaController extends Controller
          $Nota_p->Nombre_Aniestesiologo=request('NAN');
          $Nota_p->Circulante=request('CIR');
          $Nota_p->save();
+         $paciente=$Nota->fk_npq;
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Nota post-quirurgica agregada  correctamente!');
     }
 
     /**
@@ -60,6 +63,9 @@ class NotaPQuirurgicaController extends Controller
          $Nota_p->Nombre_Aniestesiologo=request('NAN');
          $Nota_p->Circulante=request('CIR');
          $Nota_p->save();
+         $paciente=$Nota->fk_npq;
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Nota post-quirurgica actualizada    correctamente!');
 
     }
 
@@ -107,13 +113,15 @@ class NotaPQuirurgicaController extends Controller
     {
         $id=request('id');
         $dato =nota_p_quirurgica::Find($id);
-
+        $paciente=$dato->fk_npq;
 
         if ($dato) {
           
             $dato->delete();
 
         }else{}
-        return view('Doctor.index');
+        
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Nota post-quirurgica eliminada  correctamente!');
     }
 }

@@ -44,7 +44,10 @@ class PlanAnaliticoController extends Controller
         $Plan->Diagnostico=$data['Diagnostico'];
         $Plan->plan=$data['Plan'];
         $Plan->save();
-         return response()->json($data);
+        // return response()->json($data);
+         $paciente=$Plan->fk_plan;
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Plan analitico  agregado  correctamente!');
     }
 
     /**
@@ -103,8 +106,10 @@ class PlanAnaliticoController extends Controller
         $Plan->plan=$data['Plan'];
         $Plan->save();
 
-         return response()->json($data);
-
+         //return response()->json($data);
+       $paciente=$Plan->fk_plan;
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Plan analitico  actualizado  correctamente!');
     }
 
     /**
@@ -118,7 +123,7 @@ class PlanAnaliticoController extends Controller
         //
          $id=request('id');
         $dato =Plan_Analitico::find(request('id'));
-  
+          $paciente=$dato->fk_plan;
         if ($dato) {
              
   
@@ -127,5 +132,8 @@ class PlanAnaliticoController extends Controller
         } else {
             
         }
+
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Plan analitico  eliminado  correctamente!');
     }
 }

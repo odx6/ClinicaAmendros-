@@ -41,7 +41,10 @@ class FormularioValoracionController extends Controller
          
          $Formulario->Comentarios=$data['NOT'];
          $Formulario->Save();
-           return response()->json($data);
+          // return response()->json($data);
+         $paciente=$data['id'];
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Formulario de valoracion agregado  correctamente!');
     }
 
     /**
@@ -95,7 +98,10 @@ class FormularioValoracionController extends Controller
         
          $Formulario->Comentarios=$data['NOT'];
          $Formulario->Save();
-        return response()->json($data);
+        //return response()->json($data);
+          $paciente=$Formulario->fk_formulario;
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Formulario de valoracion actualizado  correctamente!');
     }
 
     /**
@@ -108,7 +114,7 @@ class FormularioValoracionController extends Controller
     {
          $id=request('id');
         $dato =Formulario_Valoracion::find(request('id'));
-  
+        $paciente=$dato->fk_formulario;
         if ($dato) {
              
   
@@ -117,5 +123,8 @@ class FormularioValoracionController extends Controller
         } else {
             
         }
+
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Formulario de valoracion eliminado  correctamente!');
     }
 }

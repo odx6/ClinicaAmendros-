@@ -40,7 +40,9 @@ class DIMERehabilitacionController extends Controller
         $Diagnostico->LenguajeOrientacion=$data['LeOr'];
         $Diagnostico->Otros=$data['Otros'];
         $Diagnostico->save();
-        return response()->json($data);
+        //return response()->json($data);
+        $paciente=$data['id'];
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Diagnostico  Agregado  correctamente!');
     }
 
     /**
@@ -93,7 +95,9 @@ class DIMERehabilitacionController extends Controller
         $Diagnostico->LenguajeOrientacion=$data['LeOr'];
         $Diagnostico->Otros=$data['Otros'];
         $Diagnostico->save();
-         return response()->json($data);
+         //return response()->json($data);
+         $paciente=$data['id'];
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Diagnostico  actualizado  correctamente!');
 
     }
 
@@ -108,7 +112,7 @@ class DIMERehabilitacionController extends Controller
         //
         $id=request('id');
         $dato =DIME_Rehabilitacion::find(request('id'));
-  
+        $paciente=$dato->fk_dmi;
         if ($dato) {
           
   
@@ -117,7 +121,8 @@ class DIMERehabilitacionController extends Controller
         } else {
             
         }
-       return view('Doctor.index');
+       
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Diagnostico  Eliminado correctamente!');
         
     }
     }

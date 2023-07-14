@@ -36,6 +36,8 @@ class APatologicoController extends Controller
         $patologico->IrTe=request('IrTe');
         $patologico->Otra=request('OTRA');
         $patologico->save();
+        $paciente=$data['id'];
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patologicos Agregados  correctamente!');
     }
 
     /**
@@ -57,6 +59,8 @@ class APatologicoController extends Controller
          $patologico->IrTe=request('IrTe');
          $patologico->Otra=request('OTRA');
          $patologico->save();
+          $paciente=$patologico->fk_ap;
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patologicos Agregados  correctamente!');
     }
 
     /**
@@ -103,6 +107,7 @@ class APatologicoController extends Controller
     {
         $id=request('id');
       $dato =a_patologico::find(request('id'));
+      $paciente=$dato->fk_ap;
 
       if ($dato) {
           $dato->delete();
@@ -110,6 +115,7 @@ class APatologicoController extends Controller
       } else {
           
       }
-     return view('Doctor.index');
+      
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patologicos Eliminados  correctamente!');
     }
 }

@@ -35,8 +35,9 @@ class FExploracionFisicaController extends Controller
         $Exploracion->Motivo= request('Motivo');
         $Exploracion->Save();
 
-     return $id;
-
+            $paciente=request('id');
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Exploracion física agregada  correctamente!');
 
         
     }
@@ -51,13 +52,15 @@ class FExploracionFisicaController extends Controller
         $Exploracion->Motivo= request('Motivo');
         $Exploracion->Save();
 
-         return $id;
+         $paciente=$Exploracion->fk_Exploracion_ff;
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Exploracion física actualizada  correctamente!');
     }
        public function destory(Request $request)
     {
        $id=request('id');
         $Exploracion=  F_ExploracionFisica::find(request('id'));
-        
+        $paciente=$dato->fk_Exploracion_ff;
      
         
   
@@ -69,7 +72,9 @@ class FExploracionFisicaController extends Controller
         } else {
             
         }
-     return $id;
+     
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Exploracion física eliminda  correctamente!');
         
     }
 }

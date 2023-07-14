@@ -26,6 +26,7 @@ class AGinecobstetricoController extends Controller
     public function create(Request $request)
     {
         $gineco = new a_ginecobstetrico;
+        $paciente=request('id');
         $gineco->fk_ag=request('id');
         $gineco->Menarca=request('Menarca');
         $gineco->Ivsa=request('IVSA');
@@ -35,7 +36,9 @@ class AGinecobstetricoController extends Controller
         $gineco->Aborto=request('Abortos');
         $gineco->Paras=request('Partos');
         $gineco->save();
-          return view('Doctor.index');
+         // return view('Doctor.index');
+
+        return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedente agregado correctamente!');
       
     }
 
@@ -82,6 +85,7 @@ class AGinecobstetricoController extends Controller
     public function update(Request $request)
     {
         $gineco =a_ginecobstetrico::find(request('IDAG'));
+        $paciente=request('IDPA');
         $gineco->fk_ag=request('IDPA');
         $gineco->Menarca=request('Menarca');
         $gineco->Ivsa=request('IVSA');
@@ -90,8 +94,7 @@ class AGinecobstetricoController extends Controller
         $gineco->Aborto=request('Abortos');
         $gineco->Paras=request('Partos');
         $gineco->save();
-          return view('Doctor.index');
-
+          return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Actualizado agregado correctamente!');
     }
 
     /**
@@ -103,8 +106,9 @@ class AGinecobstetricoController extends Controller
     public function destory(Request $request)
     {
         $id=request('id');
+
         $dato =a_ginecobstetrico::find(request('id'));
-  
+        $paciente=$dato->fk_ag;
         if ($dato) {
           
   
@@ -113,7 +117,7 @@ class AGinecobstetricoController extends Controller
         } else {
             
         }
-       return view('Doctor.index');
+     return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Actualizado agregado correctamente!');
         
     }
 }

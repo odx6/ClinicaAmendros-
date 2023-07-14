@@ -49,8 +49,10 @@ class AntecedentesPhController extends Controller
         $SignosVitales->FR=$data['FR'];
         $SignosVitales->save();
 
-  
-        return response()->json($data);
+        $paciente=$data['id'];
+       // return response()->json($data);
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patologicos agregados  correctamente!');
+
     }
 
     /**
@@ -116,8 +118,9 @@ class AntecedentesPhController extends Controller
         $SignosVitales->FC=$data['FC'];
         $SignosVitales->FR=$data['FR'];
         $SignosVitales->save();
-        
-        return response()->json($data);
+        $paciente=$SignosVitales->fk_Signos;
+        //return response()->json($data);
+        return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patologicos Actualizados  correctamente!');
     }
 
     /**
@@ -132,12 +135,13 @@ class AntecedentesPhController extends Controller
 
         $here=$data['id'];
         $signos=$data['id'];
+         $paciente='';
         foreach($here as $her){
              $dato =Antecedentes_Ph::find($her);
   
         if ($dato) {
           
-  
+            $paciente=$dato->fk_Antecedentes_ph;
             $dato->delete();
             
         } else {
@@ -151,7 +155,7 @@ class AntecedentesPhController extends Controller
 
          foreach($signos as $signo){
              $dato =Signos_Vitales::find($signo);
-  
+           
         if ($dato) {
           
   
@@ -166,7 +170,8 @@ class AntecedentesPhController extends Controller
         }
 
 
-        return response()->json($data);
+        //return response()->json($data);
+          return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patologicos Eliminados  correctamente!');
     }
     public function agregar($id,$nombre, $valor,$Especificacion){
         $Antecedente= new Antecedentes_Ph;

@@ -15,7 +15,7 @@
             </div>
             <div class="modal-body">
                 <div class="row mb-4">
-                    <form action="{{ route('Consentimeinto.pdf', ['id' => $Paciente->SS]) }}" method="POST">
+                    <form action="{{ route('Consentimeinto.pdf', ['id' => $Paciente->SS]) }}" method="POST" >
                         @csrf
                         <div class="col">
                             <label for="formGroupExampleInput">Nombre del representante legal, familiar o

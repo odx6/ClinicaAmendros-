@@ -111,6 +111,7 @@ Route::post('/EliminarCita', [CitaController::class, 'destroy'])->name('destroy.
 //Rutas Doctores
 Route::get('/Doctor', [DoctorController::class, 'index'])->name('Doctor.index');
 Route::Post('/Doctor/paciente', [DoctorController::class, 'HistorialPaciente'])->name('Doctor.historial');
+Route::get('/Paciente/historial', [DoctorController::class, 'HistorialPaciente'])->name('Doctor.histo');
 Route::get('/Doctor/paciente-fisioterapia', [DoctorController::class, 'HistorialPacienteFisioterapia'])->name('Doctor.historialFisioterapia');
 Route::get('/Doctor/paciente/historial', [DoctorController::class, 'HistorialPaciente2'])->name('Paciente.historial');
 Route::post('/Doctor/paciente/historial-completo', [DoctorController::class, 'Historialcompleto'])->name('Paciente.historial-completo');

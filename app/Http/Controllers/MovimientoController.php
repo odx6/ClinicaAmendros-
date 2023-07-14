@@ -64,7 +64,10 @@ class MovimientoController extends Controller
             ]);
         }
 
-        return response()->json($data);
+        //return response()->json($data);
+         $paciente=$data['id'];
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Prueba de movimiento agregada  correctamente!');
     }
    
     /**
@@ -136,7 +139,10 @@ class MovimientoController extends Controller
         
         
 
-        return response()->json($data);
+       // return response()->json($data);
+         $paciente=$prueba->fk_prueba;
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Prueba de movimiento actualizada  correctamente!');
     }
 
     /**
@@ -149,7 +155,7 @@ class MovimientoController extends Controller
     {
         $id=request('id');
         $dato =Prueba_Ms::find(request('id'));
-  
+         $paciente=$dato->fk_prueba;
         if ($dato) {
           $dato->Movimientos()->where('fk_movimiento', $dato->pk_prueba)->delete();
           $dato->Dedos()->where('fk_dedos', $dato->pk_prueba)->delete();
@@ -159,5 +165,8 @@ class MovimientoController extends Controller
         } else {
             
         }
+
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Prueba de movimiento eliminada  correctamente!');
     }
 }

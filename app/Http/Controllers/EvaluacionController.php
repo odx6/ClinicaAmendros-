@@ -41,7 +41,10 @@ class EvaluacionController extends Controller
          $Evalauciaon->save();
 
 
-         return response()->json($data);
+        // return response()->json($data);
+          $paciente=$data['id'];
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Evaluacion muscular agregada  correctamente!');
     }
 
     /**
@@ -93,7 +96,10 @@ class EvaluacionController extends Controller
          $Evalauciaon->Val_iquierda=$data['izquierda'];
          $Evalauciaon->Val_derecha=$data['Derecha'];
          $Evalauciaon->save();
-         return response()->json($data);
+         //return response()->json($data);
+         $paciente=$Evalauciaon->fk_evaluacion;
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Evaluacion muscular actualizada correctamente!');
     }
 
     /**
@@ -106,6 +112,7 @@ class EvaluacionController extends Controller
     {
         $id=request('id');
       $dato =Evaluacion::find(request('id'));
+      $paciente=$dato->fk_evaluacion;
 
       if ($dato) {
           $dato->delete();
@@ -114,5 +121,7 @@ class EvaluacionController extends Controller
           
       }
 
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Evaluacion muscular eliminada correctamente!');
     }
 }

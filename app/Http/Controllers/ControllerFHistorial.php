@@ -320,8 +320,9 @@ foreach ($request->input('PosturasPosterior') as $PosturaData) {
         $Marcha->save();
        }  
          
-
-         return response()->json($data);
+       $paciente=$data['id'];
+         //return response()->json($data);
+        return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Historial agregado  correctamente!');
     }
 
     /**

@@ -50,13 +50,17 @@ foreach ($request->input('Posturas') as $PosturaData) {
                 'Observaciones' => $PosturaData['Observaciones'],
                 // Otros campos de cliente que desees actualizar
             ]);
-        }        
+        }
+                 
 }
 
 
 
 
-          return response()->json($data);
+          //return response()->json($data);
+$paciente=$data['id'];
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Analisis de  postura agregada  correctamente!');
     }
 
     /**
@@ -121,7 +125,10 @@ foreach ($request->input('Posturas') as $PosturaData) {
         }
         }
 
-          return response()->json($data);
+          //return response()->json($data);
+        $paciente=$Vista->fk_vista;
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Analisis de  postura agregada  correctamente!');
     }
 
     /**
@@ -136,7 +143,8 @@ foreach ($request->input('Posturas') as $PosturaData) {
          //
         $id=request('id');
         $dato =VistaPostura::find(request('id'));
-  
+         $paciente=$dato->fk_vista;
+     
         if ($dato) {
              $dato->Posturas()->where('fk_postura', $dato->pk_vista)->delete();
   
@@ -145,5 +153,7 @@ foreach ($request->input('Posturas') as $PosturaData) {
         } else {
             
         }
+
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Analisis de  postura agregada  correctamente!');
     }
 }

@@ -38,7 +38,10 @@ class HabitosSaludController extends Controller
         $this->agregar($data['id'],'Drogas',$data['Drogas'],$data['EDrogas']);
         $this->agregar($data['id'],'Pasa tiempo',$data['Pasatiempo'],$data['EPasatiempo']);
         
-        return response()->json($data);
+       // return response()->json($data);
+        $paciente=$data['id'];
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Habitos de la salud agregados  correctamente!');
     }
 
     /**
@@ -90,7 +93,10 @@ class HabitosSaludController extends Controller
         $this->Actualizar($data['IDSe_Automedica'],'Se Automedica',$data['Se_Automedica'],$data['ESe_Automedica']);
         $this->Actualizar($data['IDDrogas'],'Drogas',$data['Drogas'],$data['EDrogas']);
         $this->Actualizar($data['IDPasa_tiempo'],'Pasa tiempo',$data['Pasa_tiempo'],$data['EPasa_tiempo']);
-        return response()->json($data);
+       // return response()->json($data);
+        $paciente=$this->Actualizar($data['IDPasa_tiempo'],'Pasa tiempo',$data['Pasa_tiempo'],$data['EPasa_tiempo']);
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Habitos de la salud actualizados correctamente!');
     }
 
     /**
@@ -104,10 +110,10 @@ class HabitosSaludController extends Controller
         //
         $data = $request->all();
         $here=$data['id'];
-        
+         $paciente='';
         foreach($here as $her){
              $dato =Habitos_salud::find($her);
-  
+            $paciente=$dato->fk_Habitos;
         if ($dato) {
           
   
@@ -116,7 +122,8 @@ class HabitosSaludController extends Controller
         } else {
             
         }}
-        return response()->json($data);
+        //return response()->json($data);
+        return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Habitos de la salud eliminados correctamente!');
     }
     public function agregar($id,$nombre, $valor,$Especificacion){
         
@@ -128,6 +135,7 @@ class HabitosSaludController extends Controller
         $Habitos->Especificacion=$Especificacion;
         $Habitos->save();
 
+
    }
    public function Actualizar($id,$nombre, $valor,$Especificacion){
     $Habitos=Habitos_salud::find($id);
@@ -136,6 +144,7 @@ class HabitosSaludController extends Controller
    }
     $Habitos->Especificacion=$Especificacion;
     $Habitos->save();
+    return $Habitos->fk_Habitos;
 
 }
 }

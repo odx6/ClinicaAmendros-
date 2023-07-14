@@ -48,7 +48,9 @@ class HistorialClinicoController extends Controller
         $Historial->TABASQUISMO=request('TB');
         $Historial->DROGAS=request('DR');
         $Historial->save();
-            return view('Doctor.index');
+         $paciente=request('Paciente');
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Hitorial clinico  agregado  correctamente!');
     }
 
     /**
@@ -131,7 +133,9 @@ class HistorialClinicoController extends Controller
          $Historial->TABASQUISMO=request('TB');
          $Historial->DROGAS=request('DR');
          $Historial->save();
-           return view('Doctor.index');
+          $paciente= $Historial->PacienteSS;
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Historial clinico actualizado correctamente!');
     }
 
     /**
@@ -144,13 +148,13 @@ class HistorialClinicoController extends Controller
     {
         $id=request('id');
         $dato =Historial_clinico::Find($id);
-
+          $paciente= $dato->PacienteSS;
 
         if ($dato) {
             $dato->Exploraciones()->where('fk_e', $dato->idHIstorial_clinico)->delete();
             $dato->delete();
 
         }else{}
-         return view('Doctor.index');
+          return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Historial clinico eliminado correctamente!');
     }
 }

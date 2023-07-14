@@ -44,7 +44,10 @@ class MarchaDeambulacionController extends Controller
 
         $Marcha->save();
 
-        return response()->json($data);
+       // return response()->json($data);
+         $paciente=$data['id'];
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Marcha deambulacion agregada  correctamente!');
     }
 
     /**
@@ -101,7 +104,10 @@ class MarchaDeambulacionController extends Controller
         (isset($data['Observaciones'])) ? $Marcha->Observaciones_marcha    = $data['Observaciones']: $Marcha->Observaciones_marcha  = "no";
 
         $Marcha->save();
-        return response()->json($data);
+        //return response()->json($data);
+         $paciente= $Marcha->fk_marcha;
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Marcha deambulacion atualizada  correctamente!');
     }
 
     /**
@@ -115,7 +121,7 @@ class MarchaDeambulacionController extends Controller
          //
         $id=request('id');
         $dato =Marcha_Deambulacion::find(request('id'));
-  
+          $paciente= $dato->fk_marcha;
         if ($dato) {
           
   
@@ -124,5 +130,8 @@ class MarchaDeambulacionController extends Controller
         } else {
             
         }
+
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Marcha deambulacion eliminada  correctamente!');
     }
 }

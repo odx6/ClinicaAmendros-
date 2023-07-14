@@ -38,7 +38,10 @@ class TrasladosController extends Controller
          $Traslado->Val_final=$data['Final'];
          $Traslado->save();
 
-          return response()->json($data);
+         // return response()->json($data);
+          $paciente=$data['id'];
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Traslado agregado  correctamente!');
 
     }
 
@@ -91,7 +94,10 @@ class TrasladosController extends Controller
          $Traslado->Val_final=$data['Final'];
          $Traslado->save();
 
-          return response()->json($data);
+          //return response()->json($data);
+          $paciente=$Traslado->fk_traslados;
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Traslado atualizado  correctamente!');
     }
 
     /**
@@ -104,6 +110,7 @@ class TrasladosController extends Controller
     {
          $id=request('id');
         $dato =traslados::find(request('id'));
+         $paciente=$dato->fk_traslados;
   
         if ($dato) {
           
@@ -113,5 +120,8 @@ class TrasladosController extends Controller
         } else {
             
         }
+
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Traslado eliminado  correctamente!');
     }
 }

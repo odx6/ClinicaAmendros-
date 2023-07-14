@@ -39,6 +39,9 @@ class EstudioController extends Controller
        $Estudio->USG=request('USG');
         $Estudio->save();
 
+        $paciente=request('id');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Estudio agregado correctamente!');
+
     }
 
     /**
@@ -59,6 +62,9 @@ class EstudioController extends Controller
        $Estudio->RX=request('RX');
        $Estudio->USG=request('USG');
         $Estudio->save();
+
+        $paciente=$Estudio->fk_e;
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Estudio actualizado correctamente!');
     }
 
     /**
@@ -105,7 +111,7 @@ class EstudioController extends Controller
     {
         $id=request('id');
       $dato =estudio::find(request('id'));
-
+       $paciente=$dato->fk_e;
       if ($dato) {
        
           $dato->delete();
@@ -113,6 +119,7 @@ class EstudioController extends Controller
       } else {
           
       }
-     return view('Doctor.index');
+    
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Estudio eliminado correctamente!');
     }
 }

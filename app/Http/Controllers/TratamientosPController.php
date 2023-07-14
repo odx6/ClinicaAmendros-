@@ -38,7 +38,9 @@ class TratamientosPController extends Controller
         $Tratamiento->des_tratamiento= request('Tratamiento');
         $Tratamiento->Save();
 
-        return $id;
+       $paciente=request('id');
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Tratamiento agregado  correctamente!');
     }
     /**
      * Store a newly created resource in storage.
@@ -89,7 +91,9 @@ class TratamientosPController extends Controller
         $Tratamiento->des_tratamiento= request('Tratamiento');
         $Tratamiento->Save();
 
-        return $id;
+        $paciente=$Tratamiento->fk_tratamientos_p;
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Tratamiento actualizado  correctamente!');
     }
 
     /**
@@ -102,7 +106,7 @@ class TratamientosPController extends Controller
     {
          $id=request('id');
         $dato =Tratamientos_p::find(request('id'));
-  
+        $paciente=$dato->fk_tratamientos_p;
         if ($dato) {
           
   
@@ -111,7 +115,10 @@ class TratamientosPController extends Controller
         } else {
             
         }
-       return view('Doctor.index');
+      
+        
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Tratamiento eliminado  correctamente!');
         
     }
     }

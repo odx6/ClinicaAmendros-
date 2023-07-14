@@ -31,6 +31,9 @@ class NotaController extends Controller
         $Nota->Nota=request('NOT');
         $Nota->Tipo=request('TIPO');
         $Nota->save();
+         $paciente=request('id');
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Nota agregada  correctamente!');
     }
 
     /**
@@ -47,6 +50,9 @@ class NotaController extends Controller
         $Nota->Nota=request('NOT');
         $Nota->Tipo=request('TIPO');
         $Nota->save();
+         $paciente=$Nota->fk_n;
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Nota actualizada  correctamente!');
     }
 
     /**
@@ -93,13 +99,15 @@ class NotaController extends Controller
     {
         $id=request('id');
         $dato =nota::Find($id);
-
+        $paciente=$dato->fk_n;
 
         if ($dato) {
           
             $dato->delete();
 
         }else{}
-        return view('Doctor.index');
+        
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Nota eliminada  correctamente!');
     }
 }

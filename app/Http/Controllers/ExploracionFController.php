@@ -50,6 +50,9 @@ class ExploracionFController extends Controller
         $Exploracion->Miembro_Pelvico_ef=request('MP');
         $Exploracion->Miembro_toraxico_ef=request('MT');
         $Exploracion->save();
+        $paciente=request('id');
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Exploracion física agregada  correctamente!');
     }
 
     /**
@@ -80,6 +83,9 @@ class ExploracionFController extends Controller
         $Exploracion->Miembro_Pelvico_ef=request('MP');
         $Exploracion->Miembro_toraxico_ef=request('MT');
         $Exploracion->save();
+        $paciente=request('IDPA');
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Exploracion física actualizada  correctamente!');
     }
 
     /**
@@ -126,6 +132,7 @@ class ExploracionFController extends Controller
     {
       $id=request('id');
       $dato =exploracion_f::find(request('id'));
+      $paciente=$dato->fk_p;
 
       if ($dato) {
         
@@ -135,6 +142,8 @@ class ExploracionFController extends Controller
       } else {
           
       }
-     return view('Doctor.index');
+     
+     
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Exploracion física actualizada  correctamente!');
     }
 }

@@ -38,7 +38,9 @@ class Estado_ingravidezController extends Controller
         $Estado->Especificacion=$data['Especificacion'];
         $Estado->Numero_hijos=$data['hijos'];
         $Estado->save();
-        return response()->json($data);
+       // return response()->json($data);
+        $paciente=$data['id'];
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Estado de ingravidez agregado correctamente!');
         }
     
 
@@ -91,7 +93,9 @@ class Estado_ingravidezController extends Controller
         $Estado->Especificacion=$data['Especificacion'];
         $Estado->Numero_hijos=$data['hijos'];
         $Estado->save();
-        return response()->json($data);
+       // return response()->json($data);
+                $paciente=$Estado->fk_ingravidez;
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Estado de ingravidez actulizado correctamente!');
     }
 
     /**
@@ -104,7 +108,7 @@ class Estado_ingravidezController extends Controller
     {
         $id=request('id');
         $dato =Estado_ingravidez::find(request('id'));
-  
+        $paciente=$dato->fk_ingravidez;
         if ($dato) {
          
             $dato->delete();
@@ -112,5 +116,7 @@ class Estado_ingravidezController extends Controller
         } else {
             
         }
+
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Estado de ingravidez eliminado correctamente!');
     }
 }

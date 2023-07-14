@@ -32,6 +32,7 @@ class CicatrizQController extends Controller
     public function create(Request $request)
     {
         $data = $request->all();
+        $paciente=$data['id'];
         $Cicatriz = new Cicatriz_Q;
         $Cicatriz->fk_cicatriz = $data['id'];
         $Cicatriz->sitio = $data['Sitio'];
@@ -42,7 +43,8 @@ class CicatrizQController extends Controller
         (isset($data['Hipertrófica'])) ? $Cicatriz->Hipertrofica = $data['Hipertrófica']: $Cicatriz->Hipertrofica = "no";
         $Cicatriz->save();
 
-        return response()->json($data);
+      //  return response()->json($data);
+        return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Cicatriz agregada correctamente!');
     }
 
     /**
@@ -88,6 +90,7 @@ class CicatrizQController extends Controller
     public function update(Request $request)
     {
         $data = $request->all();
+        
         $Cicatriz =Cicatriz_Q::find($data['id']);
           $Cicatriz->sitio = $data['Sitio'];
         (isset($data['Abierta'])) ? $Cicatriz->abierta = $data['Abierta']: $Cicatriz->abierta = "no";
@@ -96,8 +99,9 @@ class CicatrizQController extends Controller
         (isset($data['Con-Aderencia'])) ? $Cicatriz->Con_Adherencia = $data['Con-Aderencia']: $Cicatriz->Con_Adherencia = "no";
         (isset($data['Hipertrófica'])) ? $Cicatriz->Hipertrofica = $data['Hipertrófica']: $Cicatriz->Hipertrofica = "no";
         $Cicatriz->save();
-
-        return response()->json($data);
+         $paciente=$Cicatriz->fk_cicatriz;
+        //return response()->json($data);
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Cicatriz quirurgica actualizada correctamente!');
     }
 
     /**
@@ -111,6 +115,7 @@ class CicatrizQController extends Controller
         
         //
         $id=request('id');
+        $paciente=$id;
         $dato =Cicatriz_Q::find(request('id'));
   
         if ($dato) {
@@ -121,5 +126,6 @@ class CicatrizQController extends Controller
         } else {
             
         }
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Cicatriz quirurgica Eliminada correctamente!');
     }
 }
