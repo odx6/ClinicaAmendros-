@@ -177,8 +177,8 @@ class AntecedentesPhController extends Controller
         $Antecedente= new Antecedentes_Ph;
         $Antecedente->fk_Antecedentes_ph=$id;
         $Antecedente->Nombre_Antecedente=$nombre;
-        if(isset($valor)){  $Antecedente->Valor=$valor; } else{
-       $Antecedente->Valor="no"; }
+        if(isset($valor)){  $Antecedente->valor=$valor; } else{
+       $Antecedente->valor="no"; }
         $Antecedente->Especificacion=$Especificacion;
         $Antecedente->save();
 
@@ -187,7 +187,7 @@ class AntecedentesPhController extends Controller
     $Antecedente=Antecedentes_Ph::find($id);
    
     $Antecedente->Nombre_Antecedente=$nombre;
-    if(isset($valor)){ $Antecedente->Valor=$valor; } else{; $Antecedente->Valor="no";
+    if(isset($valor)){ $Antecedente->valor=$valor; } else{; $Antecedente->valor="no";
    }
     $Antecedente->Especificacion=$Especificacion;
     $Antecedente->save();

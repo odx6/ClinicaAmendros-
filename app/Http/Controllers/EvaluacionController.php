@@ -36,8 +36,8 @@ class EvaluacionController extends Controller
          $Evalauciaon->fk_evaluacion=$data['id'];
          $Evalauciaon->Nombre_miembro=$data['Nombre'];
          $Evalauciaon->Tipo="Muscular";
-         $Evalauciaon->Val_iquierda=$data['izquierda'];
-         $Evalauciaon->Val_derecha=$data['Derecha'];
+         $Evalauciaon->val_iquierda=$data['izquierda'];
+         $Evalauciaon->val_derecha=$data['Derecha'];
          $Evalauciaon->save();
 
 
@@ -93,8 +93,8 @@ class EvaluacionController extends Controller
         $Evalauciaon= Evaluacion::find($data['id']);
          $Evalauciaon->Nombre_miembro=$data['Nombre'];
          $Evalauciaon->Tipo="Muscular";
-         $Evalauciaon->Val_iquierda=$data['izquierda'];
-         $Evalauciaon->Val_derecha=$data['Derecha'];
+         $Evalauciaon->val_iquierda=$data['izquierda'];
+         $Evalauciaon->val_derecha=$data['Derecha'];
          $Evalauciaon->save();
          //return response()->json($data);
          $paciente=$Evalauciaon->fk_evaluacion;
