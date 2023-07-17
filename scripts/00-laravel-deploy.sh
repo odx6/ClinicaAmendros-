@@ -16,6 +16,6 @@ php artisan view:cache
 echo "ever Running migrations..."
  php artisan migrate:refresh --seed --force
 
-echo "ever corriendo los seeders..."
-
+echo "ever creando storage"
+php artisan storage:link
 

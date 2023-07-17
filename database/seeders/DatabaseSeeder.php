@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
         $user->name ='Admin';
         $user->email='Admin@gmail.com';
         $user->password='1234';
-        $user->role='admin';
+        $user->role='director';
 
         $user->save();
         //user 

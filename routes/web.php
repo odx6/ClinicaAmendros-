@@ -35,6 +35,10 @@ use  App\Http\Controllers\PlanAnaliticoController;
 use  App\Http\Controllers\AnalisisMarchaController;
 use  App\Http\Controllers\ControllerFHistorial;
 use  App\Http\Controllers\ConsultaController;
+use  App\Http\Controllers\PagoController;
+use  App\Http\Controllers\ProductoController;
+use  App\Http\Controllers\ProvedorController;
+use  App\Http\Controllers\FacturaController;
 use Barryvdh\DomPDF\Facade\Pdf;
 /*
 |--------------------------------------------------------------------------
@@ -252,6 +256,55 @@ Route::post('/Paciente/AgregarHistorialFisio', [ControllerFHistorial::class, 'cr
 //rutas consultas
 Route::get('/Doctor/Consultas',[ConsultaController::class, 'index'])->name('index.Consultas');
 Route::post('/Doctor/AgregarConsultas',[ ConsultaController::class, 'create'])->name('create.Consultas');
+Route::get('/ListarConsultas',[ ConsultaController::class, 'store'])->name('store.Consultas');
 Route::post('/Doctor/ActualizarConsultas', [ConsultaController::class, 'update'])->name('update.Consultas');
-Route::post('/Doctor/EliminarConsultas', [ConsultaController::class, 'destroy'])->name('destroy.Consultas');
+Route::get('/ActualizarConsultas', [ConsultaController::class, 'show'])->name('show.Consultas');
+Route::get('/Doctor/EliminarConsultas', [ConsultaController::class, 'destroy'])->name('destroy.Consultas');
+//ruta Pagos
+Route::get('/Pagos',[PagoController::class, 'index'])->name('index.Pagos');
+Route::get('/Pagos/Agregar',[PagoController::class, 'Cobro'])->name('Cobro.Pagos');
+Route::post('/AgregarPagos',[ PagoController::class, 'create'])->name('create.Pagos');
+Route::get('/ListarPagos',[ PagoController::class, 'store'])->name('store.Pagos');
+Route::post('/ActualizarPagos', [PagoController::class, 'update'])->name('update.Pagos');
+Route::get('/mostrarPagos', [PagoController::class, 'show'])->name('show.Pagos');
+Route::get('/EliminarPagos', [PagoController::class, 'destroy'])->name('destroy.Pagos');
 //endconsultas
+//ruta Secretaria
+Route::get('/Secrearia',[PagoController::class, 'index'])->name('index.Secrearia');
+Route::post('/AgregarSecrearia',[ PagoController::class, 'create'])->name('create.Secrearia');
+Route::get('/ListarSecrearia',[ PagoController::class, 'store'])->name('store.Secrearia');
+Route::post('/ActualizarSecrearia', [PagoController::class, 'update'])->name('update.Secrearia');
+Route::get('/mostrarSecrearia', [PagoController::class, 'show'])->name('show.Secrearia');
+Route::get('/EliminarSecrearia', [PagoController::class, 'destroy'])->name('destroy.Secrearia');
+//endSecretarias
+ 
+
+ //Admin
+//ruta Productos
+Route::get('/Productos',[ProductoController::class, 'index'])->name('index.Productos');
+Route::get('/AgregarProductos',[ ProductoController::class, 'create'])->name('create.Productos');
+Route::post('/ListarProductos',[ ProductoController::class, 'store'])->name('store.Productos');
+Route::post('/ActualizarProductos', [ProductoController::class, 'update'])->name('update.Productos');
+Route::get('/mostrarProductos', [ProductoController::class, 'show'])->name('show.Productos');
+Route::get('/EliminarProductos', [ProductoController::class, 'destroy'])->name('destroy.Productos');
+//endSeProductos
+
+//ruta Proveedor
+Route::get('/Preveedor',[ProvedorController::class, 'index'])->name('index.Preveedor');
+Route::get('/AgregarPreveedor',[ ProvedorController::class, 'create'])->name('create.Preveedor');
+Route::post('/ListarPreveedor',[ ProvedorController::class, 'store'])->name('store.Preveedor');
+Route::post('/ActualizarPreveedor', [ProvedorController::class, 'update'])->name('update.Preveedor');
+Route::get('/mostrarPreveedor', [ProvedorController::class, 'show'])->name('show.Preveedor');
+Route::get('/EliminarPreveedor', [ProvedorController::class, 'destroy'])->name('destroy.Preveedor');
+//endSeProveedor
+
+//ruta Productos
+Route::get('/Facctura',[FacturaController::class, 'index'])->name('index.Facctura');
+Route::get('/AgregarFacctura',[ FacturaController::class, 'create'])->name('create.Facctura');
+Route::post('/ListarFacctura',[ FacturaController::class, 'store'])->name('store.Facctura');
+Route::post('/ActualizarFacctura', [FacturaController::class, 'update'])->name('update.Facctura');
+Route::get('/mostrarFacctura', [FacturaController::class, 'show'])->name('show.Facctura');
+Route::get('/EliminarFacctura', [FacturaController::class, 'destroy'])->name('destroy.Facctura');
+//endSeProductos
+
+//enAdmin

@@ -36,7 +36,7 @@ class APatologicoController extends Controller
         $patologico->IrTe=request('IrTe');
         $patologico->Otra=request('OTRA');
         $patologico->save();
-        $paciente=$data['id'];
+        $paciente=$patologico->fk_ap;
          return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patologicos Agregados  correctamente!');
     }
 

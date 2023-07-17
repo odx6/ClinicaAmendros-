@@ -2,12 +2,9 @@
 @section('title','Admin')
 @section('linkAuth')
  <!-- BEGIN PAGE LEVEL STYLE -->
- <link href="../src/plugins/src/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
 
-<link href="../src/plugins/css/light/fullcalendar/custom-fullcalendar.css" rel="stylesheet" type="text/css" />
 <link href="../src/assets/css/light/components/modal.css" rel="stylesheet" type="text/css">
 
-<link href="../src/plugins/css/dark/fullcalendar/custom-fullcalendar.css" rel="stylesheet" type="text/css" />
 <link href="../src/assets/css/dark/components/modal.css" rel="stylesheet" type="text/css">
 <!-- END PAGE LEVEL STYLE -->
 
@@ -35,118 +32,7 @@
                             </ol>
                         </nav>
                     </div>
-                    <!-- /BREADCRUMB -->
-                   <!--calendario-->
-                   <div class="row layout-top-spacing layout-spacing" id="cancel-row">
-                        <div class="col-xl-12 col-lg-12 col-md-12">
-                            <div class="calendar-container">
-                                <div class="calendar"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Agregar una nueva cita</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-    
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="">
-                                                <label class="form-label">Nombre del Doctor</label>
-                                               <!-- <input id="event-title" type="text" class="form-control">-->
-                                                <select class="form-control" name="DOCTOR" id="event-title">
-                                                    @php
-                                                    $doctores =App\Models\Doctor::all();
-                                        
-                                                    @endphp
-                                                    @foreach($doctores as $doctor)
-                                                    <option value="{{ $doctor->DSS}}">{{ $doctor->ESPECIALIDAD }}</option>
-                                                    @endforeach
-                                                    
-                                                </select>
-                                            </div>
-                                        </div>
-                                         <div class="col-md-12">
-                                            <div class="">
-                                                <label class="form-label">Nombre del pacente</label>
-                                               <!-- <input id="event-title2" type="text" class="form-control">-->
-                                                <select class="form-control" name="paciente" id="event-title2" >
-                                                    @php
-                                                    $pacientes =App\Models\Paciente::all();
-                                        
-                                                    @endphp
-                                                    @foreach($pacientes as $paciente)
-                                                    <option value="{{ $paciente->SS}}">{{ $paciente->Nombre}} {{ $paciente->Apellido}} </option>
-                                                    @endforeach
-                                                    
-                                                </select>
-                                            </div>
-                                        </div>
-    
-                                        <div class="col-md-12 ">
-                                            <div class="">
-                                                <label class="form-label">Ingresa La fecha de inicio y la hora</label>
-                                                <input id="event-start-date" type="datetime-local" class="form-control">
-                                            </div>
-                                        </div>
-    
-                                        <div class="col-md-12 ">
-                                            <div class="">
-                                                <label class="form-label">Ingresa la fecha que concluye la cita </label>
-                                                <input id="event-end-date" type="datetime-local" class="form-control">
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-md-12">
-    
-                                            <div class="d-flex mt-4">
-                                                <div class="n-chk">
-                                                    <div class="form-check form-check-primary form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="event-level" value="Work" id="rwork">
-                                                        <label class="form-check-label" for="rwork">Work</label>
-                                                    </div>
-                                                </div>
-                                                <div class="n-chk">
-                                                    <div class="form-check form-check-warning form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="event-level" value="Travel" id="rtravel">
-                                                        <label class="form-check-label" for="rtravel">Travel</label>
-                                                    </div>
-                                                </div>
-                                                <div class="n-chk">
-                                                    <div class="form-check form-check-success form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="event-level" value="Personal" id="rPersonal">
-                                                        <label class="form-check-label" for="rPersonal">Personal</label>
-                                                    </div>
-                                                </div>
-                                                <div class="n-chk">
-                                                    <div class="form-check form-check-danger form-check-inline">
-                                                        <input class="form-check-input" type="radio" name="event-level" value="Importante" id="rImportant">
-                                                        <label class="form-check-label" for="rImportant">Important</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
-                                    <button type="button" class="btn btn-success btn-update-event" data-fc-event-public-id="">Actualizar una cita</button>
-                                    <button type="button" class="btn btn-primary btn-add-event">Agregar Cita</button>
-                                    <button type="button" class="btn btn-primary btn-add-event" id="btnAgregar">Agregar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                  <!--end_Calendario-->
-
+                        <h3>Hola bienvenido</h3>
                 </div>
 
             </div>

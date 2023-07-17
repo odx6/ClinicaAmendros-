@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Secretaria;
+use App\Models\Provedor_Producto;
 use Illuminate\Http\Request;
 
-class SecretariaController extends Controller
+class ProvedorProductoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class SecretariaController extends Controller
      */
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class SecretariaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Secretaria  $secretaria
+     * @param  \App\Models\Provedor_Producto  $provedor_Producto
      * @return \Illuminate\Http\Response
      */
-    public function show(Secretaria $secretaria)
+    public function show(Provedor_Producto $provedor_Producto)
     {
         //
     }
@@ -52,10 +52,10 @@ class SecretariaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Secretaria  $secretaria
+     * @param  \App\Models\Provedor_Producto  $provedor_Producto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Secretaria $secretaria)
+    public function edit(Provedor_Producto $provedor_Producto)
     {
         //
     }
@@ -64,10 +64,10 @@ class SecretariaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Secretaria  $secretaria
+     * @param  \App\Models\Provedor_Producto  $provedor_Producto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Secretaria $secretaria)
+    public function update(Request $request, Provedor_Producto $provedor_Producto)
     {
         //
     }
@@ -75,14 +75,10 @@ class SecretariaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Secretaria  $secretaria
+     * @param  \App\Models\Provedor_Producto  $provedor_Producto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Secretaria $secretaria)
-    {
-        //
-    }
-     public function Consultas()
+    public function destroy(Provedor_Producto $provedor_Producto)
     {
         //
     }

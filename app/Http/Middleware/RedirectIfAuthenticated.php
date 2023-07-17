@@ -24,7 +24,7 @@ class RedirectIfAuthenticated
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
 
-                if(auth()->user()->role == 'admin'){
+                if(auth()->user()->role == 'director'){
                     return redirect()->route('admin.index');
                 }
                 else

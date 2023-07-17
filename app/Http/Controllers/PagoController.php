@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pago;
+use App\Models\Consulta;
+use App\Models\Paciente;
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 
 class PagoController extends Controller
@@ -14,7 +17,19 @@ class PagoController extends Controller
      */
     public function index()
     {
-        //
+        return view('Pagos.index');
+    }
+     public function Cobro(Request $request)
+    {
+         $data = $request->all();
+
+         $Consulta=Consulta::find($data['id']);
+         $Paciente=Paciente::find($Consulta->fk_paciente);
+         $Doctor=Doctor::find($Consulta->fk_doctor);
+
+
+         //return response()->json($data);
+        return view('Pagos.Cobros', compact('Consulta','Paciente','Doctor'));
     }
 
     /**
@@ -22,9 +37,28 @@ class PagoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
+        $data = $request->all();
+
+        $pago = new Pago;
+        $pago->fk_consulta=$data['id'];
+        $pago->fk_secre=$data['secretaria'];
+
+        $pago->monto=$data['Monto'];
+        $pago->TipoPago=$data['TipoPago'];
+        $pago->save();
+        $Consulta=Consulta::find($data['id']);
+        if($Consulta->monto== $pago->monto){
+
+            $Consulta->Estado="Pagado";
+            $Consulta->save();
+        }
+
+        //return response()->json($data);
+        return redirect()->route('index.Pagos')->with('mensaje', '¡Pago agregado correctamente!');
+        
     }
 
     /**
@@ -33,9 +67,9 @@ class PagoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        return view('Pagos.Pagos');
     }
 
     /**
@@ -44,9 +78,18 @@ class PagoController extends Controller
      * @param  \App\Models\Pago  $pago
      * @return \Illuminate\Http\Response
      */
-    public function show(Pago $pago)
+    public function show(Request $request)
     {
-        //
+
+            $data = $request->all();
+            $Pago=Pago::Find($data['id']);
+             $consulta=Consulta::find($Pago->fk_consulta);
+         $Paciente=Paciente::find($consulta->fk_paciente);
+         $Doctor=Doctor::find($consulta->fk_doctor);
+          return view('Pagos.Edit', compact('consulta','Paciente','Doctor','Pago'));
+
+        
+
     }
 
     /**
@@ -57,7 +100,9 @@ class PagoController extends Controller
      */
     public function edit(Pago $pago)
     {
-        //
+
+
+    
     }
 
     /**
@@ -67,9 +112,26 @@ class PagoController extends Controller
      * @param  \App\Models\Pago  $pago
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pago $pago)
+    public function update(Request $request)
     {
-        //
+        $data = $request->all();
+        $pago =Pago::find($data['id']);
+        $pago->fk_secre=$data['secretaria'];
+        $pago->monto=$data['Monto'];
+        $pago->TipoPago=$data['TipoPago'];
+        $pago->save();
+        $Consulta=Consulta::find($pago->fk_consulta);
+        if($Consulta->monto== $pago->monto){
+
+            $Consulta->Estado="Pagado";
+            $Consulta->save();
+        }else{
+            $Consulta->Estado="Pendiente";
+            $Consulta->save();
+        }
+
+        //return response()->json($data);
+        return redirect()->route('index.Pagos')->with('mensaje', '¡Pago actualizado correctamente!');
     }
 
     /**
@@ -78,8 +140,20 @@ class PagoController extends Controller
      * @param  \App\Models\Pago  $pago
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pago $pago)
+    public function destroy()
     {
-        //
+        $id=request('id');
+        $dato =Pago::Find($id);
+    
+
+        if ($dato) {
+          
+            $dato->delete();
+
+        }else{}
+        
+     
+         return redirect()->route('store.Pagos')->with('mensaje', '¡Pago eliminado  correctamente!');
+    
     }
 }

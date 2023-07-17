@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Pago extends Model
 {
     use HasFactory;
+    protected $primaryKey="pk_pagos";
+
+     public function Secretaria()
+    {
+         return $this->belongsTo(Secretaria::class);
+    }
 }

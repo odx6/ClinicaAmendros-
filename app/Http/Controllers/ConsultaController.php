@@ -35,7 +35,9 @@ class ConsultaController extends Controller
         $Consul->Estado='Pendiente';
         $Consul->save();
 
-        return redirect()->route('Doctor.index');
+        //return redirect()->route('Doctor.index');
+       
+         return redirect()->route('store.Consultas')->with('mensaje', '¡Consulta agregada  correctamente!');
     
     }
 
@@ -45,9 +47,9 @@ class ConsultaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        return view('Consultas.store');
     }
 
     /**
@@ -56,9 +58,14 @@ class ConsultaController extends Controller
      * @param  \App\Models\Consulta  $consulta
      * @return \Illuminate\Http\Response
      */
-    public function show(Consulta $consulta)
-    {
-        
+    public function show(Request $request)
+    {   
+         
+        $data = $request->all();
+        $consulta=Consulta::Find($data['id']);
+        return view('Consultas.show',compact('consulta'));
+
+
     }
 
     /**
@@ -82,7 +89,7 @@ class ConsultaController extends Controller
     public function update(Request $request)
     {
         $data = $request->all();
-        $Consul=Consulta::finc($data['id']);
+        $Consul=Consulta::find($data['id']);
         $Consul->fk_paciente=$data['consultaPaciente'];
         $Consul->fk_doctor=$data['ConsultaDoctor'];
         $Consul->fk_cita=$data['Consulta_cita'];
@@ -90,7 +97,7 @@ class ConsultaController extends Controller
         $Consul->monto=$data['Monto'];
         $Consul->Estado='Pendiente';
         $Consul->save();
-        return response()->json($data);
+         return redirect()->route('store.Consultas')->with('mensaje', '¡Consulta actualizada  correctamente!');
     }
 
     /**
@@ -110,6 +117,6 @@ class ConsultaController extends Controller
             $dato->delete();
 
         }else{}
-        return view('Doctor.index');
+        return redirect()->route('store.Consultas')->with('mensaje', '¡Consulta eliminada correctamente!');
     }
 }

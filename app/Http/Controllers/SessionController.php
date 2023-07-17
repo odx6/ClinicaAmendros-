@@ -33,7 +33,7 @@ class SessionController extends Controller
             
         else{
 
-            if(auth()->user()->role == 'admin'){
+            if(auth()->user()->role == 'director'){
                 
                 return redirect()->route('admin.index');
 

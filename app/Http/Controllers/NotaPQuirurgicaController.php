@@ -38,7 +38,7 @@ class NotaPQuirurgicaController extends Controller
          $Nota_p->Nombre_Aniestesiologo=request('NAN');
          $Nota_p->Circulante=request('CIR');
          $Nota_p->save();
-         $paciente=$Nota->fk_npq;
+         $paciente=$Nota_p->fk_npq;
      
          return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Nota post-quirurgica agregada  correctamente!');
     }
@@ -63,7 +63,7 @@ class NotaPQuirurgicaController extends Controller
          $Nota_p->Nombre_Aniestesiologo=request('NAN');
          $Nota_p->Circulante=request('CIR');
          $Nota_p->save();
-         $paciente=$Nota->fk_npq;
+         $paciente=$Nota_p->fk_npq;
      
          return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Nota post-quirurgica actualizada    correctamente!');
 
