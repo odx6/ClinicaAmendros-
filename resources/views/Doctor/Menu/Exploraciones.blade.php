@@ -18,7 +18,7 @@
                     action="{{ route('Exploracion.Formulario', ['id' => $Paciente->SS]) }}">
                     @csrf
                     <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
-                        id="Hola" style="display: none;">Agregar exploracion fisica del paciente</button>
+                        id="Hola" style="display: none;">Agregar exploración física del paciente</button>
                 </form>
             </div>
         @else

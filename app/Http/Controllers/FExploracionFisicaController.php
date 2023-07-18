@@ -37,7 +37,7 @@ class FExploracionFisicaController extends Controller
 
             $paciente=request('id');
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Exploracion física agregada  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Exploración física agregada  correctamente!');
 
         
     }
@@ -54,7 +54,7 @@ class FExploracionFisicaController extends Controller
 
          $paciente=$Exploracion->fk_Exploracion_ff;
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Exploracion física actualizada  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Exploración física actualizada  correctamente!');
     }
        public function destory(Request $request)
     {
@@ -74,7 +74,7 @@ class FExploracionFisicaController extends Controller
         }
      
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Exploracion física eliminda  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Exploración física eliminada  correctamente!');
         
     }
 }

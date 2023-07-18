@@ -38,7 +38,7 @@ class RegisterController extends Controller
         $user->password=request('password');
         $user->role=request('role');
         $user->save();
-        return redirect()->route('index.Usuarios')->with('mensaje', '¡Ususario Agregado correctamente!');
+        return redirect()->route('index.Usuarios')->with('mensaje', '¡Usuario Agregado correctamente!');
 
     }
 
@@ -68,7 +68,7 @@ class RegisterController extends Controller
         $user->password=request('password');
         $user->role=request('role');
         $user->save();
-        return redirect()->route('index.Usuarios')->with('mensaje', '¡Ususario Agregado correctamente!');
+        return redirect()->route('index.Usuarios')->with('mensaje', '¡Usuario Agregado correctamente!');
     }
 
 
@@ -84,7 +84,7 @@ class RegisterController extends Controller
         }else{}
         
      
-        return redirect()->route('index.Usuarios')->with('mensaje', '¡Ususario eliminado correctamente!');
+        return redirect()->route('index.Usuarios')->with('mensaje', '¡Usuario eliminado correctamente!');
     }
 
 }

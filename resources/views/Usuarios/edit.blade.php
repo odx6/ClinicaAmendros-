@@ -59,7 +59,7 @@
                                     </label>
 
                                     <select class="form-select" id="exampleFormControlSelect1" name="role" required>
-                                    <option selected disabled value="">Selecione un rol </option>
+                                    <option selected disabled value="">Seleccione un rol </option>
                                     <option  value="director" @if($Usuario->role=="director")selected @endif>director </option>
                                     <option  value="secretaria" @if($Usuario->role=="secretaria")selected @endif>secretaria</option>
                                     <option  value="medico" @if($Usuario->role=="medico")selected @endif>medico</option>

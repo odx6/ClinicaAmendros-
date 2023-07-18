@@ -3,7 +3,7 @@
        
             <!--end-table-->
             <div class="container">
-                <h2>Prueba de Arcos de moviidad de miembros superiores</h2>
+                <h2>Prueba de Arcos de movilidad de miembros superiores</h2>
 
                 <div class="row">
 

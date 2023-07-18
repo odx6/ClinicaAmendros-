@@ -11,7 +11,7 @@
                 <h2>Prueba De Movilidad</h2>
                
                     <div class="row">
-                        <h2>Evaluacion muscular</h2>
+                        <h2>Evaluación muscular</h2>
                         <table class="table table-bordered">
                             <thead>
 
@@ -31,10 +31,10 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Grado 3</th>
-                                    <td>La fuerza muscular está reducida tanto<br> que el moviemiento articular solo<br>
+                                    <td>La fuerza muscular está reducida tanto<br> que el movimiento articular solo<br>
                                         puede realizarse contra la gravedad<br> sin la resistencia del
-                                        examinadro.<br>Por ejemplo, la articulacion del <br>codo puede moverse desde
-                                        extension<br> completa hasta felxión completa,<br> comenzando con el brazo<br>
+                                        examinador.<br>Por ejemplo, la articulación del <br>codo puede moverse desde
+                                        extension<br> completa hasta flexión completa,<br> comenzando con el brazo<br>
                                         suspendido al lado del cuerpo. </td>
 
                                 </tr>

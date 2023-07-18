@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Notas Quirurgicas')
+@section('title', 'Notas Quirúrgicas')
 @section('linkAuth')
     <!-- BEGIN PAGE LEVEL STYLE -->
 
@@ -33,7 +33,7 @@
                     <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Registrar Nota quirurgica</li>
+                            <li class="breadcrumb-item active" aria-current="page">Registrar Nota quirúrgica</li>
                         </ol>
                     </nav>
                 </div>
@@ -44,7 +44,7 @@
 
 
                         <!-- Estudios -->
-                        <h2>NOTAS POST QUIRURGICA </h2>
+                        <h2>NOTAS POST QUIRÚRGICA </h2>
                         <!--Antecedentes patologicos-->
 
                         <form class="user needs-validation" method="POST" action="{{ route('NotasPost.create', ['id' => $id]) }}" novalidate>
@@ -53,19 +53,19 @@
                             <div class="row mb-4">
 
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Ciruguia programada </label>
+                                    <label for="formGroupExampleInput">Cirugía programada </label>
                                     <input type="date" class="form-control" placeholder="ciruja programada"
                                         name="PC" required>
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Ciruguia realizada</label>
+                                    <label for="formGroupExampleInput">Cirugía realizada</label>
                                     <input type="date" class="form-control" placeholder="CIRUJIA REALIZADA"
                                         name="EJ" required>
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Hallazgoz </label>
+                                    <label for="formGroupExampleInput">Hallazgo </label>
 
                                     <input type="text" class="form-control" placeholder="Hallazgos" name="HA"
                                         required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
@@ -96,14 +96,14 @@
                                         name="NI" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Nombre del aniestesiologo</label>
+                                    <label for="formGroupExampleInput">Nombre del anestesiólogo</label>
                                     <input type="text" class="form-control" placeholder="Nombre del aniestesiologo"
                                         name="NAN" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Ciculante</label>
+                                    <label for="formGroupExampleInput">Circulante</label>
                                     <input type="text" class="form-control" placeholder="circulante" name="CIR"
                                         required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
                                 </div>

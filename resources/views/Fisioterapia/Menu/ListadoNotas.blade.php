@@ -16,7 +16,7 @@
             <form class="user" method="POST" action="{{ route('Notas.Formulario', ['id' => $Paciente->SS]) }}">
                 @csrf
                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-                    style="display: none;">Agregar Nota clinica para el paciente </button>
+                    style="display: none;">Agregar Nota clínica para el paciente </button>
             </form>
         </div>
     @else
@@ -32,7 +32,7 @@
                                     width="100%" height="100%">
                             </div>
                             <div class="col-sm">
-                                <h2>Nota Clinica-Valoración Inicial</h2>
+                                <h2>Nota Clínica-Valoración Inicial</h2>
                                 <div class="form-group mb-4">
                                     <label for="exampleFormControlTextarea1">{{ $nota->Tipo }}</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="NOT" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">{{ $nota->Nota }}</textarea>

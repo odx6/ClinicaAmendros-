@@ -53,7 +53,7 @@
                 <th scope="col">Clave de  la secretaria</th>
                 <th scope="col">Monto</th>
                 <th  scope="col">TipoPago</th>
-                <th  scope="col">Accion</th>
+                <th  scope="col">Acción</th>
             </tr>
             <tr aria-hidden="true" class="mt-3 d-block table-row-hidden"></tr>
         </thead>
@@ -61,7 +61,7 @@
             @if($Pagos->isEmpty())
             <tr>
                 <td> No hay Pagos Agregados </td>
-                <td> Agrege nuevos Pagos </td>
+                <td> Agregue nuevos Pagos </td>
             </tr>
             @else
             @foreach($Pagos as $Pago)

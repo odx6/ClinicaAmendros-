@@ -13,7 +13,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <h2>Hipostesis</h2>
+                        <h2>Hipótesis</h2>
 
                         <div class="form-group mb-4">
 
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <h2>Participacion </h2>
+                        <h2>Participación </h2>
                         <div class="form-group mb-4">
 
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="Participacion" required  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"></textarea>

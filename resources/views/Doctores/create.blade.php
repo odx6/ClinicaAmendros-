@@ -33,16 +33,16 @@
                             
                             <div class="row mb-4">
                                  <div class="col">
-                                    <label for="formGroupExampleInput">Area
+                                    <label for="formGroupExampleInput">Área
                                     </label>
 
                                     <select class="form-select" id="exampleFormControlSelect1" name="Area" required>
-                    <option selected disabled value="">Selecione un area </option>
+                    <option selected disabled value="">Seleccione un Área </option>
                             @php
                             $Areas=App\Models\Area::all();
                             @endphp
                             @if($Areas->isEmpty())
-                            <option selected disabled value="">No hay areas Agregue nuevas </option>
+                            <option selected disabled value="">No hay áreas Agregue nuevas </option>
                             
                             @else
                             @foreach($Areas as $area)
@@ -59,7 +59,7 @@
                                     </label>
 
                                     <select class="form-select" id="exampleFormControlSelect1" name="User" required>
-                    <option selected disabled value="">Selecione un usuario  </option>
+                    <option selected disabled value="">Selecciona un usuario  </option>
                             @php
                             $Users=App\Models\User::all();
                             @endphp

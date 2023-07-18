@@ -94,7 +94,7 @@ class AGinecobstetricoController extends Controller
         $gineco->Aborto=request('Abortos');
         $gineco->Paras=request('Partos');
         $gineco->save();
-          return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Actualizado agregado correctamente!');
+          return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡ Antecedente ginecobstetrico Actualizado  correctamente!');
     }
 
     /**
@@ -117,7 +117,7 @@ class AGinecobstetricoController extends Controller
         } else {
             
         }
-     return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Actualizado agregado correctamente!');
+     return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedente ginecobstetrico eliminado  correctamente!');
         
     }
 }

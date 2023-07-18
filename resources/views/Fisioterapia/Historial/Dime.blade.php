@@ -1,6 +1,6 @@
  <div class="container desactivado" id="Fidiagnostico">
      <div class="col">
-         <h2>Diagnóstico Médico en Reabilitacion para el paciente {{ $id }} </h2>
+         <h2>Diagnóstico Médico en Rehabilitación para el paciente {{ $id }} </h2>
 
           <div class="container">
             <div class="row">
@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-sm">
                     <div class="input-group">
-                        <span class="input-group-text">Lenguaje / Orientacion</span>
+                        <span class="input-group-text">Lenguaje / Orientación</span>
                         <textarea class="form-control" aria-label="With textarea" name="LeOr" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required></textarea>
                     </div>
                 </div>

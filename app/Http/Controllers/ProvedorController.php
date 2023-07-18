@@ -97,7 +97,7 @@ class ProvedorController extends Controller
          $Provedor->Save();
 
         //return response()->json($data);
-         return redirect()->route('index.Preveedor')->with('mensaje', '¡Proveedor acualizado correctamente!');
+         return redirect()->route('index.Preveedor')->with('mensaje', '¡Proveedor actualizado correctamente!');
     }
 
     /**

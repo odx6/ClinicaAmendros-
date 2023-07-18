@@ -32,7 +32,7 @@
                     <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Doctor</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Agregar Antecedente Ginecobstetrico</li>
+                            <li class="breadcrumb-item active" aria-current="page">Agregar Antecedente Ginecobstétricos</li>
                         </ol>
                     </nav>
                 </div>
@@ -44,7 +44,7 @@
 
                         <!-- Fomulario -->
                         <!--- Historial-->
-                        <h2> ANTECEDENTES Ginecobstrecticos </h2>
+                        <h2> ANTECEDENTES Ginecobstétricos </h2>
 
                         <!--- Historial-->
                         <form class="user needs-validation" method="POST" action="{{ route('Gineco.create', ['id' => $id]) }}" novalidate>
@@ -81,7 +81,7 @@
                                 </div>
 
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Número cesareas </label>
+                                    <label for="formGroupExampleInput">Número cesáreas </label>
                                     <input type="numeric" class="form-control" placeholder="Numero de cesareas"
                                         name="Cesareas" pattern="^\d+(\.\d+)?$" required>
                                 </div>

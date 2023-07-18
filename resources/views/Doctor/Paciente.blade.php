@@ -57,7 +57,7 @@
                                 <div class="widget-header">
                                     <div class="row">
                                         <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                            <h4>Historial clinico {{ $valorSeleccionado }}</h4>
+                                            <h4>Historial clínico {{ $valorSeleccionado }}</h4>
                                             <div class="tab-content" id="rounded-pills-icon-tabContent">
                                                 <!--Boton para activar Edicion --->
                                                 <div class="switch form-switch-custom switch-inline form-switch-success">

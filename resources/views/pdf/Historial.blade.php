@@ -198,7 +198,7 @@
                     <td align="left">{{ $Paciente->Sexo }}</td>
                     <th align="left">Edo.civil:</th>
                     <td align="left">{{ $Paciente->Estado_civil }}</td>
-                    <th align="left">Religion:</th>
+                    <th align="left">Religión:</th>
                     <td align="left">{{ $Paciente->Religion }}</td>
 
 
@@ -357,7 +357,7 @@
                             </div>
                             <div class="historial-item">
                                 <div class="checkbox-container">
-                                    <label for="enfermedades-actuales">Alcholismo </label>
+                                    <label for="enfermedades-actuales">Alcoholismo </label>
                                     @if ($Historial->ALCHOLISMO == '1')
                                         <input type="checkbox" id="enfermedades-actuales" checked>
                                     @else
@@ -398,7 +398,7 @@
             </div>
             <!---end-->
             @foreach ($Patologicos as $Patologico)
-                <h2 class="historial-header">ANTECEDENTES PERSONALES PATOLOGICOS:
+                <h2 class="historial-header">ANTECEDENTES PERSONALES PATÓLOGICOS:
 
                 </h2>
 
@@ -417,7 +417,7 @@
 
                     </div>
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">Tiempo de evolucion :{{ $Patologico->DmTE }} </label>
+                        <label for="enfermedades-actuales">Tiempo de evolución :{{ $Patologico->DmTE }} </label>
                     </div>
 
 
@@ -431,7 +431,7 @@
                         <span class="checkmark"></span>
                     </div>
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">Tiempo de evolucion :{{ $Patologico->HasTe }} </label>
+                        <label for="enfermedades-actuales">Tiempo de evolución :{{ $Patologico->HasTe }} </label>
                     </div>
 
 
@@ -445,7 +445,7 @@
                         <span class="checkmark"></span>
                     </div>
                     <div class="historial-item">
-                        <label for="enfermedades-actuales">Tiempo de evolucion : </label>
+                        <label for="enfermedades-actuales">Tiempo de evolución : </label>
                     </div>
 
                     <div class="historial-item">
@@ -530,7 +530,7 @@
                                         <label for="enfermedades-actuales">TEMP : </label>
                                     </div>
                                     <div class="historial-item">
-                                        <label for="enfermedades-actuales">Pdatos : </label>
+                                        <label for="enfermedades-actuales">Datos : </label>
                                     </div>
 
                                     <div class="historial-item">

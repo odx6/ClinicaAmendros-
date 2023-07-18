@@ -22,7 +22,7 @@
                         <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Actualizar Productos</li>
+                                <li class="breadcrumb-item active" aria-current="page">Actualizar Paciente</li>
                             </ol>
                         </nav>
                     </div>
@@ -94,7 +94,7 @@
               </div>
               <div class="row mb-4">
                   <div class="col">
-                      <label for="formGroupExampleInput">Ocupacion </label>
+                      <label for="formGroupExampleInput">Ocupación </label>
                       <input type="text" class="form-control" placeholder="Ocupacion del paciente" name="Ocupacion"
                           value="{{ $Paciente->Ocupacion }}" pattern="^[A-Za-z\s]+${3,30}" required>
                   </div>
@@ -104,12 +104,12 @@
               <div class="row mb-4">
 
                   <div class="col">
-                      <label for="formGroupExampleInput">Direccón </label>
+                      <label for="formGroupExampleInput">Dirección </label>
                       <input type="text" class="form-control" placeholder="Direccion del paciente" name="Direccion"
                           value="{{ $Paciente->Direccion }}" required>
                   </div>
                   <div class="col">
-                      <label for="formGroupExampleInput">Telefono </label>
+                      <label for="formGroupExampleInput">Teléfono </label>
                       <input type="numeric" class="form-control" placeholder="Telefono del paciente" name="Telefono"
                           value="{{ $Paciente->Telefono }}" required>
 

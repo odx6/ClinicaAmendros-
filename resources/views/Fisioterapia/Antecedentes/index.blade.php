@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Historial-clinico-fisioterapia')
+@section('title', 'Historial-clínico-fisioterapia')
 @section('linkAuth')
     <!-- BEGIN PAGE LEVEL STYLE -->
 
@@ -50,7 +50,7 @@
                     <!--end seccion de primer container-->
                     <!--Segundo seccion de container--->
                     <div class="container">
-                        <h2>Antecedentes Patologicos y Heredofamiliares</h2>
+                        <h2>Antecedentes Patológicos y Heredofamiliares</h2>
                         <div class="row">
                             <div class="col">
                                 <form class="user needs-validation" method="POST"
@@ -99,7 +99,7 @@
                                                     <div
                                                         class="switch form-switch-custom switch-inline form-switch-success">
                                                         <label class="switch-label"
-                                                            for="form-custom-switch-success">Enf.Reumaticas</label>
+                                                            for="form-custom-switch-success">Enf.Reumáticas</label>
                                                         <input class="switch-input" type="checkbox" role="switch"
                                                             id="form-custom-switch-success" name="EnfReumaticas"
                                                             value="si">

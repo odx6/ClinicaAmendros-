@@ -44,7 +44,7 @@ class EvaluacionController extends Controller
         // return response()->json($data);
           $paciente=$data['id'];
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Evaluacion muscular agregada  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Evaluación muscular agregada  correctamente!');
     }
 
     /**
@@ -99,7 +99,7 @@ class EvaluacionController extends Controller
          //return response()->json($data);
          $paciente=$Evalauciaon->fk_evaluacion;
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Evaluacion muscular actualizada correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Evaluación muscular actualizada correctamente!');
     }
 
     /**
@@ -122,6 +122,6 @@ class EvaluacionController extends Controller
       }
 
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Evaluacion muscular eliminada correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Evaluación muscular eliminada correctamente!');
     }
 }

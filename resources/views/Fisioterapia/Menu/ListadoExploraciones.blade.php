@@ -123,7 +123,7 @@
                     @csrf
                     <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
                         id="Hola" style="display: none;">Agregar
-                        Exploracion</button>
+                        Exploración</button>
                 </form>
                 <form class="user" method="POST"
                     action="{{ route('destroy.FExploracionF', ['id' => $Explora->fk_Exploracion_ff]) }}">

@@ -17,7 +17,7 @@
             <form class="user" method="POST" action="{{ route('index.AnalisisMarcha', ['id' => $Paciente->SS]) }}">
                 @csrf
                 <button type="submit" class="btn btn-primary btn-rounded mb-2AnalisisMarcha me-4 btn-add-event Hola"
-                    id="Hola" style="display: none;">Agregar Plan Analisis marcha </button>
+                    id="Hola" style="display: none;">Agregar Plan Análisis marcha </button>
             </form>
         </div>
     @else
@@ -84,8 +84,8 @@
                             <tr>
                                 <td>
                                     <div class="form-group">
-                                        label for="formGroupExampleInput">El pie derecho <br> no sobrepasa <br> al
-                                        izquierdo con el paso <br>en la fase del<br> bal anceo
+                                        <label for="formGroupExampleInput">El pie derecho <br> no sobrepasa <br> al
+                                        izquierdo con el paso <br>en la fase del<br> balanceo
                                         </label>
                                     </div>
                                 </td>

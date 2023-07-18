@@ -8,7 +8,7 @@
         <form class="user needs-validation" method="POST" action="{{ route('create.MSuperiores', ['id' => $id, 'TipoM'=>'Inferior']) }}" novalidate>
             @csrf
             <div class="container">
-                <h2>Prueba de Arcos de moviidad de miembros inferiores</h2>
+                <h2>Prueba de Arcos de movilidad de miembros inferiores</h2>
 
                 <div class="row">
                    

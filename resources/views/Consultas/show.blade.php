@@ -67,17 +67,17 @@
                                         Datos correctos
                                     </div>
                                     <div class="invalid-feedback">
-                                        selecion del médico correcta
+                                        selección del médico correcta
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="">
-                                    <label class="form-label">Nombre del pacente</label>
+                                    <label class="form-label">Nombre del paciente</label>
                                     <!-- <input id="event-title2" type="text" class="form-control">-->
                                     <select class="form-control" name="consultaPaciente" id="event-title2" required>
 
-                                        <option selected disabled value="">Selecione Paciente </option>
+                                        <option selected disabled value="">Seleccione Paciente </option>
                                         @foreach ($doctores as $doctor)
                                             @if ($doctor->Pacientes->count() > 0)
                                                 @foreach ($doctor->Pacientes as $paciente)
@@ -102,7 +102,7 @@
                                     <!-- <input id="event-title2" type="text" class="form-control">-->
                                     <select class="form-control" name="Consulta cita" id="event-title2" required>
 
-                                        <option selected disabled value=""> Selecione una cita </option>
+                                        <option selected disabled value=""> Seleccione una cita </option>
                                         @foreach ($doctores as $doctor)
                                             @if ($doctor->Citas->count() > 0)
                                                 @foreach ($doctor->Citas as $citas)
@@ -122,7 +122,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="">
-                                    <label class="form-label">Selecione la secretaria</label>
+                                    <label class="form-label">Seleccione la secretaria</label>
                                     <!-- <input id="event-title" type="text" class="form-control">-->
                                     <select class="form-control" name="consultaSecretaria" id="event-title" required>
 
@@ -143,7 +143,7 @@
                                         Datos correctos
                                     </div>
                                     <div class="invalid-feedback">
-                                        selecion una secretaria correcta 
+                                        selección de  secretaria correcta 
                                     </div>
                                 </div>
                             </div>

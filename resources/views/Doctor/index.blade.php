@@ -84,13 +84,13 @@
                                             Datos correctos
                                          </div>
                                          <div class="invalid-feedback">
-                                            selecion del médico correcta
+                                            selección del médico correcta
                                          </div>
                                             </div>
                                         </div>
                                          <div class="col-md-12">
                                             <div class="">
-                                                <label class="form-label">Nombre del pacente</label>
+                                                <label class="form-label">Nombre del paciente</label>
                                                <!-- <input id="event-title2" type="text" class="form-control">-->
                                                 <select class="form-control" name="paciente" id="event-title2" required >
 
@@ -108,7 +108,7 @@
                                             Datos correctos
                                          </div>
                                          <div class="invalid-feedback">
-                                            selecion del paciente correcta
+                                            selección del paciente correcta
                                          </div>
                                             </div>
                                         </div>
@@ -121,7 +121,7 @@
                                             Datos correctos
                                          </div>
                                          <div class="invalid-feedback">
-                                            Ingresa un fecha y hora correcta
+                                            Ingresa una fecha y hora correcta
                                          </div>
                                             </div>
                                         </div>

@@ -29,7 +29,7 @@ class AntecedentesPhController extends Controller
          $data = $request->all();
 
         $this->agregar($data['id'],'Diabetes',$data['Diabetes'],$data['EDiabetes']);
-        $this->agregar($data['id'],'Enf.Reumaticas',$data['EnfReumaticas'],$data['EEnf']);
+        $this->agregar($data['id'],'Enf.Reumáticas',$data['EnfReumaticas'],$data['EEnf']);
         $this->agregar($data['id'],'Alergias',$data['Alergias'],$data['EAlergias']);
         $this->agregar($data['id'],'Encames',$data['Encames'],$data['EEncames']);
         $this->agregar($data['id'],'HTA',$data['HTA'],$data['ETA']);
@@ -51,7 +51,7 @@ class AntecedentesPhController extends Controller
 
         $paciente=$data['id'];
        // return response()->json($data);
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patologicos agregados  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patológicos agregados  correctamente!');
 
     }
 
@@ -120,7 +120,7 @@ class AntecedentesPhController extends Controller
         $SignosVitales->save();
         $paciente=$SignosVitales->fk_Signos;
         //return response()->json($data);
-        return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patologicos Actualizados  correctamente!');
+        return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patológicos Actualizados  correctamente!');
     }
 
     /**
@@ -171,7 +171,7 @@ class AntecedentesPhController extends Controller
 
 
         //return response()->json($data);
-          return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patologicos Eliminados  correctamente!');
+          return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patológicos Eliminados  correctamente!');
     }
     public function agregar($id,$nombre, $valor,$Especificacion){
         $Antecedente= new Antecedentes_Ph;

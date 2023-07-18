@@ -60,7 +60,7 @@
     <form class="user" method="POST" action="{{ route('index.Cicatriz',['id' => $Paciente->SS]) }}">
         @csrf
         <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-            style="display: none;">Agregar Cicatriz quirurgica
+            style="display: none;">Agregar traslado
         </button>
     </form>
     <form class="user" method="POST" action="{{ route('destroy.Traslados', ['id' =>$trase->pk_traslados]) }}">

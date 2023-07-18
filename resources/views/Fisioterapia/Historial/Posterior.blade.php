@@ -1,6 +1,6 @@
 <div class="container desactivado" id="FiPos">
 
-        <h2>Evaluacion Postura</h2>
+        <h2>Evaluación Postura</h2>
 
 
 
@@ -11,7 +11,7 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Aliniacion Corporal</th>
+                            <th scope="col">Alineación Corporal</th>
                             <th scope="col">GRADOS L M S</th>
 
 
@@ -21,7 +21,7 @@
                     </thead>
                     <tbody>
                         @php
-                            $Datos = ['Inclinación Lateral la Cabeza', 'Cabeza Rotada', 'Asimetria Maxilar', 'Clavículas Asimétricas', 'Hombre Capído', 'Hombro Elevado', 'Cubito Valgo', 'Cubito Varo', 'Rotación Interna de Cadera', 'Rotación Externa ', 'Genu Varum', 'Genu Valgum', 'Torsión Tibial Interna', 'Torsión Tibial Externa', 'Hallux Valgus', 'Dedos en Garra', 'Dedos en Martillo'];
+                            $Datos = ['Inclinación Lateral la Cabeza', 'Cabeza Rotada', 'Asimetría Maxilar', 'Clavículas Asimétricas', 'Hombre Capído', 'Hombro Elevado', 'Cubito Valgo', 'Cubito Varo', 'Rotación Interna de Cadera', 'Rotación Externa ', 'Genu Varum', 'Genu Valgum', 'Torsión Tibial Interna', 'Torsión Tibial Externa', 'Hallux Valgus', 'Dedos en Garra', 'Dedos en Martillo'];
                             
                         @endphp
                         @foreach ($Datos as $Dat)

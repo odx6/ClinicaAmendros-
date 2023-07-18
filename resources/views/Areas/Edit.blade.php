@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','Editar Area')
+@section('title','Editar Área')
 @section('linkAuth')
 
 @endsection

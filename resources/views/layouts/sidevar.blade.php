@@ -16,7 +16,7 @@
                     </a>
                 </div>
                 <div class="nav-item theme-text">
-                    <a href="index.html" class="nav-link"> Clinica  </a>
+                    <a href="index.html" class="nav-link"> Clínica  </a>
                 </div>
             </div>
             <div class="nav-item sidebar-toggle">
@@ -83,7 +83,7 @@
                         <a href="#clinica" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trello"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><rect x="7" y="7" width="3" height="9"></rect><rect x="14" y="7" width="3" height="5"></rect></svg>
-                                <span>Clinica</span>
+                                <span>Clínica</span>
                             </div>
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
@@ -91,13 +91,13 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="clinica" data-bs-parent="#accordionExample">
                             <li>
-                                <a href="{{route('index.Areas')}}">Areas</a>
+                                <a href="{{route('index.Areas')}}">Áreas</a>
                             </li>
                             <li>
                                 <a href="{{route('index.Usuarios')}}">Usuarios </a>
                             </li>
                             <li>
-                                <a href="{{route('index.Medico')}}">Medicos </a>
+                                <a href="{{route('index.Medico')}}">Médicos </a>
                             </li>
                              <li>
                                 <a href="{{route('index.Secrearia')}}">Secretarias </a>

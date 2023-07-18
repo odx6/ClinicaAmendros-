@@ -17,8 +17,8 @@
                                 <option value="2">Lo intento pero no fue capaz</option>
                                 <option value="3">El sujeto no pudo ponerse de pie sin ayuda</option>
                                 <option value="4">No lo intentó , usted lo notaba inseguro</option>
-                                <option value="5">No lo intentó el sujeto sentía insenguro </option>
-                                <option value="6">El sujeto no entendió las instrucciónes</option>
+                                <option value="5">No lo intentó el sujeto sentía inseguro </option>
+                                <option value="6">El sujeto no entendió las instrucciones</option>
                                 <option value="7">Otro motivo</option>
                                 <option value="7">El sujeto rechazo la prueba</option>
                             </select>
@@ -34,8 +34,8 @@
                                 <option value="2">Lo intento pero no fue capaz</option>
                                 <option value="3">El sujeto no pudo ponerse de pie sin ayuda</option>
                                 <option value="4">No lo intentó , usted lo notaba inseguro</option>
-                                <option value="5">No lo intentó el sujeto sentía insenguro </option>
-                                <option value="6">El sujeto no entendió las instrucciónes</option>
+                                <option value="5">No lo intentó el sujeto sentía inseguro </option>
+                                <option value="6">El sujeto no entendió las instrucciones</option>
                                 <option value="7">Otro motivo</option>
                                 <option value="7">El sujeto rechazo la prueba</option>
                             </select>
@@ -50,8 +50,8 @@
                                 <option value="2">Lo intento pero no fue capaz</option>
                                 <option value="3">El sujeto no pudo ponerse de pie sin ayuda</option>
                                 <option value="4">No lo intentó , usted lo notaba inseguro</option>
-                                <option value="5">No lo intentó el sujeto sentía insenguro </option>
-                                <option value="6">El sujeto no entendió las instrucciónes</option>
+                                <option value="5">No lo intentó el sujeto sentía inseguro </option>
+                                <option value="6">El sujeto no entendió las instrucciones</option>
                                 <option value="7">Otro motivo</option>
                                 <option value="7">El sujeto rechazo la prueba</option>
                             </select>

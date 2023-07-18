@@ -52,7 +52,7 @@ class ExploracionFController extends Controller
         $Exploracion->save();
         $paciente=request('id');
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Exploracion física agregada  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Exploración física agregada  correctamente!');
     }
 
     /**
@@ -85,7 +85,7 @@ class ExploracionFController extends Controller
         $Exploracion->save();
         $paciente=request('IDPA');
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Exploracion física actualizada  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Exploración física actualizada  correctamente!');
     }
 
     /**
@@ -144,6 +144,6 @@ class ExploracionFController extends Controller
       }
      
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Exploracion física actualizada  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Exploración física actualizada  correctamente!');
     }
 }

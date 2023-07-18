@@ -92,7 +92,7 @@
                                         Datos correctos
                                     </div>
                                     <div class="invalid-feedback">
-                                        selecion del paciente correcta
+                                        selección del paciente correcta
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +122,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="">
-                                    <label class="form-label">Selecione la secretaria</label>
+                                    <label class="form-label">Seleccione la secretaria</label>
                                     <!-- <input id="event-title" type="text" class="form-control">-->
                                     <select class="form-control" name="consultaSecretaria" id="event-title" required>
 
@@ -143,7 +143,7 @@
                                         Datos correctos
                                     </div>
                                     <div class="invalid-feedback">
-                                        selecion una secretaria correcta 
+                                        seleccione una secretaria correcta 
                                     </div>
                                 </div>
                             </div>

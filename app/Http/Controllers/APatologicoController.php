@@ -37,7 +37,7 @@ class APatologicoController extends Controller
         $patologico->Otra=request('OTRA');
         $patologico->save();
         $paciente=$patologico->fk_ap;
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patologicos Agregados  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patológicos Agregados  correctamente!');
     }
 
     /**
@@ -60,7 +60,7 @@ class APatologicoController extends Controller
          $patologico->Otra=request('OTRA');
          $patologico->save();
           $paciente=$patologico->fk_ap;
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patologicos Agregados  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patológicos Agregados  correctamente!');
     }
 
     /**
@@ -116,6 +116,6 @@ class APatologicoController extends Controller
           
       }
       
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patologicos Eliminados  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Antecedentes Patológicos Eliminados  correctamente!');
     }
 }

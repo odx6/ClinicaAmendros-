@@ -25,8 +25,8 @@
     
                             <img src="../src/assets/img/ClinicaAlmendros.svg" alt="auth-img">
     
-                            <h2 class="mt-5 text-white font-weight-bolder px-2">Clinica Almendros</h2>
-                            <p class="text-white px-2">Historia de la clinica</p>
+                            <h2 class="mt-5 text-white font-weight-bolder px-2">Clínica Almendros</h2>
+                            <p class="text-white px-2">Historia de la clínica</p>
                         </div>
                         
                     </div>
@@ -43,7 +43,7 @@
                                 <div class="col-md-12 mb-3">
                                     
                                     <h2>Registrarse ¿</h2>
-                                    <p>Ingresa tu correo electronico</p>
+                                    <p>Ingresa tu correo electrónico</p>
                                     
                                 </div>
                                 <div class="col-md-12">
@@ -59,7 +59,7 @@
                                 <!--endAlerta-->
                                 <div class="col-md-12">
                                     <div class="mb-3">
-                                        <label class="form-label">Email</label>
+                                        <label class="form-label">correo electrónico</label>
                                         <input type="email" class="form-control" name="email">
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                         <div class="form-check form-check-primary form-check-inline">
                                             <input class="form-check-input me-3" type="checkbox" id="form-check-default">
                                             <label class="form-check-label" for="form-check-default">
-                                                  Yo acepto los <a href="javascript:void(0);" class="text-primary">Terminos y condiciones </a>
+                                                  Yo acepto los <a href="javascript:void(0);" class="text-primary">Términos y condiciones </a>
                                             </label>
                                         </div>
                                     </div>
@@ -98,7 +98,7 @@
                                 
                                 <div class="col-12">
                                     <div class="mb-4">
-                                        <button class="btn btn-secondary w-100">SIGN UP</button>
+                                        <button class="btn btn-secondary w-100">Inicio de sesión</button>
                                     </div>
                                 </div>
                                 <!--

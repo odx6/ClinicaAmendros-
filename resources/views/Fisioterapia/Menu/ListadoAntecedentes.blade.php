@@ -21,12 +21,12 @@
             <form class="user" method="POST" action="{{ route('index.AntecedenteAH', ['id' => $Paciente->SS]) }}">
                 @csrf
                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-                    style="display: none;">Antecedentes Patologicos y
+                    style="display: none;">Antecedentes Patológicos y
                     Heredofamiliares</button>
             </form>
         </div>
     @else
-        <h2>Antecedentes Patologicos y Heredofamiliares</h2>
+        <h2>Antecedentes Patológicos y Heredofamiliares</h2>
         @php
             $ids = [];
             

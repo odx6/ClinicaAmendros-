@@ -48,7 +48,7 @@
                             <h2>Madre con</h2>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">diabetes millitus(DM)
+                                    <label for="formGroupExampleInput">diabetes mellitus(DM)
                                     </label>
                                     <select class="form-control" name="DM" required>
                                         <option selected disabled value="">diabetes </option>
@@ -58,9 +58,9 @@
                                     </select>
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Hirpertensión (HAS)</label>
+                                    <label for="formGroupExampleInput">Hipertensión (HAS)</label>
                                     <select class="form-control" name="HAS" required>
-                                        <option selected disabled value="">Hirpertensión </option>
+                                        <option selected disabled value="">Hipertensión </option>
 
                                         <option value="1">Si</option>
                                         <option value="0">No</option>
@@ -71,9 +71,9 @@
                             <div class="row mb-4">
                                 <div class="col">
 
-                                    <label for="formGroupExampleInput">Cancer(CA)</label>
+                                    <label for="formGroupExampleInput">Cáncer(CA)</label>
                                     <select class="form-control" name="CA" required>
-                                        <option selected disabled value="">Cancer(CA)</option>
+                                        <option selected disabled value="">Cáncer(CA)</option>
 
                                         <option value="1">Si</option>
                                         <option value="0">No</option>
@@ -96,10 +96,10 @@
                             <h2>Padre con :</h2>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">diabetes millitus(DM)
+                                    <label for="formGroupExampleInput">diabetes mellitus(DM)
                                     </label>
                                     <select class="form-control" name="PDM" required>
-                                        <option selected disabled value=""> diabetes millitus(DM)</option>
+                                        <option selected disabled value=""> diabetes mellitus(DM)</option>
 
                                         <option value="1">Si</option>
                                         <option value="0">No</option>
@@ -109,9 +109,9 @@
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Hirpertensión (HAS)</label>
+                                    <label for="formGroupExampleInput">Hipertensión (HAS)</label>
                                     <select class="form-control" name="PHAS" required>
-                                        <option selected disabled value="">Hirpertensión (HAS)</option>
+                                        <option selected disabled value="">Hipertensión (HAS)</option>
 
                                         <option value="1">Si</option>
                                         <option value="0">No</option>
@@ -122,9 +122,9 @@
                             <div class="row mb-4">
                                 <div class="col">
 
-                                    <label for="formGroupExampleInput"> Cancer(CA)</label>
+                                    <label for="formGroupExampleInput"> Cáncer(CA)</label>
                                     <select class="form-control" name="PCA" required>
-                                        <option selected disabled value="">Cancer(CA) </option>
+                                        <option selected disabled value="">Cáncer(CA) </option>
 
                                         <option value="1">Si</option>
                                         <option value="0">No</option>
@@ -179,7 +179,7 @@
                                         pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required>
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Ciruguias previas
+                                    <label for="formGroupExampleInput">Cirugías previas
                                     </label>
                                     <input type="text" class="form-control" placeholder="CIRUJIAS PREVIAS "
                                         name="CP" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
@@ -187,12 +187,12 @@
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput"> Transfuciones </label>
+                                    <label for="formGroupExampleInput"> Transfusiones </label>
                                     <input type="text" class="form-control" placeholder="TRANSFUCIONES"
                                         name="TF" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Fraccturas
+                                    <label for="formGroupExampleInput">Fracturas
                                     </label>
 
                                     <input type="text" class="form-control" placeholder="ACTUALES O PREVIAS"
@@ -205,9 +205,9 @@
                             <div class="row mb-4">
 
                                 <div class="col">
-                                    <label for="formGroupExampleInput"> Alcholico </label>
+                                    <label for="formGroupExampleInput"> Alcohólico </label>
                                     <select class="form-control" name="ALP" required>
-                                        <option selected disabled value="">Alcholico </option>
+                                        <option selected disabled value="">Alcohólico </option>
 
                                         <option value="1">Si</option>
                                         <option value="0">No</option>

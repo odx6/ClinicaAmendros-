@@ -24,7 +24,7 @@
                                                 <button type="submit"
                                                     class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
                                                     id="Hola" style="display: none;">Agregar antecedente
-                                                    patologico</button>
+                                                    patológico</button>
                                             </form>
                                         </div>
                                     @else
@@ -65,7 +65,7 @@
                                                 </div>
                                                 <div class="row mb-4">
                                                     <div class="col">
-                                                        <label for="formGroupExampleInput">Hirpentensión </label>
+                                                        <label for="formGroupExampleInput">Hipertensión </label>
                                                         <select class="form-control" name="HASN">
                                                             <option value="{{ $patologico->Has }}">
                                                                 @if ($patologico->Has == '1')
@@ -89,7 +89,7 @@
                                                 </div>
                                                 <div class="row mb-4">
                                                     <div class="col">
-                                                        <label for="formGroupExampleInput">Insuficiencia renal <br>Aguda o Cronica </label>
+                                                        <label for="formGroupExampleInput">Insuficiencia renal <br>Aguda o Crónica </label>
                                                         <select class="form-control" name="IR" required>
                                                             <option value="{{ $patologico->Ir }}">
                                                                 @if ($patologico->Ir == '1')
@@ -134,7 +134,7 @@
                                                 <button type="submit"
                                                     class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
                                                     id="Hola" style="display: none;">Agregar antecedente
-                                                    patologico</button>
+                                                    patológico</button>
                                             </form>
 
                                             <form class="user" method="POST"

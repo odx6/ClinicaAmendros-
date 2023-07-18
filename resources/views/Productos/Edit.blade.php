@@ -37,7 +37,7 @@
                                     </label>
 
                                     <select class="form-select" id="exampleFormControlSelect1" name="Proveedor" required>
-                    <option selected disabled value="">Selecione un provedor </option>
+                    <option selected disabled value="">Seleccione un proveedor </option>
                             @php
                             $proveedores=App\Models\Provedor::all();
                             @endphp
@@ -67,7 +67,7 @@
                                     </label>
 
                                     <select class="form-select" id="exampleFormControlSelect1" name="Factura" required>
-                    <option selected disabled value="">Selecione una factura de compra </option>
+                    <option selected disabled value="">Seleccione una factura de compra </option>
                             @php
                             $Facturas=App\Models\Factura::all();
                             @endphp

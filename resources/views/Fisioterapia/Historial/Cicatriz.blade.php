@@ -34,7 +34,7 @@
                             </td>
                             <td>
                                 <div class="switch form-switch-custom switch-inline form-switch-success">
-                                    <label class="switch-label" for="form-custom-switch-success">Retractil</label>
+                                    <label class="switch-label" for="form-custom-switch-success">Retráctil</label>
                                     <input class="switch-input" type="checkbox" role="switch"
                                         id="form-custom-switch-success" name="Retractil" value="si">
 

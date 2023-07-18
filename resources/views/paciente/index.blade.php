@@ -56,7 +56,7 @@
                                         Datos correctos
                                      </div>
                                      <div class="invalid-feedback">
-                                         Selecciona un area valida
+                                         Selecciona un área valida
                                      </div>
                                 </div>
                             
@@ -65,7 +65,7 @@
                                         <option selected disabled value="">Selecione un medico </option>
                                     </select>
                                     <div class="valid-feedback">
-                                        Selecion correcta
+                                        Selección correcta
                                      </div>
                                      <div class="invalid-feedback">
                                          Selecciona un médico
@@ -84,7 +84,7 @@
                                             Datos correctos
                                          </div>
                                          <div class="invalid-feedback">
-                                            Ingresa un nombre valido ejemplo :"jose luis"
+                                            Ingresa un nombre valido ejemplo :"Jose luis"
                                          </div>
                                 </div>
                                
@@ -96,7 +96,7 @@
                                             Datos correctos
                                          </div>
                                          <div class="invalid-feedback">
-                                            Ingresa apellidos validos  :"Hernandez Lopez"
+                                            Ingresa apellidos validos  :"Hernández López"
                                          </div>
                                 </div>
                                 </div>
@@ -171,10 +171,10 @@
                                     <input type="text" class="form-control" placeholder="Ocupacion del paciente"
                                         name="Ocupacion" required>
                                         <div class="valid-feedback">
-                                            Datos Ocupacion correctos
+                                            Datos Ocupación correctos
                                         </div>
                                         <div class="invalid-feedback">
-                                            Por favor ingresa una ocupacion valida
+                                            Por favor ingresa una ocupación valida
                                         </div>
                                 </div>
 
@@ -186,10 +186,10 @@
                                     <input type="text" class="form-control" placeholder="Direccion del paciente"
                                         name="Direccion" required minlength="4" pattern="[A-Za-z0-9\s\-\,\#]+">
                                         <div class="valid-feedback">
-                                            Datos Direccion correctos
+                                            Datos Dirección correctos
                                         </div>
                                         <div class="invalid-feedback">
-                                            Por favor ingresa una Direccion valida
+                                            Por favor ingresa una Dirección valida
                                         </div>
                                 </div>
                                 
@@ -197,10 +197,10 @@
                                     <input type="text" class="form-control" placeholder="Telefono del paciente"
                                         name="Telefono" required minlength="10" maxlength="10" pattern="[0-9]{9,15}">
                                         <div class="valid-feedback">
-                                           Telefono Correcto
+                                           Teléfono Correcto
                                         </div>
                                         <div class="invalid-feedback">
-                                            Ingresa un telefono de la forma 9514886716 sin letras ni espacios
+                                            Ingresa un teléfono de la forma 9514886716 sin letras ni espacios
                                         </div>
                                 </div>
                                 </div>
@@ -209,7 +209,7 @@
 
                                 <div class="col">
                                     <select class="form-control" name="Religion" required>
-                                        <option selected disabled value="">Religion del paciente</option>
+                                        <option selected disabled value="">Religión del paciente</option>
                                         @php
                                             $religiones = ['Catolicismo', 'Protestantismo', 'Testigos de Jehová', 'Mormonismo', 'Adventismo', 'Pentecostalismo', 'Judaísmo', 'Islam', 'Budismo', 'Hinduismo', 'Sikhismo', 'Jainismo', 'Espiritualismo', 'Religiones indígenas', 'Nuevos movimientos religiosos', 'Ateísmo', 'Agnosticismo'];
                                         @endphp

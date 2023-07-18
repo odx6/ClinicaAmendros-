@@ -30,7 +30,7 @@
 
                   <div class="row mb-4">
                       <div class="col">
-                          <label for="formGroupExampleInput">Ciruguia programada </label>
+                          <label for="formGroupExampleInput">Cirugía programada </label>
                           <input type="date" class="form-control" placeholder="ciruja programada" name="PC"
                               value="{{ $np->ProgramacionC }}" required>
                       </div>
@@ -79,7 +79,7 @@
                       </div>
 
                       <div class="col">
-                          <label for="formGroupExampleInput">Nombre del aniestesiologo</label>
+                          <label for="formGroupExampleInput">Nombre del anestesiólogo</label>
                           <input type="text" class="form-control" placeholder="Nombre del aniestesiologo"
                               name="NAN"value="{{ $np->Nombre_Aniestesiologo }}"
                               pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
@@ -88,7 +88,7 @@
                   <div class="row mb-4">
 
                       <div class="col">
-                          <label for="formGroupExampleInput">Ciculante</label>
+                          <label for="formGroupExampleInput">Circulante</label>
                           <input type="text" class="form-control" placeholder="circulante"
                               name="CIR"value="{{ $np->Circulante }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"
                               required>
@@ -110,7 +110,7 @@
                   action="{{ route('NotasPost.Formulario', ['id' => $Paciente->SS]) }}">
                   @csrf
                   <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
-                      id="Hola" style="display: none;">Agregar nota-post quirurgica</button>
+                      id="Hola" style="display: none;">Agregar nota-post quirúrgica</button>
               </form>
   </div>
   @endforeach

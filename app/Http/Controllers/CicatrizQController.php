@@ -101,7 +101,7 @@ class CicatrizQController extends Controller
         $Cicatriz->save();
          $paciente=$Cicatriz->fk_cicatriz;
         //return response()->json($data);
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Cicatriz quirurgica actualizada correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Cicatriz quirúrgica actualizada correctamente!');
     }
 
     /**
@@ -126,6 +126,6 @@ class CicatrizQController extends Controller
         } else {
             
         }
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Cicatriz quirurgica Eliminada correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Cicatriz quirúrgica Eliminada correctamente!');
     }
 }

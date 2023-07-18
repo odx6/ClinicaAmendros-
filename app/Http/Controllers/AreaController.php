@@ -40,7 +40,7 @@ class AreaController extends Controller
         $Area->NOMBE_AREA=request('Nombre');
         $Area->Save();
 
-        return redirect()->route('index.Areas')->with('mensaje', '¡Area  Agregada  correctamente!');
+        return redirect()->route('index.Areas')->with('mensaje', '¡Área  Agregada  correctamente!');
     }
 
     /**
@@ -78,7 +78,7 @@ class AreaController extends Controller
         $Area=Area::find(request('id'));
         $Area->NOMBE_AREA=request('Nombre');
         $Area->Save();
-        return redirect()->route('index.Areas')->with('mensaje', '¡Area  Actualizada  correctamente!');
+        return redirect()->route('index.Areas')->with('mensaje', '¡Área  Actualizada  correctamente!');
     }
 
     /**
@@ -100,7 +100,7 @@ class AreaController extends Controller
           
       }
       
-        return redirect()->route('index.Areas')->with('mensaje', '¡Area  Eliminada  correctamente!');
+        return redirect()->route('index.Areas')->with('mensaje', '¡Área  Eliminada  correctamente!');
     }
     }
 

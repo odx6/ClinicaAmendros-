@@ -53,8 +53,8 @@
                 <th  scope="col">Correo </th>
                 <th  scope="col">contraseña</th>
                 <th  scope="col">Rol</th>
-                <th  scope="col">fecha de creacion</th>
-                <th  scope="col">Accion</th>
+                <th  scope="col">fecha de creación</th>
+                <th  scope="col">Acción</th>
             </tr>
             <tr aria-hidden="true" class="mt-3 d-block table-row-hidden"></tr>
         </thead>
@@ -62,7 +62,7 @@
             @if($Users->isEmpty())
             <tr>
                 <td> No hay usuarios Agregados </td>
-                <td> Agrege nuevos usuarios </td>
+                <td> Agregue nuevos usuarios </td>
             </tr>
             @else
             @foreach($Users as $user)

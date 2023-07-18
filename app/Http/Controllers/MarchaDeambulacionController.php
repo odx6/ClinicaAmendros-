@@ -107,7 +107,7 @@ class MarchaDeambulacionController extends Controller
         //return response()->json($data);
          $paciente= $Marcha->fk_marcha;
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Marcha deambulacion atualizada  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Marcha deambulacion actualizada  correctamente!');
     }
 
     /**

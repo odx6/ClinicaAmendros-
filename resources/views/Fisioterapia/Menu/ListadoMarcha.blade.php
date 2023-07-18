@@ -126,7 +126,7 @@
     <form class="user" method="POST" action="{{ route('index.Marcha',['id' => $Paciente->SS]) }}">
         @csrf
         <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-            style="display: none;">Agregar Cicatriz quirurgica
+            style="display: none;">Agregar Cicatriz quirúrgica
         </button>
     </form>
     <form class="user" method="POST" action="{{ route('destroy.Marcha', ['id' =>$mar->pk_marcha]) }}">

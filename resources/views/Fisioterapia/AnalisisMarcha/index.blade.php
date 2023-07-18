@@ -1,5 +1,5 @@
 @extends('layouts.formularios')
-@section('nombreVista', 'Agregar Analisis de la marcha ')
+@section('nombreVista', 'Agregar Análisis de la marcha ')
 
 @section('formulario')
     <div class="col-sm">
@@ -9,7 +9,7 @@
             @csrf
             <!---octavo container-->
             <div class="container">
-                <h2>Analisis de la marcha</h2>
+                <h2>Ana lisis de la marcha</h2>
                 <div class="row">
                     <div class="col-sm">
 
@@ -71,7 +71,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-group">
-                                                            <label for="formGroupExampleInput">El pie derecho <br> no sobrepasa <br> al izquierdo con el paso <br>en la fase del<br> bal anceo
+                                                            <label for="formGroupExampleInput">El pie derecho <br> no sobrepasa <br> al izquierdo con el paso <br>en la fase del<br> balanceo
                                                             </label>
                                                         </div>
                                                     </td>

@@ -53,7 +53,7 @@
                 <th scope="col">Nombre</th>
                 <th  scope="col">Edad</th>
                 <th  scope="col">Sexo</th>
-                <th  scope="col">Accion</th>
+                <th  scope="col">Acción</th>
             </tr>
             <tr aria-hidden="true" class="mt-3 d-block table-row-hidden"></tr>
         </thead>

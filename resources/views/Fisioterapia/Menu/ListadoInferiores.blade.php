@@ -17,7 +17,7 @@
             <form class="user" method="POST" action="{{ route('index.MInferiores', ['id' => $Paciente->SS]) }}">
                 @csrf
                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-                    style="display: none;">Agregar Evaluacion miembros inferiores </button>
+                    style="display: none;">Agregar Evaluación miembros inferiores </button>
             </form>
         </div>
     @else
@@ -26,7 +26,7 @@
                 action="{{ route('update.MSuperiores', ['id' => $prueba->pk_prueba]) }}" novalidate>
                 @csrf
                  <div class="container">
-                    <h2>Prueba de Arcos de moviidad de miembros superiores</h2>
+                    <h2>Prueba de Arcos de movilidad de miembros superiores</h2>
 
                     <div class="row">
 
@@ -119,7 +119,7 @@
             <form class="user" method="POST" action="{{ route('index.MInferiores', ['id' => $Paciente->SS]) }}">
                 @csrf
                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
-                    id="Hola" style="display: none;">Agregar Evaluacion Miembros Inferiores
+                    id="Hola" style="display: none;">Agregar Evaluación Miembros Inferiores
                 </button>
             </form>
             <form class="user" method="POST"

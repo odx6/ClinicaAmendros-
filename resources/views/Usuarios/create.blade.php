@@ -41,7 +41,7 @@
                                         required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2">
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Email</label>
+                                    <label for="formGroupExampleInput">Correo</label>
                                     <input type="email" class="form-control" placeholder="Precio compra" name="email"
                                         required  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
                                 </div>
@@ -59,7 +59,7 @@
                                     </label>
 
                                     <select class="form-select" id="exampleFormControlSelect1" name="role" required>
-                                    <option selected disabled value="">Selecione un rol </option>
+                                    <option selected disabled value="">Seleccione un rol </option>
                                     <option  value="director">director </option>
                                     <option  value="secretaria">secretaria</option>
                                     <option  value="medico">medico</option>

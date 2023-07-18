@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Agregar Exploracion fisica')
+@section('title', 'Agregar Exploración física')
 @section('linkAuth')
     <!-- BEGIN PAGE LEVEL STYLE -->
 
@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="row mb-4">
                                     <div class="col">
-                                        <label for="formGroupExampleInput">Nombre exploracion </label>
+                                        <label for="formGroupExampleInput">Nombre exploración </label>
                                         <input type="text" class="form-control" placeholder="Exploracion Cabeza"
                                             name="NEF" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2">
                                     </div>

@@ -74,7 +74,7 @@
         <p><strong>Origen :</strong>{{$Paciente->Origen }}</p>
         <p><strong>Ocupación :</strong>{{$Paciente->Ocupacion }}</p>
         <p><strong>Dirección :</strong>{{$Paciente->Direccion }}</p>
-        <p><strong>Telefono :</strong>{{$Paciente->Telefono }}</p>
+        <p><strong>Teléfono :</strong>{{$Paciente->Telefono }}</p>
         <p><strong>Religión  :</strong>{{$Paciente->Religion }}</p>
         <p><strong>Fecha Ingreso  :</strong>{{$Paciente->FechaIngreso }}</p>
         <p><strong>Fecha Salida  :</strong>{{$Paciente->FechaSalida }}</p>
@@ -114,7 +114,7 @@
 <div class="page-break"></div> 
   <div class="espacio"></div> 
     @if(isset($Antecedentes))
-        <h4>Antecedentes Patólogicos y Heredofamiliares</h4>
+        <h4>Antecedentes Patológicos y Heredofamiliares</h4>
        
         <table class="table table-sm">
   <thead>
@@ -224,13 +224,13 @@
   @endif
 
 @if(isset($Cicatriz))
-  <h4>Cicatríz quirúrgica </h4>
+  <h4>Cicatriz quirúrgica </h4>
 <table class="table">
   <thead>
     <tr>
       <th scope="col">Sitio</th>
       <th scope="col">Queloide</th>
-      <th scope="col">Retractil</th>
+      <th scope="col">Retráctil</th>
       <th scope="col">Abierta</th>
       <th scope="col">Con aderencia</th>
       <th scope="col">Hipertrofica</th>
@@ -310,7 +310,7 @@
     @if(isset($Evaluaciones))
     <div class="container">
                     <div class="row">
-                        <h2>Evaluacion muscular</h2>
+                        <h2>Evaluación muscular</h2>
                         <table class="table table-bordered">
                             <thead>
 
@@ -332,8 +332,8 @@
                                     <th scope="row">Grado 3</th>
                                     <td>La fuerza muscular está reducida tanto que el moviemiento articular solo
                                         puede realizarse contra la gravedad sin la resistencia del
-                                        examinadro.<br>Por ejemplo, la articulacion del codo puede moverse desde
-                                        extension completa hasta felxión completa, comenzando con el brazo
+                                        examinador.<br>Por ejemplo, la articulación del codo puede moverse desde
+                                        extensión completa hasta felxión completa, comenzando con el brazo
                                         suspendido al lado del cuerpo. </td>
 
                                 </tr>
@@ -365,7 +365,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Nombre del miembro a evaluar</th>
-                                    <th scope="col">Izuierda</th>
+                                    <th scope="col">Izquierda</th>
                                     <th scope="col">Derecha</th>
                                     
 
@@ -594,7 +594,7 @@
 <p>*No lo intentó, usted lo notaba inseguro ...3</p>
 <p>*No lo intentó, el sujeto se sentía inseguro...4 </p>
 <p>*El sujeto no entendió las intrucciónes...5 </p>
-<p>*Otro motivo (especifiquelo)...6 </p>
+<p>*Otro motivo (especifique lo)...6 </p>
 <p>*El sujeto rechazó la prueba...7  </p>
 <h2>Comentarios</h2>
 <div class="form-group mb-4">
@@ -615,7 +615,7 @@
 @foreach ($Marchas as $marcha)
             
                 <div class="container">
-                <h2>Analisis de la marcha</h2>
+                <h2>Análisis de la marcha</h2>
                 <div class="row">
                     <div class="col-sm">
 

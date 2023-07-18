@@ -21,12 +21,12 @@
             <form class="user" method="POST" action="{{ route('index.AntecedenteHAB', ['id' => $Paciente->SS]) }}">
                 @csrf
                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-                    style="display: none;">Agregar Habitos de la salud
+                    style="display: none;">Agregar Hábitos de la salud
                 </button>
             </form>
         </div>
     @else
-        <h2>Hábitus de la salud</h2>
+        <h2>Hábitos de la salud</h2>
         @php
             $ids = [];
             
@@ -139,7 +139,7 @@
                     action="{{ route('index.AntecedenteHAB', ['id' => $Paciente->SS]) }}">
                     @csrf
                     <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
-                        id="Hola" style="display: none;">Agregar Habitos de salud</button>
+                        id="Hola" style="display: none;">Agregar Hábitos de salud</button>
                 </form>
             </div>
         </div>

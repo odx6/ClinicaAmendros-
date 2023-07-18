@@ -12,7 +12,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Aliniacion Corporal</th>
+                        <th scope="col">Alineación Corporal</th>
                         <th scope="col">GRADOS L M S</th>
 
 
@@ -22,7 +22,7 @@
                 </thead>
                 <tbody>
                     @php
-                        $Datos = ['Cabeza inclinada', 'Cabeza rotada', 'Hombro Caido', 'Hombro Elevado', 'Espalda Plana', 'Abducción de Escapulas', 'Abduccion de escapulas', 'Escapulas Aladas', 'Curvatura Lateral de la Columna', 'Rotacion Interna  de Cadera(Tronco)', 'Rotacion Externa de Cadera', 'Inclinación  Lateral de la Pelvis', 'Rotacion Pélvica', 'Cadera Abducida', 'Pie Pronado', 'Pie Supiano', 'Pie Plano', 'Pie Cavo'];
+                        $Datos = ['Cabeza inclinada', 'Cabeza rotada', 'Hombro Caído', 'Hombro Elevado', 'Espalda Plana', 'Abducción de Escapulas', 'Abducción de escapulas', 'Escapulas Aladas', 'Curvatura Lateral de la Columna', 'Rotación Interna  de Cadera(Tronco)', 'Rotación Externa de Cadera', 'Inclinación  Lateral de la Pelvis', 'Rotación Pélvica', 'Cadera Abducida', 'Pie Pronado', 'Pie Supiano', 'Pie Plano', 'Pie Cavo'];
                         
                     @endphp
                     @foreach ($Datos as $Dat)

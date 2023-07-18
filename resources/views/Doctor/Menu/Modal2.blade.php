@@ -65,7 +65,7 @@
                                         <input class="form-check-input" type="checkbox" id="gridCheck1" value="1"
                                             name="Revocar">
                                         <label class="form-check-label" for="gridCheck1">
-                                            formato con revocacionde concentimiento
+                                            formato con revocación de  consentimiento
                                         </label>
                                     </div>
                                 </div>
@@ -76,7 +76,7 @@
                                         <input class="form-check-input" type="checkbox" id="gridCheck1" value="1"
                                             name="NoAcepta">
                                         <label class="form-check-label" for="gridCheck1">
-                                            El paciente se niega arecibir el tratamiento
+                                            El paciente se niega a recibir el tratamiento
                                         </label>
                                     </div>
                                 </div>

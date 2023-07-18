@@ -13,7 +13,7 @@
       text-justify: inter-word;
     }
 </style>
-    <title>Hello, world!</title>
+    <title>Consentimiento Informado </title>
   </head>
   <body>
   <p style="text-align:right;">Oaxaca de Juárez, Oax., a {{$Fecha->day}} de  {{$Fecha->format('M')}} de {{$Fecha->year}}</p>
@@ -60,7 +60,7 @@
       
     </tr>
      <tr>
-      <td>Telefono : </td>
+      <td>Teléfono : </td>
       <td colspan="3"> {{$Paciente->Telefono}}</td>
       
     </tr>

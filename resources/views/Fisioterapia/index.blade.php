@@ -105,7 +105,7 @@
                                         <tr>
 
                                             <td>
-                                                <h3>Telefono :</h3>
+                                                <h3>Teléfono :</h3>
                                             </td>
                                             <td>
                                                 <h3>__________</h3>
@@ -120,7 +120,7 @@
                                         <tr>
 
                                             <td>
-                                                <h3>Ocupacion :</h3>
+                                                <h3>Ocupación :</h3>
                                             </td>
                                             <td>
                                                 <h3>__________</h3>
@@ -143,7 +143,7 @@
                                     <div class="row">
                                         <div class="col-sm-9">
                                             <h2>Terapeuta</h2>
-                                            <p>juan perez</p>
+                                            <p>juan prez</p>
                                             <div class="row">
                                                 <div class="col-8 col-sm-6">
                                                     <h2>Expediente #</h2>
@@ -639,7 +639,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-sm">
-                                <h2>Diagnóstico Médico en Reabilitacion </h2>
+                                <h2>Diagnóstico Médico en Rehabilitación </h2>
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm">
@@ -649,7 +649,7 @@
                                             <h3>Sensibilidad</h3>
                                         </div>
                                         <div class="col-sm">
-                                            <h3>Lenguaje / Orientacion</h3>
+                                            <h3>Lenguaje / Orientación</h3>
                                         </div>
                                         <div class="col-sm">
                                             <h3>Otros</h3>
@@ -956,7 +956,7 @@
                                     <thead>
                                         <tr>
                                             <th scope="col"></th>
-                                            <th scope="col">Izuierda</th>
+                                            <th scope="col">Izquierda</th>
                                             <th scope="col">Derecha</th>
 
                                         </tr>
@@ -980,7 +980,7 @@
                                                 alt="" width="100%" height="100%">
                                         </div>
                                         <div class="col-sm">
-                                            <h2>Nota Clinica-Valoración Inicial</h2>
+                                            <h2>Nota Clínica-Valoración Inicial</h2>
                                             <p>__________________---</p>
                                         </div>
 
@@ -995,7 +995,7 @@
 
                     <!---sexto container-->
                     <div class="container">
-                        <h2>Prueba de Arcos de moviidad de miembros superiores</h2>
+                        <h2>Prueba de Arcos de movilidad de miembros superiores</h2>
 
                         <div class="row">
                             <div class="col-sm">
@@ -1012,7 +1012,7 @@
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th scope="col">Flexion </th>
+                                                            <th scope="col">Flexión </th>
                                                             <th scope="col">Extencion</th>
 
                                                         </tr>
@@ -1084,7 +1084,7 @@
 
                     <!---sexto container-->
                     <div class="container">
-                        <h2>Prueba de Arcos de moviidad de miembros inferiores</h2>
+                        <h2>Prueba de Arcos de movilidad de miembros inferiores</h2>
 
                         <div class="row">
                             <div class="col-sm">
@@ -1147,7 +1147,7 @@
 
                     <!---septimo container-->
                     <div class="container">
-                        <h2>Evaluacion Postura</h2>
+                        <h2>Evaluación Postura</h2>
                         <div class="row">
                             <div class="col-sm">
 
@@ -1162,7 +1162,7 @@
                                                     <table class="table">
                                                         <thead>
                                                             <tr>
-                                                                <th scope="col">Aliniacion Corporal</th>
+                                                                <th scope="col">Alineación Corporal</th>
                                                                 <th scope="col">L</th>
                                                                 <th class="text-center" scope="col">M</th>
                                                                 <th class="text-center" scope="col">S</th>
@@ -1173,7 +1173,7 @@
                                                         </thead>
                                                         <tbody>
                                                             @php
-                                                                $Datos = ['Inclinación Lateral la Cabeza', 'Cabeza Rotada', 'Asimetria Maxilar', 'Clavículas Asimétricas', 'Hombre Capído', 'Hombro Elevado', 'Cubito Valgo', 'Cubito Varo', 'Rotación Interna de Cadera', 'Rotación Externa ', 'Genu Varum', 'Genu Valgum', 'Torsión Tibial Interna', 'Torsión Tibial Externa', 'Hallux Valgus', 'Dedos en Garra', 'Dedos en Martillo'];
+                                                                $Datos = ['Inclinación Lateral la Cabeza', 'Cabeza Rotada', 'Asimetría Maxilar', 'Clavículas Asimétricas', 'Hombre Caído', 'Hombro Elevado', 'Cubito Valgo', 'Cubito Varo', 'Rotación Interna de Cadera', 'Rotación Externa ', 'Genu Varum', 'Genu Valgum', 'Torsión Tibial Interna', 'Torsión Tibial Externa', 'Hallux Valgus', 'Dedos en Garra', 'Dedos en Martillo'];
                                                                 
                                                             @endphp
                                                             @foreach ($Datos as $Dat)
@@ -1239,7 +1239,7 @@
                                                     <table class="table">
                                                         <thead>
                                                             <tr>
-                                                                <th scope="col">Aleniacion Corporal</th>
+                                                                <th scope="col">Alineación Corporal</th>
                                                                 <th scope="col">L</th>
                                                                 <th class="text-center" scope="col">M</th>
                                                                 <th class="text-center" scope="col">S</th>
@@ -1250,7 +1250,7 @@
                                                         </thead>
                                                         <tbody>
                                                             @php
-                                                                $Datos = ['Dezplazamiento Anterior al cuerpo', 'Dezplazamiento Posterior del Cuerpo', 'Cabeza Adelantada', 'Vertebras Torácicas:Cifosis', 'Vertebras Torácicas:Pectus Excavatum', 'Pecho en Tonel', 'Pectus Carinatum', 'Columna:Lordosis', 'Espalda Cifotiva(Columna)', 'Espalda Plana(Columna)', 'Inclinacion Ant.de Pelvis y Cadera', 'Inclinacion Post.de Pelvis y Cadera', 'Genu Recurvatum', 'Rodillas Flexionadas'];
+                                                                $Datos = ['Desplazamiento Anterior al cuerpo', 'Desplazamiento Posterior del Cuerpo', 'Cabeza Adelantada', 'Vertebras Torácicas:Cifosis', 'Vertebras Torácicas:Pectus Excavatum', 'Pecho en Tonel', 'Pectus Carinatum', 'Columna:Lordosis', 'Espalda Cifotiva(Columna)', 'Espalda Plana(Columna)', 'Inclinación Ant.de Pelvis y Cadera', 'Inclinación Post.de Pelvis y Cadera', 'Genu Recurvatum', 'Rodillas Flexionadas'];
                                                                 
                                                             @endphp
                                                             @foreach ($Datos as $Dat)
@@ -1315,7 +1315,7 @@
                                                     <table class="table">
                                                         <thead>
                                                             <tr>
-                                                                <th scope="col">Aleniacion Corporal</th>
+                                                                <th scope="col">Alineación Corporal</th>
                                                                 <th scope="col">L</th>
                                                                 <th class="text-center" scope="col">M</th>
                                                                 <th class="text-center" scope="col">S</th>
@@ -1326,7 +1326,7 @@
                                                         </thead>
                                                         <tbody>
                                                             @php
-                                                                $Datos = ['Cabeza inclinada', 'Cabeza rotada', 'Hombro Caido', 'Hombro Elevado', 'Espalda Plana', 'Abducción de Escapulas', 'Abduccion de escapulas', 'Escapulas Aladas', 'Curvatura Lateral de la Columna', 'Rotacion Interna  de Cadera(Tronco)', 'Rotacion Externa de Cadera', 'Inclinación  Lateral de la Pelvis', 'Rotacion Pélvica', 'Cadera Abducida', 'Pie Pronado', 'Pie Supiano', 'Pie Plano', 'Pie Cavo'];
+                                                                $Datos = ['Cabeza inclinada', 'Cabeza rotada', 'Hombro Caído', 'Hombro Elevado', 'Espalda Plana', 'Abducción de Escapulas', 'Abducción de escapulas', 'Escapulas Aladas', 'Curvatura Lateral de la Columna', 'Rotación Interna  de Cadera(Tronco)', 'Rotación Externa de Cadera', 'Inclinación  Lateral de la Pelvis', 'Rotación Pélvica', 'Cadera Abducida', 'Pie Pronado', 'Pie Sipiano', 'Pie Plano', 'Pie Cavo'];
                                                                 
                                                             @endphp
                                                             @foreach ($Datos as $Dat)
@@ -1376,7 +1376,7 @@
                     <!---end--noveno container-->
                     <!---octavo container-->
                     <div class="container">
-                        <h2>Evaluacion Postura</h2>
+                        <h2>Evaluación Postura</h2>
                         <div class="row">
                             <div class="col-sm">
 
@@ -1390,7 +1390,7 @@
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th scope="col">Aleniacion Corporal</th>
+                                                            <th scope="col">Alineación Corporal</th>
                                                             <th scope="col">L</th>
                                                             <th class="text-center" scope="col">M</th>
                                                             <th class="text-center" scope="col">S</th>

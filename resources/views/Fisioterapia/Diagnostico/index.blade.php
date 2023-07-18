@@ -2,7 +2,7 @@
 
 @section('formulario')
     <div class="col-sm">
-        <h2>Diagnóstico Médico en Reabilitacion para el paciente {{ $id }} </h2>
+        <h2>Diagnóstico Médico en Rehabilitación para el paciente {{ $id }} </h2>
         <form class="user needs-validation" method="POST" action="{{ route('create.Diagnostico',['id'=>$id]) }}" novalidate>
             @csrf
         <div class="container">

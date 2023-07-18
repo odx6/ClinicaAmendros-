@@ -101,7 +101,7 @@ class FormularioValoracionController extends Controller
         //return response()->json($data);
           $paciente=$Formulario->fk_formulario;
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Formulario de valoracion actualizado  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Formulario de valoración actualizado  correctamente!');
     }
 
     /**
@@ -125,6 +125,6 @@ class FormularioValoracionController extends Controller
         }
 
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Formulario de valoracion eliminado  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Formulario de valoración eliminado  correctamente!');
     }
 }

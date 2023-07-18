@@ -27,7 +27,7 @@
 
                                             </div>
                                         @else
-                                            <h2> ANTECEDENTES Ginecobstrecticos </h2>
+                                            <h2> ANTECEDENTES GINECOBSTÉTRICO </h2>
                                             @foreach ($Gineco as $Gine)
                                                 <!--- Historial-->
                                                 <form class="user needs-validation" method="POST"
@@ -62,7 +62,7 @@
                                                         </div>
                                                     
                                                         <div class="col">
-                                                            <label for="formGroupExampleInput">Número de cesareas </label>
+                                                            <label for="formGroupExampleInput">Número de cesáreas </label>
                                                             <input type="numeric" class="form-control"
                                                                 placeholder="Numero de cesareas" name="Cesareas"
                                                                 value="{{ $Gine->Paras }}"   pattern="^\d+(\.\d+)?$" required>

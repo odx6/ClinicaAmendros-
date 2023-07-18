@@ -122,6 +122,6 @@ class NotaPQuirurgicaController extends Controller
         }else{}
         
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Nota post-quirurgica eliminada  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Nota post-quirúrgica eliminada  correctamente!');
     }
 }

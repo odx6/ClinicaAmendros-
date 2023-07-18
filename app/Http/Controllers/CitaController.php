@@ -46,7 +46,7 @@ class CitaController extends Controller
                      ->exists();
 
                if ($citaExistente) {
-                    return "Cita Existente por favor selecione otra hora o dia ";
+                    return "Cita Existente por favor seleccione otra hora o día ";
 } else {
      $data = $request->all();
         $date =Carbon::parse('2023-04-12 10:30:00');
@@ -84,8 +84,8 @@ class CitaController extends Controller
         $Paciente->Ocupacion="No especificado";
         $Paciente->Direccion="No especificado";
         $Paciente->Telefono=$data['Telefono'];
-        $Paciente->Religion="Catolisismo";
-        $Paciente->Escolaridad="Educacion Primaria";
+        $Paciente->Religion="Catolicismo";
+        $Paciente->Escolaridad="Educación Primaria";
         $date = Carbon::now();
         $Paciente->FechaIngreso=$date->format('Y-m-d');
         $Paciente->save();
@@ -143,7 +143,7 @@ class CitaController extends Controller
                      ->exists();
 
                      if ($citaExistente) {
-                    return "Cita Existente por favor selecione otra hora o dia ";
+                    return "Cita Existente por favor seleccione otra hora o día ";
 } else {
          $cita= Cita::find(request('idCita'));
          $cita->fk_dc=request('idDoctor');

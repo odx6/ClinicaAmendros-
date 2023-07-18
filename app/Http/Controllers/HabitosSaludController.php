@@ -33,7 +33,7 @@ class HabitosSaludController extends Controller
         $data = $request->all();
         $this->agregar($data['id'],'Tabaquismo',$data['Tabaquismo'],$data['ETabaquismo']);
         $this->agregar($data['id'],'Actividad física',$data['Actividad-física'],$data['EActividad-física']);
-        $this->agregar($data['id'],'Alcholismo',$data['Alcholismo'],$data['EAlcholismo']);
+        $this->agregar($data['id'],'Alcoholismo',$data['Alcholismo'],$data['EAlcholismo']);
         $this->agregar($data['id'],'Se Automedica',$data['Se-Automedica'],$data['ESe-Automedica']);
         $this->agregar($data['id'],'Drogas',$data['Drogas'],$data['EDrogas']);
         $this->agregar($data['id'],'Pasa tiempo',$data['Pasatiempo'],$data['EPasatiempo']);
@@ -41,7 +41,7 @@ class HabitosSaludController extends Controller
        // return response()->json($data);
         $paciente=$data['id'];
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Habitos de la salud agregados  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Hábitos de la salud agregados  correctamente!');
     }
 
     /**
@@ -96,7 +96,7 @@ class HabitosSaludController extends Controller
        // return response()->json($data);
         $paciente=$this->Actualizar($data['IDPasa_tiempo'],'Pasa tiempo',$data['Pasa_tiempo'],$data['EPasa_tiempo']);
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Habitos de la salud actualizados correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Hábitos de la salud actualizados correctamente!');
     }
 
     /**
@@ -123,7 +123,7 @@ class HabitosSaludController extends Controller
             
         }}
         //return response()->json($data);
-        return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Habitos de la salud eliminados correctamente!');
+        return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Hábitos de la salud eliminados correctamente!');
     }
     public function agregar($id,$nombre, $valor,$Especificacion){
         

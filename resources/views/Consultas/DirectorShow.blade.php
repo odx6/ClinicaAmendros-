@@ -71,7 +71,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="">
-                                    <label class="form-label">Nombre del pacente</label>
+                                    <label class="form-label">Nombre del paciente</label>
                                     <!-- <input id="event-title2" type="text" class="form-control">-->
                                     <select class="form-control" name="consultaPaciente" id="event-title2" required>
 
@@ -124,7 +124,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="">
-                                    <label class="form-label">Selecione la secretaria</label>
+                                    <label class="form-label">Seleccione la secretaria</label>
                                     <!-- <input id="event-title" type="text" class="form-control">-->
                                     <select class="form-control" name="consultaSecretaria" id="event-title" required>
 

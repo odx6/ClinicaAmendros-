@@ -50,7 +50,7 @@ class HistorialClinicoController extends Controller
         $Historial->save();
          $paciente=request('Paciente');
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Hitorial clinico  agregado  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Historial clínico  agregado  correctamente!');
     }
 
     /**
@@ -135,7 +135,7 @@ class HistorialClinicoController extends Controller
          $Historial->save();
           $paciente= $Historial->PacienteSS;
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Historial clinico actualizado correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Historial clínico actualizado correctamente!');
     }
 
     /**
@@ -155,6 +155,6 @@ class HistorialClinicoController extends Controller
             $dato->delete();
 
         }else{}
-          return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Historial clinico eliminado correctamente!');
+          return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Historial clínico eliminado correctamente!');
     }
 }

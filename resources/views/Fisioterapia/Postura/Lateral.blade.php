@@ -5,7 +5,7 @@
         action="{{ route('create.Postura', ['id' => $id, 'TipoM' => 'Lateral']) }}" novalidate>
         @csrf
         
-            <h2>Evaluacion Postura</h2>
+            <h2>Evaluación Postura</h2>
             
                 
                     <!---septimo container-->
@@ -19,7 +19,7 @@
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th scope="col">Aliniacion Corporal</th>
+                                                    <th scope="col">Alineación Corporal</th>
                                                     <th scope="col">GRADOS L M S</th>
 
 
@@ -29,7 +29,7 @@
                                             </thead>
                                             <tbody>
                                                 @php
-                                                    $Datos = ['Dezplazamiento Anterior al cuerpo', 'Dezplazamiento Posterior del Cuerpo', 'Cabeza Adelantada', 'Vertebras Torácicas:Cifosis', 'Vertebras Torácicas:Pectus Excavatum', 'Pecho en Tonel', 'Pectus Carinatum', 'Columna:Lordosis', 'Espalda Cifotiva(Columna)', 'Espalda Plana(Columna)', 'Inclinacion Ant.de Pelvis y Cadera', 'Inclinacion Post.de Pelvis y Cadera', 'Genu Recurvatum', 'Rodillas Flexionadas'];
+                                                    $Datos = ['Desplazamiento Anterior al cuerpo', 'Desplazamiento Posterior del Cuerpo', 'Cabeza Adelantada', 'Vertebras Torácicas:Cifosis', 'Vertebras Torácicas:Pectus Excavatum', 'Pecho en Tonel', 'Pectus Carinatum', 'Columna:Lordosis', 'Espalda Cifotiva(Columna)', 'Espalda Plana(Columna)', 'Inclinación Ant.de Pelvis y Cadera', 'Inclinación Post.de Pelvis y Cadera', 'Genu Recurvatum', 'Rodillas Flexionadas'];
                                                     
                                                 @endphp
                                                 @foreach ($Datos as $Dat)

@@ -135,7 +135,7 @@
                                                              <div class="row mb-4">
                                                             <div class="col">
 
-                                                                <label for="formGroupExampleInput"> Cancer(CA)</label>
+                                                                <label for="formGroupExampleInput"> Cáncer(CA)</label>
                                                                 <select class="form-control" name="PCA" required>
                                                                     <option value="{{ $Historial->PCA }}">
                                                                         @if ($Historial->PCA == '1')
@@ -190,10 +190,10 @@
                                                              <div class="row mb-4">
                                                             <div class="col">
                                                                 <label for="formGroupExampleInput">
-                                                                    Sustancias quimicas </label>
+                                                                    Sustancias químicas </label>
 
                                                                 <input type="text" class="form-control"
-                                                                    placeholder="ALERGIAS POR SUSTANCIAS QUIMICAS"
+                                                                    placeholder="ALERGIAS POR SUSTANCIAS QUíMICAS"
                                                                     name="ALS"
                                                                     value="{{ $Historial->SUSTANCIAS_Q }}" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" >
                                                             </div>
@@ -202,7 +202,7 @@
                                                        
 
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Ciruguias
+                                                                <label for="formGroupExampleInput">Cirugías
                                                                 </label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="CIRUJIAS PREVIAS " name="CP"
@@ -211,7 +211,7 @@
                                                              </div>
                                                              <div class="row mb-4">
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput"> Transfunciones </label>
+                                                                <label for="formGroupExampleInput"> Transfusiones </label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="TRANSFUCIONES" name="TF"
                                                                     value="{{ $Historial->TRANSFUCIONES }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required>
@@ -231,7 +231,7 @@
                                                         <div class="row mb-4">
 
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput"> Alcholico </label>
+                                                                <label for="formGroupExampleInput"> Alcohólico </label>
                                                                 <select class="form-control" name="ALP" required>
                                                                     <option value="{{ $Historial->ALCHOLISMO }}">
                                                                         @if ($Historial->ALCHOLISMO == '1')

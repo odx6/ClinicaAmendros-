@@ -12,10 +12,10 @@
                                     <div class="row">
                                          <div class="col-md-12">
                                             <div class="">
-                                                <label class="form-label">Area</label>
+                                                <label class="form-label">Área</label>
                                                <!-- <input id="event-title" type="text" class="form-control">-->
                                                 <select class="form-control event-title-area" name="" id="event-title-area" required>
-                                                    <option selected disabled value="">Seleciona el area </option>
+                                                    <option selected disabled value="">Selecciona el area </option>
                                                     @php
                                                     $Areas =App\Models\Area::all();
                                         
@@ -43,7 +43,7 @@
                                                     
                                                 </select>
                                                         <div class="valid-feedback">
-                                        Selecion correcta
+                                        Selección correcta
                                      </div>
                                      <div class="invalid-feedback">
                                          Selecciona un médico
@@ -52,7 +52,7 @@
                                         </div>
                                          <div class="col-md-12">
                                             <div class="">
-                                                <label class="form-label">Nombres del pacente</label>
+                                                <label class="form-label">Nombres del paciente</label>
                                                <input id="NombrePacienteP" type="text" class="form-control" name="Nombre" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"                                         max="30">
                                                   <div class="valid-feedback">
                                         Nombres del paciente correcto
@@ -78,13 +78,13 @@
                                         </div>
                                           <div class="col-md-12">
                                             <div class="">
-                                                <label class="form-label">Telefono</label>
+                                                <label class="form-label">Teléfono</label>
                                                <input id="TelefonoP" type="text" class="form-control" name="Telefono" required minlength="10" maxlength="10" pattern="[0-9]{9,15}">
                                                    <div class="valid-feedback">
                                            Telefono Correcto
                                         </div>
                                         <div class="invalid-feedback">
-                                            Ingresa un telefono de la forma 9514886716 sin letras ni espacios
+                                            Ingresa un teléfono de la forma 9514886716 sin letras ni espacios
                                         </div>
                                             </div>
                                          

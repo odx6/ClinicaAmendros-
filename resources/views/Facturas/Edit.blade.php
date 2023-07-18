@@ -26,7 +26,7 @@
                             </ol>
                         </nav>
                     </div>
-                        <h1>Datos del producto</h1>
+                        <h1>Datos de la factura </h1>
                         <form class="user needs-validation" method="POST" action="{{ route('update.Facctura',['id'=>$Factura->pk_factura]) }}"  enctype="multipart/form-data"  novalidate>
                             @csrf
 
@@ -42,7 +42,7 @@
                                         required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" value="{{$Factura->Nombre}}">
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Seleciona un archivo pdf </label>
+                                    <label for="formGroupExampleInput">Selecciona un archivo pdf </label>
                                     <input type="file" class="form-control" placeholder="Archivo" name="archivo"
                                         required >
                                 </div>

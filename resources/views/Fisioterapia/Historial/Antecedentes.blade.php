@@ -43,7 +43,7 @@
                         <tr>
                             <td>
                                 <div class="switch form-switch-custom switch-inline form-switch-success">
-                                    <label class="switch-label" for="form-custom-switch-success">Enf.Reumaticas</label>
+                                    <label class="switch-label" for="form-custom-switch-success">Enf.Reumáticas</label>
                                     <input class="switch-input" type="checkbox" role="switch"
                                         id="form-custom-switch-success" name="EnfReumaticas" value="si">
 
@@ -304,7 +304,7 @@
 
                             <div class="w-100"></div>
                             <div class="col"><br>
-                                <h2><u>Espasmos o contratuctua muscular </u></h2>
+                                <h2><u>Espasmos o contractura muscular </u></h2>
                                 <!---table-->
                                 <div class="table-responsive">
                                     <table class="table">

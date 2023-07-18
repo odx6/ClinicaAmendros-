@@ -64,7 +64,7 @@
             @if($Consultas->isEmpty())
             <tr>
                 <td> No hay Consultas Agregadas </td>
-                <td> Agrege nuevas Consultas </td>
+                <td> Agregue nuevas Consultas </td>
             </tr>
             @else
             @foreach($Consultas as $Consulta)

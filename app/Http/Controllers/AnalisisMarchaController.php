@@ -49,7 +49,7 @@ class AnalisisMarchaController extends Controller
         $Marcha->save();
          // return response()->json($data);
         $paciente=$data['id'];
-        return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Analisis de marcha agregada correctamente!');
+        return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Análisis de marcha agregada correctamente!');
     }
 
     /**
@@ -112,7 +112,7 @@ class AnalisisMarchaController extends Controller
         $Marcha->save();
          // return response()->json($data);
         $paciente=$Marcha->fk_Analis_marcha;
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Analisis de marcha actualizada correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Análisis de marcha actualizada correctamente!');
     }
 
     /**
@@ -136,6 +136,6 @@ class AnalisisMarchaController extends Controller
         } else {
             
         }
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Analisis de marcha Eliminada correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Análisis de marcha Eliminada correctamente!');
     }
 }

@@ -17,7 +17,7 @@
             <form class="user" method="POST" action="{{ route('index.Postura', ['id' => $Paciente->SS]) }}">
                 @csrf
                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-                    style="display: none;">Agregar Evaluacion Evaluación postura</button>
+                    style="display: none;">Agregar Evaluación Evaluación postura</button>
             </form>
         </div>
     @else
@@ -35,7 +35,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">Aliniacion Corporal</th>
+                                <th scope="col">Alineación Corporal</th>
                                 <th scope="col">GRADOS L M S</th>
 
                                 <th class="text-center" scope="col">Observaciones</th>

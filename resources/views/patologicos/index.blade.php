@@ -33,7 +33,7 @@
                     <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Registrar Antecedente Patologico</li>
+                            <li class="breadcrumb-item active" aria-current="page">Registrar Antecedente Patológico</li>
                         </ol>
                     </nav>
                 </div>
@@ -54,9 +54,9 @@
 
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">diabetes millitus(DM) </label>
+                                    <label for="formGroupExampleInput">diabetes mellitus(DM) </label>
                                     <select class="form-control" name="DMN" required>
-                                        <option selected disabled value="">diabetes millitus(DM) </option>
+                                        <option selected disabled value="">diabetes mellitus(DM) </option>
 
                                         <option value="1">Si</option>
                                         <option value="0">No</option>
@@ -72,9 +72,9 @@
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Hirpentensión</label>
+                                    <label for="formGroupExampleInput">Hipertensión</label>
                                     <select class="form-control" name="HASN" required>
-                                        <option selected disabled value="">Hirpentensión </option>
+                                        <option selected disabled value="">Hipertensión </option>
                                         <option value="1">Si</option>
                                         <option value="0">No</option>
 

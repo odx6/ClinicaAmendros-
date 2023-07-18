@@ -19,7 +19,7 @@
                 <path
                     d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z">
                 </path>
-            </svg>Exploraaciones Fisicas </a>
+            </svg>Exploraciones Físicas </a>
     </li>
 
     <li class="nav-item ml-2 mr-2">
@@ -53,7 +53,7 @@
                 <line x1="16" y1="17" x2="8" y2="17">
                 </line>
                 <polyline points="10 9 9 9 8 9"></polyline>
-            </svg> Antecedentes Patologicos</a>
+            </svg> Antecedentes Patológicos</a>
     </li>
     <li class="nav-item ml-2 mr-2">
         <a class="nav-link mb-2 text-center" id="rounded-pills-icon-settings-tab" data-bs-toggle="pill"
@@ -104,7 +104,7 @@
                 <circle cx="9" cy="7" r="4"></circle>
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>Cicatríz Quirúrgica </a>
+            </svg>Cicatriz Quirúrgica </a>
     </li>
     <li class="nav-item ml-2 mr-2">
         <a class="nav-link mb-2 text-center" id="rounded-pills-icon-settings-tab" data-bs-toggle="pill"
@@ -224,7 +224,7 @@
                 <circle cx="9" cy="7" r="4"></circle>
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>Analisis Marcha </a>
+            </svg>Análisis Marcha </a>
     </li>
     <li class="nav-item ml-2 mr-2">
         <a class="nav-link mb-2 text-center" id="rounded-pills-icon-settings-tab" data-bs-toggle="pill"

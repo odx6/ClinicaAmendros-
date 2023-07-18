@@ -47,7 +47,7 @@ class PlanAnaliticoController extends Controller
         // return response()->json($data);
          $paciente=$Plan->fk_plan;
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Plan analitico  agregado  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Plan analítico  agregado  correctamente!');
     }
 
     /**
@@ -109,7 +109,7 @@ class PlanAnaliticoController extends Controller
          //return response()->json($data);
        $paciente=$Plan->fk_plan;
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Plan analitico  actualizado  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Plan analítico  actualizado  correctamente!');
     }
 
     /**
@@ -134,6 +134,6 @@ class PlanAnaliticoController extends Controller
         }
 
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Plan analitico  eliminado  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Plan analítico  eliminado  correctamente!');
     }
 }

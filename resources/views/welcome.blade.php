@@ -190,7 +190,7 @@ padding-right: 4px;
                 <td align="left">Masculino</td>
                 <th align="left">Edo.civil:</th>
                 <td align="left">Soltero</td>
-                <th align="left">Religion:</th>
+                <th align="left">Religión:</th>
                 <td align="left">Cristiano</td>
 
 
@@ -199,7 +199,7 @@ padding-right: 4px;
                 <th align="left">Lugar de origen:</th>
                 <td align="left">Oaxaca</td>
                 <th align="left">Ocupación:</th>
-                <td align="left">Mecanico</td>
+                <td align="left">Mecánico</td>
             </tr>
             <tr>
 

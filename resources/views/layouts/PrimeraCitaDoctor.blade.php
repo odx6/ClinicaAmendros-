@@ -30,14 +30,14 @@
                                         Datos correctos
                                      </div>
                                      <div class="invalid-feedback">
-                                        Seleciona un medico valido
+                                        Selecciona un medico valido
                                      </div>
                                             </div>
                                         </div>
                                     
                                          <div class="col-md-12">
                                             <div class="form-control">
-                                                <label class="form-label">Nombre del pacente</label>
+                                                <label class="form-label">Nombre del paciente</label>
                                                <input id="NombrePacienteP" type="text" class="form-control" name="Nombre" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"                                         max="30">
                                                  <div class="valid-feedback">
                                         Nombres del paciente correcto
@@ -61,13 +61,13 @@
                                         </div>
                                           <div class="col-md-12">
                                             <div class="form-control">
-                                                <label class="form-label">Telefono</label>
+                                                <label class="form-label">Teléfono</label>
                                                <input id="TelefonoP" type="text" class="form-control" name="Telefono" required minlength="10" maxlength="10" pattern="[0-9]{9,15}">
                                                <div class="valid-feedback">
-                                           Telefono Correcto
+                                           Teléfono Correcto
                                         </div>
                                         <div class="invalid-feedback">
-                                            Ingresa un telefono de la forma 9514886716 sin letras ni espacios
+                                            Ingresa un teléfono de la forma 9514886716 sin letras ni espacios
                                         </div>
                                                 
                                             </div>

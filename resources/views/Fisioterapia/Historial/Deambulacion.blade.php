@@ -4,7 +4,7 @@
 
 
      <div class="col-sm">
-         <h2>Marcha Deambulacion {{ $id }} </h2>
+         <h2>Marcha Deambulatorio {{ $id }} </h2>
          <!---table-->
          <div class="table-responsive">
              <table class="table">
@@ -46,7 +46,7 @@
                          </td>
                          <td>
                              <div class="switch form-switch-custom switch-inline form-switch-success">
-                                 <label class="switch-label" for="form-custom-switch-success">Ataxica</label>
+                                 <label class="switch-label" for="form-custom-switch-success">Ataxia</label>
                                  <input class="switch-input" type="checkbox" role="switch"
                                      id="form-custom-switch-success" name="Ataxica" value="si">
 

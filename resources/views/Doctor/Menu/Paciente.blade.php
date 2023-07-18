@@ -87,7 +87,7 @@
               </div>
               <div class="row mb-4">
                   <div class="col">
-                      <label for="formGroupExampleInput">Ocupacion </label>
+                      <label for="formGroupExampleInput">Ocupación </label>
                       <input type="text" class="form-control" placeholder="Ocupacion del paciente" name="Ocupacion"
                           value="{{ $Paciente->Ocupacion }}" pattern="^[A-Za-z\s]+${3,30}" required>
                   </div>
@@ -97,12 +97,12 @@
               <div class="row mb-4">
 
                   <div class="col">
-                      <label for="formGroupExampleInput">Direccón </label>
+                      <label for="formGroupExampleInput">Dirección </label>
                       <input type="text" class="form-control" placeholder="Direccion del paciente" name="Direccion"
                           value="{{ $Paciente->Direccion }}" required>
                   </div>
                   <div class="col">
-                      <label for="formGroupExampleInput">Telefono </label>
+                      <label for="formGroupExampleInput">Teléfono </label>
                       <input type="numeric" class="form-control" placeholder="Telefono del paciente" name="Telefono"
                           value="{{ $Paciente->Telefono }}" required>
 

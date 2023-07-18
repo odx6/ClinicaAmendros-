@@ -23,7 +23,7 @@
                     <div class="form-group">
         <label for="inputAddress" class="form-label">Consulta </label>
                             <select class="form-control formulario" name="consulta" required>
-                                 <option selected disabled value="">Selecione una consulta </option>
+                                 <option selected disabled value="">Seleccione una consulta </option>
 
                                   @php
                                             

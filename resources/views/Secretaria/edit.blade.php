@@ -39,7 +39,7 @@
                                     </label>
 
                                     <select class="form-select" id="exampleFormControlSelect1" name="User" required>
-                    <option selected disabled value="">Selecione un usuario  </option>
+                    <option selected disabled value="">Seleccione un usuario  </option>
                             @php
                             $Users=App\Models\User::all();
                             @endphp
@@ -78,7 +78,7 @@
 
 
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Telefono</label>
+                                    <label for="formGroupExampleInput">Teléfono</label>
                                     <input type="number" class="form-control" placeholder="telefono" name="Telefono" value="{{$Secretaria->telefono}}"
                                         required pattern="[0-9]+" minlength="10" maxlength="10">
                                 </div>

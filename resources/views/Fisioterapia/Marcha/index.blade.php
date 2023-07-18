@@ -57,7 +57,7 @@
                                     <div
                                         class="switch form-switch-custom switch-inline form-switch-success">
                                         <label class="switch-label"
-                                            for="form-custom-switch-success">Ataxica</label>
+                                            for="form-custom-switch-success">Ataxia</label>
                                         <input class="switch-input" type="checkbox" role="switch"
                                             id="form-custom-switch-success" name="Ataxica" value="si">
 

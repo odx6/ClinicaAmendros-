@@ -69,7 +69,7 @@
                 <td>
                     <div class="switch form-switch-custom switch-inline form-switch-success">
                         <label class="switch-label"
-                            for="form-custom-switch-success">Alcholismo</label>
+                            for="form-custom-switch-success">Alcoholismo</label>
                         <input class="switch-input" type="checkbox" role="switch"
                             id="form-custom-switch-success" name="Alcholismo" value="si">
 

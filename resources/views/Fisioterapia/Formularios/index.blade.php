@@ -1,5 +1,5 @@
 @extends('layouts.formularios')
-@section('nombreVista', 'Agregar Formulario de valoracion de la bateria')
+@section('nombreVista', 'Agregar Formulario de valoración de la batería')
 
 @section('formulario')
     <div class="col-sm">
@@ -46,7 +46,7 @@
                             </select>
                         </div>
                         <h4>Número de segundos con equilibrio si es inferior a los 10 segundos</h4>
-                        <h4>C.posicion en tándem completo</h4>
+                        <h4>C.posición en tándem completo</h4>
                         <div class="form-group">
                             <select class="form-control formulario" name="pregunta3" required>
                                  <option selected disabled value="">Respuesta </option>
@@ -55,8 +55,8 @@
                                 <option value="2">Lo intento pero no fue capaz</option>
                                 <option value="3">El sujeto no pudo ponerse de pie sin ayuda</option>
                                 <option value="4">No lo intentó , usted lo notaba inseguro</option>
-                                <option value="5">No lo intentó el sujeto sentía insenguro </option>
-                                <option value="6">El sujeto no entendió las instrucciónes</option>
+                                <option value="5">No lo intentó el sujeto sentía inseguro </option>
+                                <option value="6">El sujeto no entendió las instrucciones</option>
                                 <option value="7">Otro motivo</option>
                                 <option value="8">El sujeto rechazo la prueba</option>
                             </select>

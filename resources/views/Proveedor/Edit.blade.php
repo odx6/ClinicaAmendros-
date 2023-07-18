@@ -50,7 +50,7 @@
                             <div class="row mb-4">
 
                                  <div class="col">
-                                    <label for="formGroupExampleInput">Telefono
+                                    <label for="formGroupExampleInput">Teléfono
                                     </label>
                                     <input type="number" class="form-control" placeholder="Telefono" name="Telefono"
                                         required pattern="[0-9]+" minlength="10" maxlength="10" value="{{$Provedor->Telefono}}">

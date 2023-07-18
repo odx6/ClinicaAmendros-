@@ -17,7 +17,7 @@
             <form class="user" method="POST" action="{{ route('index.Formulario', ['id' => $Paciente->SS]) }}">
                 @csrf
                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-                    style="display: none;">Agregar Formulariode valoración </button>
+                    style="display: none;">Agregar Formulario de valoración </button>
             </form>
         </div>
     @else
@@ -144,7 +144,7 @@
             <form class="user" method="POST" action="{{ route('index.Formulario', ['id' => $Paciente->SS]) }}">
                 @csrf
                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-                    style="display: none;">Agregar Formulario de evalauacion
+                    style="display: none;">Agregar Formulario de evaluación
                 </button>
             </form>
             <form class="user" method="POST"

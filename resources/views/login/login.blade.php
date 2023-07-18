@@ -26,8 +26,8 @@
     
                             <img src="../src/assets/img/ClinicaAlmendros.svg" alt="auth-img">
     
-                            <h2 class="mt-5 text-white font-weight-bolder px-2">Clinica  Almendros</h2>
-                            <p class="text-white px-2">Historia de la Clinica @if(DB::connection()->getPdo())
+                            <h2 class="mt-5 text-white font-weight-bolder px-2">Clínica  Almendros</h2>
+                            <p class="text-white px-2">Historia de la Clínica @if(DB::connection()->getPdo())
     <p>Conexión exitosa a la base de datos.</p>
 @else
     <p>Error al conectar a la base de datos.</p>
@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="mb-3">
-                                        <label class="form-label">Correro Electronico</label>
+                                        <label class="form-label">Correo Electrónico</label>
                                         <input type="email" class="form-control" name="email">
                                     </div>
                                 </div>

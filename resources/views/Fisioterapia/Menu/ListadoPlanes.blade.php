@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <h2>Participacion </h2>
+                            <h2>Participación </h2>
                             <div class="form-group mb-4">
 
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="Participacion" required
@@ -108,7 +108,7 @@
             <form class="user" method="POST" action="{{ route('index.Plan', ['id' => $Paciente->SS]) }}">
                 @csrf
                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
-                    id="Hola" style="display: none;">Agregar Formulario de evalauacion
+                    id="Hola" style="display: none;">Agregar Formulario de evaluación
                 </button>
             </form>
             <form class="user" method="POST" action="{{ route('destroy.Plan', ['id' => $plan->pk_plan]) }}">

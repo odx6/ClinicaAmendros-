@@ -60,7 +60,7 @@ foreach ($request->input('Posturas') as $PosturaData) {
           //return response()->json($data);
 $paciente=$data['id'];
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Analisis de  postura agregada  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Análisis de  postura agregada  correctamente!');
     }
 
     /**
@@ -128,7 +128,7 @@ $paciente=$data['id'];
           //return response()->json($data);
         $paciente=$Vista->fk_vista;
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Analisis de  postura agregada  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Análisis de  postura agregada  correctamente!');
     }
 
     /**
@@ -154,6 +154,6 @@ $paciente=$data['id'];
             
         }
 
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Analisis de  postura agregada  correctamente!');
+         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Análisis de  postura agregada  correctamente!');
     }
 }

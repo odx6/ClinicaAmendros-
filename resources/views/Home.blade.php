@@ -59,10 +59,10 @@
                                     <div class="row">
                                          <div class="col-md-12">
                                             <div class="form-control">
-                                                <label class="form-label">Area</label>
+                                                <label class="form-label">Área</label>
                                                <!-- <input id="event-title" type="text" class="form-control">-->
                                                 <select class="form-control event-title-area" name="Area" id="event-title-area" required >
-                                                   <option selected disabled value="">Seleciona el area </option>
+                                                   <option selected disabled value="">Selecciona el área </option>
                                                     @php
                                                     $Areas =App\Models\Area::all();
                                         
@@ -76,7 +76,7 @@
                                         Datos correctos
                                      </div>
                                      <div class="invalid-feedback">
-                                         Selecciona un area valida
+                                         Selecciona un área valida
                                      </div>
                                             </div>
                                         <div class="col-md-12">
@@ -90,7 +90,7 @@
                                                     
                                                 </select>
                                                  <div class="valid-feedback">
-                                        Selecion correcta
+                                        Selección correcta
                                      </div>
                                      <div class="invalid-feedback">
                                          Selecciona un médico
@@ -99,7 +99,7 @@
                                         </div>
                                          <div class="col-md-12">
                                             <div class="form-control">
-                                                <label class="form-label">Nombre del pacente</label>
+                                                <label class="form-label">Nombre del paciente</label>
                                                <!-- <input id="event-title2" type="text" class="form-control">-->
                                                 <select class="form-control" name="paciente" id="event-title2" required>
                                                      <option selected disabled value="">Selecciona el paciente </option>
@@ -116,7 +116,7 @@
                                             Datos correctos
                                          </div>
                                          <div class="invalid-feedback">
-                                            selecion del paciente correcta
+                                            selecciona  un  paciente correcto
                                          </div>
                                             </div>
                                         </div>
