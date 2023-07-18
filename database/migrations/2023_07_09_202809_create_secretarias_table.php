@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('fk_user');
             $table->string('Nombre');
             $table->string('Apellidos');
-            $table->integer('telefono');
+            $table->tring('telefono');
             $table->timestamps();
             // para claves foraneas 
             $table->foreign('fk_user')->references('id')->on('users');

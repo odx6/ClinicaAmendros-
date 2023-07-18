@@ -1,5 +1,5 @@
 @extends('layouts.formularios')
-@section('nombreVista', 'Editar pago')
+@section('nombreVista', 'Agregar pago')
 
 @section('formulario')
     <div class="container">
@@ -13,48 +13,44 @@
                                     </div>
 @endif
 
-                @php
-                                                   $id=auth()->user()->id;
-                                                   $secretarias =App\Models\Secretaria::where('fk_user', '=', $id)->get();
-                                        
-                                                    @endphp
-                  
-                                                    
+                     
                                                    
 
 
- <form class="user needs-validation" method="POST" action="{{ route('update.Pagos', ['id' => $Pago->pk_pagos]) }}" novalidate>
+ <form class="user needs-validation" method="POST" action="{{ route('create.PagosD') }}" novalidate>
     @csrf
 
-                <form class="row g-3">
-   
-    <div class="col-12">
-        <label for="inputAddress" class="form-label">Consulta : {{$consulta->pk_consulta}} <br></label>
-       
-    </div>
-     <div class="col-12">
-      
-        <label for="inputAddress" class="form-label">Monto de la consulta : {{$consulta->monto}} $pesos<br></label>
-    
-       
-    </div>
-    <div class="col-12">
-      
-    
-        <label for="inputAddress" class="form-label">Nombre del doctor : {{$Doctor->Nombre}} {{$Doctor->Apellidos }}<br></label>
-       
-    </div>
-    <div class="col-12">
-        <label for="inputAddress" class="form-label">Nombre del paciente : {{$Paciente->Nombre}} {{$Paciente->Apellido }}<br></label>
-       
+                    <div class="form-group">
+        <label for="inputAddress" class="form-label">Consulta </label>
+                            <select class="form-control formulario" name="consulta" required>
+                                 <option selected disabled value="">Selecione una consulta </option>
+
+                                  @php
+                                            
+                                            $Consultas = App\Models\Consulta::all();
+                                            
+                                @endphp
+
+                                @foreach($Consultas as $consulta)
+                                    <option value="{{ $consulta->pk_consulta}}">
+                                        clave: {{$consulta->pk_consulta}} {{ $consulta->monto }}  {{ $consulta->Estado }} </option>
+                                @endforeach
+                            </select>
     </div>
 
      <div class="form-group">
-        <label for="inputAddress" class="form-label">Secretaria </label>
+        <label for="inputAddress" class="form-label">Secretaria  </label>
                             <select class="form-control formulario" name="secretaria" required>
                                  <option selected disabled value="">Secretaria </option>
+
+                                  @php
+                                            
+                                            $secretarias = App\Models\Secretaria::all();
+                                            
+                                @endphp
+
                                 @foreach($secretarias as $secre)
-                                    <option value="{{ $secre->pk_secretaria}}"@if($Pago->fk_secre==$secre->pk_secretaria) selected @endif>
+                                    <option value="{{ $secre->pk_secretaria}}">
                                         {{ $secre->Nombre }}  {{ $secre->Apellidos }} </option>
                                 @endforeach
                             </select>
@@ -64,15 +60,15 @@
         <label for="inputAddress" class="form-label">Monto a pagar </label>
 
         <input type="numeric" class="form-control"
-                            id="exampleFormControlInput1" value="{{$Pago->monto}}"
-                            placeholder="Especificaciones Tabaquismo" name="Monto" pattern="^\d+(?:\.\d{1,2})?$" required >
+                            id="exampleFormControlInput1" 
+                            placeholder="Monto" name="Monto" pattern="^\d+(?:\.\d{1,2})?$" required >
                         </div>
                           <div class="form-group">
                        <label for="inputAddress" class="form-label">Tipo de pago </label>
                             <select class="form-control formulario" name="TipoPago"   required>
                                  <option selected disabled value="">Tipo de pago</option>
-                                 <option  value="Efectivo" @if($Pago->TipoPago=="Efectivo") selected @endif>Efectivo</option>
-                                 <option  value="Tarjeta"  @if($Pago->TipoPago=="Tarjeta") selected @endif>Tarjeta</option>
+                                 <option  value="Efectivo">Efectivo</option>
+                                 <option  value="Efectivo">Tarjeta</option>
                               
                             </select>
                             <br>

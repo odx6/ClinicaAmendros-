@@ -25,6 +25,12 @@ class PacienteController extends Controller
      $Areas=Area::all();
     return view('paciente.index',compact('Areas'));
   }
+
+   public function index2()
+  {
+     $Pacientes=Paciente::all();
+    return view('paciente.index2',compact('Pacientes'));
+  }
   public function create(Request $request)
   {
 
@@ -47,6 +53,37 @@ class PacienteController extends Controller
 
     $paciente->save();
     return view('Doctor.index');
+
+
+  }
+  public function show(Request $request)
+  {
+     $Paciente=Paciente::find(request('id'));
+     return view('paciente.edit',compact('Paciente'));
+  }
+
+   public function create2(Request $request)
+  {
+
+
+    $paciente = new Paciente;
+    $paciente->PacienteDoctor =request('Doctor');;
+    $paciente->Nombre = request('Nombre');
+    $paciente->Apellido = request('Apellido');
+    $paciente->Edad = request('Edad');
+    $paciente->Sexo = request('Sexo');
+    $paciente->Estado_civil = request('Estado_civil');
+    $paciente->Origen = request('Origen');
+    $paciente->Ocupacion = request('Ocupacion');
+    $paciente->Direccion = request('Direccion');
+    $paciente->Telefono = request('Telefono');
+    $paciente->Religion = request('Religion');
+    $paciente->Escolaridad = request('Escolaridad');
+    $date = Carbon::now();
+    $paciente->FechaIngreso = $date->format('Y-m-d');
+
+    $paciente->save();
+     return redirect()->route('Pacientes.listar')->with('mensaje', '¡Paciente agregado  correctamente!');
 
 
   }
@@ -159,6 +196,11 @@ class PacienteController extends Controller
 
     return view('Doctor.index');
   }
+  public function edit(){
+    $Areas=Area::all();
+    return view('paciente.create',compact('Areas'));
+
+  }
   //Update del paciente 
   public function Update(Request $request)
   {
@@ -179,6 +221,29 @@ class PacienteController extends Controller
     $paciente->FechaIngreso = request('FechaIngreso');
     $paciente->FechaSalida = request('FechaSalida');
     $paciente->save();
+
+
+  }
+  public function Update2(Request $request)
+  {
+
+    $paciente = Paciente::find(request('Identificador'));
+    $paciente->PacienteDoctor = request('Doctor');
+    $paciente->Nombre = request('Nombre');
+    $paciente->Apellido = request('Apellido');
+    $paciente->Edad = request('Edad');
+    $paciente->Sexo = request('Sexo');
+    $paciente->Estado_civil = request('Estado_civil');
+    $paciente->Origen = request('Origen');
+    $paciente->Ocupacion = request('Ocupacion');
+    $paciente->Direccion = request('Direccion');
+    $paciente->Telefono = request('Telefono');
+    $paciente->Religion = request('Religion');
+    $paciente->Escolaridad = request('Escolaridad');
+    $paciente->FechaIngreso = request('FechaIngreso');
+    $paciente->FechaSalida = request('FechaSalida');
+    $paciente->save();
+    return redirect()->route('Pacientes.listar')->with('mensaje', '¡Paciente actualizado  correctamente!');
 
 
   }
@@ -205,6 +270,28 @@ class PacienteController extends Controller
     }
     return view('Doctor.index');
   }
+ public function destroy2()
+  {
+    $id = request('id');
+    $dato = Paciente::find(request('id'));
 
+    if ($dato) {
+      $dato->historiales()->where('PacienteSS', $dato->SS)->delete();
+      $dato->Ginecobstetricos()->where('fk_ag', $dato->SS)->delete();
+      $dato->Patologicos()->where('fk_ap', $dato->SS)->delete();
+      $dato->notasPost()->where('fk_npq', $dato->SS)->delete();
+      $dato->notas()->where('fk_n', $dato->SS)->delete();
+      $dato->Estudios()->where('fk_e', $dato->SS)->delete();
+      $dato->EsploracionFisica()->where('fk_p', $dato->SS)->delete();
+      $dato->citas()->where('fk_pc', $dato->SS)->delete();
+
+
+      $dato->delete();
+
+    } else {
+
+    }
+    return redirect()->route('Pacientes.listar')->with('mensaje', '¡Paciente eliminado  correctamente!');
+  }
 
 }

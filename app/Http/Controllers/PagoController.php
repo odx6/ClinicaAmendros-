@@ -19,6 +19,11 @@ class PagoController extends Controller
     {
         return view('Pagos.index');
     }
+     public function index2()
+    {
+        $Pagos=Pago::all();
+        return view('Pagos.DirectorIndex',compact('Pagos'));
+    }
      public function Cobro(Request $request)
     {
          $data = $request->all();
@@ -31,6 +36,17 @@ class PagoController extends Controller
          //return response()->json($data);
         return view('Pagos.Cobros', compact('Consulta','Paciente','Doctor'));
     }
+
+     public function Cobro2()
+    {
+         
+
+
+         //return response()->json($data);
+        return view('Pagos.DirectorCreate');
+    }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -60,6 +76,29 @@ class PagoController extends Controller
         return redirect()->route('index.Pagos')->with('mensaje', '¡Pago agregado correctamente!');
         
     }
+    public function create2(Request $request)
+    {
+        //
+        $data = $request->all();
+
+        $pago = new Pago;
+        $pago->fk_consulta=$data['consulta'];
+        $pago->fk_secre=$data['secretaria'];
+
+        $pago->monto=$data['Monto'];
+        $pago->TipoPago=$data['TipoPago'];
+        $pago->save();
+        $Consulta=Consulta::find($data['consulta']);
+        if($Consulta->monto== $pago->monto){
+
+            $Consulta->Estado="Pagado";
+            $Consulta->save();
+        }
+
+        //return response()->json($data);
+        return redirect()->route('index.PagosD')->with('mensaje', '¡Pago agregado correctamente!');
+        
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -87,6 +126,17 @@ class PagoController extends Controller
          $Paciente=Paciente::find($consulta->fk_paciente);
          $Doctor=Doctor::find($consulta->fk_doctor);
           return view('Pagos.Edit', compact('consulta','Paciente','Doctor','Pago'));
+
+        
+
+    }
+     public function show2(Request $request)
+    {
+
+            $data = $request->all();
+            $Pago=Pago::Find($data['id']);
+             
+          return view('Pagos.DirectorEdit', compact('Pago'));
 
         
 
@@ -131,7 +181,28 @@ class PagoController extends Controller
         }
 
         //return response()->json($data);
-        return redirect()->route('index.Pagos')->with('mensaje', '¡Pago actualizado correctamente!');
+        return redirect()->route('index.PagosD')->with('mensaje', '¡Pago actualizado correctamente!');
+    }
+    public function update2(Request $request)
+    {
+        $data = $request->all();
+        $pago =Pago::find($data['id']);
+        $pago->fk_secre=$data['secretaria'];
+        $pago->monto=$data['Monto'];
+        $pago->TipoPago=$data['TipoPago'];
+        $pago->save();
+        $Consulta=Consulta::find($pago->fk_consulta);
+        if($Consulta->monto== $pago->monto){
+
+            $Consulta->Estado="Pagado";
+            $Consulta->save();
+        }else{
+            $Consulta->Estado="Pendiente";
+            $Consulta->save();
+        }
+
+        //return response()->json($data);
+        return redirect()->route('index.PagosD')->with('mensaje', '¡Pago actualizado correctamente!');
     }
 
     /**
@@ -154,6 +225,22 @@ class PagoController extends Controller
         
      
          return redirect()->route('store.Pagos')->with('mensaje', '¡Pago eliminado  correctamente!');
+    
+    }
+    public function destroy2()
+    {
+        $id=request('id');
+        $dato =Pago::Find($id);
+    
+
+        if ($dato) {
+          
+            $dato->delete();
+
+        }else{}
+        
+     
+         return redirect()->route('index.PagosD')->with('mensaje', '¡Pago eliminado  correctamente!');
     
     }
 }

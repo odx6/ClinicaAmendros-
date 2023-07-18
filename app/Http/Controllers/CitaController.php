@@ -38,7 +38,17 @@ class CitaController extends Controller
      */
     public function store(Request $request)
     {
-         $data = $request->all();
+
+
+         $citaExistente = Cita::where('fk_dc',request('id'))
+                     ->where('fk_pc',request('paciente'))
+                     ->where('inicio_c',request('inicio'))
+                     ->exists();
+
+               if ($citaExistente) {
+                    return "Cita Existente por favor selecione otra hora o dia ";
+} else {
+     $data = $request->all();
         $date =Carbon::parse('2023-04-12 10:30:00');
         $cita= new Cita;
         $cita->fk_dc=request('id');
@@ -46,36 +56,22 @@ class CitaController extends Controller
         $cita->inicio_c=request('inicio');
         $cita->Estado='Reservado';
         $cita->save();
-         //$citas = Cita::all()->toArray();
-        // $citas_json = json_encode($citas);
-        //return $citas_json;
-       /* $citas = CitaController::all();
-        $events=[];
-        foreach($citas as $citax){
-            $events[]=[
-                'id'=>$citax->pk_cita,
-                'title'=>$citax->fk_dc,
-                'start'=>$citax->inicio_c,
-               
-               
-            ];
-            }*/
+
+        return "Cita Agregada";
+}      
 
 
-           // return $events;
-           // return $everts;s
-            //return "Agregado";
-             $datosJson = json_encode($data);
-           // return response()->json($data);
 
-             return $datosJson;
-            // return redirect()->back();
+       
+        
 
       
        
     }
      public function PrimeraCita(Request $request)
     {
+        
+
          $data = $request->all();
        $Paciente = new Paciente;
         $Paciente->PacienteDoctor=$data['id'];
@@ -102,11 +98,8 @@ class CitaController extends Controller
         $cita->Estado='Primera Cita';
         $cita->save();
          
-             $datosJson = json_encode($data);
-           // return response()->json($data);
+              return "Cita Agregada";
 
-             return $datosJson;
-            // return redirect()->back();
 
       
        
@@ -145,6 +138,13 @@ class CitaController extends Controller
     {
         $data = $request->all();
         $date =Carbon::parse('2023-04-12 10:30:00');
+ $citaExistente = Cita::where('fk_dc',$data['id'])
+                     ->where('inicio_c',$data['inicio'])
+                     ->exists();
+
+                     if ($citaExistente) {
+                    return "Cita Existente por favor selecione otra hora o dia ";
+} else {
          $cita= Cita::find(request('idCita'));
          $cita->fk_dc=request('idDoctor');
          $cita->fk_pc=request('paciente');
@@ -152,14 +152,10 @@ class CitaController extends Controller
          $cita->Estado='Reservado';
          $cita->save();
 
-        /* $nombre=$cita->inicio_c;
-         $datos = $request->all();
-         $datos=json_encode($datos);
-         return $datos;*/
-       //  return "Actualizados";
-         $datosJson = json_encode($data);
-         return $datosJson;
-         //return redirect()->back();
+               return "Cita Actualizada";
+}      
+
+         
     }
 
     /**

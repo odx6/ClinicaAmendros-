@@ -102,10 +102,10 @@
                                 </div>
                                 
                               
--->
+
                                 <div class="col-12">
                                     <div class="text-center">
-                                        <p class="mb-0">No tienes Cuenta <a href="{{route('register.index')}}" class="text-warning">Registrarse</a></p>
+                                        <p class="mb-0">No tienes Cuenta <a href="#" class="text-warning">Registrarse</a></p>
                                     </div>
                                 </div>
                                 

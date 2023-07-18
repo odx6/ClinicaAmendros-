@@ -14,7 +14,8 @@ class AreaController extends Controller
      */
     public function index()
     {
-        //
+        $Areas=Area::all();
+        return view('Areas.index',compact('Areas'));
     }
 
     /**
@@ -24,7 +25,7 @@ class AreaController extends Controller
      */
     public function create()
     {
-        //
+         return view('Areas.create');
     }
 
     /**
@@ -35,7 +36,11 @@ class AreaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $Area= new Area;
+        $Area->NOMBE_AREA=request('Nombre');
+        $Area->Save();
+
+        return redirect()->route('index.Areas')->with('mensaje', '¡Area  Agregada  correctamente!');
     }
 
     /**
@@ -44,9 +49,10 @@ class AreaController extends Controller
      * @param  \App\Models\Area  $area
      * @return \Illuminate\Http\Response
      */
-    public function show(Area $area)
+    public function show(Request $request)
     {
-        //
+        $Area=Area::find(request('id'));
+        return view('Areas.Edit',compact('Area'));
     }
 
     /**
@@ -67,9 +73,12 @@ class AreaController extends Controller
      * @param  \App\Models\Area  $area
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Area $area)
+    public function update(Request $request)
     {
-        //
+        $Area=Area::find(request('id'));
+        $Area->NOMBE_AREA=request('Nombre');
+        $Area->Save();
+        return redirect()->route('index.Areas')->with('mensaje', '¡Area  Actualizada  correctamente!');
     }
 
     /**
@@ -78,8 +87,20 @@ class AreaController extends Controller
      * @param  \App\Models\Area  $area
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Area $area)
+    public function destroy()
     {
-        //
+          $id=request('id');
+      $dato =Area::find(request('id'));
+      
+
+      if ($dato) {
+          $dato->delete();
+          
+      } else {
+          
+      }
+      
+        return redirect()->route('index.Areas')->with('mensaje', '¡Area  Eliminada  correctamente!');
     }
-}
+    }
+

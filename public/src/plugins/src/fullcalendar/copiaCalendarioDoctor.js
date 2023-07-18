@@ -82,7 +82,34 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         //Funcion para segundas citas
         $(".NoPrimera").click(function () {
-          
+            var currentDate = new Date().toISOString().slice(0, 16);
+
+            // Establecer el valor mínimo en el input
+            document.getElementById("event-start-date").min = currentDate;
+            //document.getElementById("event-end-date").min = currentDate;
+            var fecha = new Date();
+
+            var anio = fecha.getFullYear();
+            var mes = agregarCeroIzquierda(fecha.getMonth() + 1); // Los meses empiezan desde 0, se suma 1 y se agrega cero a la izquierda si es necesario
+            var dia = agregarCeroIzquierda(fecha.getDate());
+
+            //var horas = agregarCeroIzquierda(fecha.getHours());
+            var horas = agregarCeroIzquierda(fecha.getHours());
+            var minutos = agregarCeroIzquierda(fecha.getMinutes());
+            var segundos = agregarCeroIzquierda(fecha.getSeconds());
+
+            var fechaHoraActual = anio + '-' + mes + '-' + dia + ' ' + horas + ':' + minutos + ':' + '00';
+
+
+            // alert(fechaHoraActual);
+            getModalAddBtnEl.style.display = 'block';
+            getModalUpdateBtnEl.style.display = 'none';
+            BotonConsulta.style.display = 'none';
+            getBotonCancelarCita.style.display = 'none';
+            myModal.show()
+
+            getModalStartDateEl.value = fechaHoraActual;
+
 
             //  getModalEndDateEl.value = fechaHoraActual;
 
@@ -128,42 +155,17 @@ document.addEventListener('DOMContentLoaded', function () {
         //alert(response);
         // Calendar Select fn.
         var calendarSelect = function (info) {
-              var currentDate = new Date().toISOString().slice(0, 16);
-
-            // Establecer el valor mínimo en el input
-            document.getElementById("event-start-date").min = currentDate;
-            //document.getElementById("event-end-date").min = currentDate;
-            var fecha = new Date();
-
-            var anio = fecha.getFullYear();
-            var mes = agregarCeroIzquierda(fecha.getMonth() + 1); // Los meses empiezan desde 0, se suma 1 y se agrega cero a la izquierda si es necesario
-            var dia = agregarCeroIzquierda(fecha.getDate());
-
-            //var horas = agregarCeroIzquierda(fecha.getHours());
-            var horas = agregarCeroIzquierda(fecha.getHours());
-            var minutos = agregarCeroIzquierda(fecha.getMinutes());
-            var segundos = agregarCeroIzquierda(fecha.getSeconds());
-
-            var fechaHoraActual = anio + '-' + mes + '-' + dia + ' ' + horas + ':' + minutos + ':' + '00';
-
-
-            // alert(fechaHoraActual);
-            getModalAddBtnEl.style.display = 'block';
-            getModalUpdateBtnEl.style.display = 'none';
-            BotonConsulta.style.display = 'none';
-            getBotonCancelarCita.style.display = 'none';
-            myModal.show()
-
-            getModalStartDateEl.value = fechaHoraActual;
-
+            //alert("Te encontre");
+            Notificacion.show();
+            // Obtener la fecha y hora actual
 
         }
 
         // Calendar AddEvent fn.
         var calendarAddEvent = function () {
            
-            
-            var currentDate = new Date();
+            Notificacion.show();
+           /* var currentDate = new Date();
             var dd = String(currentDate.getDate()).padStart(2, '0');
             var mm = String(currentDate.getMonth() + 1).padStart(2, '0'); //January is 0!
             var yyyy = currentDate.getFullYear();
@@ -172,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
             getModalUpdateBtnEl.style.display = 'none';
             getBotonCancelarCita.style.display = 'none';
             myModal.show();
-            getModalStartDateEl.value = combineDate;
+            getModalStartDateEl.value = combineDate;*/
         }
 
         // Calendar eventClick fn.

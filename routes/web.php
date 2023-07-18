@@ -39,6 +39,8 @@ use  App\Http\Controllers\PagoController;
 use  App\Http\Controllers\ProductoController;
 use  App\Http\Controllers\ProvedorController;
 use  App\Http\Controllers\FacturaController;
+use  App\Http\Controllers\AreaController;
+use  App\Http\Controllers\SecretariaController;
 use Barryvdh\DomPDF\Facade\Pdf;
 /*
 |--------------------------------------------------------------------------
@@ -55,8 +57,12 @@ Route::get('/', function () {
     return view('Home');
 })->middleware('auth')->name('Home');
 #Routes module register
-Route::get('/register',[RegisterController::class,'create'])->middleware('guest')->name('register.index');
+Route::get('/register',[RegisterController::class,'create'])->name('create.Usuarios');
+Route::get('/Agregar',[RegisterController::class,'index'])->name('index.Usuarios');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
+Route::get('/Listar', [RegisterController::class, 'show'])->name('show.Usuarios');
+Route::get('/Eliminar', [RegisterController::class, 'destroy'])->name('destroy.Usuarios');
+Route::post('/Actualizar', [RegisterController::class, 'update'])->name('update.Usuarios');
 #Routes  module login
 Route::get('/login',[SessionController::class,'create'])->middleware('guest')->name('login.index');
 Route::post('/login', [SessionController::class, 'store'])->name('login.store');
@@ -67,10 +73,24 @@ Route::get('/Admin',[AdminController::class, 'index'])->middleware('auth.admin')
 
 //prueba 
 Route::get('/pacientes', [PacienteController::class, 'index'])->middleware('auth')->name('paciente.index');
+
+Route::get('/mostrarpacientes', [PacienteController::class, 'show'])->middleware('auth')->name('Pacientes.show');
+
 Route::post('/pacientes', [PacienteController::class, 'store'])->middleware('auth')->name('paciente.store');
 Route::post('/pacientes/Actualizar', [PacienteController::class, 'Update'])->middleware('auth')->name('paciente.update');
 Route::post('/pacientes/Eliminar', [PacienteController::class, 'destroy'])->middleware('auth')->name('paciente.destroy');
 
+
+//Paciente Admin
+Route::get('/listarpacientes', [PacienteController::class, 'index2'])->middleware('auth')->name('Pacientes.listar');
+Route::get('/editpacientes', [PacienteController::class, 'edit'])->middleware('auth')->name('Pacientes.edit');
+Route::post('/createpacientes', [PacienteController::class, 'create2'])->middleware('auth')->name('Pacientes.crear');
+Route::post('/mostrarpacientes', [PacienteController::class, 'show'])->middleware('auth')->name('Pacientes.show');
+Route::post('/director/Actualizar', [PacienteController::class, 'Update2'])->middleware('auth')->name('paciente.update2');
+
+Route::get('/director/Eliminar', [PacienteController::class, 'destroy2'])->middleware('auth')->name('paciente.destroy2');
+
+//en PacienteAdmin
 
 //historial 
 Route::get('/historial', [HistorialClinicoController::class, 'store'])->name('historial.store');
@@ -261,6 +281,15 @@ Route::post('/Doctor/ActualizarConsultas', [ConsultaController::class, 'update']
 Route::get('/ActualizarConsultas', [ConsultaController::class, 'show'])->name('show.Consultas');
 Route::get('/Doctor/EliminarConsultas', [ConsultaController::class, 'destroy'])->name('destroy.Consultas');
 //ruta Pagos
+
+//rutas consultas
+Route::get('/director/Consultas',[ConsultaController::class, 'index2'])->name('index.ConsultasD');
+Route::post('/director/AgregarConsultas',[ ConsultaController::class, 'create2'])->name('create.ConsultasD');
+Route::get('/director/ListarConsultas',[ ConsultaController::class, 'store2'])->name('store.ConsultasD');
+Route::post('/director/ActualizarConsultas', [ConsultaController::class, 'update2'])->name('update.ConsultasD');
+Route::get('/director/ActualizarConsultas', [ConsultaController::class, 'show2'])->name('show.ConsultasD');
+Route::get('/director/EliminarConsultas', [ConsultaController::class, 'destroy2'])->name('destroy.ConsultasD');
+//ruta Pagos
 Route::get('/Pagos',[PagoController::class, 'index'])->name('index.Pagos');
 Route::get('/Pagos/Agregar',[PagoController::class, 'Cobro'])->name('Cobro.Pagos');
 Route::post('/AgregarPagos',[ PagoController::class, 'create'])->name('create.Pagos');
@@ -269,13 +298,22 @@ Route::post('/ActualizarPagos', [PagoController::class, 'update'])->name('update
 Route::get('/mostrarPagos', [PagoController::class, 'show'])->name('show.Pagos');
 Route::get('/EliminarPagos', [PagoController::class, 'destroy'])->name('destroy.Pagos');
 //endconsultas
+//ruta Pagos
+Route::get('/PagosD',[PagoController::class, 'index2'])->name('index.PagosD');
+Route::get('/Pagos/AgregarD',[PagoController::class, 'Cobro2'])->name('Cobro.PagosD');
+Route::post('/AgregarPagosD',[ PagoController::class, 'create2'])->name('create.PagosD');
+Route::get('/ListarPagosD',[ PagoController::class, 'store2'])->name('store.PagosD');
+Route::post('/ActualizarPagosD', [PagoController::class, 'update2'])->name('update.PagosD');
+Route::get('/mostrarPagosD', [PagoController::class, 'show2'])->name('show.PagosD');
+Route::get('/EliminarPagosD', [PagoController::class, 'destroy2'])->name('destroy.PagosD');
+//endconsultas
 //ruta Secretaria
-Route::get('/Secrearia',[PagoController::class, 'index'])->name('index.Secrearia');
-Route::post('/AgregarSecrearia',[ PagoController::class, 'create'])->name('create.Secrearia');
-Route::get('/ListarSecrearia',[ PagoController::class, 'store'])->name('store.Secrearia');
-Route::post('/ActualizarSecrearia', [PagoController::class, 'update'])->name('update.Secrearia');
-Route::get('/mostrarSecrearia', [PagoController::class, 'show'])->name('show.Secrearia');
-Route::get('/EliminarSecrearia', [PagoController::class, 'destroy'])->name('destroy.Secrearia');
+Route::get('/Secrearia',[SecretariaController::class, 'index'])->name('index.Secrearia');
+Route::get('/AgregarSecrearia',[ SecretariaController::class, 'create'])->name('create.Secrearia');
+Route::post('/ListarSecrearia',[ SecretariaController::class, 'store'])->name('store.Secrearia');
+Route::post('/ActualizarSecrearia', [SecretariaController::class, 'update'])->name('update.Secrearia');
+Route::get('/mostrarSecrearia', [SecretariaController::class, 'show'])->name('show.Secrearia');
+Route::get('/EliminarSecrearia', [SecretariaController::class, 'destroy'])->name('destroy.Secrearia');
 //endSecretarias
  
 
@@ -306,5 +344,24 @@ Route::post('/ActualizarFacctura', [FacturaController::class, 'update'])->name('
 Route::get('/mostrarFacctura', [FacturaController::class, 'show'])->name('show.Facctura');
 Route::get('/EliminarFacctura', [FacturaController::class, 'destroy'])->name('destroy.Facctura');
 //endSeProductos
+
+//ruta Productos
+Route::get('/Areas',[AreaController::class, 'index'])->name('index.Areas');
+Route::get('/AgregarAreas',[ AreaController::class, 'create'])->name('create.Areas');
+Route::post('/ListarAreas',[ AreaController::class, 'store'])->name('store.Areas');
+Route::post('/ActualizarAreas', [AreaController::class, 'update'])->name('update.Areas');
+Route::get('/mostrarAreas', [AreaController::class, 'show'])->name('show.Areas');
+Route::get('/EliminarAreas', [AreaController::class, 'destroy'])->name('destroy.Areas');
+//endSeProductos
+
+//ruta Productos
+Route::get('/Medico',[DoctorController::class, 'index2'])->name('index.Medico');
+Route::get('/AgregarMedico',[ DoctorController::class, 'create'])->name('create.Medico');
+Route::post('/ListarMedico',[ DoctorController::class, 'store'])->name('store.Medico');
+Route::post('/ActualizarMedico', [DoctorController::class, 'update'])->name('update.Medico');
+Route::get('/mostrarMedico', [DoctorController::class, 'show'])->name('show.Medico');
+Route::get('/EliminarMedico', [DoctorController::class, 'destroy'])->name('destroy.Medico');
+//endSeProductos
+
 
 //enAdmin

@@ -377,7 +377,7 @@ var currentDate = new Date().toISOString().slice(0, 16);
                     inicio: $('#event-start-date').val(),
                     _token: $('meta[name="csrf-token"]').attr('content'),
                 },
-            }).done(function (res) { //alert(res) 
+            }).done(function (res) { alert(res) 
                 location.reload();});
             myModal.hide()
 
@@ -407,7 +407,7 @@ var currentDate = new Date().toISOString().slice(0, 16);
                     _token: $('meta[name="csrf-token"]').attr('content'),
 
                 },
-            }).done(function (res) { //alert(res)
+            }).done(function (res) { alert(res);
             myModal.hide()
         location.reload();});
 
@@ -460,7 +460,7 @@ var currentDate = new Date().toISOString().slice(0, 16);
 
         // mis variables 
         $("#btnAgregar").click(function () {
-          //  alert("me pulso");
+          // alert("me pulso");
             $.ajax({
                 type: "POST",
                 url: 'eventos',
@@ -473,7 +473,7 @@ var currentDate = new Date().toISOString().slice(0, 16);
 
                 },
             }).done(function (res) {
-                //alert(res)
+                alert(res);
                 myModal.hide();
                 location.reload();
             });
@@ -497,7 +497,7 @@ var currentDate = new Date().toISOString().slice(0, 16);
 
                 },
             }).done(function (res) {
-               // alert(res)
+                alert(res);
                 myModal.hide();
                 location.reload();
             });

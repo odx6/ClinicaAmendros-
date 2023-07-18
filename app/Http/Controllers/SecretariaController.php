@@ -14,6 +14,9 @@ class SecretariaController extends Controller
      */
     public function index()
     {
+        $Secretarias=Secretaria::all();
+
+        return view('Secretaria.index',compact('Secretarias'));
         
     }
 
@@ -24,7 +27,7 @@ class SecretariaController extends Controller
      */
     public function create()
     {
-        //
+        return view('Secretaria.create');
     }
 
     /**
@@ -35,7 +38,15 @@ class SecretariaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $Secretaria= new Secretaria;
+        $Secretaria->fk_user=request('User');
+        $Secretaria->Nombre=request('Nombre');
+        $Secretaria->Apellidos=request('Apellidos');
+        $Secretaria->telefono=request('Telefono');
+        $Secretaria->save();
+
+
+        return redirect()->route('index.Secrearia')->with('mensaje', '¡Secretaria Agregada correctamente!');
     }
 
     /**
@@ -44,9 +55,11 @@ class SecretariaController extends Controller
      * @param  \App\Models\Secretaria  $secretaria
      * @return \Illuminate\Http\Response
      */
-    public function show(Secretaria $secretaria)
+    public function show()
     {
-        //
+        $Secretaria=Secretaria::find(request('id'));
+
+        return view('Secretaria.edit',compact('Secretaria'));
     }
 
     /**
@@ -57,7 +70,7 @@ class SecretariaController extends Controller
      */
     public function edit(Secretaria $secretaria)
     {
-        //
+        
     }
 
     /**
@@ -69,7 +82,15 @@ class SecretariaController extends Controller
      */
     public function update(Request $request, Secretaria $secretaria)
     {
-        //
+        $Secretaria=Secretaria::find(request('id'));
+        $Secretaria->fk_user=request('User');
+        $Secretaria->Nombre=request('Nombre');
+        $Secretaria->Apellidos=request('Apellidos');
+        $Secretaria->telefono=request('Telefono');
+        $Secretaria->save();
+
+
+        return redirect()->route('index.Secrearia')->with('mensaje', '¡Secretaria Actualizada correctamente!');
     }
 
     /**
@@ -78,12 +99,22 @@ class SecretariaController extends Controller
      * @param  \App\Models\Secretaria  $secretaria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Secretaria $secretaria)
+    public function destroy()
     {
-        //
+        $id=request('id');
+        $dato =Secretaria::Find($id);
+
+        if ($dato) {
+            $dato->delete();
+
+        }else{}
+        
+     
+        return redirect()->route('index.Secrearia')->with('mensaje', '¡Secretaria eliminada correctamente!');
+        
     }
      public function Consultas()
     {
-        //
+        
     }
 }

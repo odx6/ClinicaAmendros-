@@ -49,6 +49,12 @@ class DoctorController extends Controller
         return view('Doctor.index');
 
     }
+     public function index2()
+    {
+        $Doctores=Doctor::all();
+        return view('Doctores.index',compact('Doctores'));
+
+    }
     public function HistorialPaciente(Request $request)
     {
         $valorSeleccionado = $request->input('paciente');
@@ -244,7 +250,7 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        //
+        return view('Doctores.create');
     }
 
     /**
@@ -255,7 +261,18 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $Doctor = new Doctor;
+         $Doctor->AreaDoctor =request('Area');
+         $Doctor->fk_user =request('User');
+         $Doctor->Nombre =request('Nombre');
+         $Doctor->Apellidos =request('Apellidos');
+         $Doctor->Especialidades =request('Especialidades');
+         $Doctor->Cedula =request('Cedula');
+         $Doctor->ESPECIALIDAD =request('Especialidad');
+         $Doctor->save();
+
+         return redirect()->route('index.Medico')->with('mensaje', '¡Medico Agregado correctamente!');
+
     }
 
     /**
@@ -266,7 +283,8 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-        //
+        $Doctor=Doctor::find(request('id'));
+        return view('Doctores.edit',compact('Doctor'));
     }
 
     /**
@@ -286,9 +304,19 @@ class DoctorController extends Controller
      * @param  \App\Models\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Doctor $doctor)
+    public function update(Request $request)
     {
-        //
+        $Doctor =Doctor::find(request('id'));
+         $Doctor->AreaDoctor =request('Area');
+         $Doctor->fk_user =request('User');
+         $Doctor->Nombre =request('Nombre');
+         $Doctor->Apellidos =request('Apellidos');
+         $Doctor->Especialidades =request('Especialidades');
+         $Doctor->Cedula =request('Cedula');
+         $Doctor->ESPECIALIDAD =request('Especialidad');
+         $Doctor->save();
+
+         return redirect()->route('index.Medico')->with('mensaje', '¡Medico Actualizado correctamente!');
     }
     public function Historialcompleto(Request $request)
     {
@@ -315,7 +343,17 @@ class DoctorController extends Controller
      */
     public function destroy(Doctor $doctor)
     {
-        //
+             $id=request('id');
+        $dato =Doctor::Find($id);
+
+        if ($dato) {
+           
+            $dato->delete();
+
+        }else{}
+        
+     
+        return redirect()->route('index.Medico')->with('mensaje', '¡Medico eliminado correctamente!');
     }
     public function Medico(Request $request)
     {
