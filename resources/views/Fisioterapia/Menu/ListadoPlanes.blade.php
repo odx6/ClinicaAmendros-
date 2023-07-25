@@ -31,7 +31,7 @@
                             <div class="form-group mb-4">
 
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="Ob" required
-                                    pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">{{ $plan->Objetivos }}</textarea>
+                                    pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">{{ $plan->Objetivos }}</textarea>
                             </div>
                         </div>
                         <div class="col">
@@ -40,7 +40,7 @@
                             <div class="form-group mb-4">
 
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="Hipostesis" required
-                                    pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">{{ $plan->Hipotesis }}</textarea>
+                                    pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">{{ $plan->Hipotesis }}</textarea>
                             </div>
                         </div>
                         <div class="col">
@@ -49,7 +49,7 @@
                             <div class="form-group mb-4">
 
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="Estructura" required
-                                    pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">{{ $plan->Estrucutura_corp }}</textarea>
+                                    pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">{{ $plan->Estrucutura_corp }}</textarea>
                             </div>
                         </div>
                         <div class="col">
@@ -57,7 +57,7 @@
                             <div class="form-group mb-4">
 
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="Funcion" required
-                                    pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">{{ $plan->Funcion_Corporal }}</textarea>
+                                    pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">{{ $plan->Funcion_Corporal }}</textarea>
                             </div>
                         </div>
                         <div class="col">
@@ -65,7 +65,7 @@
                             <div class="form-group mb-4">
 
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="Actividad" required
-                                    pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">{{ $plan->Actividad }}</textarea>
+                                    pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">{{ $plan->Actividad }}</textarea>
                             </div>
                         </div>
                         <div class="col">
@@ -73,7 +73,7 @@
                             <div class="form-group mb-4">
 
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="Participacion" required
-                                    pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">{{ $plan->Participacion }}</textarea>
+                                    pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">{{ $plan->Participacion }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                             <div class="form-group mb-4">
 
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="Diagnostico" required
-                                    pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">{{ $plan->Diagnostico }}</textarea>
+                                    pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">{{ $plan->Diagnostico }}</textarea>
                             </div>
                         </div>
                         <div class="col">
@@ -91,7 +91,7 @@
                             <div class="form-group mb-4">
 
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="Plan" required
-                                    pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">{{ $plan->plan }}</textarea>
+                                    pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">{{ $plan->plan }}</textarea>
                             </div>
                         </div>
 

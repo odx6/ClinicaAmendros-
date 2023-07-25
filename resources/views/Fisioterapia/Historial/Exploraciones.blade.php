@@ -18,8 +18,8 @@
                                             <td>
                                                 <div class="form-group">
 
-                                                    <input type="numeric" class="form-control" id="exampleFormControlInput1"
-                                                        placeholder="Peso(Kg)" name="Peso" required pattern="^\d+(\.\d+)?$" title="Ingresa un número entero o decimal válido">
+                                                    <input type="numeric" class="form-control" 
+                                                        placeholder="Peso(Kg)" name="Peso" required pattern="^\d+(\.\d+)?$" title="Ingresa un número entero o decimal válido" id="peso">
                                                 </div>
                                             </td>
 
@@ -32,8 +32,8 @@
                                             <td>
                                                 <div class="form-group">
 
-                                                    <input type="numeric" class="form-control" id="exampleFormControlInput1"
-                                                       placeholder="Estatura" name="Estatura" pattern="^\d+(\.\d+)?$" required>
+                                                    <input type="numeric" class="form-control" 
+                                                       placeholder="Estatura" name="Estatura" pattern="^\d+(\.\d+)?$"  id="altura" required>
                                                 </div>
                                             </td>
 
@@ -46,26 +46,13 @@
                                             <td>
                                                 <div class="form-group">
 
-                                                    <input type="text" class="form-control" id="exampleFormControlInput1"
-                                                        value="" placeholder="(IMC)" name="IMC" pattern="^\d+(\.\d+)?$" required>
+                                                    <input type="text" class="form-control" 
+                                                        value="" placeholder="(IMC)" name="IMC" pattern="^\d+(\.\d+)?$" id="resultado" required>
                                                 </div>
                                             </td>
 
                                         </tr>
-                                        <tr>
-
-                                            <td>
-                                                <h3>Etnia :</h3>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-
-                                                    <input type="text" class="form-control" id="exampleFormControlInput1"
-                                                        value=""  placeholder="Etnia" name="Etnia" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
-                                                </div>
-                                            </td>
-
-                                        </tr>
+                                        
 
                                     </tbody>
                                 </table>
@@ -77,7 +64,7 @@
                                 <div class="form-group">
 
                                     <input type="text" class="form-control" id="exampleFormControlInput1"
-                                        value="" placeholder="Motivo" name="Motivo" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                        value="N/A" placeholder="Motivo" name="Motivo" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                 </div>
 
                             </div>

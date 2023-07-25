@@ -15,7 +15,7 @@
                     <div class="col-sm">
                         <h2>Miembro</h2>
                         <input type="text" class="form-control form-control-lg" placeholder="Nombre del miembro a evaluar"
-                            name="NombreMiembro" placeholder="Nombre del miembro a evaluar" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3" required>
+                            name="NombreMiembro" placeholder="Nombre del miembro a evaluar" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="3" required>
                         <div class="container">
                             <div class="table-responsive">
                                 <table class="table" id="tablamiembroS">
@@ -34,7 +34,7 @@
                                                 <td>
                                                     <input type="text" class="form-control form-control-lg"
                                                         placeholder="Nombre del movimiento"
-                                                        name="Movimientos[movimento][Nombre]" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3">
+                                                        name="Movimientos[movimento][Nombre]" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="3">
                                                 </td>
                                                 <td>
                                                     <select class="form-control" name="Movimientos[movimento][Valor]" required>
@@ -105,7 +105,7 @@
 
                 <div class="input-group">
                     <span class="input-group-text">Observaciones</span>
-                    <textarea class="form-control" aria-label="With textarea" name="observaciones" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"></textarea>
+                    <textarea class="form-control" aria-label="With textarea" name="observaciones" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$"></textarea>
                 </div>
                 <br>
                 <br>

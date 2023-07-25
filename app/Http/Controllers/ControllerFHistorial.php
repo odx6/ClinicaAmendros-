@@ -54,7 +54,6 @@ class ControllerFHistorial extends Controller
                 'Peso' => $data['Peso'],
                 'Estatura' => $data['Estatura'],
                 'IMC' => $data['IMC'],
-                'Etnia' => $data['Etnia'],
                 'Motivo' => $data['Motivo'],
             ]);
 
@@ -74,18 +73,20 @@ class ControllerFHistorial extends Controller
 
        if(isset($data['FisioAnte'])){
 
-         $this->agregar($data['id'],'Diabetes',$data['Diabetes'],$data['EDiabetes']);
-        $this->agregar($data['id'],'Enf.Reumaticas',$data['EnfReumaticas'],$data['EEnf']);
-        $this->agregar($data['id'],'Alergias',$data['Alergias'],$data['EAlergias']);
-        $this->agregar($data['id'],'Encames',$data['Encames'],$data['EEncames']);
-        $this->agregar($data['id'],'HTA',$data['HTA'],$data['ETA']);
-        $this->agregar($data['id'],'Accidentes',$data['Accidentes'],$data['EAccidentes']);
-        $this->agregar($data['id'],'Cáncer',$data['Cáncer'],$data['ECancer']);
-        $this->agregar($data['id'],'Cardiopatías',$data['Cardiopatias'],$data['ECardiopatias']);
-        $this->agregar($data['id'],'Transfusiones',$data['Transfusiones'],$data['ETransfunciones']);
-        $this->agregar($data['id'],'Cirugías',$data['Cirugías'],$data['ECirugias']);
-        $this->agregar($data['id'],'Fracturas',$data['Fracturas'],$data['EFracturas']);
-        $this->agregar($data['id'],'Espasmos',$data['Espasmos'],$data['EEspasmos']);
+     $this->agregar($data['id'],'Diabetes',(isset($data['Diabetes'])) ? $data['Diabetes']:  "no",$data['EDiabetes']);
+        $this->agregar($data['id'],'Enf.Reumáticas', (isset($data['EnfReumaticas'])) ? $data['EnfReumaticas']:  "no",$data['EEnf']);
+        $this->agregar($data['id'],'Alergias',(isset($data['Alergias'])) ? $data['Alergias']:  "no",$data['EAlergias']);
+        $this->agregar($data['id'],'Encames',(isset($data['Encames'])) ? $data['Encames']:  "no",$data['EEncames']);
+        $this->agregar($data['id'],'HTA',(isset($data['HTA'])) ? $data['HTA']:  "no"
+,$data['ETA']);
+        $this->agregar($data['id'],'Accidentes',(isset($data['Accidentes'])) ? $data['Accidentes']:  "no",$data['EAccidentes']);
+        $this->agregar($data['id'],'Cáncer', (isset($data['Cáncer'])) ? $data['Cáncer']:  "no",$data['ECancer']);
+        $this->agregar($data['id'],'Cardiopatías',(isset($data['Cardiopatias'])) ? $data['Cardiopatias']:  "no",$data['ECardiopatias']);
+        $this->agregar($data['id'],'Transfusiones',(isset($data['Transfusiones'])) ? $data['Transfusiones']:  "no",$data['ETransfunciones']);
+        $this->agregar($data['id'],'Cirugías', (isset($data['Cirugías'])) ? $data['Cirugías']:  "no",$data['ECirugias']);
+        $this->agregar($data['id'],'Fracturas',(isset($data['Fracturas'])) ? $data['Fracturas']:  "no",$data['EFracturas']);
+        $this->agregar($data['id'],'Espasmos',(isset($data['Espasmos'])) ? $data['Espasmos']:  "no",$data['EEspasmos']);
+        
         
          $SignosVitales= new Signos_Vitales;
         $SignosVitales->fk_Signos=$data['id'];
@@ -99,19 +100,19 @@ class ControllerFHistorial extends Controller
        } 
         if(isset($data['FisioHabitos'])){
 
-        $this->agregar2($data['id'],'Tabaquismo',$data['Tabaquismo'],$data['ETabaquismo']);
-        $this->agregar2($data['id'],'Actividad física',$data['Actividad-física'],$data['EActividad-física']);
-        $this->agregar2($data['id'],'Alcholismo',$data['Alcholismo'],$data['EAlcholismo']);
-        $this->agregar2($data['id'],'Se Automedica',$data['Se-Automedica'],$data['ESe-Automedica']);
-        $this->agregar2($data['id'],'Drogas',$data['Drogas'],$data['EDrogas']);
-        $this->agregar2($data['id'],'Pasa tiempo',$data['Pasatiempo'],$data['EPasatiempo']);
+         $this->agregar($data['id'],'Tabaquismo',(isset($data['Tabaquismo'])) ? $data['Tabaquismo']:  "no",$data['ETabaquismo']);
+        $this->agregar($data['id'],'Actividad física',(isset($data['Actividad-física'])) ? $data['Actividad-física']:  "no",$data['EActividad-física']);
+        $this->agregar($data['id'],'Alcoholismo',(isset($data['Alcholismo'])) ? $data['Alcholismo']:  "no",$data['EAlcholismo']);
+        $this->agregar($data['id'],'Se Automedica',  (isset($data['Se-Automedica'])) ? $data['Se-Automedica']:  "no",$data['ESe-Automedica']);
+        $this->agregar($data['id'],'Drogas', (isset($data['Drogas'])) ? $data['Drogas']:  "no",$data['EDrogas']);
+        $this->agregar($data['id'],'Pasa tiempo',(isset($data['Pasatiempo'])) ? $data['Pasatiempo']:  "no",$data['EPasatiempo']);
 
         }
         if(isset($data['FisioIngra'])){
 
         $Estado= new Estado_ingravidez;
         $Estado->fk_ingravidez=$data['id'];
-        $Estado->Embarazada=$data['embarazada'];
+        $Estado->Embarazada=(isset($data['embarazada'])) ? $data['embarazada']:  "no";
         $Estado->Especificacion=$data['Especificacion'];
         $Estado->Numero_hijos=$data['hijos'];
         $Estado->save();

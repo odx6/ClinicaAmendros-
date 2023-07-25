@@ -41,7 +41,7 @@
                        
 
                                <textarea type="text" class="form-control" id="exampleFormControlInput1"
-                                                        value="" name="Tratamiento" placeholder="Tratamientos" required minlength="3" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">{{ $trata->des_tratamiento }}</textarea>
+                                                        value="" name="Tratamiento" placeholder="Tratamientos" required minlength="3" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">{{ $trata->des_tratamiento }}</textarea>
                     </div>
 
                 </div>

@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Paciente extends Model
 {
     use HasFactory;
+     use SoftDeletes;
     //sirve para especificar que la columna no se llama id 
     protected $primaryKey = 'SS';
 

@@ -27,6 +27,8 @@
                                                     </svg>Historial Clínico </a>
                                             </li>
 
+                                            @if($Paciente->Sexo=="F")
+
                                             <li class="nav-item ml-2 mr-2">
                                                 <a class="nav-link mb-2 text-center" id="rounded-pills-icon-contact-tab"
                                                     data-bs-toggle="pill" href="#rounded-pills-icon-contact"
@@ -48,6 +50,7 @@
                                                         <polyline points="10 9 9 9 8 9"></polyline>
                                                     </svg> Antecedentes Ginecobstétricos</a>
                                             </li>
+                                            @endif
 
                                             <li class="nav-item ml-2 mr-2">
                                                 <a class="nav-link mb-2 text-center" id="rounded-pills-icon-settings-tab"

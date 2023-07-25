@@ -15,7 +15,7 @@
                     <div class="col-sm">
                         <h2>Miembro</h2>
                           <input type="text" class="form-control form-control-lg"
-                                                        placeholder="Nombre del miembro a evaluar" name="NombreMiembro" placeholder="Nombre del miembro a evaluar"  required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3">
+                                                        placeholder="Nombre del miembro a evaluar" name="NombreMiembro" placeholder="Nombre del miembro a evaluar"  required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="3">
                         <div class="container">
                             <br>
                             <div class="table-responsive"> 
@@ -34,7 +34,7 @@
             <tr>
                 <td>
                     <input type="text" class="form-control form-control-lg"
-                                                        placeholder="Nombre del movimiento" name="Movimientos[movimento][Nombre]" value="" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3">
+                                                        placeholder="Nombre del movimiento" name="Movimientos[movimento][Nombre]" value="" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="3">
                 </td>
                 <td>
                      <select class="form-control" name="Movimientos[movimento][Valor]" required>
@@ -74,7 +74,7 @@
 
                 <div class="input-group">
                     <span class="input-group-text">Observaciones</span>
-                    <textarea class="form-control" aria-label="With textarea" name="observaciones" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" ></textarea>
+                    <textarea class="form-control" aria-label="With textarea" name="observaciones" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" ></textarea>
                 </div>
                 <br>
                 <br>

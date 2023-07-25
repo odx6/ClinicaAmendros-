@@ -31,7 +31,7 @@ class FExploracionFisicaController extends Controller
         $Exploracion->Peso= request('Peso');
         $Exploracion->Estatura= request('Estatura');
         $Exploracion->IMC= request('IMC');
-        $Exploracion->Etnia= request('Etnia');
+       
         $Exploracion->Motivo= request('Motivo');
         $Exploracion->Save();
 
@@ -48,7 +48,7 @@ class FExploracionFisicaController extends Controller
         $Exploracion->Peso= request('Peso');
         $Exploracion->Estatura= request('Estatura');
         $Exploracion->IMC= request('IMC');
-        $Exploracion->Etnia= request('Etnia');
+
         $Exploracion->Motivo= request('Motivo');
         $Exploracion->Save();
 

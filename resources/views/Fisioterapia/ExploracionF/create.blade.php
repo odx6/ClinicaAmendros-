@@ -42,7 +42,7 @@
                     <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Agregar Exploracion Física</li>
+                            <li class="breadcrumb-item active" aria-current="page">Agregar Exploración Física</li>
                         </ol>
                     </nav>
                 </div>
@@ -69,7 +69,7 @@
                                             <td>
                                                 <div class="form-group">
 
-                                                    <input type="numeric" class="form-control" id="exampleFormControlInput1"
+                                                    <input type="numeric" class="form-control" id="peso"
                                                         placeholder="Peso(Kg)" name="Peso" required pattern="^\d+(\.\d+)?$" title="Ingresa un número entero o decimal válido">
                                                 </div>
                                             </td>
@@ -83,8 +83,8 @@
                                             <td>
                                                 <div class="form-group">
 
-                                                    <input type="numeric" class="form-control" id="exampleFormControlInput1"
-                                                       placeholder="Estatura" name="Estatura" pattern="^\d+(\.\d+)?$" required>
+                                                    <input type="numeric" class="form-control"  
+                                                       placeholder="Estatura" name="Estatura" id="altura" pattern="^\d+(\.\d+)?$" required>
                                                 </div>
                                             </td>
 
@@ -97,27 +97,13 @@
                                             <td>
                                                 <div class="form-group">
 
-                                                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                    <input type="text" class="form-control" id="resultado"
                                                         value="" placeholder="(IMC)" name="IMC" pattern="^\d+(\.\d+)?$" required>
                                                 </div>
                                             </td>
 
                                         </tr>
-                                        <tr>
-
-                                            <td>
-                                                <h3>Etnia :</h3>
-                                            </td>
-                                            <td>
-                                                <div class="form-group">
-
-                                                    <input type="text" class="form-control" id="exampleFormControlInput1"
-                                                        value=""  placeholder="Etnia" name="Etnia" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
-                                                </div>
-                                            </td>
-
-                                        </tr>
-
+                                       
                                     </tbody>
                                 </table>
 
@@ -128,7 +114,7 @@
                                 <div class="form-group">
 
                                     <input type="text" class="form-control" id="exampleFormControlInput1"
-                                        value="" placeholder="Motivo" name="Motivo" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                        value="N/A" placeholder="Motivo" name="Motivo" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                 </div>
 
                             </div>
@@ -165,7 +151,29 @@
     <!-- END MAIN CONTAINER -->
 @endsection
 @section('Scripts')
+<script type="text/javascript">
+    
 
+$('#altura').change(function() {
+      // alert("Funciona");
+       calcularIMC();
+      });
+function calcularIMC() {
+            var peso = parseFloat(document.getElementById("peso").value);
+            var altura = parseFloat(document.getElementById("altura").value);
+
+            if (isNaN(peso) || isNaN(altura) || altura <= 0) {
+                alert("Por favor, ingresa valores válidos para peso y altura.");
+                return;
+            }
+
+            var imc = peso / (altura * altura);
+
+        
+            document.getElementById("resultado").value = imc.toFixed(2);
+        }
+
+</script>
 
     <script src="{{ asset('MisFunciones/Clinica.js') }}"></script>
     <script src="{{ asset('src/plugins/src/highlight/highlight.pack.js') }}"></script>

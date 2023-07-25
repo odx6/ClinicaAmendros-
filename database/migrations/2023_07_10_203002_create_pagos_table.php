@@ -22,6 +22,8 @@ return new class extends Migration
             $table->foreign('fk_consulta')->references('pk_consulta')->on('consultas');
             $table->foreign('fk_secre')->references('pk_secretaria')->on('secretarias');
             $table->timestamps();
+             $table->softDeletes();
+            
         });
     }
 

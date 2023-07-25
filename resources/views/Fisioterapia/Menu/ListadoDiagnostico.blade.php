@@ -22,38 +22,43 @@
     @else
         <!--Antecedentes patologicos-->
         @foreach ($DIME as $dime)
-            <form class="user needs-validation" method="POST" action="{{ route('update.Diagnostico', ['id' => $dime->fk_dmi]) }}" novalidate>
+            <form class="user needs-validation" method="POST"
+                action="{{ route('update.Diagnostico', ['id' => $dime->fk_dmi]) }}" novalidate>
                 @csrf
                 <div class="container">
-                    <div class="row">
-                        <div class="col-sm">
 
-                            <div class="input-group">
-                                <span class="input-group-text">Reflejos</span>
-                                <textarea class="form-control" aria-label="With textarea" name="Reflejos" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>{{ $dime->Reflejos }}</textarea>
-                            </div>
+                    <div class="col-sm">
 
+                        <div class="input-group">
+                            <span class="input-group-text">Reflejos</span>
+                            <textarea class="form-control" aria-label="With textarea" name="Reflejos"
+                                pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required>{{ $dime->Reflejos }}</textarea>
                         </div>
-                        <div class="col-sm">
 
-                            <div class="input-group">
-                                <span class="input-group-text">Sensibilidad</span>
-                                <textarea class="form-control" aria-label="With textarea" name="Sensibilidad" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>{{ $dime->Sensibilidad }}</textarea>
-                            </div>
-                        </div>
-                        <div class="col-sm">
-                            <div class="input-group">
-                                <span class="input-group-text">Lenguaje / Orientacion</span>
-                                <textarea class="form-control" aria-label="With textarea" name="LeOr" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>{{ $dime->LenguajeOrientacion }}</textarea>
-                            </div>
-                        </div>
-                        <div class="col-sm">
-                            <div class="input-group">
-                                <span class="input-group-text">Otros</span>
-                                <textarea class="form-control" aria-label="With textarea" name="Otros" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>{{ $dime->Otros }}</textarea>
-                            </div>
+                    </div>
+                    <div class="col-sm">
+
+                        <div class="input-group">
+                            <span class="input-group-text">Sensibilidad</span>
+                            <textarea class="form-control" aria-label="With textarea" name="Sensibilidad"
+                                pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required>{{ $dime->Sensibilidad }}</textarea>
                         </div>
                     </div>
+                    <div class="col-sm">
+                        <div class="input-group">
+                            <span class="input-group-text">Lenguaje / Orientacion</span>
+                            <textarea class="form-control" aria-label="With textarea" name="LeOr"
+                                pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required>{{ $dime->LenguajeOrientacion }}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="input-group">
+                            <span class="input-group-text">Otros</span>
+                            <textarea class="form-control" aria-label="With textarea" name="Otros"
+                                pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required>{{ $dime->Otros }}</textarea>
+                        </div>
+                    </div>
+
 
                 </div>
                 <br>

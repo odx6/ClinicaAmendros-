@@ -59,7 +59,7 @@
                                     <label for="formGroupExampleInput">Dirección
                                     </label>
                                     <input type="text" class="form-control" placeholder="Direccion" name="Direccion"
-                                        required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2">
+                                        required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2">
                                 </div>
                                 </div>
 

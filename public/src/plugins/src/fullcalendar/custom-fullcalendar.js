@@ -176,75 +176,7 @@ var currentDate = new Date().toISOString().slice(0, 16);
 
 
         });
-        //endprimeracita
-        var calendarEventsList = [
-            {
-                id: 1,
-                title: 'Todos los eventos ',
-                start: `${newDate.getFullYear()}-${getDynamicMonth()}-01`,
-                extendedProps: { calendar: 'Work' }
-            },
-            {
-                id: 2,
-                title: 'Long Event',
-                start: `${newDate.getFullYear()}-${getDynamicMonth()}-07`,
-                end: `${newDate.getFullYear()}-${getDynamicMonth()}-10`,
-                extendedProps: { calendar: 'Personal' }
-            },
-            {
-                groupId: '999',
-                id: 3,
-                title: 'Repeating Event',
-                start: `${newDate.getFullYear()}-${getDynamicMonth()}-09T16:00:00`,
-                extendedProps: { calendar: 'Important' }
-            },
-            {
-                groupId: '999',
-                id: 4,
-                title: 'Repeating Event',
-                start: `${newDate.getFullYear()}-${getDynamicMonth()}-16T16:00:00`,
-                extendedProps: { calendar: 'Travel' }
-            },
-            {
-                id: 5,
-                title: 'Conference',
-                start: `${newDate.getFullYear()}-${getDynamicMonth()}-11`,
-                end: `${newDate.getFullYear()}-${getDynamicMonth()}-13`,
-                extendedProps: { calendar: 'Work' }
-            },
-            {
-                id: 6,
-                title: 'Meeting',
-                start: `${newDate.getFullYear()}-${getDynamicMonth()}-12T10:30:00`,
-                end: `${newDate.getFullYear()}-${getDynamicMonth()}-12T12:30:00`,
-                extendedProps: { calendar: 'Personal' }
-            },
-            {
-                id: 7,
-                title: 'Lunch',
-                start: `${newDate.getFullYear()}-${getDynamicMonth()}-12T12:00:00`,
-                extendedProps: { calendar: 'Important' }
-            },
-            {
-                id: 8,
-                title: 'Meeting',
-                start: `${newDate.getFullYear()}-${getDynamicMonth()}-12T14:30:00`,
-                extendedProps: { calendar: 'Travel' }
-            },
-            {
-                id: 9,
-                title: 'Birthday Party',
-                start: `${newDate.getFullYear()}-${getDynamicMonth()}-13T07:00:00`,
-                extendedProps: { calendar: 'Personal' }
-            },
-            {
-                id: 10,
-                title: 'Click for Google',
-                url: 'http://google.com/',
-                start: `${newDate.getFullYear()}-${getDynamicMonth()}-28`,
-                extendedProps: { calendar: 'Important' }
-            }
-        ]
+       
        // alert(response);
         // Calendar Select fn.
         var calendarSelect = function (info) {
@@ -288,9 +220,19 @@ var currentDate = new Date().toISOString().slice(0, 16);
                 getModalTitleE2.value = eventObj.extendedProps.Idpaciente;
 
                 let fecha = "" + eventObj.start;
+                
+
                 let fecha3 = new Date(fecha);
-                let Format = fecha3.toISOString().slice(0, 10) + ' ' + fecha3.toLocaleTimeString();
-               // alert(Format);
+                var anio = fecha3.getFullYear();
+            var mes = agregarCeroIzquierda(fecha3.getMonth() + 1); // Los meses empiezan desde 0, se suma 1 y se agrega cero a la izquierda si es necesario
+            var dia = agregarCeroIzquierda(fecha3.getDate());
+
+            //var horas = agregarCeroIzquierda(fecha.getHours());
+            var horas = agregarCeroIzquierda(fecha3.getHours());
+            var minutos = agregarCeroIzquierda(fecha3.getMinutes());
+            var segundos = agregarCeroIzquierda(fecha3.getSeconds());
+             var Format = anio + '-' + mes + '-' + dia + ' ' + horas + ':' + minutos + ':' + '00';
+                
                 getModalStartDateEl.value = Format;
                 getModalUpdateBtnEl.setAttribute('data-fc-event-public-id', getModalEventId)
                 getBotonCancelarCita.setAttribute('data-fc-event-public-id', getModalEventId)
@@ -378,7 +320,8 @@ var currentDate = new Date().toISOString().slice(0, 16);
                     _token: $('meta[name="csrf-token"]').attr('content'),
                 },
             }).done(function (res) { alert(res) 
-                location.reload();});
+                //location.reload();
+        });
             myModal.hide()
 
         })
@@ -407,9 +350,12 @@ var currentDate = new Date().toISOString().slice(0, 16);
                     _token: $('meta[name="csrf-token"]').attr('content'),
 
                 },
-            }).done(function (res) { alert(res);
-            myModal.hide()
-        location.reload();});
+            }).done(function (res) { //alert(res);
+            $("#MensajeCita").text(res);
+              
+                alerta.show();
+                if(res=="Cita Actualizada correctamente"){location.reload();}
+                             });
 
             
         })
@@ -444,6 +390,7 @@ var currentDate = new Date().toISOString().slice(0, 16);
         calendar.render();
 
         var myModal = new bootstrap.Modal(document.getElementById('exampleModal'))
+        var alerta = new bootstrap.Modal(document.getElementById('Alerta'))
         //Muestra  el mensaje si es primera cita;
         var Notificacion = new bootstrap.Modal(document.getElementById('standardModal'))
         //Primera cita
@@ -473,9 +420,16 @@ var currentDate = new Date().toISOString().slice(0, 16);
 
                 },
             }).done(function (res) {
-                alert(res);
-                myModal.hide();
-                location.reload();
+               //alert(res);
+                $("#MensajeCita").text(res);
+               
+                alerta.show();
+                 myModal.hide();
+                
+  if(res=="Cita Agregada"){
+    myModal.hide();
+    location.reload();
+}
             });
 
         })
@@ -497,9 +451,12 @@ var currentDate = new Date().toISOString().slice(0, 16);
 
                 },
             }).done(function (res) {
-                alert(res);
-                myModal.hide();
-                location.reload();
+                 $("#MensajeCita").text(res);
+                
+                alerta.show();
+                 if(res=="Cita Agregada"){
+                    myModal.hide();
+                    location.reload();}
             });
 
         })

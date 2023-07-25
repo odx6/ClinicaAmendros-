@@ -34,7 +34,8 @@ class Estado_ingravidezController extends Controller
         $data = $request->all();
         $Estado= new Estado_ingravidez;
         $Estado->fk_ingravidez=$data['id'];
-        $Estado->Embarazada=$data['embarazada'];
+        
+        $Estado->Embarazada=(isset($data['embarazada'])) ? $data['embarazada']:  "no";
         $Estado->Especificacion=$data['Especificacion'];
         $Estado->Numero_hijos=$data['hijos'];
         $Estado->save();
@@ -89,7 +90,7 @@ class Estado_ingravidezController extends Controller
         $data = $request->all();
         $Estado=Estado_ingravidez::find($data['id']);
         
-        $Estado->Embarazada=$data['embarazada'];
+        $Estado->Embarazada=(isset($data['embarazada'])) ? $data['embarazada']:  "no";
         $Estado->Especificacion=$data['Especificacion'];
         $Estado->Numero_hijos=$data['hijos'];
         $Estado->save();

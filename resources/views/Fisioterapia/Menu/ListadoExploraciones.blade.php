@@ -80,21 +80,7 @@
                                     </td>
 
                                 </tr>
-                                <tr>
-
-                                    <td>
-                                        <h3>Etnia :</h3>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-
-                                            <input type="text" class="form-control" id="exampleFormControlInput1"
-                                                value="{{ $Explora->Etnia }}" name="Etnia" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
-                                        </div>
-                                    </td>
-
-                                </tr>
-
+                                
                             </tbody>
                         </table>
 
@@ -105,7 +91,7 @@
                         <div class="form-group">
 
                             <input type="text" class="form-control" id="exampleFormControlInput1"
-                                value="{{ $Explora->Motivo }}" name="Motivo" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                value="{{ $Explora->Motivo }}" name="Motivo" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                         </div>
 
                     </div>

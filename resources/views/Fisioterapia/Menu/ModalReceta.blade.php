@@ -15,7 +15,7 @@
                         <label for="formGroupExampleInput">Indicaciones Medicas </label>
 
                         <span class="input-group-text">Indicaciones</span>
-                        <textarea class="form-control" name="Receta"></textarea>
+                        <textarea class="form-control" name="Receta" required></textarea>
 
                     </div>
             </div>

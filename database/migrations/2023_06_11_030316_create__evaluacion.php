@@ -21,6 +21,8 @@ return new class extends Migration
             $table->integer('val_iquierda');
             $table->integer('val_derecha');
             $table->timestamps();
+             $table->softDeletes();
+            
             $table->foreign('fk_evaluacion')->references('SS')->on('pacientes');
         });
     }

@@ -26,12 +26,14 @@ return new class extends Migration
             $table->string('role')->nullable();
             $table->rememberToken();
             $table->timestamps();
+             $table->softDeletes();
         });
         //Create area
         Schema::create('areas', function (Blueprint $table) {
             $table->id('IDAREA')->unique();
             $table->string('NOMBE_AREA');
             $table->timestamps();
+             $table->softDeletes();
         });
   // create doctor 
         Schema::create('doctors', function (Blueprint $table) {
@@ -46,6 +48,7 @@ return new class extends Migration
            
             
             $table->timestamps();
+             $table->softDeletes();
             // para claves foraneas 
             $table->foreign('AreaDoctor')->references('IDAREA')->on('areas');
             $table->foreign('fk_user')->references('id')->on('users');
@@ -69,6 +72,7 @@ return new class extends Migration
             $table->date('FechaIngreso');
             $table->date('FechaSalida')->nullable();
             $table->timestamps();
+             $table->softDeletes();
             // para claves foraneas 
             $table->foreign('PacienteDoctor')->references('DSS')->on('doctors');
             
@@ -98,6 +102,7 @@ return new class extends Migration
             $table->Integer('TABASQUISMO');
             $table->Integer('DROGAS');
             $table->timestamps();
+             $table->softDeletes();
             
             // para claves foraneas 
             $table->foreign('PacienteSS')->references('SS')->on('pacientes');
@@ -116,6 +121,7 @@ return new class extends Migration
             $table->integer('Aborto');
             $table->integer('Paras');
             $table->timestamps();
+             $table->softDeletes();
 
             // para claves foraneas 
             $table->foreign('fk_ag')->references('SS')->on('pacientes');
@@ -126,13 +132,14 @@ return new class extends Migration
             $table->id('id_a_p')->unique();
             $table->unsignedBigInteger('fk_ap');
             $table->Integer('Dm');
-            $table->Integer('DmTE');
+            $table->String('DmTE');
             $table->Integer('Has');
-            $table->Integer('HasTe');
+            $table->String('HasTe');
             $table->Integer('Ir');
             $table->String('IrTe');
             $table->String('Otra');
             $table->timestamps();
+             $table->softDeletes();
             
             // para claves foraneas 
             $table->foreign('fk_ap')->references('SS')->on('pacientes');
@@ -152,6 +159,7 @@ return new class extends Migration
             $table->String('Nombre_Aniestesiologo');
             $table->String('Circulante');
             $table->timestamps();
+             $table->softDeletes();
 
             // para claves foraneas 
             $table->foreign('fk_npq')->references('SS')->on('pacientes');
@@ -164,6 +172,7 @@ return new class extends Migration
             $table->String('Nota');
             $table->String('Tipo');
             $table->timestamps();
+             $table->softDeletes();
             
             // para claves foraneas 
             $table->foreign('fk_n')->references('SS')->on('pacientes');
@@ -182,6 +191,7 @@ return new class extends Migration
             $table->String('RX');
             $table->String('USG');
             $table->timestamps();
+             $table->softDeletes();
             
             // para claves foraneas 
             $table->foreign('fk_e')->references('SS')->on('pacientes');
@@ -190,14 +200,12 @@ return new class extends Migration
          //Estudios
          Schema::create('exploracion_fs', function (Blueprint $table) {
             $table->id('pk_Exploracion')->unique();
-            $table->unsignedBigInteger('fk_e');
+           
             $table->unsignedBigInteger('fk_d');
             $table->unsignedBigInteger('fk_p');
-            $table->Boolean('TA');
-            $table->Boolean('FC');
-            $table->Boolean('X1');
-            $table->Boolean('FR');
-            $table->Boolean('X2');
+            $table->String('TA');
+            $table->integer('FC');
+            $table->integer('FR');
             $table->Double('TEMP');
             $table->Double('PESO');
             $table->String('Nombre_ef');
@@ -207,9 +215,10 @@ return new class extends Migration
             $table->String('Miembro_pelvico_ef');
             $table->String('Miembro_toraxico_ef');
             $table->Timestamps();
+             $table->softDeletes();
             
             // para claves foraneas 
-            $table->foreign('fk_e')->references('idHIstorial_clinico')->on('historial__clinicos');
+           
             $table->foreign('fk_d')->references('DSS')->on('doctors');
             $table->foreign('fk_p')->references('SS')->on('pacientes');
         });
@@ -222,6 +231,7 @@ return new class extends Migration
             $table->DateTime('inicio_c');
             $table->String('Estado');
             $table->timestamps();
+             $table->softDeletes();
             // para claves foraneas 
             $table->foreign('fk_dc')->references('DSS')->on('doctors');
             $table->foreign('fk_pc')->references('SS')->on('pacientes');

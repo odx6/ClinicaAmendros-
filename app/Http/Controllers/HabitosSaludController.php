@@ -31,12 +31,13 @@ class HabitosSaludController extends Controller
     public function create(Request $request)
     {
         $data = $request->all();
-        $this->agregar($data['id'],'Tabaquismo',$data['Tabaquismo'],$data['ETabaquismo']);
-        $this->agregar($data['id'],'Actividad física',$data['Actividad-física'],$data['EActividad-física']);
-        $this->agregar($data['id'],'Alcoholismo',$data['Alcholismo'],$data['EAlcholismo']);
-        $this->agregar($data['id'],'Se Automedica',$data['Se-Automedica'],$data['ESe-Automedica']);
-        $this->agregar($data['id'],'Drogas',$data['Drogas'],$data['EDrogas']);
-        $this->agregar($data['id'],'Pasa tiempo',$data['Pasatiempo'],$data['EPasatiempo']);
+       
+        $this->agregar($data['id'],'Tabaquismo',(isset($data['Tabaquismo'])) ? $data['Tabaquismo']:  "no",$data['ETabaquismo']);
+        $this->agregar($data['id'],'Actividad física',(isset($data['Actividad-física'])) ? $data['Actividad-física']:  "no",$data['EActividad-física']);
+        $this->agregar($data['id'],'Alcoholismo',(isset($data['Alcholismo'])) ? $data['Alcholismo']:  "no",$data['EAlcholismo']);
+        $this->agregar($data['id'],'Se Automedica',  (isset($data['Se-Automedica'])) ? $data['Se-Automedica']:  "no",$data['ESe-Automedica']);
+        $this->agregar($data['id'],'Drogas', (isset($data['Drogas'])) ? $data['Drogas']:  "no",$data['EDrogas']);
+        $this->agregar($data['id'],'Pasa tiempo',(isset($data['Pasatiempo'])) ? $data['Pasatiempo']:  "no",$data['EPasatiempo']);
         
        // return response()->json($data);
         $paciente=$data['id'];
@@ -87,16 +88,17 @@ class HabitosSaludController extends Controller
     public function update(Request $request)
     {
         $data = $request->all();
-        $this->Actualizar($data['IDTabaquismo'],'Tabaquismo',$data['Tabaquismo'],$data['ETabaquismo']);
-        $this->Actualizar($data['IDActividad_física'],'Actividad física',$data['Actividad_física'],$data['EActividad_física']);
-        $this->Actualizar($data['IDAlcholismo'],'Alcholismo',$data['Alcholismo'],$data['EAlcholismo']);
-        $this->Actualizar($data['IDSe_Automedica'],'Se Automedica',$data['Se_Automedica'],$data['ESe_Automedica']);
-        $this->Actualizar($data['IDDrogas'],'Drogas',$data['Drogas'],$data['EDrogas']);
-        $this->Actualizar($data['IDPasa_tiempo'],'Pasa tiempo',$data['Pasa_tiempo'],$data['EPasa_tiempo']);
+        $this->Actualizar($data['IDTabaquismo'],'Tabaquismo',(isset($data['Tabaquismo'])) ? $data['Tabaquismo']:  "no",$data['ETabaquismo']);
+        $this->Actualizar($data['IDActividad_física'],'Actividad física',(isset($data['Actividad_física'])) ? $data['Actividad_física']:  "no",$data['EActividad_física']);
+        $this->Actualizar($data['IDAlcholismo'],'Alcholismo',(isset($data['Alcholismo'])) ? $data['Alcholismo']:  "no",$data['EAlcholismo']);
+        $this->Actualizar($data['IDSe_Automedica'],'Se Automedica',(isset($data['Se_Automedica'])) ? $data['Se_Automedica']:  "no",$data['ESe_Automedica']);
+        $this->Actualizar($data['IDDrogas'],'Drogas',(isset($data['Drogas'])) ? $data['Drogas']:  "no",$data['EDrogas']);
+        $this->Actualizar($data['IDPasa_tiempo'],'Pasa tiempo',(isset($data['Pasatiempo'])) ? $data['Pasatiempo']:  "no",$data['EPasa_tiempo']);
        // return response()->json($data);
-        $paciente=$this->Actualizar($data['IDPasa_tiempo'],'Pasa tiempo',$data['Pasa_tiempo'],$data['EPasa_tiempo']);
+        $paciente=$this->Actualizar($data['IDPasa_tiempo'],'Pasa tiempo',(isset($data['Pasa_tiempo'])) ? $data['Pasa_tiempo']:  "no",$data['EPasa_tiempo']);
      
-         return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Hábitos de la salud actualizados correctamente!');
+        return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Hábitos de la salud actualizados correctamente!');
+        
     }
 
     /**

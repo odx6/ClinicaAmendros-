@@ -99,7 +99,7 @@
                   <div class="col">
                       <label for="formGroupExampleInput">Dirección </label>
                       <input type="text" class="form-control" placeholder="Direccion del paciente" name="Direccion"
-                          value="{{ $Paciente->Direccion }}" required>
+                          value="{{ $Paciente->Direccion }}" required pattern="^[a-zA-Z0-9.#\s]+$">
                   </div>
                   <div class="col">
                       <label for="formGroupExampleInput">Teléfono </label>

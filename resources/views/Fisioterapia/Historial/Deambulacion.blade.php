@@ -79,7 +79,7 @@
                              <h2>Observaciones</h2>
                              <div class="form-group mb-4">
                                 
-                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Observaciones" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required></textarea>
+                                 <textarea class="form-control" id="DeamObservaciones" rows="3" name="Observaciones" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required></textarea>
                              </div>
                          </td>
 

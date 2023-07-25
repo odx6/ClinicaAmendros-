@@ -31,16 +31,14 @@ class ExploracionFController extends Controller
     public function create(Request $request)
     {
         $Exploracion= new exploracion_f;
-        $Exploracion->fk_e=1;
+       
        /* $Exploracion->fk_d=request('Doctor');
         $Exploracion->fk_p=request('Paciente');*/
         $Exploracion->fk_d=request('idDoc');
         $Exploracion->fk_p=request('id');
         $Exploracion->TA=request('T/A');
         $Exploracion->FC=request('FC');
-        $Exploracion->X1=request('X1');
         $Exploracion->FR=request('FR');
-        $Exploracion->X2=request('X2');                                                                
         $Exploracion->TEMP=request('TEMP');
         $Exploracion->PESO=request('PESO');
         $Exploracion->Nombre_ef=request('NEF');
@@ -64,16 +62,16 @@ class ExploracionFController extends Controller
     public function store(Request $request)
     {
         $Exploracion= exploracion_f::find(request('IDAG'));
-        $Exploracion->fk_e=request('IDDOC');
+        
        /* $Exploracion->fk_d=request('Doctor');
         $Exploracion->fk_p=request('Paciente');*/
-        $Exploracion->fk_d=1;
+        $Exploracion->fk_d=request('IDDOC');
         $Exploracion->fk_p=request('IDPA');
         $Exploracion->TA=request('T/A');
         $Exploracion->FC=request('FC');
-        $Exploracion->X1=request('X1');
+        
         $Exploracion->FR=request('FR');
-        $Exploracion->X2=request('X2');
+        
         $Exploracion->TEMP=request('TEMP');
         $Exploracion->PESO=request('PESO');
         $Exploracion->Nombre_ef=request('NEF');

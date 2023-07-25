@@ -19,6 +19,8 @@ return new class extends Migration
             $table->String('NombreMovi');
             $table->integer('valor');
             $table->timestamps();
+             $table->softDeletes();
+            
             $table->foreign('fk_movimiento')->references('pk_prueba')->on('prueba__ms');
         });
     }

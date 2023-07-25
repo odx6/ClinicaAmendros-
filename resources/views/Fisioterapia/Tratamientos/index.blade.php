@@ -66,7 +66,7 @@
                                                 <div class="form-group">
 
                                                     <textarea type="text" class="form-control" id="exampleFormControlInput1"
-                                                        value="" name="Tratamiento" placeholder="Tratamientos" required minlength="3" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"></textarea>
+                                                        value="" name="Tratamiento" placeholder="Tratamientos" required minlength="3" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$"></textarea>
                                                 </div>
                                             </td>
 

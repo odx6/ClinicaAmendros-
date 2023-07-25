@@ -93,7 +93,7 @@
                                     <h2>Observaciones</h2>
                                     <div class="form-group mb-4">
                                       
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Observaciones" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"></textarea>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Observaciones" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$"></textarea>
                                     </div>
                                 </td>
 

@@ -24,6 +24,8 @@ return new class extends Migration
             $table->String('Otros');
             $table->String('Observaciones_marcha');
             $table->timestamps();
+             $table->softDeletes();
+            
             $table->foreign('fk_marcha')->references('SS')->on('pacientes');
         });
     }

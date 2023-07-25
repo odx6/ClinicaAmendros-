@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class Dedos extends Model
 {
     protected $fillable = [
@@ -17,6 +17,7 @@ class Dedos extends Model
         // Otros atributos fillable
     ];
     use HasFactory;
+     use SoftDeletes;
     protected $primaryKey = 'pk_dedos';
     
     public function Prueba()

@@ -16,11 +16,13 @@ return new class extends Migration
         Schema::create('signos__vitales', function (Blueprint $table) {
             $table->id('Pk_Signos_vitales');
             $table->unsignedBigInteger('fk_Signos');
-            $table->integer('TA');
+            $table->String('TA');
             $table->Double('Temp');
             $table->String('FC');
             $table->String('FR');
             $table->timestamps();
+             $table->softDeletes();
+            
              $table->foreign('fk_Signos')->references('SS')->on('pacientes');
         });
     }

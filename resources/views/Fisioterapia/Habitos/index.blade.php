@@ -38,8 +38,8 @@
                     <div class="form-group">
 
                         <input type="text" class="form-control"
-                            id="exampleFormControlInput1" value=""
-                            placeholder="Especificaciones Tabaquismo" name="ETabaquismo" required  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                            id="exampleFormControlInput1" value="N/A"
+                            placeholder="Especificaciones Tabaquismo" name="ETabaquismo" required  pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                     </div>
                 </td>
             </tr>
@@ -57,8 +57,8 @@
                     <div class="form-group">
 
                         <input type="text" class="form-control"
-                            id="exampleFormControlInput1" value=""
-                            placeholder="Especificaciones Actividad fisica" name="EActividad-física" value="si" required  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                            id="exampleFormControlInput1" value="N/A"
+                            placeholder="Especificaciones Actividad fisica" name="EActividad-física" value="si" required  pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                     </div>
                 </td>
 
@@ -79,8 +79,8 @@
                     <div class="form-group">
 
                         <input type="text" class="form-control"
-                            id="exampleFormControlInput1" value=""
-                            placeholder="Especificaciones Alcholismo " name="EAlcholismo" value="si" required  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                            id="exampleFormControlInput1" value="N/A"
+                            placeholder="Especificaciones Alcholismo " name="EAlcholismo" value="si" required  pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                     </div>
                 </td>
                 </tr>
@@ -98,8 +98,8 @@
                     <div class="form-group">
 
                         <input type="text" class="form-control"
-                            id="exampleFormControlInput1" value=""
-                            placeholder="Especificaciones Se Automedica " name="ESe-Automedica" value="si" required  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                            id="exampleFormControlInput1" value="N/A"
+                            placeholder="Especificaciones Se Automedica " name="ESe-Automedica" value="si" required  pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                     </div>
                 </td>
 
@@ -120,8 +120,8 @@
                     <div class="form-group">
 
                         <input type="text" class="form-control"
-                            id="exampleFormControlInput1" value=""
-                            placeholder="Especificaciones Drogas " name="EDrogas" value="si" required  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                            id="exampleFormControlInput1" value="N/A"
+                            placeholder="Especificaciones Drogas " name="EDrogas" value="si" required  pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                     </div>
                 </td>
                 </tr>
@@ -139,8 +139,8 @@
                     <div class="form-group">
 
                         <input type="text" class="form-control"
-                            id="exampleFormControlInput1" value=""
-                            placeholder="Especificaciones Pasatiempos " name="EPasatiempo" value="si" required  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                            id="exampleFormControlInput1" value="N/A"
+                            placeholder="Especificaciones Pasatiempos " name="EPasatiempo" value="si" required  pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                     </div>
                 </td>
             </tr>

@@ -9,8 +9,8 @@
                                               <p class="modal-text">¿ La cita que quiere agendar es primera cita ?</p>
                                            </div>
                                           <div class="modal-footer justify-content-between">
-                                            <button class="btn NoPrimera" data-bs-dismiss="modal"  id="NoPrimera"><i class="flaticon-cancel-12"></i>No</button>
-                                            <button type="btn" class="btn btn-primary SiPrimera " id="SiPrimera">Si</button>
+                                            <button class="btn btn-rounded mb-2 me-4  NoPrimera" data-bs-dismiss="modal"  id="NoPrimera"><i class="flaticon-cancel-12"></i>No</button>
+                                            <button type="btn" class="btn btn-primary btn-rounded mb-2 me-4 SiPrimera " id="SiPrimera">Si</button>
                                           </div>
                                         </div>
                                       </div>

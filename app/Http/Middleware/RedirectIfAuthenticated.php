@@ -26,6 +26,8 @@ class RedirectIfAuthenticated
 
                 if(auth()->user()->role == 'director'){
                     return redirect()->route('admin.index');
+                }elseif (auth()->user()->role == 'medico') {
+                     return redirect()->route('Doctor.index');
                 }
                 else
                 {

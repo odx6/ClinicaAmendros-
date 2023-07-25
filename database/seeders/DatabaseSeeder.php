@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         //Areas
 
-        $area = new Area;
+       $area = new Area;
         $area->NOMBE_AREA='FISOTERAPIA';
         $area->save();
 
@@ -46,7 +46,8 @@ class DatabaseSeeder extends Seeder
         $user->password='1234';
         $user->role='director';
 
-        $user->save();
+       $user->save();
+       
         //user 
         $user2 = new User;
         $user2->name ='Usertest';

@@ -19,9 +19,10 @@ return new class extends Migration
             $table->Double('Peso');
             $table->Double('Estatura');
             $table->Double('IMC');
-            $table->String('Etnia');
             $table->String('Motivo');
             $table->timestamps();
+             $table->softDeletes();
+            
             $table->foreign('fk_Exploracion_ff')->references('SS')->on('pacientes');
         });
     }

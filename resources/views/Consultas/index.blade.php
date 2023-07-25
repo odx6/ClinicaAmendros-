@@ -49,11 +49,13 @@
                                     <!-- <input id="event-title" type="text" class="form-control">-->
                                     <select class="form-control" name="ConsultaDoctor" id="event-title" required>
 
-                                        <option selected disabled value="">Seleccione un doctor </option>
+                                       
                                         @php
                                             $id = auth()->user()->id;
                                             $doctores = App\Models\Doctor::where('fk_user', '=', $id)->get();
-                                            
+
+                                        $fechaactual=\Carbon\Carbon::now();
+                                        $fechaactual->subHour();
                                         @endphp
 
                                         @foreach ($doctores as $doctor)
@@ -106,7 +108,9 @@
                                         @foreach ($doctores as $doctor)
                                             @if ($doctor->Citas->count() > 0)
                                                 @foreach ($doctor->Citas as $citas)
+                                                    @if($fechaactual->isSameDay($citas->inicio_c) && $fechaactual->gt($citas->inicio_c) )
                                                     <option value="{{ $citas->pk_cita }}">{{ $citas->inicio_c }} </option>
+                                                    @endif
                                                 @endforeach
                                             @endif
                                         @endforeach

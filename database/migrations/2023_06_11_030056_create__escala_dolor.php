@@ -18,6 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('fk_escala');
             $table->integer('Escala');
             $table->timestamps();
+             $table->softDeletes();
+            
              $table->foreign('fk_escala')->references('SS')->on('pacientes');
         });
     }

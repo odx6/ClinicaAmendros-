@@ -34,7 +34,7 @@
                             <h2>Miembro</h2>
                             <input type="text" class="form-control form-control-lg"
                                 placeholder="Nombre del miembro a evaluar" name="NombreMiembro"
-                                placeholder="Nombre del miembro a evaluar" value="{{ $prueba->NombrePrueba }}" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3">
+                                placeholder="Nombre del miembro a evaluar" value="{{ $prueba->NombrePrueba }}" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="3">
                             <div class="container">
                                 <div class="table-responsive">
                                     <table class="table" id="tablamiembroS">
@@ -58,7 +58,7 @@
                                                                     class="form-control form-control-lg"
                                                                     placeholder="Nombre del movimiento"
                                                                     name="Movimientos[{{$movi->pk_movimiento}}][Nombre]"
-                                                                    value="{{ $movi->NombreMovi }}" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3"> 
+                                                                    value="{{ $movi->NombreMovi }}" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="3"> 
                                                             </td>
                                                             <td>
                                                                 <select class="form-control"

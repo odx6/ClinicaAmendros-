@@ -28,97 +28,34 @@
 
 
                                 <div class="row mb-4">
-                    <div class="col">
-                        <label for="formGroupExampleInput">
-                            T/A </label>
-                        <select class="form-control" name="T/A" required>
-                            <option value="{{ $Ex->TA }}">
-                                @if ($Ex->TA == '1')
-                                    {{ 'Si' }}
-                                @endif
-                                @if ($Ex->TA == '0')
-                                    {{ 'No' }}
-                                @endif
-                            </option>
-                            <option value="1">Si</option>
-                            <option value="0">No</option>
-
-                        </select>
-                    </div>
-                    <div class="col">
-                        <label for="formGroupExampleInput">
-                            FC </label>
-                        <select class="form-control" name="FC" required>
-                            <option value="{{ $Ex->FC }}">
-                                @if ($Ex->FC == '1')
-                                    {{ 'Si' }}
-                                @endif
-                                @if ($Ex->FC == '0')
-                                    {{ 'No' }}
-                                @endif
-                            </option>
-                            <option value="1">Si</option>
-                            <option value="0">No</option>
-
-                        </select>
-                    </div>
-                    </div>
-
-                                <div class="row mb-4">
-                    <div class="col">
-                        <label for="formGroupExampleInput">
-                            X1 </label>
-                        <select class="form-control" name="X1" required>
-                            <option value="{{ $Ex->X1 }}">
-                                @if ($Ex->X1 == '1')
-                                    {{ 'Si' }}
-                                @endif
-                                @if ($Ex->X1 == '0')
-                                    {{ 'No' }}
-                                @endif
-                            </option>
-                            <option value="1">Si</option>
-                            <option value="0">No</option>
-
-                        </select>
-                    </div>
-                    <div class="col">
-                        <label for="formGroupExampleInput">
-                            FR </label>
-                        <select class="form-control" name="FR" required>
-                            <option value="{{ $Ex->FR }}">
-                                @if ($Ex->FR == '1')
-                                    {{ 'Si' }}
-                                @endif
-                                @if ($Ex->FR == '0')
-                                    {{ 'No' }}
-                                @endif
-                            </option>
-                            <option value="1">Si</option>
-                            <option value="0">No</option>
-
-                        </select>
-                    </div>
-                    </div>
-
-                                <div class="row mb-4">
-                    <div class="col">
-                        <label for="formGroupExampleInput">
-                            X2 </label>
-                        <select class="form-control" name="X2" required>
-                            <option value="{{ $Ex->X2 }}">
-                                @if ($Ex->X2 == '1')
-                                    {{ 'Si' }}
-                                @endif
-                                @if ($Ex->X2 == '0')
-                                    {{ 'No' }}
-                                @endif
-                            </option>
-                            <option value="1">Si</option>
-                            <option value="0">No</option>
-
-                        </select>
-                    </div>
+                   
+                                     <div class="row mb-4">
+                                <div class="col">
+                                    <label for="formGroupExampleInput">
+                                        T/A </label>
+                                        <input type="text" class="form-control"  value="{{ $Ex->TA }}" placeholder="T/A"
+                                            name="T/A" pattern="^[0-9]+(?:\/[0-9]+)?$" required>
+                                
+                                </div>
+                                <div class="col">
+                                    <label for="formGroupExampleInput">
+                                        FC </label>
+                                        <input type="number" class="form-control" placeholder="FC"
+                                            name="FC" value="{{ $Ex->FC }}" pattern="^\d+(\.\d+)?$" required>
+                                    
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                              
+                                <div class="col">
+                                    <label for="formGroupExampleInput">
+                                        FR </label>
+                                         <input type="number" class="form-control" placeholder="FR"
+                                            name="FR" value="{{ $Ex->FR}}" pattern="^\d+(\.\d+)?$" required>
+                                  
+                                </div>
+                            </div>
+                                
 
                     
 </div>
@@ -131,12 +68,12 @@
                         <div class="row mb-4">
                             <div class="col">
                                 <label for="formGroupExampleInput">Temperatura</label>
-                                <input type="numeric" class="form-control" placeholder="TEMPERATURA" name="TEMP"
+                                <input type="number" class="form-control" placeholder="TEMPERATURA" name="TEMP"
                                     value="{{ $Ex->TEMP }}" pattern="^\d+(\.\d+)?$" required>
                             </div>
                             <div class="col">
                                 <label for="formGroupExampleInput">PESO (KG) </label>
-                                <input type="numeric " class="form-control" placeholder="PESO (KG)" name="PESO"
+                                <input type="number" class="form-control" placeholder="PESO (KG)" name="PESO"
                                     value="{{ $Ex->PESO }}" pattern="^\d+(\.\d+)?$" required>
                             </div>
                             </div>
@@ -150,7 +87,7 @@
                             <div class="col">
                                 <label for="formGroupExampleInput">Cabeza </label>
                                 <input type="text" class="form-control" placeholder="Exploracion Cabeza"
-                                    name="CAEF" value="{{ $Ex->Cabeza_ef }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="5" required>
+                                    name="CAEF" value="{{ $Ex->Cabeza_ef }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" required value="N/A">
                             </div>
                             </div>
 
@@ -158,24 +95,24 @@
                             <div class="col">
                                 <label for="formGroupExampleInput">Cuello</label>
                                 <input type="text" class="form-control" placeholder="Exploracion cuello  "
-                                    name="CUEF" value="{{ $Ex->Cuello_ef }}"  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="5"required>
+                                    name="CUEF" value="{{ $Ex->Cuello_ef }}"  pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2"required value="N/A">
                             </div>
                             <div class="col">
                                 <label for="formGroupExampleInput">Abdomen </label>
                                 <input type="text" class="form-control" placeholder="Exploracion abdomen "
-                                    name="ABEF" value="{{ $Ex->Abdomen_ef }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="5" required>
+                                    name="ABEF" value="{{ $Ex->Abdomen_ef }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" required value="N/A">
                             </div>
                         </div>
                         <div class="row mb-4">
                             <div class="col">
                                 <label for="formGroupExampleInput">Miembro pelvico </label>
                                 <input type="text" class="form-control" placeholder="Exploracion miembro pelvico"
-                                    name="MP" value="{{ $Ex->Miembro_pelvico_ef }}"pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="5" required>
+                                    name="MP" value="{{ $Ex->Miembro_pelvico_ef }}"pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" required value="N/A">
                             </div>
                             <div class="col">
                                 <label for="formGroupExampleInput">Miembro toraxico</label>
                                 <input type="text" class="form-control" placeholder="Exploracion miembro toraxico"
-                                    name="MT" value="{{ $Ex->Miembro_toraxico_ef }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="5" required>
+                                    name="MT" value="{{ $Ex->Miembro_toraxico_ef }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" required value="N/A">
                             </div>
 
                         </div>

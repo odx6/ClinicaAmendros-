@@ -127,16 +127,19 @@
                             @include('Fisioterapia.Historial.Habitos')
                             <!--End-Habitos-->
                             <!--radio boton-->
+                            @if($Paciente=="F")
                             <div class="switch form-switch-custom switch-inline form-switch-info">
                                 <input class="switch-input" type="checkbox" role="switch" id="FisioIngra" name="FisioIngra"
                                     value="1">
                                 <label class="switch-label" for="form-custom-switch-info">¿Esta en estado de Ingravidez el
                                     paciente?</label>
                             </div>
+
                             <!--end  radio -->
                             <!--Ingravidez-->
                             @include('Fisioterapia.Historial.Ingravidez')
                             <!--End-Ingravidez-->
+                            @endif
                             <!--radio boton-->
                             <div class="switch form-switch-custom switch-inline form-switch-info">
                                 <input class="switch-input" type="checkbox" role="switch" id="FisioDiagnostico"

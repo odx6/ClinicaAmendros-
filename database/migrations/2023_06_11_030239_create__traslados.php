@@ -19,6 +19,8 @@ return new class extends Migration
             $table->String('Val_inicial');
             $table->String('Val_final');
             $table->timestamps();
+             $table->softDeletes();
+            
             $table->foreign('fk_traslados')->references('SS')->on('pacientes');
         });
     }

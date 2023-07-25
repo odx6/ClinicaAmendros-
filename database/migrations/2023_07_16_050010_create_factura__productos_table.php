@@ -22,6 +22,8 @@ return new class extends Migration
               $table->foreign('fk_producto')->references('pk_producto')->on('productos');
               $table->foreign('fk_factura')->references('pk_factura')->on('facturas');
             $table->timestamps();
+             $table->softDeletes();
+            
         });
     }
 

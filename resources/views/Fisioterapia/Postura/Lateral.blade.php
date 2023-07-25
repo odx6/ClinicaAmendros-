@@ -58,10 +58,10 @@
                                                             <div class="form-group">
 
                                                                 <input type="text" class="form-control"
-                                                                    id="exampleFormControlInput1" value=""
+                                                                    id="exampleFormControlInput1" value="N/A"
                                                                     name="Posturas[{{ $Dat }}][Observaciones]"
                                                                     placeholder="Observaciones" required
-                                                                    pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3">
+                                                                    pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="3">
                                                             </div>
                                                         </td>
                                                     </tr>

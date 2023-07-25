@@ -53,61 +53,30 @@
                                 <div class="col">
                                     <label for="formGroupExampleInput">
                                         T/A </label>
-                                    <select class="form-control" name="T/A" required>
-                                        <option selected disabled value="">T/a </option>
-
-                                        <option value="1">Si</option>
-                                        <option value="0">No</option>
-
-                                    </select>
+                                        <input type="text" class="form-control" placeholder="T/A"
+                                            name="T/A" pattern="^[0-9]+(?:\/[0-9]+)?$" required>
+                                
                                 </div>
                                 <div class="col">
                                     <label for="formGroupExampleInput">
                                         FC </label>
-                                    <select class="form-control" name="FC" required>
-                                        <option selected disabled value="">FC </option>
-
-                                        <option value="1">Si</option>
-                                        <option value="0">No</option>
-
-                                    </select>
+                                        <input type="number" class="form-control" placeholder="FC"
+                                            name="FC" pattern="^\d+(\.\d+)?$" required>
+                                    
                                 </div>
                             </div>
                             <div class="row mb-4">
-                                <div class="col">
-                                    <label for="formGroupExampleInput">
-                                        X1 </label>
-                                    <select class="form-control" name="X1" required>
-                                        <option selected disabled value="">X1 </option>
-
-                                        <option value="1">Si</option>
-                                        <option value="0">No</option>
-
-                                    </select>
-                                </div>
+                              
                                 <div class="col">
                                     <label for="formGroupExampleInput">
                                         FR </label>
-                                    <select class="form-control" name="FR" required>
-                                        <option selected disabled value="">FR </option>
-
-                                        < <option value="1">Si</option>
-                                            <option value="0">No</option>
-
-                                    </select>
+                                         <input type="number" class="form-control" placeholder="FR"
+                                            name="FR" pattern="^\d+(\.\d+)?$" required>
+                                  
                                 </div>
                             </div>
                             <div class="row mb-4">
-                                <div class="col">
-                                    <label for="formGroupExampleInput">
-                                        X2 </label>
-                                    <select class="form-control" name="X2" required>
-                                        <option selected disabled value="">X2 </option>
-
-                                        <option value="1">Si</option>
-                                        <option value="0">No</option>
-
-                                    </select>
+                                
                                 </div>
 
 
@@ -116,38 +85,38 @@
                                 <div class="row mb-4">
                                     <div class="col">
                                         <label for="formGroupExampleInput">Temperatura </label>
-                                        <input type="text" class="form-control" placeholder="TEMPERATURA"
+                                        <input type="numeric" class="form-control" placeholder="TEMPERATURA"
                                             name="TEMP" pattern="^\d+(\.\d+)?$" required>
                                     </div>
                                     <div class="col">
                                         <label for="formGroupExampleInput">Peso (KG) </label>
-                                        <input type="text" class="form-control" placeholder="PESO (KG)"
+                                        <input type="numberic" class="form-control" placeholder="PESO (KG)"
                                             name="PESO" pattern="^\d+(\.\d+)?$" required>
                                     </div>
                                 </div>
                                 <div class="row mb-4">
                                     <div class="col">
                                         <label for="formGroupExampleInput">Nombre exploración </label>
-                                        <input type="text" class="form-control" placeholder="Exploracion Cabeza"
-                                            name="NEF" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2">
+                                        <input type="text" class="form-control" placeholder="Exploracion Cabeza" value="N/A"
+                                            name="NEF" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2">
                                     </div>
                                     <div class="col">
                                         <label for="formGroupExampleInput">Cabeza </label>
-                                        <input type="text" class="form-control" placeholder="Exploracion Cabeza"
-                                            name="CAEF" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2">
+                                        <input type="text" class="form-control" placeholder="Exploracion Cabeza" value="N/A"
+                                            name="CAEF" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2">
                                     </div>
                                 </div>
                                 <div class="row mb-4">
                                     <div class="col">
                                         <label for="formGroupExampleInput">Cuello</label>
-                                        <input type="text" class="form-control" placeholder="Exploracion cuello  "
-                                            name="CUEF" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"
+                                        <input type="text" class="form-control" placeholder="Exploracion cuello  " value="N/A"
+                                            name="CUEF" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2"
                                             max="30">
                                     </div>
                                     <div class="col">
                                         <label for="formGroupExampleInput">Abdomen</label>
-                                        <input type="text" class="form-control" placeholder="Exploracion abdomen "
-                                            name="ABEF" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"
+                                        <input type="text" class="form-control" placeholder="Exploracion abdomen " value="N/A"
+                                            name="ABEF" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2"
                                             max="30">
                                     </div>
                                 </div>
@@ -155,14 +124,14 @@
                                     <div class="col">
                                         <label for="formGroupExampleInput">Miembro pelvico </label>
                                         <input type="text" class="form-control"
-                                            placeholder="Exploracion miembro pelvico" name="MP" required
-                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" max="30">
+                                            placeholder="Exploracion miembro pelvico" name="MP" value="N/A"  required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" max="30">
                                     </div>
                                     <div class="col">
                                         <label for="formGroupExampleInput">Miembro toraxico</label>
-                                        <input type="text" class="form-control"
+                                        <input type="text" class="form-control" value="N/A"
                                             placeholder="Exploracion miembro toraxico" name="MT" required
-                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" max="30">
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" max="30">
                                     </div>
 
                                 </div>

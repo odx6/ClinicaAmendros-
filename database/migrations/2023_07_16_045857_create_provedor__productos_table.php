@@ -19,6 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('fk_proveedor');
             $table->integer('precio');
             $table->timestamps();
+             $table->softDeletes();
+            
               $table->foreign('fk_producto')->references('pk_producto')->on('productos');
               $table->foreign('fk_proveedor')->references('pk_proveedor')->on('provedors');
             

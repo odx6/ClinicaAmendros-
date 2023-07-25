@@ -34,7 +34,7 @@
                             <h2>Miembro</h2>
                             <input type="text" class="form-control form-control-lg"
                                 placeholder="Nombre del miembro a evaluar" name="NombreMiembro"
-                                placeholder="Nombre del miembro a evaluar" value="{{ $prueba->NombrePrueba }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3" required>
+                                placeholder="Nombre del miembro a evaluar" value="{{ $prueba->NombrePrueba }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="3" required>
                             <div class="container">
                                 <div class="table-responsive">
                                     <table class="table" id="tablamiembroS">
@@ -58,7 +58,7 @@
                                                                     class="form-control form-control-lg"
                                                                     placeholder="Nombre del movimiento"
                                                                     name="Movimientos[{{ $movi->pk_movimiento }}][Nombre]"
-                                                                    value="{{ $movi->NombreMovi }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3" required>
+                                                                    value="{{ $movi->NombreMovi }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="3" required>
                                                             </td>
                                                             <td>
                                                                 <select class="form-control"
@@ -105,7 +105,7 @@
 
                     <div class="input-group">
                         <span class="input-group-text">Observaciones</span>
-                        <textarea class="form-control" aria-label="With textarea" name="observaciones" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3" required >{{ $prueba->Observaciones_prue }}</textarea>
+                        <textarea class="form-control" aria-label="With textarea" name="observaciones" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="3" required >{{ $prueba->Observaciones_prue }}</textarea>
                     </div>
                     <br>
                     <br>

@@ -40,7 +40,7 @@
                         <!-- Fomulario -->
                         <!--- Historial-->
 
-                        <form class="user" method="POST" action="{{ route('historial.create', ['Paciente' => $id]) }}">
+                        <form class="user needs-validation" method="POST" action="{{ route('historial.create', ['Paciente' => $id]) }}" novalidate>
                             @csrf
 
                             <h2> ANTECEDENTES HEREDOFAMILARES</h2>
@@ -147,8 +147,8 @@
                                 <div class="col">
                                     <label for="formGroupExampleInput">Causas</label>
                                     <input type="text" class="form-control"
-                                        placeholder="CAUSAS DE LA MUERTE PADRE Y MADRE " name="CAM"
-                                        pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" max="50" required>
+                                        placeholder="CAUSAS DE LA MUERTE PADRE Y MADRE " name="CAM" value="N/A"
+                                        pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" max="50" required>
                                 </div>
 
                             </div>
@@ -160,13 +160,13 @@
                                     <label for="formGroupExampleInput">Alergias
                                     </label>
                                     <input type="text" class="form-control" placeholder="ALERGIAS" name="ALERGIAS"
-                                        required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2">
+                                        required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" value="N/A">
                                 </div>
                                 <div class="col">
                                     <label for="formGroupExampleInput">alimentos
                                     </label>
                                     <input type="text" class="form-control" placeholder="ALERGIAS POR ALIMENTOS "
-                                        name="AL" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required>
+                                        name="AL" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" value="N/A" required >
                                 </div>
                             </div>
                             <div class="row mb-4">
@@ -175,28 +175,28 @@
                                         quimicas </label>
 
                                     <input type="text" class="form-control"
-                                        placeholder="ALERGIAS POR SUSTANCIAS QUIMICAS" name="ALS"
-                                        pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required>
+                                        placeholder="ALERGIAS POR SUSTANCIAS QUIMICAS" name="ALS" value="N/A"
+                                        pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" required>
                                 </div>
                                 <div class="col">
                                     <label for="formGroupExampleInput">Cirugías previas
                                     </label>
-                                    <input type="text" class="form-control" placeholder="CIRUJIAS PREVIAS "
-                                        name="CP" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
+                                    <input type="text" class="form-control" placeholder="CIRUJIAS PREVIAS " value="N/A"
+                                        name="CP" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required>
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
                                     <label for="formGroupExampleInput"> Transfusiones </label>
                                     <input type="text" class="form-control" placeholder="TRANSFUCIONES"
-                                        name="TF" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
+                                        name="TF" value="N/A" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required>
                                 </div>
                                 <div class="col">
                                     <label for="formGroupExampleInput">Fracturas
                                     </label>
 
                                     <input type="text" class="form-control" placeholder="ACTUALES O PREVIAS"
-                                        name="FP" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
+                                        name="FP" value="N/A" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required>
                                 </div>
 
 

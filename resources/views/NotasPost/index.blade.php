@@ -68,12 +68,12 @@
                                     <label for="formGroupExampleInput">Hallazgo </label>
 
                                     <input type="text" class="form-control" placeholder="Hallazgos" name="HA"
-                                        required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                        required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" value="N/A">
                                 </div>
                                 <div class="col">
                                     <label for="formGroupExampleInput">Complicaciones </label>
                                     <input type="text" class="form-control" placeholder="COMPLICACIONES" name="CO"
-                                        required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                        required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" value="N/A">
                                 </div>
                             </div>
                             <div class="row mb-4">

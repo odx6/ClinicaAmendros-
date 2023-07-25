@@ -23,7 +23,8 @@
         <h2>Estado de ingravidez</h2>
         <!--Antecedentes patologicos-->
         @foreach ($Ingravidez as $in)
-            <form class="user needs-validation" method="POST" action="{{ route('update.Ingravidez', ['id' => $in->pk_e_ingravidez]) }}" novalidate>
+            <form class="user needs-validation" method="POST"
+                action="{{ route('update.Ingravidez', ['id' => $in->pk_e_ingravidez]) }}" novalidate>
                 @csrf
                 @if ($in->Embarazada == 'si')
                     <div class="switch form-switch-custom switch-inline form-switch-success">
@@ -44,7 +45,8 @@
                 <div class="form-group">
 
                     <input type="text" class="form-control" id="exampleFormControlInput1"
-                        value="{{ $in->Especificacion }}" name="Especificacion" placeholder="Especifique" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" >
+                        value="{{ $in->Especificacion }}" name="Especificacion" placeholder="Especifique" required
+                        pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                 </div>
 
                 <h3>Cuantos hijos tiene </h3>
@@ -53,7 +55,7 @@
                     <select class="form-select" id="exampleFormControlSelect1" name="hijos" required>
                         <option value="{{ $in->Numero_hijos }}">{{ $in->Numero_hijos }} Hijos</option>
 
-                        @for ($i = 0; $i <= 30; $i++)
+                        @for ($i = 0; $i <= 10; $i++)
                             @if ($i < 2)
                                 <option value="{{ $i }}">{{ $i }} hijo(a)
                                 @else
@@ -84,9 +86,7 @@
                     style="display: none;">Agregar Estado de ingravidez</button>
             </form>
 </div>
-
 @endforeach
 
 @endif
 </div>
-

@@ -20,6 +20,8 @@ return new class extends Migration
             $table->String('Especificacion');
             $table->String('Numero_hijos');
             $table->timestamps();
+             $table->softDeletes();
+            
             $table->foreign('fk_ingravidez')->references('SS')->on('pacientes');
         });
     }

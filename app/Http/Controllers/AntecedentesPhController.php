@@ -28,18 +28,19 @@ class AntecedentesPhController extends Controller
     {
          $data = $request->all();
 
-        $this->agregar($data['id'],'Diabetes',$data['Diabetes'],$data['EDiabetes']);
-        $this->agregar($data['id'],'Enf.Reumáticas',$data['EnfReumaticas'],$data['EEnf']);
-        $this->agregar($data['id'],'Alergias',$data['Alergias'],$data['EAlergias']);
-        $this->agregar($data['id'],'Encames',$data['Encames'],$data['EEncames']);
-        $this->agregar($data['id'],'HTA',$data['HTA'],$data['ETA']);
-        $this->agregar($data['id'],'Accidentes',$data['Accidentes'],$data['EAccidentes']);
-        $this->agregar($data['id'],'Cáncer',$data['Cáncer'],$data['ECancer']);
-        $this->agregar($data['id'],'Cardiopatías',$data['Cardiopatias'],$data['ECardiopatias']);
-        $this->agregar($data['id'],'Transfusiones',$data['Transfusiones'],$data['ETransfunciones']);
-        $this->agregar($data['id'],'Cirugías',$data['Cirugías'],$data['ECirugias']);
-        $this->agregar($data['id'],'Fracturas',$data['Fracturas'],$data['EFracturas']);
-        $this->agregar($data['id'],'Espasmos',$data['Espasmos'],$data['EEspasmos']);
+        $this->agregar($data['id'],'Diabetes',(isset($data['Diabetes'])) ? $data['Diabetes']:  "no",$data['EDiabetes']);
+        $this->agregar($data['id'],'Enf.Reumáticas', (isset($data['EnfReumaticas'])) ? $data['EnfReumaticas']:  "no",$data['EEnf']);
+        $this->agregar($data['id'],'Alergias',(isset($data['Alergias'])) ? $data['Alergias']:  "no",$data['EAlergias']);
+        $this->agregar($data['id'],'Encames',(isset($data['Encames'])) ? $data['Encames']:  "no",$data['EEncames']);
+        $this->agregar($data['id'],'HTA',(isset($data['HTA'])) ? $data['HTA']:  "no"
+,$data['ETA']);
+        $this->agregar($data['id'],'Accidentes',(isset($data['Accidentes'])) ? $data['Accidentes']:  "no",$data['EAccidentes']);
+        $this->agregar($data['id'],'Cáncer', (isset($data['Cáncer'])) ? $data['Cáncer']:  "no",$data['ECancer']);
+        $this->agregar($data['id'],'Cardiopatías',(isset($data['Cardiopatias'])) ? $data['Cardiopatias']:  "no",$data['ECardiopatias']);
+        $this->agregar($data['id'],'Transfusiones',(isset($data['Transfusiones'])) ? $data['Transfusiones']:  "no",$data['ETransfunciones']);
+        $this->agregar($data['id'],'Cirugías', (isset($data['Cirugías'])) ? $data['Cirugías']:  "no",$data['ECirugias']);
+        $this->agregar($data['id'],'Fracturas',(isset($data['Fracturas'])) ? $data['Fracturas']:  "no",$data['EFracturas']);
+        $this->agregar($data['id'],'Espasmos',(isset($data['Espasmos'])) ? $data['Espasmos']:  "no",$data['EEspasmos']);
         
          $SignosVitales= new Signos_Vitales;
         $SignosVitales->fk_Signos=$data['id'];
@@ -98,17 +99,21 @@ class AntecedentesPhController extends Controller
     public function update(Request $request)
     {
         $data = $request->all();
-        $this->Actualizar($data['IDDiabetes'],'Diabetes',$data['Diabetes'],$data['EDiabetes']);
-        $this->Actualizar($data['IDEnf_Reumaticas'],'Enf.Reumaticas',$data['Enf_Reumaticas'],$data['EEnf_Reumaticas']);
-        $this->Actualizar($data['IDAlergias'],'Alergias',$data['Alergias'],$data['EAlergias']);
-        $this->Actualizar($data['IDEncames'],'Encames',$data['Encames'],$data['EEncames']);
-        $this->Actualizar($data['IDAccidentes'],'Accidentes',$data['Accidentes'],$data['EAccidentes']);
-        $this->Actualizar($data['IDCáncer'],'Cáncer',$data['Cáncer'],$data['ECáncer']);
-        $this->Actualizar($data['IDCardiopatías'],'Cardiopatías',$data['Cardiopatías'],$data['ECardiopatías']);
-        $this->Actualizar($data['IDTransfusiones'],'Transfusiones',$data['Transfusiones'],$data['ETransfusiones']);
-        $this->Actualizar($data['IDCirugías'],'Cirugías',$data['Cirugías'],$data['ECirugías']);
-        $this->Actualizar($data['IDFracturas'],'Fracturas',$data['Fracturas'],$data['EFracturas']);
-        $this->Actualizar($data['IDEspasmos'],'Espasmos',$data['Espasmos'],$data['EEspasmos']);
+        $this->Actualizar($data['IDDiabetes'],'Diabetes',(isset($data['Diabetes'])) ? $data['Diabetes']:  "no",$data['EDiabetes']);
+        $this->Actualizar($data['IDEnf_Reumáticas'],'Enf.Reumaticas',(isset($data['Enf_Reumáticas'])) ? $data['Enf_Reumáticas']:  "no",$data['EEnf_Reumáticas']);
+        $this->Actualizar($data['IDAlergias'],'Alergias',(isset($data['Alergias'])) ? $data['Alergias']:  "no",$data['EAlergias']);
+        $this->Actualizar($data['IDEncames'],'Encames',(isset($data['Encames'])) ? $data['Encames']:  "no",$data['EEncames']);
+
+
+        $this->Actualizar($data['IDHTA'],'HTA',(isset($data['HTA'])) ? $data['HTA']:  "no"
+,$data['EHTA']);
+        $this->Actualizar($data['IDAccidentes'],'Accidentes',(isset($data['Accidentes'])) ? $data['Accidentes']:  "no",$data['EAccidentes']);
+        $this->Actualizar($data['IDCáncer'],'Cáncer',(isset($data['Cáncer'])) ? $data['Cáncer']:  "no",$data['ECáncer']);
+        $this->Actualizar($data['IDCardiopatías'],'Cardiopatías',(isset($data['Cardiopatias'])) ? $data['Cardiopatias']:  "no",$data['ECardiopatías']);
+        $this->Actualizar($data['IDTransfusiones'],'Transfusiones',(isset($data['Transfusiones'])) ? $data['Transfusiones']:  "no",$data['ETransfusiones']);
+        $this->Actualizar($data['IDCirugías'],'Cirugías',(isset($data['Cirugías'])) ? $data['Cirugías']:  "no",$data['ECirugías']);
+        $this->Actualizar($data['IDFracturas'],'Fracturas',(isset($data['Fracturas'])) ? $data['Fracturas']:  "no",$data['EFracturas']);
+        $this->Actualizar($data['IDEspasmos'],'Espasmos',(isset($data['Espasmos'])) ? $data['Espasmos']:  "no",$data['EEspasmos']);
 
            
         $SignosVitales=Signos_Vitales::find($data['IDSignos']);

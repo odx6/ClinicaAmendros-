@@ -54,7 +54,7 @@
                                                 <input type="text" class="form-control" id="exampleFormControlInput1"
                                                     value="{{ $pos->Inclinacion_Corporal }}"
                                                     name="Posturas[{{ $pos->pk_postura }}][Nombre]"
-                                                    placeholder="Observaciones" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3" required>
+                                                    placeholder="Observaciones" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="3" required>
                                             </div>
                                         </td>
                                         <td> <select class="form-control" name="Posturas[{{ $pos->pk_postura }}][L]" required>
@@ -76,7 +76,7 @@
                                                 <input type="text" class="form-control" id="exampleFormControlInput1"
                                                     value="{{ $pos->Observaciones }}"
                                                     name="Posturas[{{ $pos->pk_postura }}][Observaciones]"
-                                                    placeholder="Observaciones" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3" required>
+                                                    placeholder="Observaciones" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="3" required>
                                             </div>
                                         </td>
                                         <td>

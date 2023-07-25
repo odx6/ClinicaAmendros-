@@ -66,7 +66,7 @@ class DoctorController extends Controller
             $Estudios = estudio::where('fk_e', '=', $valorSeleccionado)->get();
             $Notas_p = nota_p_quirurgica::where('fk_npq', '=', $valorSeleccionado)->get();
             $Notas = nota::where('fk_n', '=', $valorSeleccionado)->get();
-            $Exploraciones = exploracion_f::where('fk_d', '=', $valorSeleccionado)->get();
+            $Exploraciones = exploracion_f::where('fk_p', '=', $valorSeleccionado)->get();
             
 
             $Paciente = Paciente::Find($valorSeleccionado);
@@ -127,7 +127,7 @@ class DoctorController extends Controller
         $Estudios = estudio::where('fk_e', '=', $valorSeleccionado)->get();
         $Notas_p = nota_p_quirurgica::where('fk_npq', '=', $valorSeleccionado)->get();
         $Notas = nota::where('fk_n', '=', $valorSeleccionado)->get();
-        $Exploraciones = exploracion_f::where('fk_d', '=', $valorSeleccionado)->get();
+        $Exploraciones = exploracion_f::where('fk_p', '=', $valorSeleccionado)->get();
         $Paciente = Paciente::Find($valorSeleccionado);
             $idDoctor=$Paciente->PacienteDoctor;
             $Doctor=Doctor::find($idDoctor);
@@ -204,15 +204,7 @@ class DoctorController extends Controller
         }
 
 
-        // Sacar su Historial del paciente 
-            $idDoctor=$Paciente->PacienteDoctor;
-            $Doctor=Doctor::find($idDoctor);
-            $idArea=$Doctor->AreaDoctor;
-            $Area=Area::find($idArea);
-          
-
-        $Paciente = Paciente::Find($valorSeleccionado);
-        $Doctor = Doctor::Find($Paciente->SS);
+        
         $Planes=Plan_Analitico::where('fk_plan', '=', $valorSeleccionado)->get();
         Pdf::setOption(['dpi' => 150, 'defaultFont' => 'sans-serif']);
         $data = []; // Agrega aquí los datos que deseas pasar a la vista

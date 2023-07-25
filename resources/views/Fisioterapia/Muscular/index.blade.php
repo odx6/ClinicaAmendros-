@@ -76,7 +76,7 @@
                                         <div class="col">
                                             
                                             <input type="text" class="form-control form-control-lg"
-                                                placeholder="Nombre del miembro a evaluar" name="Nombre" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                                placeholder="Nombre del miembro a evaluar" name="Nombre" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                         </div>
                                     </th>
                                 </tr>

@@ -30,12 +30,12 @@
                     <div class="col">
                         <label for="formGroupExampleInput">Nota </label>
                         <input type="text" class="form-control" placeholder="cuerpo de la nota" name="NOT"
-                            value="{{ $np->Nota }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
+                            value="{{ $np->Nota }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required>
                     </div>
                     <div class="col">
                         <label for="formGroupExampleInput">Tipo </label>
                         <input type="text" class="form-control" placeholder="TIPO DE NOTA" name="TIPO"
-                            value="{{ $np->Tipo }}"pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"  required>
+                            value="{{ $np->Tipo }}"pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$"  required>
                     </div>
 
                 </div>

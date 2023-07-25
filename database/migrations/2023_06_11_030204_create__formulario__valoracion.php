@@ -23,6 +23,8 @@ return new class extends Migration
            
             $table->String('Comentarios');
             $table->timestamps();
+             $table->softDeletes();
+            
             $table->foreign('fk_formulario')->references('SS')->on('pacientes');
 
         });

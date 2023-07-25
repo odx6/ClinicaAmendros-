@@ -64,6 +64,7 @@
                 <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
             </svg>Habitos de salud</a>
     </li>
+    @if($Paciente->Sexo=="F")
     <li class="nav-item ml-2 mr-2">
         <a class="nav-link mb-2 text-center" id="rounded-pills-icon-settings-tab" data-bs-toggle="pill"
             href="#rounded-pills-icon-Nota" role="tab" aria-controls="rounded-pills-icon-settings"
@@ -79,6 +80,7 @@
                 </line>
             </svg>Estado de ingravidez</a>
     </li>
+    @endif
     <li class="nav-item ml-2 mr-2">
         <a class="nav-link mb-2 text-center" id="rounded-pills-icon-settings-tab" data-bs-toggle="pill"
             href="#rounded-pills-icon-Notas" role="tab" aria-controls="rounded-pills-icon-settings"

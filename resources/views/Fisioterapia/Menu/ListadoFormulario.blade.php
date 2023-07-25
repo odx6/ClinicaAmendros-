@@ -127,7 +127,7 @@
                             <div class="form-group mb-4">
 
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="NOT" required
-                                    pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">{{ $form->Comentarios }}</textarea>
+                                    pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">{{ $form->Comentarios }}</textarea>
                             </div>
 
                         </div>

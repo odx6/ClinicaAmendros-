@@ -74,10 +74,15 @@
                                                    $doctores =App\Models\Doctor::where('fk_user', '=', $id)->get();
                                         
                                                     @endphp
-
+                                                    @if($doctores->isEmpty())
+                                                    <option selected disabled value="">no hay pacientes asignados a este medico </option>
+                                                    @else
+                                                    
+                                                   
                                                     @foreach($doctores as $doctor)
                                                     <option value="{{ $doctor->DSS}}">{{ $doctor->Nombre.' '.$doctor->Apellidos.' '.$doctor->ESPECIALIDAD }}</option>
                                                     @endforeach
+                                                    @endif
                                                     
                                                 </select>
                                                 <div class="valid-feedback">
@@ -100,6 +105,8 @@
                                                     @foreach($doctor->Pacientes as $paciente)
                                                     <option value="{{ $paciente->SS}}">{{ $paciente->Nombre}} {{ $paciente->Apellido}} </option>
                                                     @endforeach
+                                                    @else
+                                                    <option selected disabled value="">no hay pacientes asignados a este medico </option>
                                                     @endif
                                                     @endforeach
                                                     
@@ -134,18 +141,14 @@
                                 </div>
 
                                 <div class="modal-footer">
-                                    <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-rounded mb-2 me-4" data-bs-dismiss="modal">Cerrar</button>
                                     
-                                    
-                                    @if($doctor->Pacientes->count() <= 0 ||  $doctores->isEmpty() )
-                                    
-                                        
-                                    @else
-                                    <button type="submit" class="btn btn-success btn-update-event" data-fc-event-public-id="">Actualizar una cita</button>
-                                    <button type="submit" class="btn btn-primary btn-add-event">Agregar Cita</button>
-                                    <button type="submit" class="btn btn-primary btn-add-event" id="idConsulta">Consulta</button>
-                                     <button type="submit" class="btn btn-primary btn-delete-event" data-fc-event-public-id="">Cancelar cita</button>
-                                    @endif
+                                 
+                                    <button type="submit" class="btn btn-success  btn-rounded mb-2 me-4 btn-update-event" data-fc-event-public-id="">Actualizar una cita</button>
+                                    <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4  btn-add-event">Agregar Cita</button>
+                                    <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4  btn-add-event" id="idConsulta">Consulta</button>
+                                     <button type="submit" class="btn btn-primary  btn-rounded mb-2 me-4 btn-delete-event" data-fc-event-public-id="">Cancelar cita</button>
+                                   
                                 </div>
                                 
                             </form>
@@ -159,6 +162,7 @@
             </div>
 @include('layouts.ModalConfirmacion')
 @include('layouts.PrimeraCitaDoctor')
+@include('layouts.Alerta')
 @include('layouts.footer')
 </div>
         <!--  END CONTENT AREA  -->

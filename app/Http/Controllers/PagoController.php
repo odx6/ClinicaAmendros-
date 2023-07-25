@@ -171,7 +171,7 @@ class PagoController extends Controller
         $pago->TipoPago=$data['TipoPago'];
         $pago->save();
         $Consulta=Consulta::find($pago->fk_consulta);
-        if($Consulta->monto== $pago->monto){
+        if($Consulta->monto<= $pago->monto){
 
             $Consulta->Estado="Pagado";
             $Consulta->save();
@@ -192,7 +192,7 @@ class PagoController extends Controller
         $pago->TipoPago=$data['TipoPago'];
         $pago->save();
         $Consulta=Consulta::find($pago->fk_consulta);
-        if($Consulta->monto== $pago->monto){
+        if($Consulta->monto<= $pago->monto){
 
             $Consulta->Estado="Pagado";
             $Consulta->save();

@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('Apellidos');
             $table->string('telefono');
             $table->timestamps();
+             $table->softDeletes();
+            
             // para claves foráneas 
             $table->foreign('fk_user')->references('id')->on('users');
 

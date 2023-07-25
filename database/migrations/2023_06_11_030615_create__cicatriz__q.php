@@ -23,6 +23,8 @@ return new class extends Migration
             $table->String('Con_Adherencia');
             $table->String('Hipertrofica');
             $table->timestamps();
+             $table->softDeletes();
+            
             $table->foreign('fk_cicatriz')->references('SS')->on('pacientes');
         });
        

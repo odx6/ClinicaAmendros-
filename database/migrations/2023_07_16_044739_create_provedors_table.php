@@ -23,6 +23,8 @@ return new class extends Migration
             $table->String('Empresa');
 
             $table->timestamps();
+             $table->softDeletes();
+            
         });
     }
 

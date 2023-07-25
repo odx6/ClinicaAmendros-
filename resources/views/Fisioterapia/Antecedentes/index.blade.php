@@ -88,9 +88,9 @@
                                                     <div class="form-group">
 
                                                         <input type="text" class="form-control"
-                                                            id="exampleFormControlInput1" value=""
+                                                            id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Especificacion para diabetes" name="EDiabetes"
-                                                            required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                                            required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                                     </div>
                                                 </td>
                                             </tr>
@@ -110,9 +110,9 @@
                                                     <div class="form-group">
 
                                                         <input type="text" class="form-control"
-                                                            id="exampleFormControlInput1" value=""
+                                                            id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Enfermedades Reumaticas" name="EEnf" required
-                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                                     </div>
                                                 </td>
 
@@ -133,9 +133,9 @@
                                                     <div class="form-group">
 
                                                         <input type="text" class="form-control"
-                                                            id="exampleFormControlInput1" value=""
+                                                            id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Alergias" name="EAlergias" required
-                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                                     </div>
                                                 </td>
 
@@ -156,9 +156,9 @@
                                                     <div class="form-group">
 
                                                         <input type="text" class="form-control"
-                                                            id="exampleFormControlInput1" value=""
+                                                            id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Encames" name="EEncames" required
-                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                                     </div>
                                                 </td>
 
@@ -181,9 +181,9 @@
                                                     <div class="form-group">
 
                                                         <input type="text" class="form-control"
-                                                            id="exampleFormControlInput1" value=""
+                                                            id="exampleFormControlInput1" value="N/A"
                                                             placeholder="HTA" name="ETA" required
-                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                                     </div>
                                                 </td>
                                                 </tr>
@@ -203,9 +203,9 @@
                                                     <div class="form-group">
 
                                                         <input type="text" class="form-control"
-                                                            id="exampleFormControlInput1" value=""
+                                                            id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Accidentes" name="EAccidentes" required
-                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                                     </div>
                                                 </td>
                                             </tr>
@@ -226,9 +226,9 @@
                                                     <div class="form-group">
 
                                                         <input type="text" class="form-control"
-                                                            id="exampleFormControlInput1" value=""
+                                                            id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Cáncer" name="ECancer" required
-                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                                     </div>
                                                 </td>
                                                   </tr>
@@ -249,9 +249,9 @@
                                                     <div class="form-group">
 
                                                         <input type="text" class="form-control"
-                                                            id="exampleFormControlInput1" value=""
+                                                            id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Cardiopatias" name="ECardiopatias" required
-                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                                     </div>
                                                 </td>
                                             </tr>
@@ -272,9 +272,9 @@
                                                     <div class="form-group">
 
                                                         <input type="text" class="form-control"
-                                                            id="exampleFormControlInput1" value=""
+                                                            id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Transfunciones" name="ETransfunciones" required
-                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                                     </div>
                                                 </td>
                                                 </tr>
@@ -294,9 +294,9 @@
                                                     <div class="form-group">
 
                                                         <input type="text" class="form-control"
-                                                            id="exampleFormControlInput1" value=""
+                                                            id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Cirugias" name="ECirugias" required
-                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                                     </div>
                                                 </td>
                                             </tr>
@@ -317,9 +317,9 @@
                                                     <div class="form-group">
 
                                                         <input type="text" class="form-control"
-                                                            id="exampleFormControlInput1" value=""
+                                                            id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Fracturas" name="EFracturas" required
-                                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                                     </div>
                                                 </td>
 
@@ -342,8 +342,8 @@
                                                                 <div class="form-group">
 
                                                                     <input type="numeric" class="form-control"
-                                                                        id="exampleFormControlInput1" value=""
-                                                                        placeholder="TA" name="TA" required>
+                                                                        id="exampleFormControlInput1" value="" 
+                                                                        placeholder="TA" name="TA" pattern="^[0-9]+(?:\/[0-9]+)?$" required>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -354,8 +354,8 @@
                                                             <div class="col">
                                                                 <div class="form-group">
 
-                                                                    <input type="numeric" class="form-control"
-                                                                        id="exampleFormControlInput1" value=""
+                                                                    <input type="number" class="form-control"
+                                                                        id="exampleFormControlInput1" value="" pattern="^\d+(\.\d+)?$"
                                                                         placeholder="Temp" name="Temp" required>
                                                                 </div>
 
@@ -369,8 +369,8 @@
                                                             <div class="col">
                                                                 <div class="form-group">
 
-                                                                    <input type="numeric" class="form-control"
-                                                                        id="exampleFormControlInput1" value=""
+                                                                    <input type="number" class="form-control"
+                                                                        id="exampleFormControlInput1" value="" pattern="^\d+(\.\d+)?$"
                                                                         placeholder="FC" name="FC" required>
                                                                 </div>
                                                             </div>
@@ -384,7 +384,7 @@
                                                                 <div class="form-group">
 
                                                                     <input type="numeric" class="form-control"
-                                                                        id="exampleFormControlInput1" value=""
+                                                                        id="exampleFormControlInput1" value=""  pattern="^\d+(\.\d+)?$"
                                                                         placeholder="FR" name="FR" required>
                                                                 </div>
                                                             </div>
@@ -429,10 +429,10 @@
 
                                                                             <input type="text" class="form-control"
                                                                                 id="exampleFormControlInput1"
-                                                                                value=""
+                                                                                value="N/A"
                                                                                 placeholder="Especificacion Espasmos"
                                                                                 name="EEspasmos" required
-                                                                                pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                                                                pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                                                         </div>
                                                                     </td>
 

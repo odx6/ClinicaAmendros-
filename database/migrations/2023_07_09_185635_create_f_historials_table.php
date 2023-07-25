@@ -18,6 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('fk_fhistorial');
             $table->foreign('fk_fhistorial')->references('SS')->on('pacientes');
             $table->timestamps();
+             $table->softDeletes();
+            
         });
     }
 

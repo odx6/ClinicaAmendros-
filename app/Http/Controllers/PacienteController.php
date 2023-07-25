@@ -139,15 +139,13 @@ class PacienteController extends Controller
     $patologico->save();
     if (request('checkExploracion') == "1") {
       $Exploracion = new exploracion_f;
-      $Exploracion->fk_e = $Historial->idHIstorial_clinico;
+     
 
       $Exploracion->fk_d = $Paciente->PacienteDoctor;
       $Exploracion->fk_p = $Paciente->SS;
       $Exploracion->TA = request('T/A');
       $Exploracion->FC = request('FC');
-      $Exploracion->X1 = request('X1');
       $Exploracion->FR = request('FR');
-      $Exploracion->X2 = request('X2');
       $Exploracion->TEMP = request('TEMP');
       $Exploracion->PESO = request('PESO');
       $Exploracion->Nombre_ef = request('NEF');

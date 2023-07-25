@@ -30,7 +30,7 @@
 
                                     <div class="form-group">
 
-                                        <textarea type="text" class="form-control" id="exampleFormControlInput1" name="Posturas[{{ $Dat }}][Nombre]"
+                                        <textarea type="text" class="form-control POS" id="exampleFormControlInput1" name="Posturas[{{ $Dat }}][Nombre]"
                                             placeholder="Observaciones" rows="3" required>{{ $Dat }}</textarea>
                                     </div>
                                 </td>
@@ -48,9 +48,9 @@
                                 <td>
                                     <div class="form-group">
 
-                                        <input type="text" class="form-control" id="exampleFormControlInput1"
-                                            value="" name="Posturas[{{ $Dat }}][Observaciones]"
-                                            placeholder="Observaciones" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"
+                                        <input type="text" class="form-control POS" id="exampleFormControlInput1"
+                                            value="N/A" name="Posturas[{{ $Dat }}][Observaciones]"
+                                            placeholder="Observaciones" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$"
                                             minlength="3">
                                     </div>
                                 </td>

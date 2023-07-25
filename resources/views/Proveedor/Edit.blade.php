@@ -59,7 +59,7 @@
                                     <label for="formGroupExampleInput">Dirección
                                     </label>
                                     <input type="text" class="form-control" placeholder="Direccion" name="Direccion"
-                                        required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" value="{{$Provedor->Direccion}}">
+                                        required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" value="{{$Provedor->Direccion}}">
                                 </div>
                                 </div>
 
@@ -77,7 +77,7 @@
                                 <div class="col">
                                     <label for="formGroupExampleInput">Empresa</label>
                                     <input type="numeric" class="form-control" placeholder="Empresa" name="Empresa"
-                                        required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" value="{{$Provedor->Empresa}}">
+                                        required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" value="{{$Provedor->Empresa}}">
                                 </div>
                                 </div>
                            

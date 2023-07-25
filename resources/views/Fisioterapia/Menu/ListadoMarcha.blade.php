@@ -107,7 +107,7 @@
                                 <h2>Observaciones</h2>
                                 <div class="form-group mb-4">
                                     <label for="exampleFormControlTextarea1">Example textarea</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Observaciones" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">{{$mar->Observaciones_marcha}}</textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Observaciones" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">{{$mar->Observaciones_marcha}}</textarea>
                                 </div>
                             </td>
 

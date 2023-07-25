@@ -32,120 +32,114 @@
             
         @endphp
 
-        <div class="row">
-            <div class="col">
-                <form class="user needs-validation" method="POST" action="{{ route('update.AntecedenteHAB') }}" novalidate>
-                    @csrf
-                    <div class="row">
-                        <div class="col-md-6">
-                            @php
-                                $count = 0;
-                                $total = count($habitos);
-                            @endphp
-                            @foreach ($habitos as $An => $item)
-                                @if ($count % 2 == 0)
-                                    <div class="switch form-switch-custom switch-inline form-switch-success">
-                                        <label class="switch-label"
-                                            for="form-custom-switch-success">{{ $item->Nombre }}</label>
-                                        @if ($item->Valor == 'si')
-                                            <input class="switch-input" type="checkbox" role="switch"
-                                                id="form-custom-switch-success" name="{{ $item->Nombre }}"
-                                                value="si" checked>
-                                        @else
-                                            <input class="switch-input" type="checkbox" role="switch"
-                                                id="form-custom-switch-success" name="{{ $item->Nombre }}"
-                                                value="si">
-                                        @endif
-                                    </div>
-                                    <div class="form-group">
-                                        <br>
-                                        <input type="text" class="form-control" id="exampleFormControlInput1"
-                                            value="{{ $item->Especificacion }}"
-                                            placeholder="Especificacion para diabetes" name="E{{ $item->Nombre }}" required  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"><br>
-                                    </div>
-                                    <div class="form-group">
-                                        <br>
-                                        <input type="hidden" class="form-control" id="exampleFormControlInput1"
-                                            value="{{ $item->pk_Habitos }}" placeholder="Especificacion para diabetes"
-                                            name="ID{{ $item->Nombre }}"><br>
-                                        @php
-                                            $ids[] = $item->pk_Habitos;
-                                            
-                                        @endphp
-                                    </div>
+
+
+        <form class="user needs-validation" method="POST" action="{{ route('update.AntecedenteHAB') }}" novalidate>
+            @csrf
+            <div class="row">
+                <div class="col-md-6">
+                    @php
+                        $count = 0;
+                        $total = count($habitos);
+                    @endphp
+                    @foreach ($habitos as $An => $item)
+                        @if ($count % 2 == 0)
+                            <div class="switch form-switch-custom switch-inline form-switch-success">
+                                <label class="switch-label" for="form-custom-switch-success">{{ $item->Nombre }}</label>
+                                @if ($item->Valor == 'si')
+                                    <input class="switch-input" type="checkbox" role="switch"
+                                        id="form-custom-switch-success" name="{{ $item->Nombre }}" value="si"
+                                        checked>
+                                @else
+                                    <input class="switch-input" type="checkbox" role="switch"
+                                        id="form-custom-switch-success" name="{{ $item->Nombre }}" value="si">
                                 @endif
+                            </div>
+                            <div class="form-group">
+                                <br>
+                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                    value="{{ $item->Especificacion }}" placeholder="Especificacion para diabetes"
+                                    name="E{{ $item->Nombre }}" required
+                                    pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$"><br>
+                            </div>
+                            <div class="form-group">
+                                <br>
+                                <input type="hidden" class="form-control" id="exampleFormControlInput1"
+                                    value="{{ $item->pk_Habitos }}" placeholder="Especificacion para diabetes"
+                                    name="ID{{ $item->Nombre }}"><br>
                                 @php
-                                    $count++;
-                                @endphp
-                            @endforeach
-                        </div>
-                      
-                        <div class="col-md-6">
-                            @php
-                                $count = 0;
-                            @endphp
-                            @foreach ($habitos as $An => $item)
-                                @if ($count % 2 != 0)
-                                    <div class="switch form-switch-custom switch-inline form-switch-success">
-                                        <label class="switch-label"
-                                            for="form-custom-switch-success">{{ $item->Nombre }}</label>
-                                        @if ($item->Valor == 'si')
-                                            <input class="switch-input" type="checkbox" role="switch"
-                                                id="form-custom-switch-success" name="{{ $item->Nombre }}"
-                                                value="si" checked>
-                                        @else
-                                            <input class="switch-input" type="checkbox" role="switch"
-                                                id="form-custom-switch-success" name="{{ $item->Nombre }}"
-                                                value="si">
-                                        @endif
-                                    </div>
-                                    <div class="form-group">
-                                        <br>
-                                        <input type="text" class="form-control" id="exampleFormControlInput1"
-                                            value="{{ $item->Especificacion }}"
-                                            placeholder="Especificacion para diabetes" name="E{{ $item->Nombre }}" required  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
-                                        <br>
-                                    </div>
-                                    <div class="form-group">
-                                        <br>
-                                        <input type="hidden" class="form-control" id="exampleFormControlInput1"
-                                            value="{{ $item->pk_Habitos }}" placeholder="Especificacion para diabetes"
-                                            name="ID{{ $item->Nombre }}"><br>
-                                        @php
-                                            $ids[] = $item->pk_Habitos;
-                                            
-                                        @endphp
-                                    </div>
+                                    $ids[] = $item->pk_Habitos;
                                     
-                                @endif
-                                @php
-                                    $count++;
                                 @endphp
-                            @endforeach
-                        </div>
+                            </div>
+                        @endif
+                        @php
+                            $count++;
+                        @endphp
+                    @endforeach
+                </div>
 
-                    </div>
-                    <div class="modal-footer">
+                <div class="col-md-6">
+                    @php
+                        $count = 0;
+                    @endphp
+                    @foreach ($habitos as $An => $item)
+                        @if ($count % 2 != 0)
+                            <div class="switch form-switch-custom switch-inline form-switch-success">
+                                <label class="switch-label" for="form-custom-switch-success">{{ $item->Nombre }}</label>
+                                @if ($item->Valor == 'si')
+                                    <input class="switch-input" type="checkbox" role="switch"
+                                        id="form-custom-switch-success" name="{{ $item->Nombre }}" value="si"
+                                        checked>
+                                @else
+                                    <input class="switch-input" type="checkbox" role="switch"
+                                        id="form-custom-switch-success" name="{{ $item->Nombre }}" value="si">
+                                @endif
+                            </div>
+                            <div class="form-group">
+                                <br>
+                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                    value="{{ $item->Especificacion }}" placeholder="Especificacion para diabetes"
+                                    name="E{{ $item->Nombre }}" required
+                                    pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                <br>
+                            </div>
+                            <div class="form-group">
+                                <br>
+                                <input type="hidden" class="form-control" id="exampleFormControlInput1"
+                                    value="{{ $item->pk_Habitos }}" placeholder="Especificacion para diabetes"
+                                    name="ID{{ $item->Nombre }}"><br>
+                                @php
+                                    $ids[] = $item->pk_Habitos;
+                                    
+                                @endphp
+                            </div>
+                        @endif
+                        @php
+                            $count++;
+                        @endphp
+                    @endforeach
+                </div>
 
-                        <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
-                            style="display: none;">Actualizar</button>
-                </form>
-                <form class="user" method="POST" action="{{ route('destroy.AntecedenteHAB', ['id' => $ids]) }}">
-                    @csrf
-                    <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola"
-                        id="Hola" style="display: none;">Eliminar</button>
-                </form>
-                <form class="user" method="POST"
-                    action="{{ route('index.AntecedenteHAB', ['id' => $Paciente->SS]) }}">
-                    @csrf
-                    <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
-                        id="Hola" style="display: none;">Agregar Hábitos de salud</button>
-                </form>
             </div>
-        </div>
+            <div class="modal-footer">
 
+                <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
+                    style="display: none;">Actualizar</button>
+        </form>
+        <form class="user" method="POST" action="{{ route('destroy.AntecedenteHAB', ['id' => $ids]) }}">
+            @csrf
+            <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
+                style="display: none;">Eliminar</button>
+        </form>
+        <form class="user" method="POST" action="{{ route('index.AntecedenteHAB', ['id' => $Paciente->SS]) }}">
+            @csrf
+            <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
+                style="display: none;">Agregar Hábitos de salud</button>
+        </form>
+
+
+    </div>
     @endif
 </div>
-@if($habitos->isEmpty()) @else </div> @endif
-
 

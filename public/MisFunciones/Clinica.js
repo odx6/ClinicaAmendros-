@@ -3,25 +3,56 @@ $(document).ready(function() {
     //alert("El documento ha sido cargado completamente.");
     // funcion para activar opciones 
     $('.desactivado').hide();
+    $('.desactivado input').prop("disabled", true);
+    $('.desactivado select').prop("disabled", true);
+    $('.dime').prop("disabled", true);
+    $('#TratamientosT').prop("disabled", true);
+    $('#DeamObservaciones').prop("disabled", true);
+    $('#MSOB').prop("disabled", true);
+    $('.OFron').prop("disabled", true);
+    $('.LA').prop("disabled", true);
+    $('.POS').prop("disabled", true);
+    $('#Formis').prop("disabled", true);
+    $('.PlanText').prop("disabled", true);
+     
+
+
+
+
+
+    
+   
+
     $('#form-custom-switch-info').change(function() {
         if (this.checked) {
           $('#Ocultar').show();
+           $('#Ocultar input').prop("disabled", false);
         } else {
           $('#Ocultar').hide();
+          $('#Ocultar input').prop("disabled", true);
         }
       });
       $('#form-custom-switch-info2').change(function() {
         if (this.checked) {
           $('#OExploraciones').show();
+          $("#OExploraciones input").prop("disabled", false);
+          
+
         } else {
           $('#OExploraciones').hide();
+          $("#OExploraciones input").prop("disabled", true);
         }
       });
       $('#form-custom-switch-info3').change(function() {
         if (this.checked) {
           $('#NPQuirurgicas').show();
+         
+          $("#NPQuirurgicas input").prop("disabled", false);
+
         } else {
           $('#NPQuirurgicas').hide();
+          $("#NPQuirurgicas input").prop("disabled", true);
+
         }
       });
       //barra de dolor 
@@ -54,39 +85,65 @@ $(document).ready(function() {
        $('#FisioExploraciones').change(function() {
         if (this.checked) {
           $('#FisioExplo').show();
+          $("#FisioExplo input").prop("disabled", false);
+
         } else {
           $('#FisioExplo').hide();
+          $("#FisioExplo input").prop("disabled", true);
+
+
         }
       });
 
          $('#FisioTrata').change(function() {
         if (this.checked) {
           $('#FisioTratamientos').show();
+          $("#FisioTratamientos input").prop("disabled", false);
+           $('#TratamientosT').prop("disabled", false);
+
+
         } else {
           $('#FisioTratamientos').hide();
+          $("#FisioTratamientos input").prop("disabled", true);
+            $('#TratamientosT').prop("disabled", true);
+
+
+
         }
       });
            $('#FisioAnalisis').change(function() {
         if (this.checked) {
           $('#FisioAna').show();
+        $('#FisioAna input,select').prop("disabled", false);
+
         } else {
           $('#FisioAna').hide();
+         $('#FisioAna input,select').prop("disabled", true);
+
         }
       });
           //Antecedentes
            $('#FisioAnte').change(function() {
         if (this.checked) {
           $('#FisioAntecedente').show();
+         $('#FisioAntecedente input').prop("disabled", false);
+
         } else {
           $('#FisioAntecedente').hide();
+         $('#FisioAntecedente input').prop("disabled", true);
+
         }
       });
             //Cicatriz
            $('#FisioCica').change(function() {
         if (this.checked) {
           $('#FisioCicatriz').show();
+         $('#FisioCicatriz input').prop("disabled", false);
+
         } else {
           $('#FisioCicatriz').hide();
+         $('#FisioCicatriz input').prop("disabled", true);
+
         }
       });
 
@@ -94,16 +151,28 @@ $(document).ready(function() {
            $('#FisioDeambu').change(function() {
         if (this.checked) {
           $('#FisioDeam').show();
+         $('#FisioDeam input').prop("disabled", false);
+    $('#DeamObservaciones').prop("disabled", false);
+
+
         } else {
           $('#FisioDeam').hide();
+         $('#FisioDeam input').prop("disabled", true);
+    $('#DeamObservaciones').prop("disabled", true);
+
+
         }
       });
             //Dime
            $('#FisioDiagnostico').change(function() {
         if (this.checked) {
           $('#Fidiagnostico').show();
+    $('.dime').prop("disabled", false);
+
         } else {
           $('#Fidiagnostico').hide();
+    $('.dime').prop("disabled", true);
+
         }
       });
 
@@ -111,32 +180,55 @@ $(document).ready(function() {
            $('#FisioDolor').change(function() {
         if (this.checked) {
           $('#FiDolor').show();
+         $('#FiDolor input').prop("disabled", false);
+
         } else {
           $('#FiDolor').hide();
+         $('#FiDolor input').prop("disabled", true);
+
         }
       });
             //Formulario
            $('#FisioFormulario').change(function() {
         if (this.checked) {
           $('#FiForm').show();
+         $('#FiForm input,select').prop("disabled", false);
+         $('#Formis').prop("disabled", false);
+
+
         } else {
           $('#FiForm').hide();
+         $('#FiForm input,select').prop("disabled", true);
+         $('#Formis').prop("disabled", true);
+
+
         }
       });
             //Frontal
-           $('#FisioFormulario').change(function() {
+           $('#FisioFrontal').change(function() {
         if (this.checked) {
           $('#FiFrontal').show();
+         $('#FiFrontal input,select').prop("disabled", false);
+          $('.OFron').prop("disabled", false);
+
+
         } else {
           $('#FiFrontal').hide();
+         $('#FiFrontal input,select').prop("disabled", true);
+          $('.OFron').prop("disabled", true);
+
         }
       });
               //Habitos
            $('#FisioHabitos').change(function() {
         if (this.checked) {
           $('#FiHa').show();
+         $('#FiHa input ').prop("disabled",false);
+
         } else {
           $('#FiHa').hide();
+         $('#FiHa input ').prop("disabled",true);
+
         }
       });
 
@@ -145,56 +237,87 @@ $(document).ready(function() {
            $('#FisioIngra').change(function() {
         if (this.checked) {
           $('#Figra').show();
+         $('#Figra input,select').prop("disabled",false);
+
         } else {
           $('#Figra').hide();
+         $('#Figra input,select').prop("disabled", true);
+
         }
       });
             //Lateral
            $('#FisioInLateral').change(function() {
         if (this.checked) {
           $('#FiLateral').show();
+         $('#FiLateral input,select').prop("disabled", false);
+          $('.LA').prop("disabled", false);
+
         } else {
           $('#FiLateral').hide();
+         $('#FiLateral input,select').prop("disabled", true);
+          $('.LA').prop("disabled", true);
+
         }
       });
              //Muscular
            $('#FisioMuscular').change(function() {
         if (this.checked) {
           $('#FiMuscular').show();
+         $('#FiMuscular input,select').prop("disabled", false);
+
         } else {
           $('#FiMuscular').hide();
+         $('#FiMuscular input,select').prop("disabled", true);
+
         }
       });
             //Nota
            $('#FisioNota').change(function() {
         if (this.checked) {
           $('#FiNota').show();
+         $('#FiNota input ').prop("disabled", false);
+
         } else {
           $('#FiNota').hide();
+         $('#FiNota input').prop("disabled", true);
+
         }
       });
             //Plan
            $('#FisioPlan').change(function() {
         if (this.checked) {
           $('#FiPlan').show();
+          $('.PlanText').prop("disabled", false);
         } else {
           $('#FiPlan').hide();
+          $('.PlanText').prop("disabled", true);
         }
       });
            //Posterior
            $('#FisioPosterior').change(function() {
         if (this.checked) {
           $('#FiPos').show();
+            $('.POS').prop("disabled", false);
+             $('#FiPos input,select').prop("disabled", false);
+
         } else {
           $('#FiPos').hide();
+            $('.POS').prop("disabled", true);
+             $('#FiPos input,select').prop("disabled", true);
+
         }
       });
              //Superior
            $('#FisioSuperiores').change(function() {
         if (this.checked) {
           $('#FiSuperiores').show();
+          $('#FiSuperiores input,select').prop("disabled", false);
+            $('#MSOB').prop("disabled", false);
         } else {
           $('#FiSuperiores').hide();
+            $('#MSOB').prop("disabled", true);
+          $('#FiSuperiores input,select').prop("disabled", true);
+
         }
       });
          
@@ -204,8 +327,12 @@ $(document).ready(function() {
            $('#FisioTraslados').change(function() {
         if (this.checked) {
           $('#Fitraslados').show();
+          $('#Fitraslados select ').prop("disabled", false);
+
         } else {
           $('#Fitraslados').hide();
+          $('#Fitraslados select ').prop("disabled", true);
+
         }
       });
 
@@ -309,6 +436,26 @@ document.getElementById("Enlace").addEventListener("click", function(event) {
   
 });
     //endmiembros Superiores
+
+  $('#altura').change(function() {
+      calcularIMC();
+      });
+
+
+
+function calcularIMC() {
+            var peso = parseFloat(document.getElementById("peso").value);
+            var altura = parseFloat(document.getElementById("altura").value);
+
+            if (isNaN(peso) || isNaN(altura) || altura <= 0) {
+                alert("Por favor, ingresa valores válidos para peso y altura.");
+                return;
+            }
+
+            var imc = peso / (altura * altura);
+
+          document.getElementById("resultado").value = imc.toFixed(2);
+        }
 
 
   });

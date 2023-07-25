@@ -21,6 +21,8 @@ return new class extends Migration
             $table->String('LenguajeOrientacion');
             $table->String('Otros');
             $table->timestamps();
+             $table->softDeletes();
+            
             $table->foreign('fk_dmi')->references('SS')->on('pacientes');
         });
     }

@@ -20,8 +20,8 @@
                                                         paciente.
                                                     </div>
 
-                                                    <form class="user" method="POST"
-                                                        action="{{ route('historial.Formulario', ['id' => $Paciente->SS]) }}">
+                                                    <form class="user needs-validation" method="POST"
+                                                        action="{{ route('historial.Formulario', ['id' => $Paciente->SS]) }}" novalidate>
                                                         @csrf
                                                         <button type="submit"
                                                             class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola"
@@ -33,8 +33,8 @@
                                                 @foreach ($Historiales as $Historial)
                                                     <!--- Historial-->
 
-                                                    <form class="user" method="POST"
-                                                        action="{{ route('historial.update',['Identificador'=>$Historial->idHIstorial_clinico ,'Paciente'=>$Historial->PacienteSS ]) }}">
+                                                    <form class="user needs-validation" method="POST"
+                                                        action="{{ route('historial.update',['Identificador'=>$Historial->idHIstorial_clinico ,'Paciente'=>$Historial->PacienteSS ]) }}" novalidate>
                                                         @csrf
                                                         <h2> ANTECEDENTES HEREDOFAMILARES</h2>
                                                        
@@ -165,7 +165,7 @@
                                                             <div class="col">
                                                                 <label for="formGroupExampleInput">Causas</label>
                                                                 <input type="text" class="form-control"
-                                                                    placeholder="CAUSAS DE LA MUERTE PADRE Y MADRE "
+                                                                    placeholder="CAUSAS DE LA MUERTE PADRE Y MADRE " value="N/A" 
                                                                     name="CAM" value="{{ $Historial->CAUSAS }}" required>
                                                             </div>
 
@@ -177,14 +177,14 @@
                                                                 </label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="ALERGIAS  " name="ALERGIAS"
-                                                                    value="{{ $Historial->ALERGIAS }}" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" >
+                                                                    value="{{ $Historial->ALERGIAS }}" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2"   >
                                                             </div>
                                                             <div class="col">
                                                                 <label for="formGroupExampleInput">Alimentos
                                                                 </label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="ALERGIAS POR ALIMENTOS " name="AL"
-                                                                    value="{{ $Historial->ALIMENTOS }}" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2">
+                                                                    value="{{ $Historial->ALIMENTOS }}" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2">
                                                             </div>
                                                              </div>
                                                              <div class="row mb-4">
@@ -195,7 +195,7 @@
                                                                 <input type="text" class="form-control"
                                                                     placeholder="ALERGIAS POR SUSTANCIAS QUíMICAS"
                                                                     name="ALS"
-                                                                    value="{{ $Historial->SUSTANCIAS_Q }}" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" >
+                                                                    value="{{ $Historial->SUSTANCIAS_Q }}" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2"  >
                                                             </div>
 
 
@@ -206,7 +206,7 @@
                                                                 </label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="CIRUJIAS PREVIAS " name="CP"
-                                                                    value="{{ $Historial->CIRUJIAS_P }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required>
+                                                                    value="{{ $Historial->CIRUJIAS_P }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" required >
                                                             </div>
                                                              </div>
                                                              <div class="row mb-4">
@@ -214,7 +214,7 @@
                                                                 <label for="formGroupExampleInput"> Transfusiones </label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="TRANSFUCIONES" name="TF"
-                                                                    value="{{ $Historial->TRANSFUCIONES }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required>
+                                                                    value="{{ $Historial->TRANSFUCIONES }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" required >
                                                             </div>
                                                             <div class="col">
                                                                 <label for="formGroupExampleInput">Fracturas
@@ -222,7 +222,7 @@
 
                                                                 <input type="text" class="form-control"
                                                                     placeholder="ACTUALES O PREVIAS" name="FP"
-                                                                    value="{{ $Historial->FRACTURAS }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required >
+                                                                    value="{{ $Historial->FRACTURAS }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" required  >
                                                             </div>
 
 

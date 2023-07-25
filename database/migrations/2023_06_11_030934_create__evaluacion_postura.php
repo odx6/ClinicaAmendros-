@@ -20,6 +20,8 @@ return new class extends Migration
             $table->String('valor');
             $table->String('Observaciones');
             $table->timestamps();
+             $table->softDeletes();
+            
             $table->foreign('fk_postura')->references('pk_vista')->on('vista_posturas');
         });
     }

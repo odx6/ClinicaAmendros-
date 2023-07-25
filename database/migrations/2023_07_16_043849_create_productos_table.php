@@ -20,6 +20,8 @@ return new class extends Migration
             $table->Double('Precio_compra');
             $table->Double('Precio_venta');
             $table->timestamps();
+             $table->softDeletes();
+            
         });
     }
 

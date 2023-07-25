@@ -56,12 +56,12 @@
                                     <label for="formGroupExampleInput">Hemoglobina
                                     </label>
                                     <input type="text" class="form-control" placeholder="HEMOGLOBINA" name="HEMOGLOBINA"
-                                        required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2">
+                                        required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" value="N/A">
                                 </div>
                                 <div class="col">
                                     <label for="formGroupExampleInput">Hematocrito</label>
                                     <input type="text" class="form-control" placeholder="HEMATOCRITO " name="HEMATOCRITO"
-                                        required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                        required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" value="N/A">
                                 </div>
                             </div>
                             <div class="row mb-4">
@@ -69,41 +69,41 @@
                                 <div class="col">
                                     <label for="formGroupExampleInput">Plaquetas
                                     </label>
-                                    <input type="text" class="form-control" placeholder="PLAQUETAS" name="PLAQUETAS"
-                                        required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                    <input type="text" class="form-control" placeholder="PLAQUETAS" name="PLAQUETAS" value="N/A"
+                                        required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$"> 
                                 </div>
                                 <div class="col">
                                     <label for="formGroupExampleInput">Glucosa
                                     </label>
-                                    <input type="text" class="form-control" placeholder="GLUCOSA" name="GLUCOSA" required
-                                        pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                    <input type="text" class="form-control" placeholder="GLUCOSA" name="GLUCOSA"  value="N/A" required
+                                        pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" >
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
                                     <label for="formGroupExampleInput">Urea
                                     </label>
-                                    <input type="text" class="form-control" placeholder="UREA" name="UREA" required
-                                        pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                    <input type="text" class="form-control" placeholder="UREA" name="UREA" required value="N/A"
+                                        pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                 </div>
                                 <div class="col">
                                     <label for="formGroupExampleInput">Creatinina</label>
-                                    <input type="text" class="form-control" placeholder="CREATININA " name="CREATININA"
-                                        required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                    <input type="text" class="form-control" placeholder="CREATININA " name="CREATININA" value="N/A"
+                                        required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
                                     <label for="formGroupExampleInput">Rx
                                     </label>
-                                    <input type="text" class="form-control" placeholder="RX" name="RX" required
-                                        pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                    <input type="text" class="form-control" placeholder="RX" name="RX" required value="N/A"
+                                        pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                 </div>
                                 <div class="col">
                                     <label for="formGroupExampleInput">Usg
                                     </label>
-                                    <input type="text" class="form-control" placeholder="USG" name="USG" required
-                                        pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                    <input type="text" class="form-control" placeholder="USG" name="USG" required value="N/A"
+                                        pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                 </div>
                             </div>
 

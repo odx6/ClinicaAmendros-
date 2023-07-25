@@ -29,6 +29,8 @@ return new class extends Migration
             $table->integer('total');
           
             $table->timestamps();
+             $table->softDeletes();
+            
             $table->foreign('fk_Analis_marcha')->references('SS')->on('pacientes');
         });
     }

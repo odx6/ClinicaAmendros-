@@ -90,10 +90,10 @@
                                 </div>
 
                                 <div class="modal-footer">
-                                    <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
-                                    <button type="submit" class="btn btn-success btn-update-event" data-fc-event-public-id="">Actualizar una cita</button>
+                                    <button type="button" class="btn btn-rounded mb-2 me-4" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-update-event" data-fc-event-public-id="">Actualizar una cita</button>
                                     
-                                    <button type="submit" class="btn btn-primary btn-add-event" id="btnPrimera">Agregar Cita</button>
+                                    <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event" id="btnPrimera">Agregar Cita</button>
                                 </div>
                                 </form>
                             </div>

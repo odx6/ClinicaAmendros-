@@ -41,7 +41,7 @@
                                         <label class="switch-label" for="form-custom-switch-success">Sitio</label>
                                         <input class="form-control" type="text" 
                                             id="form-custom-switch-success" name="Sitio" value="{{$cica->sitio}}"
-                                             required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                             required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
 
                                     </div>
                                 </td>

@@ -18,6 +18,8 @@ return new class extends Migration
             $table->String('Nombre');
             $table->String('url');
             $table->timestamps();
+             $table->softDeletes();
+            
         });
     }
 

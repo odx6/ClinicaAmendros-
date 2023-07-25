@@ -62,7 +62,7 @@
                                         <input type="text" class="form-control" id="exampleFormControlInput1"
                                             value="{{ $item->Especificacion }}"
                                             placeholder="Especificacion para diabetes"
-                                            name="E{{ $item->Nombre_Antecedente }}" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" ><br>
+                                            name="E{{ $item->Nombre_Antecedente }}" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" ><br>
                                     </div>
                                     <div class="form-group">
                                         <br>
@@ -105,7 +105,7 @@
                                         <input type="text" class="form-control" id="exampleFormControlInput1"
                                             value="{{ $item->Especificacion }}"
                                             placeholder="Especificacion para diabetes"
-                                            name="E{{ $item->Nombre_Antecedente }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
+                                            name="E{{ $item->Nombre_Antecedente }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required>
                                         <br>
                                     </div>
                                     <div class="form-group">
@@ -165,7 +165,7 @@
 
                                                     <input type="numeric" class="form-control"
                                                         id="exampleFormControlInput1" value="{{ $signo->TA }}"
-                                                        placeholder="TA" name="TA" required pattern="[0-9]+(\.[0-9]+)?" required>
+                                                        placeholder="TA" name="TA" required pattern="^[0-9]+(?:\/[0-9]+)?$" required>
                                                 </div>
                                             </div>
                                         </div>

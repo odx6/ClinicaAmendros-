@@ -62,11 +62,5 @@ class SessionController extends Controller
        return redirect()->to('/login');
     }
 
-    public function prueba(Request $request){
-
-       $datos=request()->all();
-       $datos2=request('id');
-      // return "hola controler prueba";
-      return $datos2;
-    }
+    
 }

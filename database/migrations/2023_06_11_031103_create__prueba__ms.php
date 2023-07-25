@@ -20,6 +20,8 @@ return new class extends Migration
             $table->String('Observaciones_prue');
             $table->String('Tipo');
             $table->timestamps();
+             $table->softDeletes();
+            
             $table->foreign('fk_prueba')->references('SS')->on('pacientes');
             
 

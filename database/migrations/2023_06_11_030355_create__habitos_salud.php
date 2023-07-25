@@ -20,6 +20,8 @@ return new class extends Migration
             $table->String('Valor');
             $table->String('Especificacion');
             $table->timestamps();
+             $table->softDeletes();
+            
              $table->foreign('fk_Habitos')->references('SS')->on('pacientes');
         });
     }

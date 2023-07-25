@@ -25,6 +25,8 @@ return new class extends Migration
             $table->String('Diagnostico');
             $table->String('plan');
             $table->timestamps();
+             $table->softDeletes();
+            
             $table->foreign('fk_plan')->references('SS')->on('pacientes');
 
         });

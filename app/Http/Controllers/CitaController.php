@@ -36,43 +36,86 @@ class CitaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    
     public function store(Request $request)
     {
-
+       date_default_timezone_set('America/Mexico_City');
 
          $citaExistente = Cita::where('fk_dc',request('id'))
                      ->where('fk_pc',request('paciente'))
                      ->where('inicio_c',request('inicio'))
                      ->exists();
+        $Validacion2=Cita::where('fk_dc',request('id'))->where('inicio_c',request('inicio'))->exists();    
+        $Validacion3=Cita::where('fk_pc',request('paciente'))->where('inicio_c',request('inicio'))->exists();
+        $fechaActual = Carbon::now();
+        $fechaActual->subHour();
+        $fechaAsignada=Carbon::parse(request('inicio')); 
 
-               if ($citaExistente) {
+               if($citaExistente) {
                     return "Cita Existente por favor seleccione otra hora o día ";
-} else {
-     $data = $request->all();
-        $date =Carbon::parse('2023-04-12 10:30:00');
-        $cita= new Cita;
-        $cita->fk_dc=request('id');
-        $cita->fk_pc=request('paciente');
-        $cita->inicio_c=request('inicio');
-        $cita->Estado='Reservado';
-        $cita->save();
+               }elseif($Validacion2){
+                     return "El doctor tiene un cita a la misma hora seleccione otra hora";
+               }
+                elseif($Validacion3){
+                     return "El paciente tiene un cita a la misma hora seleccione otra hora";
+               } else {
 
-        return "Cita Agregada";
-}      
+                    if($fechaActual->isSameDay($fechaAsignada)){
 
+                     $horaAsignada = $fechaAsignada->hour;
+                     $minutosAsignados = $fechaAsignada->minute;
+   
+                    $horaActual = $fechaActual->hour;
 
+                    $minutosActuales = $fechaActual->minute;
+                    if($horaAsignada >= $horaActual){
+                  $data = $request->all();
+                  
+                  $cita= new Cita;
+                  $cita->fk_dc=request('id');
+                  $cita->fk_pc=request('paciente');
+                  $cita->inicio_c=request('inicio');
+                  $cita->Estado='Reservado';
+                  $cita->save();
+                  return "Cita Agregada";
+              }else{echo 'nose puede agregar una cita una hora menor  a al fecha actual '.$fechaActual.' '.$fechaAsignada->addHour();}
 
-       
-        
+    }else{
 
-      
-       
+        $data = $request->all();
+                 
+                  $cita= new Cita;
+                  $cita->fk_dc=request('id');
+                  $cita->fk_pc=request('paciente');
+                  $cita->inicio_c=request('inicio');
+                  $cita->Estado='Reservado';
+                  $cita->save();
+                  return "Cita Agregada";
+    }
+}             
     }
      public function PrimeraCita(Request $request)
     {
-        
+        date_default_timezone_set('America/Mexico_City');
 
-         $data = $request->all();
+        $Validacion2=Cita::where('fk_dc',request('id'))->where('inicio_c',request('inicio'))->exists();
+        if($Validacion2) {
+                    return "El doctor tiene una cita  por favor seleccione otra hora o día ";
+               }
+
+        $fechaActual = Carbon::now();
+         $fechaActual->subHour();
+        $fechaAsignada=Carbon::parse(request('inicio'));
+
+         if($fechaActual->isSameDay($fechaAsignada)){
+                    $horaAsignada = $fechaAsignada->hour;
+                     $minutosAsignados = $fechaAsignada->minute;
+   
+                    $horaActual = $fechaActual->hour;
+
+                    $minutosActuales = $fechaActual->minute;
+                    if($horaAsignada >= $horaActual){
+                  $data = $request->all();
        $Paciente = new Paciente;
         $Paciente->PacienteDoctor=$data['id'];
         $Paciente->Nombre=$data['NombrePaciente'];
@@ -99,6 +142,41 @@ class CitaController extends Controller
         $cita->save();
          
               return "Cita Agregada";
+              }
+
+              if($fechaActual->gt( $fechaAsignada)){ return "No se pueden agregar consultas menores a la fecha actual";}
+
+}else{
+        $data = $request->all();
+       $Paciente = new Paciente;
+        $Paciente->PacienteDoctor=$data['id'];
+        $Paciente->Nombre=$data['NombrePaciente'];
+        $Paciente->Apellido=$data['Apellidos'];
+        $Paciente->Edad=0;
+        $Paciente->Sexo="M";
+        $Paciente->Estado_civil="Soltero(a)";
+        $Paciente->Origen="No especificado";
+        $Paciente->Ocupacion="No especificado";
+        $Paciente->Direccion="No especificado";
+        $Paciente->Telefono=$data['Telefono'];
+        $Paciente->Religion="Catolicismo";
+        $Paciente->Escolaridad="Educación Primaria";
+        $date = Carbon::now();
+        $Paciente->FechaIngreso=$date->format('Y-m-d');
+        $Paciente->save();
+
+        
+        $cita= new Cita;
+        $cita->fk_dc=$data['id'];
+        $cita->fk_pc=$Paciente->SS;
+        $cita->inicio_c=$data['inicio'];
+        $cita->Estado='Primera Cita';
+        $cita->save();
+         
+              return "Cita Agregada";
+}
+
+        
 
 
       
@@ -136,24 +214,60 @@ class CitaController extends Controller
      */
     public function update(Request $request)
     {
-        $data = $request->all();
-        $date =Carbon::parse('2023-04-12 10:30:00');
- $citaExistente = Cita::where('fk_dc',$data['id'])
-                     ->where('inicio_c',$data['inicio'])
-                     ->exists();
 
-                     if ($citaExistente) {
+ $citaExistente = Cita::where('fk_dc',request('idDoctor'))
+                     ->where('fk_pc',request('paciente'))
+                     ->where('inicio_c',request('inicio'))
+                     ->exists();
+        $Validacion2=Cita::where('fk_dc',request('idDoctor'))->where('inicio_c',request('inicio'))->exists();    
+        $Validacion3=Cita::where('fk_pc',request('paciente'))->where('inicio_c',request('inicio'))->exists();
+        $fechaActual = Carbon::now();
+        $fechaAsignada=Carbon::parse(request('inicio')); 
+
+               if($citaExistente) {
                     return "Cita Existente por favor seleccione otra hora o día ";
-} else {
-         $cita= Cita::find(request('idCita'));
+               }elseif($Validacion2){
+                     return "El doctor tiene un cita a la misma hora seleccione otra hora";
+               }
+                elseif($Validacion3){
+                     return "El paciente tiene un cita a la misma hora seleccione otra hora";
+               } else {
+
+                    if($fechaActual->isSameDay($fechaAsignada)){
+                    $horaAsignada = $fechaAsignada->hour;
+                     $minutosAsignados = $fechaAsignada->minute;
+   
+                    $horaActual = $fechaActual->hour;
+
+                    $minutosActuales = $fechaActual->minute;
+                    if($horaAsignada >= $horaActual){
+                        $data = $request->all();
+                  $cita= Cita::find(request('idCita'));
          $cita->fk_dc=request('idDoctor');
          $cita->fk_pc=request('paciente');
          $cita->inicio_c=request('inicio');
          $cita->Estado='Reservado';
          $cita->save();
+                  return "Cita Actualizada correctamente";
+              }
 
-               return "Cita Actualizada";
-}      
+              if($fechaActual->gt( $fechaAsignada)){ return "No se pueden agregar consultas menores a la fecha actual y hora actual ";}
+    }else{
+
+        $data = $request->all();
+                 
+              $cita= Cita::find(request('idCita'));
+         $cita->fk_dc=request('idDoctor');
+         $cita->fk_pc=request('paciente');
+         $cita->inicio_c=request('inicio');
+         $cita->Estado='Reservado';
+         $cita->save();
+                  return "Cita Actualizada correctamente";
+    }
+}             
+
+
+        
 
          
     }
@@ -203,7 +317,7 @@ class CitaController extends Controller
                'id'=>$event->pk_cita,
                'title'=>$nombre,
                'start'=>$event->inicio_c,
-               'extendedProps'=>['calendar'=>'Traumatologia','Idpaciente'=>$event->fk_pc,'IdDoctor'=>$event->fk_dc,'IDArea'=>$Area->IDAREA,'NombreA'=>$Area->NOMBE_AREA,'Doctor'=>$Nombre],
+               'extendedProps'=>['calendar'=>'Ginecologia','Idpaciente'=>$event->fk_pc,'IdDoctor'=>$event->fk_dc,'IDArea'=>$Area->IDAREA,'NombreA'=>$Area->NOMBE_AREA,'Doctor'=>$Nombre],
            ];
     }
     $datosJson = json_encode($events);
@@ -220,9 +334,10 @@ public function CitasDoctores(Request $request)
 
 
         $events=[];
-   
+        if(isset($all_events)){
         foreach($all_events as $event){
            $paciente= Paciente::findOrFail($event->fk_pc);
+           if(isset($paciente)){
             $nombre=$paciente->Nombre.' '.$paciente->Apellido;
 
            $events[]=[
@@ -230,12 +345,16 @@ public function CitasDoctores(Request $request)
                'title'=>$nombre,
                'start'=>$event->inicio_c,
                'end'=>$event->fin_cita,
-               'extendedProps'=>['calendar'=>'Importante','Idpaciente'=>$event->fk_pc,'IdDoctor'=>$event->fk_dc,],
+               'extendedProps'=>['calendar'=>'Oftalmologia','Idpaciente'=>$event->fk_pc,'IdDoctor'=>$event->fk_dc,],
            ];
+
+       }
     }
+}
     $datosJson = json_encode($events);
    
 return response()->json($events);
 }
     
 }
+

@@ -26,6 +26,8 @@ return new class extends Migration
             $table->foreign('fk_cita')->references('pk_cita')->on('citas');
             $table->foreign('fk_secre')->references('pk_secretaria')->on('secretarias');
             $table->timestamps();
+             $table->softDeletes();
+            
         });
     }
 

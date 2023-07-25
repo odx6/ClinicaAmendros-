@@ -167,8 +167,9 @@
                                 <div class="col">
                                     <label for="formGroupExampleInput">Causas</label>
                                     <input type="text" class="form-control"
-                                        placeholder="CAUSAS DE LA MUERTE PADRE Y MADRE " name="CAM"
-                                        pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" max="50" required>
+                                        placeholder="CAUSAS DE LA MUERTE PADRE Y MADRE " name="CAM" value="N/A"
+                                        pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2"
+                                        max="50" required>
                                 </div>
 
                             </div>
@@ -180,13 +181,15 @@
                                     <label for="formGroupExampleInput">Alergias
                                     </label>
                                     <input type="text" class="form-control" placeholder="ALERGIAS" name="ALERGIAS"
-                                        required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2">
+                                        value="N/A" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$"
+                                        minlength="2">
                                 </div>
                                 <div class="col">
                                     <label for="formGroupExampleInput">alimentos
                                     </label>
                                     <input type="text" class="form-control" placeholder="ALERGIAS POR ALIMENTOS "
-                                        name="AL" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required>
+                                        value="N/A" name="AL"
+                                        pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" required>
                                 </div>
                             </div>
                             <div class="row mb-4">
@@ -195,28 +198,31 @@
                                         químicas </label>
 
                                     <input type="text" class="form-control"
-                                        placeholder="ALERGIAS POR SUSTANCIAS QUIMICAS" name="ALS"
-                                        pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required>
+                                        placeholder="ALERGIAS POR SUSTANCIAS QUIMICAS" name="ALS" value="N/A"
+                                        pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" required>
                                 </div>
                                 <div class="col">
                                     <label for="formGroupExampleInput">Cirugías previas
                                     </label>
                                     <input type="text" class="form-control" placeholder="CIRUJIAS PREVIAS "
-                                        name="CP" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
+                                        name="CP" value="N/A"
+                                        pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required>
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
                                     <label for="formGroupExampleInput"> Transfusiones </label>
                                     <input type="text" class="form-control" placeholder="TRANSFUCIONES"
-                                        name="TF" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
+                                        value="N/A" name="TF"
+                                        pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required>
                                 </div>
                                 <div class="col">
                                     <label for="formGroupExampleInput">Fracturas
                                     </label>
 
                                     <input type="text" class="form-control" placeholder="ACTUALES O PREVIAS"
-                                        name="FP" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
+                                        name="FP" value="N/A"
+                                        pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required>
                                 </div>
 
 
@@ -286,7 +292,7 @@
                                 <div class="col">
                                     <label for="formGroupExampleInput">Tiempo de evolución </label>
                                     <input type="numeric" class="form-control" placeholder="Evolucion de la diabetes  "
-                                        name="DMTE" required>
+                                        value="N/A" name="DMTE" required>
                                 </div>
                             </div>
                             <div class="row mb-4">
@@ -302,7 +308,7 @@
                                 <div class="col">
                                     <label for="formGroupExampleInput">Tiempo de evolución </label>
                                     <input type="numeric" class="form-control" placeholder="Evolucion" name="HASTE"
-                                        required>
+                                        value="N/A" required>
                                 </div>
                             </div>
                             <div class="row mb-4">
@@ -319,7 +325,7 @@
                                 <div class="col">
                                     <label for="formGroupExampleInput"> Tiempo de <br> evolución </label>
                                     <input type="numeric" class="form-control" placeholder="Evolucion" name="IrTe"
-                                        required>
+                                        value="N/A" required>
                                 </div>
                             </div>
 
@@ -328,140 +334,118 @@
                                 <div class="col">
                                     <label for="formGroupExampleInput">Otra </label>
                                     <input type="text" class="form-control" placeholder="Evolucion" name="OTRA"
-                                        required>
+                                        value="N/A" required>
                                 </div>
                             </div>
 
                             <!--radio boton-->
                             <div class="switch form-switch-custom switch-inline form-switch-info">
                                 <input class="switch-input" type="checkbox" role="switch" id="form-custom-switch-info2"
-                                    name="checkExploracion" value="1" required>
+                                    name="checkExploracion" value="1" >
                                 <label class="switch-label" for="form-custom-switch-info">¿Tiene exploraciones fisicas el
                                     paciente?</label>
                             </div>
                             <!--end  radio -->
-                            <div id="OExploraciones" class="desactivado">
+                            <div id="OExploraciones" class="desactivado" style="display: none;">
                                 <br>
                                 <!--end aPatologicos-->
                                 <h1>Exploraciones físicas del del paciente</h1>
                                 <br>
                                 <!--Estudios patologicos --->
+
+
+                                <div class="row mb-4">
+
+                                    <div class="row mb-4">
+                                        <div class="col">
+                                            <label for="formGroupExampleInput">
+                                                T/A </label>
+                                            <input type="text" class="form-control" placeholder="T/A" name="T/A"
+                                                pattern="^[0-9]+(?:\/[0-9]+)?$" required>
+
+                                        </div>
+                                        <div class="col">
+                                            <label for="formGroupExampleInput">
+                                                FC </label>
+                                            <input type="text" class="form-control" placeholder="FC" name="FC"
+                                                pattern="^\d+(\.\d+)?$" required>
+
+                                        </div>
+                                    </div>
+                                    <div class="row mb-4">
+
+                                        <div class="col">
+                                            <label for="formGroupExampleInput">
+                                                FR </label>
+                                            <input type="text" class="form-control" placeholder="FR" name="FR"
+                                                pattern="^\d+(\.\d+)?$" required>
+
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+
+
+
                                 <div class="row mb-4">
                                     <div class="col">
-                                        <label for="formGroupExampleInput">
-                                            T/A </label>
-                                        <select class="form-control" name="T/A" required>
-                                            <option selected disabled value="">T/a </option>
-
-                                            <option value="1">Si</option>
-                                            <option value="0">No</option>
-
-                                        </select>
+                                        <label for="formGroupExampleInput">Temperatura </label>
+                                        <input type="text" class="form-control" placeholder="TEMPERATURA"
+                                            name="TEMP" pattern="^\d+(\.\d+)?$" required>
                                     </div>
                                     <div class="col">
-                                        <label for="formGroupExampleInput">
-                                            FC </label>
-                                        <select class="form-control" name="FC" required>
-                                            <option selected disabled value="">FC </option>
-
-                                            <option value="1">Si</option>
-                                            <option value="0">No</option>
-
-                                        </select>
+                                        <label for="formGroupExampleInput">Peso (KG) </label>
+                                        <input type="text" class="form-control" placeholder="PESO (KG)"
+                                            name="PESO" pattern="^\d+(\.\d+)?$" required>
                                     </div>
                                 </div>
                                 <div class="row mb-4">
                                     <div class="col">
-                                        <label for="formGroupExampleInput">
-                                            X1 </label>
-                                        <select class="form-control" name="X1" required>
-                                            <option selected disabled value="">X1 </option>
-
-                                            <option value="1">Si</option>
-                                            <option value="0">No</option>
-
-                                        </select>
+                                        <label for="formGroupExampleInput">Nombre exploracion </label>
+                                        <input type="text" class="form-control" placeholder="Exploracion Cabeza"
+                                            name="NEF" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2">
                                     </div>
                                     <div class="col">
-                                        <label for="formGroupExampleInput">
-                                            FR </label>
-                                        <select class="form-control" name="FR" required>
-                                            <option selected disabled value="">FR </option>
-
-                                            < <option value="1">Si</option>
-                                                <option value="0">No</option>
-
-                                        </select>
+                                        <label for="formGroupExampleInput">Cabeza </label>
+                                        <input type="text" class="form-control" placeholder="Exploracion Cabeza"
+                                            value="N/A" name="CAEF" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2">
                                     </div>
                                 </div>
                                 <div class="row mb-4">
                                     <div class="col">
-                                        <label for="formGroupExampleInput">
-                                            X2 </label>
-                                        <select class="form-control" name="X2" required>
-                                            <option selected disabled value="">X2 </option>
-
-                                            <option value="1">Si</option>
-                                            <option value="0">No</option>
-
-                                        </select>
+                                        <label for="formGroupExampleInput">Cuello</label>
+                                        <input type="text" class="form-control" placeholder="Exploracion cuello  "
+                                            value="N/A" name="CUEF" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2"
+                                            max="30">
                                     </div>
-
-
-
-
-                                    <div class="row mb-4">
-                                        <div class="col">
-                                            <label for="formGroupExampleInput">Temperatura </label>
-                                            <input type="text" class="form-control" placeholder="TEMPERATURA"
-                                                name="TEMP" pattern="^\d+(\.\d+)?$" required>
-                                        </div>
-                                        <div class="col">
-                                            <label for="formGroupExampleInput">Peso (KG) </label>
-                                            <input type="text" class="form-control" placeholder="PESO (KG)"
-                                                name="PESO" pattern="^\d+(\.\d+)?$" required>
-                                        </div>
+                                    <div class="col">
+                                        <label for="formGroupExampleInput">Abdomen</label>
+                                        <input type="text" class="form-control" placeholder="Exploracion abdomen "
+                                            value="N/A" name="ABEF" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2"
+                                            max="30">
                                     </div>
-                                    <div class="row mb-4">
-                                        <div class="col">
-                                            <label for="formGroupExampleInput">Nombre exploracion </label>
-                                            <input type="text" class="form-control" placeholder="Exploracion Cabeza"
-                                                name="NEF" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2">
-                                        </div>
-                                        <div class="col">
-                                            <label for="formGroupExampleInput">Cabeza </label>
-                                            <input type="text" class="form-control" placeholder="Exploracion Cabeza"
-                                                name="CAEF" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2">
-                                        </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <label for="formGroupExampleInput">Miembro pelvico </label>
+                                        <input type="text" class="form-control" value="N/A"
+                                            placeholder="Exploracion miembro pelvico" name="MP" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2"
+                                            max="30">
                                     </div>
-                                    <div class="row mb-4">
-                                        <div class="col">
-                                            <label for="formGroupExampleInput">Cuello</label>
-                                            <input type="text" class="form-control" placeholder="Exploracion cuello  "
-                                                name="CUEF" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"
-                                                max="30">
-                                        </div>
-                                        <div class="col">
-                                            <label for="formGroupExampleInput">Abdomen</label>
-                                            <input type="text" class="form-control" placeholder="Exploracion abdomen "
-                                                name="ABEF" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"
-                                                max="30">
-                                        </div>
-                                    </div>
-                                    <div class="row mb-4">
-                                        <div class="col">
-                                            <label for="formGroupExampleInput">Miembro pelvico </label>
-                                            <input type="text" class="form-control"
-                                                placeholder="Exploracion miembro pelvico" name="MP" required
-                                                pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" max="30">
-                                        </div>
-                                        <div class="col">
-                                            <label for="formGroupExampleInput">Miembro toraxico</label>
-                                            <input type="text" class="form-control"
-                                                placeholder="Exploracion miembro toraxico" name="MT" required
-                                                pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" max="30">
-                                        </div>
-
+                                    <div class="col">
+                                        <label for="formGroupExampleInput">Miembro toraxico</label>
+                                        <input type="text" class="form-control" value="N/A"
+                                            placeholder="Exploracion miembro toraxico" name="MT" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2"
+                                            max="30">
                                     </div>
 
                                 </div>
@@ -534,7 +518,7 @@
 
 
                             <!-- Estudios -->
-                            <div id="Ocultar" class="desactivado">
+                            <div id="Ocultar" class="desactivado" style="display: none;">
                                 <br>
                                 <h2>Estudios del paciente </h2>
                                 <br>
@@ -549,12 +533,14 @@
                                         <label for="formGroupExampleInput">Hemoglobina
                                         </label>
                                         <input type="text" class="form-control" placeholder="HEMOGLOBINA"
-                                            name="HEMOGLOBINA" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2">
+                                            name="HEMOGLOBINA" value="N/A" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2">
                                     </div>
                                     <div class="col">
                                         <label for="formGroupExampleInput">Hematocrito</label>
                                         <input type="text" class="form-control" placeholder="HEMATOCRITO "
-                                            name="HEMATOCRITO" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                            name="HEMATOCRITO" value="N/A" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                     </div>
                                 </div>
                                 <div class="row mb-4">
@@ -563,13 +549,15 @@
                                         <label for="formGroupExampleInput">Plaquetas
                                         </label>
                                         <input type="text" class="form-control" placeholder="PLAQUETAS"
-                                            name="PLAQUETAS" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                            name="PLAQUETAS" value="N/A" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                     </div>
                                     <div class="col">
                                         <label for="formGroupExampleInput">Glucosa
                                         </label>
                                         <input type="text" class="form-control" placeholder="GLUCOSA" name="GLUCOSA"
-                                            required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                            value="N/A" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                     </div>
                                 </div>
                                 <div class="row mb-4">
@@ -577,12 +565,14 @@
                                         <label for="formGroupExampleInput">Urea
                                         </label>
                                         <input type="text" class="form-control" placeholder="UREA" name="UREA"
-                                            required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                            value="N/A" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                     </div>
                                     <div class="col">
                                         <label for="formGroupExampleInput">Creatinina</label>
                                         <input type="text" class="form-control" placeholder="CREATININA "
-                                            name="CREATININA" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                            name="CREATININA" value="N/A" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                     </div>
                                 </div>
                                 <div class="row mb-4">
@@ -590,13 +580,15 @@
                                         <label for="formGroupExampleInput">Rx
                                         </label>
                                         <input type="text" class="form-control" placeholder="RX" name="RX"
-                                            required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                            required value="N/A"
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                     </div>
                                     <div class="col">
                                         <label for="formGroupExampleInput">Usg
                                         </label>
                                         <input type="text" class="form-control" placeholder="USG" name="USG"
-                                            required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                            required value="N/A"
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
                                     </div>
                                 </div>
                                 <!--end estudios--->
@@ -604,121 +596,133 @@
 
 
                             </div>
-                
-                    <!--radio boton-->
-                    <div class="switch form-switch-custom switch-inline form-switch-info">
-                        <input class="switch-input" type="checkbox" role="switch" id="form-custom-switch-info3"
-                            name="checkNotas" value="1">
-                        <label class="switch-label" for="form-custom-switch-info">¿Tiene notas el
-                            paciente?</label>
-                    </div>
-                    <!--end  radio -->
 
-
-                    <div id="NPQuirurgicas" class="desactivado">
-
-                        <br>
-                        <h1>Notas </h1>
-                        <br>
-
-                        <div class="row mb-4">
-                            <div class="col">
-                                <label for="formGroupExampleInput">NOTA </label>
-                                <input type="text" class="form-control" placeholder="cuerpo de la nota"
-                                    name="NOT" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                            <!--radio boton-->
+                            <div class="switch form-switch-custom switch-inline form-switch-info">
+                                <input class="switch-input" type="checkbox" role="switch" id="form-custom-switch-info3"
+                                    name="checkNotas" value="1">
+                                <label class="switch-label" for="form-custom-switch-info">¿Tiene notas el
+                                    paciente?</label>
                             </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col">
-                                <label for="formGroupExampleInput">TIPO DE NOTA</label>
-                                <input type="text" class="form-control" placeholder="TIPO DE NOTA" name="TIPO"
-                                    required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                            <!--end  radio -->
+
+
+                            <div id="NPQuirurgicas" class="desactivado" style="display:none;">
+
+                                <br>
+                                <h1>Notas </h1>
+                                <br>
+
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <label for="formGroupExampleInput">NOTA </label>
+                                        <input type="text" class="form-control" placeholder="cuerpo de la nota"
+                                            name="NOT" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <label for="formGroupExampleInput">TIPO DE NOTA</label>
+                                        <input type="text" class="form-control" placeholder="TIPO DE NOTA"
+                                            name="TIPO" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                    </div>
+
+                                </div>
+
+
+
+                                <!----- end Notas--->
+                                <br>
+                                <h2>NOTAS POST QUIRURGICA </h2>
+                                <br>
+                                <!--Antecedentes patologicos-->
+
+
+
+
+                                <div class="row mb-4">
+
+                                    <div class="col">
+                                        <label for="formGroupExampleInput">Ciruguia programada </label>
+                                        <input type="date" class="form-control" placeholder="ciruja programada"
+                                            name="PC" required>
+                                    </div>
+                                    <div class="col">
+                                        <label for="formGroupExampleInput">Ciruguia realizada</label>
+                                        <input type="date" class="form-control" placeholder="CIRUJIA REALIZADA"
+                                            name="EJ" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <label for="formGroupExampleInput">Hallazgoz </label>
+
+                                        <input type="text" class="form-control" placeholder="Hallazgos"
+                                            name="HA" value="N/A" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                    </div>
+                                    <div class="col">
+                                        <label for="formGroupExampleInput">Complicaciones </label>
+                                        <input type="text" class="form-control" placeholder="COMPLICACIONES"
+                                            name="CO" value="N/A" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <label for="formGroupExampleInput">Nombre del cirujano </label>
+                                        <input type="text" class="form-control" placeholder="Nombre del cirujano "
+                                            name="NC" value="N/A" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="formGroupExampleInput">Nombre del ayudante </label>
+                                        <input type="text" class="form-control" placeholder="Nombre del ayudante"
+                                            name="NAY" value="N/A" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <label for="formGroupExampleInput">Nombre del instrumentista</label>
+                                        <input type="text" class="form-control" placeholder="nombre instrumentista"
+                                            name="NI" value="N/A" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                    </div>
+                                    <div class="col">
+                                        <label for="formGroupExampleInput">Nombre del aniestesiologo</label>
+                                        <input type="text" class="form-control"
+                                            placeholder="Nombre del aniestesiologo" name="NAN" value="N/A"
+                                            required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <label for="formGroupExampleInput">Ciculante</label>
+                                        <input type="text" class="form-control" placeholder="circulante"
+                                            name="CIR" value="N/A" required
+                                            pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                    </div>
+                                    <!--end notaspost-->
+                                </div>
+                                <br>
+
+
+
+                                <!--end_Formulario-->
+
+
+                                <!--end_Formulario-->
+
                             </div>
-
-                        </div>
-
-
-
-                        <!----- end Notas--->
-                        <br>
-                        <h2>NOTAS POST QUIRURGICA </h2>
-                        <br>
-                        <!--Antecedentes patologicos-->
-
-
-
-
-                        <div class="row mb-4">
-
-                            <div class="col">
-                                <label for="formGroupExampleInput">Ciruguia programada </label>
-                                <input type="date" class="form-control" placeholder="ciruja programada"
-                                    name="PC" required>
-                            </div>
-                            <div class="col">
-                                <label for="formGroupExampleInput">Ciruguia realizada</label>
-                                <input type="date" class="form-control" placeholder="CIRUJIA REALIZADA"
-                                    name="EJ">
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col">
-                                <label for="formGroupExampleInput">Hallazgoz </label>
-
-                                <input type="text" class="form-control" placeholder="Hallazgos" name="HA"
-                                    required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
-                            </div>
-                            <div class="col">
-                                <label for="formGroupExampleInput">Complicaciones </label>
-                                <input type="text" class="form-control" placeholder="COMPLICACIONES" name="CO"
-                                    required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col">
-                                <label for="formGroupExampleInput">Nombre del cirujano </label>
-                                <input type="text" class="form-control" placeholder="Nombre del cirujano "
-                                    name="NC" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
-                            </div>
-
-                            <div class="col">
-                                <label for="formGroupExampleInput">Nombre del ayudante </label>
-                                <input type="text" class="form-control" placeholder="Nombre del ayudante"
-                                    name="NAY" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col">
-                                <label for="formGroupExampleInput">Nombre del instrumentista</label>
-                                <input type="text" class="form-control" placeholder="nombre instrumentista"
-                                    name="NI" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
-                            </div>
-                            <div class="col">
-                                <label for="formGroupExampleInput">Nombre del aniestesiologo</label>
-                                <input type="text" class="form-control" placeholder="Nombre del aniestesiologo"
-                                    name="NAN" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col">
-                                <label for="formGroupExampleInput">Ciculante</label>
-                                <input type="text" class="form-control" placeholder="circulante" name="CIR"
-                                    required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
-                            </div>
-                            <!--end notaspost-->
-                        </div>
-                        <br>
-
-
-
-                        <!--end_Formulario-->
-
-
-                        <!--end_Formulario-->
 
                     </div>
 
                 </div>
+
 
 
                 <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Enviar

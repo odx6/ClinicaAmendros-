@@ -7,28 +7,28 @@
                 <div class="col-sm">
 
                     <div class="input-group">
-                        <span class="input-group-text">Reflejos</span>
-                        <textarea class="form-control" aria-label="With textarea" name="Reflejos" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required></textarea>
+                        <span class="input-group-text ">Reflejos</span>
+                        <textarea class="form-control dime" aria-label="With textarea" name="Reflejos" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$"  required></textarea>
                     </div>
 
                 </div>
                 <div class="col-sm">
 
                     <div class="input-group">
-                        <span class="input-group-text">Sensibilidad</span>
-                        <textarea class="form-control" aria-label="With textarea" name="Sensibilidad" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required></textarea>
+                        <span class="input-group-text ">Sensibilidad</span>
+                        <textarea class="form-control dime" aria-label="With textarea" name="Sensibilidad" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required></textarea>
                     </div>
                 </div>
                 <div class="col-sm">
                     <div class="input-group">
                         <span class="input-group-text">Lenguaje / Orientación</span>
-                        <textarea class="form-control" aria-label="With textarea" name="LeOr" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required></textarea>
+                        <textarea class="form-control dime" aria-label="With textarea" name="LeOr" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required></textarea>
                     </div>
                 </div>
                 <div class="col-sm">
                     <div class="input-group">
                         <span class="input-group-text">Otros</span>
-                        <textarea class="form-control" aria-label="With textarea" name="Otros" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required></textarea>
+                        <textarea class="form-control dime" aria-label="With textarea" name="Otros" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required></textarea>
                     </div>
                 </div>
             </div>

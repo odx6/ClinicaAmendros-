@@ -35,7 +35,7 @@
                                 <h2>Nota Clínica-Valoración Inicial</h2>
                                 <div class="form-group mb-4">
                                     <label for="exampleFormControlTextarea1">{{ $nota->Tipo }}</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="NOT" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">{{ $nota->Nota }}</textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="NOT" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">{{ $nota->Nota }}</textarea>
                                 </div>
 
                             </div>
