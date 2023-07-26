@@ -151,7 +151,7 @@ class HistorialClinicoController extends Controller
           $paciente= $dato->PacienteSS;
 
         if ($dato) {
-            $dato->Exploraciones()->where('fk_e', $dato->idHIstorial_clinico)->delete();
+            
             $dato->delete();
 
         }else{}

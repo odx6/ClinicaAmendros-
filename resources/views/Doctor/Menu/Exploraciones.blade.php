@@ -23,7 +23,7 @@
             </div>
         @else
             @foreach ($Exploraciones as $Ex)
-                <form class="user needs-validation" method="POST" action="{{ route('Exploracion.store',['IDAG'=>$Ex->pk_Exploracion,'IDDOC'=>$Ex->fk_e]) }}" novalidate>
+                <form class="user needs-validation" method="POST" action="{{ route('Exploracion.store',['IDAG'=>$Ex->pk_Exploracion,'IDDOC'=>$Ex->fk_d ,'IDPA'=> $Ex->fk_p]) }}" novalidate>
                     @csrf
 
 

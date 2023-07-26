@@ -103,7 +103,7 @@ class AGinecobstetricoController extends Controller
      * @param  \App\Models\a_ginecobstetrico  $a_ginecobstetrico
      * @return \Illuminate\Http\Response
      */
-    public function destory(Request $request)
+    public function destroy(Request $request)
     {
         $id=request('id');
 

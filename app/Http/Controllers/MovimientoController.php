@@ -158,7 +158,7 @@ class MovimientoController extends Controller
          $paciente=$dato->fk_prueba;
         if ($dato) {
           $dato->Movimientos()->where('fk_movimiento', $dato->pk_prueba)->delete();
-          $dato->Dedos()->where('fk_dedos', $dato->pk_prueba)->delete();
+          
   
             $dato->delete();
             

@@ -52,7 +52,8 @@ class PacienteController extends Controller
     $paciente->FechaIngreso = $date->format('Y-m-d');
 
     $paciente->save();
-    return view('Doctor.index');
+    $paciente=$paciente->SS;
+    return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Paciente agregado   correctamente!');
 
 
   }
@@ -191,8 +192,8 @@ class PacienteController extends Controller
         $Nota->save();
           }
     }
-
-    return view('Doctor.index');
+        $paciente=$Paciente->SS;
+    return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Historial agregado   correctamente!');
   }
   public function edit(){
     $Areas=Area::all();
@@ -219,6 +220,8 @@ class PacienteController extends Controller
     $paciente->FechaIngreso = request('FechaIngreso');
     $paciente->FechaSalida = request('FechaSalida');
     $paciente->save();
+    $paciente=$paciente->SS;
+    return redirect()->route('Doctor.histo', compact('paciente'))->with('mensaje', '¡Paciente actualizado   correctamente!');
 
 
   }

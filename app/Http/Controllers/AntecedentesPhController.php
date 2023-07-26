@@ -100,7 +100,7 @@ class AntecedentesPhController extends Controller
     {
         $data = $request->all();
         $this->Actualizar($data['IDDiabetes'],'Diabetes',(isset($data['Diabetes'])) ? $data['Diabetes']:  "no",$data['EDiabetes']);
-        $this->Actualizar($data['IDEnf_Reumáticas'],'Enf.Reumaticas',(isset($data['Enf_Reumáticas'])) ? $data['Enf_Reumáticas']:  "no",$data['EEnf_Reumáticas']);
+        $this->Actualizar($data['IDEnf_Reumaticas'],'Enf.Reumaticas',(isset($data['Enf_Reumaticas'])) ? $data['Enf_Reumaticas']:  "no",$data['EEnf_Reumaticas']);
         $this->Actualizar($data['IDAlergias'],'Alergias',(isset($data['Alergias'])) ? $data['Alergias']:  "no",$data['EAlergias']);
         $this->Actualizar($data['IDEncames'],'Encames',(isset($data['Encames'])) ? $data['Encames']:  "no",$data['EEncames']);
 
@@ -109,7 +109,7 @@ class AntecedentesPhController extends Controller
 ,$data['EHTA']);
         $this->Actualizar($data['IDAccidentes'],'Accidentes',(isset($data['Accidentes'])) ? $data['Accidentes']:  "no",$data['EAccidentes']);
         $this->Actualizar($data['IDCáncer'],'Cáncer',(isset($data['Cáncer'])) ? $data['Cáncer']:  "no",$data['ECáncer']);
-        $this->Actualizar($data['IDCardiopatías'],'Cardiopatías',(isset($data['Cardiopatias'])) ? $data['Cardiopatias']:  "no",$data['ECardiopatías']);
+        $this->Actualizar($data['IDCardiopatías'],'Cardiopatías',(isset($data['Cardiopatías'])) ? $data['Cardiopatías']:  "no",$data['ECardiopatías']);
         $this->Actualizar($data['IDTransfusiones'],'Transfusiones',(isset($data['Transfusiones'])) ? $data['Transfusiones']:  "no",$data['ETransfusiones']);
         $this->Actualizar($data['IDCirugías'],'Cirugías',(isset($data['Cirugías'])) ? $data['Cirugías']:  "no",$data['ECirugías']);
         $this->Actualizar($data['IDFracturas'],'Fracturas',(isset($data['Fracturas'])) ? $data['Fracturas']:  "no",$data['EFracturas']);

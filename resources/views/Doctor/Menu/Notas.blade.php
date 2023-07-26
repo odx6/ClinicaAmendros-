@@ -51,7 +51,7 @@
                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
                     style="display: none;">Agregar nota</button>
             </form>
-            <form class="user" method="POST" action="{{ route('Notas.destroy', ['id' => $np->pk_n]) }}">
+            <form class="user" method="POST" action="{{ route('Notas.destroy', ['id' => $np->pk_nota]) }}">
                 @csrf
                 <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
                     style="display: none;">Eliminar</button>

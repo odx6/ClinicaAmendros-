@@ -60,7 +60,7 @@ class FExploracionFisicaController extends Controller
     {
        $id=request('id');
         $Exploracion=  F_ExploracionFisica::find(request('id'));
-        $paciente=$dato->fk_Exploracion_ff;
+        $paciente=$Exploracion->fk_Exploracion_ff;
      
         
   

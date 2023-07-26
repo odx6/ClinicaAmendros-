@@ -97,7 +97,7 @@
                                                         id="Hola" style="display: none;">Agregar Antecedente Ginecobstetrico</button>
                                                 </form>s
                                                 <form class="user" method="POST"
-                                                    action="{{ route('Gineco.destroy', ['id' => $Gine->fk_ag]) }}">
+                                                    action="{{ route('Gineco.destroy', ['id' => $Gine->id_a_g]) }}">
                                                     @csrf
                                                     <button type="submit"
                                                         class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola"
