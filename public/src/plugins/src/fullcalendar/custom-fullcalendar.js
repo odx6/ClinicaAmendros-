@@ -250,6 +250,7 @@ var currentDate = new Date().toISOString().slice(0, 16);
         // Activate Calender    
         var calendar = new FullCalendar.Calendar(calendarEl, {
             selectable: true,
+            locale: 'es',
             height: checkWidowWidth() ? 900 : 1052,
             initialView: checkWidowWidth() ? 'listWeek' : 'dayGridMonth',
             //initialView: 'dayGridDay' ,

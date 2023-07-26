@@ -152,7 +152,7 @@ class PacienteController extends Controller
       $Exploracion->Cabeza_ef = request('CAEF');
       $Exploracion->Cuello_ef = request('CUEF');
       $Exploracion->Abdomen_ef = request('ABEF');
-      $Exploracion->Miembro_Pelvico_ef = request('MP');
+      $Exploracion->Miembro_pelvico_ef = request('MP');
       $Exploracion->Miembro_toraxico_ef = request('MT');
       $Exploracion->save();
     }
