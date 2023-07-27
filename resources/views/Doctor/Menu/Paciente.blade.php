@@ -56,17 +56,14 @@
                   <div class="col">
                       <label for="formGroupExampleInput">Sexo </label>
                       <select class="form-control selects" name="Sexo" required>
-                          <option value={{ $Paciente->Sexo }}>
-                              @if ($Paciente->Sexo == 'M')
-                                  {{ 'Masculino' }}
-                              @endif
-                              @if ($Paciente->Sexo == 'F')
-                                  {{ 'Femenino' }}
-                              @endif
-                          </option>
+                    
 
-                          <option value="M">Masculino</option>
-                          <option value="F">Femenino</option>
+                          <option value="M" @if ($Paciente->Sexo == 'M')
+                                 selected
+                              @endif>Masculino</option>
+                          <option value="F" @if ($Paciente->Sexo == 'F')
+                                 selected
+                              @endif>Femenino</option>
 
                       </select>
                   </div>

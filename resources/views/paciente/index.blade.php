@@ -32,7 +32,7 @@
                     <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Registrar Paciente Secretaria</li>
+                            <li class="breadcrumb-item active" aria-current="page">Registrar Paciente </li>
                         </ol>
                     </nav>
                 </div>

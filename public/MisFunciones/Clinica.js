@@ -389,6 +389,36 @@ $(document).ready(function() {
 
       //endFisioterapia
 
+    //Producto Stock
+    $(".Stock").change(function () {
+
+        var ProductoSeleccionado = $(this).val();
+        //alert(ProductoSeleccionado);
+       $.ajax({
+            type: "POST",
+            url: 'Stock',
+            data: {
+                producto: ProductoSeleccionado,
+                _token: $('meta[name="csrf-token"]').attr('content'),
+
+            },
+        }).done(function (res) {
+
+             //alert(res)
+            $('#StockSalida').val(res);
+            $("#cantidad").attr("max",res);
+
+           // mostrarUsuarios(res);
+        });
+
+    });
+
+
+
+   
+    //endProductos Stock 
+
+
     //Script miembros Superiores 
 
 

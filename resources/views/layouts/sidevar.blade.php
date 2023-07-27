@@ -138,6 +138,9 @@
                             <li>
                                 <a href="{{route('index.Facctura')}}"> Facturas </a>
                             </li>
+                             <li>
+                                <a href="{{route('index.Salidas')}}"> Salidas </a>
+                            </li>
                                                        
                         </ul>
                     </li>

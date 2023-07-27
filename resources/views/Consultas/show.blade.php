@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'ACtualizar Consulta')
+@section('title', 'Actualizar Consulta')
 @section('linkAuth')
     <!-- BEGIN PAGE LEVEL STYLE -->
 

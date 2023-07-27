@@ -41,6 +41,7 @@ use  App\Http\Controllers\ProvedorController;
 use  App\Http\Controllers\FacturaController;
 use  App\Http\Controllers\AreaController;
 use  App\Http\Controllers\SecretariaController;
+use  App\Http\Controllers\SalidaController;
 use Barryvdh\DomPDF\Facade\Pdf;
 /*
 |--------------------------------------------------------------------------
@@ -325,6 +326,7 @@ Route::post('/ListarProductos',[ ProductoController::class, 'store'])->name('sto
 Route::post('/ActualizarProductos', [ProductoController::class, 'update'])->name('update.Productos');
 Route::get('/mostrarProductos', [ProductoController::class, 'show'])->name('show.Productos');
 Route::get('/EliminarProductos', [ProductoController::class, 'destroy'])->name('destroy.Productos');
+Route::post('/Stock', [ProductoController::class, 'Stock'])->name('Stock.Productos');
 //endSeProductos
 
 //ruta Proveedor
@@ -361,6 +363,14 @@ Route::post('/ListarMedico',[ DoctorController::class, 'store'])->name('store.Me
 Route::post('/ActualizarMedico', [DoctorController::class, 'update'])->name('update.Medico');
 Route::get('/mostrarMedico', [DoctorController::class, 'show'])->name('show.Medico');
 Route::get('/EliminarMedico', [DoctorController::class, 'destroy'])->name('destroy.Medico');
+//endSeProductos
+//ruta Productos
+Route::get('/Salidas',[SalidaController::class, 'index'])->name('index.Salidas');
+Route::get('/AgregarSalidas',[ SalidaController::class, 'create'])->name('create.Salidas');
+Route::post('/ListarSalidas',[ SalidaController::class, 'store'])->name('store.Salidas');
+Route::post('/ActualizarSalidas', [SalidaController::class, 'update'])->name('update.Salidas');
+Route::get('/mostrarSalidas', [SalidaController::class, 'show'])->name('show.Salidas');
+Route::get('/EliminarSalidas', [SalidaController::class, 'destroy'])->name('destroy.Salidas');
 //endSeProductos
 
 

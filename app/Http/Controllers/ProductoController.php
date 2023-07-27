@@ -68,9 +68,16 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Producto $producto)
+    public function Stock(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $Producto=Producto::find($data['producto']);
+        $Cantidad=$Producto->Cantidad;
+
+        // $datosJson = json_encode($Producto);
+         //return response()->json($datosJson);
+        return $Cantidad;
     }
 
     /**
