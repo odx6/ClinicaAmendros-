@@ -21,17 +21,22 @@
             </form>
         </div>
     @else
+     <h1 style="text-align: center;">FORMULARIO DE VALORACIÓN DE LA BATERÍA BREVE VALORACIÓN FUNCIONAL </h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk"><span class="red-asterisk">*</span></span> son obligatorios </h4>
+                       
         @foreach ($Formularios as $form)
             <form class="user needs-validation" method="POST"
                 action="{{ route('update.Formulario', ['id' => $form->pk_formulario]) }}" novalidate>
                 @csrf
                 <div class="container">
                     <h2>Formulario de valoración de la batería breve valoración funcional</h2>
+                   
                     <div class="row">
                         <div class="col-sm">
                             <h4>Pruebas de equilibrio</h4>
                             <p>El sujeto debe de ser capaz de ponerse de pie, sin ayuda de bastones o andadores.</p>
-                            <p>A.Posición con pies juntos</p>
+                            <p>A.Posición con pies juntos <span class="red-asterisk">*</span></p>
                             <div class="form-group">
                                 <select class="form-control formulario" name="pregunta1" required>
 
@@ -55,10 +60,16 @@
                                     <option value="8" @if ($form->P_pies_juntos == '8') selected @endif>El sujeto
                                         rechazo la prueba</option>
                                 </select>
+                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     El campo es obligatorio
+                                     </div>
                             </div>
-                            <h4>En caso de obtener 0 puntos termine la prueba de equilibrio</h4>
+                            <h4>En caso de obtener 0 puntos termine la prueba de equilibrio </h4>
 
-                            <h4>B.Posición de semitándendem </h4>
+                            <h4>B.Posición de semitándendem <span class="red-asterisk">*</span> </h4>
                             <div class="form-group">
                                 <select class="form-control" name="pregunta2" required>
 
@@ -81,9 +92,15 @@
                                     <option value="8" @if ($form->P_semitandem == '8') selected @endif>El sujeto
                                         rechazo la prueba</option>
                                     </select>
+                                    <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     El campo es obligatorio
+                                     </div>
                             </div>
                             <h4>Número de segundos con equilibrio si es inferior a los 10 segundos</h4>
-                            <h4>C.posicion en tándem completo</h4>
+                            <h4>C.posicion en tándem completo <span class="red-asterisk">*</span></h4>
                             <div class="form-group">
                                 <select class="form-control" name="pregunta3" required>
 
@@ -107,10 +124,16 @@
                                         rechazo la prueba</option>
 
                                 </select>
+                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     El campo es obligatorio
+                                     </div>
                             </div>
                         </div>
                         <div class="col-sm">
-                            <h4>Número de segundos con equilibrio si es inferior a 10 segundos </h4>
+                            <h4>Número de segundos con equilibrio si es inferior a 10 segundos <span class="red-asterisk">*</span></h4>
                             <div class="form-group">
                                 <select class="form-control formulario" name="pregunta4" required>
                                     @for ($i = 1; $i < 10; $i++)
@@ -119,15 +142,28 @@
                                             {{ $i }} segundos </option>
                                     @endfor
                                 </select>
+                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     El campo es obligatorio
+                                     </div>
                             </div>
 
 
 
-                            <h2>Comentarios</h2>
+                            <h2>Comentarios <span class="red-asterisk">*</span></h2>
                             <div class="form-group mb-4">
 
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="NOT" required
-                                    pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">{{ $form->Comentarios }}</textarea>
+                                    pattern="^[a-zA-Z0-9\s.,!?@#$%^&()-_=+[\]{}|:;'<>/\\]+$">{{ $form->Comentarios }}</textarea>
+                                    <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un comentario valido 
+                                     </div>
+
                             </div>
 
                         </div>

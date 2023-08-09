@@ -20,10 +20,16 @@
             </form>
         </div>
     @else
+<h1 style="text-align: center;">NOTA DE VALORACIÓN INICIAL</h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk"><span class="red-asterisk">*</span></span>  son obligatorios</h4>
+
         @foreach ($Notas as $nota)
             <form class="user needs-validation" method="POST"
                 action="{{ route('Nota.store', ['IDAG' => $nota->pk_nota, 'IDPA' => $nota->fk_n, 'TIPO' => $nota->Tipo]) }}" novalidate>
                 @csrf
+                <h2>NOTA CLÍNICA DE VALORACIÓN INICIAL  </h2>
+                
                 <div class="row">
                     <div class="container">
                         <div class="row">
@@ -34,8 +40,14 @@
                             <div class="col-sm">
                                 <h2>Nota Clínica-Valoración Inicial</h2>
                                 <div class="form-group mb-4">
-                                    <label for="exampleFormControlTextarea1">{{ $nota->Tipo }}</label>
+                                    <label for="exampleFormControlTextarea1">{{ $nota->Tipo }} <span class="red-asterisk">*</span></label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="NOT" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">{{ $nota->Nota }}</textarea>
+                                     <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una nota valida 
+                                     </div>
                                 </div>
 
                             </div>
@@ -51,7 +63,7 @@
                     <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
                         style="display: none;">Actualizar</button>
             </form>
-            <form class="user" method="POST" action="{{ route('index.Cicatriz', ['id' => $Paciente->SS]) }}">
+            <form class="user" method="POST" action="{{ route('Notas.Formulario', ['id' => $Paciente->SS]) }}">
                 @csrf
                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
                     style="display: none;">Agregar Nota Clínica-Valoración Inicial

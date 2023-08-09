@@ -3,7 +3,9 @@
 
 @section('formulario')
     <div class="container">
-
+<h1 style="text-align: center;">AGREGAR PRUEBAS DE MOVILIDAD EVALUACIÓN MUSCULAR</h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk"><span class="red-asterisk">*</span></span>  son obligatorios</h4>
         <!---table-->
         <form class="user needs-validation" method="POST" action="{{ route('create.Muscular', ['id' => $id]) }}" novalidate>
             @csrf
@@ -65,7 +67,7 @@
                         <table class="table table-sm">
                             <thead>
                                 <tr>
-                                    <th scope="col">Nombre del miembro a evaluar</th>
+                                    <th scope="col">Nombre del miembro a evaluar <span class="red-asterisk">*</span></th>
                                     
 
                                 </tr>
@@ -76,15 +78,21 @@
                                         <div class="col">
                                             
                                             <input type="text" class="form-control form-control-lg"
-                                                placeholder="Nombre del miembro a evaluar" name="Nombre" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                                placeholder="Nombre *" name="Nombre" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                                 <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un nombre valido 
+                                     </div>
                                         </div>
                                     </th>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <label class="switch-label" for="form-custom-switch-success">Izquierda</label>
+                                        <label class="switch-label" for="form-custom-switch-success">Izquierda <span class="red-asterisk">*</span></label>
                                         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="izquierda" required>
-                                            <option selected disabled value="">Grado
+                                            <option selected disabled value="">...
                                                         </option>
                                            
                                             <option value="0">Grado 0</option>
@@ -94,14 +102,20 @@
                                             <option value="4">Grado 4</option>
                                             <option value="5">Grado 5</option>
                                         </select>
+                                           <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                    Campo obligatorio 
+                                     </div>
                                     </td>
                                  </tr>
                                 <tr>
                                     
                                     <td>
-                                         <label class="switch-label" for="form-custom-switch-success">Derecha</label>
+                                         <label class="switch-label" for="form-custom-switch-success">Derecha <span class="red-asterisk">*</span></label>
                                         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="Derecha" required>
-                                            <option selected disabled value="" >Grado
+                                            <option selected disabled value="" >...
                                                         </option>
                                             <option value="0">Grado 0</option>
                                             <option value="1">Grado 1</option>
@@ -110,6 +124,12 @@
                                             <option value="4">Grado 4</option>
                                             <option value="5">Grado 5</option>
                                         </select>
+                                           <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                    Campo obligatorio 
+                                     </div>
                                     </td>
                                     </tr>
                                     
@@ -125,7 +145,6 @@
             <!--end-table-->
 
     </div>
-    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Enviar
-        Datos</button>
+    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Guardar</button>
     </form>
 @endsection

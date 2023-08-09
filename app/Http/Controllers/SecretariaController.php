@@ -80,7 +80,7 @@ class SecretariaController extends Controller
      * @param  \App\Models\Secretaria  $secretaria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Secretaria $secretaria)
+    public function update(Request $request)
     {
         $Secretaria=Secretaria::find(request('id'));
         $Secretaria->fk_user=request('User');

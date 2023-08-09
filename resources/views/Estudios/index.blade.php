@@ -27,15 +27,19 @@
 
             <div class="middle-content container-xxl p-0">
 
-                <!-- BREADCRUMB -->
-                <div class="page-meta">
+               <div class="page-meta">
                     <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Registrar Estudios </li>
-                        </ol>
+                            <li class="breadcrumb-item"><a href="#">Usuario : {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
+                        </ol> 
                     </nav>
                 </div>
+                <h1 style="text-align: center;">AGREGAR ESTUDIOS </h1>
+                <h3>Datos del paciente </h3>
+                <h4>Los datos marcados con <span class="red-asterisk">*</span>  son obligatorios</h4>
                 <!-- /BREADCRUMB -->
                 <!--calendario-->
                 <div class="row layout-top-spacing layout-spacing" id="cancel-row">
@@ -44,7 +48,7 @@
 
                         <!-- Estudios -->
                         <h2>Estudios del paciente </h2>
-                        <!--Antecedentes patologicos-->
+                        
 
                         <form class="user needs-validation" method="POST" action="{{ route('Estudios.create', ['id' => $id]) }}" novalidate>
                             @csrf
@@ -53,57 +57,107 @@
                             <div class="row mb-4">
 
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Hemoglobina
+                                    <label for="formGroupExampleInput">Hemoglobina <span class="red-asterisk">*</span>
                                     </label>
                                     <input type="text" class="form-control" placeholder="HEMOGLOBINA" name="HEMOGLOBINA"
                                         required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" value="N/A">
+                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un estudio valido para Hemoglobina
+                                     </div>
+                                         
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Hematocrito</label>
+                                    <label for="formGroupExampleInput">Hematocrito <span class="red-asterisk">*</span></label>
                                     <input type="text" class="form-control" placeholder="HEMATOCRITO " name="HEMATOCRITO"
-                                        required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" value="N/A">
+                                        required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" value="N/A"> 
+                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un estudio valido para Hematocrito
+                                     </div>
+                                        
                                 </div>
                             </div>
                             <div class="row mb-4">
 
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Plaquetas
+                                    <label for="formGroupExampleInput">Plaquetas <span class="red-asterisk">*</span>
                                     </label>
                                     <input type="text" class="form-control" placeholder="PLAQUETAS" name="PLAQUETAS" value="N/A"
-                                        required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$"> 
+                                        required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un estudio valido para plaquetas
+                                     </div>
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Glucosa
+                                    <label for="formGroupExampleInput">Glucosa <span class="red-asterisk">*</span>
                                     </label>
                                     <input type="text" class="form-control" placeholder="GLUCOSA" name="GLUCOSA"  value="N/A" required
                                         pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" >
+                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un estudio valido para Glucosa
+                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Urea
+                                    <label for="formGroupExampleInput">Urea <span class="red-asterisk">*</span>
                                     </label>
                                     <input type="text" class="form-control" placeholder="UREA" name="UREA" required value="N/A"
                                         pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un estudio valido para Urea
+                                     </div>
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Creatinina</label>
+                                    <label for="formGroupExampleInput">Creatinina <span class="red-asterisk">*</span></label>
                                     <input type="text" class="form-control" placeholder="CREATININA " name="CREATININA" value="N/A"
                                         required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un estudio valido para creatinina
+                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Rx
+                                    <label for="formGroupExampleInput">Rx <span class="red-asterisk">*</span>
                                     </label>
                                     <input type="text" class="form-control" placeholder="RX" name="RX" required value="N/A"
                                         pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                          <div class="valid-feedback">
+                                       Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un estudio valido para rx
+                                     </div>
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Usg
+                                    <label for="formGroupExampleInput">Usg <span class="red-asterisk">*</span>
                                     </label>
                                     <input type="text" class="form-control" placeholder="USG" name="USG" required value="N/A"
                                         pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                       <div class="valid-feedback">
+                                       Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un estudio valido para usg
+                                     </div>
                                 </div>
                             </div>
 
@@ -113,8 +167,7 @@
 
                     </div>
 
-                    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Enviar
-                        Datos</button>
+                    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Guardar</button>
                     <!--end aPatologicos-->
 
                 </form>

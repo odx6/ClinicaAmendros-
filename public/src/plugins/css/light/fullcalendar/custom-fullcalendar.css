@@ -111,7 +111,7 @@
 }
 
 .fc-bg-primary {
-  color: #4361ee;
+  color: #0c0c0c;
   background-color: rgba(67, 97, 238, 0.15);
 }
 .fc-bg-primary.fc-h-event .fc-event-main {
@@ -119,7 +119,7 @@
 }
 
 .fc-bg-success {
-  color: #00ab55;
+  color: #0a0a0a;
   background-color: rgba(26, 188, 156, 0.15);
 }
 .fc-bg-success.fc-h-event .fc-event-main {
@@ -127,7 +127,7 @@
 }
 
 .fc-bg-warning {
-  color: #e2a03f;
+  color: #030303;
   background-color: rgba(226, 160, 63, 0.15);
 }
 .fc-bg-warning.fc-h-event .fc-event-main {
@@ -143,7 +143,7 @@
 }
 
 .fc-bg-primary .fc-daygrid-event-dot {
-  border-color: #4361ee;
+  border-color: #2509a5;
 }
 
 .fc-bg-success .fc-daygrid-event-dot {

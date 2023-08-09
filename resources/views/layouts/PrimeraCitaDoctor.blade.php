@@ -13,7 +13,7 @@
                                          
                                             <div class="col-md-12">
                                             <div class="">
-                                                <label class="form-label">Nombre del Doctor</label>
+                                                <label class="form-label">Nombre del Doctor *</label>
                                                <!-- <input id="event-title" type="text" class="form-control">-->
                                                 <select class="form-control" name="DOCTOR" id="NombreDoctorP" required>
                                                     @php
@@ -37,7 +37,7 @@
                                     
                                          <div class="col-md-12">
                                             <div class="form-control">
-                                                <label class="form-label">Nombre del paciente</label>
+                                                <label class="form-label">Nombre del paciente *</label>
                                                <input id="NombrePacienteP" type="text" class="form-control" name="Nombre" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"                                         max="30">
                                                  <div class="valid-feedback">
                                         Nombres del paciente correcto
@@ -49,7 +49,7 @@
                                         </div>
                                          <div class="col-md-12">
                                             <div class="form-control">
-                                                <label class="form-label">Apellidos del paciente</label>
+                                                <label class="form-label">Apellidos del paciente *</label>
                                                <input id="NombreApellidosP" type="text" class="form-control" name="Apellidos" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"                                         max="30">
                                                  <div class="valid-feedback">
                                         Apellidos del paciente correcto
@@ -61,7 +61,7 @@
                                         </div>
                                           <div class="col-md-12">
                                             <div class="form-control">
-                                                <label class="form-label">Teléfono</label>
+                                                <label class="form-label">Teléfono *</label>
                                                <input id="TelefonoP" type="text" class="form-control" name="Telefono" required minlength="10" maxlength="10" pattern="[0-9]{9,15}">
                                                <div class="valid-feedback">
                                            Teléfono Correcto
@@ -75,7 +75,7 @@
     
                                         <div class="col-md-12 ">
                                             <div class="form-control">
-                                                <label class="form-label">Ingresa La fecha de inicio y la hora</label>
+                                                <label class="form-label">Ingresa La fecha de inicio y la hora  *</label>
                                                 <input id="PrimerStar" type="datetime-local" class="form-control" required>
                                                  <div class="valid-feedback">
                                             Datos correctos

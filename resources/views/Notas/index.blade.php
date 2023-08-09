@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','Agregar Estudio')
+@section('title','Agregar Nota')
 @section('linkAuth')
  <!-- BEGIN PAGE LEVEL STYLE -->
 
@@ -27,14 +27,19 @@
                 <div class="middle-content container-xxl p-0">
 
                     <!-- BREADCRUMB -->
-                    <div class="page-meta">
-                        <nav class="breadcrumb-style-one" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Registrar Paciente Secretaria</li>
-                            </ol>
-                        </nav>
-                    </div>
+                   <div class="page-meta">
+                    <nav class="breadcrumb-style-one" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Usuario : {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
+                        </ol> 
+                    </nav>
+                </div>
+                <h1 style="text-align: center;"> AGREGAR NOTA</h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk">*</span>  son obligatorios</h4>
                     <!-- /BREADCRUMB -->
                    <!--calendario-->
                    <div class="row layout-top-spacing layout-spacing" id="cancel-row">
@@ -47,21 +52,35 @@
                                 @csrf
 
 
-                                <h1>Notas </h1>
+                                <h4>NOTAS </h4>
+       
+
                                 <br>
 
                                 <div class="row mb-4">
                                     <div class="col">
-                                        <label for="formGroupExampleInput">NOTA </label>
+                                        <label for="formGroupExampleInput">Nota <span class="red-asterisk">*</span> </label>
                                         <input type="text" class="form-control" placeholder="cuerpo de la nota"
                                             name="NOT" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                             <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese datos validos para la nota 
+                                     </div>
                                     </div>
                                 </div>
                                 <div class="row mb-4">
                                     <div class="col">
-                                        <label for="formGroupExampleInput">TIPO DE NOTA</label>
+                                        <label for="formGroupExampleInput">Tipo  de nota <span class="red-asterisk">*</span> </label>
                                         <input type="text" class="form-control" placeholder="TIPO DE NOTA"
                                             name="TIPO" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                            <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un tipo valido para la nota
+                                     </div>
                                     </div>
 
                                 </div>
@@ -72,7 +91,7 @@
                       
                                     
                                     <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
-                                        >Enviar Datos</button>
+                                        >Guardar</button>
                                 
                             </form>
                         

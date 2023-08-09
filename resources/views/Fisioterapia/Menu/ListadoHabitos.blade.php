@@ -26,7 +26,10 @@
             </form>
         </div>
     @else
-        <h2>Hábitos de la salud</h2>
+     <h1 style="text-align: center;">HABITOS DE SALUD </h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk">*</span> son obligatorios </h4>
+        <h2>HÁBITOS DE LA SALUD</h2>
         @php
             $ids = [];
             
@@ -58,9 +61,16 @@
                             <div class="form-group">
                                 <br>
                                 <input type="text" class="form-control" id="exampleFormControlInput1"
-                                    value="{{ $item->Especificacion }}" placeholder="Especificacion para diabetes"
+                                    value="{{ $item->Especificacion }}" placeholder="Especificacion *"
                                     name="E{{ $item->Nombre }}" required
-                                    pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$"><br>
+                                    pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                      <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación {{ $item->Nombre }}
+                                     </div>
+                                    <br>
                             </div>
                             <div class="form-group">
                                 <br>
@@ -99,9 +109,15 @@
                             <div class="form-group">
                                 <br>
                                 <input type="text" class="form-control" id="exampleFormControlInput1"
-                                    value="{{ $item->Especificacion }}" placeholder="Especificacion para diabetes"
+                                    value="{{ $item->Especificacion }}" placeholder="Especificacion *"
                                     name="E{{ $item->Nombre }}" required
                                     pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                    <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación {{ $item->Nombre }}
+                                     </div>
                                 <br>
                             </div>
                             <div class="form-group">

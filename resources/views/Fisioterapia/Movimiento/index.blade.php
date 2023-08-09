@@ -3,7 +3,9 @@
 
 @section('formulario')
     <div class="col-sm">
-
+<h1 style="text-align: center;">AGREGAR PRUEBAS DE MOVILIDAD PARA MIEMBROS SUPERIORES</h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk"><span class="red-asterisk">*</span></span>  son obligatorios</h4>
         <!---table-->
         <form class="user needs-validation" method="POST" action="{{ route('create.MSuperiores', ['id' => $id, 'TipoM' => 'Superior']) }}" novalidate>
             @csrf
@@ -14,15 +16,22 @@
 
                     <div class="col-sm">
                         <h2>Miembro</h2>
+                            
                         <input type="text" class="form-control form-control-lg" placeholder="Nombre del miembro a evaluar"
                             name="NombreMiembro" placeholder="Nombre del miembro a evaluar" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="3" required>
+                             <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un nombre valido
+                                     </div>
                         <div class="container">
                             <div class="table-responsive">
                                 <table class="table" id="tablamiembroS">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Movimiento</th>
-                                            <th scope="col">Grados</th>
+                                            <th scope="col">Movimiento *</th>
+                                            <th scope="col">Grados *</th>
 
                                             <th class="text-center" scope="col">Acción</th>
                                         </tr>
@@ -35,6 +44,12 @@
                                                     <input type="text" class="form-control form-control-lg"
                                                         placeholder="Nombre del movimiento"
                                                         name="Movimientos[movimento][Nombre]" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="3">
+                                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un nombre valido
+                                     </div>
                                                 </td>
                                                 <td>
                                                     <select class="form-control" name="Movimientos[movimento][Valor]" required>
@@ -46,6 +61,12 @@
                                                             </option>
                                                         @endfor
                                                     </select>
+                                                     <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     El campo es obligatorio
+                                     </div>
 
                                                 </td>
 
@@ -104,8 +125,14 @@
                 </div>
 
                 <div class="input-group">
-                    <span class="input-group-text">Observaciones</span>
+                    <span class="input-group-text">Observaciones <span class="red-asterisk">*</span></span>
                     <textarea class="form-control" aria-label="With textarea" name="observaciones" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$"></textarea>
+                    <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una observacion valida
+                                     </div>
                 </div>
                 <br>
                 <br>
@@ -113,8 +140,7 @@
             <!--end-table-->
 
     </div>
-    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Enviar
-        Datos</button>
+    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Guardar</button>
     </form>
 
 

@@ -311,13 +311,24 @@ class CitaController extends Controller
             $Doctor=Doctor::find($event->fk_dc);
             $Area=Area::find($Doctor->AreaDoctor);
             $Nombre=$Doctor->Nombre." ".$Doctor->Apellidos." ".$Doctor->ESPECIALIDAD;
+             $Color="Ginecologia";
+             $fechaActual = Carbon::now();
+             $fechaAsignada=Carbon::parse($event->inicio_c); 
+
+             if( $fechaActual->isSameDay($fechaAsignada)){
+                $Color="Traumatologia";
+             }elseif($fechaAsignada->gt($fechaActual)){
+                 $Color="Ginecologia";
+             }elseif($fechaActual->gt($fechaAsignada)){
+                $Color="Fisoterapia";
+             }
 
 
            $events[]=[
                'id'=>$event->pk_cita,
                'title'=>$nombre,
                'start'=>$event->inicio_c,
-               'extendedProps'=>['calendar'=>'Ginecologia','Idpaciente'=>$event->fk_pc,'IdDoctor'=>$event->fk_dc,'IDArea'=>$Area->IDAREA,'NombreA'=>$Area->NOMBE_AREA,'Doctor'=>$Nombre],
+               'extendedProps'=>['calendar'=>$Color,'Idpaciente'=>$event->fk_pc,'IdDoctor'=>$event->fk_dc,'IDArea'=>$Area->IDAREA,'NombreA'=>$Area->NOMBE_AREA,'Doctor'=>$Nombre],
            ];
     }
     $datosJson = json_encode($events);
@@ -339,13 +350,23 @@ public function CitasDoctores(Request $request)
            $paciente= Paciente::findOrFail($event->fk_pc);
            if(isset($paciente)){
             $nombre=$paciente->Nombre.' '.$paciente->Apellido;
+              $fechaActual = Carbon::now();
+             $fechaAsignada=Carbon::parse($event->inicio_c); 
+
+             if( $fechaActual->isSameDay($fechaAsignada)){
+                $Color="Traumatologia";
+             }elseif($fechaAsignada->gt($fechaActual)){
+                 $Color="Ginecologia";
+             }elseif($fechaActual->gt($fechaAsignada)){
+                $Color="Fisoterapia";
+             }
 
            $events[]=[
                'id'=>$event->pk_cita,
                'title'=>$nombre,
                'start'=>$event->inicio_c,
                'end'=>$event->fin_cita,
-               'extendedProps'=>['calendar'=>'Oftalmologia','Idpaciente'=>$event->fk_pc,'IdDoctor'=>$event->fk_dc,],
+               'extendedProps'=>['calendar'=>$Color,'Idpaciente'=>$event->fk_pc,'IdDoctor'=>$event->fk_dc,],
            ];
 
        }

@@ -29,14 +29,19 @@
             <div class="middle-content container-xxl p-0">
 
                 <!-- BREADCRUMB -->
-                <div class="page-meta">
+               <div class="page-meta">
                     <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Registrar Antecedente Patológico</li>
-                        </ol>
+                            <li class="breadcrumb-item"><a href="#">Usuario : {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
+                        </ol> 
                     </nav>
                 </div>
+                <h1 style="text-align: center;">AGREGAR ANTECEDENTES NO PATOLOGICOS </h1>
+                <h3>Datos de antecedentes</h3>
+                <h4>Los datos marcados con <span class="red-asterisk"><span class="red-asterisk">*</span></span>  son obligatorios</h4>
                 <!-- /BREADCRUMB -->
                 <!--calendario-->
                 <div class="row layout-top-spacing layout-spacing" id="cancel-row">
@@ -45,7 +50,8 @@
 
                         <!-- Fomulario -->
                         <!--- Historial-->
-                        <h2> ANTECEDENTES NO PATOLOGICOS </h2>
+                        <h4> ANTECEDENTES NO PATOLOGICOS </h4>
+                       
                         <!--Antecedentes patologicos-->
 
                         <form class="user needs-validation" method="POST" action="{{ route('Pato.create', ['id' => $id]) }}" novalidate>
@@ -54,62 +60,105 @@
 
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">diabetes mellitus(DM) </label>
+                                    <label for="formGroupExampleInput">diabetes mellitus(DM) <span class="red-asterisk">*</span> </label>
                                     <select class="form-control" name="DMN" required>
-                                        <option selected disabled value="">diabetes mellitus(DM) </option>
+                                        <option selected disabled value="">...</option>
 
                                         <option value="1">Si</option>
                                         <option value="0">No</option>
 
                                     </select>
+                                    <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         El campo es obligatorio
+                                     </div>
                                 </div>
 
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Tiempo de evolución </label>
+                                    <label for="formGroupExampleInput">Tiempo de evolución <span class="red-asterisk">*</span></label>
                                     <input type="numeric" class="form-control" placeholder="Evolucion de la diabetes  "
                                         name="DMTE" required>
+                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Por favor ingresa un tiempo de evolución correcto 
+                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Hipertensión</label>
+                                    <label for="formGroupExampleInput">Hipertensión <span class="red-asterisk">*</span></label>
                                     <select class="form-control" name="HASN" required>
-                                        <option selected disabled value="">Hipertensión </option>
+                                        <option selected disabled value="">...</option>
                                         <option value="1">Si</option>
                                         <option value="0">No</option>
 
                                     </select>
+                                    <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         El campo es obligatorio
+                                     </div>
                                 </div>
                                 <div class="col">
                                     <label for="formGroupExampleInput">Tiempo de evolución </label>
                                     <input type="numeric" class="form-control" placeholder="Evolucion" name="HASTE"
-                                        required>
+                                        required> 
+                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Por favor ingresa un tiempo de evolución correcto 
+                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Insuficiencia renal <br>Aguda o Cronica </label>
+                                    <label for="formGroupExampleInput">Insuficiencia renal <span class="red-asterisk">*</span> <br>Aguda o Cronica </label>
                                     <select class="form-control" name="IR" required>
-                                        <option selected disabled value="">Insuficiencia </option>
+                                        <option selected disabled value="">...</option>
 
                                         <option value="1">Si</option>
                                         <option value="0">No</option>
 
                                     </select>
+                                     <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         El campo es obligatorio
+                                     </div>
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput"> Tiempo de <br> evolución </label>
+                                    <label for="formGroupExampleInput"> Tiempo de <br> evolución  <span class="red-asterisk">*</span></label>
                                     <input type="numeric" class="form-control" placeholder="Evolucion" name="IrTe"
                                         required>
+                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Por favor ingresa un tiempo de evolución correcto 
+                                     </div>
+
                                 </div>
                             </div>
 
                             <div class="row mb-4">
 
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Otra </label>
+                                    <label for="formGroupExampleInput">Otra <span class="red-asterisk">*</span> </label>
                                     <input type="text" class="form-control" placeholder="Evolucion" name="OTRA"
                                         required>
+                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese otra opción valida
+                                     </div>
                                 </div>
                             </div>
                             
@@ -121,7 +170,7 @@
                    
 
                         <button type="submit"
-                            class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Enviar Datos</button>
+                            class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Guardar</button>
                 
                         </form>
                     <!--end_Formulario-->

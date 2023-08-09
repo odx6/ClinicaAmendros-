@@ -23,6 +23,10 @@
         @foreach ($Cicatriz as $cica)
             <form class="user needs-validation" method="POST" action="{{ route('update.Cicatriz', ['id' => $cica->pk_cicatriz]) }}" novalidate>
                 @csrf
+                
+                  <h1 style="text-align: center;">CICATRIZ QUIRURGIA</h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk">*</span> son obligatorios</h4>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -38,10 +42,16 @@
                             <tr>
                                 <td>
                                     <div class="switch form-switch-custom switch-inline form-switch-success">
-                                        <label class="switch-label" for="form-custom-switch-success">Sitio</label>
+                                        <label class="switch-label" for="form-custom-switch-success">Sitio  <span class="red-asterisk">*</span></label>
                                         <input class="form-control" type="text" 
                                             id="form-custom-switch-success" name="Sitio" value="{{$cica->sitio}}"
                                              required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                             <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un sitio valido 
+                                     </div>
 
                                     </div>
                                 </td>

@@ -28,14 +28,19 @@
             <div class="middle-content container-xxl p-0">
 
                 <!-- BREADCRUMB -->
-                <div class="page-meta">
+                 <div class="page-meta">
                     <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Agregar consulta </li>
+                            <li class="breadcrumb-item"><a href="#">Usuario : {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
                         </ol>
                     </nav>
                 </div>
+                <h1 style="text-align: center;">AGREGAR UNA NUEVA CONSULTA </h1>
+                <h3>Datos de la consulta</h3>
+                <h4>Los datos marcados con <span class="red-asterisk">*</span>  son obligatorios</h4>
                 <!-- /BREADCRUMB -->
                 <form method="POST" action="{{ route('create.ConsultasD') }}" class="user needs-validation" novalidate>
                     @csrf
@@ -45,7 +50,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="">
-                                    <label class="form-label">Nombre del Médico</label>
+                                    <label class="form-label">Nombre del Médico <span class="red-asterisk">*</span></label>
                                     <!-- <input id="event-title" type="text" class="form-control">-->
                                     <select class="form-control" name="ConsultaDoctor" id="event-title" required>
 
@@ -71,7 +76,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="">
-                                    <label class="form-label">Nombre del pacente</label>
+                                    <label class="form-label">Nombre del pacente <span class="red-asterisk">*</span></label>
                                     <!-- <input id="event-title2" type="text" class="form-control">-->
                                     <select class="form-control" name="consultaPaciente" id="event-title2" required>
 
@@ -97,7 +102,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="">
-                                    <label class="form-label">Cita </label>
+                                    <label class="form-label">Cita <span class="red-asterisk">*</span></label>
                                     <!-- <input id="event-title2" type="text" class="form-control">-->
                                     <select class="form-control" name="Consulta cita" id="event-title2" required>
 
@@ -124,7 +129,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="">
-                                    <label class="form-label">Seleccione la secretaria</label>
+                                    <label class="form-label">Seleccione la secretaria <span class="red-asterisk">*</span></label>
                                     <!-- <input id="event-title" type="text" class="form-control">-->
                                     <select class="form-control" name="consultaSecretaria" id="event-title" required>
 
@@ -152,7 +157,7 @@
 
                             <div class="col-md-12 ">
                                 <div class="">
-                                    <label class="form-label">Monto a cobrar </label>
+                                    <label class="form-label">Monto a cobrar <span class="red-asterisk">*</span></label>
                                     <input  type="number" class="form-control" name="Monto" required value="">
                                     <div class="valid-feedback">
                                         Datos correctos
@@ -169,10 +174,7 @@
                         </div>
 
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">
-                                        Enviar datos
-                                    </button>
+                   <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Guardar</button>
                 </form>
                     <!--end.Brad-->
 

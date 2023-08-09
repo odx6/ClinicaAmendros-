@@ -21,10 +21,10 @@
             </form>
         </div>
     @else
-        <h2>Prueba De Movilidad</h2>
-
-
-        <h2>Evaluación muscular</h2>
+       <h1 style="text-align: center;">EVALUACIÓN MUSCULAR</h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk">*</span> son obligatorios </h4>
+        
         <table class="table table-bordered">
             <thead>
 
@@ -77,6 +77,7 @@
 
         <div class="row">
             <h2>Evaluación de fuerza</h2>
+            <h4>Los campos marcados con * son requeridos </h4>
             @foreach ($Evaluaciones as $Evaluacion)
                 <form class="user needs-validation" method="POST"
                     action="{{ route('update.Muscular', ['id' => $Evaluacion->pk_evaluacion]) }}" novalidate>
@@ -85,7 +86,7 @@
                         <table class="table table-sm">
                             <thead>
                                 <tr>
-                                    <th scope="col">Nombre del miembro a evaluar</th>
+                                    <th scope="col">Nombre del miembro a evaluar <span class="red-asterisk">*</span></th>
 
 
                                 </tr>
@@ -99,6 +100,12 @@
                                                 placeholder="Nombre del miembro a evaluar" name="Nombre"
                                                 value="{{ $Evaluacion->Nombre_miembro }}" required
                                                 pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                                 <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un nombre valido 
+                                     </div>
                                         </div>
                                     </th>
                                 </tr>
@@ -117,6 +124,12 @@
                                             <option value="4">Grado 4</option>
                                             <option value="5">Grado 5</option>
                                         </select>
+                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                    Campo obligatorio 
+                                     </div>
                                     </td>
                                 </tr>
                                 <tr>
@@ -133,6 +146,12 @@
                                             <option value="4">Grado 4</option>
                                             <option value="5">Grado 5</option>
                                         </select>
+                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                    Campo obligatorio 
+                                     </div>
                                     </td>
                                 </tr>
 

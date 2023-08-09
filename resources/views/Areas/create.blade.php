@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <!-- BEGIN LOADER -->
+    <!-- BEGIN LOADER --> 
     <div id="load_screen">
         <div class="loader">
             <div class="loader-content">
@@ -22,15 +22,18 @@
             <div class="middle-content container-xxl p-0">
 
                 <!-- BREADCRUMB -->
-                <div class="page-meta">
+                 <div class="page-meta">
                     <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Agregar Área</li>
+                            <li class="breadcrumb-item"><a href="#">Usuario : {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
                         </ol>
                     </nav>
                 </div>
-                <h1>Datos del área</h1>
+                <h1 style="text-align: center;">AGREGAR UNA NUEVA  ÁREA </h1>
+                <h3>Datos del área</h3>
                 <form class="user needs-validation" method="POST" action="{{ route('store.Areas') }}" novalidate>
                     @csrf
 
@@ -39,17 +42,24 @@
                     <div class="row mb-4">
 
                         <div class="col">
-                            <label for="formGroupExampleInput">Nombre
+                            <label for="formGroupExampleInput">Nombre <span class="red-asterisk">*</span>
                             </label>
                             <input type="text" class="form-control" placeholder="nombre" name="Nombre" required
                                 pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2">
+                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un nombre valido para el área
+                                     </div>
+
                         </div>
+                         
 
                     </div>
 
 
-                    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Enviar
-                        Datos</button>
+                    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Guardar</button>
                     <!--end aPatologicos-->
 
                 </form>

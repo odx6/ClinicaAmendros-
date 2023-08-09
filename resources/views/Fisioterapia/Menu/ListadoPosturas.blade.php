@@ -17,16 +17,20 @@
             <form class="user" method="POST" action="{{ route('index.Postura', ['id' => $Paciente->SS]) }}">
                 @csrf
                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-                    style="display: none;">Agregar Evaluación Evaluación postura</button>
+                    style="display: none;">Agregar Evaluación postura</button>
             </form>
         </div>
     @else
+     <h1 style="text-align: center;">EVALUCIÓN DE POSTURA </h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk"><span class="red-asterisk">*</span></span> son obligatorios </h4>
         @foreach ($PosturaFrontal as $postura)
             <form class="user needs-validation" method="POST"
                 action="{{ route('update.Postura', ['id' => $postura->pk_vista]) }}" novalidate>
                 @csrf
 
-                <h2>Evaluacion Postura</h2>
+                <h2>EVALUACIÓN DE POSTURA</h2>
+                
 
                 <h2>{{ $postura->Nombre }}</h2>
 
@@ -55,6 +59,12 @@
                                                     value="{{ $pos->Inclinacion_Corporal }}"
                                                     name="Posturas[{{ $pos->pk_postura }}][Nombre]"
                                                     placeholder="Observaciones" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="3" required>
+                                                    <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un nombre valido 
+                                     </div>
                                             </div>
                                         </td>
                                         <td> <select class="form-control" name="Posturas[{{ $pos->pk_postura }}][L]" required>
@@ -69,6 +79,12 @@
                                                     @if ($pos->valor == 'S') selected @endif>
                                                     S</option>
                                             </select>
+                                              <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     El campo es obligatorio
+                                     </div>
 
                                         <td>
                                             <div class="form-group">
@@ -77,6 +93,12 @@
                                                     value="{{ $pos->Observaciones }}"
                                                     name="Posturas[{{ $pos->pk_postura }}][Observaciones]"
                                                     placeholder="Observaciones" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="3" required>
+                                                    <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una observación valida
+                                     </div>
                                             </div>
                                         </td>
                                         <td>
@@ -85,7 +107,8 @@
                                                 <input type="hidden" class="form-control" id="exampleFormControlInput1"
                                                     value="{{ $pos->pk_postura }}"
                                                     name="Posturas[{{ $pos->pk_postura }}][IDP]"
-                                                    placeholder="Observaciones">
+                                                    placeholder="Observaciones" >
+                                                     
                                             </div>
                                         </td>
                                     </tr>

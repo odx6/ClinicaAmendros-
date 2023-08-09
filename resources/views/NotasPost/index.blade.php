@@ -29,14 +29,19 @@
             <div class="middle-content container-xxl p-0">
 
                 <!-- BREADCRUMB -->
-                <div class="page-meta">
+                  <div class="page-meta">
                     <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Registrar Nota quirúrgica</li>
-                        </ol>
+                            <li class="breadcrumb-item"><a href="#">Usuario : {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
+                        </ol> 
                     </nav>
                 </div>
+                <h1 style="text-align: center;"> AGREGAR NOTA POSTQUIRURGICA</h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk">*</span>  son obligatorios</h4>
                 <!-- /BREADCRUMB -->
                 <!--calendario-->
                 <div class="row layout-top-spacing layout-spacing" id="cancel-row">
@@ -44,7 +49,9 @@
 
 
                         <!-- Estudios -->
-                        <h2>NOTAS POST QUIRÚRGICA </h2>
+                        <h4>NOTAS POST QUIRÚRGICA </h4>
+          
+
                         <!--Antecedentes patologicos-->
 
                         <form class="user needs-validation" method="POST" action="{{ route('NotasPost.create', ['id' => $id]) }}" novalidate>
@@ -53,59 +60,108 @@
                             <div class="row mb-4">
 
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Cirugía programada </label>
+                                    <label for="formGroupExampleInput">Cirugía programada <span class="red-asterisk">*</span> </label>
                                     <input type="date" class="form-control" placeholder="ciruja programada"
                                         name="PC" required>
+                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una fecha valida
+                                     </div>
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Cirugía realizada</label>
+                                    <label for="formGroupExampleInput">Cirugía realizada <span class="red-asterisk">*</span></label>
                                     <input type="date" class="form-control" placeholder="CIRUJIA REALIZADA"
                                         name="EJ" required>
+                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una fecha valida
+                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Hallazgo </label>
+                                    <label for="formGroupExampleInput">Hallazgo <span class="red-asterisk">*</span> </label>
 
                                     <input type="text" class="form-control" placeholder="Hallazgos" name="HA"
                                         required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" value="N/A">
+                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un hallazgo valido
+                                     </div>
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Complicaciones </label>
+                                    <label for="formGroupExampleInput">Complicaciones <span class="red-asterisk">*</span></label>
                                     <input type="text" class="form-control" placeholder="COMPLICACIONES" name="CO"
                                         required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" value="N/A">
+                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una complicación valida
+                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Nombre del cirujano </label>
+                                    <label for="formGroupExampleInput">Nombre del cirujano <span class="red-asterisk">*</span></label>
                                     <input type="text" class="form-control" placeholder="Nombre del cirujano "
-                                        name="NC" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                        name="NC" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"> <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un nombre valido 
+                                     </div>
                                 </div>
 
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Nombre del ayudante </label>
+                                    <label for="formGroupExampleInput">Nombre del ayudante <span class="red-asterisk">*</span></label>
                                     <input type="text" class="form-control" placeholder="Nombre del ayudante"
-                                        name="NAY" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                        name="NAY" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"> <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un nombre valido 
+                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Nombre del instrumentista</label>
+                                    <label for="formGroupExampleInput">Nombre del instrumentista <span class="red-asterisk">*</span></label>
                                     <input type="text" class="form-control" placeholder="nombre instrumentista"
-                                        name="NI" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                        name="NI" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"> <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un nombre valido 
+                                     </div>
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Nombre del anestesiólogo</label>
+                                    <label for="formGroupExampleInput">Nombre del anestesiólogo <span class="red-asterisk">*</span></label>
                                     <input type="text" class="form-control" placeholder="Nombre del aniestesiologo"
-                                        name="NAN" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                        name="NAN" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"> <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un nombre valido 
+                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Circulante</label>
+                                    <label for="formGroupExampleInput">Circulante <span class="red-asterisk">*</span></label>
                                     <input type="text" class="form-control" placeholder="circulante" name="CIR"
-                                        required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                        required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"> <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un nombre valido 
+                                     </div>
                                 </div>
                                 <!--end notaspost-->
                             </div>
@@ -125,8 +181,7 @@
                     </div>
 
 
-                    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Enviar
-                        datos</button>
+                    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Guardar</button>
                     </form>
                 </div>
             </div>

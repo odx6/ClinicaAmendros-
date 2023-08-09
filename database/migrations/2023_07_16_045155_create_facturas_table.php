@@ -15,10 +15,14 @@ return new class extends Migration
     {
         Schema::create('facturas', function (Blueprint $table) {
             $table->id('pk_factura');
+            $table->unsignedBigInteger('fk_proveedor');
+
             $table->String('Nombre');
             $table->String('url');
             $table->timestamps();
              $table->softDeletes();
+              $table->foreign('fk_proveedor')->references('pk_proveedor')->on('provedors');
+            
             
         });
     }

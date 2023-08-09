@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','Inventario')
+@section('title','Control de insumos')
 @section('linkAuth')
 
 @endsection
@@ -18,18 +18,21 @@
                 <div class="middle-content container-xxl p-0">
 
                     <!-- BREADCRUMB -->
-                    <div class="page-meta">
-                        <nav class="breadcrumb-style-one" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Proveedores</li>
-                            </ol>
-                        </nav>
-                    </div>
+                      <div class="page-meta">
+                    <nav class="breadcrumb-style-one" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Usuario : {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
+                        </ol> 
+                    </nav>
+                </div>
+                <h1 style="text-align: center;">LISTADO DE FACTURAS REGISTRADASS</h1>
                     @if(session('mensaje'))
  <div class="alert alert-icon-left alert-light-success alert-dismissible fade show mb-4" role="alert">
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> <svg xmlns="http://www.w3.org/2000/svg" data-bs-dismiss="alert" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x close"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12" y2="17"></line></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                                         <strong> <strong>Exito!</strong> {{ session('mensaje') }}.
                                     </div>
 @endif
@@ -48,7 +51,8 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">Clave de factura</th>
+                <th scope="col">Registro de la factura</th>
+                <th scope="col">Proveedor de factura</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Acción</th>
             </tr>
@@ -60,6 +64,7 @@
                 <td> No hay facturas  Agregadas </td>
                 <td> Agrege nuevos fracturas </td>
             </tr>
+             
             @else
             @foreach($Facturas as $factu)
             <tr>
@@ -70,15 +75,26 @@
                 </td>
                 <td>
                     <div class="media">
+                        @php
+                        $Proveedor=App\Models\Provedor::find($factu->fk_proveedor);
+                        @endphp
+                       {{$Proveedor->Nombre}}
+                       
+                       {{$Proveedor->Apellidos}} 
+                       
+                    </div>
+                </td>
+                <td>
+                    <div class="media">
                        {{$factu->Nombre}}
                     </div>
                 </td>
                
                
-                <td class="text-center">
+                <td class="text">
                     <div class="action-btns">
                         
-                        <a href="{{Storage::url($factu->url);}}" class="action-btn btn-edit bs-tooltip me-2" data-toggle="tooltip" data-placement="top" title="Editar">
+                        <a href="{{Storage::url($factu->url)}}" class="action-btn btn-edit bs-tooltip me-2" data-toggle="tooltip" data-placement="top" title="Editar">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                         </a>
                         <a href="{{route('show.Facctura',['id'=>$factu->pk_factura])}}" class="action-btn btn-edit bs-tooltip me-2" data-toggle="tooltip" data-placement="top" title="Editar">

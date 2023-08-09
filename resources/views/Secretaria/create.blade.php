@@ -18,15 +18,19 @@
                 <div class="middle-content container-xxl p-0">
 
                     <!-- BREADCRUMB -->
-                    <div class="page-meta">
-                        <nav class="breadcrumb-style-one" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Agregar Secretaria</li>
-                            </ol>
-                        </nav>
-                    </div>
-                        <h1>Datos de  la secretaria</h1>
+                      <div class="page-meta">
+                    <nav class="breadcrumb-style-one" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Usuario : {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
+                        </ol> 
+                    </nav>
+                </div>
+                <h1 style="text-align: center;">AGREGAR UNA SECRETARIA</h1>
+                <h3>Datos del  la secretaria </h3>
+                <h4>Los datos marcados con <span class="red-asterisk">*</span>  son obligatorios</h4>
                         <form class="user needs-validation" method="POST" action="{{ route('store.Secrearia') }}" novalidate>
                             @csrf
  
@@ -35,7 +39,7 @@
                             <div class="row mb-4">
 
                                  <div class="col">
-                                    <label for="formGroupExampleInput">Usuario
+                                    <label for="formGroupExampleInput">Usuario   <span class="red-asterisk">*</span>
                                     </label>
 
                                     <select class="form-select" id="exampleFormControlSelect1" name="User" required>
@@ -55,22 +59,44 @@
                    
 
                 </select>
+                 <div class="valid-feedback">
+                                        Datos correctos
+                                    </div>
+                                    <div class="invalid-feedback">
+                                   El campo es obligatorio
+                                    </div>
                                 </div>
-                            </div>
+                                </div>
+                            
                             <div class="row mb-4">
 
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Nombre(s)
+                                    <label for="formGroupExampleInput">Nombre(s)  <span class="red-asterisk">*</span>
                                     </label>
                                     <input type="text" class="form-control" placeholder="nombre" name="Nombre"
                                         required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2">
+                                         <div class="valid-feedback">
+                                        Datos correctos
+                                    </div>
+                                    <div class="invalid-feedback">
+                                    Ingrese un nombre(s) valido 
+                                    </div>
                                 </div>
+                               
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Apellido(s)
+                                    <label for="formGroupExampleInput">Apellidos  <span class="red-asterisk">*</span>
                                     </label>
                                     <input type="text" class="form-control" placeholder="nombre" name="Apellidos"
                                         required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2">
+                                         <div class="valid-feedback">
+                                        Datos correctos
+                                    </div>
+                                    <div class="invalid-feedback">
+                                    Ingrese apellidos validos
+                                    </div>
                                 </div>
+
+                                
                                 </div>
                             <div class="row mb-4">
 
@@ -78,16 +104,22 @@
 
 
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Teléfono</label>
+                                    <label for="formGroupExampleInput">Teléfono  <span class="red-asterisk">*</span></label>
                                     <input type="number" class="form-control" placeholder="telefono" name="Telefono"
                                         required pattern="[0-9]+" minlength="10" maxlength="10">
+                                         <div class="valid-feedback">
+                                        Datos correctos
+                                    </div>
+                                    <div class="invalid-feedback">
+                                   Ingrese un teléfono de 10 dígitos sin espacios 
+                                    </div>
                                 </div>
                                 </div>
+                           
                            
                             
                            
-<button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola" >Enviar
-                        Datos</button>
+<button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola" >Guardar </button>
                     <!--end aPatologicos-->
 
                 </form>

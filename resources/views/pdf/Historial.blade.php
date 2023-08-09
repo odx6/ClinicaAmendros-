@@ -170,6 +170,12 @@
         <div class="historial-container">
 
             <h1 class="historial-header">HISTORIA CLINICA </h1>
+            fecha de creación :  <p class="fecha" id="fecha-actual">Oaxaca, Oax., a {{$Fecha->day}} de  {{$Fecha->format('M')}} de {{$Fecha->year}}   Almendro 210, Colonia Reforma. CP. 68050 </p>
+
+            <h2>Datos del medico </h2>
+                <p><strong>Nombre  del doctor :</strong> DR.{{ $Doctor->Nombre }} {{ $Doctor->Apellidos }}</p>
+                <p><strong>Cedula :</strong> {{ $Doctor->Cedula }} </p>
+                <p><strong>Especialidad :</strong> {{ $Doctor->ESPECIALIDAD }} </p>
             @foreach ($Historiales as $Historial)
                 <table>
                     <tr>
@@ -181,7 +187,7 @@
                     </tr>
                 </table>
             @endforeach
-            <h1 class="historial-header">FICHA DE IDENTIFICACION:
+            <h1 class="historial-header">FICHA DE IDENTIFICACION:  
             </h1>
             <table>
 
@@ -810,24 +816,11 @@
         @endforeach
         @foreach ($Notas as $Nota)
             <div class="historial-item textarea-container">
-                <label for="observaciones">NOTA DE EVALUACIÓN POSTOPERATORIA:</label>
+                <label for="observaciones">{{ $Nota->Tipo }}</label>
                 <textarea id="observaciones">{{ $Nota->Nota }}</textarea>
             </div>
-            <div class="historial-item textarea-container">
-                <label for="observaciones">NOTA MEDICA:</label>
-                <textarea id="observaciones">EJEMOLO NOTA</textarea>
-            </div>
-            <div class="historial-item textarea-container">
-                <label for="observaciones">NOTA de ALTA:</label>
-                <textarea id="observaciones">EJEMPLO NOTA </textarea>
-            </div>
-
-
-            <div class="historial-item textarea-container">
-                <label for="recomendaciones">Recomendaciones:</label>
-                <textarea id="recomendaciones">EJEMPLO NOTA </textarea>
-            </div>
-            </div>
+           
+           
 
 
 

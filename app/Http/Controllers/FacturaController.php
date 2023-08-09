@@ -52,6 +52,7 @@ class FacturaController extends Controller
 
             $Factura = new Factura;
             $Factura->Nombre=request('Nombre');
+            $Factura->fk_proveedor=request('Proveedor');
             $Factura->url=$path;
             $Factura->save();
 
@@ -93,7 +94,7 @@ class FacturaController extends Controller
      */
     public function edit(Factura $factura)
     {
-        //
+        
     }
 
     /**
@@ -124,6 +125,7 @@ class FacturaController extends Controller
             $file = $request->file('archivo');
             $path = $file->store('pdfs', 'public');
             $Factura->Nombre=$data['Nombre'];
+             $Factura->fk_proveedor=$data['Proveedor'];
             $Factura->url=$path;
             $Factura->save();
 
@@ -167,6 +169,16 @@ class FacturaController extends Controller
     }
 
 
+    }
+     public function Facturas(Request $request)
+    {
+        $id = Request('area');
+        $Medicos = Factura::where('fk_proveedor', '=', $id)->get();
+        $MedicosJson = json_encode($Medicos);
+        //return $MedicosJson;
+        //Para mostrar los datos con javaScript
+
+        return response()->json($Medicos);
     }
 }
 

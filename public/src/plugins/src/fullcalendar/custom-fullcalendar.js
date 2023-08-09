@@ -6,7 +6,13 @@ document.addEventListener('DOMContentLoaded', function () {
     function agregarCeroIzquierda(numero) {
         return numero < 10 ? '0' + numero : numero;
     }
-
+function getMexicoCurrentDate() {
+  const currentDate = new Date();
+  const utcOffset = currentDate.getTimezoneOffset(); // Obtener la diferencia de minutos entre UTC y el huso horario local
+  const mexicoUtcOffset = (utcOffset / 60) - 5; // Ajuste para el huso horario de México (UTC-5 o UTC-6)
+  currentDate.setHours(currentDate.getHours() + mexicoUtcOffset);
+  return currentDate;
+}
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -109,8 +115,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         //Funcion para segundas citas
         $("#NoPrimera").click(function () {
-var currentDate = new Date().toISOString().slice(0, 16);
-
+var currentDate = new Date(getMexicoCurrentDate()).toISOString().slice(0, 16);
+            //alert(currentDate);
             // Establecer el valor mínimo en el input
             document.getElementById("event-start-date").min = currentDate;
             //document.getElementById("event-end-date").min = currentDate;
@@ -305,12 +311,12 @@ var currentDate = new Date().toISOString().slice(0, 16);
                 id: uuidv4(),
                 title: getTitleValue,
                 start: setModalStartDateValue,
-                end: setModalEndDateValue,
-                allDay: true,
+              //  end: setModalEndDateValue,
+                allDay: false,
                 extendedProps: { calendar: getModalCheckedRadioBtnValue }
             })
-            var x = $('#event-start-date').val();
-            alert(x);
+            //var x = $('#event-start-date').val();
+           // alert(x);
             $.ajax({
                 type: "POST",
                 url: 'eventos',
@@ -320,10 +326,19 @@ var currentDate = new Date().toISOString().slice(0, 16);
                     inicio: $('#event-start-date').val(),
                     _token: $('meta[name="csrf-token"]').attr('content'),
                 },
-            }).done(function (res) { alert(res) 
-                //location.reload();
+            }).done(function (res) { 
+               $("#MensajeCita").text(res);
+               
+                  
+                  if(res=="Cita Agregada"){
+    myModal.hide();
+    location.reload();}else{
+         alerta.show();
+                 myModal.hide();
+    }
+   
         });
-            myModal.hide()
+            
 
         })
 
@@ -354,10 +369,17 @@ var currentDate = new Date().toISOString().slice(0, 16);
             }).done(function (res) { //alert(res);
             $("#MensajeCita").text(res);
               
-                alerta.show();
-                if(res=="Cita Actualizada correctamente"){location.reload();}
-                             });
+                
+                if(res=="Cita Actualizada correctamente"){
+                     myModal.hide();
+                    alerta.show();
+                    location.reload();}else{
+                        myModal.hide();
+            alerta.show();
 
+                    }
+                             });
+            
             
         })
 
@@ -406,36 +428,7 @@ var currentDate = new Date().toISOString().slice(0, 16);
             if (getModalIfCheckedRadioBtnEl !== null) { getModalIfCheckedRadioBtnEl.checked = false; }
         })
 
-        // mis variables 
-        $("#btnAgregar").click(function () {
-          // alert("me pulso");
-            $.ajax({
-                type: "POST",
-                url: 'eventos',
-                data: {
-                    id: $('#event-title').val(),
-                    paciente: $('#event-title2').val(),
-                    inicio: $('#event-start-date').val(),
-
-                    _token: $('meta[name="csrf-token"]').attr('content'),
-
-                },
-            }).done(function (res) {
-               //alert(res);
-                $("#MensajeCita").text(res);
-               
-                alerta.show();
-                 myModal.hide();
-                
-  if(res=="Cita Agregada"){
-    myModal.hide();
-    location.reload();
-}
-            });
-
-        })
-
-        //end
+      
         // mis variables 
         $("#btnPrimera").click(function () {
             //alert("me pulso primera cita");

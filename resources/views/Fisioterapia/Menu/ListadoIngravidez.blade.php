@@ -20,7 +20,9 @@
             </form>
         </div>
     @else
-        <h2>Estado de ingravidez</h2>
+        <h1 style="text-align: center;">ESTADO DE INGRAVIDEZ</h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk">*</span> son obligatorios</h4>
         <!--Antecedentes patologicos-->
         @foreach ($Ingravidez as $in)
             <form class="user needs-validation" method="POST"
@@ -41,15 +43,21 @@
 
                     </div>
                 @endif
-                <h3>Especifique</h3>
+                <h3>Especifique <span class="red-asterisk">*</span></h3>
                 <div class="form-group">
 
                     <input type="text" class="form-control" id="exampleFormControlInput1"
                         value="{{ $in->Especificacion }}" name="Especificacion" placeholder="Especifique" required
                         pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificacion valida
+                                     </div>
                 </div>
 
-                <h3>Cuantos hijos tiene </h3>
+                <h3>Cuantos hijos tiene <span class="red-asterisk">*</span></h3>
                 <div class="form-group mb-4">
 
                     <select class="form-select" id="exampleFormControlSelect1" name="hijos" required>
@@ -65,6 +73,12 @@
                         @endfor
 
                     </select>
+                    <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     El campo es obligatorio
+                                     </div>
                 </div>
 
 

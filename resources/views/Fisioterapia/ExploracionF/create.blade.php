@@ -38,14 +38,18 @@
             <div class="middle-content container-xxl p-0">
 
                 <!-- BREADCRUMB -->
-                <div class="page-meta">
+                  <div class="page-meta">
                     <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Agregar Exploración Física</li>
-                        </ol>
+                            <li class="breadcrumb-item"><a href="#">Usuario : {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
+                        </ol> 
                     </nav>
                 </div>
+                <h1 style="text-align: center;">AGREGAR EXPLORACIÓN FÍSICA</h1>
+                <h4>Los datos marcados con <span class="red-asterisk"><span class="red-asterisk">*</span></span>  son obligatorios</h4>
                 <!-- /BREADCRUMB -->
                 <!--calendario-->
                 <div class="row layout-top-spacing layout-spacing" id="cancel-row">
@@ -56,7 +60,8 @@
                             @csrf
                             <div class="col">
 
-                                <h2>Exploración Física</h2>
+                                <h2>EXPLORACIÓN FÍSICA</h2>
+                             
                                 <table class="table">
 
                                     <tbody>
@@ -64,13 +69,19 @@
                                         <tr>
 
                                             <td>
-                                                <h3>peso :</h3>
+                                                <h3>peso <span class="red-asterisk">*</span>:</h3>
                                             </td>
                                             <td>
                                                 <div class="form-group">
 
                                                     <input type="numeric" class="form-control" id="peso"
                                                         placeholder="Peso(Kg)" name="Peso" required pattern="^\d+(\.\d+)?$" title="Ingresa un número entero o decimal válido">
+                                                        <div class="valid-feedback">
+                                            Dato  correcto
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Ingrese un valor numérico valido 
+                                        </div>
                                                 </div>
                                             </td>
 
@@ -78,13 +89,19 @@
                                         <tr>
 
                                             <td>
-                                                <h3>Estatura :</h3>
+                                                <h3>Estatura <span class="red-asterisk">*</span>:</h3>
                                             </td>
                                             <td>
                                                 <div class="form-group">
 
                                                     <input type="numeric" class="form-control"  
                                                        placeholder="Estatura" name="Estatura" id="altura" pattern="^\d+(\.\d+)?$" required>
+                                                       <div class="valid-feedback">
+                                            Dato  correcto
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Ingrese un valor numérico valido 
+                                        </div>
                                                 </div>
                                             </td>
 
@@ -92,13 +109,19 @@
                                         <tr>
 
                                             <td>
-                                                <h3>(IMC):</h3>
+                                                <h3>(IMC) <span class="red-asterisk">*</span>:</h3>
                                             </td>
                                             <td>
                                                 <div class="form-group">
 
                                                     <input type="text" class="form-control" id="resultado"
                                                         value="" placeholder="(IMC)" name="IMC" pattern="^\d+(\.\d+)?$" required>
+                                                        <div class="valid-feedback">
+                                            Dato  correcto
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Ingrese un valor numérico valido 
+                                        </div>
                                                 </div>
                                             </td>
 
@@ -110,11 +133,17 @@
                             </div>
                             <div class="col">
                                
-                                <h2>Motivo de la consulta</h2>
+                                <h2>Motivo de la consulta <span class="red-asterisk">*</span></h2>
                                 <div class="form-group">
 
                                     <input type="text" class="form-control" id="exampleFormControlInput1"
                                         value="N/A" placeholder="Motivo" name="Motivo" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                          <div class="valid-feedback">
+                                            Dato  correcto
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Ingrese un motivo valido
+                                        </div>
                                 </div>
 
                             </div>
@@ -128,8 +157,7 @@
             
 
         </div>
-        <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Enviar
-            Datos</button>
+        <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Guardar</button>
         </form>
 
     </div>

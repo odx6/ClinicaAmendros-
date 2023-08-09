@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Indicaciones Medicas</h5>
+                <h1 class="modal-title" id="exampleModalLabel">INDICACIONES MEDICAS</h>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     <svg> ... </svg>
                 </button>
@@ -12,7 +12,7 @@
                 <form action="{{ route('Receta.pdf', ['id' => $Paciente->SS]) }}" method="POST">
                     @csrf
                     <div class="col">
-                        <label for="formGroupExampleInput">Indicaciones Medicas </label>
+                        <label for="formGroupExampleInput">Indicaciones Medicas <span class="red-asterisk">*</span></label>
 
                         <span class="input-group-text">Indicaciones</span>
                         <textarea class="form-control" name="Receta" required></textarea>

@@ -61,7 +61,7 @@ class SalidaController extends Controller
        
 
 
-        return redirect()->route('index.Salidas')->with('mensaje', '¡Salida de producto Agregado correctamente!');
+        return redirect()->route('index.Salidas')->with('mensaje', '¡Salida de producto  correctamente!');
         
     }
 
@@ -132,7 +132,7 @@ class SalidaController extends Controller
        
 
 
-        return redirect()->route('index.Salidas')->with('mensaje', '¡Salida de producto Actualizado correctamente!');
+        return redirect()->route('index.Salidas')->with('mensaje', '¡Salida de producto Actualizada correctamente!');
     }
 
     /**

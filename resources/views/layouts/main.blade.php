@@ -41,6 +41,13 @@
         body.dark .layout-px-spacing, .layout-px-spacing {
             min-height: calc(100vh - 155px) !important;
         }
+        h1{
+
+            align-items: center;
+        }
+         .red-asterisk {
+            color: red;
+        }
     </style>
 
     

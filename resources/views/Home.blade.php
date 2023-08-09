@@ -35,11 +35,14 @@
                 <div class="page-meta">
                     <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">{{ auth()->user()->role }}</li>
+                            <li class="breadcrumb-item"><a href="#">Usuario : {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
                         </ol>
                     </nav>
                 </div>
+                <h1 style="text-align: center;">AGENDA  </h1>
                 <!-- /BREADCRUMB -->
                 <!--calendario-->
                 <div class="row layout-top-spacing layout-spacing" id="cancel-row">
@@ -56,7 +59,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Agregar una nueva cita</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">AGREGAR UNA CITA PARA EL PACIENTE</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
@@ -65,8 +68,9 @@
 
                                     <div class="row">
                                         <div class="col-md-12">
+                                             <label class="form-label">Los campos con <span class="red-asterisk">*</span> son obligatorios</label>
                                             <div class="">
-                                                <label class="form-label">Área</label>
+                                                <label class="form-label">Área <span class="red-asterisk">*</span></label>
                                                 <!-- <input id="event-title" type="text" class="form-control">-->
                                                 <select class="form-control event-title-area" name="Area"
                                                     id="event-title-area" required>
@@ -89,7 +93,7 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="">
-                                                    <label class="form-label">Nombre del Doctor</label>
+                                                    <label class="form-label">Nombre(s) del Doctor <span class="red-asterisk">*</span></label>
                                                     <!-- <input id="event-title" type="text" class="form-control">-->
                                                     <select class="form-control event-title" name="DOCTOR" id="event-title"
                                                         required>
@@ -109,7 +113,7 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="">
-                                                    <label class="form-label">Nombre del paciente</label>
+                                                    <label class="form-label">Nombre(s) del paciente <span class="red-asterisk">*</span></label>
                                                     <!-- <input id="event-title2" type="text" class="form-control">-->
                                                     <select class="form-control" name="paciente" id="event-title2" required>
                                                         <option selected disabled value="">Selecciona el paciente
@@ -135,7 +139,7 @@
 
                                             <div class="col-md-12 ">
                                                 <div class="">
-                                                    <label class="form-label">Ingresa La fecha de inicio y la hora</label>
+                                                    <label class="form-label">Ingresa La fecha de inicio y la hora <span class="red-asterisk">*</span></label>
                                                     <input id="event-start-date" type="datetime-local" class="form-control"
                                                         placeholder="Fecha de la cita"   required>
                                                     <div class="valid-feedback">

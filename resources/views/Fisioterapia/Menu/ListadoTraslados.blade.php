@@ -20,12 +20,17 @@
             </form>
         </div>
     @else
+<h1 style="text-align: center;">TRASLADOS</h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk"><span class="red-asterisk">*</span></span> son obligatorios </h4>
         @foreach ($Traslados as $trase)
         <form class="user needs-validation" method="POST" action="{{ route('update.Traslados',['id'=>$trase->pk_traslados]) }}" novalidate>
             @csrf
+            <h2>TRASLADOS</h2>
+               
             <div class="col-sm">
 
-                <h3>Val Inicial</h3>
+                <h3>Val Inicial <span class="red-asterisk">*</span></h3>
                 <select class="form-control" name="Inicial" required>
                     <option value="{{$trase->Val_inicial}}">{{$trase->Val_inicial}}</option>
                     @php
@@ -36,7 +41,14 @@
                         <option value="{{ $tras }}">{{ $tras }} </option>
                     @endforeach
                 </select>
-                <h3>Val.final</h3>
+                  <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una valoración inicial valida
+                                     </div>
+
+                <h3>Val.final <span class="red-asterisk">*</span></h3>
                 <select class="form-control" name="Final" required>
                     <option value="{{$trase->Val_final}}">{{$trase->Val_final}}</option>
                     @php
@@ -47,6 +59,12 @@
                         <option value="{{ $tras }}">{{ $tras }} </option>
                     @endforeach
                 </select>
+                 <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una valoración final valida
+                                     </div>
                 <br>
                 <br>
             </div>
@@ -57,7 +75,7 @@
             <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola"
                 style="display: none;">Actualizar</button>
     </form>
-    <form class="user" method="POST" action="{{ route('index.Cicatriz',['id' => $Paciente->SS]) }}">
+    <form class="user" method="POST" action="{{ route('index.Traslados',['id' => $Paciente->SS]) }}">
         @csrf
         <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
             style="display: none;">Agregar traslado

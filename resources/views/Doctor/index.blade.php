@@ -27,16 +27,21 @@
                 <div class="middle-content container-xxl p-0">
 
                     <!-- BREADCRUMB -->
-                    <div class="page-meta">
-                        <nav class="breadcrumb-style-one" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Vista Doctores</li>
-                            </ol>
-                        </nav>
+                     <div class="page-meta">
+                    <nav class="breadcrumb-style-one" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Usuario : {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
+                        </ol>
+                    </nav>
+                </div>
+                
                     </div>
                     <!-- /BREADCRUMB -->
                    <!--calendario-->
+                     <h1 style="text-align: center;">AGENDA </h1>
                    <div class="row layout-top-spacing layout-spacing" id="cancel-row">
                         <div class="col-xl-12 col-lg-12 col-md-12">
                             <div class="calendar-container">
@@ -53,7 +58,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Agregar una nueva cita</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">AGREGAR UNA NUEVA CITA</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <form method="POST" action="{{ route('Doctor.historial') }}" class="needs-validation" novalidate>
@@ -64,7 +69,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="">
-                                                <label class="form-label">Nombre del Médico</label>
+                                                <label class="form-label">Nombre del Médico <span class="red-asterisk">*</span></label>
                                                <!-- <input id="event-title" type="text" class="form-control">-->
                                                 <select class="form-control" name="DOCTOR" id="event-title" required>
                                                       
@@ -95,7 +100,7 @@
                                         </div>
                                          <div class="col-md-12">
                                             <div class="">
-                                                <label class="form-label">Nombre del paciente</label>
+                                                <label class="form-label">Nombre del paciente </label>
                                                <!-- <input id="event-title2" type="text" class="form-control">-->
                                                 <select class="form-control" name="paciente" id="event-title2" required >
 

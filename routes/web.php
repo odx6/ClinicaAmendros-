@@ -345,6 +345,7 @@ Route::post('/ListarFacctura',[ FacturaController::class, 'store'])->name('store
 Route::post('/ActualizarFacctura', [FacturaController::class, 'update'])->name('update.Facctura');
 Route::get('/mostrarFacctura', [FacturaController::class, 'show'])->name('show.Facctura');
 Route::get('/EliminarFacctura', [FacturaController::class, 'destroy'])->name('destroy.Facctura');
+Route::post('/Factura', [FacturaController::class, 'Facturas'])->name('Fact.Facctura');
 //endSeProductos
 
 //ruta Productos

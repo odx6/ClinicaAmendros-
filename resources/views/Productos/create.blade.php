@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','Inventario')
+@section('title','Control de insumos')
 @section('linkAuth')
 
 @endsection
@@ -18,25 +18,29 @@
                 <div class="middle-content container-xxl p-0">
 
                     <!-- BREADCRUMB -->
-                    <div class="page-meta">
-                        <nav class="breadcrumb-style-one" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Productos</li>
-                            </ol>
-                        </nav>
-                    </div>
-                        <h1>Datos del producto</h1>
+                     <div class="page-meta">
+                    <nav class="breadcrumb-style-one" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Usuario : {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
+                        </ol> 
+                    </nav>
+                </div>
+                <h1 style="text-align: center;">AGREGAR UN NUEVO PRODUCTO</h1>
+                <h3>Datos del producto </h3>
+                <h4>Los datos marcados con <span class="red-asterisk">*</span>  son obligatorios</h4>
                         <form class="user needs-validation" method="POST" action="{{ route('store.Productos') }}" novalidate>
                             @csrf
 
                             
                             <div class="row mb-4">
                                  <div class="col">
-                                    <label for="formGroupExampleInput">Proveedor
+                                    <label for="formGroupExampleInput">Proveedor <span class="red-asterisk">*</span>
                                     </label>
 
-                                    <select class="form-select" id="exampleFormControlSelect1" name="Proveedor" required>
+                                    <select class="form-select prove" id="exampleFormControlSelect1" name="Proveedor" required>
                     <option selected disabled value="">Seleccione un proveedor </option>
                             @php
                             $proveedores=App\Models\Provedor::all();
@@ -53,59 +57,87 @@
                    
 
                 </select>
+                 <div class="valid-feedback">
+                                        Datos correctos
+                                    </div>
+                                    <div class="invalid-feedback">
+                                   El campo es obligatorio
+                                    </div>
                                 </div>
                                  <div class="col">
-                                    <label for="formGroupExampleInput">Factura
+                                    <label for="formGroupExampleInput">Factura <span class="red-asterisk">*</span>
                                     </label>
 
-                                    <select class="form-select" id="exampleFormControlSelect1" name="Factura" required>
+                                    <select class="form-select resultado" id="exampleFormControlSelect1" name="Factura" required>
                     <option selected disabled value="">Seleccione una factura de compra </option>
-                            @php
-                            $Facturas=App\Models\Factura::all();
-                            @endphp
-                            @if($Facturas->isEmpty())
-                            <option selected disabled value="">No hay facturas Agregue nuevas </option>
+                          
+                           
 
-                            @else
-                            @foreach($Facturas as $factu)
-                            <option value="{{ $factu->pk_factura}}">{{ $factu->Nombre }} 
-                            @endforeach
-                            @endif
+                            
                            
                    
 
                 </select>
+                 <div class="valid-feedback">
+                                        Datos correctos
+                                    </div>
+                                    <div class="invalid-feedback">
+                                   El campo es obligatorio
+                                    </div>
                                 </div>
                             </div>
                             <div class="row mb-4">
 
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Nombre
+                                    <label for="formGroupExampleInput">Nombre <span class="red-asterisk">*</span>
                                     </label>
                                     <input type="text" class="form-control" placeholder="nombre" name="Nombre"
-                                        required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2">
+                                        required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"> 
+                                         <div class="valid-feedback">
+                                        Datos correctos
+                                    </div>
+                                    <div class="invalid-feedback">
+                                  Ingrese un nombre valido 
+                                    </div>
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Cantidad</label>
+                                    <label for="formGroupExampleInput">Cantidad <span class="red-asterisk">*</span></label>
                                     <input type="numeric" class="form-control" placeholder="Precio compra" name="Cantidad"
                                         required pattern="[0-9]+">
+                                        <div class="valid-feedback">
+                                        Datos correctos
+                                    </div>
+                                    <div class="invalid-feedback">
+                                  Ingrese una cantidad valida 
+                                    </div>
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Precio compra</label>
+                                    <label for="formGroupExampleInput">Precio compra <span class="red-asterisk">*</span></label>
                                     <input type="numeric" class="form-control" placeholder="Precio compra" name="Precio compra"
                                         required pattern="[0-9]+">
+                                        <div class="valid-feedback">
+                                        Datos correctos
+                                    </div>
+                                    <div class="invalid-feedback">
+                                  Ingrese un precio de compra valido
+                                    </div>
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Precio venta</label>
+                                    <label for="formGroupExampleInput">Precio venta <span class="red-asterisk">*</span></label>
                                     <input type="numeric" class="form-control" placeholder="Precio venta" name="Precio venta"
                                         required pattern="[0-9]+">
+                                        <div class="valid-feedback">
+                                        Datos correctos
+                                    </div>
+                                    <div class="invalid-feedback">
+                                  Ingrese un precio de venta valido
+                                    </div>
                                 </div>
                                 </div>
                            
-<button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola" >Enviar
-                        Datos</button>
+<button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola" >Guardar </button>
                     <!--end aPatologicos-->
 
                 </form>
@@ -117,6 +149,7 @@
 
 @endsection
 @section('Scripts')
+<script src="{{ asset('MisFunciones/Clinica.js') }}"></script>
  
 
 @endsection

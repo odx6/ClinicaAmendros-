@@ -24,7 +24,11 @@
 
         </div>
     @else
+    <h1 style="text-align: center;">TRATAMIENTOS</h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk"><span class="red-asterisk">*</span></span> son obligatorios </h4>
         <h2> TRATAMEINTOS PREVIOS DEL PACIENTE </h2>
+        
         @foreach ($Tratamiento as $trata)
             <!--- Historial-->
             <form class="user needs-validation" method="POST"
@@ -36,12 +40,18 @@
                 <div class="row mb-4">
 
                     <div class="col">
-                        <label for="formGroupExampleInput">Tratamientos Previos
+                        <label for="formGroupExampleInput">Tratamientos previos <span class="red-asterisk">*</span>
                         </label>
                        
 
                                <textarea type="text" class="form-control" id="exampleFormControlInput1"
                                                         value="" name="Tratamiento" placeholder="Tratamientos" required minlength="3" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">{{ $trata->des_tratamiento }}</textarea>
+                                                          <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un tratamiento valido 
+                                     </div>
                     </div>
 
                 </div>

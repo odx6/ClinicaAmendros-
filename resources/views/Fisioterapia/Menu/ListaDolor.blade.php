@@ -20,16 +20,18 @@
             </form>
         </div>
     @else
+        <h1 style="text-align: center;">ESCALA DE DOLOR</h1>
+
         @foreach ($Dolor as $dol)
         <form class="user" method="POST" action="{{ route('update.Escala',['id'=>$dol->pk_escala]) }}">
             @csrf
             <div class="row">
                 <h2>Escala de Dolor</h2>
-                <div class="col-sm">
+                
                     <input type="range" min="0" max="10" step="1" value="{{$dol->Escala}}"
                         id="dolorBarra" name="Escala">
                     <h3>Valor de Dolor: <span id="valorDolor">{{$dol->Escala}}</span></h3>
-                </div>
+              
             </div>
 
         <!--end-table-->
@@ -49,8 +51,12 @@
         <button type="submit" class="btn btn-danger btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
             style="display: none;">Eliminar</button>
     </form>
-    @endforeach 
-    @endif
+    
+    
+</div>
+@endforeach 
+@endif
 </div>
 
-@if($Dolor->isEmpty())@else </div>@endif
+
+

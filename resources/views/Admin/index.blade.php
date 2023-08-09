@@ -31,12 +31,16 @@
                 <div class="page-meta">
                     <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">{{ $Doctor }}</li>
+                            <li class="breadcrumb-item"><a href="#">Usuario : {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
                         </ol>
                     </nav>
                 </div>
-                <h3>Hola bienvenido</h3>
+                <br>
+                <h1>Hola bienvenido director {{auth()->user()->name}}</h1>
+                
             </div>
 
         </div>

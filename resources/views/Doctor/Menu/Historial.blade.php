@@ -32,7 +32,7 @@
                                             @else
                                                 @foreach ($Historiales as $Historial)
                                                     <!--- Historial-->
-
+                                                       <h1 style="text-align: center;">HISTORIAL DEL PACIENTE</h1>
                                                     <form class="user needs-validation" method="POST"
                                                         action="{{ route('historial.update',['Identificador'=>$Historial->idHIstorial_clinico ,'Paciente'=>$Historial->PacienteSS ]) }}" novalidate>
                                                         @csrf
@@ -40,7 +40,7 @@
                                                        
                                                         <div class="row mb-4">
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">diabetes millitus(DM)
+                                                                <label for="formGroupExampleInput">diabetes millitus(DM) <span class="red-asterisk">*</span>
                                                                 </label>
                                                                 <select class="form-control" name="DM" required>
                                                                     <option value="{{ $Historial->DM }}">
@@ -54,9 +54,15 @@
                                                                     <option value="0">No</option>
 
                                                                 </select>
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         el campo es requerido
+                                     </div>
                                                             </div>
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Hirpertensión (HAS)</label>
+                                                                <label for="formGroupExampleInput">Hirpertensión (HAS) <span class="red-asterisk">*</span></label>
                                                                 <select class="form-control" name="HAS" required>
                                                                     <option value="{{ $Historial->HAS }}">
                                                                         @if ($Historial->HAS == '1')
@@ -69,6 +75,12 @@
                                                                     <option value="0">No</option>
 
                                                                 </select>
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         el campo es requerido
+                                     </div>
                                                             </div>
                                                             </div>
                                                              <div class="row mb-4">
@@ -87,9 +99,15 @@
                                                                     <option value="0">No</option>
 
                                                                 </select>
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         el campo es requerido
+                                     </div>
                                                             </div>
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Madre fallecida</label>
+                                                                <label for="formGroupExampleInput">Madre fallecida <span class="red-asterisk">*</span></label>
                                                                 <select class="form-control" name="MF" required>
                                                                     <option value="{{ $Historial->MFALLECIDA }}">
                                                                         {{ $Historial->MFALLECIDA }}</option>
@@ -97,11 +115,17 @@
                                                                     <option value="No">No</option>
 
                                                                 </select>
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         el campo es requerido
+                                     </div>
                                                             </div>
                                                              </div>
                                                              <div class="row mb-4">
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">diabetes millitus(DM)
+                                                                <label for="formGroupExampleInput">diabetes millitus(DM) <span class="red-asterisk">*</span>
                                                                 </label>
                                                                 <select class="form-control" name="PDM" required>
                                                                     <option value="{{ $Historial->PDM }}">
@@ -115,9 +139,15 @@
                                                                     <option value="0">No</option>
 
                                                                 </select>
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         el campo es requerido
+                                     </div>
                                                             </div>
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Hirpertensión (HAS)</label>
+                                                                <label for="formGroupExampleInput">Hirpertensión (HAS) <span class="red-asterisk">*</span></label>
                                                                 <select class="form-control" name="PHAS" required>
                                                                     <option value="{{ $Historial->PHAS }}">
                                                                         @if ($Historial->PHAS == '1')
@@ -130,12 +160,18 @@
                                                                     <option value="0">No</option>
 
                                                                 </select>
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         el campo es requerido
+                                     </div>
                                                             </div>
                                                              </div>
                                                              <div class="row mb-4">
                                                             <div class="col">
 
-                                                                <label for="formGroupExampleInput"> Cáncer(CA)</label>
+                                                                <label for="formGroupExampleInput"> Cáncer(CA) <span class="red-asterisk">*</span></label>
                                                                 <select class="form-control" name="PCA" required>
                                                                     <option value="{{ $Historial->PCA }}">
                                                                         @if ($Historial->PCA == '1')
@@ -148,10 +184,16 @@
                                                                     <option value="0">No</option>
 
                                                                 </select>
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         el campo es requerido
+                                     </div>
                                                             </div>
 
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Padre fallecido</label>
+                                                                <label for="formGroupExampleInput">Padre fallecido <span class="red-asterisk">*</span></label>
                                                                 <select class="form-control" name="PF" required>
                                                                     <option value="{{ $Historial->PFALLECIDA }}">
                                                                         {{ $Historial->PFALLECIDA }}</option>
@@ -159,32 +201,56 @@
                                                                     <option value="No">No</option>
 
                                                                 </select>
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         el campo es requerido
+                                     </div>
                                                             </div>
                                                              </div>
                                                              <div class="row mb-4">
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Causas</label>
+                                                                <label for="formGroupExampleInput">Causas <span class="red-asterisk">*</span></label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="CAUSAS DE LA MUERTE PADRE Y MADRE " value="N/A" 
                                                                     name="CAM" value="{{ $Historial->CAUSAS }}" required>
+                                                                    <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         ingrese una casusa valida
+                                     </div>
                                                             </div>
 
                                                         </div>
                                                         <h2> ANTECEDENTES PERSONALES NO PATOLOGICOS </h2>
                                                         <div class="row mb-4">
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Alergias 
+                                                                <label for="formGroupExampleInput">Alergias  <span class="red-asterisk">*</span>
                                                                 </label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="ALERGIAS  " name="ALERGIAS"
-                                                                    value="{{ $Historial->ALERGIAS }}" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2"   >
+                                                                    value="{{ $Historial->ALERGIAS }}" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&()-_=+[\]{}|:;'<>/\\]+$" minlength="2"   >
+                                                                    <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         ingrese alergias validas
+                                     </div>
                                                             </div>
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Alimentos
+                                                                <label for="formGroupExampleInput">Alimentos <span class="red-asterisk">*</span>
                                                                 </label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="ALERGIAS POR ALIMENTOS " name="AL"
-                                                                    value="{{ $Historial->ALIMENTOS }}" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2">
+                                                                    value="{{ $Historial->ALIMENTOS }}" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&()-_=+[\]{}|:;'<>/\\]+$" minlength="2">
+                                                                    <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         ingrese una alergia de alimentos valida
+                                     </div>
                                                             </div>
                                                              </div>
                                                              <div class="row mb-4">
@@ -195,18 +261,30 @@
                                                                 <input type="text" class="form-control"
                                                                     placeholder="ALERGIAS POR SUSTANCIAS QUíMICAS"
                                                                     name="ALS"
-                                                                    value="{{ $Historial->SUSTANCIAS_Q }}" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2"  >
+                                                                    value="{{ $Historial->SUSTANCIAS_Q }}" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&()-_=+[\]{}|:;'<>/\\]+$" minlength="2"  >
+                                                                    <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         ingrese una alergia de sustancias químicas valida
+                                     </div>
                                                             </div>
 
 
                                                        
 
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Cirugías
+                                                                <label for="formGroupExampleInput">Cirugías <span class="red-asterisk">*</span>
                                                                 </label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="CIRUJIAS PREVIAS " name="CP"
-                                                                    value="{{ $Historial->CIRUJIAS_P }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" required >
+                                                                    value="{{ $Historial->CIRUJIAS_P }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&()-_=+[\]{}|:;'<>/\\]+$" minlength="2" required >
+                                                                    <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         ingrese una cirugía valida 
+                                     </div>
                                                             </div>
                                                              </div>
                                                              <div class="row mb-4">
@@ -214,15 +292,27 @@
                                                                 <label for="formGroupExampleInput"> Transfusiones </label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="TRANSFUCIONES" name="TF"
-                                                                    value="{{ $Historial->TRANSFUCIONES }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" required >
+                                                                    value="{{ $Historial->TRANSFUCIONES }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&()-_=+[\]{}|:;'<>/\\]+$" minlength="2" required >
+                                                                     <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         ingrese una transfusión valida
+                                     </div>
                                                             </div>
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Fracturas
+                                                                <label for="formGroupExampleInput">Fracturas <span class="red-asterisk">*</span>
                                                                 </label>
 
                                                                 <input type="text" class="form-control"
                                                                     placeholder="ACTUALES O PREVIAS" name="FP"
-                                                                    value="{{ $Historial->FRACTURAS }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2" required  >
+                                                                    value="{{ $Historial->FRACTURAS }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&()-_=+[\]{}|:;'<>/\\]+$" minlength="2" required  >
+                                                                     <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         ingrese una fractura  valida
+                                     </div>
                                                             </div>
 
 
@@ -231,7 +321,7 @@
                                                         <div class="row mb-4">
 
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput"> Alcohólico </label>
+                                                                <label for="formGroupExampleInput"> Alcohólico <span class="red-asterisk">*</span></label>
                                                                 <select class="form-control" name="ALP" required>
                                                                     <option value="{{ $Historial->ALCHOLISMO }}">
                                                                         @if ($Historial->ALCHOLISMO == '1')
@@ -244,9 +334,15 @@
                                                                     <option value="0">No</option>
 
                                                                 </select>
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         el campo es requerido
+                                     </div>
                                                             </div>
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput"> Tabaquismo </label>
+                                                                <label for="formGroupExampleInput"> Tabaquismo <span class="red-asterisk">*</span> </label>
                                                                 <select class="form-control" name="TB" required>
                                                                     <option value="{{ $Historial->TABASQUISMO }}">
                                                                         @if ($Historial->TABASQUISMO == '1')
@@ -259,11 +355,17 @@
                                                                     <option value="0">No</option>
 
                                                                 </select>
+                                                                 <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         el campo es requerido
+                                     </div>
                                                             </div>
                                                              </div>
                                                              <div class="row mb-4">
                                                             <div class="col">
-                                                                <label for="formGroupExampleInput">Drogas </label>
+                                                                <label for="formGroupExampleInput">Drogas <span class="red-asterisk">*</span></label>
                                                                 <select class="form-control" name="DR" required>
                                                                     <option value="{{ $Historial->DROGAS }}" >
                                                                         @if ($Historial->DROGAS == '1')
@@ -276,6 +378,12 @@
                                                                     <option value="0">No</option>
 
                                                                 </select>
+                                                                 <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         el campo es requerido
+                                     </div>
                                                             </div>
 
 

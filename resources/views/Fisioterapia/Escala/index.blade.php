@@ -2,12 +2,13 @@
 @section('nombreVista', 'Agregar Escala de dolor')
 
 @section('formulario')
-    <div class="col-sm">
-        
+    
+        <h1 style="text-align: center;">AGREGAR ESCALA DE DOLOR</h1>
+              
         <!---table-->
         <form class="user" method="POST" action="{{ route('create.Escala', ['id' => $id]) }}">
             @csrf
-            <div class="col-sm">
+            
                 <h2>Escala de dolor paciente {{ $id }} </h2>
                 <!---table-->
                  <div class="col-sm">
@@ -16,12 +17,11 @@
                                 <h3>Valor de Dolor: <span id="valorDolor">0</span></h3>
                             </div>
                 <!--end-table-->
-            </div>
+            
            
             <!--end-table-->
 
-    </div>
-    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Enviar
-        Datos</button>
+   
+    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Guardar</button>
     </form>
 @endsection

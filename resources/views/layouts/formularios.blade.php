@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Historial-clinico-fisioterapia')
+@section('title', 'Clinica Almendros')
 @section('linkAuth')
     <!-- BEGIN PAGE LEVEL STYLE -->
    
@@ -62,11 +62,13 @@
             <div class="middle-content container-xxl p-0">
 
                 <!-- BREADCRUMB -->
-                <div class="page-meta">
+              <div class="page-meta">
                     <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">@yield('nombreVista') </li>
+                            <li class="breadcrumb-item"><a href="#">Usuario : {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
                         </ol>
                     </nav>
                 </div>

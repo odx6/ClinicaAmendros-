@@ -58,6 +58,7 @@
         <img src="./src/assets/img/clinica.jpeg" class="navbar-logo" alt="logo" height="80" style="float:left;"
             class="img">
         <h4>Clínica Almendros <br>Unidad Médico Quirúrgica</h4>
+          <p class="fecha" id="fecha-actual">Oaxaca, Oax., a {{$Fecha->day}} de  {{$Fecha->format('M')}} de {{$Fecha->year}}   Almendro 210, Colonia Reforma. CP. 68050 </p>
 
     </header>
     <div class="espacio"></div>
@@ -79,6 +80,12 @@
                 <p><strong>Religión :</strong>{{ $Paciente->Religion }}</p>
                 <p><strong>Fecha Ingreso :</strong>{{ $Paciente->FechaIngreso }}</p>
                 <p><strong>Fecha Salida :</strong>{{ $Paciente->FechaSalida }}</p>
+
+                <h2>Datos del medico </h2>
+                <p><strong>Nombre  del doctor :</strong> DR.{{ $Doctor->Nombre }} {{ $Doctor->Apellidos }}</p>
+                <p><strong>Cedula :</strong> {{ $Doctor->Cedula }} </p>
+                <p><strong>Especialidad :</strong> {{ $Doctor->ESPECIALIDAD }} </p>
+
 
             </div>
 

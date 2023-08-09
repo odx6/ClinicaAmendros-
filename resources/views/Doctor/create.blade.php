@@ -68,7 +68,7 @@
                             <h2>Madre con</h2>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">diabetes mellitus(DM)
+                                    <label for="formGroupExampleInput">diabetes mellitus(DM) <span class="red-asterisk">*</span>
                                     </label>
                                     <select class="form-control" name="DM" required>
                                         <option selected disabled value="">diabetes </option>
@@ -78,7 +78,7 @@
                                     </select>
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Hipertensión (HAS)</label>
+                                    <label for="formGroupExampleInput">Hipertensión (HAS) <span class="red-asterisk">*</span></label>
                                     <select class="form-control" name="HAS" required>
                                         <option selected disabled value="">Hipertensión </option>
 
@@ -91,7 +91,7 @@
                             <div class="row mb-4">
                                 <div class="col">
 
-                                    <label for="formGroupExampleInput">Cáncer(CA)</label>
+                                    <label for="formGroupExampleInput">Cáncer(CA) <span class="red-asterisk">*</span></label>
                                     <select class="form-control" name="CA" required>
                                         <option selected disabled value="">Cáncer(CA)</option>
 
@@ -129,7 +129,7 @@
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Hipertensión (HAS)</label>
+                                    <label for="formGroupExampleInput">Hipertensión (HAS) <span class="red-asterisk">*</span></label>
                                     <select class="form-control" name="PHAS" required>
                                         <option selected disabled value="">Hipertensión (HAS)</option>
 
@@ -142,7 +142,7 @@
                             <div class="row mb-4">
                                 <div class="col">
 
-                                    <label for="formGroupExampleInput"> Cáncer(CA)</label>
+                                    <label for="formGroupExampleInput"> Cáncer(CA) <span class="red-asterisk">*</span></label>
                                     <select class="form-control" name="PCA" required>
                                         <option selected disabled value="">Cáncer(CA) </option>
 
@@ -153,7 +153,7 @@
                                 </div>
 
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Padre fallecido</label>
+                                    <label for="formGroupExampleInput">Padre fallecido <span class="red-asterisk">*</span></label>
                                     <select class="form-control" name="PF" required>
                                         <option selected disabled value="">Padre fallecido </option>
 
@@ -165,7 +165,7 @@
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Causas</label>
+                                    <label for="formGroupExampleInput">Causas <span class="red-asterisk">*</span></label>
                                     <input type="text" class="form-control"
                                         placeholder="CAUSAS DE LA MUERTE PADRE Y MADRE " name="CAM" value="N/A"
                                         pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" minlength="2"

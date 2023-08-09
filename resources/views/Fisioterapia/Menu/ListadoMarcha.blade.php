@@ -20,9 +20,14 @@
             </form>
         </div>
     @else
+    <h1 style="text-align: center;">MARCHA DEAMBULACIÓN </h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk"><span class="red-asterisk">*</span></span> son obligatorios </h4>
         @foreach ($MarchasDeam as $mar)
         <form class="user needs-validation" method="POST" action="{{ route('update.Marcha',['id'=>$mar->pk_marcha]) }}" novalidate>
             @csrf
+            <h2>MARCHA DEAMBULACION</h2>
+              
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -104,10 +109,16 @@
                         </tr>
                         <tr>
                             <td>
-                                <h2>Observaciones</h2>
+                                <h2>Observaciones <span class="red-asterisk">*</span></h2>
                                 <div class="form-group mb-4">
-                                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                                   
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Observaciones" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">{{$mar->Observaciones_marcha}}</textarea>
+                                     <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una observación valida
+                                     </div>
                                 </div>
                             </td>
 
@@ -126,7 +137,7 @@
     <form class="user" method="POST" action="{{ route('index.Marcha',['id' => $Paciente->SS]) }}">
         @csrf
         <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-            style="display: none;">Agregar Cicatriz quirúrgica
+            style="display: none;">Agregar Marcha/Deambulacion
         </button>
     </form>
     <form class="user" method="POST" action="{{ route('destroy.Marcha', ['id' =>$mar->pk_marcha]) }}">

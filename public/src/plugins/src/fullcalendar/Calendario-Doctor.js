@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', function () {
     function agregarCeroIzquierda(numero) {
         return numero < 10 ? '0' + numero : numero;
     }
+    function getMexicoCurrentDate() {
+  const currentDate = new Date();
+  const utcOffset = currentDate.getTimezoneOffset(); // Obtener la diferencia de minutos entre UTC y el huso horario local
+  const mexicoUtcOffset = (utcOffset / 60) - 5; // Ajuste para el huso horario de México (UTC-5 o UTC-6)
+  currentDate.setHours(currentDate.getHours() + mexicoUtcOffset);
+  return currentDate;
+}
     // Date variable
     var newDate = new Date();
     $.ajaxSetup({
@@ -91,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
         //end terminacion de citas 
         //Funcion es primeracita
         $(".SiPrimera").click(function () {
-            var currentDate = new Date().toISOString().slice(0, 16);
+            var currentDate = new Date(getMexicoCurrentDate()).toISOString().slice(0, 16);
 
             // Establecer el valor mínimo en el input
             document.getElementById("event-start-date").min = currentDate;

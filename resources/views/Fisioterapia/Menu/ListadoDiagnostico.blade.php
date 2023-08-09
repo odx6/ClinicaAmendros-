@@ -16,7 +16,7 @@
             <form class="user" method="POST" action="{{ route('index.Diagnostico', ['id' => $Paciente->SS]) }}">
                 @csrf
                 <button type="submit" class="btn btn-primary btn-rounded mb-2 me-4 btn-add-event Hola" id="Hola"
-                    style="display: none;">Agregar Diagnóstico médico en rehabilitacion </button>
+                    style="display: none;">Agregar Diagnóstico médico en rehabilitación </button>
             </form>
         </div>
     @else
@@ -25,37 +25,66 @@
             <form class="user needs-validation" method="POST"
                 action="{{ route('update.Diagnostico', ['id' => $dime->fk_dmi]) }}" novalidate>
                 @csrf
+              <h1 style="text-align: center;">DIAGNÓSTICO MÉDICO EN REHABILITACIÓN </h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk">*</span> son obligatorios </h4>
                 <div class="container">
 
                     <div class="col-sm">
 
                         <div class="input-group">
-                            <span class="input-group-text">Reflejos</span>
+                            <span class="input-group-text">Reflejos <span class="red-asterisk">*</span></span>
                             <textarea class="form-control" aria-label="With textarea" name="Reflejos"
                                 pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required>{{ $dime->Reflejos }}</textarea>
+                                   <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese     un diagnostico valido para reflejos
+                                     </div>
+
                         </div>
 
                     </div>
                     <div class="col-sm">
 
                         <div class="input-group">
-                            <span class="input-group-text">Sensibilidad</span>
+                            <span class="input-group-text">Sensibilidad <span class="red-asterisk">*</span></span>
                             <textarea class="form-control" aria-label="With textarea" name="Sensibilidad"
                                 pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required>{{ $dime->Sensibilidad }}</textarea>
+                                 <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese     un diagnostico valido para sensibilidad
+                                     </div>
                         </div>
                     </div>
                     <div class="col-sm">
                         <div class="input-group">
-                            <span class="input-group-text">Lenguaje / Orientacion</span>
+                            <span class="input-group-text">Lenguaje / Orientación <span class="red-asterisk">*</span></span>
                             <textarea class="form-control" aria-label="With textarea" name="LeOr"
                                 pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required>{{ $dime->LenguajeOrientacion }}</textarea>
+                                 <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un diagnostico Lenguaje / Orientación
+                                     </div>
                         </div>
                     </div>
                     <div class="col-sm">
                         <div class="input-group">
-                            <span class="input-group-text">Otros</span>
+                            <span class="input-group-text">Otros <span class="red-asterisk">*</span></span>
                             <textarea class="form-control" aria-label="With textarea" name="Otros"
                                 pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required>{{ $dime->Otros }}</textarea>
+                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un diagnostico para otros
+                                     </div>
+
                         </div>
                     </div>
 

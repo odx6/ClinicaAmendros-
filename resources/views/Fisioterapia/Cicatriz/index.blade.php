@@ -2,10 +2,14 @@
 
 @section('formulario')
     <div class="col-sm">
-        <h2>Cicatriz Quirúrgica para el paciente {{ $id }}</h2>
+       <h1 style="text-align: center;">AGREGAR CICATRIZ QUIRÚRGIA</h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk">*</span>  son obligatorios</h4>
         <!---table-->
         <form class="user needs-validation" method="POST" action="{{ route('create.Cicatriz', ['id' => $id]) }}" novalidate>
             @csrf
+            <h2>CICATRIZ QUIRÚRGIA</h2>
+              
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -21,9 +25,15 @@
                         <tr>
                             <td>
                                 <div class="switch form-switch-custom switch-inline form-switch-success">
-                                    <label class="switch-label" for="form-custom-switch-success">Sitio</label>
+                                    <label class="switch-label" for="form-custom-switch-success">Sitio <span class="red-asterisk">*</span></label>
                                     <input class="form-control" type="text" 
                                        name="Sitio" value="" required  pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un sitio valido 
+                                     </div>
 
                                 </div>
                             </td>
@@ -85,7 +95,6 @@
             <!--end-table-->
 
     </div>
-    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Enviar
-        Datos</button>
+    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Guardar</button>
     </form>
 @endsection

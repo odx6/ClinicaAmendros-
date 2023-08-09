@@ -122,14 +122,14 @@
         <div class="row">
             <div class="col-md-6">
                 <br>
-                <p>_____________________________<br>{{$Doctor->Nombre}} {{$Doctor->Apellidos}}</p>
+                <p>_____________________________<br> DR. {{$Doctor->Nombre}} {{$Doctor->Apellidos}}</p>
                 <br>
                 <br>
-                <p>______________________________<br>{{$NombreResponsable}}</p>
+                <p>______________________________<br>{{$NombreResponsable}} Nombre y firma del responsable </p>
             </div>
             <div class="col-md-6">
                 <br>
-                <p class="Firmas">__________________________<br>{{$Paciente->Nombre}} {{$Paciente->Apellido}}</p>
+                <p class="Firmas">__________________________<br>{{$Paciente->Nombre}} {{$Paciente->Apellido}} Nombre y firma del paciente</p>
 </div>
 </div>
 </div>

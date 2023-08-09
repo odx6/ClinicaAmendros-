@@ -28,7 +28,9 @@
                                             </form>
                                         </div>
                                     @else
-                                        <h2> ANTECEDENTES NO PATOLOGICOS </h2>
+                                    <h1 style="text-align: center;">ANTECEDENTES NO PATOLOGICOS</h1>
+                                      
+                                        <h4> Los campos marcados con <span class="red-asterisk">*</span> son obligatorios </h4>
                                         <!--Antecedentes patologicos-->
                                         @foreach ($Patologicos as $patologico)
                                             <form class="user needs-validation" method="POST"
@@ -39,7 +41,7 @@
                                               
                                                 <div class="row mb-4">
                                                     <div class="col">
-                                                        <label for="formGroupExampleInput">diabetes millitus(DM)</label>
+                                                        <label for="formGroupExampleInput">diabetes millitus(DM) <span class="red-asterisk">*</span> </label>
                                                         <select class="form-control" name="DMN" required>
 
                                                             <option value="{{ $patologico->Dm }}">
@@ -54,18 +56,30 @@
                                                             <option value="0">No</option>
 
                                                         </select>
+                                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         el campo es requerido
+                                     </div>
                                                     </div>
 
                                                     <div class="col">
-                                                        <label for="formGroupExampleInput">Tiempo de evolución </label>
+                                                        <label for="formGroupExampleInput">Tiempo de evolución <span class="red-asterisk">*</span> </label>
                                                         <input type="text" class="form-control"
                                                             placeholder="Evolucion de la diabetes  " name="DMTE"
                                                             value="{{ $patologico->DmTE }}">
+                                                             <div class="valid-feedback" required>
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         Ingrese el tiempo de evolución correcto
+                                     </div>
                                                     </div>
                                                 </div>
                                                 <div class="row mb-4">
                                                     <div class="col">
-                                                        <label for="formGroupExampleInput">Hipertensión </label>
+                                                        <label for="formGroupExampleInput">Hipertensión <span class="red-asterisk">*</span></label>
                                                         <select class="form-control" name="HASN">
                                                             <option value="{{ $patologico->Has }}">
                                                                 @if ($patologico->Has == '1')
@@ -79,17 +93,29 @@
                                                             <option value="0">No</option>
 
                                                         </select>
+                                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         El campo es obligatorio
+                                     </div>
                                                     </div>
                                                     <div class="col">
-                                                        <label for="formGroupExampleInput"> Tiempo de evolución</label>
+                                                        <label for="formGroupExampleInput"> Tiempo de evolución <span class="red-asterisk">*</span></label>
                                                         <input type="text" class="form-control"
                                                             placeholder="Evolucion" name="HASTE"
                                                             value="{{ $patologico->HasTe }}" required>
+                                                            <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         Ingrese el tiempo de evolución correcto
+                                     </div>
                                                     </div>
                                                 </div>
                                                 <div class="row mb-4">
                                                     <div class="col">
-                                                        <label for="formGroupExampleInput">Insuficiencia renal <br>Aguda o Crónica </label>
+                                                        <label for="formGroupExampleInput">Insuficiencia renal <span class="red-asterisk">*</span> <br>Aguda o Crónica </label>
                                                         <select class="form-control" name="IR" required>
                                                             <option value="{{ $patologico->Ir }}">
                                                                 @if ($patologico->Ir == '1')
@@ -103,22 +129,40 @@
                                                             <option value="0">No</option>
 
                                                         </select>
+                                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         El campo es obligatorio
+                                     </div>
                                                     </div>
                                                     <div class="col">
-                                                        <label for="formGroupExampleInput">Tiempo de <br> evolución </label>
+                                                        <label for="formGroupExampleInput">Tiempo de <br> evolución <span class="red-asterisk">*</span> </label>
                                                         <input type="text" class="form-control"
                                                             placeholder="Evolucion" name="IrTe"
                                                             value="{{ $patologico->IrTe }}" required>
+                                                            <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         Ingrese el tiempo de evolución correcto
+                                     </div>
                                                     </div>
                                                 </div>
 
                                                 <div class="row mb-4">
 
                                                     <div class="col">
-                                                        <label for="formGroupExampleInput">Otra </label>
+                                                        <label for="formGroupExampleInput">Otra <span class="red-asterisk">*</span></label>
                                                         <input type="text" class="form-control"
                                                             placeholder="Evolucion" name="OTRA"
-                                                            value="{{ $patologico->Otra }}" required>
+                                                            value="{{ $patologico->Otra }}" required> 
+                                                            <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         Ingrese otra opción correcta
+                                     </div>
                                                     </div>
                                                 </div>
 

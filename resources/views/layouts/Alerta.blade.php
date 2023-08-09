@@ -11,10 +11,7 @@
             <div class="modal-body">
                 <p class="modal-text" id="MensajeCita"></p>
             </div>
-            <div class="modal-footer">
-                <button class="btn" data-bs-dismiss="modal"><i class="flaticon-cancel-12"></i>Cerrar</button>
-               
-            </div>
+           
         </div>
     </div>
 </div>

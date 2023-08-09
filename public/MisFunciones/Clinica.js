@@ -418,6 +418,48 @@ $(document).ready(function() {
    
     //endProductos Stock 
 
+    //Facturas 
+     $(".prove").change(function () {
+
+        var areaSeleccionada = $(this).val();
+        //alert(areaSeleccionada);
+        $.ajax({
+            type: "POST",
+            url: 'Factura',
+            data: {
+                area: areaSeleccionada,
+                _token: $('meta[name="csrf-token"]').attr('content'),
+
+            },
+        }).done(function (res) {
+
+           // alert(res)
+
+          mostrarProve(res);
+        });
+
+    });
+
+
+
+    function mostrarProve(usuarios) {
+        var selectUsuarios = $(".resultado");
+        selectUsuarios.empty();
+
+        if (usuarios.length > 0) {
+            usuarios.forEach(function (usuario) {
+                selectUsuarios.append("<option value='" + usuario.pk_factura + "'>" + usuario.Nombre + "</option>");
+            });
+        } else {
+            selectUsuarios.append("<option selected disabled value='' >No se encontraron facturas para este proveedor</option>");
+        }
+    }
+
+
+
+    //enfacturas 
+
+
 
     //Script miembros Superiores 
 
@@ -451,7 +493,7 @@ document.getElementById("Enlace").addEventListener("click", function(event) {
   var fila = tabla.insertRow();
   
   var celda1 = fila.insertCell();
-  celda1.innerHTML = ' <input type="text" class="form-control form-control-lg" placeholder="Nombre del movimiento" name="Movimientos[movimento'+contador+'][Nombre]" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3">';
+  celda1.innerHTML = ' <input type="text" class="form-control form-control-lg" placeholder="Nombre del movimiento" name="Movimientos[movimento'+contador+'][Nombre]" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="3"><div class="valid-feedback"> Dato correcto </div> <div class="invalid-feedback"> Ingrese un nombre valido </div>';
   
   var celda2 = fila.insertCell();
   var selectHTML = '<select class="form-control" name="Movimientos[movimento'+contador+'][Valor]" required>';
@@ -459,7 +501,7 @@ document.getElementById("Enlace").addEventListener("click", function(event) {
   for (var i = 0; i <= 360; i++) {
     selectHTML += '<option value="' + i + '">' + i + '°</option>';
   }
-  selectHTML += '</select>';
+  selectHTML += '</select><div class="valid-feedback"> Dato correcto </div> <div class="invalid-feedback"> El campo es obligatorio </div>';
   celda2.innerHTML = selectHTML;
   
  
@@ -489,3 +531,20 @@ function calcularIMC() {
 
 
   });
+$('#myForm').on('submit', function(event) {
+    event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+
+    const archivo = $('#archivo')[0].files[0]; // Obtener el archivo seleccionado
+
+    if (archivo) {
+        // Verificar si es un PDF o HTML
+        if (archivo.type === 'application/pdf' || archivo.type === 'text/html') {
+            alert('El archivo es válido.');
+            this.submit(); // Enviar el formulario
+        } else {
+            alert('El archivo no es válido. Por favor, selecciona un archivo PDF o HTML.');
+        }
+    } else {
+        alert('Por favor, selecciona un archivo.');
+    }
+});

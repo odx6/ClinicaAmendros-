@@ -3,7 +3,7 @@
          <div class="modal-dialog">
              <div class="modal-content">
                  <div class="modal-header">
-                     <h5 class="modal-title" id="exampleModalLabel">Agregar una nueva cita</h5>
+                     <h5 class="modal-title" id="exampleModalLabel">Agregar una primera cita</h5>
                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                  </div>
                  <form class="needs-validation" novalidate>
@@ -11,12 +11,13 @@
 
                          <div class="row">
                              <div class="col-md-12">
+                                <label class="form-label">Los datos marcados con * son obligatorios</label>
                                  <div class="">
-                                     <label class="form-label">Área</label>
+                                     <label class="form-label">Área *</label>
                                      <!-- <input id="event-title" type="text" class="form-control">-->
                                      <select class="form-control event-title-area" name="" id="event-title-area"
                                          required>
-                                         <option selected disabled value="">Selecciona el area </option>
+                                         <option selected disabled value="">Selecciona el área </option>
                                          @php
                                              $Areas = App\Models\Area::all();
                                              
@@ -30,12 +31,12 @@
                                          Datos correctos
                                      </div>
                                      <div class="invalid-feedback">
-                                         Selecciona un area valida
+                                         Selecciona un área valida
                                      </div>
                                  </div>
                                  <div class="col-md-12">
                                      <div class="">
-                                         <label class="form-label">Nombre del Médico</label>
+                                         <label class="form-label">Nombre del Médico *</label>
                                          <!-- <input id="event-title" type="text" class="form-control">-->
                                          <select class="form-control event-title" name="DOCTOR" id="NombreDoctorP"
                                              required>
@@ -54,7 +55,7 @@
                                  </div>
                                  <div class="col-md-12">
                                      <div class="">
-                                         <label class="form-label">Nombres del paciente</label>
+                                         <label class="form-label">Nombre(s) del paciente * </label>
                                          <input id="NombrePacienteP" type="text" class="form-control" name="Nombre"
                                              required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" max="30">
                                          <div class="valid-feedback">
@@ -68,7 +69,7 @@
                                  </div>
                                  <div class="col-md-12">
                                      <div class="">
-                                         <label class="form-label">Apellidos del paciente</label>
+                                         <label class="form-label">Apellido(s) del paciente *</label>
                                          <input id="NombreApellidosP" type="text" class="form-control"
                                              name="Apellidos" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"
                                              max="30">
@@ -83,14 +84,14 @@
                                  </div>
                                  <div class="col-md-12">
                                      <div class="">
-                                         <label class="form-label">Teléfono</label>
+                                         <label class="form-label">Teléfono *</label>
                                          <input id="TelefonoP" type="text" class="form-control" name="Telefono"
                                              required minlength="10" maxlength="10" pattern="[0-9]{9,15}">
                                          <div class="valid-feedback">
-                                             Telefono Correcto
+                                             Teléfono Correcto
                                          </div>
                                          <div class="invalid-feedback">
-                                             Ingresa un teléfono de la forma 9514886716 sin letras ni espacios
+                                            Ingresa un numero telefónico de 10 dígitos sin espacios
                                          </div>
                                      </div>
 
@@ -98,13 +99,13 @@
 
                                  <div class="col-md-12 ">
                                      <div class="">
-                                         <label class="form-label">Ingresa La fecha de inicio y la hora</label>
+                                         <label class="form-label">Ingresa La fecha de inicio y la hora *</label>
                                          <input id="PrimerStar" type="datetime-local" class="form-control" required>
                                          <div class="valid-feedback">
                                              Datos correctos
                                          </div>
                                          <div class="invalid-feedback">
-                                             Ingresa un fecha y hora correcta
+                                             Ingresa una fecha y hora correcta
                                          </div>
                                      </div>
                                  </div>

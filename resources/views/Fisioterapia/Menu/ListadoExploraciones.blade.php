@@ -33,7 +33,9 @@
                     @csrf
                     <div class="col">
 
-                        <h2>Exploración Física</h2>
+                        <h1 style="text-align: center;">EXPLORACIÓN FÍSICA </h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk">*</span> son obligatorios </h4>
                         <table class="table">
 
                             <tbody>
@@ -41,13 +43,19 @@
                                 <tr>
 
                                     <td>
-                                        <h3>peso :</h3>
+                                        <h3>peso <span class="red-asterisk">*</span> :</h3>
                                     </td>
                                     <td>
                                         <div class="form-group">
 
                                             <input type="text" class="form-control" id="exampleFormControlInput1"
                                                 value="{{ $Explora->Peso }}" name="Peso" required pattern="^\d+(\.\d+)?$">
+                                                 <div class="valid-feedback">
+                                            Dato  correcto
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Ingrese un valor numérico valido 
+                                        </div>
                                         </div>
                                     </td>
 
@@ -55,13 +63,19 @@
                                 <tr>
 
                                     <td>
-                                        <h3>Estatura :</h3>
+                                        <h3>Estatura <span class="red-asterisk">*</span>:</h3>
                                     </td>
                                     <td>
                                         <div class="form-group">
 
                                             <input type="text" class="form-control" id="exampleFormControlInput1"
                                                 value="{{ $Explora->Estatura }}" name="Estatura" required pattern="^\d+(\.\d+)?$" >
+                                                <div class="valid-feedback">
+                                            Dato  correcto
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Ingrese un valor numérico valido 
+                                        </div>
                                         </div>
                                     </td>
 
@@ -69,13 +83,19 @@
                                 <tr>
 
                                     <td>
-                                        <h3>(IMC):</h3>
+                                        <h3>(IMC) <span class="red-asterisk">*</span>:</h3>
                                     </td>
                                     <td>
                                         <div class="form-group">
 
                                             <input type="text" class="form-control" id="exampleFormControlInput1"
                                                 value="{{ $Explora->IMC }}" name="IMC" required pattern="^\d+(\.\d+)?$">
+                                                <div class="valid-feedback">
+                                            Dato  correcto
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Ingrese un valor numérico valido 
+                                        </div>
                                         </div>
                                     </td>
 
@@ -87,11 +107,17 @@
                     </div>
                     <div class="col">
                        
-                        <h2>Motivo de la consulta</h2>
+                        <h2>Motivo de la consulta <span class="red-asterisk">*</span></h2>
                         <div class="form-group">
 
                             <input type="text" class="form-control" id="exampleFormControlInput1"
                                 value="{{ $Explora->Motivo }}" name="Motivo" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                <div class="valid-feedback">
+                                            Dato  correcto
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Ingrese un motivo valido
+                                        </div>
                         </div>
 
                     </div>

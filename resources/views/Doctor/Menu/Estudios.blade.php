@@ -25,7 +25,9 @@
                 </form>
             </div>
         @else
-            <h2>Estudios del paciente </h2>
+         <h1 style="text-align: center;">ESTUDIOS DEL PACIENTE</h1>
+            
+            <h4>Los campos marcados con <span class="red-asterisk">*</span> son obligatorios</h4>
             <!--Antecedentes patologicos-->
             @foreach ($Estudios as $estudio)
                 <form class="user needs-validation" method="POST"
@@ -33,63 +35,113 @@
                     @csrf
                     <div class="row mb-4">
                         <div class="col">
-                            <label for="formGroupExampleInput">Hemoglobina
+                            <label for="formGroupExampleInput">Hemoglobina <span class="red-asterisk">*</span>
                             </label>
                             <input type="text" class="form-control" placeholder="HEMOGLOBINA" name="HEMOGLOBINA"
                                 value="{{ $estudio->HEMOGLOBINA }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"
                                 required>
+                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un estudio valido para Hemoglobina
+                                     </div>
                         </div>
                         <div class="col">
-                            <label for="formGroupExampleInput">Hematocrito</label>
+                            <label for="formGroupExampleInput">Hematocrito <span class="red-asterisk">*</span></label>
                             <input type="text" class="form-control" placeholder="HEMATOCRITO " name="HEMATOCRITO"
                                 value="{{ $estudio->HEMATOCRITO }}" attern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"
                                 required>
+                                 <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un estudio valido para Hematocrito
+                                     </div>
                         </div>
                     </div>
 
                     <div class="row mb-4">
                         <div class="col">
-                            <label for="formGroupExampleInput">plaquetas
+                            <label for="formGroupExampleInput">plaquetas <span class="red-asterisk">*</span>
                             </label>
                             <input type="text" class="form-control" placeholder="PLAQUETAS" name="PLAQUETAS"
                                 value="{{ $estudio->PLAQUETAS }}" attern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"
                                 required>
+                                 <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un estudio valido para plaquetas
+                                     </div>
                         </div>
                         <div class="col">
-                            <label for="formGroupExampleInput">Glucosa
-                            </label>
+                            <label for="formGroupExampleInput">Glucosa <span class="red-asterisk">*</span>
+                            </label> 
                             <input type="text" class="form-control" placeholder="GLUCOSA" name="GLUCOSA"
                                 value="{{ $estudio->GLUCOSA }}" attern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"
                                 required>
+                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un estudio valido para Glucosa
+                                     </div>
                         </div>
                     </div>
                     <div class="row mb-4">
                         <div class="col">
-                            <label for="formGroupExampleInput">Urea
+                            <label for="formGroupExampleInput">Urea <span class="red-asterisk">*</span>
                             </label>
                             <input type="text" class="form-control" placeholder="UREA" name="UREA"
                                 value="{{ $estudio->UREA }}" attern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required>
+                                 <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un estudio valido para Urea
+                                     </div>
+
                         </div>
                         <div class="col">
-                            <label for="formGroupExampleInput">Creatinina</label>
+                            <label for="formGroupExampleInput">Creatinina <span class="red-asterisk">*</span></label>
                             <input type="text" class="form-control" placeholder="CREATININA " name="CREATININA"
                                 value="{{ $estudio->CREATININA }}" attern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"
                                 required>
+                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un estudio valido para creatinina
+                                     </div>
                         </div>
                     </div>
 
                     <div class="row mb-4">
                         <div class="col">
-                            <label for="formGroupExampleInput">Rx
+                            <label for="formGroupExampleInput">Rx <span class="red-asterisk">*</span>
                             </label>
                             <input type="text" class="form-control" placeholder="RX" name="RX"
                                 value="{{ $estudio->RX }}" attern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required>
+                                 <div class="valid-feedback">
+                                       Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un estudio valido para rx
+                                     </div>
+ 
                         </div>
                         <div class="col">
-                            <label for="formGroupExampleInput">Usg
+                            <label for="formGroupExampleInput">Usg <span class="red-asterisk">*</span>
                             </label>
                             <input type="text" class="form-control" placeholder="USG" name="USG"
                                 value="{{ $estudio->USG }}" attern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" required>
+                                  <div class="valid-feedback">
+                                       Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un estudio valido para usg
+                                     </div>
                         </div>
                     </div>
 

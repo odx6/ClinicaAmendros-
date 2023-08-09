@@ -93,15 +93,7 @@
                             <li>
                                 <a href="{{route('index.Areas')}}">Áreas</a>
                             </li>
-                            <li>
-                                <a href="{{route('index.Usuarios')}}">Usuarios </a>
-                            </li>
-                            <li>
-                                <a href="{{route('index.Medico')}}">Médicos </a>
-                            </li>
-                             <li>
-                                <a href="{{route('index.Secrearia')}}">Secretarias </a>
-                            </li>
+                           
                             <li>
                                 <a href="{{route('Pacientes.listar')}}">Pacientes </a>
                             </li>
@@ -117,12 +109,37 @@
                                                        
                         </ul>
                     </li>
+                      <li class="menu">
+                        <a href="#Roles" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trello"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><rect x="7" y="7" width="3" height="9"></rect><rect x="14" y="7" width="3" height="5"></rect></svg>
+                                <span>Roles</span>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </div>
+                        </a>
+                        <ul class="collapse submenu list-unstyled" id="Roles" data-bs-parent="#accordionExample">
+                            
+                            <li>
+                                <a href="{{route('index.Usuarios')}}">Usuarios </a>
+                            </li>
+                            <li>
+                                <a href="{{route('index.Medico')}}">Médicos </a>
+                            </li>
+                             <li>
+                                <a href="{{route('index.Secrearia')}}">Secretarias </a>
+                            </li>
+                           
+                                                       
+                        </ul>
+                    </li>
 
              <li class="menu">
                         <a href="#invoice" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-database"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-                                <span>Inventario</span>
+                                <span>control de insumos</span>
                             </div>
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>

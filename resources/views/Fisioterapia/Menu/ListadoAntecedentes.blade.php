@@ -26,7 +26,9 @@
             </form>
         </div>
     @else
-        <h2>Antecedentes Patológicos y Heredofamiliares</h2>
+          <h1 style="text-align: center;">ANTECEDENTES PATOLÓGICO Y HEREDOFAMILIARES</h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk"><span class="red-asterisk">*</span> son obligatorios</h4>
         @php
             $ids = [];
             
@@ -46,7 +48,7 @@
                                 @if ($count % 2 == 0)
                                     <div class="switch form-switch-custom switch-inline form-switch-success">
                                         <label class="switch-label"
-                                            for="form-custom-switch-success">{{ $item->Nombre_Antecedente }}</label>
+                                            for="form-custom-switch-success">{{ $item->Nombre_Antecedente }} </label>
                                         @if ($item->valor == 'si')
                                             <input class="switch-input" type="checkbox" role="switch"
                                                 id="form-custom-switch-success" name="{{ $item->Nombre_Antecedente }}"
@@ -61,14 +63,21 @@
                                         <br>
                                         <input type="text" class="form-control" id="exampleFormControlInput1"
                                             value="{{ $item->Especificacion }}"
-                                            placeholder="Especificacion para diabetes"
-                                            name="E{{ $item->Nombre_Antecedente }}" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" ><br>
+                                            placeholder="Especificacion "
+                                            name="E{{ $item->Nombre_Antecedente }}" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&()-_=+[\]{}|:;'<>/\\]+$" >
+                                              <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación para  enfermedades {{ $item->Nombre_Antecedente}}
+                                     </div>
+                                            <br>
                                     </div>
                                     <div class="form-group">
                                         <br>
                                         <input type="hidden" class="form-control" id="exampleFormControlInput1"
                                             value="{{ $item->pk_Antecedentes_ph }}"
-                                            placeholder="Especificacion para diabetes"
+                                            placeholder="Especificacion "
                                             name="ID{{ $item->Nombre_Antecedente }}"><br>
                                         @php
                                             $ids[] = $item->pk_Antecedentes_ph;
@@ -104,8 +113,14 @@
                                         <br>
                                         <input type="text" class="form-control" id="exampleFormControlInput1"
                                             value="{{ $item->Especificacion }}"
-                                            placeholder="Especificacion para diabetes"
-                                            name="E{{ $item->Nombre_Antecedente }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required>
+                                            placeholder="Especificacion "
+                                            name="E{{ $item->Nombre_Antecedente }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&()-_=+[\]{}|:;'<>/\\]+$" required>
+                                             <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación para  enfermedades {{ $item->Nombre_Antecedente}}
+                                     </div>
                                         <br>
                                     </div>
                                     <div class="form-group">
@@ -145,7 +160,7 @@
                                         <h3>Signos vitales</h3>
                                         <div class="row">
                                             <div class="col">
-                                                <h3>T/A</h3>
+                                                <h3>T/A <span class="red-asterisk">*</span></h3>
                                             </div>
                                             <div class="col">
                                                 @php
@@ -166,12 +181,18 @@
                                                     <input type="numeric" class="form-control"
                                                         id="exampleFormControlInput1" value="{{ $signo->TA }}"
                                                         placeholder="TA" name="TA" required pattern="^[0-9]+(?:\/[0-9]+)?$" required>
+                                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un valor valido 
+                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col">
-                                                <h3>TEMP</h3>
+                                                <h3>TEMP <span class="red-asterisk">*</span></h3>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
@@ -179,6 +200,12 @@
                                                     <input type="text" class="form-control"
                                                         id="exampleFormControlInput1" value="{{ $signo->Temp }}"
                                                         placeholder="Temp" name="Temp" pattern="[0-9]+(\.[0-9]+)?" required>
+                                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un valor valido 
+                                     </div>
                                                 </div>
 
                                             </div>
@@ -186,7 +213,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col">
-                                                <h3>FC</h3>
+                                                <h3>FC <span class="red-asterisk">*</span></h3>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
@@ -194,13 +221,19 @@
                                                     <input type="text" class="form-control"
                                                         id="exampleFormControlInput1" value="{{ $signo->FC }}"
                                                         placeholder="FC" name="FC" pattern="[0-9]+(\.[0-9]+)?" required>
+                                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un valor valido 
+                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col">
 
-                                                <h3>FR</h3>
+                                                <h3>FR <span class="red-asterisk">*</span></h3>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
@@ -208,6 +241,12 @@
                                                     <input type="text" class="form-control"
                                                         id="exampleFormControlInput1" value="{{ $signo->FR }}"
                                                         placeholder="FR" name="FR" pattern="[0-9]+(\.[0-9]+)?" required>
+                                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un valor valido 
+                                     </div>
                                                 </div>
                                             </div>
                                         </div>

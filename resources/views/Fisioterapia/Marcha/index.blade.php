@@ -2,13 +2,16 @@
 
 @section('formulario')
     <div class="container">
-        
+        <h1 style="text-align: center;">AGREGAR MARCHA DEAMBULACION</h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk"><span class="red-asterisk">*</span></span>  son obligatorios</h4>
+       
         <!---table-->
         <form class="user needs-validation" method="POST" action="{{ route('create.Marcha', ['id' => $id]) }}" novalidate>
             @csrf
             
-                <h2>Marcha Deambulacion {{ $id }} </h2>
-                <!---table-->
+                <h2>MARCHA DEAMBULACION</h2>
+            
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -90,10 +93,16 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <h2>Observaciones</h2>
+                                    <h2>Observaciones <span class="red-asterisk">*</span></h2>
                                     <div class="form-group mb-4">
                                       
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Observaciones" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$"></textarea>
+                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una observación valida
+                                     </div>
                                     </div>
                                 </td>
 
@@ -109,7 +118,6 @@
             <!--end-table-->
 
     </div>
-    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Enviar
-        Datos</button>
+    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Guardar</button>
     </form>
 @endsection

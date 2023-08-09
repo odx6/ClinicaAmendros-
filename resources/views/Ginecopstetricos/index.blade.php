@@ -28,14 +28,19 @@
             <div class="middle-content container-xxl p-0">
 
                 <!-- BREADCRUMB -->
-                <div class="page-meta">
+               <div class="page-meta">
                     <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Doctor</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Agregar Antecedente Ginecobstétricos</li>
-                        </ol>
+                            <li class="breadcrumb-item"><a href="#">Usuario : {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
+                        </ol> 
                     </nav>
                 </div>
+                <h1 style="text-align: center;"> AGREGAR ANTECEDENTES GINECOBSTETRICOS</h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk">*</span>  son obligatorios</h4>
                 <!-- /BREADCRUMB -->
                 <!--calendario-->
                 <div class="row layout-top-spacing layout-spacing" id="cancel-row">
@@ -44,7 +49,8 @@
 
                         <!-- Fomulario -->
                         <!--- Historial-->
-                        <h2> ANTECEDENTES Ginecobstétricos </h2>
+                        <h4> ANTECEDENTES GINECOBSTÉTRICOS  </h4>
+                        
 
                         <!--- Historial-->
                         <form class="user needs-validation" method="POST" action="{{ route('Gineco.create', ['id' => $id]) }}" novalidate>
@@ -59,43 +65,79 @@
                             <div class="row mb-4">
 
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Menarca </label>
+                                    <label for="formGroupExampleInput">Menarca <span class="red-asterisk">*</span>  </label>
                                     <input type="numeric" class="form-control"
                                         placeholder="Inicio de la menstruacion en años " name="Menarca"
                                         pattern="^\d+(\.\d+)?$" required>
+                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un valor valido  en años 
+                                     </div>
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Inicio actividad sexual
+                                    <label for="formGroupExampleInput">Inicio actividad sexual <span class="red-asterisk">*</span> 
                                     </label>
                                     <input type="numeric" class="form-control"
                                         placeholder="inicio de la vida sexual" name="IVSA"
                                         pattern="^\d+(\.\d+)?$" required>
+                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un valor valido  en años 
+                                     </div>
 
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Número de gestas </label>
+                                    <label for="formGroupExampleInput">Número de gestas <span class="red-asterisk">*</span>  </label>
                                     <input type="numeric" class="form-control" placeholder="Numero de gestas "
                                         name="gestas" pattern="^\d+(\.\d+)?$" required>
+                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un valor valido  en años 
+                                     </div>
                                 </div>
 
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Número cesáreas </label>
+                                    <label for="formGroupExampleInput">Número cesáreas  <span class="red-asterisk">*</span> </label>
                                     <input type="numeric" class="form-control" placeholder="Numero de cesareas"
                                         name="Cesareas" pattern="^\d+(\.\d+)?$" required>
+                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un valor valido  en años 
+                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Número de abortos</label>
+                                    <label for="formGroupExampleInput">Número de abortos <span class="red-asterisk">*</span> </label>
                                     <input type="numeric" class="form-control" placeholder="Numero de Abortos"
                                         name="Abortos" pattern="^\d+(\.\d+)?$" required>
+                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un valor valido  en años 
+                                     </div>
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Número paras</label>
+                                    <label for="formGroupExampleInput">Número paras <span class="red-asterisk">*</span> </label>
                                     <input type="numeric" class="form-control" placeholder="Numero de Partos"
                                         name="Partos" pattern="^\d+(\.\d+)?$" required>
+                                        <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un valor valido  en años 
+                                     </div>
                                 </div>
                             </div>
 
@@ -109,8 +151,7 @@
 
 
                     </div>
-                    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Enviar
-                        Datos</button>
+                    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Guardar</button>
                 </form>
 
                     <!--end_Formulario-->

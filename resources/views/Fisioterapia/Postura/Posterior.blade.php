@@ -5,9 +5,10 @@
         action="{{ route('create.Postura', ['id' => $id, 'TipoM' => 'Posterior']) }}" novalidate>
         @csrf
 
-        <h2>Evaluacion Postura</h2>
+         <h2>EVALUACIÓN DE POSTURA</h2>
 
         <h2>Vista Posterior</h2>
+         <h4>Los campos marcados con * son obligatorios </h4>
         <div class="table-responsive">
             <table class="table">
                 <thead>
@@ -32,7 +33,12 @@
                                 <div class="form-group">
 
                                     <textarea type="text" class="form-control" id="exampleFormControlInput1" name="Posturas[{{ $Dat }}][Nombre]"
-                                        placeholder="Observaciones" rows="3" required>{{ $Dat }}</textarea>
+                                        placeholder="Observaciones" rows="3" required>{{ $Dat }}</textarea><div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un nombre valido 
+                                     </div>
                                 </div>
                             </td>
 
@@ -43,16 +49,28 @@
                                     <option value="M">Moderado</option>
                                     <option value="S">Severo</option>
                                 </select>
+                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     El campo es obligatorio
+                                     </div>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <div class="form-group">
-
+                                     <span class="input-group-text">Observaciones <span class="red-asterisk">*</span></span>
                                     <input type="text" class="form-control" id="exampleFormControlInput1"
                                         value="N/A" name="Posturas[{{ $Dat }}][Observaciones]"
                                         placeholder="Observaciones" required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$"
                                         minlength="3">
+                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una observación valida
+                                     </div>
                                 </div>
                             </td>
                         </tr>

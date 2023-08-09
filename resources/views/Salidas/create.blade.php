@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','Inventario')
+@section('title','Control de insumos')
 @section('linkAuth')
 
 @endsection
@@ -19,20 +19,26 @@
 
                     <!-- BREADCRUMB -->
                     <div class="page-meta">
-                        <nav class="breadcrumb-style-one" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Agregar Salida de Productos</li>
-                            </ol>
-                        </nav>
-                    </div>
-                        <h1>Datos de la salida de productos</h1>
+                    <nav class="breadcrumb-style-one" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Usuario : {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
+                        </ol> 
+                    </nav>
+                </div>
+                <h1 style="text-align: center;">SALIDA DE PRODUCTO</h1>
+                <h3>Datos de la salida</h3>
+                <h4>Los datos marcados con <span class="red-asterisk">*</span>  son obligatorios</h4>
                         <form class="user needs-validation" method="POST" action="{{ route('store.Salidas') }}" novalidate>
                             @csrf
 
                             
                             <div class="row mb-4">
                                 <div class="col">
+                                    <label for="formGroupExampleInput">Área  <span class="red-asterisk">*</span>
+                                    </label>
                                     <select class="form-control event-title-area" name="Area"  required>
                                         <option selected disabled value="">Área </option>
                                         @foreach ($Areas as $area)
@@ -48,6 +54,8 @@
                                 </div>
                             
                                 <div class="col">
+                                    <label for="formGroupExampleInput">Médico  <span class="red-asterisk">*</span>
+                                    </label>
                                     <select class="form-control event-title" name="Doctor"  required>
                                         <option selected disabled value="">Selecione un medico </option>
                                         
@@ -63,7 +71,7 @@
                             <div class="row mb-4">
 
                                   <div class="col">
-                                    <label for="formGroupExampleInput">Producto
+                                    <label for="formGroupExampleInput">Producto <span class="red-asterisk">*</span>
                                     </label>
                                     <select class="form-control Stock" name="producto"  required>
                                         <option selected disabled value="">Seleccione un producto </option>
@@ -87,28 +95,27 @@
 
                                 
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Stock</label>
-                                    <input type="numeric" class="form-control " placeholder="Stock" name="Stock" id="StockSalida"
+                                    <label for="formGroupExampleInput">Existencia</label>
+                                    <input type="numeric" class="form-control " placeholder="Existencia" name="Stock" id="StockSalida"
                                         required pattern="[0-9]+" readonly>
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Cantidad de salida</label>
+                                    <label for="formGroupExampleInput">Cantidad de salida <span class="red-asterisk">*</span></label>
                                     <input type="number" class="form-control" placeholder="Cantidad" name="cantidad"  id="cantidad"
                                         required pattern="[0-9]+">
                                          <div class="valid-feedback">
                                         Datos correctos
                                      </div>
                                      <div class="invalid-feedback">
-                                        ingresa un valor minimo al stock
+                                        ingresa un valor menor a la existencia
                                      </div>
                                 </div>
                               
                                 </div>
                            
-<button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola" >Enviar
-                        Datos</button>
+<button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola" >Guardar </button>
                     <!--end aPatologicos-->
 
                 </form>

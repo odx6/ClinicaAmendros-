@@ -27,7 +27,9 @@
 
                                             </div>
                                         @else
-                                            <h2> ANTECEDENTES GINECOBSTÉTRICO </h2>
+                                        <h1 style="text-align: center;">ANTECEDENTES GINECOBSTÉTRICO</h1>
+                                            
+                                            <h4>Los campos marcados con <span class="red-asterisk">*</span> son obligatorios </h4>
                                             @foreach ($Gineco as $Gine)
                                                 <!--- Historial-->
                                                 <form class="user needs-validation" method="POST"
@@ -39,47 +41,83 @@
                                                     <div class="row mb-4">
 
                                                         <div class="col">
-                                                            <label for="formGroupExampleInput">Menarca </label>
+                                                            <label for="formGroupExampleInput">Menarca <span class="red-asterisk">*</span></label>
                                                             <input type="numeric" class="form-control"
                                                                 placeholder="Inicio de la menstruacion en años "
                                                                 name="Menarca" value="{{ $Gine->Menarca }}"   pattern="^\d+(\.\d+)?$" required >
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un valor valido  en años 
+                                     </div>
                                                         </div>
                                                         <div class="col">
-                                                            <label for="formGroupExampleInput">Inicio actividad sexual
+                                                            <label for="formGroupExampleInput">Inicio actividad sexual <span class="red-asterisk">*</span>
                                                             </label>
                                                             <input type="numeric" class="form-control"
                                                                 placeholder="inicio de la vida sexual" name="IVSA"
                                                                 value="{{ $Gine->Ivsa }}"   pattern="^\d+(\.\d+)?$" required >
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un valor valido  en años 
+                                     </div>
 
                                                         </div>
                                                         </div>
                                                           <div class="row mb-4">
                                                         <div class="col">
-                                                            <label for="formGroupExampleInput">Número de gestas </label>
+                                                            <label for="formGroupExampleInput">Número de gestas  <span class="red-asterisk">*</span></label>
                                                             <input type="numeric" class="form-control"
                                                                 placeholder="Numero de gestas " name="gestas"
                                                                 value="{{ $Gine->Gesta }}"   pattern="^\d+(\.\d+)?$" required>
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un valor valido  en años 
+                                     </div>
                                                         </div>
                                                     
                                                         <div class="col">
-                                                            <label for="formGroupExampleInput">Número de cesáreas </label>
+                                                            <label for="formGroupExampleInput">Número de cesáreas <span class="red-asterisk">*</span> </label>
                                                             <input type="numeric" class="form-control"
                                                                 placeholder="Numero de cesareas" name="Cesareas"
                                                                 value="{{ $Gine->Paras }}"   pattern="^\d+(\.\d+)?$" required>
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un valor valido  en años 
+                                     </div>
                                                         </div>
                                                          </div>
                                                           <div class="row mb-4">
                                                         <div class="col">
-                                                            <label for="formGroupExampleInput">Número de abortos</label>
+                                                            <label for="formGroupExampleInput">Número de abortos <span class="red-asterisk">*</span></label>
                                                             <input type="numeric" class="form-control"
                                                                 placeholder="Numero de Abortos" name="Abortos"
                                                                 value="{{ $Gine->Aborto }}"   pattern="^\d+(\.\d+)?$" required>
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un valor valido  en años 
+                                     </div>
                                                         </div>
                                                         <div class="col">
-                                                            <label for="formGroupExampleInput">Número de paras</label>
+                                                            <label for="formGroupExampleInput">Número de paras <span class="red-asterisk">*</span></label>
                                                             <input type="numeric" class="form-control"
                                                                 placeholder="Numero de Partos" name="Partos"
                                                                 value="{{ $Gine->Paras }}"   pattern="^\d+(\.\d+)?$" required>
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un valor valido  en años 
+                                     </div>
                                                         </div>
                                                     </div>
 

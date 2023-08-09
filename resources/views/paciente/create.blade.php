@@ -27,15 +27,17 @@
 
             <div class="middle-content container-xxl p-0">
 
-                <!-- BREADCRUMB -->
-                <div class="page-meta">
+                  <div class="page-meta">
                     <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Registrar Paciente</li>
+                            <li class="breadcrumb-item"><a href="#">Usuario: {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
                         </ol>
                     </nav>
                 </div>
+                <h1 style="text-align: center;">AGREGAR UN NUEVO PACIENTE </h1>
                 <!-- /BREADCRUMB -->
                 <!--calendario-->
                 <div class="row layout-top-spacing layout-spacing" id="cancel-row">
@@ -43,11 +45,13 @@
                         <form class="user needs-validation" method="POST" action="{{ route('Pacientes.crear') }}"
                             novalidate>
                             @csrf
-                            <h1>Datos del paciente </h1>
+                            <h3>DATOS DEL PACIENTE</h3>
+                            <h4>Los datos marcados con <span class="red-asterisk">*</span>  on obligatorios</h4>
                             <div class="row mb-4">
                                 <div class="col">
+                                    <label for="formGroupExampleInput">Área <span class="red-asterisk">*</span> </label>
                                     <select class="form-control event-title-area" name="Area"  required>
-                                        <option selected disabled value="">Área </option>
+                                        <option selected disabled value="">Área <span class="red-asterisk">*</span> </option>
                                         @foreach ($Areas as $area)
                                             <option value="{{ $area->IDAREA }}">{{ $area->NOMBE_AREA }}</option>
                                         @endforeach
@@ -61,8 +65,9 @@
                                 </div>
                             
                                 <div class="col">
+                                    <label for="formGroupExampleInput">Doctor <span class="red-asterisk">*</span> </label>
                                     <select class="form-control event-title" name="Doctor"  required>
-                                        <option selected disabled value="">Seleccione un medico </option>
+                                        <option selected disabled value="">Seleccione un medico <span class="red-asterisk">*</span>  </option>
                                     </select>
                                     <div class="valid-feedback">
                                         Selección correcta
@@ -75,8 +80,8 @@
 
                             <div class="row mb-4">
                                 <div class="col-7">
-                                    <!--<label for="formGroupExampleInput">Nombre del paciente</label>-->
-                                    <input type="text" class="form-control " placeholder="Nombre del paciente "
+                                    <!-<label for="formGroupExampleInput">Nombre(s) <span class="red-asterisk">*</span> </label>
+                                    <input type="text" class="form-control " placeholder="Nombre * "
                                         name="Nombre" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"
                                         max="30">
                                         
@@ -89,7 +94,8 @@
                                 </div>
                                
                                 <div class="col">
-                                    <input type="text" class="form-control" placeholder="Apellido del paciente"
+                                    <label for="formGroupExampleInput">Apellido(s) <span class="red-asterisk">*</span> </label>
+                                    <input type="text" class="form-control" placeholder="Apellidos *"
                                         name="Apellido" required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2"
                                         max="30">
                                         <div class="valid-feedback">
@@ -103,8 +109,9 @@
 
                             <div class="row mb-4">
                                 <div class="col">
+                                    <label for="formGroupExampleInput">Edad <span class="red-asterisk">*</span> </label>
                                     <select class="form-control" name="Edad" required>
-                                        <option selected disabled value="">Edad del paciente en años</option>
+                                        <option selected disabled value="">Edad del paciente en años  *</option>
 
                                         @for ($i = 1; $i <= 100; $i++)
                                             <option value="{{ $i }}">{{ $i }}</option>
@@ -119,8 +126,9 @@
                                 </div>
                                
                                 <div class="col">
+                                    <label for="formGroupExampleInput">Sexo <span class="red-asterisk">*</span> </label>
                                     <select class="form-control" name="Sexo" required>
-                                        <option selected disabled value="">Sexo del paciente</option>
+                                        <option selected disabled value="">Sexo *</option>
 
                                         <option value="M">Masculino</option>
                                         <option value="F">Femenino</option>
@@ -138,8 +146,9 @@
                             <div class="row mb-4">
 
                                 <div class="col">
+                                    <label for="formGroupExampleInput">Estado civil <span class="red-asterisk">*</span> </label>
                                     <select class="form-control" name="Estado_civil" required>
-                                        <option selected disabled value="">Estado civil del paciente </option>
+                                        <option selected disabled value="">Estado civil del paciente *</option>
                                         @php
                                             $Estados = ['Soltero(a)', 'Casado(a)', 'Separado(a)', 'Divorciado(a)', 'Viudo(a)', 'Conviviente o pareja de hecho'];
                                         @endphp
@@ -157,7 +166,8 @@
                                 </div>
                                 
                                 <div class="col">
-                                    <input type="text" class="form-control" placeholder="Origen el paciente"
+                                    <label for="formGroupExampleInput">Origen <span class="red-asterisk">*</span> </label>
+                                    <input type="text" class="form-control" placeholder="Origen *"
                                         name="Origen" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
                                     <div class="valid-feedback">
                                         Datos de origen correctos
@@ -168,6 +178,7 @@
                                 </div>
                                
                                 <div class="col">
+                                    <label for="formGroupExampleInput">Ocupación <span class="red-asterisk">*</span> </label>
                                     <input type="text" class="form-control" placeholder="Ocupacion del paciente"
                                         name="Ocupacion" required>
                                         <div class="valid-feedback">
@@ -183,8 +194,9 @@
                             <div class="row mb-4">
 
                                 <div class="col">
+                                    <label for="formGroupExampleInput">Dirección <span class="red-asterisk">*</span> </label>
                                     <input type="text" class="form-control" placeholder="Direccion del paciente"
-                                        name="Direccion" required minlength="4" pattern="^[a-zA-Z0-9.#\s]+$
+                                        name="Direccion" required minlength="4" pattern="^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ.,\s-]{1,100}$
 ">
                                         <div class="valid-feedback">
                                             Datos Dirección correctos
@@ -195,7 +207,8 @@
                                 </div>
                                 
                                 <div class="col">
-                                    <input type="text" class="form-control" placeholder="Telefono del paciente"
+                                    <label for="formGroupExampleInput">Teléfono <span class="red-asterisk">*</span> </label>
+                                    <input type="text" class="form-control" placeholder="Telefono *"
                                         name="Telefono" required minlength="10" maxlength="10" pattern="[0-9]{9,15}">
                                         <div class="valid-feedback">
                                            Teléfono Correcto
@@ -209,8 +222,9 @@
                             <div class="row mb-4">
 
                                 <div class="col">
+                                    <label for="formGroupExampleInput">Religión <span class="red-asterisk">*</span> </label>
                                     <select class="form-control" name="Religion" required>
-                                        <option selected disabled value="">Religión del paciente</option>
+                                        <option selected disabled value="">Religión del paciente *</option>
                                         @php
                                             $religiones = ['Catolicismo', 'Protestantismo', 'Testigos de Jehová', 'Mormonismo', 'Adventismo', 'Pentecostalismo', 'Judaísmo', 'Islam', 'Budismo', 'Hinduismo', 'Sikhismo', 'Jainismo', 'Espiritualismo', 'Religiones indígenas', 'Nuevos movimientos religiosos', 'Ateísmo', 'Agnosticismo'];
                                         @endphp
@@ -230,8 +244,9 @@
                                
 
                                 <div class="col">
+                                    <label for="formGroupExampleInput">Escolaridad <span class="red-asterisk">*</span> </label>
                                     <select class="form-control" name="Escolaridad" required>
-                                        <option selected disabled value="">Escolaridad del paciente</option>
+                                        <option selected disabled value="">Escolaridad del paciente *</option>
                                         @php
                                             $nivelesEducacion = ['Educación Inicial o Preescolar', 'Educación Primaria', 'Educación Secundaria', 'Educación Media o Bachillerato', 'Educación Técnica o Profesional', 'Educación Superior', 'Formación Profesional o Técnica Superior', 'Educación Continua', 'Educación a Distancia o en Línea', 'Educación para Adultos'];
                                         @endphp
@@ -250,8 +265,7 @@
                             </div>
 
 
-
-                            <input type="submit" name="time" class="btn btn-primary">
+<button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola" >Guardar </button>
                         </form>
                     </div>
                 </div>

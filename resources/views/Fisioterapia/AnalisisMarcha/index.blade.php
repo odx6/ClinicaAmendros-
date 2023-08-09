@@ -3,13 +3,17 @@
 
 @section('formulario')
     <div class="col-sm">
-
+<h1 style="text-align: center;">AGREGAR ANÁLISIS DE LA MARCHA</h1>
+               
+                <h4>Los datos marcados con <span class="red-asterisk"><span class="red-asterisk">*</span></span>  son obligatorios</h4>
         <!---table-->
         <form class="user needs-validation" method="POST" action="{{ route('create.AnalisisMarcha', ['id' => $id]) }}" novalidate>
             @csrf
+
             <!---octavo container-->
             <div class="container">
-                <h2>Ana lisis de la marcha</h2>
+                 <h2>ANÁLISIS DE LA MARCHA </h2>
+               
                 <div class="row">
                     <div class="col-sm">
 
@@ -36,7 +40,7 @@
                                                     <td>
                                                         <div class="form-group">
                                                             <label for="formGroupExampleInput">Duda o <br> vacila o <br> múltiples
-                                                               <br> intentos <br> para comenzar
+                                                               <br> intentos <br> para comenzar <span class="red-asterisk">*</span>
                                                             </label>
                                                         </div>
                                                     </td>
@@ -50,6 +54,12 @@
                                                                 <option value="1">(1)No </option>
                                                                 <option value="2">(2)Moderado </option>
                                                             </select>
+                                                            <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     El campo es obligatorio
+                                     </div>
                                                         </div>
                                                     </td>
                                                     
@@ -71,7 +81,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-group">
-                                                            <label for="formGroupExampleInput">El pie derecho <br> no sobrepasa <br> al izquierdo con el paso <br>en la fase del<br> balanceo
+                                                            <label for="formGroupExampleInput">El pie derecho <br> no sobrepasa <br> al izquierdo con el paso <br>en la fase del<br> balanceo <span class="red-asterisk">*</span>
                                                             </label>
                                                         </div>
                                                     </td>
@@ -86,6 +96,12 @@
                                                                 <option value="1">(1)No </option>
                                                                 
                                                             </select>
+                                                            <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     El campo es obligatorio
+                                     </div>
                                                         </div>
                                                     </td>
                                                     
@@ -96,7 +112,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-group">
-                                                            <label for="formGroupExampleInput">El pie derecho <br> no se levanta <br>completamente del suelo <br> con el paso <br>en la fase del balanceo
+                                                            <label for="formGroupExampleInput">El pie derecho <br> no se levanta <br>completamente del suelo <br> con el paso <br>en la fase del balanceo <span class="red-asterisk">*</span>
                                                             </label>
                                                         </div>
                                                     </td>
@@ -110,6 +126,12 @@
                                                                 <option value="1">(1)No </option>
                                                                 
                                                             </select>
+                                                            <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     El campo es obligatorio
+                                     </div>
                                                         </div>
                                                     </td>
                                                     
@@ -120,7 +142,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-group">
-                                                            <label for="formGroupExampleInput">El pie izquierdo<br> no sobrepasa el derecho<br> con el paso<br> en la fase del balanceo
+                                                            <label for="formGroupExampleInput">El pie izquierdo<br> no sobrepasa el derecho<br> con el paso<br> en la fase del balanceo <span class="red-asterisk">*</span>
                                                             </label>
                                                         </div>
                                                     </td>
@@ -134,6 +156,12 @@
                                                                 <option value="1">(1)No </option>
                                                                 
                                                             </select>
+                                                            <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     El campo es obligatorio
+                                     </div>
                                                         </div>
                                                     </td>
                                                     
@@ -144,7 +172,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-group">
-                                                            <label for="formGroupExampleInput">El pie izquierdo<br> no se levanta completamente<br> del suelo <br>con el paso en<br> la fase del balanceo
+                                                            <label for="formGroupExampleInput">El pie izquierdo<br> no se levanta completamente<br> del suelo <br>con el paso en<br> la fase del balanceo <span class="red-asterisk">*</span>
                                                             </label>
                                                         </div>
                                                     </td>
@@ -158,6 +186,12 @@
                                                                 <option value="1">(1)No </option>
                                                                 
                                                             </select>
+                                                            <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     El campo es obligatorio
+                                     </div>
                                                         </div>
                                                     </td>
                                                     
@@ -178,7 +212,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-group">
-                                                            <label for="formGroupExampleInput">La longitud del<br> paso con el pie derecho<br> e izquierdo es diferente
+                                                            <label for="formGroupExampleInput">La longitud del<br> paso con el pie derecho<br> e izquierdo es diferente <span class="red-asterisk">*</span>
                                                             </label>
                                                         </div>
                                                     </td>
@@ -192,6 +226,12 @@
                                                                 <option value="1">(1)No </option>
                                                                 
                                                             </select>
+                                                            <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     El campo es obligatorio
+                                     </div>
                                                         </div>
                                                     </td>
                                                     
@@ -212,7 +252,7 @@
                                                 <tr>
                                                     <td>
                                                         <div class="form-group">
-                                                            <label for="formGroupExampleInput">Para<br> o hay discontinuidad <br>entre los pasos
+                                                            <label for="formGroupExampleInput">Para<br> o hay discontinuidad <br>entre los pasos <span class="red-asterisk">*</span>
                                                             </label>
                                                         </div>
                                                     </td>
@@ -226,6 +266,12 @@
                                                                 <option value="1">(1)No </option>
                                                                 
                                                             </select>
+                                                            <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     El campo es obligatorio
+                                     </div>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -233,7 +279,7 @@
                                                         <td>
                                                             <div class="form-group">
                                                                 <label for="formGroupExampleInput">
-                                                                    TRAYECTORIA <br>(Estimada en relación a las <br>baldosas del suelo de 30 cm;<br> se observa<br> la desviación de un pie <br>en 3 mts de distancia)
+                                                                    TRAYECTORIA <br>(Estimada en relación a las <br>baldosas del suelo de 30 cm;<br> se observa<br> la desviación de un pie <br>en 3 mts de distancia) <span class="red-asterisk">*</span>
                                                                 </label>
                                                             </div>
                                                         </td>
@@ -243,7 +289,7 @@
                                                     <tr>
                                                         <td>
                                                             <div class="form-group">
-                                                                <label for="formGroupExampleInput">Marcada desviación,<br> utiliza ayuda
+                                                                <label for="formGroupExampleInput">Marcada desviación,<br> utiliza ayuda <span class="red-asterisk">*</span>
                                                                 </label>
                                                             </div>
                                                         </td>
@@ -258,6 +304,12 @@
                                                                     <option value="2">(2)Moderado </option>
                                                                     
                                                                 </select>
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     El campo es obligatorio
+                                     </div>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -274,7 +326,7 @@
                                                     <tr>
                                                         <td>
                                                             <div class="form-group">
-                                                                <label for="formGroupExampleInput">Marcado balanceo<br> o utiliza ayuda,<br> flexión de rodillas,<br> espalda <br>o extensión hacia afuera<br> de los brazos
+                                                                <label for="formGroupExampleInput">Marcado balanceo<br> o utiliza ayuda,<br> flexión de rodillas,<br> espalda <br>o extensión hacia afuera<br> de los brazos <span class="red-asterisk">*</span>
                                                                 </label>
                                                             </div>
                                                         </td>
@@ -289,6 +341,12 @@
                                                                     <option value="2">(2)Moderado </option>
                                                                     
                                                                 </select>
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     El campo es obligatorio
+                                     </div>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -305,7 +363,7 @@
                                                     <tr>
                                                         <td>
                                                             <div class="form-group">
-                                                                <label for="formGroupExampleInput"> Talones <br>separados
+                                                                <label for="formGroupExampleInput"> Talones <br>separados <span class="red-asterisk">*</span>
                                                                 </label>
                                                             </div>
                                                         </td>
@@ -320,13 +378,19 @@
                                                                    
                                                                     
                                                                 </select>
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     El campo es obligatorio
+                                     </div>
                                                             </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
                                                             <div class="form-group">
-                                                                <label for="formGroupExampleInput"> Suma Total
+                                                                <label for="formGroupExampleInput"> Suma total <span class="red-asterisk">*</span>
                                                                 </label>
                                                             </div>
                                                         </td>
@@ -334,6 +398,12 @@
                                                             <div class="form-group">
     
                                                                 <input type="numeric" class="form-control" placeholder="Suma total" name="Total" id="Resultado" required>
+                                                                <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     La suma total es obligatoria
+                                     </div>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -359,8 +429,7 @@
 
 
     </div>
-    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Enviar
-        Datos</button>
+    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Guardar</button>
     </form>
 
 

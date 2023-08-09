@@ -129,6 +129,7 @@ class DoctorController extends Controller
         $Notas = nota::where('fk_n', '=', $valorSeleccionado)->get();
         $Exploraciones = exploracion_f::where('fk_p', '=', $valorSeleccionado)->get();
         $Paciente = Paciente::Find($valorSeleccionado);
+         $Fecha = $fechaActual = Carbon::now();
             $idDoctor=$Paciente->PacienteDoctor;
             $Doctor=Doctor::find($idDoctor);
             $idArea=$Doctor->AreaDoctor;
@@ -160,11 +161,11 @@ class DoctorController extends Controller
              $Marchas=Analisis_marcha::where('fk_Analis_marcha', '=', $valorSeleccionado)->get();
 
 
-        $pdf = PDF::loadView('Fisioterapia.pdfFisio', compact('valorSeleccionado', 'Paciente', 'ExploracionesF', 'Tratamiento', 'Antecedentes', 'Estudios', 'DIME', 'Ingravidez', 'habitos','signos', 'Cicatriz', 'Traslados','MarchasDeam','Dolor', 'Evaluaciones','Notas', 'Superiores','Pruebas','PruebasInferiores','PosturaFrontal','Formularios', 'Planes','Marchas'))->setPaper('a4', 'letter');
+        $pdf = PDF::loadView('Fisioterapia.pdfFisio', compact('valorSeleccionado', 'Paciente', 'ExploracionesF', 'Tratamiento', 'Antecedentes', 'Estudios', 'DIME', 'Ingravidez', 'habitos','signos', 'Cicatriz', 'Traslados','MarchasDeam','Dolor', 'Evaluaciones','Notas', 'Superiores','Pruebas','PruebasInferiores','PosturaFrontal','Formularios', 'Planes','Marchas' ,'Doctor', 'Fecha'))->setPaper('a4', 'letter');
         return $pdf->stream('login.pdf');
 
           }else{
-        $pdf = PDF::loadView('pdf.Historial', compact('valorSeleccionado', 'Paciente', 'Historiales', 'Gineco', 'Patologicos', 'Estudios', 'Notas_p', 'Notas', 'Exploraciones'))->setPaper('a4', 'letter');
+        $pdf = PDF::loadView('pdf.Historial', compact('valorSeleccionado', 'Paciente', 'Historiales', 'Gineco', 'Patologicos', 'Estudios', 'Notas_p', 'Notas', 'Exploraciones', 'Doctor','Fecha'))->setPaper('a4', 'letter');
         // Agrega la cabecera al PDF
 
 

@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','Inventario')
+@section('title','Control de insumos')
 @section('linkAuth')
 
 @endsection
@@ -18,39 +18,87 @@
                 <div class="middle-content container-xxl p-0">
 
                     <!-- BREADCRUMB -->
-                    <div class="page-meta">
-                        <nav class="breadcrumb-style-one" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Agregar Factura</li>
-                            </ol>
-                        </nav>
-                    </div>
-                        <h1>Datos del producto</h1>
-                        <form class="user needs-validation" method="POST" action="{{ route('store.Facctura') }}"  enctype="multipart/form-data"  novalidate>
+                     <div class="page-meta">
+                    <nav class="breadcrumb-style-one" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Usuario : {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
+                        </ol> 
+                    </nav>
+                </div>
+                <h1 style="text-align: center;">AGREGAR FACTURA</h1>
+                <h3>Datos de la factura   </h3>
+                <h4>Los datos marcados con <span class="red-asterisk"><span class="red-asterisk">*</span></span>  son obligatorios</h4>
+                        <form id="myForm" class="user needs-validation" method="POST" action="{{ route('store.Facctura') }}"  enctype="multipart/form-data"  novalidate>
                             @csrf
 
                             
-                           
+                            
                         
                             <div class="row mb-4">
+                                 <div class="col">
+                                    <label for="formGroupExampleInput">Proveedor <span class="red-asterisk">*</span>
+                                    </label>
+
+                                    <select class="form-select" id="exampleFormControlSelect1" name="Proveedor" required>
+                    <option selected disabled value="">Seleccione un proveedor </option>
+                            @php
+                            $proveedores=App\Models\Provedor::all();
+                            @endphp
+                            @if($proveedores->isEmpty())
+                            <option selected disabled value="">No hay proveedores Agregue nuevos </option>
+                            
+                            @else
+                            @foreach($proveedores as $prove)
+                            <option value="{{ $prove->pk_proveedor }}">{{ $prove->Nombre }} {{ $prove->Apellidos }}
+                            @endforeach
+                            @endif
+                           
+                   
+
+                </select>
+                <div class="valid-feedback">
+                                        Datos correctos
+                                     </div>
+                                     <div class="invalid-feedback">
+                                         Selecciona un proveedor 
+                                     </div>
+                                </div>
+
+                            </div>
+
+                                 <div class="row mb-4">
 
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Nombre Factura
+                                    <label for="formGroupExampleInput">Nombre Factura <span class="red-asterisk">*</span>
                                     </label>
                                     <input type="text" class="form-control" placeholder="nombre" name="Nombre"
-                                        required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2">
+                                        required pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" minlength="2" >
+                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un nombre valido
+                                     </div>
+
                                 </div>
                                 <div class="col">
-                                    <label for="formGroupExampleInput">Selecciona un archivo pdf </label>
-                                    <input type="file" class="form-control" placeholder="Archivo" name="archivo"
+                                    <label for="formGroupExampleInput">Selecciona un archivo pdf <span class="red-asterisk">*</span> </label>
+                                    <input type="file" id="archivo" class="form-control" placeholder="Archivo" name="archivo"
                                         required >
+                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un archivo valido
+                                     </div>
                                 </div>
                             </div>
                             
                            
-<button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola" >Enviar
-                        Datos</button>
+<button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola" >Guardar </button>
                     <!--end aPatologicos-->
 
                 </form>
@@ -63,5 +111,6 @@
 @endsection
 @section('Scripts')
  
+    <script src="{{ asset('MisFunciones/Clinica.js') }}"></script>
 
 @endsection

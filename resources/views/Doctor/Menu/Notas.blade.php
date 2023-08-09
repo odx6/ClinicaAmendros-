@@ -20,22 +20,36 @@
             </form>
         </div>
     @else
-        <h2>NOTAS </h2>
+       <h1 style="text-align: center;">NOTAS DEL PACIENTE</h1>
+       
+        <h4>Los campos marcados con * son obligatorios </h4>
         <!--Antecedentes patologicos-->
         @foreach ($Notas as $np)
-            <form class="user needs-validation" method="POST" action="{{ route('Nota.store',['IDAG'=>$np->pk_nota,'IDPA'=>$np->fk_n]) }}">
+            <form class="user needs-validation" method="POST" action="{{ route('Nota.store',['IDAG'=>$np->pk_nota,'IDPA'=>$np->fk_n]) }}" novalidate>
                 @csrf
 
                 <div class="row mb-4">
                     <div class="col">
-                        <label for="formGroupExampleInput">Nota </label>
+                        <label for="formGroupExampleInput">Nota <span class="red-asterisk">*</span></label>
                         <input type="text" class="form-control" placeholder="cuerpo de la nota" name="NOT"
                             value="{{ $np->Nota }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$" required>
+                            <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese datos validos para la nota 
+                                     </div>
                     </div>
                     <div class="col">
-                        <label for="formGroupExampleInput">Tipo </label>
+                        <label for="formGroupExampleInput">Tipo <span class="red-asterisk">*</span></label>
                         <input type="text" class="form-control" placeholder="TIPO DE NOTA" name="TIPO"
-                            value="{{ $np->Tipo }}"pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$"  required>
+                            value="{{ $np->Tipo }}" pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$"  required>
+                            <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un tipo valido para la nota
+                                     </div>
                     </div>
 
                 </div>

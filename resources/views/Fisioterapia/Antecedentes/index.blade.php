@@ -38,24 +38,30 @@
                 <div class="page-meta">
                     <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Registrar Antecedentes Patológicos y
-                                Heredofamiliares </li>
-                        </ol>
+                            <li class="breadcrumb-item"><a href="#">Usuario : {{auth()->user()->name}}
+                           
+                            <li class="breadcrumb-item active" aria-current="page"> Correo : {{auth()->user()->email}}</li>
+
+                        </ol> 
                     </nav>
                 </div>
+                <h1 style="text-align: center;">AGREGAR ANTECEDENTES PATÓLOGICOS</h1>
+                
+                <h4>Los datos marcados con <span class="red-asterisk">*</span>  son obligatorios</h4>
                 <!-- /BREADCRUMB -->
                 <!--calendario-->
                 <div class="row layout-top-spacing layout-spacing" id="cancel-row">
                     <!--end seccion de primer container-->
                     <!--Segundo seccion de container--->
                     <div class="container">
-                        <h2>Antecedentes Patológicos y Heredofamiliares</h2>
+                       
                         <div class="row">
                             <div class="col">
                                 <form class="user needs-validation" method="POST"
                                     action="{{ route('create.AntecedenteAH', ['id' => $id]) }}" novalidate>
                                     @csrf
+                                     <h2>ANTECEDENTES PATÓLOGICOS </h2>
+                                
                                     <table class="table">
                                         <thead>
                                             <tr>
@@ -78,7 +84,7 @@
                                                     <div
                                                         class="switch form-switch-custom switch-inline form-switch-success">
                                                         <label class="switch-label"
-                                                            for="form-custom-switch-success">Diabetes</label>
+                                                            for="form-custom-switch-success">Diabetes <span class="red-asterisk">*</span></label>
                                                         <input class="switch-input" type="checkbox" role="switch"
                                                             id="form-custom-switch-success" name="Diabetes" value="si">
 
@@ -91,6 +97,12 @@
                                                             id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Especificacion para diabetes" name="EDiabetes"
                                                             required pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                                             <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación para diabetes
+                                     </div>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -99,7 +111,7 @@
                                                     <div
                                                         class="switch form-switch-custom switch-inline form-switch-success">
                                                         <label class="switch-label"
-                                                            for="form-custom-switch-success">Enf.Reumáticas</label>
+                                                            for="form-custom-switch-success">Enf.Reumáticas <span class="red-asterisk">*</span></label>
                                                         <input class="switch-input" type="checkbox" role="switch"
                                                             id="form-custom-switch-success" name="EnfReumaticas"
                                                             value="si">
@@ -113,6 +125,12 @@
                                                             id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Enfermedades Reumaticas" name="EEnf" required
                                                             pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                                             <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación para  enfermedades reumáticas 
+                                     </div>
                                                     </div>
                                                 </td>
 
@@ -127,6 +145,7 @@
                                                         <input class="switch-input" type="checkbox" role="switch"
                                                             id="form-custom-switch-success" name="Alergias" value="si">
 
+
                                                     </div>
                                                 </td>
                                                 <td>
@@ -136,6 +155,12 @@
                                                             id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Alergias" name="EAlergias" required
                                                             pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                                             <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación para alergias
+                                     </div>
                                                     </div>
                                                 </td>
 
@@ -159,6 +184,12 @@
                                                             id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Encames" name="EEncames" required
                                                             pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                                             <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación para encames
+                                     </div>
                                                     </div>
                                                 </td>
 
@@ -184,6 +215,12 @@
                                                             id="exampleFormControlInput1" value="N/A"
                                                             placeholder="HTA" name="ETA" required
                                                             pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                                             <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación para HTA
+                                     </div>
                                                     </div>
                                                 </td>
                                                 </tr>
@@ -206,6 +243,12 @@
                                                             id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Accidentes" name="EAccidentes" required
                                                             pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                                             <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación para accidentes
+                                     </div>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -229,6 +272,12 @@
                                                             id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Cáncer" name="ECancer" required
                                                             pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                                             <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación para cáncer
+                                     </div>
                                                     </div>
                                                 </td>
                                                   </tr>
@@ -252,6 +301,12 @@
                                                             id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Cardiopatias" name="ECardiopatias" required
                                                             pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                                             <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación para cardiopatías
+                                     </div>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -275,6 +330,12 @@
                                                             id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Transfunciones" name="ETransfunciones" required
                                                             pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                                             <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación para transfusiones
+                                     </div>
                                                     </div>
                                                 </td>
                                                 </tr>
@@ -297,6 +358,12 @@
                                                             id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Cirugias" name="ECirugias" required
                                                             pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                                             <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación para cirugías 
+                                     </div>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -320,6 +387,12 @@
                                                             id="exampleFormControlInput1" value="N/A"
                                                             placeholder="Fracturas" name="EFracturas" required
                                                             pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                                             <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación para fracturas
+                                     </div>
                                                     </div>
                                                 </td>
 
@@ -336,7 +409,7 @@
                                                         <h3>Signos vitales</h3>
                                                         <div class="row">
                                                             <div class="col">
-                                                                <h3>T/A</h3>
+                                                                <h3>T/A <span class="red-asterisk">*</span></h3>
                                                             </div>
                                                             <div class="col">
                                                                 <div class="form-group">
@@ -344,12 +417,18 @@
                                                                     <input type="numeric" class="form-control"
                                                                         id="exampleFormControlInput1" value="" 
                                                                         placeholder="TA" name="TA" pattern="^[0-9]+(?:\/[0-9]+)?$" required>
+                                                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación para T/A
+                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col">
-                                                                <h3>TEMP</h3>
+                                                                <h3>TEMP <span class="red-asterisk">*</span></h3>
                                                             </div>
                                                             <div class="col">
                                                                 <div class="form-group">
@@ -357,6 +436,12 @@
                                                                     <input type="number" class="form-control"
                                                                         id="exampleFormControlInput1" value="" pattern="^\d+(\.\d+)?$"
                                                                         placeholder="Temp" name="Temp" required>
+                                                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación para temp
+                                     </div>
                                                                 </div>
 
                                                             </div>
@@ -364,7 +449,7 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col">
-                                                                <h3>FC</h3>
+                                                                <h3>FC <span class="red-asterisk">*</span></h3>
                                                             </div>
                                                             <div class="col">
                                                                 <div class="form-group">
@@ -372,13 +457,19 @@
                                                                     <input type="number" class="form-control"
                                                                         id="exampleFormControlInput1" value="" pattern="^\d+(\.\d+)?$"
                                                                         placeholder="FC" name="FC" required>
+                                                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación para fc
+                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col">
 
-                                                                <h3>FR</h3>
+                                                                <h3>FR *</h3>
                                                             </div>
                                                             <div class="col">
                                                                 <div class="form-group">
@@ -386,6 +477,12 @@
                                                                     <input type="numeric" class="form-control"
                                                                         id="exampleFormControlInput1" value=""  pattern="^\d+(\.\d+)?$"
                                                                         placeholder="FR" name="FR" required>
+                                                                         <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un valor valido para fr
+                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -397,14 +494,14 @@
 
                                                 <div class="w-100"></div>
                                                 <div class="col"><br>
-                                                    <h2><u>Espasmos o contratuctua muscular </u></h2>
+                                                    <h2><u>Espasmos o contrarrotura muscular  <span class="red-asterisk">*</span></u></h2>
                                                     <!---table-->
                                                     <div class="table-responsive">
                                                         <table class="table">
                                                             <thead>
                                                                 <tr>
                                                                     <th scope="col">si no </th>
-                                                                    <th scope="col">Sitio/Caracteristicas</th>
+                                                                    <th scope="col">Sitio/Características</th>
 
                                                                 </tr>
                                                                 <tr aria-hidden="true"
@@ -432,7 +529,13 @@
                                                                                 value="N/A"
                                                                                 placeholder="Especificacion Espasmos"
                                                                                 name="EEspasmos" required
-                                                                                pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$">
+                                                                                pattern="^[a-zA-Z0-9\s.,!?@#$%^&*()-_=+[\]{}|:;'<>/\\]+$"> 
+                                                                                 <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una especificación para espasmos
+                                     </div>
                                                                         </div>
                                                                     </td>
 
@@ -458,8 +561,7 @@
                         </div>
 
                     </div>
-                    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Enviar
-                        Datos</button>
+                    <button type="submit" class="btn btn-success btn-rounded mb-2 me-4 btn-add-event Hola">Guardar</button>
                     </form>
                     </form>
                     <!--end seccion de Segundo container-->

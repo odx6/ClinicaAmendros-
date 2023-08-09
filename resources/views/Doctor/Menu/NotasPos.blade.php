@@ -20,78 +20,135 @@
               </form>
           </div>
       @else
-          <h2>NOTAS POST QUIRURGICA </h2>
+         <h1 style="text-align: center;">NOTAS POST QUIRURGICA</h1>
+        
+          <h4>Los campos marcados con <span class="red-asterisk">*</span> son obligatorios </h4>
           <!--Antecedentes patologicos-->
           @foreach ($Notas_p as $np)
               <form class="user needs-validation" method="POST"
-                  action="{{ route('NotasPost.store', ['IDAG' => $np->idNotaP, 'IDPA' => $np->fk_npq]) }}">
+                  action="{{ route('NotasPost.store', ['IDAG' => $np->idNotaP, 'IDPA' => $np->fk_npq]) }}" novalidate>
                   @csrf
 
 
                   <div class="row mb-4">
                       <div class="col">
-                          <label for="formGroupExampleInput">Cirugía programada </label>
+                          <label for="formGroupExampleInput">Cirugía programada <span class="red-asterisk">*</span> </label>
                           <input type="date" class="form-control" placeholder="ciruja programada" name="PC"
                               value="{{ $np->ProgramacionC }}" required>
+                               <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una fecha valida
+                                     </div>
                       </div>
                       <div class="col">
-                          <label for="formGroupExampleInput">Ciruguia realizada</label>
+                          <label for="formGroupExampleInput">Ciruguia realizada <span class="red-asterisk">*</span></label>
                           <input type="date" class="form-control" placeholder="CIRUJIA REALIZADA"
                               name="EJ"value="{{ $np->Ejecucion }}" required>
+                               <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una fecha valida
+                                     </div>
                       </div>
                   </div>
                   <div class="row mb-4">
                       <div class="col">
-                          <label for="formGroupExampleInput">Hallazgos </label>
+                          <label for="formGroupExampleInput">Hallazgos  <span class="red-asterisk">*</span></label>
 
                           <input type="text" class="form-control" placeholder="Hallazgos"
-                              name="HA"value="{{ $np->Hallazgos }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                              name="HA"value="{{ $np->Hallazgos }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
+                              <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un hallazgo valido
+                                     </div>
                       </div>
+                      
                       <div class="col">
-                          <label for="formGroupExampleInput">Complicaciones </label>
+                          <label for="formGroupExampleInput">Complicaciones <span class="red-asterisk">*</span> </label>
                           <input type="text" class="form-control" placeholder="COMPLICACIONES"
                               name="CO"value="{{ $np->Complicaciones }}" required
                               pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                              <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese una complicación valida
+                                     </div>
                       </div>
                   </div>
                   <div class="row mb-4">
                       <div class="col">
-                          <label for="formGroupExampleInput">Nombre del cirujano</label>
+                          <label for="formGroupExampleInput">Nombre del cirujano <span class="red-asterisk">*</span></label>
                           <input type="text" class="form-control" placeholder="Nombre del cirujano "
                               name="NC"value="{{ $np->Nombre_Cirujano }}" required
                               pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+">
+                              <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un nombre valido 
+                                     </div>
                       </div>
 
                       <div class="col">
-                          <label for="formGroupExampleInput">Nombre del ayudante </label>
+                          <label for="formGroupExampleInput">Nombre del ayudante  <span class="red-asterisk">*</span> </label>
                           <input type="text" class="form-control" placeholder="Nombre del ayudante"
                               name="NAY"value="{{ $np->Nombre_Ayudante }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"
                               required>
+                               <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un nombre valido 
+                                     </div>
                       </div>
                   </div>
                   <div class="row mb-4">
 
                       <div class="col">
-                          <label for="formGroupExampleInput">Nombre del instrumentista</label>
+                          <label for="formGroupExampleInput">Nombre del instrumentista <span class="red-asterisk">*</span></label>
                           <input type="text" class="form-control" placeholder="nombre instrumentista"
                               name="NI"value="{{ $np->Nombre_Instrumentista }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"
                               required>
+                               <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un nombre valido 
+                                     </div>
                       </div>
 
                       <div class="col">
-                          <label for="formGroupExampleInput">Nombre del anestesiólogo</label>
+                          <label for="formGroupExampleInput">Nombre del anestesiólogo <span class="red-asterisk">*</span></label>
                           <input type="text" class="form-control" placeholder="Nombre del aniestesiologo"
                               name="NAN"value="{{ $np->Nombre_Aniestesiologo }}"
                               pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+" required>
+                               <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un nombre valido 
+                                     </div>
                       </div>
                   </div>
                   <div class="row mb-4">
 
                       <div class="col">
-                          <label for="formGroupExampleInput">Circulante</label>
+                          <label for="formGroupExampleInput">Circulante <span class="red-asterisk">*</span></label>
                           <input type="text" class="form-control" placeholder="circulante"
                               name="CIR"value="{{ $np->Circulante }}" pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+"
                               required>
+                               <div class="valid-feedback">
+                                        Dato correcto
+                                     </div>
+                                     <div class="invalid-feedback">
+                                     Ingrese un nombre valido 
+                                     </div>
                       </div>
                   </div>
                   <!--end notaspost-->

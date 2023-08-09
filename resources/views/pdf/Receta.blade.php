@@ -73,7 +73,7 @@ text-align: right;
           </div>
         
        
-    <p class="abajo">________________________<br>{{$Doctor->Nombre}} {{$Doctor->Apellidos}}<br></p>
+    <p class="abajo">________________________<br>DR. {{$Doctor->Nombre}} {{$Doctor->Apellidos}}<br></p>
     </div>
     
 </body>
