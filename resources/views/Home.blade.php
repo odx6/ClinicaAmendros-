@@ -141,7 +141,7 @@
                                                 <div class="">
                                                     <label class="form-label">Ingresa La fecha de inicio y la hora <span class="red-asterisk">*</span></label>
                                                     <input id="event-start-date" type="datetime-local" class="form-control"
-                                                        placeholder="Fecha de la cita"   required>
+                                                        placeholder="Fecha de la cita"   max="2023-12-30" required>
                                                     <div class="valid-feedback">
                                                         Datos correctos
                                                     </div>
@@ -177,6 +177,7 @@
                 @include('layouts.ModalConfirmacion')
                 @include('layouts.PrimeraCita')
                 @include('layouts.Alerta')
+                
 
             </div>
 
@@ -196,5 +197,5 @@
     <!--  BEGIN CUSTOM SCRIPTS FILE  -->
     <script src="../src/plugins/src/fullcalendar/custom-fullcalendar.js"></script>
     <!--  END CUSTOM SCRIPTS FILE  -->
-
+<script src="{{ asset('MisFunciones/Clinica.js') }}"></script>
 @endsection

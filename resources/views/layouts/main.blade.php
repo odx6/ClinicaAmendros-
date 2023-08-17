@@ -73,6 +73,8 @@
     <script src="{{ asset('src/assets/js/forms/bootstrap_validation/bs_validation_script.js')}}"></script>
 <script src="{{ asset('MisFunciones/ValidacionFomularioPaciente.js') }}"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ <script src="{{ asset('MisFunciones/Clinica.js') }}"></script>
 
 @yield('Scripts')
 </body>

@@ -8,7 +8,7 @@ php artisan config:cache
 
 echo "Limpiar las rutas"
 php artisan cache:clear
-echo "ever Caching routes..."
+echo "ever limpiar rutas ..."
 php artisan route:cache
 echo "ever Caching routes..."
 php artisan view:cache

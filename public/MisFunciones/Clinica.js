@@ -548,3 +548,35 @@ $('#myForm').on('submit', function(event) {
         alert('Por favor, selecciona un archivo.');
     }
 });
+
+$('.btn-delete').click(function(e) {
+ 
+      e.preventDefault();
+
+      const url = $(this).attr('href');
+      console.log('URL del enlace:', url);
+Swal.fire({
+  title: '¿Estas seguro(a) de eliminar el dato?',
+  text: "El dato sera eliminado permanentente!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Si, quiero elimniarlo'
+}).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href =url;
+    Swal.fire(
+      'Eliminado!',
+      'El dato a sido elimnado correctamente',
+      'success'
+    )
+  }
+
+})
+    });
+
+
+
+
+//EndAlertas

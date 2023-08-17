@@ -354,28 +354,41 @@ document.addEventListener('DOMContentLoaded', function () {
         // Delete Event
         getBotonCancelarCita.addEventListener('click', function () {
 
-            var getPublicID = this.dataset.fcEventPublicId;
-            var getTitleUpdatedValue = getModalTitleEl.value;
+Swal.fire({
+  title: '¿Estas seguro(a) de cancelar la cita?',
+  text: "La cita se borrara y no se revertira!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'si quiero'
+}).then((result) => {
+  if (result.isConfirmed) {
 
-            // var getEvent = calendar.getEventById(getPublicID);
 
-            //getEvent.setProp('title', getTitleUpdatedValue);
-            //codigo para actualizar 
-            //alert("Delete"+ getPublicID);
             $.ajax({
                 type: "POST",
                 url: 'EliminarCita',
                 data: {
-                    idCita: getPublicID,
+                    idCita:getPublicID,
                     _token: $('meta[name="csrf-token"]').attr('content'),
 
                 },
-            }).done(function (res) { //alert(res)
+            }).done(function (res) { //alert(res) 
+            myModal.hide()
+            location.reload(); });
+    Swal.fire(
+      'Cancelada!',
+      'Tu cita se elimino correctamente.',
+      'success'
+    )
+  }
+})
+            var getPublicID = this.dataset.fcEventPublicId;
+            var getTitleUpdatedValue = getModalTitleEl.value;
 
-                location.reload();
-            });
-
-
+            
+           
         })
         //endEliminar
         calendar.setOption('locale', 'ES');

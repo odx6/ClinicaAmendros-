@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="col">
                                     <label for="formGroupExampleInput">Correo</label>
-                                    <input type="email" class="form-control" placeholder="Precio compra" name="email"
+                                    <input type="email" class="form-control" placeholder="Correo" name="email"
                                         required  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
                                         <div class="valid-feedback">
                                         Datos correctos
@@ -65,7 +65,7 @@
                             <div class="row mb-4">
                                 <div class="col">
                                     <label for="formGroupExampleInput">Contraseña <span class="red-asterisk">*</span></label>
-                                    <input type="password" class="form-control" placeholder="Precio compra" name="password"
+                                    <input type="password" class="form-control" placeholder="Contraseña" name="password"
                                         required >
                                         <div class="valid-feedback">
                                         Datos correctos

@@ -129,6 +129,6 @@
 
 @endsection
 @section('Scripts')
- 
+  <script src="{{ asset('MisFunciones/Clinica.js') }}"></script>
 
 @endsection

@@ -86,7 +86,7 @@ Route::post('/pacientes/Eliminar', [PacienteController::class, 'destroy'])->midd
 Route::get('/listarpacientes', [PacienteController::class, 'index2'])->middleware('auth')->name('Pacientes.listar');
 Route::get('/editpacientes', [PacienteController::class, 'edit'])->middleware('auth')->name('Pacientes.edit');
 Route::post('/createpacientes', [PacienteController::class, 'create2'])->middleware('auth')->name('Pacientes.crear');
-Route::post('/mostrarpacientes', [PacienteController::class, 'show'])->middleware('auth')->name('Pacientes.show');
+//Route::post('/mostrarpacientes', [PacienteController::class, 'show'])->middleware('auth')->name('Pacientes.show');
 Route::post('/director/Actualizar', [PacienteController::class, 'Update2'])->middleware('auth')->name('paciente.update2');
 
 Route::get('/director/Eliminar', [PacienteController::class, 'destroy2'])->middleware('auth')->name('paciente.destroy2');
